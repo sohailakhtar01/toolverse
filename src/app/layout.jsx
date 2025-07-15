@@ -3,9 +3,6 @@ import "./globals.css";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 
-
-// temp change for redeploy
-
 // Import fonts
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,16 +23,16 @@ export const metadata = {
     "AI tools", "Productivity software", "Best AI apps", "Tool directory", "Design tools", "Marketing AI", "ToolVault"
   ],
   icons: {
-    icon: "/logo.png", // ✅ This line adds favicon support
+    icon: "/logo.png",
   },
   openGraph: {
     title: "ToolVault - Curated AI Tool Directory",
     description: "ToolVault helps you discover the best AI tools across every category, including pricing, ratings, and use cases.",
-    url: "https://www.toolvault.ai", // replace with real domain
+    url: "https://toolverse-brown.vercel.app", // ✅ TEMPORARY: actual deployed site
     siteName: "ToolVault",
     images: [
       {
-        url: "/logo.png", // should already be in /public
+        url: "/logo.png",
         width: 32,
         height: 32,
         alt: "ToolVault AI Tools Directory",
@@ -50,15 +47,16 @@ export const metadata = {
     images: ["/logo.png"],
   },
   alternates: {
-    canonical: "https://www.toolvault.ai",
+    canonical: "https://toolverse-brown.vercel.app", // ✅ TEMPORARY
   },
 };
 
-
-// --- LAYOUT ---
 export default function RootLayout({ children }) {
   return (
     <html lang="en" dir="ltr" data-theme="light">
+      <head>
+        <meta name="google-site-verification" content="fhoUx6Asp7AlWxDIvLfaXFEbw4pp94yNUhqewq6pMJM" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased scroll-smooth bg-white text-gray-900`}
       >
