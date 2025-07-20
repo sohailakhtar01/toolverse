@@ -50,9 +50,9 @@ const Header = () => {
             <Link href="/how-it-works" className="px-3 py-2 text-[18px] text-gray-700 hover:text-purple-600 transition-colors">How It Works</Link>
             <Link href="/featured" className="px-3 py-2 text-[18px]   text-gray-700 hover:text-purple-600 transition-colors">Featured</Link>
             <Link href="/about" className="px-3 py-2 text-[18px] text-gray-700 hover:text-purple-600 transition-colors">About Us</Link>
-            <Link href="/sign-in" className="px-3 py-2 text-[18px]  cursor-pointer text-purple-600 hover:text-purple-700 transition-colors">
+            {/* <Link href="/sign-in" className="px-3 py-2 text-[18px]  cursor-pointer text-purple-600 hover:text-purple-700 transition-colors">
               Sign in
-            </Link>
+            </Link> */}
             <Link href="/browse-tools " className="px-5 py-2 cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-[30px] hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101">
               Get Started
             </Link>
@@ -70,7 +70,7 @@ const Header = () => {
         {isOpen && (
           <div
             onClick={() => setIsOpen(false)}
-            className="fixed inset-0 bg-blue-500 bg-opacity-10 backdrop-blur-sm z-40 md:hidden"
+            className="fixed inset-0 bg-gradient-to-r from-purple-500 to-pink-500 bg-opacity-10 backdrop-blur-sm z-40 md:hidden"
 
           />
         )}
@@ -102,9 +102,9 @@ const Header = () => {
               <Link href="/how-it-works" onClick={() => setIsOpen(false)} className="text-left text-xl px-4 py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">How It Works</Link>
               <Link href="/featured" onClick={() => setIsOpen(false)} className="text-left px-4 text-xl py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">Featured</Link>
               <Link href="/about" onClick={() => setIsOpen(false)} className="text-left px-4 text-xl  py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">About Us</Link>
-              <Link href="/sign-in" onClick={() => setIsOpen(false)} className="text-left px-4 text-xl  py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">
+              {/* <Link href="/sign-in" onClick={() => setIsOpen(false)} className="text-left px-4 text-xl  py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">
                 Sign in
-              </Link>
+              </Link> */}
 <div className="pt-4 mb-[50px] border-t border-purple-100 flex justify-center items-center h-full">
                 <Link href="/browse-tools" onClick={() => setIsOpen(false)} className="block w-[80%] text-center px-3 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105 shadow-lg">
                   Get Started
