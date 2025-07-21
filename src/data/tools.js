@@ -186,19 +186,19 @@ export const tools = [
     "name": "Zara",
     "slug": "zara",
     "image": "/zara.png",
-    "url": null,
+    "url": "https://www.micro1.ai/zara",
     "category": [
       "Business Management",
       "AI Recruiting"
     ],
-    "price": "Unknown",
+    "price": "$89/month (Early Stage) or $399/month (Growth)",
     "description": "The world's best AI recruiter by micro1",
     "tags": [
       "recruiting",
       "hiring",
       "ai recruiter"
     ],
-    "rating":3.8,
+    "rating":4.8,
     "keywords": [
       "ai recruiter",
       "hiring tool"
@@ -2478,24 +2478,24 @@ export const tools = [
     "name": "Branded",
     "slug": "branded",
     "image": "/brand.png",
-    "url": null,
+    "url":"https://surveys.gobranded.com/",
     "category": [
       "AI Detection & Anti-Detection",
       "Business Research"
     ],
-    "price": "Unknown",
+    "price": "Free to join and earn points, with a minimum cash-out of $5 (500 points).",
     "description": "Branded connects businesses with research participants, offering AI-driven insights and custom audience targeting.",
     "tags": [
       "research participants",
       "ai-driven insights",
       "audience targeting"
     ],
-    "rating": null,
+    "rating": 4.1,
     "keywords": [
       "market research",
       "ai insights"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "hCaptcha",
@@ -3278,12 +3278,12 @@ export const tools = [
     "name": "Wanderboat",
     "slug": "wanderboat",
     "image": "/wander.png",
-    "url": null,
+    "url": "https://wanderboat.ai/",
     "category": [
       "Daily Life",
       "AI Travel"
     ],
-    "price": "Unknown",
+    "price": "Free tier available; contact for premium pricing",
     "description": "AI-powered travel platform for personalized trip planning and point-of-interest discovery.",
     "tags": [
       "travel planning",
@@ -3291,7 +3291,7 @@ export const tools = [
       "point-of-interest",
       "ai travel"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "ai trip planner",
       "travel platform"
@@ -3302,12 +3302,12 @@ export const tools = [
     "name": "SpoiledChild",
     "slug": "spoiledchild",
     "image": "/spoinled.png",
-    "url": null,
+    "url": "https://www.spoiledchild.com/",
     "category": [
       "Daily Life",
       "Health & Wellness"
     ],
-    "price": "Unknown",
+    "price": "Products sold individually; subscriptions available",
     "description": "AI-powered wellness platform for personalized anti-aging hair and skin products.",
     "tags": [
       "wellness platform",
@@ -3316,7 +3316,7 @@ export const tools = [
       "hair care",
       "skin care"
     ],
-    "rating": null,
+    "rating": 5.0,
     "keywords": [
       "ai wellness",
       "personalized products"
@@ -3332,7 +3332,7 @@ export const tools = [
       "Daily Life",
       "Business Management"
     ],
-    "price": "Unknown",
+    "price": "freemium",
     "description": "Conversational AI platform for ecommerce, automating support and driving sales.",
     "tags": [
       "conversational ai",
@@ -3340,7 +3340,7 @@ export const tools = [
       "support automation",
       "sales"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "ai customer service",
       "ecommerce support"
@@ -3351,13 +3351,13 @@ export const tools = [
     "name": "Chat & Ask AI",
     "slug": "chat-ask-ai-1",
     "image": "/chatandask.png",
-    "url": null,
+    "url": "https://chatandask.ai/",
     "category": [
       "Daily Life",
       "Social Media",
       "Chatbots & Virtual Companions"
     ],
-    "price": "Unknown",
+    "price": "Free tier available; paid plans start at $9.99/month",
     "description": "Advanced AI chatbot with GPT-4o, offering various AI tools and WhatsApp integration.",
     "tags": [
       "ai chatbot",
@@ -3365,7 +3365,7 @@ export const tools = [
       "whatsapp integration",
       "ai tools"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "advanced chatbot",
       "whatsapp integration"
@@ -3376,12 +3376,12 @@ export const tools = [
     "name": "Wondershare Virbo",
     "slug": "wondershare-virbo",
     "image": "/wasd.png",
-    "url": null,
+    "url": "https://virbo.wondershare.com/",
     "category": [
       "Daily Life",
       "Video & Animation"
     ],
-    "price": "Unknown",
+    "price": "Starts from $9.99/month (billed annually) for basic plan, with free trial available.",
     "description": "AI video generator with avatars, voices, and translation for effortless video creation.",
     "tags": [
       "video generation",
@@ -3389,7 +3389,7 @@ export const tools = [
       "voices",
       "translation"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "ai video generator",
       "video creation"
@@ -3400,12 +3400,12 @@ export const tools = [
     "name": "HitPaw FotorPea",
     "slug": "hitpaw-fotorpea",
     "image": "/hutpaw.png",
-    "url": null,
+    "url": "https://online.hitpaw.com/",
     "category": [
       "Daily Life",
       "Image Generation & Editing"
     ],
-    "price": "Unknown",
+    "price": "Free to try, then various plans: Weekly ($4.99), Monthly ($22.39), Yearly ($90.39), Perpetual ($130.39) (prices may vary slightly based on current promotions).",
     "description": "AI photo enhancer for quality improvement, unblurring, and object removal.",
     "tags": [
       "photo enhancer",
@@ -3413,7 +3413,7 @@ export const tools = [
       "unblurring",
       "object removal"
     ],
-    "rating": null,
+    "rating": 4.7,
     "keywords": [
       "ai photo editor",
       "image enhancement"
@@ -3424,12 +3424,12 @@ export const tools = [
     "name": "DreamFace",
     "slug": "dreamface",
     "image": "/dream.png",
-    "url": null,
+    "url": "https://dreamfacetech.com/",
     "category": [
       "Daily Life",
       "Image Generation & Editing"
     ],
-    "price": "Unknown",
+    "price": "Offers in-app purchases, including weekly ($4.99-$14.99), yearly ($29.99-$89.99), and 3-year plans ($59.99) with varying features.",
     "description": "AI-powered photo animating and face editing app for content creation.",
     "tags": [
       "photo animating",
@@ -3437,23 +3437,23 @@ export const tools = [
       "content creation",
       "app"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "ai photo editor",
       "face animator"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Design Bundles",
     "slug": "design-bundles",
     "image": "/desing.png",
-    "url": null,
+    "url":"https://designbundles.net/",
     "category": [
       "Daily Life",
       "Art & Creative Design"
     ],
-    "price": "Unknown",
+    "price": "Offers various membership plans: Hobbyist ($11.99/month or $115.90/year), Unlimited ($24.99/month or $239.90/year), Business ($97.99/month or $899.90/year), plus individual product purchases.",
     "description": "Online marketplace for design resources like fonts, graphics, and templates, plus AI tools.",
     "tags": [
       "design resources",
@@ -3462,12 +3462,12 @@ export const tools = [
       "templates",
       "ai tools"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "design marketplace",
       "ai design tools"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Artbreeder",
@@ -3478,14 +3478,14 @@ export const tools = [
       "Daily Life",
       "Interior & Architectural Design"
     ],
-    "price": "Unknown",
+    "price": "Free plan available. Paid plans start from $7.49/month (billed yearly) or $8.99/month, with higher tiers for more credits and features.",
     "description": "AI-powered collaborative tool for creating and manipulating images.",
     "tags": [
       "collaborative tool",
       "image creation",
       "image manipulation"
     ],
-    "rating": null,
+    "rating": 4.0,
     "keywords": [
       "ai art creation",
       "image manipulation"
@@ -3502,19 +3502,19 @@ export const tools = [
       "Daily Life",
       "Research & Data Analysis"
     ],
-    "price": "Unknown",
+    "price": "freemium",
     "description": "Thomson Reuters: Technology solutions and expertise for professionals across various industries.",
     "tags": [
       "technology solutions",
       "expertise",
       "industry"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "technology services",
       "professional solutions"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Abacus.AI",
@@ -3525,14 +3525,14 @@ export const tools = [
       "Legal & Finance",
       "Image Analysis"
     ],
-    "price": "Unknown",
+    "price": "ChatLLM subscription starts at $10 per user per month. Enterprise pricing is custom.",
     "description": "AI platform for building and embedding AI solutions into applications.",
     "tags": [
       "ai platform",
       "ai solutions",
       "embedding"
     ],
-    "rating": null,
+    "rating": 3.0,
     "keywords": [
       "ai platform",
       "application integration"
@@ -3543,12 +3543,12 @@ export const tools = [
     "name": "MathGPT",
     "slug": "mathgpt",
     "image": "/math.png",
-    "url": null,
+    "url": "https://apps.apple.com/ph/app/mathgpt-ai-homework-helper/id6472092303",
     "category": [
       "Legal & Finance",
       "Education & Translation"
     ],
-    "price": "Unknown",
+    "price": "Free with in-app purchases for additional features or subscriptions.",
     "description": "AI math solver and homework helper with video explanations and step-by-step solutions.",
     "tags": [
       "math solver",
@@ -3556,7 +3556,7 @@ export const tools = [
       "video explanations",
       "step-by-step solutions"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "ai math solver",
       "homework assistant"
@@ -3635,12 +3635,12 @@ export const tools = [
     "name": "AInvest",
     "slug": "ainvest",
     "image": "/aiinvest.png",
-    "url": null,
+    "url": "https://www.ainvest.com/",
     "category": [
       "Legal & Finance",
       "AI Investing"
     ],
-    "price": "Unknown",
+    "price": "$49.99/month or $25.00/month billed annually",
     "description": "AI-powered stock analysis platform with real-time data and predictive tools.",
     "tags": [
       "stock analysis",
@@ -3648,7 +3648,7 @@ export const tools = [
       "predictive tools",
       "investing"
     ],
-    "rating": null,
+    "rating": 4.7,
     "keywords": [
       "ai stock analysis",
       "investing platform"
@@ -4369,12 +4369,12 @@ export const tools = [
     "name": "MediSphere",
     "slug": "medisphere",
     "image": "/medisphere.png",
-    "url": null,
+    "url":"https://medisphere.cloud/",
     "category": [
       "Health & Wellness",
       "AI Healthcare"
     ],
-    "price": "Unknown",
+    "price": "F CFA 256,000/year (approx. $438 USD/year)",
     "description": "AI-driven healthcare management platform for doctors and staff.",
     "tags": [
       "healthcare management",
@@ -4382,7 +4382,7 @@ export const tools = [
       "doctors",
       "staff"
     ],
-    "rating": null,
+    "rating": 5.0,
     "keywords": [
       "ai healthcare",
       "medical management"
@@ -4489,19 +4489,19 @@ export const tools = [
     "name": "Freed",
     "slug": "freed",
     "image": "/freed.png",
-    "url": null,
+    "url": "https://www.getfreed.ai/",
     "category": [
       "Health & Wellness",
       "AI Healthcare"
     ],
-    "price": "Unknown",
+    "price": "$99/month per clinician (starting); team plans available",
     "description": "Freed is an AI medical scribe for instant clinical documentation and happier clinicians.",
     "tags": [
       "ai medical scribe",
       "clinical documentation",
       "healthcare"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "medical scribe",
       "clinical documentation"
@@ -4512,12 +4512,12 @@ export const tools = [
     "name": "Heidi Health",
     "slug": "heidi-health",
     "image": "/heidi.png",
-    "url": null,
+    "url": "https://www.heidihealth.com/",
     "category": [
       "Health & Wellness",
       "AI Healthcare"
     ],
-    "price": "Unknown",
+    "price": "$99/month (Pro plan); Free plan available",
     "description": "AI medical scribe for clinicians, transcribing visits and generating notes to save time.",
     "tags": [
       "ai medical scribe",
@@ -4525,30 +4525,7 @@ export const tools = [
       "note generation",
       "healthcare"
     ],
-    "rating": null,
-    "keywords": [
-      "medical scribe",
-      "ai transcription"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "Heidi Health",
-    "slug": "heidi-health-2",
-    "image": "/heidi.png",
-    "url": null,
-    "category": [
-      "Health & Wellness",
-      "AI Healthcare"
-    ],
-    "price": "Unknown",
-    "description": "AI medical scribe for transcribing visits and generating notes.",
-    "tags": [
-      "ai medical scribe",
-      "transcribing",
-      "note generation"
-    ],
-    "rating": null,
+    "rating": 4.1,
     "keywords": [
       "medical scribe",
       "ai transcription"
@@ -5427,12 +5404,12 @@ export const tools = [
     "name": "LOVESCAPE",
     "slug": "lovescape",
     "image": "/lovespa.png",
-    "url": null,
+    "url": "https://lovescape.com/",
     "category": [
       "Chatbots & Virtual Companions",
       "AI Girlfriend"
     ],
-    "price": "Unknown",
+    "price": "$5.99/month (annual plan)",
     "description": "Platform for creating and interacting with AI girlfriends through chat, visuals, and voice.",
     "tags": [
       "ai girlfriend",
@@ -5441,7 +5418,7 @@ export const tools = [
       "voice",
       "interaction"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "ai girlfriend",
       "virtual companion"
