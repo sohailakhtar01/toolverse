@@ -7,14 +7,14 @@ export const tools = [
     "category": [
       "3D Generation"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Basic free; Pro $15.9/mo; Advanced $39.9/mo; Premium $111.9/mo)",
     "description": "AI-powered 3D model generator from images and text.",
     "tags": [
       "3D models",
       "image to 3D",
       "text to 3D"
     ],
-    "rating": null,
+    "rating":  4.2,
     "keywords": [
       "3d generator",
       "ai 3d",
@@ -26,18 +26,18 @@ export const tools = [
     "name": "iPurix",
     "slug": "ipurix",
     "image": "/iprurix.png",
-    "url": null,
+    "url": "https://remove-watermark.org/",
     "category": [
       "Image Generation & Editing"
     ],
-    "price": "Unknown",
+    "price": "Freemium",
     "description": "AI-powered tool to remove watermarks from images quickly and easily.",
     "tags": [
       "watermark removal",
       "image editing",
       "photo editor"
     ],
-    "rating": null,
+    "rating":  4.0,
     "keywords": [
       "watermark remover",
       "ai image tool"
@@ -48,12 +48,12 @@ export const tools = [
     "name": "Twistly",
     "slug": "twistly",
     "image": "/twistly.png",
-    "url": null,
+    "url": "https://twistly.ai/",
     "category": [
       "Office & Productivity",
       "Writing & Editing"
     ],
-    "price": "Unknown",
+    "price": "Freemium (free add-in on Microsoft AppSource)",
     "description": "AI presentation maker add-in for PowerPoint that creates beautiful presentations in seconds.",
     "tags": [
       "presentations",
@@ -61,7 +61,7 @@ export const tools = [
       "design",
       "productivity"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "presentation maker",
       "ai presentation"
@@ -72,7 +72,7 @@ export const tools = [
     "name": "Skywork",
     "slug": "skywork",
     "image": "/skywork.png",
-    "url": null,
+    "url": "https://skywork.ai/",
     "category": [
       "Office & Productivity",
       "Business Management"
@@ -85,7 +85,7 @@ export const tools = [
       "agent",
       "information management"
     ],
-    "rating": null,
+    "rating":  4.1,
     "keywords": [
       "ai workspace",
       "productivity agent"
@@ -96,18 +96,18 @@ export const tools = [
     "name": "Veo3 AI",
     "slug": "veo3-ai",
     "image": "/veo.png",
-    "url": null,
+    "url":"https://veo3.ai/",
     "category": [
       "Video & Animation"
     ],
-    "price": "Unknown",
+    "price": "Paid (via Gemini Pro plan $249.99/mo)",
     "description": "AI for instant 8-second video creation from text, images, articles.",
     "tags": [
       "video generation",
       "text to video",
       "image to video"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "ai video generator",
       "video creation"
@@ -118,18 +118,18 @@ export const tools = [
     "name": "Earth Zoom Out AI",
     "slug": "earth-zoom-out-ai",
     "image": "/earth.png",
-    "url": null,
+    "url": "https://higgsfield.ai/motion/70e490b9-26b7-4572-8d9c-2ac8dcc9adc0",
     "category": [
       "Video & Animation"
     ],
-    "price": "Unknown",
+    "price": "Freemium",
     "description": "AI video generator transforming images into cosmic Earth zoom-out videos.",
     "tags": [
       "video generation",
       "image to video",
       "zoom videos"
     ],
-    "rating": null,
+    "rating": 4.0,
     "keywords": [
       "ai video generator",
       "cosmic videos"
@@ -140,18 +140,18 @@ export const tools = [
     "name": "Videotok",
     "slug": "videotok",
     "image": "/videotok.png",
-    "url": null,
+    "url": "https://videotok.app/",
     "category": [
       "Video & Animation"
     ],
-    "price": "Unknown",
+    "price": "Paid",
     "description": "AI video generator for content creators and brands. Automate the video creation process with images, animations, voiceovers, and transitions in just a few minutes.",
     "tags": [
       "video generation",
       "content creation",
       "automation"
     ],
-    "rating": null,
+    "rating":  4.3,
     "keywords": [
       "ai video generator",
       "video automation",
@@ -163,19 +163,19 @@ export const tools = [
     "name": "ViralQR",
     "slug": "viralqr",
     "image": "/viralqr.png",
-    "url": null,
+    "url": "https://viralqr.com/",
     "category": [
       "Daily Life",
       "Marketing & Advertising"
     ],
-    "price": "Unknown",
+    "price": "Paid",
     "description": "Your All-in-One Solution for Dynamic QR Codes and Secure Sharing",
     "tags": [
       "qr codes",
       "sharing",
       "marketing"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "dynamic qr codes",
       "secure sharing"
@@ -198,7 +198,7 @@ export const tools = [
       "hiring",
       "ai recruiter"
     ],
-    "rating": null,
+    "rating":3.8,
     "keywords": [
       "ai recruiter",
       "hiring tool"
@@ -209,7 +209,7 @@ export const tools = [
     "name": "Bitchat",
     "slug": "bitchat",
     "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
-    "url": null,
+    "url": "https://bitchats.app/?utm_source=toolify",
     "category": [
       "Chatbots & Virtual Companions"
     ],
@@ -220,7 +220,7 @@ export const tools = [
       "offline",
       "bluetooth mesh"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "decentralized messaging",
       "offline chat"
@@ -231,19 +231,19 @@ export const tools = [
     "name": "Utell AI",
     "slug": "utell-ai",
     "image": "/zara.png",
-    "url": null,
+    "url": "https://utell.ai/",
     "category": [
       "Education & Translation",
       "Voice Generation & Conversion"
     ],
-    "price": "Unknown",
+    "price": "Freemium",
     "description": "AI accent conversion software for clearer global communication.",
     "tags": [
       "accent conversion",
       "communication",
       "translation"
     ],
-    "rating": null,
+    "rating": 4.1,
     "keywords": [
       "accent converter",
       "global communication"
@@ -254,12 +254,13 @@ export const tools = [
     "name": "Sim Studio",
     "slug": "sim-studio",
     "image": "/sim.png",
-    "url": null,
+    "url":"https://simstudio.ai/",
+
     "category": [
       "Coding & Development",
       "Office & Productivity"
     ],
-    "price": "Unknown",
+    "price": "Freemium",
     "description": "Visual platform for building and deploying AI agents and workflows.",
     "tags": [
       "ai agents",
@@ -267,30 +268,31 @@ export const tools = [
       "development",
       "no-code"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "ai agent builder",
       "workflow platform"
     ],
     "isFeatured": true
   },
+////////////////////////
   {
     "name": "Wonderchat",
     "slug": "wonderchat",
     "image": "/wonder.png",
-    "url": null,
+    "url": "https://wonderchat.io/",
     "category": [
       "Chatbots & Virtual Companions",
       "Customer Service"
     ],
-    "price": "Unknown",
+    "price": "Freemium (20 free messages, paid plans start ~$29/mo)",
     "description": "AI Chatbot builder to create custom ChatGPT chatbots from website links or PDFs.",
     "tags": [
       "chatbot builder",
       "chatgpt",
       "customer service"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "ai chatbot",
       "custom chatbot"
@@ -301,18 +303,18 @@ export const tools = [
     "name": "Seedance AI",
     "slug": "seedance-ai",
     "image": "/seed.png",
-    "url": null,
+    "url": "https://seedance-ai.com/",
     "category": [
       "Video & Animation"
     ],
-    "price": "Unknown",
+    "price": "freemium",
     "description": "AI video generation platform for professional-grade content.",
     "tags": [
       "video generation",
       "professional content",
       "animation"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "ai video platform",
       "content creation"
@@ -323,19 +325,19 @@ export const tools = [
     "name": "y2doc",
     "slug": "y2doc",
     "image": "/y2.png",
-    "url": null,
+    "url":"https://y2doc.com/",
     "category": [
       "Office & Productivity",
       "Research & Data Analysis"
     ],
-    "price": "Unknown",
+    "price":  "Freemium (free usage with limits; premium plans likely)",
     "description": "Youtube-> structured doc, one click",
     "tags": [
       "youtube",
       "documentation",
       "summarization"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "youtube to doc",
       "video summarizer"
@@ -346,11 +348,11 @@ export const tools = [
     "name": "Veo3.bot: Free Access to Google Veo 3 AI Video Generation with Native Audio",
     "slug": "veo3-bot-free-access-to-google-veo-3-ai-video-generation-with-native-audio",
     "image": "/veo3.png",
-    "url": null,
+    "url": "https://gemini.google/overview/video-generation/?hl=en",
     "category": [
       "Video & Animation"
     ],
-    "price": "Free",
+    "price": "Included in Google AI Pro/Ultra plan (Pro: ~ $20–30/mo)",
     "description": "Veo3.bot provides seamless access to Google Veo 3’s innovative video creation tools.",
     "tags": [
       "video generation",
@@ -358,7 +360,7 @@ export const tools = [
       "video creation",
       "audio"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "google veo 3",
       "ai video generator"
@@ -368,14 +370,14 @@ export const tools = [
   {
     "name": "ChatGPT",
     "slug": "chatgpt",
-    "image": "/chat.png",
+    "image": "/chatgpt.png",
     "url": "https://openai.com/chatgpt",
     "category": [
       "Writing & Editing",
       "Chatbots & Virtual Companions",
       "Office & Productivity"
     ],
-    "price": "Free",
+    "price": "Free tier; ChatGPT Plus at $20/mo",
     "description": "A free-to-use AI system for conversations, insights, and task automation.",
     "tags": [
       "conversational ai",
@@ -383,13 +385,13 @@ export const tools = [
       "chat",
       "writing assistant"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "ai chat",
       "gpt model",
       "writing assistant"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "DeepSeek",
@@ -403,43 +405,43 @@ export const tools = [
       "Office & Productivity",
       "Chatbots & Virtual Companions"
     ],
-    "price": "Unknown",
+    "price":"Freemium (free API tier; paid usage plans)",
     "description": "DeepSeek is an AI company providing foundation models and APIs for AI applications.",
     "tags": [
       "foundation models",
       "apis",
       "ai applications"
     ],
-    "rating": null,
+    "rating": 4.1,
     "keywords": [
       "ai models",
       "api access"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "DeepL",
     "slug": "deepl",
-    "image": "/deepl.png",
+    "image": "/deepla.png",
     "url": "https://www.deepl.com/",
     "category": [
       "Writing & Editing",
       "Coding & Development",
       "Education & Translation"
     ],
-    "price": "Unknown",
+    "price":  "Freemium (Free & Pro plans from €6.99/mo)",
     "description": "Accurate machine translation and AI-powered writing assistance for text and documents.",
     "tags": [
       "translation",
       "writing assistance",
       "documents"
     ],
-    "rating": null,
+    "rating": 4.7,
     "keywords": [
       "machine translation",
       "ai writing"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Notion",
@@ -452,7 +454,7 @@ export const tools = [
       "Education & Translation",
       "Office & Productivity"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free; Team $8/mo; Enterprise custom)",
     "description": "All-in-one workspace for notes, docs, projects, and AI-powered productivity.",
     "tags": [
       "workspace",
@@ -461,12 +463,12 @@ export const tools = [
       "project management",
       "productivity"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "all-in-one workspace",
       "ai productivity"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Grammarly",
@@ -476,19 +478,19 @@ export const tools = [
     "category": [
       "Writing & Editing"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free; Premium from $12/mo; Business $15/mo/user)",
     "description": "AI writing assistant for grammar, style, and tone correction and improvement.",
     "tags": [
       "grammar checker",
       "writing assistant",
       "style correction"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "ai writing assistant",
       "grammar improvement"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "QuillBot",
@@ -499,19 +501,19 @@ export const tools = [
       "Writing & Editing",
       "AI Detection & Anti-Detection"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Premium from $9.95/mo)",
     "description": "AI-powered writing tool for paraphrasing, grammar checking, and more to improve writing.",
     "tags": [
       "paraphrasing",
       "grammar checking",
       "writing improvement"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "ai writing tool",
       "paraphraser"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Studocu",
@@ -523,19 +525,19 @@ export const tools = [
       "Voice Generation & Conversion",
       "Office & Productivity"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free access with premium subscription options)",
     "description": "Studocu is a platform for students to share and access study materials globally.",
     "tags": [
       "study materials",
       "education",
       "student resources"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "study platform",
       "student sharing"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Gamma",
@@ -546,7 +548,7 @@ export const tools = [
       "Writing & Editing",
       "Art & Creative Design"
     ],
-    "price": "Free",
+    "price": "Free with paid plans (starting ~$12/mo)",
     "description": "AI-powered platform for creating presentations, webpages, and documents with minimal design effort.",
     "tags": [
       "presentations",
@@ -555,12 +557,12 @@ export const tools = [
       "design",
       "no-design"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "ai presentation maker",
       "document creator"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Beacons",
@@ -573,7 +575,7 @@ export const tools = [
       "Marketing & Advertising",
       "Research & Data Analysis"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free and Pro from $12/mo)",
     "description": "All-in-one platform for content creators with link-in-bio, store, email marketing, and media kits.",
     "tags": [
       "content creators",
@@ -581,12 +583,12 @@ export const tools = [
       "email marketing",
       "media kits"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "creator platform",
       "social media tools"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Perchance",
@@ -603,12 +605,12 @@ export const tools = [
       "lists",
       "syntax"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "random generator platform",
       "content generation"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "ZeroGPT",
@@ -621,18 +623,18 @@ export const tools = [
       "Marketing & Advertising",
       "Education & Translation"
     ],
-    "price": "Unknown",
+    "price": "free",
     "description": "ZeroGPT is an AI content detector and offers various writing tools.",
     "tags": [
       "ai content detector",
       "writing tools"
     ],
-    "rating": null,
+    "rating": 4.0,
     "keywords": [
       "ai detector",
       "writing assistant"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Bitbucket",
@@ -643,7 +645,7 @@ export const tools = [
       "Writing & Editing",
       "Coding & Development"
     ],
-    "price": "Unknown",
+    "price": "Free for small teams; Standard $3/user/mo; Premium $6/user/mo",
     "description": "Git-based code and CI/CD tool optimized for teams using Jira.",
     "tags": [
       "git",
@@ -651,12 +653,12 @@ export const tools = [
       "code management",
       "jira"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "code tool",
       "development"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "OpenAI",
@@ -669,19 +671,19 @@ export const tools = [
       "Video & Animation",
       "Chatbots & Virtual Companions"
     ],
-    "price": "Unknown",
+    "price": "API usage-based pricing (varies by model and usage)",
     "description": "AI research and deployment company focused on building safe and beneficial AGI.",
     "tags": [
       "agi",
       "ai research",
       "safe ai"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "ai research",
       "openai models"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Adobe",
@@ -694,19 +696,19 @@ export const tools = [
       "Social Media",
       "Marketing & Advertising"
     ],
-    "price": "Unknown",
+    "price": "Subscription plans vary by product; Creative Cloud from $20.99/mo",
     "description": "Adobe provides creative, marketing, and document management solutions.",
     "tags": [
       "creative tools",
       "marketing solutions",
       "document management"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "adobe creative cloud",
       "design tools"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Grok",
@@ -725,12 +727,12 @@ export const tools = [
       "real-time search",
       "xai"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "ai assistant",
       "real time search"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Freepik AI Image Generator",
@@ -740,19 +742,19 @@ export const tools = [
     "category": [
       "Image Generation & Editing"
     ],
-    "price": "Unknown",
+    "price": "Free with Freepik Premium subscription from $9.99/mo",
     "description": "Free AI tool to generate images from text in real-time with various styles and options.",
     "tags": [
       "image generation",
       "text to image",
       "free tool"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "ai image generator",
       "freepik"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "remove.bg",
@@ -762,19 +764,19 @@ export const tools = [
     "category": [
       "Image Generation & Editing"
     ],
-    "price": "Unknown",
+    "price": "Free limited usage; paid plans from $9/mo",
     "description": "AI-powered background remover for images in 5 seconds.",
     "tags": [
       "background remover",
       "image editing",
       "photo tools"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "remove background",
       "ai photo editor"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Shutterstock",
@@ -785,7 +787,7 @@ export const tools = [
       "Image Generation & Editing",
       "Art & Creative Design"
     ],
-    "price": "Unknown",
+    "price": "Subscription and on-demand packs; from $49/mo",
     "description": "Shutterstock provides royalty-free stock images, videos, and music with AI-powered creative tools.",
     "tags": [
       "stock images",
@@ -793,12 +795,12 @@ export const tools = [
       "music",
       "creative tools"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "stock media",
       "ai creative tools"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "CapCut",
@@ -810,7 +812,7 @@ export const tools = [
       "Voice Generation & Conversion",
       "Video & Animation"
     ],
-    "price": "Unknown",
+    "price": "Free with optional in-app purchases",
     "description": "CapCut is an AI-driven all-in-one video editor and graphic design tool.",
     "tags": [
       "video editor",
@@ -818,12 +820,12 @@ export const tools = [
       "ai video",
       "video editing"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "video editor",
       "graphic design tool"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "PolyBuzz.ai",
@@ -841,12 +843,12 @@ export const tools = [
       "ai characters",
       "customized bots"
     ],
-    "rating": null,
+    "rating": 4.1,
     "keywords": [
       "ai chatbot",
       "ai character creation"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Seaart.ai",
@@ -864,7 +866,7 @@ export const tools = [
       "ai art",
       "free tool"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "ai illustration",
       "art generator"
@@ -881,19 +883,19 @@ export const tools = [
       "Video & Animation",
       "Business Management"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Premium from $19.99/yr)",
     "description": "Photography and video editing app with creative community and professional tools.",
     "tags": [
       "photography",
       "video editing",
       "creative community"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "photo editing app",
       "video editing app"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Photoroom",
@@ -903,19 +905,19 @@ export const tools = [
     "category": [
       "Image Generation & Editing"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Premium from $9.99/mo)",
     "description": "All-in-one photo editing platform for professional designs.",
     "tags": [
       "photo editing",
       "professional designs",
       "image tools"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "photo editor",
       "design platform"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Pixelcut",
@@ -925,7 +927,7 @@ export const tools = [
     "category": [
       "Image Generation & Editing"
     ],
-    "price": "Unknown",
+    "price": "Free with Premium plans",
     "description": "Free AI photo editor with tools for background removal, retouching, upscaling, and template-based design.",
     "tags": [
       "photo editor",
@@ -933,12 +935,12 @@ export const tools = [
       "upscaling",
       "retouching"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "ai photo editor",
       "background remover"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "ImageToText.info",
@@ -949,30 +951,30 @@ export const tools = [
       "Image Analysis",
       "AI OCR"
     ],
-    "price": "Unknown",
+    "price": "Free",
     "description": "Online OCR tool to extract text from images for free.",
     "tags": [
       "ocr",
       "text extraction",
       "image to text"
     ],
-    "rating": null,
+    "rating": 4.0,
     "keywords": [
       "ocr tool",
       "extract text from image"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "文心一言 (Wénxīn Yīyán)",
     "slug": "wenxin-yiyan",
     "image": "/chian.png",
-    "url": null,
+    "url":"https://yiyan.baidu.com/",
     "category": [
       "Image Analysis",
       "Research & Data Analysis"
     ],
-    "price": "Unknown",
+    "price": "Freemium (ERNIE 3.5 free; professional ERNIE 4.x tiers)",
     "description": "文心一言 is an AI assistant for chatting, answering questions, and helping with work and study.",
     "tags": [
       "ai assistant",
@@ -980,23 +982,23 @@ export const tools = [
       "q&a",
       "work assistance"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "ai assistant",
       "chat tool"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Sider",
     "slug": "sider",
     "image": "/sider.png",
-    "url": null,
+    "url":"https://sider.ai/",
     "category": [
       "Image Analysis",
       "Social Media"
     ],
-    "price": "Unknown",
+    "price": "Freemium (free Chrome extension; Pro plans to be announced)",
     "description": "AI assistant integrating ChatGPT, Claude, and Gemini for reading, writing, and more on any webpage.",
     "tags": [
       "ai assistant",
@@ -1005,22 +1007,22 @@ export const tools = [
       "gemini",
       "web assistant"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "ai assistant",
       "browser extension"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "YouCam App Provider",
     "slug": "youcam-app-provider",
     "image": "/youcan.png",
-    "url": null,
+    "url": "https://www.perfectcorp.com/consumer/apps/ymk",
     "category": [
       "Image Analysis"
     ],
-    "price": "Unknown",
+    "price": "Free (consumer version); AR/beauty enterprise plans via Perfect Corp.",
     "description": "AI & AR solutions for beauty, fashion, and skin tech, including virtual try-on.",
     "tags": [
       "ai solutions",
@@ -1029,23 +1031,23 @@ export const tools = [
       "fashion",
       "virtual try-on"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "ai beauty",
       "ar fashion"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "PDF Guru",
     "slug": "pdf-guru",
     "image": "/pdf.png",
-    "url": null,
+    "url": "https://pdfguru.com/",
     "category": [
       "Image Analysis",
       "Office & Productivity"
     ],
-    "price": "Unknown",
+    "price": "Freemium (free summarizer; Pro upgrade available)",
     "description": "Online PDF tool for summarizing, editing, converting, signing, and form filling.",
     "tags": [
       "pdf tools",
@@ -1053,23 +1055,23 @@ export const tools = [
       "editing",
       "converting"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "pdf tool",
       "online pdf editor"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "PDNob PDF Editor",
     "slug": "pdnob-pdf-editor",
     "image": "/pdnob.png",
-    "url": null,
+    "url": "https://www.pdnob.com/products/pdnob-pdf-editor.html",
     "category": [
       "Image Analysis",
       "Office & Productivity"
     ],
-    "price": "Unknown",
+    "price": "Free trial (50 AI credits); paid license after trial",
     "description": "AI-powered PDF editor for Windows and Mac with comprehensive PDF management features.",
     "tags": [
       "pdf editor",
@@ -1077,23 +1079,23 @@ export const tools = [
       "mac",
       "pdf management"
     ],
-    "rating": null,
+    "rating": 4.1,
     "keywords": [
       "ai pdf editor",
       "pdf management"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "PDNob Image Translator",
     "slug": "pdnob-image-translator",
     "image": "/pdnob.png",
-    "url": null,
+    "url":"https://www.pdnob.com/products/pdnob-pdf-editor.html",
     "category": [
       "Image Analysis",
       "Education & Translation"
     ],
-    "price": "Unknown",
+    "price":"Included with PDNob PDF Editor (trial then license)",
     "description": "Free AI-powered app to translate text from images instantly and locally.",
     "tags": [
       "image translation",
@@ -1101,12 +1103,12 @@ export const tools = [
       "ocr",
       "free app"
     ],
-    "rating": null,
+    "rating": 4.1,
     "keywords": [
       "image translator",
       "ai translation"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Abacus.AI",
@@ -1117,19 +1119,19 @@ export const tools = [
       "Image Analysis",
       "Legal & Finance"
     ],
-    "price": "Unknown",
+    "price": "Contact for enterprise pricing",
     "description": "AI platform for building and embedding AI solutions into applications.",
     "tags": [
       "ai platform",
       "ai solutions",
       "embedding"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "ai platform",
       "application integration"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Planner 5D",
@@ -1140,7 +1142,7 @@ export const tools = [
       "Image Analysis",
       "Interior & Architectural Design"
     ],
-    "price": "Free",
+    "price": "Freemium",
     "description": "A 3D home design tool using AI to convert 2D plans into 3D models.",
     "tags": [
       "3d design",
@@ -1148,35 +1150,35 @@ export const tools = [
       "2d to 3d",
       "architectural design"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "3d home design",
       "ai design tool"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Dewatermark.AI",
     "slug": "dewatermark-ai",
     "image": "/dewater.png",
-    "url": null,
+    "url": "https://dewatermark.ai/",
     "category": [
       "Image Analysis",
       "Image Generation & Editing"
     ],
-    "price": "Unknown",
+    "price": "Freemium (free credits; paid plans)",
     "description": "AI-powered online tool to remove watermarks and unwanted objects from images.",
     "tags": [
       "watermark removal",
       "object removal",
       "image editing"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "ai watermark remover",
       "image cleanup"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Lenso.ai",
@@ -1186,19 +1188,19 @@ export const tools = [
     "category": [
       "Image Analysis"
     ],
-    "price": "Unknown",
+    "price": "Freemium (basic free; paid tiers planned)",
     "description": "Lenso.ai is an AI-powered reverse image search platform for finding similar and related images.",
     "tags": [
       "reverse image search",
       "image analysis",
       "image search"
     ],
-    "rating": null,
+    "rating": 4.1,
     "keywords": [
       "ai reverse image search",
       "image finder"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "clickworker",
@@ -1209,19 +1211,19 @@ export const tools = [
       "Image Analysis",
       "Health & Wellness"
     ],
-    "price": "Unknown",
+    "price": "Pay-per-task (rates vary)",
     "description": "Crowdsourcing platform for AI training data and data management services.",
     "tags": [
       "crowdsourcing",
       "ai training data",
       "data management"
     ],
-    "rating": null,
+    "rating": 4.0,
     "keywords": [
       "ai training",
       "data services"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "ElevenLabs",
@@ -1233,7 +1235,7 @@ export const tools = [
       "Voice Generation & Conversion",
       "Coding & Development"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Starter free; paid from $5/mo)",
     "description": "AI audio platform offering text-to-speech, voice cloning, and dubbing services.",
     "tags": [
       "text-to-speech",
@@ -1241,35 +1243,35 @@ export const tools = [
       "dubbing",
       "ai audio"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "ai audio platform",
       "voice generator"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Kling AI",
     "slug": "kling-ai",
     "image": "/kling.png",
-    "url": null,
+    "url": "https://kling.ai/",
     "category": [
       "Music & Audio",
       "Video & Animation"
     ],
-    "price": "Unknown",
+    "price":"Freemium ($5/mo basic; $10–$92 tiered plans)",
     "description": "AI creative platform for generating images and videos.",
     "tags": [
       "image generation",
       "video generation",
       "creative platform"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "ai video generator",
       "ai image generator"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Wondershare",
@@ -1281,7 +1283,7 @@ export const tools = [
       "Video & Animation",
       "Daily Life"
     ],
-    "price": "Unknown",
+    "price":"Varies by product; Filmora from $49.99/yr, Recoverit from $59.99/mo, one-time from $5–$129.99",
     "description": "Software solutions for creativity, productivity, and utility, including video editing, PDF tools, and data management.",
     "tags": [
       "video editing",
@@ -1289,12 +1291,12 @@ export const tools = [
       "data management",
       "productivity"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "software solutions",
       "productivity tools"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "EaseUS",
@@ -1304,19 +1306,19 @@ export const tools = [
     "category": [
       "Music & Audio"
     ],
-    "price": "Unknown",
+    "price": "Freemium (recover up to 2 GB free); Pro from $69.95/mo or $99.95/yr",
     "description": "EaseUS provides data recovery, backup, partition management, and multimedia software.",
     "tags": [
       "data recovery",
       "backup",
       "multimedia software"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "data management",
       "software"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Adobe Podcast",
@@ -1327,14 +1329,14 @@ export const tools = [
       "Music & Audio",
       "Voice Generation & Conversion"
     ],
-    "price": "Unknown",
+    "price": "Free beta",
     "description": "AI-powered audio recording and editing platform by Adobe.",
     "tags": [
       "audio recording",
       "audio editing",
       "podcast tools"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "ai audio editor",
       "podcast creation"
@@ -1351,19 +1353,19 @@ export const tools = [
       "Voice Generation & Conversion",
       "Social Media"
     ],
-    "price": "Unknown",
+    "price":"Freemium (Basic free; Standard $10/mo; Pro $30/mo; Premium $60/mo)",
     "description": "AI video generator that transforms text and photos into stunning videos.",
     "tags": [
       "video generation",
       "text to video",
       "photo to video"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "ai video generator",
       "video creation"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Symphony Creative Studio",
@@ -1436,18 +1438,18 @@ export const tools = [
     "name": "Riffusion",
     "slug": "riffusion",
     "image": "/rif.png",
-    "url": null,
+    "url": "https://www.riffusion.com/",
     "category": [
       "Music & Audio"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free; Starter $6/mo; Member $36/mo; Studio time $2/hr)",
     "description": "Generative AI instrument for creating, remixing, and sharing studio-quality songs from text prompts.",
     "tags": [
       "generative music",
       "song creation",
       "text to song"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "ai music generator",
       "song remixing"
@@ -1463,7 +1465,7 @@ export const tools = [
       "Music & Audio",
       "Voice Generation & Conversion"
     ],
-    "price": "Unknown",
+    "price": "Freemium (free basic; paid tiers $9.99/mo+)",
     "description": "Real-time AI voice changer and soundboard for PC and Mac.",
     "tags": [
       "voice changer",
@@ -1471,22 +1473,22 @@ export const tools = [
       "pc",
       "mac"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "ai voice changer",
       "real-time audio"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "MiniMax Audio",
     "slug": "minimax-audio",
     "image": "/mood.png",
-    "url": null,
+    "url": "https://www.minimax.io/audio?utm_source=toolify",
     "category": [
       "Music & Audio"
     ],
-    "price": "Unknown",
+    "price": "freemiun",
     "description": "MiniMax Audio creates lifelike speech in multiple languages with diverse voices.",
     "tags": [
       "text-to-speech",
@@ -1510,7 +1512,7 @@ export const tools = [
       "Image Generation & Editing",
       "Video & Animation"
     ],
-    "price": "Unknown",
+    "price": "Free with optional in-app purchases",
     "description": "CapCut is an AI-driven all-in-one video editor and graphic design tool.",
     "tags": [
       "video editor",
@@ -1518,12 +1520,12 @@ export const tools = [
       "ai video",
       "video editing"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "video editor",
       "graphic design tool"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Studocu",
@@ -1535,14 +1537,14 @@ export const tools = [
       "Writing & Editing",
       "Office & Productivity"
     ],
-    "price": "Unknown",
+    "price": "Freemium (3-mo $35.97; annual $83.88)",
     "description": "Studocu is a platform for students to share and access study materials globally.",
     "tags": [
       "study materials",
       "education",
       "student resources"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "study platform",
       "student sharing"
@@ -1559,7 +1561,7 @@ export const tools = [
       "Music & Audio",
       "Coding & Development"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free; Starter $5/mo; Creator $11/mo; Pro $99/mo; Scale $330/mo; Business $1,100/mo)",
     "description": "AI audio platform offering text-to-speech, voice cloning, and dubbing services.",
     "tags": [
       "text-to-speech",
@@ -1567,23 +1569,23 @@ export const tools = [
       "dubbing",
       "ai audio"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "ai audio platform",
       "voice generator"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "TurboScribe",
     "slug": "turboscribe",
     "image": "/tubo.png",
-    "url": null,
+    "url": "https://turboscribe.ai/",
     "category": [
       "Voice Generation & Conversion",
       "Education & Translation"
     ],
-    "price": "Unknown",
+    "price": "Freemium (3 transcripts/day free; Unlimited $10/mo annual or $20/mo monthly)",
     "description": "AI transcription service converting audio and video to text in 98+ languages.",
     "tags": [
       "transcription",
@@ -1591,35 +1593,35 @@ export const tools = [
       "video to text",
       "multilingual"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "ai transcription",
       "audio transcription"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "VEED.IO",
     "slug": "veed-io",
-    "image": "/veed.png",
+    "image": "/veeddd.png",
     "url": "https://www.veed.io/",
     "category": [
       "Voice Generation & Conversion",
       "Video & Animation"
     ],
-    "price": "Unknown",
+    "price": "Paid (Lite €12–19/user/mo; Pro €22–29/user/mo; Business custom)",
     "description": "Online video editor with AI tools for creating professional videos quickly and easily.",
     "tags": [
       "video editor",
       "ai video tools",
       "professional video"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "online video editor",
       "ai tools"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "InVideo",
@@ -1630,7 +1632,7 @@ export const tools = [
       "Voice Generation & Conversion",
       "Video & Animation"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free plan; Business $15/mo annual; Unlimited $30/mo annual; Generative $96/mo)",
     "description": "Online video editor with 5000+ templates, AI tools, and stock media.",
     "tags": [
       "video editor",
@@ -1638,23 +1640,23 @@ export const tools = [
       "ai tools",
       "stock media"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "online video editor",
       "video templates"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Clipto.AI",
     "slug": "clipto-ai",
     "image": "/clipto.png",
-    "url": null,
+    "url": "https://clipto.ai/",
     "category": [
       "Voice Generation & Conversion",
       "Video & Animation"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free tier; Pro $20/mo)",
     "description": "AI-powered media management assistant with transcription, video editing, and asset management tools.",
     "tags": [
       "media management",
@@ -1662,7 +1664,7 @@ export const tools = [
       "video editing",
       "asset management"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "ai media assistant",
       "transcription tools"
@@ -1679,19 +1681,19 @@ export const tools = [
       "Music & Audio",
       "Social Media"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Basic free; Standard $10/mo; Pro $30/mo; Premium $60/mo)",
     "description": "AI video generator that transforms text and photos into stunning videos.",
     "tags": [
       "video generation",
       "text to video",
       "photo to video"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "ai video generator",
       "video creation"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Otter.ai",
@@ -1702,7 +1704,7 @@ export const tools = [
       "Voice Generation & Conversion",
       "Marketing & Advertising"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Basic free; Pro $8.33/mo; Business $20/mo)",
     "description": "AI meeting assistant for real-time transcription, summaries, and action items.",
     "tags": [
       "meeting assistant",
@@ -1710,12 +1712,12 @@ export const tools = [
       "summaries",
       "productivity"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "ai meeting tool",
       "transcription service"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "HeyGen",
@@ -1726,19 +1728,19 @@ export const tools = [
       "Voice Generation & Conversion",
       "Video & Animation"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free trial; paid from ~$30/mo)",
     "description": "AI video generation platform for creating engaging business videos quickly and easily.",
     "tags": [
       "video generation",
       "business videos",
       "ai avatars"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "ai video platform",
       "business video creation"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "name": "Vidnoz AI",
@@ -1757,13 +1759,14 @@ export const tools = [
       "ai voices",
       "free tool"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "ai video generator",
       "ai avatars"
     ],
     "isFeatured": false
   },
+  /////////upto this i have done///////////////////
   {
     "name": "Adobe",
     "slug": "adobe-1",
@@ -2693,7 +2696,7 @@ export const tools = [
   {
     "name": "DeepL",
     "slug": "deepl-1",
-    "image": "/deepl.png",
+    "image": "/deepla.png",
     "url": "https://www.deepl.com/",
     "category": [
       "Coding & Development",
@@ -4959,7 +4962,7 @@ export const tools = [
   {
     "name": "DeepL",
     "slug": "deepl-2",
-    "image": "/deepl.png",
+    "image": "/deepla.png",
     "url": "https://www.deepl.com/",
     "category": [
       "Education & Translation",
