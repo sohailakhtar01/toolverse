@@ -3299,31 +3299,6 @@ export const tools = [
     "isFeatured": false
   },
   {
-    "name": "SpoiledChild",
-    "slug": "spoiledchild",
-    "image": "/spoinled.png",
-    "url": "https://www.spoiledchild.com/",
-    "category": [
-      "Daily Life",
-      "Health & Wellness"
-    ],
-    "price": "Products sold individually; subscriptions available",
-    "description": "AI-powered wellness platform for personalized anti-aging hair and skin products.",
-    "tags": [
-      "wellness platform",
-      "personalized products",
-      "anti-aging",
-      "hair care",
-      "skin care"
-    ],
-    "rating": 5.0,
-    "keywords": [
-      "ai wellness",
-      "personalized products"
-    ],
-    "isFeatured": false
-  },
-  {
     "name": "Gorgias",
     "slug": "gorgias",
     "image": "/gorgia.png",
@@ -3399,13 +3374,13 @@ export const tools = [
   {
     "name": "HitPaw FotorPea",
     "slug": "hitpaw-fotorpea",
-    "image": "/hutpaw.png",
+    "image": "/hitttt.png",
     "url": "https://online.hitpaw.com/",
     "category": [
       "Daily Life",
       "Image Generation & Editing"
     ],
-    "price": "Free to try, then various plans: Weekly ($4.99), Monthly ($22.39), Yearly ($90.39), Perpetual ($130.39) (prices may vary slightly based on current promotions).",
+    "price": "Free to try, then various plans: Weekly ($4.99), Monthly ($22.39), Yearly ($90.39), Perpetual ($130.39) .",
     "description": "AI photo enhancer for quality improvement, unblurring, and object removal.",
     "tags": [
       "photo enhancer",
@@ -3634,7 +3609,7 @@ export const tools = [
   {
     "name": "AInvest",
     "slug": "ainvest",
-    "image": "/aiinvest.png",
+    "image": "/aiiiiiii.png",
     "url": "https://www.ainvest.com/",
     "category": [
       "Legal & Finance",
@@ -4368,7 +4343,7 @@ export const tools = [
   {
     "name": "MediSphere",
     "slug": "medisphere",
-    "image": "/medisphere.png",
+    "image": "/medisssssss.png",
     "url":"https://medisphere.cloud/",
     "category": [
       "Health & Wellness",
