@@ -223,9 +223,9 @@ const ToolList = ({ tools, title = "Featured Tools", showSearch = true, showFilt
       {/* Load More Button (if needed) */}
       {filteredTools.length > 0 && tools.length > filteredTools.length && (
         <div className="text-center mt-12">
-          <button className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all font-medium shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40">
+          {/* <button className="px-8 cursor-pointer py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all font-medium shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40">
             Load More Tools
-          </button>
+          </button> */}
         </div>
       )}
     </div>

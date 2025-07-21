@@ -2987,30 +2987,6 @@ export const tools = [
     "isFeatured": false
   },
   {
-    "name": "VSCO",
-    "slug": "vsco-1",
-    "image": "/vsco.png",
-    "url": "https://vsco.co/",
-    "category": [
-      "Video & Animation",
-      "Image Generation & Editing",
-      "Business Management"
-    ],
-    "price": "Unknown",
-    "description": "Photography and video editing app with creative community and professional tools.",
-    "tags": [
-      "photography",
-      "video editing",
-      "creative community"
-    ],
-    "rating": null,
-    "keywords": [
-      "photo editing app",
-      "video editing app"
-    ],
-    "isFeatured": false
-  },
-  {
     "name": "Kling AI",
     "slug": "kling-ai-1",
     "image": "/kling.png",
@@ -3750,32 +3726,133 @@ export const tools = [
     "isFeatured": false
   },
   {
-    "name": "Notion",
-    "slug": "notion-1",
-    "image": "/notion.png",
-    "url": "https://www.notion.so/",
-    "category": [
-      "Business Management",
-      "Writing & Editing",
-      "Education & Translation",
-      "Office & Productivity"
-    ],
-    "price": "Unknown",
-    "description": "All-in-one workspace for notes, docs, projects, and AI-powered productivity.",
-    "tags": [
-      "workspace",
-      "notes",
-      "docs",
-      "project management",
-      "productivity"
-    ],
-    "rating": null,
-    "keywords": [
-      "all-in-one workspace",
-      "ai productivity"
-    ],
-    "isFeatured": false
-  },
+  "name": "Figma",
+  "slug": "figma",
+  "image": "/figma.png",
+  "url": "https://www.figma.com/",
+  "category": [
+    "Art & Creative Design",
+    "Office & Productivity"
+  ],
+  "price": "freemium",
+  "description": "Collaborative design tool for creating beautiful interfaces and prototypes in real-time.",
+  "tags": [
+    "design",
+    "prototype",
+    "collaboration",
+    "interface",
+    "ui/ux"
+  ],
+  "rating": 4.9,
+  "keywords": [
+    "collaborative design tool",
+    "interface prototyping"
+  ],
+  "isFeatured": true
+},
+{
+  "name": "Slack",
+  "slug": "slack",
+  "image": "/slack.png",
+  "url": "https://slack.com/",
+  "category": [
+    "Customer Service",
+    "Daily Life",
+    "Office & Productivity",
+    "Business Management"
+  ],
+  "price": "$7.25/mo",
+  "description": "Team collaboration platform that brings all your communication together in one place.",
+  "tags": [
+    "communication",
+    "team chat",
+    "collaboration",
+    "messaging",
+    "workplace"
+  ],
+  "rating": 4.6,
+  "keywords": [
+    "team communication",
+    "business messaging"
+  ],
+  "isFeatured": true
+},
+{
+  "name": "VS Code",
+  "slug": "vs-code",
+  "image": "/vscode.png",
+  "url": "https://code.visualstudio.com/",
+  "category": [
+    "Coding & Development",
+    "Office & Productivity"
+  ],
+  "price": "Free",
+  "description": "Powerful code editor with intelligent features and extensive customization options.",
+  "tags": [
+    "code editor",
+    "development",
+    "extensions",
+    "open source",
+    "debugging"
+  ],
+  "rating": 4.5,
+  "keywords": [
+    "smart code editor",
+    "developer tool"
+  ],
+  "isFeatured": true
+},
+{
+  "name": "Google Analytics",
+  "slug": "google-analytics",
+  "image": "/google-analytics.png",
+  "url": "https://analytics.google.com/",
+  "category": [
+    "Research & Data Analysis",
+    "Marketing & Advertising",
+    "Business Management"
+  ],
+  "price": "Free",
+  "description": "Web analytics service that tracks and reports website traffic and user behavior.",
+  "tags": [
+    "analytics",
+    "data",
+    "tracking",
+    "website",
+    "user behavior"
+  ],
+  "rating": 4.5,
+  "keywords": [
+    "website analytics",
+    "traffic analysis"
+  ],
+  "isFeatured": true
+},
+{
+  "name": "Trello",
+  "slug": "trello",
+  "image": "/trello.png",
+  "url": "https://trello.com/",
+  "category": [
+    "Office & Productivity",
+    "Business Management"
+  ],
+  "price": "Free",
+  "description": "Visual project management tool that uses boards, lists, and cards to organize tasks.",
+  "tags": [
+    "project management",
+    "task tracking",
+    "boards",
+    "kanban",
+    "organization"
+  ],
+  "rating": 4.4,
+  "keywords": [
+    "task organization",
+    "visual workflow"
+  ],
+  "isFeatured": true
+},
   {
     "name": "Salesforce Platform",
     "slug": "salesforce-platform-1",
@@ -4936,33 +5013,6 @@ export const tools = [
     "isFeatured": false
   },
   {
-    "name": "Notion",
-    "slug": "notion-2",
-    "image": "/notion.png",
-    "url": "https://www.notion.so/",
-    "category": [
-      "Education & Translation",
-      "Writing & Editing",
-      "Business Management",
-      "Office & Productivity"
-    ],
-    "price": "Unknown",
-    "description": "All-in-one workspace for notes, docs, projects, and AI-powered productivity.",
-    "tags": [
-      "workspace",
-      "notes",
-      "docs",
-      "project management",
-      "productivity"
-    ],
-    "rating": null,
-    "keywords": [
-      "all-in-one workspace",
-      "ai productivity"
-    ],
-    "isFeatured": false
-  },
-  {
     "name": "Perplexity AI",
     "slug": "perplexity-ai",
     "image": "/perplex.png",
@@ -5846,33 +5896,6 @@ export const tools = [
     "keywords": [
       "ai assistant",
       "real time search"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "Notion",
-    "slug": "notion-3",
-    "image": "/notion.png",
-    "url": "https://www.notion.so/",
-    "category": [
-      "Office & Productivity",
-      "Writing & Editing",
-      "Business Management",
-      "Education & Translation"
-    ],
-    "price": "Unknown",
-    "description": "All-in-one workspace for notes, docs, projects, and AI-powered productivity.",
-    "tags": [
-      "workspace",
-      "notes",
-      "docs",
-      "project management",
-      "productivity"
-    ],
-    "rating": null,
-    "keywords": [
-      "all-in-one workspace",
-      "ai productivity"
     ],
     "isFeatured": false
   },

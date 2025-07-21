@@ -68,7 +68,7 @@ export default function FeaturedToolsClient({ toolsData }) {
           {filteredTools.map((tool, index) => (
             <Link
               key={tool.slug || tool.name}
-              href={`/tool/${tool.slug || tool.name.toLowerCase().replace(/\s+/g, '-')}`}
+              href={`/tools/${tool.slug || tool.name.toLowerCase().replace(/\s+/g, '-')}`} //////// yaha par tools kiya gaya hai
               className="block group"
             >
               <article

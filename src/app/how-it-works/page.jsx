@@ -356,12 +356,12 @@ export default function HowItWorksPage() {
             >
               Browse AI Tools Now
             </Link>
-            <Link
+            {/* <Link
               href="/categories"
               className="px-8 py-4 border-2 border-purple-200 text-purple-600 rounded-xl font-semibold hover:bg-purple-50 transition-all"
             >
               View Categories
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

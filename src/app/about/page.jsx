@@ -203,18 +203,18 @@ export default function AboutPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a 
+              {/* <a 
                 href="/contact" 
                 className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 font-semibold shadow-lg inline-block"
               >
                 Join Our Community
-              </a>
-              <a 
+              </a> */}
+              {/* <a 
                 href="#mission" 
                 className="px-8 py-4 border-2 border-purple-200 text-purple-600 rounded-2xl hover:bg-purple-50 transition-all duration-300 font-semibold inline-block"
               >
                 Learn More
-              </a>
+              </a> */}
             </div>
           </div>
         </section>
@@ -445,12 +445,12 @@ export default function AboutPage() {
                 <span>Explore Tools</span>
                 <ArrowRight className="w-5 h-5" />
               </a>
-              <a 
+              {/* <a 
                 href="/contact"
                 className="px-8 py-4 border-2 border-white text-white rounded-2xl hover:bg-white/10 transition-all duration-300 font-semibold inline-block"
               >
                 Get in Touch
-              </a>
+              </a> */}
             </div>
           </div>
         </section>
