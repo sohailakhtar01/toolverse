@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@components/Header";
@@ -13,6 +13,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+});
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
   display: "swap",
 });
 
@@ -89,8 +95,9 @@ export default function RootLayout({ children }) {
         </Script>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased scroll-smooth bg-white text-gray-900`}
-      >
+  className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} antialiased scroll-smooth bg-white text-gray-900`}
+>
+
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
