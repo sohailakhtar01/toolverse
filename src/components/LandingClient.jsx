@@ -65,14 +65,14 @@ export default function LandingClient() {
 <div className="flex flex-wrap gap-4 sm:gap-10 mb-[30px] justify-center mt-[-50px]">
   <a
     href="/browse-tools"
-    className="px-6 py-3 cursor-pointer bg-gradient-to-r  from-purple-500 to-pink-500 text-white rounded-[30px] font-outfit font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101"
+    className="px-6 py-3 cursor-pointer bg-gradient-to-r  from-purple-500 to-pink-500 text-white rounded-[30px]  font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101"
   >
     🔍 Browse All AI Tools
   </a>
 
   <a
     href="/featured"
-    className="px-6 py-3 cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-[30px] font-outfit font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101"
+    className="px-6 py-3 cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-[30px]  font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101"
   >
     ⭐ Featured Tools of the Week
   </a>

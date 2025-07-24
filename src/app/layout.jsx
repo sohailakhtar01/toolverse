@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Outfit } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@components/Header";
@@ -15,12 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
 });
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  display: "swap",
-});
+
 
 // --- SEO METADATA ---
 export const metadata = {
@@ -95,7 +90,7 @@ export default function RootLayout({ children }) {
         </Script>
       </head>
       <body
-  className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} antialiased scroll-smooth bg-white text-gray-900`}
+  className={`${geistSans.variable} ${geistMono.variable}  antialiased scroll-smooth bg-white text-gray-900`}
 >
 
         <Header />
