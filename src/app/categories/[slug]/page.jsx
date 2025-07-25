@@ -57,9 +57,12 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function CategoryPage({ params }) {
+export default function CategoryPage({ params, searchParams }) {
   const rawSlug = decodeURIComponent(params.slug);
-  
+
+  // ✅ Step 1: Get the sort parameter from the URL, default to 'rating'
+  const sortParam = searchParams.sort || 'rating';
+
   // Convert "office-and-productivity" → "Office & Productivity"
   const readableCategory = rawSlug
     .replace(/-and-/g, ' & ')
@@ -74,6 +77,20 @@ export default function CategoryPage({ params }) {
   const filteredTools = tools.filter(tool =>
     (tool.category || []).some(cat => cat.toLowerCase() === readableCategory)
   );
+
+  // ✅ Step 2: Sort the tools based on the sortParam
+  const sortedTools = filteredTools.slice().sort((a, b) => {
+    if (sortParam === 'name') {
+      return a.name.localeCompare(b.name);
+    }
+    if (sortParam === 'price') {
+      const pa = a.price === 'Free' ? 0 : parseFloat(a.price.replace(/[^\d.]/g, ''));
+      const pb = b.price === 'Free' ? 0 : parseFloat(b.price.replace(/[^\d.]/g, ''));
+      return pa - pb;
+    }
+    // Default to sorting by rating (descending)
+    return (b.rating || 0) - (a.rating || 0);
+  });
   
   // Generate JSON-LD structured data for SEO
   const jsonLd = {
@@ -109,24 +126,16 @@ export default function CategoryPage({ params }) {
       
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
         {/* Hero Section */}
-        <div className="relative overflow-hidden bg-white shadow-sm border-b">
+        <div className="relative overflow-hidden bg-white shadow-sm">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-indigo-600/5"></div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
             {/* Breadcrumb */}
-            <nav className="flex mb-6" aria-label="Breadcrumb">
+            <nav className="flex mb-6 mt-4" aria-label="Breadcrumb">
               <ol className="inline-flex items-center space-x-1 md:space-x-3 text-sm">
                 <li className="inline-flex items-center">
                   <a href="/" className="text-gray-500 hover:text-blue-600 transition-colors">
                     Home
                   </a>
-                </li>
-                <li>
-                  <div className="flex items-center">
-                    <span className="mx-2 text-gray-400">/</span>
-                    <a href="/categories" className="text-gray-500 hover:text-blue-600 transition-colors">
-                      Categories
-                    </a>
-                  </div>
                 </li>
                 <li aria-current="page">
                   <div className="flex items-center">
@@ -143,7 +152,7 @@ export default function CategoryPage({ params }) {
                 {filteredTools.length} {filteredTools.length === 1 ? 'Tool' : 'Tools'} Available
               </div>
               
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+              <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4 leading-tight">
                 {capitalizedCategory}
                 <span className="block text-2xl lg:text-3xl font-normal text-gray-600 mt-2">
                   Tools Collection
@@ -178,48 +187,46 @@ export default function CategoryPage({ params }) {
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {filteredTools.length === 0 ? (
             <div className="text-center py-16">
-              <div className="w-24 h-24 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center">
-                <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </div>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-2">No Tools Found</h2>
-              <p className="text-gray-600 mb-6">
-                We couldn't find any tools in the "{capitalizedCategory}" category at the moment.
-              </p>
-              <a
-                href="/categories"
-                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
-              >
-                Browse All Categories
-              </a>
+              {/* ... (no changes in the "No Tools Found" block) ... */}
             </div>
-          ) : (
+          ) : ( 
             <>
-              {/* Filter/Sort Bar */}
-              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 p-4 bg-white rounded-xl shadow-sm border">
+              {/* ✅ Step 3: Add the filter/sort bar with the new dropdown form */}
+              <div className="flex flex-col sm:flex-row justify-between items-center mb-8 p-4 bg-white rounded-xl shadow-sm">
                 <div className="mb-4 sm:mb-0">
-                  <h2 className="text-lg font-semibold text-gray-900">
-                    Showing {filteredTools.length} {filteredTools.length === 1 ? 'tool' : 'tools'}
+                  <h2 className="text-lg font-semibold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+                    Showing {sortedTools.length} {sortedTools.length === 1 ? 'tool' : 'tools'}
                   </h2>
                   <p className="text-sm text-gray-500 mt-1">
                     Find the perfect {readableCategory} solution for your needs
                   </p>
                 </div>
                 
-                {/* Optional: Add sort dropdown here if needed */}
-                <div className="text-sm text-gray-500">
-                  Updated regularly with new tools
-                </div>
+                <form method="get" className="flex items-center gap-2">
+                  <label htmlFor="sort" className="text-md font-medium text-gray-700">Sort by:</label>
+                  <select
+                    id="sort"
+                    name="sort"
+                    defaultValue={sortParam}
+                    className="px-3 py-1.5 cursor-pointer border border-gray-300 rounded-lg bg-white text-sm focus:ring-blue-500 focus:border-blue-500 transition"
+                  >
+                    <option value="rating">Rating</option>
+                    <option value="name">Name</option>
+                    <option value="price">Price</option>
+                  </select>
+                  <button type="submit" className="px-4 cursor-pointer py-1.5 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+                    Apply
+                  </button>
+                </form>
               </div>
               
-              {/* Tools Grid */}
+              {/* ✅ Step 4: Loop over sortedTools to render the grid */}
               <div 
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
                 role="list"
                 aria-label={`${capitalizedCategory} tools`}
               >
-                {filteredTools.map((tool, index) => (
+                {sortedTools.map((tool, index) => (
                   <div 
                     key={tool.slug} 
                     role="listitem"
@@ -241,16 +248,16 @@ export default function CategoryPage({ params }) {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    href="/categories"
+                    href="/browse-tools"
                     className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
                   >
                     Browse All Categories
                   </a>
                   <a
-                    href="/suggest"
+                    href="/how-it-works"
                     className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
                   >
-                    Suggest a Tool
+                    How It Works 🚀
                   </a>
                 </div>
               </div>

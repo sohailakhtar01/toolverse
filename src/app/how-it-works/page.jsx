@@ -169,7 +169,7 @@ export default function HowItWorksPage() {
       </div>
 
       {/* How It Works Section */}
-      <div id="how-it-works" className="relative py-20">
+      <div id="how-it-works" className="relative mt-[-50]py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-16">
