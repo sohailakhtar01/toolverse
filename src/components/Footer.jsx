@@ -32,17 +32,17 @@ export default function Footer() {
             </p>
             <div className="flex space-x-3">
               {/* Social Icons */}
-              <Link href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+              <Link href="https://www.facebook.com/kabil.sunny" target="_blank" aria-label="Facebook">
                 <div className="w-9 h-9 bg-purple-100 rounded-full flex items-center justify-center hover:bg-purple-200 transition-colors">
                   <Facebook className="w-5 h-5 text-purple-600" />
                 </div>
               </Link>
-              <Link href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+              <Link href="https://x.com/1Akthar12?t=GdHKsmfS6yrUbGhkzrg8lQ&s=09" target="_blank" aria-label="Twitter">
                 <div className="w-9 h-9 bg-purple-100 rounded-full flex items-center justify-center hover:bg-purple-200 transition-colors">
                   <Twitter className="w-5 h-5 text-purple-600" />
                 </div>
               </Link>
-              <Link href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+              <Link href="https://www.linkedin.com/in/sohail-akhtar-197982343" target="_blank" aria-label="LinkedIn">
                 <div className="w-9 h-9 bg-purple-100 rounded-full flex items-center justify-center hover:bg-purple-200 transition-colors">
                   <Linkedin className="w-5 h-5 text-purple-600" />
                 </div>
@@ -61,9 +61,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/browse-tools" className="text-gray-600 hover:text-purple-600">Browse Tools</Link></li>
               <li><Link href="/categories" className="text-gray-600 hover:text-purple-600">Categories</Link></li>
-              <li><Link href="/featured" className="text-gray-600 hover:text-purple-600">Featured</Link></li>
-              <li><Link href="/pricing" className="text-gray-600 hover:text-purple-600">Pricing</Link></li>
-              <li><Link href="#" className="text-gray-600 hover:text-purple-600">Submit Tool</Link></li>
+              <li><Link href="/featured" className="text-gray-600 hover:text-purple-600">Featured</Link></li>              <li><Link href="#" className="text-gray-600 hover:text-purple-600">Submit Tool</Link></li>
             </ul>
           </div>
 

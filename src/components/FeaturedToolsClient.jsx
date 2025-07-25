@@ -48,7 +48,7 @@ export default function FeaturedToolsClient({ toolsData }) {
               <button
                 key={tab}
                 onClick={() => setSelectedCategory(tab)}
-                className={`px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 whitespace-nowrap relative overflow-hidden ${
+                className={`px-6 py-2 sm:px-8 sm:py-2 cursor-pointer rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 whitespace-nowrap relative overflow-hidden ${
                   selectedCategory === tab
                     ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg transform scale-105'
                     : 'text-gray-600 hover:text-purple-600 hover:bg-purple-50'
@@ -72,7 +72,7 @@ export default function FeaturedToolsClient({ toolsData }) {
               className="block group"
             >
               <article
-                className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 overflow-hidden border border-purple-100 hover:border-purple-200 relative"
+                className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-101 overflow-hidden border border-purple-100 hover:border-purple-200 relative"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {tool.trending && (
@@ -123,7 +123,7 @@ export default function FeaturedToolsClient({ toolsData }) {
                     </div>
                   </div>
 
-                  <div className="w-full group/btn bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl py-3 sm:py-4 text-center hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
+                  <div className="w-full group/btn bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl py-1 sm:py-2 text-center hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-101 font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
                     <span>View Tool</span>
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </div>
@@ -135,7 +135,7 @@ export default function FeaturedToolsClient({ toolsData }) {
 
         {/* Load More Section */}
         <div className="text-center">
-          <button className="px-8 sm:px-12 py-4 sm:py-5 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl flex items-center space-x-3 mx-auto">
+          <button className="px-6 sm:px-6 py-2 sm:py-3 cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl flex items-center space-x-3 mx-auto">
             <span>View All Tools</span>
             <ArrowRight className="w-5 h-5" />
           </button>
