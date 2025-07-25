@@ -1,7 +1,9 @@
 // src/components/ToolList.jsx
 "use client"; // <--- This is crucial for client-side functionality
+import { useRouter } from 'next/navigation';
 
 import React, { useState, useMemo } from 'react';
+
 import ToolCard from './ToolCard'; // <--- Import ToolCard (adjust path if needed)
 
 const ToolList = ({ tools, title = "Featured Tools", showSearch = true, showFilters = true }) => {
@@ -9,6 +11,8 @@ const ToolList = ({ tools, title = "Featured Tools", showSearch = true, showFilt
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [sortBy, setSortBy] = useState("rating");
   const [viewMode, setViewMode] = useState("grid");
+  const router = useRouter();
+
 
   const categories = useMemo(() => {
   if (!Array.isArray(tools)) return []; // 🛡️ Safety guard
@@ -113,9 +117,10 @@ const ToolList = ({ tools, title = "Featured Tools", showSearch = true, showFilt
                 </div>
                 <input
                   type="text"
-                  placeholder="Search tools..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+  placeholder="Search tools..."
+  value={searchTerm}
+  onChange={(e) => setSearchTerm(e.target.value)}
+
                   className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all"
                 />
               </div>
@@ -126,15 +131,27 @@ const ToolList = ({ tools, title = "Featured Tools", showSearch = true, showFilt
               <div className="flex flex-col sm:flex-row gap-3">
                 {/* Category Filter */}
                 <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="px-4 py-3 border cursor-pointer border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all bg-white min-w-[150px]"
-                >
-                  <option value="all">All Categories</option>
-                  {categories.map(category => (
-                    <option key={category} value={category}>{category}</option>
-                  ))}
-                </select>
+  value={selectedCategory}
+  onChange={(e) => {
+    const selected = e.target.value;
+    setSelectedCategory(selected);
+
+    if (selected !== 'all') {
+      const slug = selected
+        .toLowerCase()
+        .replace(/ & /g, '-and-')  // Replace " & " with "-and-"
+        .replace(/\s+/g, '-');     // Replace spaces with hyphens
+      router.push(`/categories/${slug}`);
+    }
+  }}
+  className="px-4 py-3 border cursor-pointer border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all bg-white min-w-[150px]"
+>
+  <option value="all">All Categories</option>
+  {categories.map((category) => (
+    <option key={category} value={category}>{category}</option>
+  ))}
+</select>
+
 
                 {/* Sort Filter */}
                 <select

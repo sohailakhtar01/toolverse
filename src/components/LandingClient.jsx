@@ -122,15 +122,20 @@ export default function LandingClient() {
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 sm:gap-6">
           {categories.map((category) => (
-            <div
-              key={category.name}
-              className="group p-4 sm:p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer border border-purple-100"
-              onClick={() => setSelectedCategory(category.name)}
-            >
-              <div className={`w-16 h-16 ${category.color} rounded-2xl flex items-center justify-center mb-4 text-white`}>{category.icon}</div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-1">{category.name}</h3>
-              <p className="text-purple-600 font-medium text-sm">{category.count}</p>
-            </div>
+
+            
+            // here i am changing this
+            <Link
+  key={category.name}
+  href={`/categories/${encodeURIComponent(category.name)}`}
+  className="block group p-4 sm:p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer border border-purple-100"
+>
+  <div className={`w-16 h-16 ${category.color} rounded-2xl flex items-center justify-center mb-4 text-white`}>
+    {category.icon}
+  </div>
+  <h3 className="text-xl font-semibold text-gray-800 mb-1">{category.name}</h3>
+  <p className="text-purple-600 font-medium text-sm">{category.count}</p>
+</Link>
           ))}
         </div>
       </section>
