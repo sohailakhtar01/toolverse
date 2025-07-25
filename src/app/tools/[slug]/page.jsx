@@ -78,7 +78,13 @@ export default function ToolDetailPage({ params }) {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
+          {/* ////////adding here ///// */}
+        
+
+
+          {/* ////////adding here ///// */}
+
+
           {/* Left Column - Tool Details */}
           <div className="lg:col-span-2 space-y-8">
             
@@ -128,6 +134,35 @@ export default function ToolDetailPage({ params }) {
                 ))}
               </div>
             </div>
+
+            {/* /////////adding here /////// */}
+                {/* SEO Content Section: Overview, FAQs, Related Tools */}
+{tool.overview && (
+  <section className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-8">
+    <h2 className="text-2xl font-bold text-gray-900 mb-4">What is {tool.name}?</h2>
+    <p className="text-gray-700 leading-relaxed">{tool.overview}</p>
+  </section>
+)}
+
+{tool.faqs?.length > 0 && (
+  <section className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-8">
+    <h3 className="text-xl font-semibold text-gray-900 mb-4">FAQs</h3>
+    <ul className="space-y-4">
+      {tool.faqs.map((faq, i) => (
+        <li key={i}>
+          <strong className="block text-gray-800">{faq.question}</strong>
+          <p className="text-gray-600">{faq.answer}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+)}
+
+
+
+
+
+            {/* /////////adding here /////// */}
 
             {/* Additional Info */}
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-8">

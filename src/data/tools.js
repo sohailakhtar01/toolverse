@@ -345,6 +345,41 @@ export const tools = [
     "isFeatured": true
   },
   {
+  "name": "NovelAI",
+  "slug": "novelai",
+  "image": "/novel.png",
+  "url": "https://novelai.net/",
+  "category": [
+    "Writing & Editing",
+    "Storytelling & Entertainment"
+  ],
+  "price": "Subscription (Tablet $10/mo, Scroll $15/mo, Opus $25/mo)",
+  "description": "AI-powered platform for writing stories, creating characters, and generating art with customizable storytelling assistance.",
+  "tags": [
+    "story writing",
+    "ai storytelling",
+    "character creation",
+    "text to image"
+  ],
+  "rating": 4.6,
+  "keywords": [
+    "ai story generator",
+    "novel writing tool"
+  ],
+  "isFeatured": true,
+  "overview": "NovelAI is a storytelling-focused AI platform designed to help users write engaging fiction, generate vivid characters, and even produce illustrative art. With a focus on privacy and creativity, it offers a personal sandbox for novelists, roleplayers, and creators alike.",
+  "faqs": [
+    {
+      "question": "What can I use NovelAI for?",
+      "answer": "You can use NovelAI to write stories, build characters, and generate visuals using AI, making it ideal for writers and roleplaying enthusiasts."
+    },
+    {
+      "question": "Is NovelAI free?",
+      "answer": "NovelAI offers a free trial with limited features, but full access requires a paid subscription starting at $10 per month."
+    }
+  ]
+},
+  {
     "name": "Veo3.bot: Free Access to Google Veo 3 AI Video Generation with Native Audio",
     "slug": "veo3-bot-free-access-to-google-veo-3-ai-video-generation-with-native-audio",
     "image": "/veo3.png",
@@ -471,27 +506,29 @@ export const tools = [
     "isFeatured": true
   },
   {
-    "name": "Grammarly",
-    "slug": "grammarly",
-    "image": "/grammarly.png",
-    "url": "https://www.grammarly.com/",
-    "category": [
-      "Writing & Editing"
-    ],
-    "price": "Freemium (Free; Premium from $12/mo; Business $15/mo/user)",
-    "description": "AI writing assistant for grammar, style, and tone correction and improvement.",
-    "tags": [
-      "grammar checker",
-      "writing assistant",
-      "style correction"
-    ],
-    "rating": 4.4,
-    "keywords": [
-      "ai writing assistant",
-      "grammar improvement"
-    ],
-    "isFeatured": true
-  },
+  "name": "Grammarly",
+  "slug": "grammarly",
+  "image": "/grammarly.png",
+  "url": "https://www.grammarly.com/",
+  "category": ["Writing & Editing"],
+  "price": "Freemium (Free; Premium from $12/mo; Business $15/mo/user)",
+  "description": "AI writing assistant for grammar, style, and tone correction and improvement.",
+  "tags": ["grammar checker", "writing assistant", "style correction"],
+  "rating": 4.4,
+  "keywords": ["ai writing assistant", "grammar improvement"],
+  "isFeatured": true,
+  "overview": "Grammarly is an AI-powered writing assistant designed to help users improve their grammar, spelling, punctuation, and writing style. It's used by students, professionals, and businesses for better communication across emails, documents, and social media.",
+  "faqs": [
+    {
+      "question": "What is Grammarly used for?",
+      "answer": "Grammarly helps detect and correct grammar issues, enhance tone, and provide clarity suggestions across various writing platforms."
+    },
+    {
+      "question": "Is Grammarly free?",
+      "answer": "Grammarly offers a free version with basic corrections and paid plans for advanced suggestions."
+    }
+  ]
+},
   {
     "name": "QuillBot",
     "slug": "quillbot",
@@ -1624,29 +1661,75 @@ export const tools = [
     "isFeatured": true
   },
   {
-    "name": "InVideo",
-    "slug": "invideo",
-    "image": "/invideo.png",
-    "url": "https://invideo.io/",
-    "category": [
-      "Voice Generation & Conversion",
-      "Video & Animation"
-    ],
-    "price": "Freemium (Free plan; Business $15/mo annual; Unlimited $30/mo annual; Generative $96/mo)",
-    "description": "Online video editor with 5000+ templates, AI tools, and stock media.",
-    "tags": [
-      "video editor",
-      "templates",
-      "ai tools",
-      "stock media"
-    ],
-    "rating": 4.5,
-    "keywords": [
-      "online video editor",
-      "video templates"
-    ],
-    "isFeatured": true
-  },
+  "name": "Ideogram",
+  "slug": "ideogram",
+  "image": "/ideogram.png",
+  "url": "https://ideogram.ai/",
+  "category": [
+    "Art & Creative Design"
+  ],
+  "price": "Free (with optional premium plans coming soon)",
+  "description": "AI-powered text-to-image generator specialized in creative typography and artistic design.",
+  "tags": [
+    "text to image",
+    "ai art",
+    "creative design",
+    "typography"
+  ],
+  "rating": 4.3,
+  "keywords": [
+    "ai image generator",
+    "text to image"
+  ],
+  "isFeatured": true,
+  "overview": "Ideogram is an AI text-to-image generator known for its precision in creating typography-rich images. It allows users to generate visually compelling artwork from text prompts, making it a powerful tool for designers, marketers, and content creators looking to produce custom visuals quickly.",
+  "faqs": [
+    {
+      "question": "What makes Ideogram unique?",
+      "answer": "Ideogram specializes in generating images that accurately reflect input text, especially for logos, signs, and artistic typography."
+    },
+    {
+      "question": "Is Ideogram free to use?",
+      "answer": "Yes, Ideogram is currently free to use with registration. Premium plans with enhanced features may be introduced later."
+    }
+  ]
+},
+ {
+  "name": "InVideo",
+  "slug": "invideo",
+  "image": "/invideo.png",
+  "url": "https://invideo.io/",
+  "category": [
+    "Video & Animation",
+    "Voice Generation & Conversion"
+  ],
+  "price": "Freemium (Free plan; Business $15/mo; Unlimited $30/mo; Generative $96/mo)",
+  "description": "Online video editor with 5000+ templates, AI-powered tools, voiceovers, and stock media library.",
+  "tags": [
+    "video editing",
+    "ai video generator",
+    "voiceover generation",
+    "stock footage"
+  ],
+  "rating": 4.5,
+  "keywords": [
+    "ai video editor",
+    "online video editing",
+    "video templates"
+  ],
+  "isFeatured": true,
+  "overview": "InVideo is an all-in-one online video editing platform powered by AI. It enables users to create professional-quality videos using 5000+ customizable templates, voice generation tools, and a vast library of stock footage and music. Ideal for marketers, educators, creators, and businesses, it streamlines video production from script to publish.",
+  "faqs": [
+    {
+      "question": "What is InVideo used for?",
+      "answer": "InVideo is used to create and edit professional videos for social media, marketing, YouTube, and more, using AI tools and prebuilt templates."
+    },
+    {
+      "question": "Is InVideo free?",
+      "answer": "Yes, InVideo offers a free plan with limited features. Premium plans start at $15/month and unlock more templates, exports, and advanced AI features."
+    }
+  ]
+},
   {
     "name": "Clipto.AI",
     "slug": "clipto-ai",
@@ -1812,27 +1895,30 @@ export const tools = [
     "isFeatured": false
   },
   {
-    "name": "Leonardo.Ai",
-    "slug": "leonardo-ai",
-    "image": "/lep.png",
-    "url": "https://leonardo.ai/",
-    "category": [
-      "Art & Creative Design"
-    ],
-    "price": "Unknown",
-    "description": "AI platform for generating production-quality creative assets with speed and style consistency.",
-    "tags": [
-      "creative assets",
-      "ai generation",
-      "style consistency"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai creative assets",
-      "production quality"
-    ],
-    "isFeatured": false
-  },
+  "name": "Leonardo.Ai",
+  "slug": "leonardo-ai",
+  "image": "/lep.png",
+  "url": "https://leonardo.ai/",
+  "category": ["Art & Creative Design"],
+  "price": "Free & Paid options",
+  "description": "AI platform for generating production-quality creative assets with speed and style consistency.",
+  "tags": ["creative assets", "ai generation", "style consistency"],
+  "rating": 4.8,
+  "keywords": ["ai creative assets", "production quality"],
+  "isFeatured": true,
+
+  "overview": "Leonardo.Ai is a powerful AI tool used by designers and creatives to generate high-quality production assets quickly. It's known for its consistent style generation and rapid prototyping capabilities.",
+  "faqs": [
+    {
+      "question": "What is Leonardo.Ai used for?",
+      "answer": "It’s used to create creative assets like illustrations, product concepts, game art, and more using AI."
+    },
+    {
+      "question": "Is Leonardo.Ai free?",
+      "answer": "It offers free and premium plans depending on your usage needs."
+    }
+  ],
+},
   {
     "name": "Picsart",
     "slug": "picsart",
