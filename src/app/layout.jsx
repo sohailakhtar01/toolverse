@@ -67,28 +67,34 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" dir="ltr" data-theme="light">
       <head>
-        {/* Google Search Console verification */}
-        <meta
-          name="google-site-verification"
-          content="fhoUx6Asp7AlWxDIvLfaXFEbw4pp94yNUhqewq6pMJM"
-        />
+  {/* Google Search Console verification */}
+  <meta
+    name="google-site-verification"
+    content="fhoUx6Asp7AlWxDIvLfaXFEbw4pp94yNUhqewq6pMJM"
+  />
 
-        {/* Google Analytics Script */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=G-2ZC85B8D0N`}
-          strategy="afterInteractive"
-        />
-        <Script id="ga-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-2ZC85B8D0N', {
-              page_path: window.location.pathname,
-            });
-          `}
-        </Script>
-      </head>
+  {/* ✅ Important Site Name Metadata */}
+  <meta property="og:site_name" content="ToolVault" />
+  <meta name="application-name" content="ToolVault" />
+  <meta name="apple-mobile-web-app-title" content="ToolVault" />
+
+  {/* Google Analytics Script */}
+  <Script
+    src={`https://www.googletagmanager.com/gtag/js?id=G-2ZC85B8D0N`}
+    strategy="afterInteractive"
+  />
+  <Script id="ga-init" strategy="afterInteractive">
+    {`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2ZC85B8D0N', {
+        page_path: window.location.pathname,
+      });
+    `}
+  </Script>
+</head>
+
       <body
   className={`${geistSans.variable} ${geistMono.variable}  antialiased scroll-smooth bg-white text-gray-900`}
 >
