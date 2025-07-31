@@ -1541,7 +1541,7 @@ export const tools = [
   },
   {
     "name": "CapCut",
-    "slug": "capcut-1",
+    "slug": "capcut",
     "image": "/cap.png",
     "url": "https://www.capcut.com/",
     "category": [
@@ -1561,55 +1561,6 @@ export const tools = [
     "keywords": [
       "video editor",
       "graphic design tool"
-    ],
-    "isFeatured": true
-  },
-  {
-    "name": "Studocu",
-    "slug": "studocu-1",
-    "image": "/studo.png",
-    "url": "https://www.studocu.com/",
-    "category": [
-      "Voice Generation & Conversion",
-      "Writing & Editing",
-      "Office & Productivity"
-    ],
-    "price": "Freemium (3-mo $35.97; annual $83.88)",
-    "description": "Studocu is a platform for students to share and access study materials globally.",
-    "tags": [
-      "study materials",
-      "education",
-      "student resources"
-    ],
-    "rating": 4.4,
-    "keywords": [
-      "study platform",
-      "student sharing"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "ElevenLabs",
-    "slug": "elevenlabs-1",
-    "image": "/eleven.png",
-    "url": "https://elevenlabs.io/",
-    "category": [
-      "Voice Generation & Conversion",
-      "Music & Audio",
-      "Coding & Development"
-    ],
-    "price": "Freemium (Free; Starter $5/mo; Creator $11/mo; Pro $99/mo; Scale $330/mo; Business $1,100/mo)",
-    "description": "AI audio platform offering text-to-speech, voice cloning, and dubbing services.",
-    "tags": [
-      "text-to-speech",
-      "voice cloning",
-      "dubbing",
-      "ai audio"
-    ],
-    "rating": 4.5,
-    "keywords": [
-      "ai audio platform",
-      "voice generator"
     ],
     "isFeatured": true
   },
@@ -1753,30 +1704,6 @@ export const tools = [
       "transcription tools"
     ],
     "isFeatured": false
-  },
-  {
-    "name": "PixVerse",
-    "slug": "pixverse-1",
-    "image": "/pixelverse.png",
-    "url": "https://pixverse.ai/",
-    "category": [
-      "Voice Generation & Conversion",
-      "Music & Audio",
-      "Social Media"
-    ],
-    "price": "Freemium (Basic free; Standard $10/mo; Pro $30/mo; Premium $60/mo)",
-    "description": "AI video generator that transforms text and photos into stunning videos.",
-    "tags": [
-      "video generation",
-      "text to video",
-      "photo to video"
-    ],
-    "rating": 4.5,
-    "keywords": [
-      "ai video generator",
-      "video creation"
-    ],
-    "isFeatured": true
   },
   {
     "name": "Otter.ai",
@@ -2036,32 +1963,6 @@ export const tools = [
     "isFeatured": false
   },
   {
-    "name": "Beacons",
-    "slug": "beacons-1",
-    "image": "/beacon.png",
-    "url": "https://beacons.ai/",
-    "category": [
-      "Social Media",
-      "Writing & Editing",
-      "Marketing & Advertising",
-      "Research & Data Analysis"
-    ],
-    "price": "Unknown",
-    "description": "All-in-one platform for content creators with link-in-bio, store, email marketing, and media kits.",
-    "tags": [
-      "content creators",
-      "link-in-bio",
-      "email marketing",
-      "media kits"
-    ],
-    "rating": null,
-    "keywords": [
-      "creator platform",
-      "social media tools"
-    ],
-    "isFeatured": false
-  },
-  {
     "name": "Uhmegle",
     "slug": "uhmegle",
     "image": "/uh.png",
@@ -2085,32 +1986,8 @@ export const tools = [
     "isFeatured": false
   },
   {
-    "name": "PixVerse",
-    "slug": "pixverse-2",
-    "image": "/pixelverse.png",
-    "url": "https://pixverse.ai/",
-    "category": [
-      "Social Media",
-      "Music & Audio",
-      "Voice Generation & Conversion"
-    ],
-    "price": "Unknown",
-    "description": "AI video generator that transforms text and photos into stunning videos.",
-    "tags": [
-      "video generation",
-      "text to video",
-      "photo to video"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai video generator",
-      "video creation"
-    ],
-    "isFeatured": false
-  },
-  {
     "name": "Sider",
-    "slug": "sider-1",
+    "slug": "sider",
     "image": "/sider.png",
     "url": null,
     "category": [
@@ -2297,53 +2174,6 @@ export const tools = [
     "keywords": [
       "advanced chatbot",
       "whatsapp integration"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "QuillBot",
-    "slug": "quillbot-1",
-    "image": "/quill.png",
-    "url": "https://quillbot.com/",
-    "category": [
-      "AI Detection & Anti-Detection",
-      "Writing & Editing"
-    ],
-    "price": "Unknown",
-    "description": "AI-powered writing tool for paraphrasing, grammar checking, and more to improve writing.",
-    "tags": [
-      "paraphrasing",
-      "grammar checking",
-      "writing improvement"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai writing tool",
-      "paraphraser"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "ZeroGPT",
-    "slug": "zerogpt-1",
-    "image": "/zerogpt.png",
-    "url": "https://www.zerogpt.com/",
-    "category": [
-      "AI Detection & Anti-Detection",
-      "Writing & Editing",
-      "Marketing & Advertising",
-      "Education & Translation"
-    ],
-    "price": "Unknown",
-    "description": "ZeroGPT is an AI content detector and offers various writing tools.",
-    "tags": [
-      "ai content detector",
-      "writing tools"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai detector",
-      "writing assistant"
     ],
     "isFeatured": false
   },
@@ -2581,7 +2411,7 @@ export const tools = [
   },
   {
     "name": "OpenAI",
-    "slug": "openai-1",
+    "slug": "openai",
     "image": "/openai.png",
     "url": "https://openai.com/",
     "category": [
@@ -2601,56 +2431,6 @@ export const tools = [
     "keywords": [
       "ai research",
       "openai models"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "DeepSeek",
-    "slug": "deepseek-1",
-    "image": "/deep.png",
-    "url": "https://www.deepseek.com/",
-    "category": [
-      "Coding & Development",
-      "Writing & Editing",
-      "Education & Translation",
-      "Office & Productivity",
-      "Chatbots & Virtual Companions"
-    ],
-    "price": "Unknown",
-    "description": "DeepSeek is an AI company providing foundation models and APIs for AI applications.",
-    "tags": [
-      "foundation models",
-      "apis",
-      "ai applications"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai models",
-      "api access"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "DeepL",
-    "slug": "deepl-1",
-    "image": "/deepla.png",
-    "url": "https://www.deepl.com/",
-    "category": [
-      "Coding & Development",
-      "Writing & Editing",
-      "Education & Translation"
-    ],
-    "price": "Unknown",
-    "description": "Accurate machine translation and AI-powered writing assistance for text and documents.",
-    "tags": [
-      "translation",
-      "writing assistance",
-      "documents"
-    ],
-    "rating": null,
-    "keywords": [
-      "machine translation",
-      "ai writing"
     ],
     "isFeatured": false
   },
@@ -2775,31 +2555,6 @@ export const tools = [
     "isFeatured": false
   },
   {
-    "name": "ElevenLabs",
-    "slug": "elevenlabs-2",
-    "image": "/eleven.png",
-    "url": "https://elevenlabs.io/",
-    "category": [
-      "Coding & Development",
-      "Music & Audio",
-      "Voice Generation & Conversion"
-    ],
-    "price": "Unknown",
-    "description": "AI audio platform offering text-to-speech, voice cloning, and dubbing services.",
-    "tags": [
-      "text-to-speech",
-      "voice cloning",
-      "dubbing",
-      "ai audio"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai audio platform",
-      "voice generator"
-    ],
-    "isFeatured": false
-  },
-  {
     "name": "Hugging Face",
     "slug": "hugging-face",
     "image": "/hugging.png",
@@ -2851,31 +2606,6 @@ export const tools = [
     "isFeatured": false
   },
   {
-    "name": "OpenAI",
-    "slug": "openai-2",
-    "image": "/open.png",
-    "url": "https://openai.com/",
-    "category": [
-      "Video & Animation",
-      "Image Generation & Editing",
-      "Coding & Development",
-      "Chatbots & Virtual Companions"
-    ],
-    "price": "Unknown",
-    "description": "AI research and deployment company focused on building safe and beneficial AGI.",
-    "tags": [
-      "agi",
-      "ai research",
-      "safe ai"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai research",
-      "openai models"
-    ],
-    "isFeatured": false
-  },
-  {
     "name": "Sora",
     "slug": "sora",
     "image": "/sora.png",
@@ -2899,33 +2629,8 @@ export const tools = [
     "isFeatured": false
   },
   {
-    "name": "CapCut",
-    "slug": "capcut-2",
-    "image": "/cap.png",
-    "url": "https://www.capcut.com/",
-    "category": [
-      "Video & Animation",
-      "Image Generation & Editing",
-      "Voice Generation & Conversion"
-    ],
-    "price": "Unknown",
-    "description": "CapCut is an AI-driven all-in-one video editor and graphic design tool.",
-    "tags": [
-      "video editor",
-      "graphic design",
-      "ai video",
-      "video editing"
-    ],
-    "rating": null,
-    "keywords": [
-      "video editor",
-      "graphic design tool"
-    ],
-    "isFeatured": false
-  },
-  {
     "name": "Kling AI",
-    "slug": "kling-ai-1",
+    "slug": "kling-ai",
     "image": "/kling.png",
     "url": null,
     "category": [
@@ -3043,7 +2748,7 @@ export const tools = [
   },
   {
     "name": "Wondershare",
-    "slug": "wondershare-1",
+    "slug": "wondershare",
     "image": "/wondershare.png",
     "url": "https://www.wondershare.com/",
     "category": [
@@ -3136,31 +2841,6 @@ export const tools = [
     "keywords": [
       "technology services",
       "professional solutions"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "Wondershare",
-    "slug": "wondershare-2",
-    "image": "/wondershare.png",
-    "url": "https://www.wondershare.com/",
-    "category": [
-      "Daily Life",
-      "Music & Audio",
-      "Video & Animation"
-    ],
-    "price": "Unknown",
-    "description": "Software solutions for creativity, productivity, and utility, including video editing, PDF tools, and data management.",
-    "tags": [
-      "video editing",
-      "pdf tools",
-      "data management",
-      "productivity"
-    ],
-    "rating": null,
-    "keywords": [
-      "software solutions",
-      "productivity tools"
     ],
     "isFeatured": false
   },
@@ -3406,7 +3086,7 @@ export const tools = [
   },
   {
     "name": "Abacus.AI",
-    "slug": "abacus-ai-1",
+    "slug": "abacus-ai",
     "image": "/abacus.png",
     "url": "https://www.abacus.ai/",
     "category": [
@@ -4136,56 +3816,6 @@ export const tools = [
     "isFeatured": false
   },
   {
-    "name": "Beacons",
-    "slug": "beacons-2",
-    "image": "/beacon.png",
-    "url": "https://beacons.ai/",
-    "category": [
-      "Marketing & Advertising",
-      "Writing & Editing",
-      "Social Media",
-      "Research & Data Analysis"
-    ],
-    "price": "Unknown",
-    "description": "All-in-one platform for content creators with link-in-bio, store, email marketing, and media kits.",
-    "tags": [
-      "content creators",
-      "link-in-bio",
-      "email marketing",
-      "media kits"
-    ],
-    "rating": null,
-    "keywords": [
-      "creator platform",
-      "social media tools"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "ZeroGPT",
-    "slug": "zerogpt-2",
-    "image": "/zerogpt.png",
-    "url": "https://www.zerogpt.com/",
-    "category": [
-      "Marketing & Advertising",
-      "Writing & Editing",
-      "AI Detection & Anti-Detection",
-      "Education & Translation"
-    ],
-    "price": "Unknown",
-    "description": "ZeroGPT is an AI content detector and offers various writing tools.",
-    "tags": [
-      "ai content detector",
-      "writing tools"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai detector",
-      "writing assistant"
-    ],
-    "isFeatured": false
-  },
-  {
     "name": "Mailchimp",
     "slug": "mailchimp",
     "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
@@ -4849,7 +4479,7 @@ export const tools = [
   },
   {
     "name": "DeepSeek",
-    "slug": "deepseek-2",
+    "slug": "deepseek",
     "image": "/deep.png",
     "url": "https://www.deepseek.com/",
     "category": [
@@ -4875,7 +4505,7 @@ export const tools = [
   },
   {
     "name": "DeepL",
-    "slug": "deepl-2",
+    "slug": "deepl",
     "image": "/deepla.png",
     "url": "https://www.deepl.com/",
     "category": [
@@ -4951,30 +4581,6 @@ export const tools = [
     "isFeatured": false
   },
   {
-    "name": "ZeroGPT",
-    "slug": "zerogpt-3",
-    "image": "/zero.png",
-    "url": "https://www.zerogpt.com/",
-    "category": [
-      "Education & Translation",
-      "Writing & Editing",
-      "AI Detection & Anti-Detection",
-      "Marketing & Advertising"
-    ],
-    "price": "Unknown",
-    "description": "ZeroGPT is an AI content detector and offers various writing tools.",
-    "tags": [
-      "ai content detector",
-      "writing tools"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai detector",
-      "writing assistant"
-    ],
-    "isFeatured": false
-  },
-  {
     "name": "Poe",
     "slug": "poe",
     "image": "/poe.png",
@@ -4985,7 +4591,7 @@ export const tools = [
     ],
     "price": "Unknown",
     "description": "Poe is an AI chat platform powered by Quora, offering access to multiple AI models.",
-    "tags": [
+    "tags": [ 
       "ai chat platform",
       "quora",
       "ai models"
@@ -5137,31 +4743,6 @@ export const tools = [
     "keywords": [
       "google gemini",
       "ai assistant"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "OpenAI",
-    "slug": "openai-3",
-    "image": "/openai.png",
-    "url": "https://openai.com/",
-    "category": [
-      "Chatbots & Virtual Companions",
-      "Image Generation & Editing",
-      "Coding & Development",
-      "Video & Animation"
-    ],
-    "price": "Unknown",
-    "description": "AI research and deployment company focused on building safe and beneficial AGI.",
-    "tags": [
-      "agi",
-      "ai research",
-      "safe ai"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai research",
-      "openai models"
     ],
     "isFeatured": false
   },
