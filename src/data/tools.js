@@ -379,6 +379,49 @@ export const tools = [
     }
   ]
 },
+{
+  "name": "Brevo",
+  "slug": "brevo",
+  "image": "/brevo.png",
+  "url": "https://www.brevo.com/",
+  "category": [
+    "Marketing & Advertising",
+    "Email & SMS Campaigns",
+    "CRM & Automation"
+  ],
+  "price": "Free plan available. Paid plans start at $25/month.",
+  "description": "Brevo (formerly Sendinblue) is a complete marketing automation platform offering powerful tools for email, SMS, WhatsApp campaigns, CRM, and transactional messaging – all in one place.",
+  "tags": [
+    "email marketing",
+    "sms marketing",
+    "crm platform",
+    "marketing automation",
+    "transactional emails"
+  ],
+  "rating": 4.8,
+  "keywords": [
+    "email marketing tool",
+    "brevo vs mailchimp",
+    "marketing automation",
+    "brevo features"
+  ],
+  "isFeatured": true,
+  "overview": "Brevo is an all-in-one marketing solution trusted by over 500,000 businesses worldwide. It helps startups, agencies, and enterprises scale communication through professional emails, SMS, WhatsApp messaging, marketing automation, and a built-in CRM. Whether you're just starting or scaling your business, Brevo provides advanced features with transparent pricing and excellent deliverability.",
+  "faqs": [
+    {
+      "question": "Is Brevo free to use?",
+      "answer": "Yes, Brevo offers a free plan that includes up to 300 emails/day, unlimited contacts, and core marketing features. Paid plans unlock more advanced tools and higher limits."
+    },
+    {
+      "question": "What makes Brevo different from other email tools?",
+      "answer": "Brevo combines email, SMS, WhatsApp, marketing automation, and CRM in one platform with clear pricing. It's designed to grow with your business, offering excellent deliverability and tools for both beginners and pros."
+    },
+    {
+      "question": "Who should use Brevo?",
+      "answer": "Brevo is ideal for startups, solopreneurs, SaaS founders, e-commerce brands, marketers, and agencies looking for a reliable and affordable marketing solution."
+    }
+  ]
+},
   {
     "name": "Veo3.bot: Free Access to Google Veo 3 AI Video Generation with Native Audio",
     "slug": "veo3-bot-free-access-to-google-veo-3-ai-video-generation-with-native-audio",
