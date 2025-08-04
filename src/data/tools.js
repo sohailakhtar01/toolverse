@@ -347,7 +347,7 @@ export const tools = [
   {
   "name": "ShareASale",
   "slug": "shareasale",
-  "image": null,
+  "image": "/share.png",
   "url": "https://www.shareasale.com/",
   "category": [
     "Affiliate Marketing Network",
@@ -381,43 +381,43 @@ export const tools = [
     }
   ]
 },
-  {
-  "name": "Rank Math",
-  "slug": "rank‑math",
-  "image": "/rankmath.png",
-  "url": "https://rankmath.com/",
-  "category": [
-    "SEO & SEM",
-    "Marketing & Advertising"
-  ],
-  "price": "Free (Core) or Subscription (Pro $95.88/yr, Business $251.88/yr, Agency $599.88/yr)",
-  "description": "A feature‑rich WordPress SEO plugin offering on‑page analysis, schema markup, redirect manager, Content AI, and ranks tracking—many features free.",
-  "tags": [
-    "WordPress SEO",
-    "schema markup",
-    "content analysis",
-    "Content AI",
-    "redirect manager"
-  ],
-  "rating": 4.9,
-  "keywords": [
-    "WordPress SEO plugin",
-    "AI SEO tool",
-    "content optimization"
-  ],
-  "isFeatured": true,
-  "overview": "Rank Math is a WordPress‑only SEO plugin focused on delivering advanced SEO and AI‑driven features in both free and premium tiers. It replaces many separate plugins by combining on‑page analysis, schema, redirects, keyword tracking, and AI content tools.",
-  "faqs": [
-    {
-      "question": "What versions of Rank Math are available?",
-      "answer": "Rank Math is offered in a free core version, as well as Pro, Business, and Agency tiers."
-    },
-    {
-      "question": "How much does Rank Math cost?",
-      "answer": "Pro is priced at ~$95.88/year, Business at ~$251.88/year, and Agency at ~$599.88/year (all billed annually)."
-    }
-  ]
-},
+//   {
+//   "name": "Rank_Math",
+//   "slug": "rank‑math",
+//   "image": "/rankmath.png",
+//   "url": "https://rankmath.com/",
+//   "category": [
+//     "SEO & SEM",
+//     "Marketing & Advertising"
+//   ],
+//   "price": "Free (Core) or Subscription (Pro $95.88/yr, Business $251.88/yr, Agency $599.88/yr)",
+//   "description": "A feature‑rich WordPress SEO plugin offering on‑page analysis, schema markup, redirect manager, Content AI, and ranks tracking—many features free.",
+//   "tags": [
+//     "WordPress SEO",
+//     "schema markup",
+//     "content analysis",
+//     "Content AI",
+//     "redirect manager"
+//   ],
+//   "rating": 4.9,
+//   "keywords": [
+//     "WordPress SEO plugin",
+//     "AI SEO tool",
+//     "content optimization"
+//   ],
+//   "isFeatured": true,
+//   "overview": "Rank Math is a WordPress‑only SEO plugin focused on delivering advanced SEO and AI‑driven features in both free and premium tiers. It replaces many separate plugins by combining on‑page analysis, schema, redirects, keyword tracking, and AI content tools.",
+//   "faqs": [
+//     {
+//       "question": "What versions of Rank Math are available?",
+//       "answer": "Rank Math is offered in a free core version, as well as Pro, Business, and Agency tiers."
+//     },
+//     {
+//       "question": "How much does Rank Math cost?",
+//       "answer": "Pro is priced at ~$95.88/year, Business at ~$251.88/year, and Agency at ~$599.88/year (all billed annually)."
+//     }
+//   ]
+// },
   {
   "name": "Semrush",
   "slug": "semrush",
