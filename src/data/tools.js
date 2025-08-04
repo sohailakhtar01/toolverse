@@ -345,6 +345,117 @@ export const tools = [
     "isFeatured": true
   },
   {
+  "name": "ShareASale",
+  "slug": "shareasale",
+  "image": null,
+  "url": "https://www.shareasale.com/",
+  "category": [
+    "Affiliate Marketing Network",
+    "Marketing & Advertising"
+  ],
+  "price": "Merchant Subscription (One‑time setup $550–625, Initial deposit ~$100–125, Monthly fee $35; Affiliate access is free)",
+  "description": "A long‑established affiliate marketing network connecting merchants and affiliates, offering real-time tracking, robust analytics, and a large catalog of merchant programs.",
+  "tags": [
+    "affiliate platform",
+    "merchant network",
+    "real‑time tracking",
+    "commission management",
+    "affiliate recruitment"
+  ],
+  "rating": 4.9,
+  "keywords": [
+    "affiliate marketing network",
+    "merchant affiliate program",
+    "affiliate analytics"
+  ],
+  "isFeatured": true,
+  "overview": "ShareASale is one of the oldest and most reputable affiliate marketing platforms (founded in 2000, now owned by Awin). It enables merchants to create and manage affiliate programs with real‑time tracking, while affiliates can find wide-ranging merchants and earn commission through pay‑per-sale and pay‑per-lead models.",
+  "faqs": [
+    {
+      "question": "How does pricing work for merchants on ShareASale?",
+      "answer": "Merchants pay a one‑time setup fee ($550–625), a minimum deposit (~$100–125) to pay affiliate rewards, and a monthly platform fee of $35. Affiliates register for free."
+    },
+    {
+      "question": "When and how do affiliates get paid?",
+      "answer": "Affiliates are paid once a month (on the 20th), via direct deposit (ACH/wire), check, or Payoneer. The minimum payout threshold is typically $50."
+    }
+  ]
+},
+  {
+  "name": "Rank Math",
+  "slug": "rank‑math",
+  "image": "/rankmath.png",
+  "url": "https://rankmath.com/",
+  "category": [
+    "SEO & SEM",
+    "Marketing & Advertising"
+  ],
+  "price": "Free (Core) or Subscription (Pro $95.88/yr, Business $251.88/yr, Agency $599.88/yr)",
+  "description": "A feature‑rich WordPress SEO plugin offering on‑page analysis, schema markup, redirect manager, Content AI, and ranks tracking—many features free.",
+  "tags": [
+    "WordPress SEO",
+    "schema markup",
+    "content analysis",
+    "Content AI",
+    "redirect manager"
+  ],
+  "rating": 4.9,
+  "keywords": [
+    "WordPress SEO plugin",
+    "AI SEO tool",
+    "content optimization"
+  ],
+  "isFeatured": true,
+  "overview": "Rank Math is a WordPress‑only SEO plugin focused on delivering advanced SEO and AI‑driven features in both free and premium tiers. It replaces many separate plugins by combining on‑page analysis, schema, redirects, keyword tracking, and AI content tools.",
+  "faqs": [
+    {
+      "question": "What versions of Rank Math are available?",
+      "answer": "Rank Math is offered in a free core version, as well as Pro, Business, and Agency tiers."
+    },
+    {
+      "question": "How much does Rank Math cost?",
+      "answer": "Pro is priced at ~$95.88/year, Business at ~$251.88/year, and Agency at ~$599.88/year (all billed annually)."
+    }
+  ]
+},
+  {
+  "name": "Semrush",
+  "slug": "semrush",
+  "image": "/semrush.png",
+  "url": "https://www.semrush.com/",
+  "category": [
+    "SEO & SEM",
+    "Marketing & Advertising"
+  ],
+  "price": "Subscription (Pro $139.95/mo, Guru $249.95/mo, Business $499.95/mo; annual discounts available)",
+  "description": "An all‑in‑one, AI-powered digital marketing platform offering tools for SEO, keyword research, competitive analysis, content optimization, PPC, social media, and more.",
+  "tags": [
+    "SEO toolkit",
+    "keyword research",
+    "competitor analysis",
+    "site audit",
+    "content optimization"
+  ],
+  "rating": 4.9,
+  "keywords": [
+    "SEO tool",
+    "competitive intelligence",
+    "content marketing platform"
+  ],
+  "isFeatured": true,
+  "overview": "Semrush is a comprehensive SaaS platform widely used by digital marketers and agencies. It enables keyword and backlink analysis, site audits, ranking tracking, content strategy tools, and campaign monitoring—all from a single interface.",
+  "faqs": [
+    {
+      "question": "What is Semrush used for?",
+      "answer": "Semrush offers tools for SEO and PPC research, site audits, backlink analytics, competitor insights, content optimization, social media scheduling, and local marketing."
+    },
+    {
+      "question": "How much does Semrush cost?",
+      "answer": "The core SEO Toolkit includes plans at $139.95/month (Pro), $249.95/month (Guru), and $499.95/month (Business); annual plans reduce these to approximately $117.33, $208.33, and $416.66 per month, respectively."
+    }
+  ]
+},
+  {
   "name": "NovelAI",
   "slug": "novelai",
   "image": "/novel.png",
