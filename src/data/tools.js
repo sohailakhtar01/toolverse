@@ -491,6 +491,118 @@ export const tools = [
   ]
 },
 {
+  "name": "Pictory",
+  "slug": "pictory",
+  "image": "/pictory.png",
+  "url": "https://pictory.ai/",
+  "category": [
+    "Video & Animation",
+    "Marketing & Advertising"
+  ],
+  "price": "Free trial available; Paid plans start at $23/month (Standard), $47/month (Premium), $119/month (Teams) when billed annually",
+  "description": "Pictory is an AI-powered video generation tool that transforms long-form content like blog posts or articles into short, engaging videos, ideal for social media and marketing.",
+  "tags": [
+    "video creation",
+    "text to video",
+    "ai video editing",
+    "content repurposing",
+    "video summarization"
+  ],
+  "rating": 4.8,
+  "keywords": [
+    "ai video generator",
+    "blog to video",
+    "content to video tool"
+  ],
+  "isFeatured": true,
+  "overview": "Pictory enables users—especially marketers, content creators, and educators—to create branded videos from written content or existing long-form videos. With features like automatic captions, voiceovers, and customizable templates, Pictory is a go-to for repurposing content into visual formats.",
+  "faqs": [
+    {
+      "question": "What does Pictory do?",
+      "answer": "Pictory converts scripts, blog posts, or long videos into short, shareable videos using AI. It automatically extracts key points, adds visuals, and generates subtitles."
+    },
+    {
+      "question": "How much does Pictory cost?",
+      "answer": "Pictory offers a free trial. Paid plans start at $23/month (Standard), $47/month (Premium), and $119/month (Teams) when billed annually. Monthly billing is also available at higher rates."
+    }
+  ]
+},
+{
+  "name": "Scalenut",
+  "slug": "scalenut",
+  "image": "/scale.png",
+  "url": "https://www.scalenut.com/",
+  "category": [
+    "SEO & SEM",
+    "Writing & Editing",
+    "Marketing & Advertising"
+  ],
+  "price": "Free trial available; Paid plans start at $39/month (Essential), $79/month (Growth), $149/month (Pro) when billed annually",
+  "description": "Scalenut is an AI-powered SEO and content marketing platform designed to help users research, plan, create, and optimize content that ranks higher on search engines.",
+  "tags": [
+    "seo content",
+    "ai writing",
+    "keyword research",
+    "content brief",
+    "topic clustering"
+  ],
+  "rating": 4.7,
+  "keywords": [
+    "seo writing assistant",
+    "content optimization tool",
+    "ai content generator"
+  ],
+  "isFeatured": true,
+  "overview": "Scalenut combines AI writing with SEO-focused tools to help marketers and businesses create content that performs. From keyword planning and content briefs to long-form writing and optimization, Scalenut streamlines the entire content lifecycle for better SERP results.",
+  "faqs": [
+    {
+      "question": "What is Scalenut used for?",
+      "answer": "Scalenut is used for AI-powered content creation and SEO optimization. It helps users create blog posts, landing pages, and content strategies using SERP insights and AI writing capabilities."
+    },
+    {
+      "question": "How much does Scalenut cost?",
+      "answer": "Scalenut offers a free trial. Paid plans are $39/month (Essential), $79/month (Growth), and $149/month (Pro) when billed annually. Monthly billing is also available at slightly higher rates."
+    }
+  ]
+},
+{
+  "name": "WriteSonic",
+  "slug": "writesonic",
+  "image": "/write.png",
+  "url": "https://writesonic.com/",
+  "category": [
+    "Writing & Editing",
+    "Marketing & Advertising",
+  ],
+  "price": "Free plan available; Paid plans start at $16/month (depending on word usage and features)",
+  "description": "An AI-powered writing platform that helps users generate high-quality marketing copy, blog articles, product descriptions, and more using GPT-based technology.",
+  "tags": [
+    "ai writing tool",
+    "copywriting",
+    "blog generator",
+    "email writing",
+    "product descriptions"
+  ],
+  "rating": 4.7,
+  "keywords": [
+    "ai copy generator",
+    "blog writing assistant",
+    "GPT writer"
+  ],
+  "isFeatured": true,
+  "overview": "WriteSonic is an advanced AI writing tool used by marketers, agencies, and freelancers to create SEO-optimized content, sales copy, social media posts, and even landing pages. Built on GPT, it speeds up content creation while maintaining quality and tone.",
+  "faqs": [
+    {
+      "question": "What can WriteSonic be used for?",
+      "answer": "WriteSonic is ideal for writing blog posts, product descriptions, ad copy, email content, and social media captions. It also offers chatbot and AI article generation tools."
+    },
+    {
+      "question": "Is WriteSonic free?",
+      "answer": "Yes, WriteSonic offers a free trial with limited word credits. Paid plans begin at $16/month, with more features and higher word limits available at higher tiers."
+    }
+  ]
+},
+{
   "name": "Brevo",
   "slug": "brevo",
   "image": "/brevo.png",

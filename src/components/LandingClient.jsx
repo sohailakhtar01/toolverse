@@ -58,7 +58,16 @@ export default function LandingClient() {
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
             Explore thousands of carefully curated digital tools, software, and services to grow your business.
           </p>
-        </div>
+<div className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent  py-5 px-4 sm:py-7 sm:px-6 lg:py-4 lg:px-8 text-center rounded-lg shadow-xl">
+        <p className=" text-xl sm:text-2xl md:text-2xl font-semibold leading-tight">
+            We've partnered with industry leaders like 
+            <span className="font-bold">Grammarly</span>,
+            <span className="font-bold">Writesonic</span>,
+            <span className="font-bold">Pictory</span>,
+            <span className="font-bold">Scalenut</span>, and
+            <span className="font-bold">Semrush</span> to help you achieve your goals faster.
+        </p>
+    </div>        </div>
       </section>
 
       {/* call to action buttons */}
