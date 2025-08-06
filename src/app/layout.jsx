@@ -72,6 +72,10 @@ export default function RootLayout({ children }) {
     name="google-site-verification"
     content="fhoUx6Asp7AlWxDIvLfaXFEbw4pp94yNUhqewq6pMJM"
   />
+    <meta
+    name="impact-site-verification"
+    content="33ca4a2c-09ea-4621-ab2f-9abc3336cafe"
+  />
 
   {/* ✅ Important Site Name Metadata */}
   <meta property="og:site_name" content="ToolVault" />
