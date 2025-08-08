@@ -59,14 +59,13 @@ export default function LandingClient() {
             Explore thousands of carefully curated digital tools, software, and services to grow your business.
           </p>
 <div className="p-[2px] rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 shadow-xl text-center">
-  <div className="bg-white rounded-lg py-5 px-4 sm:py-6 sm:px-6 lg:py-8 lg:px-8">
+  <div className="bg-gradient-to-r from-[#F3F7FF] to-[#F6F5FE] rounded-lg py-5 px-4 sm:py-6 sm:px-6 lg:py-8 lg:px-8">
     <p className="text-black text-base sm:text-lg md:text-xl lg:text-2xl font-semibold leading-snug sm:leading-normal">
       We've partnered with industry leaders like
-      <span className="block sm:inline font-bold"> Grammarly</span>
       <span className="block sm:inline font-bold"> Writesonic</span>
       <span className="block sm:inline font-bold"> Pictory</span>
       <span className="block sm:inline font-bold"> Scalenut</span>
-      <span className="block sm:inline font-bold"> Semrush</span> to help you achieve your goals faster.
+       to help you achieve your goals faster.
     </p>
   </div>
 </div>
