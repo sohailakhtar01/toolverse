@@ -64,10 +64,10 @@ const Header = () => {
   <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
 </Link>
 
-<Link href="/about" className="group relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
+{/* <Link href="/about" className="group relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
   About Us
   <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
-</Link>
+</Link> */}
             {/* <Link href="/sign-in" className="px-3 py-2 text-[18px]  cursor-pointer text-purple-600 hover:text-purple-700 transition-colors">
               Sign in
             </Link> */}

@@ -70,7 +70,7 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-gray-800 mb-4">Support</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="#" className="text-gray-600 hover:text-purple-600">Help Center</Link></li>
-              <li><Link href="#" className="text-gray-600 hover:text-purple-600">Contact Us</Link></li>
+              <li><Link href="/about" className="text-gray-600 hover:text-purple-600">About Us</Link></li>
               <li><Link href="#" className="text-gray-600 hover:text-purple-600">Privacy Policy</Link></li>
               <li><Link href="#" className="text-gray-600 hover:text-purple-600">Terms of Service</Link></li>
               <li><Link href="#" className="text-gray-600 hover:text-purple-600">API Docs</Link></li>
