@@ -1,3 +1,9 @@
 @import "tailwindcss";
 
-
+/* Fonts */
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}
+.font-spaceGrotesk {
+  font-family: var(--font-space-grotesk);
+}

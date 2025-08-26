@@ -51,11 +51,11 @@ export default function LandingClient() {
               🎯 Featured Tool Directory
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl  font-montserrat font-bold mb-4">
             Discover the <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Best AI Tools</span>
             <span className="text-black"> for Your Business</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+          <p className="text-base sm:text-lg md:text-xl font-spaceGrotesk text-gray-600 max-w-2xl mx-auto mb-8">
             Explore thousands of carefully curated digital tools, software, and services to grow your business.
           </p>
 <div className="p-[2px] rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 shadow-xl text-center">

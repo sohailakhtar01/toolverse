@@ -30,7 +30,7 @@ export default function BrowseToolsPage() {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl font-spaceGrotesk lg:text-6xl font-bold text-gray-900 mb-6">
               Discover the{" "}
               <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
                 Best AI Tools
@@ -40,7 +40,7 @@ export default function BrowseToolsPage() {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-gray-600 font-spaceGrotesk max-w-3xl mx-auto mb-8 leading-relaxed">
               Explore thousands of carefully curated AI tools, software, and services. 
               From productivity to creative platforms, find everything you need to grow your business.
             </p>

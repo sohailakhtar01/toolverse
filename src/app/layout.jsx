@@ -1,8 +1,25 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+// Load Space Grotesk
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
 
 // Import fonts
 const geistSans = Geist({
@@ -100,8 +117,8 @@ export default function RootLayout({ children }) {
 </head>
 
       <body
-  className={`${geistSans.variable} ${geistMono.variable}  antialiased scroll-smooth bg-white text-gray-900`}
->
+        className={`${montserrat.variable} ${spaceGrotesk.variable} antialiased scroll-smooth bg-white text-gray-900`}
+      >
 
         <Header />
         <main className="min-h-screen">{children}</main>
