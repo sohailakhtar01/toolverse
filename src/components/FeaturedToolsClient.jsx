@@ -135,10 +135,25 @@ export default function FeaturedToolsClient({ toolsData }) {
 
         {/* Load More Section */}
         <div className="text-center">
-          <button className="px-6 sm:px-6 py-2 sm:py-3 cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl flex items-center space-x-3 mx-auto">
-            <span>View All Tools</span>
-            <ArrowRight className="w-5 h-5" />
-          </button>
+         <div className="flex items-center justify-center space-x-4">
+      {/* View All Tools Button */}
+      <Link
+        href="/browse-tools"
+        className="px-6 sm:px-6 py-2 sm:py-2 cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl flex items-center space-x-3"
+      >
+        <span>View All Tools</span>
+        <ArrowRight className="w-5 h-5" />
+      </Link>
+
+      {/* AI News Button */}
+      <Link
+        href="/blog"
+        className="px-6 sm:px-6 py-2 sm:py-2 cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl flex items-center space-x-3"
+      >
+        <span>AI News</span>
+        <ArrowRight className="w-5 h-5" />
+      </Link>
+    </div>
           <p className="text-gray-500 text-sm mt-4">
             Showing {filteredTools.length} of {toolsData.length} tools
           </p>

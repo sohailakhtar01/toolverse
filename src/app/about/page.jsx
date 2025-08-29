@@ -601,8 +601,8 @@ export default function AboutPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="/tools"
-                  className="px-8 py-4 bg-white text-purple-600 rounded-2xl hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 font-semibold shadow-lg inline-flex items-center justify-center space-x-2"
+                  href="/browse-tools"
+                  className="px-8 py-4 bg-white text-purple-600 rounded-2xl hover:bg-gray-50 transition-all duration-300 transform  font-semibold shadow-lg inline-flex items-center justify-center space-x-2"
                   role="button"
                 >
                   <span>Explore 500+ Tools</span>

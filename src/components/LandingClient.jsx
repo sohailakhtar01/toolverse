@@ -155,7 +155,7 @@ export default function LandingClient() {
       {/* View All Tools Button */}
       <div className='w-full flex justify-center'>
         <Link href="/browse-tools">
-          <button className="sm:px-8 py-2 mb-8 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl hover:from-purple-600 hover:to-pink-600 transition transform hover:scale-101 font-medium text-base">
+          <button className="sm:px-8 py-2 mb-8 cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl hover:from-purple-600 hover:to-pink-600 transition transform hover:scale-101 font-medium text-base">
             View All Tools
           </button>
         </Link>
