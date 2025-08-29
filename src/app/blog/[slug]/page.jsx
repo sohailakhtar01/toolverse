@@ -1,6 +1,6 @@
-import { getPost, getAllPosts } from '../../../lib/sanity'
+import { getPost, getAllPosts } from '@/lib/sanity'
 import { PortableText } from '@portabletext/react'
-import { urlFor } from '../../../lib/sanity'
+import { urlFor } from '@/lib/sanity'
 import Image from 'next/image'
 
 export default async function BlogPost({ params }) {

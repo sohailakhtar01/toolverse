@@ -54,6 +54,12 @@ const Header = () => {
   <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
 </Link>
 
+<Link href="/blog" className="group relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
+  Insights
+  <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
+</Link>
+
+
 <Link href="/how-it-works" className="group relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
   How It Works
   <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
@@ -64,10 +70,7 @@ const Header = () => {
   <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
 </Link>
 
-{/* <Link href="/about" className="group relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
-  About Us
-  <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
-</Link> */}
+
             {/* <Link href="/sign-in" className="px-3 py-2 text-[18px]  cursor-pointer text-purple-600 hover:text-purple-700 transition-colors">
               Sign in
             </Link> */}
@@ -116,9 +119,10 @@ const Header = () => {
             <nav className="flex flex-col space-y-2 flex-grow"> {/* flex-grow to push last link to bottom */}
               <Link href="/" className="px-3 py-2 text-xl text-gray-700  hover:text-purple-600 transition-colors">Home</Link>
               <Link href="/browse-tools" onClick={() => setIsOpen(false)} className="text-left text-xl  px-4 py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">Browse Tools</Link>
+                            <Link href="/blog" onClick={() => setIsOpen(false)} className="text-left text-xl  px-4 py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">Insights</Link>
+
               <Link href="/how-it-works" onClick={() => setIsOpen(false)} className="text-left text-xl px-4 py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">How It Works</Link>
               <Link href="/featured" onClick={() => setIsOpen(false)} className="text-left px-4 text-xl py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">Featured</Link>
-              <Link href="/about" onClick={() => setIsOpen(false)} className="text-left px-4 text-xl  py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">About Us</Link>
               {/* <Link href="/sign-in" onClick={() => setIsOpen(false)} className="text-left px-4 text-xl  py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">
                 Sign in
               </Link> */}

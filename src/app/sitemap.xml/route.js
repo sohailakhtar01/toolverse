@@ -16,8 +16,9 @@ export async function GET() {
 
   const categoryRoutes = getCategoryRoutes(today);
   const toolRoutes = getToolRoutes(today);
+  const blogRoutes = await getBlogRoutes(today); // ✅ new blog routes
 
-  const allRoutes = [...staticRoutes, ...categoryRoutes, ...toolRoutes];
+  const allRoutes = [...staticRoutes, ...categoryRoutes, ...toolRoutes, ...blogRoutes];
 
   const routesXml = allRoutes.map((route) => `
     <url>
@@ -66,5 +67,24 @@ function getToolRoutes(lastmod) {
     lastmod,
     changefreq: "monthly",
     priority: tool.isFeatured ? "0.9" : "0.7"
+  }));
+}
+
+// ✅ New: fetch blog slugs from Sanity
+async function getBlogRoutes(lastmod) {
+  const query = `*[_type == "post"]{ "slug": slug.current }`;
+  const sanityProjectId = "xp8eiamz"; // <-- replace with your actual projectId
+  const sanityDataset = "production"; // <-- replace if using a different dataset
+
+  const url = `https://${sanityProjectId}.api.sanity.io/v2021-10-21/data/query/${sanityDataset}?query=${encodeURIComponent(query)}`;
+  
+  const res = await fetch(url);
+  const data = await res.json();
+
+  return data.result.map(post => ({
+    url: `/blog/${post.slug}`,
+    lastmod,
+    changefreq: "weekly",
+    priority: "0.8"
   }));
 }
