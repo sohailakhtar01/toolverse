@@ -37,35 +37,35 @@ const Header = () => {
                 className="w-10 h-10"
               />
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"> {/* Reverted to pink-600 */}
+            <span className="text-2xl font-spaceGrotesk font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"> {/* Reverted to pink-600 */}
               ToolVault
             </span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4">
-<Link href="/" className="group relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
+<Link href="/" className="group font-spaceGrotesk  relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
   Home
-  <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
+  <span className="absolute left-0  font-spaceGrotesk -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
 </Link>
 
-<Link href="/browse-tools" className="group relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
+<Link href="/browse-tools" className="group font-spaceGrotesk  relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
   Browse Tools
-  <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
+  <span className="absolute left-0 font-spaceGrotesk  -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
 </Link>
 
-<Link href="/blog" className="group relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
+<Link href="/blog" className="group font-spaceGrotesk  relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
   Insights
-  <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
+  <span className="absolute left-0 font-spaceGrotesk  -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
 </Link>
 
 
-<Link href="/how-it-works" className="group relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
+<Link href="/how-it-works" className="group font-spaceGrotesk  relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
   How It Works
-  <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
+  <span className="absolute left-0 -bottom-1 font-spaceGrotesk  w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
 </Link>
 
-<Link href="/featured" className="group relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
+<Link href="/featured" className="group font-spaceGrotesk  relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
   Featured
   <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
 </Link>
@@ -117,16 +117,16 @@ const Header = () => {
 
             {/* Mobile Navigation Links */}
             <nav className="flex flex-col space-y-2 flex-grow"> {/* flex-grow to push last link to bottom */}
-              <Link href="/" className="px-3 py-2 text-xl text-gray-700  hover:text-purple-600 transition-colors">Home</Link>
-              <Link href="/browse-tools" onClick={() => setIsOpen(false)} className="text-left text-xl  px-4 py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">Browse Tools</Link>
-                            <Link href="/blog" onClick={() => setIsOpen(false)} className="text-left text-xl  px-4 py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">Insights</Link>
+              <Link href="/" className="px-3 font-spaceGrotesk py-2 text-xl text-gray-700  hover:text-purple-600 transition-colors">Home</Link>
+              <Link href="/browse-tools" onClick={() => setIsOpen(false)} className="text-left font-spaceGrotesk text-xl  px-4 py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">Browse Tools</Link>
+                            <Link href="/blog" onClick={() => setIsOpen(false)} className="text-left font-spaceGrotesk text-xl  px-4 py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">Insights</Link>
 
-              <Link href="/how-it-works" onClick={() => setIsOpen(false)} className="text-left text-xl px-4 py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">How It Works</Link>
-              <Link href="/featured" onClick={() => setIsOpen(false)} className="text-left px-4 text-xl py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">Featured</Link>
+              <Link href="/how-it-works" onClick={() => setIsOpen(false)} className="text-left text-xl font-spaceGrotesk px-4 py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">How It Works</Link>
+              <Link href="/featured" onClick={() => setIsOpen(false)} className="text-left px-4 text-xl font-spaceGrotesk py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">Featured</Link>
               {/* <Link href="/sign-in" onClick={() => setIsOpen(false)} className="text-left px-4 text-xl  py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">
                 Sign in
               </Link> */}
-<div className="pt-4 mb-[50px] border-t border-purple-100 flex justify-center items-center h-full">
+<div className="pt-4 mb-[50px] border-t font-spaceGrotesk border-purple-100 flex justify-center items-center h-full">
                 {/* <Link href="/browse-tools" onClick={() => setIsOpen(false)} className="block w-[80%] text-center px-3 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105 shadow-lg">
                   Get Started
                 </Link> */}

@@ -7,3 +7,6 @@
 .font-spaceGrotesk {
   font-family: var(--font-space-grotesk);
 }
+html, body {
+  font-family: var(--font-space-grotesk), sans-serif;
+}

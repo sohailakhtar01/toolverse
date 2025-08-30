@@ -51,7 +51,7 @@ export default function LandingClient() {
               🎯 Featured Tool Directory
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl  font-montserrat font-bold mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl  font-spaceGrotesk font-bold mb-4">
             Discover the <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Best AI Tools</span>
             <span className="text-black"> for Your Business</span>
           </h1>
@@ -60,7 +60,7 @@ export default function LandingClient() {
           </p>
 <div className="p-[2px] rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 shadow-xl text-center">
   <div className="bg-gradient-to-r from-[#F3F7FF] to-[#F6F5FE] rounded-lg py-5 px-4 sm:py-6 sm:px-6 lg:py-8 lg:px-8">
-    <p className="text-black text-base sm:text-lg md:text-xl lg:text-2xl font-semibold leading-snug sm:leading-normal">
+    <p className="text-black font-spaceGrotesk text-base sm:text-lg md:text-xl lg:text-2xl font-semibold leading-snug sm:leading-normal">
       We've partnered with industry leaders like
       <span className="block sm:inline font-bold"> Writesonic</span>
       <span className="block sm:inline font-bold"> Pictory</span>
@@ -77,14 +77,14 @@ export default function LandingClient() {
 <div className="flex flex-wrap gap-4 sm:gap-10 mb-[30px] justify-center mt-[-50px]">
   <a
     href="/browse-tools"
-    className="px-6 py-3 cursor-pointer bg-gradient-to-r  from-purple-500 to-pink-500 text-white rounded-[30px]  font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101"
+    className="px-6 py-3 cursor-pointer bg-gradient-to-r font-spaceGrotesk from-purple-500 to-pink-500 text-white rounded-[30px]  font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101"
   >
     🔍 Browse All AI Tools
   </a>
 
   <a
     href="/featured"
-    className="px-6 py-3 cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-[30px]  font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101"
+    className="px-6 py-3 cursor-pointer bg-gradient-to-r font-spaceGrotesk from-purple-500 to-pink-500 text-white rounded-[30px]  font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101"
   >
     ⭐ Featured Tools of the Week
   </a>
@@ -100,7 +100,7 @@ export default function LandingClient() {
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
           <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-gray-200 shadow-sm">
             <span className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></span>
-            <span className="text-sm font-medium text-gray-600">Explore Tools</span>
+            <span className="text-sm font-spaceGrotesk font-medium text-gray-600">Explore Tools</span>
           </div>
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
         </div>
@@ -126,9 +126,9 @@ export default function LandingClient() {
       <section className="px-4 sm:px-6 py-16 md:py-20 bg-white/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto text-center mb-10">
           <h2 className="text-4xl font-bold mb-4">
-            Explore by <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Category</span>
+            Explore by <span className="bg-gradient-to-r font-spaceGrotesk from-purple-600 to-pink-600 bg-clip-text text-transparent">Category</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl font-spaceGrotesk mx-auto">
             Browse tools by category to find exactly what you need for your specific use case.
           </p>
         </div>

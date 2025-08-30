@@ -117,8 +117,9 @@ export default function RootLayout({ children }) {
 </head>
 
       <body
-        className={`${montserrat.variable} ${spaceGrotesk.variable} antialiased scroll-smooth bg-white text-gray-900`}
-      >
+  className={`${spaceGrotesk.variable} antialiased scroll-smooth bg-white text-gray-900`}
+>
+
 
         <Header />
         <main className="min-h-screen">{children}</main>

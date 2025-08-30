@@ -3,6 +3,7 @@ import { PortableText } from '@portabletext/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+export const revalidate = 60; // 👈 Add this here
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
