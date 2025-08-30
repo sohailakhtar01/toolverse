@@ -13,4 +13,4 @@ export default function BrowseToolsLayout({ children }) {
       {children} {/* This is where the content from page.jsx will be rendered */}
     </>
   );
-}
+}                  
