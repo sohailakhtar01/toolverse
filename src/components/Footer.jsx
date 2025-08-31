@@ -60,7 +60,7 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-gray-800 mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/browse-tools" className="text-gray-600 hover:text-purple-600">Browse Tools</Link></li>
-              <li><Link href="/categories" className="text-gray-600 hover:text-purple-600">Categories</Link></li>
+              
               <li><Link href="/featured" className="text-gray-600 hover:text-purple-600">Featured</Link></li>              <li><Link href="#" className="text-gray-600 hover:text-purple-600">Submit Tool</Link></li>
             </ul>
           </div>
@@ -71,7 +71,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="#" className="text-gray-600 hover:text-purple-600">Help Center</Link></li>
               <li><Link href="/about" className="text-gray-600 hover:text-purple-600">About Us</Link></li>
-              <li><Link href="#" className="text-gray-600 hover:text-purple-600">Privacy Policy</Link></li>
+              <li><Link href="/how-it-works" className="text-gray-600 hover:text-purple-600">How It Works</Link></li>
               <li><Link href="#" className="text-gray-600 hover:text-purple-600">Terms of Service</Link></li>
               <li><Link href="#" className="text-gray-600 hover:text-purple-600">API Docs</Link></li>
             </ul>

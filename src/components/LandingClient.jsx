@@ -1,5 +1,4 @@
 'use client';
-
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import tools from '@/data/tools';
@@ -64,7 +63,7 @@ export default function LandingClient() {
       We've partnered with industry leaders like
       <span className="block sm:inline font-bold"> Writesonic</span>
       <span className="block sm:inline font-bold"> Pictory</span>
-      <span className="block sm:inline font-bold"> Scalenut</span>
+      <span className="block sm:inline font-bold mr-1"> Scalenut</span>
        to help you achieve your goals faster.
     </p>
   </div>
@@ -76,21 +75,23 @@ export default function LandingClient() {
       {/* call to action buttons */}
 <div className="flex flex-wrap gap-4 sm:gap-10 mb-[30px] justify-center mt-[-50px]">
   <a
-    href="/browse-tools"
-    className="px-6 py-3 cursor-pointer bg-gradient-to-r font-spaceGrotesk from-purple-500 to-pink-500 text-white rounded-[30px]  font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101"
-  >
-    🔍 Browse All AI Tools
-  </a>
+  href="/browse-tools"
+  className="flex items-center gap-2 px-6 py-3 cursor-pointer bg-gradient-to-r font-spaceGrotesk from-purple-500 to-pink-500 text-white rounded-2xl font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101"
+>
+  <Search size={18} />
+  Browse All AI Tools
+</a>
 
   <a
-    href="/featured"
-    className="px-6 py-3 cursor-pointer bg-gradient-to-r font-spaceGrotesk from-purple-500 to-pink-500 text-white rounded-[30px]  font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101"
-  >
-    ⭐ Featured Tools of the Week
-  </a>
+  href="/featured"
+  className="flex items-center gap-2 px-6 py-3 cursor-pointer bg-gradient-to-r font-spaceGrotesk from-purple-500 to-pink-500 text-white rounded-2xl font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101"
+>
+  <Star size={18} />
+  Featured Tools of the Week
+</a>
 </div>
 
-
+             
 
 
 
