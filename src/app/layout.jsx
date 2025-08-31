@@ -20,7 +20,6 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-
 // Import fonts
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,49 +32,84 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-
-// --- SEO METADATA ---
+// --- OPTIMIZED SEO METADATA FOR COMPETING WITH TOOLIFY & INSIDR ---
 export const metadata = {
-  title: "ToolVault - Discover the Best Digital Tools for Your Business",
-  description:
-    "Discover, compare, and explore AI tools across categories including productivity, design, marketing, and more. Boost your workflow with ToolVault.",
+  // 🔥 COMPETITOR-BEATING TITLE
+  title: "1200+ Best AI Tools Directory 2025 | Complete AI Software List - ToolVault",
+  
+  // 🔥 KEYWORD-RICH DESCRIPTION
+  description: "Discover 1200+ best AI tools across 100+ categories. Complete AI tools directory updated daily with free & paid AI software for business, design, writing, productivity, marketing & more. Compare top AI apps 2025.",
+  
+  // 🔥 HIGH-VOLUME KEYWORDS (What people actually search)
   keywords: [
-    "AI tools",
-    "Productivity software",
-    "Best AI apps",
-    "Tool directory",
-    "Design tools",
-    "Marketing AI",
-    "ToolVault",
+    "best ai tools 2025",
+    "ai tools directory", 
+    "complete ai tools list",
+    "1200+ ai tools",
+    "free ai tools",
+    "ai software directory",
+    "best ai apps 2025",
+    "ai tools list",
+    "top ai tools",
+    "ai productivity tools",
+    "ai writing tools",
+    "ai design tools",
+    "ai marketing tools",
+    "ToolVault"
   ],
+  
   icons: {
     icon: "/logo.png",
   },
+  
+  // 🔥 OPTIMIZED OPEN GRAPH
   openGraph: {
-    title: "ToolVault - Curated AI Tool Directory",
-    description:
-      "ToolVault helps you discover the best AI tools across every category, including pricing, ratings, and use cases.",
-    url: "https://toolverse-brown.vercel.app", // ✅ TEMPORARY: actual deployed site
-    siteName: "ToolVault",
+    title: "1200+ Best AI Tools Directory 2025 - ToolVault",
+    description: "Complete directory of 1200+ best AI tools across 100+ categories. Updated daily with free & paid AI software for every need.",
+    url: "https://toolverse-brown.vercel.app",
+    siteName: "ToolVault - AI Tools Directory",
     images: [
       {
         url: "/logo.png",
-        width: 32,
-        height: 32,
-        alt: "ToolVault AI Tools Directory",
+        width: 1200,
+        height: 630,
+        alt: "ToolVault - Best AI Tools Directory 2025",
       },
     ],
     type: "website",
+    locale: "en_US",
   },
+  
+  // 🔥 TWITTER OPTIMIZED
   twitter: {
     card: "summary_large_image",
-    title: "ToolVault - Discover the Best AI Tools",
-    description:
-      "Your all-in-one hub for comparing and exploring the top AI tools across categories.",
+    title: "1200+ Best AI Tools Directory 2025 - ToolVault",
+    description: "Discover the complete directory of best AI tools across 100+ categories. Updated daily!",
     images: ["/logo.png"],
+    site: "@ToolVault", // Add your Twitter handle if you have one
   },
+  
   alternates: {
-    canonical: "https://toolverse-brown.vercel.app", // ✅ TEMPORARY
+    canonical: "https://toolverse-brown.vercel.app",
+  },
+  
+  // 🔥 ADDITIONAL SEO METADATA
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  
+  // 🔥 STRUCTURED DATA HINTS
+  other: {
+    'theme-color': '#ffffff',
+    'msapplication-TileColor': '#ffffff',
   },
 };
 
@@ -84,43 +118,72 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" dir="ltr" data-theme="light">
       <head>
-  {/* Google Search Console verification */}
-  <meta
-    name="google-site-verification"
-    content="fhoUx6Asp7AlWxDIvLfaXFEbw4pp94yNUhqewq6pMJM"
-  />
-    <meta
-    name="impact-site-verification"
-    content="4112f957-1414-4b17-baaa-ea2bb07b2ba7"
-  />
+        {/* Google Search Console verification */}
+        <meta
+          name="google-site-verification"
+          content="fhoUx6Asp7AlWxDIvLfaXFEbw4pp94yNUhqewq6pMJM"
+        />
+        <meta
+          name="impact-site-verification"
+          content="4112f957-1414-4b17-baaa-ea2bb07b2ba7"
+        />
 
-  {/* ✅ Important Site Name Metadata */}
-  <meta property="og:site_name" content="ToolVault" />
-  <meta name="application-name" content="ToolVault" />
-  <meta name="apple-mobile-web-app-title" content="ToolVault" />
+        {/* ✅ Important Site Name Metadata */}
+        <meta property="og:site_name" content="ToolVault - AI Tools Directory" />
+        <meta name="application-name" content="ToolVault" />
+        <meta name="apple-mobile-web-app-title" content="ToolVault" />
+        
+        {/* 🔥 ADDITIONAL SEO META TAGS */}
+        <meta name="author" content="ToolVault Team" />
+        <meta name="publisher" content="ToolVault" />
+        <meta name="copyright" content="ToolVault 2025" />
+        <meta name="revisit-after" content="1 day" />
+        
+        {/* 🔥 STRUCTURED DATA FOR AI TOOLS DIRECTORY */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "ToolVault",
+              "alternateName": "ToolVault - AI Tools Directory",
+              "url": "https://toolverse-brown.vercel.app",
+              "description": "Complete directory of 1200+ best AI tools across 100+ categories",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://toolverse-brown.vercel.app/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              },
+              "sameAs": [
+                // Add your social media links here when you have them
+                // "https://twitter.com/toolvault",
+                // "https://linkedin.com/company/toolvault"
+              ]
+            })
+          }}
+        />
 
-  {/* Google Analytics Script */}
-  <Script
-    src={`https://www.googletagmanager.com/gtag/js?id=G-2ZC85B8D0N`}
-    strategy="afterInteractive"
-  />
-  <Script id="ga-init" strategy="afterInteractive">
-    {`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2ZC85B8D0N', {
-        page_path: window.location.pathname,
-      });
-    `}
-  </Script>
-</head>
+        {/* Google Analytics Script */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-2ZC85B8D0N`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-2ZC85B8D0N', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
+      </head>
 
       <body
-  className={`${spaceGrotesk.variable} antialiased scroll-smooth bg-white text-gray-900`}
->
-
-
+        className={`${spaceGrotesk.variable} antialiased scroll-smooth bg-white text-gray-900`}
+      >
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />

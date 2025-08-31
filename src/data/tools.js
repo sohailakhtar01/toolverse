@@ -321,6 +321,114 @@ export const tools = [
     ],
     "isFeatured": true
   },
+{
+    "name": "GitHub Copilot",
+    "slug": "github-copilot",
+    "image": "/githubcopilot.png",
+    "url": "https://github.com/features/copilot",
+    "category": [
+      "Coding & Development"
+    ],
+    "price": "Freemium (free for students/verified open source contributors; paid for individuals: $10/month or $100/year, business: $19/user/month)",
+    "description": "An AI pair programmer that provides autocompletion-style suggestions as you code, helping developers write code faster and more efficiently.",
+    "tags": [
+      "code generation",
+      "ai programming assistant",
+      "developer tools",
+      "ide integration"
+    ],
+    "rating": 4.6,
+    "keywords": [
+      "github copilot",
+      "ai code assistant",
+      "code completion tool"
+    ],
+    "isFeatured": true,
+    "overview": "GitHub Copilot is an AI tool developed by GitHub and OpenAI that assists developers by suggesting code snippets and entire functions in real-time. It integrates with popular IDEs like VS Code, JetBrains IDEs, and Vim, trained on billions of lines of public code.",
+    "faqs": [
+      {
+        "question": "What IDEs does GitHub Copilot support?",
+        "answer": "GitHub Copilot supports a number of popular IDEs, including Visual Studio Code, Visual Studio, JetBrains IDEs (IntelliJ IDEA, PyCharm, etc.), and Neovim."
+      },
+      {
+        "question": "How does GitHub Copilot's pricing work?",
+        "answer": "GitHub Copilot has a freemium model. It's free for verified students, teachers, and maintainers of popular open-source projects. For individuals, it costs $10 per month or $100 per year. Business plans are $19 per user per month."
+      }
+    ]
+  },
+  {
+    "name": "Jasper AI",
+    "slug": "jasper-ai",
+    "image": "/jasper.png",
+    "url": "https://www.jasper.ai/",
+    "category": [
+      "Content Creation",
+      "Marketing & Advertising"
+    ],
+    "price": "Subscription-based (Creator: $39/month, Teams: $99/month, Business: custom pricing)",
+    "description": "An AI writing assistant and content creation platform that helps teams generate marketing copy, blog posts, and other content quickly and at scale.",
+    "tags": [
+      "ai writing assistant",
+      "content generation",
+      "marketing copy",
+      "long-form content",
+      "brand voice"
+    ],
+    "rating": 4.8,
+    "keywords": [
+      "jasper ai",
+      "ai writer",
+      "content marketing tool"
+    ],
+    "isFeatured": true,
+    "overview": "Jasper AI is a leading AI platform that assists marketing teams and businesses in generating high-quality content. It uses large language models to write everything from social media posts and ad copy to full-length articles and books, and it can be trained to write in a specific brand voice.",
+    "faqs": [
+      {
+        "question": "What types of content can Jasper AI generate?",
+        "answer": "Jasper AI is versatile and can generate a wide variety of content, including blog posts, social media captions, email newsletters, marketing copy, ad headlines, and even scripts."
+      },
+      {
+        "question": "Does Jasper AI have a free trial?",
+        "answer": "Yes, Jasper AI offers a free trial that allows new users to test the platform's features and capabilities before committing to a paid plan."
+      }
+    ]
+  },
+  {
+    "name": "Canva AI",
+    "slug": "canva-ai",
+    "image": "/canvaai.jpeg",
+    "url": "https://www.canva.com/your-brand/ai-tools/",
+    "category": [
+      "Marketing & Advertising",
+      "Office & Productivity"
+    ],
+    "price": "Freemium (some AI features included in free plan, more advanced features available with Canva Pro: $14.99/month or $119.99/year)",
+    "description": "A suite of AI-powered design tools integrated into the Canva platform, allowing users to generate images, create designs, and edit photos using simple text prompts.",
+    "tags": [
+      "image generation",
+      "ai design tool",
+      "photo editing",
+      "design automation"
+    ],
+    "rating": 4.7,
+    "keywords": [
+      "canva ai",
+      "magic studio",
+      "ai image generator"
+    ],
+    "isFeatured": true,
+    "overview": "Canva AI, part of Canva's Magic Studio, offers a range of AI tools for graphic design. Its flagship features include Magic Design, which generates templates from text prompts, and Magic Media, which creates images and videos from simple descriptions. These tools are designed to simplify the design process for both beginners and professionals.",
+    "faqs": [
+      {
+        "question": "What is Canva's 'Magic Studio'?",
+        "answer": "Canva Magic Studio is a suite of AI-powered tools integrated into the Canva platform. It includes features like Magic Write for text generation, Magic Design for creating visuals from text, and Magic Media for turning text into images and videos."
+      },
+      {
+        "question": "Do I need a Canva Pro subscription to use the AI tools?",
+        "answer": "Some basic AI features are available with a free Canva account, but the more advanced and powerful tools, often with more credits or unlimited usage, are exclusive to or work better with a Canva Pro or Teams subscription."
+      }
+    ]
+  },
   {
     "name": "y2doc",
     "slug": "y2doc",
@@ -2676,31 +2784,6 @@ export const tools = [
     "isFeatured": false
   },
   {
-    "name": "OpenAI",
-    "slug": "openai",
-    "image": "/openai.png",
-    "url": "https://openai.com/",
-    "category": [
-      "Coding & Development",
-      "Image Generation & Editing",
-      "Video & Animation",
-      "Chatbots & Virtual Companions"
-    ],
-    "price": "Unknown",
-    "description": "AI research and deployment company focused on building safe and beneficial AGI.",
-    "tags": [
-      "agi",
-      "ai research",
-      "safe ai"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai research",
-      "openai models"
-    ],
-    "isFeatured": false
-  },
-  {
     "name": "Salesforce Platform",
     "slug": "salesforce-platform",
     "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
@@ -3863,33 +3946,6 @@ export const tools = [
     "isFeatured": false
   },
   {
-    "name": "Airtable",
-    "slug": "airtable-1",
-    "image": "/airtable.png",
-    "url": "https://www.airtable.com/",
-    "category": [
-      "Business Management",
-      "Coding & Development",
-      "Education & Translation",
-      "Office & Productivity",
-      "Research & Data Analysis"
-    ],
-    "price": "Unknown",
-    "description": "Airtable is a no-code app-building platform with AI for data management and workflow automation.",
-    "tags": [
-      "no-code",
-      "app building",
-      "data management",
-      "workflow automation"
-    ],
-    "rating": null,
-    "keywords": [
-      "no-code platform",
-      "ai data management"
-    ],
-    "isFeatured": false
-  },
-  {
     "name": "VSCO",
     "slug": "vsco-2",
     "image": "/.vsco.png",
@@ -4744,56 +4800,6 @@ export const tools = [
     "isFeatured": false
   },
   {
-    "name": "DeepSeek",
-    "slug": "deepseek",
-    "image": "/deep.png",
-    "url": "https://www.deepseek.com/",
-    "category": [
-      "Education & Translation",
-      "Writing & Editing",
-      "Coding & Development",
-      "Office & Productivity",
-      "Chatbots & Virtual Companions"
-    ],
-    "price": "Unknown",
-    "description": "DeepSeek is an AI company providing foundation models and APIs for AI applications.",
-    "tags": [
-      "foundation models",
-      "apis",
-      "ai applications"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai models",
-      "api access"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "DeepL",
-    "slug": "deepl",
-    "image": "/deepla.png",
-    "url": "https://www.deepl.com/",
-    "category": [
-      "Education & Translation",
-      "Writing & Editing",
-      "Coding & Development"
-    ],
-    "price": "Unknown",
-    "description": "Accurate machine translation and AI-powered writing assistance for text and documents.",
-    "tags": [
-      "translation",
-      "writing assistance",
-      "documents"
-    ],
-    "rating": null,
-    "keywords": [
-      "machine translation",
-      "ai writing"
-    ],
-    "isFeatured": false
-  },
-  {
     "name": "Perplexity AI",
     "slug": "perplexity-ai",
     "image": "/perplex.png",
@@ -4816,33 +4822,6 @@ export const tools = [
       "ai search",
       "llm",
       "information discovery"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "Airtable",
-    "slug": "airtable-2",
-    "image": "/airtable.png",
-    "url": "https://www.airtable.com/",
-    "category": [
-      "Education & Translation",
-      "Coding & Development",
-      "Business Management",
-      "Office & Productivity",
-      "Research & Data Analysis"
-    ],
-    "price": "Unknown",
-    "description": "Airtable is a no-code app-building platform with AI for data management and workflow automation.",
-    "tags": [
-      "no-code",
-      "app building",
-      "data management",
-      "workflow automation"
-    ],
-    "rating": null,
-    "keywords": [
-      "no-code platform",
-      "ai data management"
     ],
     "isFeatured": false
   },

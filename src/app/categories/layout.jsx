@@ -1,3 +1,170 @@
+// 🔥 CATEGORIES LAYOUT WITH KILLER SEO
+
+export const metadata = {
+  // 🎯 TARGET HIGH-VOLUME CATEGORY KEYWORDS
+  title: 'AI Tools Categories 2025 | 100+ Categories of Best AI Software - ToolVault',
+  
+  // 🎯 CATEGORY-FOCUSED DESCRIPTION  
+  description: 'Browse AI tools by categories. 100+ categories including AI writing tools, AI design tools, AI productivity apps, AI coding assistants, AI marketing software & more. Find the perfect AI tool for your needs.',
+  
+  // 🎯 CATEGORY KEYWORDS (High search volume)
+  keywords: [
+    'ai tools categories',
+    'ai tools by category',
+    'types of ai tools',
+    'ai software categories', 
+    'ai writing tools',
+    'ai design tools',
+    'ai productivity tools',
+    'ai coding tools',
+    'ai marketing tools',
+    'ai business tools',
+    'ai content tools',
+    'ai image tools',
+    'ai video tools',
+    'ai chatbots',
+    'ai automation tools',
+    'browse ai tools by category',
+    'categorized ai tools',
+    '100+ ai tool categories'
+  ],
+  
+  // 🎯 OPEN GRAPH
+  openGraph: {
+    title: 'AI Tools Categories 2025 | 100+ Categories - ToolVault',
+    description: 'Explore AI tools organized in 100+ categories. Find AI writing, design, productivity, coding & marketing tools.',
+    type: 'website', 
+    url: 'https://toolverse-brown.vercel.app/categories',
+    siteName: 'ToolVault - AI Tools Directory',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'AI Tools Categories - ToolVault',
+      },
+    ],
+  },
+  
+  // 🎯 TWITTER CARD
+  twitter: {
+    card: 'summary_large_image',
+    title: '100+ AI Tools Categories - ToolVault',
+    description: 'Browse AI tools organized by categories. Writing, design, productivity, coding & more.',
+    images: ['/logo.png'],
+  },
+  
+  // 🎯 CANONICAL & ROBOTS
+  alternates: {
+    canonical: 'https://toolverse-brown.vercel.app/categories',
+  },
+  
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+};
+
 export default function CategoriesLayout({ children }) {
-  return <>{children}</>;
+  return (
+    <>
+      {/* 🔥 STRUCTURED DATA FOR CATEGORIES PAGE */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "AI Tools Categories",
+            "description": "Browse AI tools organized in 100+ categories",
+            "url": "https://toolverse-brown.vercel.app/categories",
+            "mainEntity": {
+              "@type": "ItemList",
+              "name": "AI Tool Categories",
+              "description": "Complete list of AI tool categories",
+              "numberOfItems": "100+",
+              "itemListOrder": "https://schema.org/ItemListOrderAscending"
+            },
+            "breadcrumb": {
+              "@type": "BreadcrumbList", 
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://toolverse-brown.vercel.app"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2, 
+                  "name": "Categories",
+                  "item": "https://toolverse-brown.vercel.app/categories"
+                }
+              ]
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://toolverse-brown.vercel.app/categories/{category_name}",
+              "query-input": "required name=category_name"
+            }
+          })
+        }}
+      />
+      
+      {/* 🔥 CATEGORIES SCHEMA - SPECIFIC CATEGORIES */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList", 
+            "name": "Popular AI Tool Categories",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "AI Writing Tools",
+                "url": "https://toolverse-brown.vercel.app/categories/writing",
+                "description": "AI tools for content creation, copywriting, and text generation"
+              },
+              {
+                "@type": "ListItem", 
+                "position": 2,
+                "name": "AI Design Tools",
+                "url": "https://toolverse-brown.vercel.app/categories/design",
+                "description": "AI-powered design and image generation tools"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3, 
+                "name": "AI Productivity Tools",
+                "url": "https://toolverse-brown.vercel.app/categories/productivity", 
+                "description": "AI tools for task automation and workflow optimization"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "AI Coding Tools", 
+                "url": "https://toolverse-brown.vercel.app/categories/coding",
+                "description": "AI-powered development and programming assistants"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "AI Marketing Tools",
+                "url": "https://toolverse-brown.vercel.app/categories/marketing",
+                "description": "AI tools for marketing automation and campaign optimization"
+              }
+            ]
+          })
+        }}
+      />
+      
+      {children}
+    </>
+  );
 }

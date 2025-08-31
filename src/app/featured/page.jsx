@@ -1,107 +1,233 @@
 import FeaturedToolsClient from '@/components/FeaturedToolsClient';
 
-// ✅ Tools data with slug for routing
+// ✅ AI TOOLS DATA - FOCUS ON ACTUAL AI TOOLS
 const toolsData = [
   {
-    name: "Notion",
-    slug: "notion",
-    category: "Productivity",
-    description: "All-in-one workspace for notes, tasks, wikis, and databases. Perfect for teams and individuals.",
-    rating: 4.8,
-    users: "10M+",
+    name: "ChatGPT",
+    slug: "chatgpt",
+    category: "AI Writing",
+    description: "Advanced AI chatbot for writing, coding, analysis, and creative tasks. Most popular AI tool worldwide.",
+    rating: 4.9,
+    users: "100M+",
     price: "Free",
     featured: true,
-    icon: "📝",
+    icon: "🤖",
     trending: true
   },
   {
-    name: "Figma",
-    slug: "figma",
-    category: "Design",
-    description: "Collaborative design tool for creating beautiful interfaces and prototypes in real-time.",
-    rating: 4.9,
-    users: "8M+",
-    price: "Free",
+    name: "Midjourney",
+    slug: "midjourney", 
+    category: "AI Art",
+    description: "AI-powered image generator creating stunning artwork from text prompts. Leading AI art tool.",
+    rating: 4.8,
+    users: "15M+",
+    price: "$10/mo",
     featured: true,
     icon: "🎨",
-    trending: false
+    trending: true
   },
   {
-    name: "Slack",
-    slug: "slack",
-    category: "Communication",
-    description: "Team collaboration platform that brings all your communication together in one place.",
-    rating: 4.6,
-    users: "12M+",
-    price: "$7.25/mo",
-    featured: true,
-    icon: "💬",
-    trending: false
-  },
-  {
-    name: "VS Code",
-    slug: "vs-code",
-    category: "Development",
-    description: "Powerful code editor with intelligent features and extensive customization options.",
+    name: "Claude",
+    slug: "claude",
+    category: "AI Assistant",
+    description: "Advanced AI assistant for writing, analysis, coding, and complex reasoning tasks.",
     rating: 4.9,
-    users: "15M+",
+    users: "5M+",
     price: "Free",
+    featured: true,
+    icon: "🧠",
+    trending: true
+  },
+  {
+    name: "GitHub Copilot",
+    slug: "github-copilot",
+    category: "AI Coding",
+    description: "AI-powered coding assistant that helps write, debug, and optimize code in real-time.",
+    rating: 4.7,
+    users: "8M+",
+    price: "$10/mo",
     featured: true,
     icon: "⚡",
     trending: true
   },
   {
-    name: "Google Analytics",
-    slug: "google-analytics",
-    category: "Analytics",
-    description: "Web analytics service that tracks and reports website traffic and user behavior.",
-    rating: 4.5,
-    users: "5M+",
-    price: "Free",
+    name: "Jasper AI",
+    slug: "jasper-ai",
+    category: "AI Content",
+    description: "AI content generator for marketing copy, blog posts, social media, and business content.",
+    rating: 4.6,
+    users: "2M+",
+    price: "$39/mo",
     featured: true,
-    icon: "📊",
+    icon: "✍️",
     trending: false
   },
   {
-    name: "Trello",
-    slug: "trello",
-    category: "Productivity",
-    description: "Visual project management tool that uses boards, lists, and cards to organize tasks.",
-    rating: 4.4,
-    users: "6M+",
+    name: "Canva AI",
+    slug: "canva-ai",
+    category: "AI Design",
+    description: "AI-powered design platform for creating graphics, presentations, videos, and marketing materials.",
+    rating: 4.8,
+    users: "120M+",
     price: "Free",
     featured: true,
-    icon: "📋",
+    icon: "🎯",
+    trending: true
+  },
+  {
+    name: "Grammarly AI",
+    slug: "grammarly",
+    category: "AI Writing",
+    description: "AI writing assistant for grammar checking, style improvement, and content optimization.",
+    rating: 4.5,
+    users: "30M+",
+    price: "Free",
+    featured: true,
+    icon: "📝",
     trending: false
+  },
+  {
+    name: "RunwayML",
+    slug: "runway",
+    category: "AI Video",
+    description: "AI video generator and editor for creating professional videos from text and images.",
+    rating: 4.6,
+    users: "3M+",
+    price: "$15/mo",
+    featured: true,
+    icon: "🎬",
+    trending: true
   }
 ];
 
-// ✅ SEO Metadata
+// ✅ OPTIMIZED SEO METADATA FOR FEATURED AI TOOLS
 export const metadata = {
-  title: 'Featured Tools ‑ Top Productivity & Design Tools | ToolHub',
-  description:
-    'Discover the most popular and highly‑rated tools used by millions of professionals worldwide.',
+  // 🔥 COMPETITOR-BEATING TITLE WITH CORRECT BRAND
+  title: 'Featured AI Tools 2025 | Top 50+ Best AI Software & Apps - ToolVault',
+  
+  // 🔥 AI-FOCUSED DESCRIPTION
+  description: 'Discover the top 50+ featured AI tools of 2025. Handpicked best AI software including ChatGPT, Midjourney, Claude, GitHub Copilot & more. Free & paid AI apps for business, creativity, and productivity.',
+  
+  // 🔥 AI-FOCUSED KEYWORDS
   keywords: [
-    'featured tools',
-    'productivity tools',
-    'design tools',
-    'communication tools',
-    'development tools',
-    'analytics tools',
+    'featured ai tools 2025',
+    'top ai tools',
+    'best ai software',
+    'popular ai apps',
+    'chatgpt alternatives',
+    'ai tools list',
+    'trending ai tools',
+    'best ai tools 2025',
+    'ai productivity tools',
+    'ai writing tools',
+    'ai design tools',
+    'ai coding tools',
+    'ai content tools',
+    'free ai tools',
+    'ToolVault featured'
   ],
+  
+  // 🔥 OPEN GRAPH FOR SOCIAL SHARING
   openGraph: {
-    title: 'Featured Tools ‑ Top Productivity & Design Tools',
-    description:
-      'Discover the most popular and highly‑rated tools used by millions of professionals worldwide.',
+    title: 'Featured AI Tools 2025 | Top 50+ Best AI Software - ToolVault',
+    description: 'Discover the most popular AI tools of 2025. ChatGPT, Midjourney, Claude & 47+ more featured AI apps.',
     type: 'website',
-    url: '/featured',
+    url: 'https://toolverse-brown.vercel.app/featured',
+    siteName: 'ToolVault - AI Tools Directory',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Featured AI Tools 2025 - ToolVault',
+      },
+    ],
+  },
+  
+  // 🔥 TWITTER CARD
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Top 50+ Featured AI Tools 2025 - ToolVault',
+    description: 'Handpicked collection of the best AI tools including ChatGPT, Midjourney, Claude & more.',
+    images: ['/logo.png'],
+  },
+  
+  // 🔥 CANONICAL URL
+  alternates: {
+    canonical: 'https://toolverse-brown.vercel.app/featured',
+  },
+  
+  // 🔥 ROBOTS
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
 
 export default function FeaturedPage() {
   return (
-    <div className="min-h-screen  bg-gradient-to-br from-purple-50 via-white to-pink-50">
-      <FeaturedToolsClient toolsData={toolsData} />
-    </div>
+    <>
+      {/* 🔥 STRUCTURED DATA FOR FEATURED AI TOOLS */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Featured AI Tools 2025",
+            "description": "Top 50+ featured AI tools handpicked by ToolVault experts",
+            "url": "https://toolverse-brown.vercel.app/featured",
+            "mainEntity": {
+              "@type": "ItemList",
+              "name": "Featured AI Tools",
+              "description": "Curated list of the best AI tools for 2025",
+              "numberOfItems": "50+",
+              "itemListElement": toolsData.map((tool, index) => ({
+                "@type": "SoftwareApplication",
+                "position": index + 1,
+                "name": tool.name,
+                "description": tool.description,
+                "applicationCategory": tool.category,
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": tool.rating,
+                  "bestRating": 5
+                },
+                "offers": {
+                  "@type": "Offer",
+                  "price": tool.price === "Free" ? "0" : tool.price.replace(/[^0-9.]/g, ''),
+                  "priceCurrency": "USD"
+                }
+              }))
+            },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://toolverse-brown.vercel.app"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Featured AI Tools",
+                  "item": "https://toolverse-brown.vercel.app/featured"
+                }
+              ]
+            }
+          })
+        }}
+      />
+      
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
+        <FeaturedToolsClient toolsData={toolsData} />
+      </div>
+    </>
   );
 }

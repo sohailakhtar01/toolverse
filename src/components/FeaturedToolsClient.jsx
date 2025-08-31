@@ -8,7 +8,7 @@ export default function FeaturedToolsClient({ toolsData }) {
   const [selectedCategory, setSelectedCategory] = useState('Featured');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const categories = ['Featured', 'Productivity', 'Design', 'Communication', 'Development', 'Analytics'];
+const categories = ["Featured","AI Writing", "AI Art", "AI Assistant", "AI Coding", "AI Content", "AI Design", "AI Video"];
 
   const filteredTools = toolsData.filter(tool => {
     const matchesCategory = selectedCategory === 'Featured' || tool.category === selectedCategory;
