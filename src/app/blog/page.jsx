@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { getAllPosts, urlFor } from '@/lib/sanity'
+export const revalidate = 60; // 👈 Add this here
 
 // SEO: Generate dynamic metadata for the page
 export async function generateMetadata() {

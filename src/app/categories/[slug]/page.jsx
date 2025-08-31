@@ -131,28 +131,27 @@ export default function CategoryPage({ params, searchParams }) {
       "name": `AI ${capitalizedCategory} Tools Directory`,
       "description": `Curated list of ${filteredTools.length}+ AI ${readableCategory} tools`,
       "numberOfItems": filteredTools.length,
-      "itemListElement": filteredTools.map((tool, index) => ({
-        "@type": "ListItem",
-        "position": index + 1,
-        "item": {
-          "@type": "SoftwareApplication",
-          "name": tool.name,
-          "description": tool.description,
-          "url": `https://toolverse-brown.vercel.app/tools/${tool.slug}`,
-          "applicationCategory": `AI ${capitalizedCategory}`,
-          "operatingSystem": "Web-based",
-          "aggregateRating": tool.rating ? {
-            "@type": "AggregateRating",
-            "ratingValue": tool.rating,
-            "bestRating": 5
-          } : undefined,
-          "offers": {
-            "@type": "Offer",
-            "price": tool.price === 'Free' ? "0" : tool.price.replace(/[^0-9.]/g, ''),
-            "priceCurrency": "USD"
-          }
-        }
-      }))
+      
+      // In your JSON-LD structured data, replace the aggregateRating section:
+
+"itemListElement": filteredTools.map((tool, index) => ({
+  "@type": "ListItem",
+  "position": index + 1,
+  "item": {
+    "@type": "SoftwareApplication",
+    "name": tool.name,
+    "description": tool.description,
+    "url": `https://toolverse-brown.vercel.app/tools/${tool.slug}`,
+    "applicationCategory": `AI ${capitalizedCategory}`,
+    "operatingSystem": "Web-based",
+    // Remove aggregateRating completely
+    "offers": {
+      "@type": "Offer",
+      "price": tool.price === 'Free' ? "0" : tool.price.replace(/[^0-9.]/g, ''),
+      "priceCurrency": "USD"
+    }
+  }
+}))
     },
     "breadcrumb": {
       "@type": "BreadcrumbList",
