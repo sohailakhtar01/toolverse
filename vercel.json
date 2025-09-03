@@ -1,12 +1,14 @@
 {
   "redirects": [
     {
-      "source": "https://toolverse-brown.vercel.app/:path*",
+      "source": "/",
+      "destination": "https://thetoolsverse.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
       "destination": "https://thetoolsverse.com/:path*",
       "permanent": true
     }
   ]
-}  
-
-
-
+}
