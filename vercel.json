@@ -1,10 +1,9 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "https://toolverse-brown.vercel.app/:path*",
       "destination": "https://thetoolsverse.com/:path*",
-      "permanent": true,
-      "host": "toolverse-brown.vercel.app"
+      "permanent": true
     }
   ]
 }
