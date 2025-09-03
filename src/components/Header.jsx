@@ -38,7 +38,7 @@ const Header = () => {
               />
             </div>
             <span className="text-2xl font-spaceGrotesk font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"> {/* Reverted to pink-600 */}
-              ToolVault
+              ToolsVerse
             </span>
           </Link>
 

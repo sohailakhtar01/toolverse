@@ -1,6 +1,7 @@
 "use client"; // This is necessary for Next.js to treat this file as a client component
 import { useState } from "react";
 import Link from "next/link";
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { Wrench, Facebook, Twitter, Linkedin, Instagram, ChevronUp } from "lucide-react";
 
 export default function Footer() {
@@ -24,7 +25,7 @@ export default function Footer() {
                 <Wrench className="w-5 h-5 text-white" />
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                ToolVault
+                ToolsVerse
               </span>
             </div>
             <p className="text-gray-600 mb-4 text-sm sm:text-base">
@@ -69,11 +70,8 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold text-gray-800 mb-4">Support</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="#" className="text-gray-600 hover:text-purple-600">Help Center</Link></li>
               <li><Link href="/about" className="text-gray-600 hover:text-purple-600">About Us</Link></li>
               <li><Link href="/how-it-works" className="text-gray-600 hover:text-purple-600">How It Works</Link></li>
-              <li><Link href="#" className="text-gray-600 hover:text-purple-600">Terms of Service</Link></li>
-              <li><Link href="#" className="text-gray-600 hover:text-purple-600">API Docs</Link></li>
             </ul>
           </div>
 
@@ -105,12 +103,22 @@ export default function Footer() {
         <div className="border-t border-purple-100 mt-10 pt-6 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm space-y-4 md:space-y-0">
             <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
-              <span>📧 hello@toolvault.com</span>
-              <span>📞 +91 7320046645</span>
-              <span>📍 Bangalore,India</span>
-            </div>
+  <span className="flex items-center space-x-2">
+    <Mail className="w-4 h-4" />
+    <span>sohail@toolsverse.com</span>
+  </span>
+  <span className="flex items-center space-x-2">
+    <Phone className="w-4 h-4" />
+    <span>+91 7320046645</span>
+  </span>
+  <span className="flex items-center space-x-2">
+    <MapPin className="w-4 h-4" />
+    <span>Bangalore, India</span>
+  </span>
+</div>
+
             <div className="flex items-center space-x-4">
-              <span>© {new Date().getFullYear()} ToolVault. All rights reserved.</span>
+              <span>© {new Date().getFullYear()} Toolsverse. All rights reserved.</span>
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="text-purple-600 hover:text-purple-700 flex items-center"
