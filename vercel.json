@@ -1,3 +1,9 @@
 {
-  "redirects": []
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://thetoolsverse.com/:path*", 
+      "permanent": true
+    }
+  ]
 }
