@@ -3,17 +3,15 @@ import toolsData from '@/data/tools.js';
 import { getAllPosts } from '@/lib/sanity';
 
 export const dynamic = 'force-dynamic';
-export const revalidate = 3600; // Revalidate every hour
+export const revalidate = 3600;
 
 export async function GET() {
-  // ✅ Multiple fallback options for domain
-  const baseUrl = 
-    process.env.SITE_URL || 
-    process.env.NEXT_PUBLIC_SITE_URL || 
-    process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 
-    "https://www.thetoolsverse.com"; // Your new domain as final fallback
-
+  // ✅ HARDCODED domain for now - no more environment variable confusion
+  const baseUrl = "https://www.thetoolsverse.com";
+  
   const today = new Date().toISOString().split('T')[0];
+
+  console.log("🚀 Sitemap base URL:", baseUrl); // Debug log
 
   try {
     // ✅ Static routes
@@ -38,7 +36,9 @@ export async function GET() {
       ...blogRoutes,
     ];
 
-    // ✅ Build XML
+    // ✅ Build XML with debug
+    console.log("🔍 Total routes:", allRoutes.length);
+    
     const routesXml = allRoutes
       .map(
         (route) => `
@@ -59,11 +59,11 @@ export async function GET() {
     return new Response(xml, {
       headers: {
         "Content-Type": "application/xml",
-        "Cache-Control": "s-maxage=3600, stale-while-revalidate=86400",
+        "Cache-Control": "no-cache, no-store, must-revalidate", // Force fresh content
       },
     });
   } catch (error) {
-    console.error("Error generating sitemap:", error);
+    console.error("❌ Error generating sitemap:", error);
 
     // ✅ Minimal fallback with correct domain
     const fallbackXml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -83,7 +83,10 @@ export async function GET() {
 </urlset>`;
 
     return new Response(fallbackXml, {
-      headers: { "Content-Type": "application/xml" },
+      headers: { 
+        "Content-Type": "application/xml",
+        "Cache-Control": "no-cache"
+      },
     });
   }
 }
@@ -103,6 +106,8 @@ function getCategoryRoutes(lastmod) {
       });
     });
 
+    console.log("📂 Categories found:", Array.from(categoriesSet));
+
     return Array.from(categoriesSet).map((slug) => ({
       url: `/categories/${slug}`,
       lastmod,
@@ -110,7 +115,7 @@ function getCategoryRoutes(lastmod) {
       priority: "0.8",
     }));
   } catch (error) {
-    console.error("Error generating category routes:", error);
+    console.error("❌ Error generating category routes:", error);
     return [];
   }
 }
@@ -118,6 +123,8 @@ function getCategoryRoutes(lastmod) {
 // ✅ Tool routes
 function getToolRoutes(lastmod) {
   try {
+    console.log("🔧 Tools found:", toolsData.length);
+    
     return toolsData.map((tool) => ({
       url: `/tools/${tool.slug}`,
       lastmod,
@@ -125,7 +132,7 @@ function getToolRoutes(lastmod) {
       priority: tool.isFeatured ? "0.9" : "0.7",
     }));
   } catch (error) {
-    console.error("Error generating tool routes:", error);
+    console.error("❌ Error generating tool routes:", error);
     return [];
   }
 }
@@ -136,9 +143,11 @@ async function getBlogRoutes() {
     const posts = await getAllPosts();
 
     if (!posts || posts.length === 0) {
-      console.warn("No blog posts found for sitemap");
+      console.warn("⚠️ No blog posts found for sitemap");
       return [];
     }
+
+    console.log("📝 Blog posts found:", posts.length);
 
     return posts.map((post) => {
       const publishDate = post.publishedAt
@@ -153,7 +162,7 @@ async function getBlogRoutes() {
       };
     });
   } catch (error) {
-    console.error("Error fetching blog routes:", error);
+    console.error("❌ Error fetching blog routes:", error);
     return [];
   }
 }
