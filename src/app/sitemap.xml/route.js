@@ -6,7 +6,13 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 3600; // Revalidate every hour
 
 export async function GET() {
-  const baseUrl = "https://toolverse-brown.vercel.app";
+  // ✅ Multiple fallback options for domain
+  const baseUrl = 
+    process.env.SITE_URL || 
+    process.env.NEXT_PUBLIC_SITE_URL || 
+    process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 
+    "https://www.thetoolsverse.com"; // Your new domain as final fallback
+
   const today = new Date().toISOString().split('T')[0];
 
   try {
@@ -59,7 +65,7 @@ export async function GET() {
   } catch (error) {
     console.error("Error generating sitemap:", error);
 
-    // ✅ Minimal fallback
+    // ✅ Minimal fallback with correct domain
     const fallbackXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
