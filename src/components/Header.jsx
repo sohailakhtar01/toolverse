@@ -31,7 +31,7 @@ const Header = () => {
             <div className="flex items-center justify-center">
               <Image
                 src="/logo.png" // Ensure this path is correct relative to public folder
-                alt="ToolVault Logo"
+                alt="Toolsverse Logo"
                 width={40}
                 height={40}
                 className="w-10 h-10"

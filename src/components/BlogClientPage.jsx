@@ -47,14 +47,14 @@ export default function BlogClientPage({ posts }) {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "ToolVault - AI Tools Directory Blog",
-    "description": "Discover, compare, and explore AI tools across categories including productivity, design, marketing, and more. Expert reviews and insights from ToolVault.",
-    "url": "https://toolverse-brown.vercel.app/blog",
+    "name": "Toolsverse - AI Tools Directory Blog",
+    "description": "Discover, compare, and explore AI tools across categories including productivity, design, marketing, and more. Expert reviews and insights from Toolsverse.",
+    "url": "https://thetoolsverse.com/blog",
     "blogPost": posts.map(post => ({
         "@type": "BlogPosting",
         "headline": post.title,
         "description": post.excerpt,
-        "url": `https://toolverse-brown.vercel.app/blog/${post.slug.current}`,
+        "url": `https://thetoolsverse.com/blog/${post.slug.current}`,
         "datePublished": post.publishedAt,
         "dateModified": post._updatedAt || post.publishedAt,
         "image": post.mainImage?.asset?.url ? {
@@ -64,20 +64,20 @@ export default function BlogClientPage({ posts }) {
             "height": 630
         } : {
             "@type": "ImageObject",
-            "url": "https://toolverse-brown.vercel.app/og-blog.jpg",
+            "url": "https://thetoolsverse.com/og-blog.jpg",
             "width": 1200,
             "height": 630
         },
         "author": {
             "@type": "Person",
-            "name": post.author?.name || "ToolVault Team",
+            "name": post.author?.name || "Toolsverse Team",
         },
         "publisher": {
             "@type": "Organization",
-            "name": "ToolVault",
+            "name": "Toolsverse",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://toolverse-brown.vercel.app/logo.png"
+                "url": "https://thetoolsverse.com/logo.png"
             }
         }
     }))
@@ -189,7 +189,7 @@ export default function BlogClientPage({ posts }) {
                             />
                         )}
                         <span className="text-sm font-medium text-gray-900 font-montserrat">
-                            {post.author?.name || 'ToolVault Team'}
+                            {post.author?.name || 'Toolsverse Team'}
                         </span>
                       </div>
                       <Link href={`/blog/${post.slug.current}`} className="text-sm font-semibold text-purple-600 hover:text-purple-800">

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "How It Works - Find Perfect AI Tools for Your Business | ToolVault",
+  title: "How It Works - Find Perfect AI Tools for Your Business | Toolsverse",
   description: "Learn how to discover, compare, and choose the best AI tools for your business needs. Step-by-step guide to finding productivity software, design tools, and automation solutions.",
   keywords: "how to find AI tools, best AI software selection, compare AI tools pricing, choose productivity software, AI tools for business, digital tools comparison guide",
   openGraph: {

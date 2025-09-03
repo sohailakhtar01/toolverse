@@ -35,7 +35,7 @@ const geistMono = Geist_Mono({
 // --- OPTIMIZED SEO METADATA FOR COMPETING WITH TOOLIFY & INSIDR ---
 export const metadata = {
   // 🔥 COMPETITOR-BEATING TITLE
-  title: "1200+ Best AI Tools Directory 2025 | Complete AI Software List - ToolVault",
+  title: "1200+ Best AI Tools Directory 2025 | Complete AI Software List - Toolsverse",
   
   // 🔥 KEYWORD-RICH DESCRIPTION
   description: "Discover 1200+ best AI tools across 100+ categories. Complete AI tools directory updated daily with free & paid AI software for business, design, writing, productivity, marketing & more. Compare top AI apps 2025.",
@@ -55,7 +55,7 @@ export const metadata = {
     "ai writing tools",
     "ai design tools",
     "ai marketing tools",
-    "ToolVault"
+    "Toolsverse"
   ],
   
   icons: {
@@ -64,16 +64,16 @@ export const metadata = {
   
   // 🔥 OPTIMIZED OPEN GRAPH
   openGraph: {
-    title: "1200+ Best AI Tools Directory 2025 - ToolVault",
+    title: "1200+ Best AI Tools Directory 2025 - Toolsverse",
     description: "Complete directory of 1200+ best AI tools across 100+ categories. Updated daily with free & paid AI software for every need.",
-    url: "https://toolverse-brown.vercel.app",
-    siteName: "ToolVault - AI Tools Directory",
+    url: "https://thetoolsverse.com",
+    siteName: "Toolsverse - AI Tools Directory",
     images: [
       {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "ToolVault - Best AI Tools Directory 2025",
+        alt: "Toolsverse - Best AI Tools Directory 2025",
       },
     ],
     type: "website",
@@ -83,14 +83,14 @@ export const metadata = {
   // 🔥 TWITTER OPTIMIZED
   twitter: {
     card: "summary_large_image",
-    title: "1200+ Best AI Tools Directory 2025 - ToolVault",
+    title: "1200+ Best AI Tools Directory 2025 - Toolsverse",
     description: "Discover the complete directory of best AI tools across 100+ categories. Updated daily!",
     images: ["/logo.png"],
-    site: "@ToolVault", // Add your Twitter handle if you have one
+    site: "@Toolsverse", // Add your Twitter handle if you have one
   },
   
   alternates: {
-    canonical: "https://toolverse-brown.vercel.app",
+    canonical: "https://thetoolsverse.com",
   },
   
   // 🔥 ADDITIONAL SEO METADATA
@@ -129,14 +129,14 @@ export default function RootLayout({ children }) {
         />
 
         {/* ✅ Important Site Name Metadata */}
-        <meta property="og:site_name" content="ToolVault - AI Tools Directory" />
-        <meta name="application-name" content="ToolVault" />
-        <meta name="apple-mobile-web-app-title" content="ToolVault" />
+        <meta property="og:site_name" content="Toolsverse - AI Tools Directory" />
+        <meta name="application-name" content="Toolsverse" />
+        <meta name="apple-mobile-web-app-title" content="Toolsverse" />
         
         {/* 🔥 ADDITIONAL SEO META TAGS */}
-        <meta name="author" content="ToolVault Team" />
-        <meta name="publisher" content="ToolVault" />
-        <meta name="copyright" content="ToolVault 2025" />
+        <meta name="author" content="Toolsverse Team" />
+        <meta name="publisher" content="Toolsverse" />
+        <meta name="copyright" content="Toolsverse 2025" />
         <meta name="revisit-after" content="1 day" />
         
         {/* 🔥 STRUCTURED DATA FOR AI TOOLS DIRECTORY */}
@@ -146,19 +146,19 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "ToolVault",
-              "alternateName": "ToolVault - AI Tools Directory",
-              "url": "https://toolverse-brown.vercel.app",
+              "name": "Toolsverse",
+              "alternateName": "Toolsverse - AI Tools Directory",
+              "url": "https://thetoolsverse.com",
               "description": "Complete directory of 1200+ best AI tools across 100+ categories",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://toolverse-brown.vercel.app/search?q={search_term_string}",
+                "target": "https://thetoolsverse.com/search?q={search_term_string}",
                 "query-input": "required name=search_term_string"
               },
               "sameAs": [
                 // Add your social media links here when you have them
-                // "https://twitter.com/toolvault",
-                // "https://linkedin.com/company/toolvault"
+                // "https://twitter.com/Toolsverse",
+                // "https://linkedin.com/company/Toolsverse"
               ]
             })
           }}

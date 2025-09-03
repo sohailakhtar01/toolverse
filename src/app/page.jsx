@@ -3,10 +3,10 @@ import LandingClient from '@/components/LandingClient';
 
 export const metadata = {
   // 🔥 HOMEPAGE TITLE - MOST IMPORTANT SEO ELEMENT
-  title: 'ToolVault: 1200+ Best AI Tools Directory 2025 | #1 AI Software List',
+  title: 'Toolsverse: 1200+ Best AI Tools Directory 2025 | #1 AI Software List',
   
   // 🔥 HOMEPAGE DESCRIPTION - TARGET ALL MAJOR KEYWORDS
-  description: 'ToolVault is the #1 AI tools directory with 1200+ best AI tools across 100+ categories. Discover free & paid AI software for business, productivity, writing, design, marketing & more. Updated daily with latest AI apps 2025.',
+  description: 'Toolsverse is the #1 AI tools directory with 1200+ best AI tools across 100+ categories. Discover free & paid AI software for business, productivity, writing, design, marketing & more. Updated daily with latest AI apps 2025.',
   
   // 🔥 HIGH-IMPACT KEYWORDS FOR HOMEPAGE
   keywords: [
@@ -24,24 +24,24 @@ export const metadata = {
     'ai design tools', 
     'ai marketing tools',
     'ai business tools',
-    'ToolVault directory',
+    'Toolsverse directory',
     'ai tools website',
     'compare ai tools'
   ],
   
   // 🔥 HOMEPAGE OPEN GRAPH - FOR SOCIAL SHARING
   openGraph: {
-    title: 'ToolVault: #1 AI Tools Directory with 1200+ Best AI Tools 2025',
+    title: 'Toolsverse: #1 AI Tools Directory with 1200+ Best AI Tools 2025',
     description: 'Discover the complete directory of 1200+ best AI tools across 100+ categories. Free & paid AI software for every need. Updated daily!',
     type: 'website',
-    url: 'https://toolverse-brown.vercel.app',
-    siteName: 'ToolVault - AI Tools Directory',
+    url: 'https://thetoolsverse.com',
+    siteName: 'Toolsverse - AI Tools Directory',
     images: [
       {
         url: '/logo.png',
         width: 1200,
         height: 630,
-        alt: 'ToolVault - Best AI Tools Directory 2025',
+        alt: 'Toolsverse - Best AI Tools Directory 2025',
       },
     ],
     locale: 'en_US',
@@ -50,15 +50,15 @@ export const metadata = {
   // 🔥 TWITTER CARD FOR HOMEPAGE
   twitter: {
     card: 'summary_large_image',
-    title: 'ToolVault: 1200+ Best AI Tools Directory 2025',
+    title: 'Toolsverse: 1200+ Best AI Tools Directory 2025',
     description: 'The complete directory of best AI tools across 100+ categories. Find your perfect AI tool!',
     images: ['/logo.png'],
-    site: '@ToolVault', // Add your Twitter handle
+    site: '@Toolsverse', // Add your Twitter handle
   },
   
   // 🔥 CANONICAL URL
   alternates: {
-    canonical: 'https://toolverse-brown.vercel.app',
+    canonical: 'https://thetoolsverse.com',
   },
   
   // 🔥 ROBOTS & INDEXING
@@ -91,13 +91,13 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "ToolVault",
-            "alternateName": "ToolVault AI Tools Directory",
-            "url": "https://toolverse-brown.vercel.app",
+            "name": "Toolsverse",
+            "alternateName": "Toolsverse AI Tools Directory",
+            "url": "https://thetoolsverse.com",
             "description": "The #1 AI tools directory with 1200+ best AI tools across 100+ categories",
             "potentialAction": {
               "@type": "SearchAction",
-              "target": "https://toolverse-brown.vercel.app/search?q={search_term_string}",
+              "target": "https://thetoolsverse.com/search?q={search_term_string}",
               "query-input": "required name=search_term_string"
             },
             "mainEntity": {
@@ -109,11 +109,11 @@ export default function HomePage() {
             },
             "publisher": {
               "@type": "Organization",
-              "name": "ToolVault",
-              "url": "https://toolverse-brown.vercel.app",
+              "name": "Toolsverse",
+              "url": "https://thetoolsverse.com",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://toolverse-brown.vercel.app/logo.png"
+                "url": "https://thetoolsverse.com/logo.png"
               }
             }
           })
@@ -127,15 +127,15 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "ToolVault",
-            "url": "https://toolverse-brown.vercel.app",
-            "logo": "https://toolverse-brown.vercel.app/logo.png",
-            "description": "ToolVault is the #1 AI tools directory featuring 1200+ best AI tools across 100+ categories",
+            "name": "Toolsverse",
+            "url": "https://thetoolsverse.com",
+            "logo": "https://thetoolsverse.com/logo.png",
+            "description": "Toolsverse is the #1 AI tools directory featuring 1200+ best AI tools across 100+ categories",
             "foundingDate": "2024",
             "sameAs": [
               // Add your social media links when you have them
-              // "https://twitter.com/toolvault",
-              // "https://linkedin.com/company/toolvault"
+              // "https://twitter.com/Toolsverse",
+              // "https://linkedin.com/company/Toolsverse"
             ]
           })
         }}

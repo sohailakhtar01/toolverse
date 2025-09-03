@@ -103,7 +103,7 @@ const toolsData = [
 // ✅ OPTIMIZED SEO METADATA FOR FEATURED AI TOOLS
 export const metadata = {
   // 🔥 COMPETITOR-BEATING TITLE WITH CORRECT BRAND
-  title: 'Featured AI Tools 2025 | Top 50+ Best AI Software & Apps - ToolVault',
+  title: 'Featured AI Tools 2025 | Top 50+ Best AI Software & Apps - Toolsverse',
   
   // 🔥 AI-FOCUSED DESCRIPTION
   description: 'Discover the top 50+ featured AI tools of 2025. Handpicked best AI software including ChatGPT, Midjourney, Claude, GitHub Copilot & more. Free & paid AI apps for business, creativity, and productivity.',
@@ -124,22 +124,22 @@ export const metadata = {
     'ai coding tools',
     'ai content tools',
     'free ai tools',
-    'ToolVault featured'
+    'Toolsverse featured'
   ],
   
   // 🔥 OPEN GRAPH FOR SOCIAL SHARING
   openGraph: {
-    title: 'Featured AI Tools 2025 | Top 50+ Best AI Software - ToolVault',
+    title: 'Featured AI Tools 2025 | Top 50+ Best AI Software - Toolsverse',
     description: 'Discover the most popular AI tools of 2025. ChatGPT, Midjourney, Claude & 47+ more featured AI apps.',
     type: 'website',
-    url: 'https://toolverse-brown.vercel.app/featured',
-    siteName: 'ToolVault - AI Tools Directory',
+    url: 'https://thetoolsverse.com/featured',
+    siteName: 'Toolsverse - AI Tools Directory',
     images: [
       {
         url: '/logo.png',
         width: 1200,
         height: 630,
-        alt: 'Featured AI Tools 2025 - ToolVault',
+        alt: 'Featured AI Tools 2025 - Toolsverse',
       },
     ],
   },
@@ -147,14 +147,14 @@ export const metadata = {
   // 🔥 TWITTER CARD
   twitter: {
     card: 'summary_large_image',
-    title: 'Top 50+ Featured AI Tools 2025 - ToolVault',
+    title: 'Top 50+ Featured AI Tools 2025 - Toolsverse',
     description: 'Handpicked collection of the best AI tools including ChatGPT, Midjourney, Claude & more.',
     images: ['/logo.png'],
   },
   
   // 🔥 CANONICAL URL
   alternates: {
-    canonical: 'https://toolverse-brown.vercel.app/featured',
+    canonical: 'https://thetoolsverse.com/featured',
   },
   
   // 🔥 ROBOTS
@@ -179,8 +179,8 @@ export default function FeaturedPage() {
             "@context": "https://schema.org",
             "@type": "CollectionPage",
             "name": "Featured AI Tools 2025",
-            "description": "Top 50+ featured AI tools handpicked by ToolVault experts",
-            "url": "https://toolverse-brown.vercel.app/featured",
+            "description": "Top 50+ featured AI tools handpicked by Toolsverse experts",
+            "url": "https://thetoolsverse.com/featured",
             "mainEntity": {
               "@type": "ItemList",
               "name": "Featured AI Tools",
@@ -211,13 +211,13 @@ export default function FeaturedPage() {
                   "@type": "ListItem",
                   "position": 1,
                   "name": "Home",
-                  "item": "https://toolverse-brown.vercel.app"
+                  "item": "https://thetoolsverse.com"
                 },
                 {
                   "@type": "ListItem",
                   "position": 2,
                   "name": "Featured AI Tools",
-                  "item": "https://toolverse-brown.vercel.app/featured"
+                  "item": "https://thetoolsverse.com/featured"
                 }
               ]
             }

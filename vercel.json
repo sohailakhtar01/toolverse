@@ -5,7 +5,7 @@
       "has": [
         {
           "type": "host",
-          "value": "toolverse-brown.vercel.app"
+          "value": "thetoolsverse.com"
         }
       ],
       "destination": "https://thetoolsverse.com",
@@ -16,7 +16,7 @@
       "has": [
         {
           "type": "host",
-          "value": "toolverse-brown.vercel.app"
+          "value": "thetoolsverse.com"
         }
       ],
       "destination": "https://thetoolsverse.com/:path*",

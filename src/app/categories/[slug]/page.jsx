@@ -23,7 +23,7 @@ export async function generateMetadata({ params }) {
   
   return {
     // 🔥 COMPETITOR-BEATING TITLE WITH AI FOCUS
-    title: `${toolCount}+ Best AI ${capitalizedCategory} Tools 2025 | Top AI ${capitalizedCategory} Software - ToolVault`,
+    title: `${toolCount}+ Best AI ${capitalizedCategory} Tools 2025 | Top AI ${capitalizedCategory} Software - ToolsVerse`,
     
     // 🔥 KEYWORD-RICH DESCRIPTION
     description: `Discover ${toolCount}+ best AI ${readableCategory} tools of 2025. Compare top AI ${readableCategory} software with ratings, pricing & reviews. Free & paid AI ${readableCategory} apps for business, productivity & creativity. Updated daily.`,
@@ -46,17 +46,17 @@ export async function generateMetadata({ params }) {
     
     // 🔥 OPTIMIZED OPEN GRAPH
     openGraph: {
-      title: `${toolCount}+ Best AI ${capitalizedCategory} Tools 2025 - ToolVault`,
+      title: `${toolCount}+ Best AI ${capitalizedCategory} Tools 2025 - ToolsVerse`,
       description: `Compare ${toolCount}+ top AI ${readableCategory} tools. Find the perfect AI ${readableCategory} software with ratings, reviews & pricing.`,
       type: 'website',
-      url: `https://toolverse-brown.vercel.app/categories/${rawSlug}`,
-      siteName: 'ToolVault - AI Tools Directory',
+      url: `https://thetoolsverse.com/categories/${rawSlug}`,
+      siteName: 'ToolsVerse - AI Tools Directory',
       images: [
         {
           url: '/logo.png',
           width: 1200,
           height: 630,
-          alt: `Best AI ${capitalizedCategory} Tools 2025 - ToolVault`,
+          alt: `Best AI ${capitalizedCategory} Tools 2025 - ToolsVerse`,
         },
       ],
     },
@@ -70,7 +70,7 @@ export async function generateMetadata({ params }) {
     },
     
     alternates: {
-      canonical: `https://toolverse-brown.vercel.app/categories/${rawSlug}`,
+      canonical: `https://thetoolsverse.com/categories/${rawSlug}`,
     },
     
     // 🔥 ROBOTS & INDEXING
@@ -125,7 +125,7 @@ export default function CategoryPage({ params, searchParams }) {
     "@type": "CollectionPage",
     "name": `Best AI ${capitalizedCategory} Tools 2025`,
     "description": `Complete directory of ${filteredTools.length}+ best AI ${readableCategory} tools for 2025`,
-    "url": `https://toolverse-brown.vercel.app/categories/${rawSlug}`,
+    "url": `https://thetoolsverse.com/categories/${rawSlug}`,
     "mainEntity": {
       "@type": "ItemList",
       "name": `AI ${capitalizedCategory} Tools Directory`,
@@ -141,7 +141,7 @@ export default function CategoryPage({ params, searchParams }) {
     "@type": "SoftwareApplication",
     "name": tool.name,
     "description": tool.description,
-    "url": `https://toolverse-brown.vercel.app/tools/${tool.slug}`,
+    "url": `https://thetoolsverse.com/tools/${tool.slug}`,
     "applicationCategory": `AI ${capitalizedCategory}`,
     "operatingSystem": "Web-based",
     // Remove aggregateRating completely
@@ -160,19 +160,19 @@ export default function CategoryPage({ params, searchParams }) {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://toolverse-brown.vercel.app"
+          "item": "https://thetoolsverse.com"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Categories",
-          "item": "https://toolverse-brown.vercel.app/categories"
+          "item": "https://thetoolsverse.com/categories"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": `AI ${capitalizedCategory} Tools`,
-          "item": `https://toolverse-brown.vercel.app/categories/${rawSlug}`
+          "item": `https://thetoolsverse.com/categories/${rawSlug}`
         }
       ]
     }
@@ -501,7 +501,7 @@ export default function CategoryPage({ params, searchParams }) {
                   Ready to Transform Your {capitalizedCategory} Workflow?
                 </h2>
                 <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                  Explore more AI tools across different categories or discover what makes ToolVault the #1 choice for AI tool discovery.
+                  Explore more AI tools across different categories or discover what makes ToolsVerse the #1 choice for AI tool discovery.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a

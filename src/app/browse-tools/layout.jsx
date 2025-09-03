@@ -3,7 +3,7 @@
 
 export const metadata = {
   // 🔥 COMPETITOR-BEATING TITLE
-  title: "Browse 1200+ AI Tools by Category 2025 | Complete AI Tools Directory - ToolVault",
+  title: "Browse 1200+ AI Tools by Category 2025 | Complete AI Tools Directory - ToolsVerse",
   
   // 🔥 KEYWORD-RICH DESCRIPTION  
   description: "Browse 1200+ best AI tools across 100+ categories. Filter by free/paid, ratings, and features. Complete AI tools directory with productivity, design, writing, marketing & business tools updated daily.",
@@ -22,16 +22,16 @@ export const metadata = {
   
   // 🔥 OPEN GRAPH FOR SOCIAL SHARING
   openGraph: {
-    title: "Browse 1200+ AI Tools by Category 2025 - ToolVault",
+    title: "Browse 1200+ AI Tools by Category 2025 - ToolsVerse",
     description: "Filter and browse 1200+ AI tools across 100+ categories. Find the perfect AI tool for your needs.",
-    url: "https://toolverse-brown.vercel.app/browse-tools",
+    url: "https://thetoolsverse.com/browse-tools",
     type: "website",
     images: [
       {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Browse AI Tools Directory - ToolVault",
+        alt: "Browse AI Tools Directory - ToolsVerse",
       },
     ],
   },
@@ -39,14 +39,14 @@ export const metadata = {
   // 🔥 TWITTER CARD
   twitter: {
     card: "summary_large_image",
-    title: "Browse 1200+ AI Tools by Category - ToolVault", 
+    title: "Browse 1200+ AI Tools by Category - ToolsVerse", 
     description: "Filter and discover the best AI tools across 100+ categories",
     images: ["/logo.png"],
   },
   
   // 🔥 CANONICAL URL
   alternates: {
-    canonical: "https://toolverse-brown.vercel.app/browse-tools",
+    canonical: "https://thetoolsverse.com/browse-tools",
   },
   
   // 🔥 ROBOTS META
@@ -72,7 +72,7 @@ export default function BrowseToolsLayout({ children }) {
             "@type": "CollectionPage",
             "name": "Browse AI Tools by Category",
             "description": "Browse 1200+ AI tools across 100+ categories",
-            "url": "https://toolverse-brown.vercel.app/browse-tools",
+            "url": "https://thetoolsverse.com/browse-tools",
             "mainEntity": {
               "@type": "ItemList",
               "name": "AI Tools Directory",
@@ -86,13 +86,13 @@ export default function BrowseToolsLayout({ children }) {
                   "@type": "ListItem",
                   "position": 1,
                   "name": "Home",
-                  "item": "https://toolverse-brown.vercel.app"
+                  "item": "https://thetoolsverse.com"
                 },
                 {
                   "@type": "ListItem", 
                   "position": 2,
                   "name": "Browse AI Tools",
-                  "item": "https://toolverse-brown.vercel.app/browse-tools"
+                  "item": "https://thetoolsverse.com/browse-tools"
                 }
               ]
             }
