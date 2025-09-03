@@ -2,7 +2,13 @@
   "redirects": [
     {
       "source": "/:path*",
-      "destination": "https://thetoolsverse.com/:path*", 
+      "has": [
+        {
+          "type": "host",
+          "value": "toolverse-brown.vercel.app"
+        }
+      ],
+      "destination": "https://thetoolsverse.com/:path*",
       "permanent": true
     }
   ]
