@@ -58,22 +58,25 @@ export const metadata = {
     "Toolsverse"
   ],
   
-  icons: {
-    icon: "/logo.png",
-  },
+ icons: {
+  icon: "/favicon.ico",          // Default favicon
+  shortcut: "/favicon.ico",
+  apple: "/logo.png",            // iOS ke liye
+},
+
   
   // 🔥 OPTIMIZED OPEN GRAPH
   openGraph: {
-    title: "1200+ Best AI Tools Directory 2025 - Toolsverse",
+    title: "1200+ Best AI Tools Directory 2025 - ToolsVerse",
     description: "Complete directory of 1200+ best AI tools across 100+ categories. Updated daily with free & paid AI software for every need.",
     url: "https://thetoolsverse.com",
-    siteName: "Toolsverse - AI Tools Directory",
+    siteName: "ToolsVerse - AI Tools Directory",
     images: [
       {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Toolsverse - Best AI Tools Directory 2025",
+        alt: "ToolsVerse - Best AI Tools Directory 2025",
       },
     ],
     type: "website",
@@ -129,14 +132,14 @@ export default function RootLayout({ children }) {
         />
 
         {/* ✅ Important Site Name Metadata */}
-        <meta property="og:site_name" content="Toolsverse - AI Tools Directory" />
-        <meta name="application-name" content="Toolsverse" />
-        <meta name="apple-mobile-web-app-title" content="Toolsverse" />
+        <meta property="og:site_name" content="ToolsVerse - AI Tools Directory" />
+        <meta name="application-name" content="ToolsVerse" />
+        <meta name="apple-mobile-web-app-title" content="ToolsVerse" />
         
         {/* 🔥 ADDITIONAL SEO META TAGS */}
-        <meta name="author" content="Toolsverse Team" />
-        <meta name="publisher" content="Toolsverse" />
-        <meta name="copyright" content="Toolsverse 2025" />
+        <meta name="author" content="ToolsVerse Team" />
+        <meta name="publisher" content="ToolsVerse" />
+        <meta name="copyright" content="ToolsVerse 2025" />
         <meta name="revisit-after" content="1 day" />
         
         {/* 🔥 STRUCTURED DATA FOR AI TOOLS DIRECTORY */}
