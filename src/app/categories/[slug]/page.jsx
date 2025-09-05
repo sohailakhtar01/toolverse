@@ -164,12 +164,6 @@ export default function CategoryPage({ params, searchParams }) {
         },
         {
           "@type": "ListItem",
-          "position": 2,
-          "name": "Categories",
-          "item": "https://thetoolsverse.com/categories"
-        },
-        {
-          "@type": "ListItem",
           "position": 3,
           "name": `AI ${capitalizedCategory} Tools`,
           "item": `https://thetoolsverse.com/categories/${rawSlug}`
@@ -237,10 +231,10 @@ export default function CategoryPage({ params, searchParams }) {
                   </a>
                 </li>
                 <li>
-                  <div className="flex items-center">
+                  {/* <div className="flex items-center">
                     <span className="mx-2 text-gray-400">/</span>
                     <a href="/categories" className="text-gray-500 hover:text-blue-600 transition-colors">Categories</a>
-                  </div>
+                  </div> */}
                 </li>
                 <li aria-current="page">
                   <div className="flex items-center">

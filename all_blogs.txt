@@ -19,7 +19,7 @@ export async function generateMetadata() {
       'position': index + 1,
       'item': {
         '@type': 'BlogPosting',
-        '@id': `https://www.yourwebsite.com/blog/${post.slug.current}`, // IMPORTANT: Change this URL
+        '@id': `https://www.thetoolsverse.com/blog/${post.slug.current}`, // IMPORTANT: Change this URL
         'headline': post.title,
         'datePublished': post.publishedAt,
         'image': urlFor(post.mainImage).width(1200).height(630).url(), // Social share image size
@@ -35,17 +35,17 @@ export async function generateMetadata() {
     title: pageTitle,
     description: pageDescription,
     alternates: {
-      canonical: 'https://www.yourwebsite.com/blog', // IMPORTANT: Change this URL
+      canonical: 'https://www.thetoolsverse.com/blog', // IMPORTANT: Change this URL
     },
     openGraph: {
       title: pageTitle,
       description: pageDescription,
-      url: 'https://www.yourwebsite.com/blog', // IMPORTANT: Change this URL
+      url: 'https://www.thetoolsverse.com/blog', // IMPORTANT: Change this URL
       siteName: 'Your Site Name', // IMPORTANT: Change this
       type: 'website',
       images: [
         {
-          url: 'https://www.yourwebsite.com/og-blog.jpg', // A default OG image for the blog page
+          url: 'https://www.thetoolsverse.com/og-blog.jpg', // A default OG image for the blog page
           width: 1200,
           height: 630,
         },

@@ -357,6 +357,318 @@ export const tools = [
     ]
   },
   {
+  "name": "Anki",
+  "slug": "anki",
+  "image": "/anki.png",
+  "url": "https://apps.ankiweb.net",
+  "category": ["Education & Learning"],
+  "price": "Free (iOS app costs $24.99)",
+  "description": "A powerful, intelligent flashcard program that helps you spend more time on challenging material and less on what you already know using spaced repetition.",
+  "tags": ["flashcards", "spaced repetition", "memory", "study tool"],
+  "rating": 4.5,
+  "keywords": ["anki flashcards", "spaced repetition app", "memory tool"],
+  "isFeatured": true,
+  "overview": "Anki is a free flashcard program that uses spaced repetition algorithm to help students memorize information more effectively. It's available across multiple platforms including Windows, Mac, Linux, iOS, and Android.",
+  "faqs": [
+    {
+      "question": "Is Anki completely free?",
+      "answer": "Anki is free on desktop and Android, but the iOS app costs $24.99. The core functionality remains the same across all platforms."
+    },
+    {
+      "question": "What makes Anki different from other flashcard apps?",
+      "answer": "Anki uses sophisticated spaced repetition algorithms that optimize review scheduling based on your performance, making learning more efficient than traditional flashcard methods."
+    }
+  ]
+},
+{
+  "name": "Quizlet",
+  "slug": "quizlet",
+  "image": "/quizlet.png",
+  "url": "https://quizlet.com",
+  "category": ["Education & Learning"],
+  "price": "Freemium (Quizlet Plus: $7.99/month or $35.99/year)",
+  "description": "A digital learning tool that helps students and teachers create, share, and study flashcards, quizzes, and games for any subject.",
+  "tags": ["flashcards", "study games", "educational platform", "AI tutoring"],
+  "rating": 4.4,
+  "keywords": ["quizlet study", "digital flashcards", "online learning platform"],
+  "isFeatured": true,
+  "overview": "Quizlet is a popular online study platform that offers flashcards, games, and AI-powered study tools. It serves millions of students worldwide with both free and premium features.",
+  "faqs": [
+    {
+      "question": "What's included in Quizlet's free plan?",
+      "answer": "The free plan includes creating study sets, flashcards mode, match game, and limited rounds of Learn and Test modes daily."
+    },
+    {
+      "question": "Is Quizlet Plus worth it?",
+      "answer": "Quizlet Plus ($35.99/year) provides unlimited access to all study modes, removes ads, and includes AI tutoring features, making it valuable for serious students."
+    }
+  ]
+},
+{
+  "name": "Hemingway Editor",
+  "slug": "hemingway-editor",
+  "image": "/hemingway.png",
+  "url": "https://hemingwayapp.com",
+  "category": ["Writing & Content"],
+  "price": "Free web version (Hemingway Editor Plus: $8.33-$12.50/month)",
+  "description": "A writing app that helps make your writing bold and clear by highlighting complex sentences, passive voice, and other readability issues.",
+  "tags": ["writing tool", "grammar checker", "readability", "content editing"],
+  "rating": 4.7,
+  "keywords": ["hemingway editor", "writing improvement", "readability checker"],
+  "isFeatured": true,
+  "overview": "Hemingway Editor is a writing enhancement tool that analyzes text for readability and suggests improvements. It offers both free web-based editing and premium AI-powered features.",
+  "faqs": [
+    {
+      "question": "What's the difference between free and Plus versions?",
+      "answer": "The free web version provides basic readability analysis, while Hemingway Editor Plus ($8.33-$12.50/month) includes AI-powered sentence rewriting and advanced editing features."
+    },
+    {
+      "question": "How does Hemingway Editor improve writing?",
+      "answer": "It highlights hard-to-read sentences, passive voice, unnecessary adverbs, and provides readability scores to help writers create clearer, more engaging content."
+    }
+  ]
+},
+{
+  "name": "Consensus",
+  "slug": "consensus",
+  "image": "/consensus.png",
+  "url": "https://consensus.app",
+  "category": ["Research & Analysis"],
+  "price": "Freemium (Premium: $9/month, Pro: $10/month)",
+  "description": "An AI-powered search engine that finds insights in research papers using large language models to answer questions with scientific evidence.",
+  "tags": ["research tool", "scientific papers", "evidence-based", "academic search"],
+  "rating": 4.6,
+  "keywords": ["consensus ai", "research search engine", "scientific evidence"],
+  "isFeatured": true,
+  "overview": "Consensus is an AI-driven research platform that searches through 200+ million scientific papers to provide evidence-based answers to research questions using GPT-4 and other advanced models.",
+  "faqs": [
+    {
+      "question": "What makes Consensus different from regular search engines?",
+      "answer": "Consensus specifically searches peer-reviewed scientific literature and uses AI to synthesize findings from multiple studies, providing evidence-based answers rather than general web results."
+    },
+    {
+      "question": "What's included in the free plan?",
+      "answer": "The free plan offers unlimited searches, research quality indicators, AI-powered filters, and limited access to GPT-4 summaries and other premium features."
+    }
+  ]
+},
+{
+  "name": "Elicit",
+  "slug": "elicit",
+  "image": "/elicit.jpeg",
+  "url": "https://elicit.com",
+  "category": ["Research & Analysis"],
+  "price": "Freemium (Plus: $12/month, Pro: $49/month)",
+  "description": "An AI research assistant that helps researchers find, summarize, and extract data from academic papers to accelerate literature reviews.",
+  "tags": ["research assistant", "literature review", "academic papers", "data extraction"],
+  "rating": 4.5,
+  "keywords": ["elicit ai", "research assistant", "academic research tool"],
+  "isFeatured": true,
+  "overview": "Elicit is an AI-powered research tool that searches through 125+ million academic papers, extracts key information, and helps researchers conduct systematic reviews more efficiently.",
+  "faqs": [
+    {
+      "question": "What's the difference between Elicit plans?",
+      "answer": "Basic (free) includes unlimited search and limited extractions. Plus ($12/month) offers 50 PDF extractions monthly. Pro ($49/month) provides 200 extractions and systematic review tools."
+    },
+    {
+      "question": "How does Elicit help with research?",
+      "answer": "Elicit can search academic literature, extract data from papers, generate research summaries, and help identify relevant studies for systematic reviews."
+    }
+  ]
+},
+{
+  "name": "Wolfram Alpha",
+  "slug": "wolfram-alpha",
+  "image": "/wolframalpha.jpeg",
+  "url": "https://www.wolframalpha.com",
+  "category": ["Education & Learning", "Productivity & Tools"],
+  "price": "Freemium (Pro: $5/month, Pro Premium: $8.25/month)",
+  "description": "A computational knowledge engine that answers factual queries by computing answers from curated data rather than searching the web.",
+  "tags": ["computational engine", "math solver", "knowledge base", "calculator"],
+  "rating": 4.6,
+  "keywords": ["wolfram alpha", "computational engine", "math calculator"],
+  "isFeatured": true,
+  "overview": "Wolfram Alpha is a unique computational knowledge engine that provides expert-level answers by computing from its vast curated database, covering mathematics, science, engineering, and more.",
+  "faqs": [
+    {
+      "question": "What's the difference between free and Pro versions?",
+      "answer": "Free version provides basic computations. Pro ($5/month) includes step-by-step solutions and extended computation time. Pro Premium ($8.25/month) adds priority support and full feature access."
+    },
+    {
+      "question": "What makes Wolfram Alpha different from search engines?",
+      "answer": "Instead of searching for existing content, Wolfram Alpha computes answers using its curated knowledge base and sophisticated algorithms, providing unique insights and solutions."
+    }
+  ]
+},
+{
+  "name": "Photomath",
+  "slug": "photomath",
+  "image": "/photomath.png",
+  "url": "https://photomath.com",
+  "category": ["Education & Learning"],
+  "price": "Freemium (Photomath Plus: $9.99/month or $69.99/year)",
+  "description": "A math learning app that provides step-by-step solutions to math problems by scanning them with your camera or typing them in.",
+  "tags": ["math solver", "camera calculator", "step-by-step solutions", "homework help"],
+  "rating": 4.5,
+  "keywords": ["photomath app", "math camera", "homework solver"],
+  "isFeatured": true,
+  "overview": "Photomath is a popular math learning app that uses camera recognition to solve mathematical problems and provide detailed step-by-step explanations, serving millions of students worldwide.",
+  "faqs": [
+    {
+      "question": "Is Photomath completely free?",
+      "answer": "Core features including step-by-step solutions for symbolic math are free. Photomath Plus ($69.99/year) adds AI-powered tutorials, deeper explanations, and textbook solutions."
+    },
+    {
+      "question": "What types of math problems can Photomath solve?",
+      "answer": "Photomath can solve arithmetic, algebra, trigonometry, calculus, and statistics problems, from basic calculations to advanced mathematical concepts."
+    }
+  ]
+},
+{
+  "name": "Symbolab",
+  "slug": "symbolab",
+  "image": "/symbolab.jpeg",
+  "url": "https://www.symbolab.com",
+  "category": ["Education & Learning"],
+  "price": "Freemium (Pro: $2.49/week or equivalent monthly/yearly plans)",
+  "description": "An advanced AI-powered math solver that provides step-by-step solutions to mathematical problems from basic arithmetic to advanced calculus.",
+  "tags": ["math solver", "step-by-step solutions", "calculus", "algebra"],
+  "rating": 4.5,
+  "keywords": ["symbolab calculator", "math problem solver", "step by step math"],
+  "isFeatured": true,
+  "overview": "Symbolab is an AI-powered mathematics tool that offers comprehensive solutions to various mathematical problems with detailed explanations, supporting multiple languages and providing mobile accessibility.",
+  "faqs": [
+    {
+      "question": "What math topics does Symbolab cover?",
+      "answer": "Symbolab covers basic arithmetic, algebra, trigonometry, calculus, linear algebra, and more advanced mathematical concepts with detailed step-by-step solutions."
+    },
+    {
+      "question": "How does Symbolab pricing work?",
+      "answer": "Symbolab offers a basic free version and a Pro subscription starting from $2.49/week, with annual plans providing better value for unlimited access to advanced features."
+    }
+  ]
+},
+{
+  "name": "Duolingo",
+  "slug": "duolingo",
+  "image": "/duolingo.png",
+  "url": "https://www.duolingo.com",
+  "category": ["Education & Learning"],
+  "price": "Freemium (Duolingo Plus: $6.99/month)",
+  "description": "A gamified language learning platform that makes learning new languages fun and accessible through bite-sized lessons and AI-powered personalization.",
+  "tags": ["language learning", "gamification", "education", "mobile app"],
+  "rating": 4.7,
+  "keywords": ["duolingo app", "language learning platform", "learn languages online"],
+  "isFeatured": true,
+  "overview": "Duolingo is the world's most popular language-learning platform, using AI and gamification to make language learning engaging and effective for millions of users worldwide.",
+  "faqs": [
+    {
+      "question": "Is Duolingo effective for learning languages?",
+      "answer": "Duolingo is effective for building vocabulary and basic conversational skills, especially when combined with other learning methods. It's great for beginners and maintaining language skills."
+    },
+    {
+      "question": "What's included in Duolingo Plus?",
+      "answer": "Duolingo Plus ($6.99/month) removes ads, allows offline downloads, provides unlimited hearts, and includes progress tracking and streak repair features."
+    }
+  ]
+},
+{
+  "name": "Reverso Context",
+  "slug": "reverso-context",
+  "image": "/reverso.png",
+  "url": "https://context.reverso.net",
+  "category": ["Education & Learning", "Productivity & Tools"],
+  "price": "Freemium (Premium features available)",
+  "description": "A translation and language learning tool that provides translations in context from real-world examples, helping users understand proper usage.",
+  "tags": ["translation", "language learning", "context examples", "dictionary"],
+  "rating": 4.3,
+  "keywords": ["reverso context", "translation tool", "language context"],
+  "isFeatured": false,
+  "overview": "Reverso Context is a comprehensive translation and language tool that provides translations with real-world context examples, making it easier to understand proper word usage and meaning.",
+  "faqs": [
+    {
+      "question": "How is Reverso Context different from Google Translate?",
+      "answer": "Reverso Context provides translations with real-world usage examples from authentic texts, helping users understand context and proper usage rather than just direct translations."
+    },
+    {
+      "question": "What languages does Reverso Context support?",
+      "answer": "Reverso Context supports major languages including English, Spanish, French, German, Italian, Portuguese, Russian, Arabic, and many others with contextual examples."
+    }
+  ]
+},
+{
+  "name": "Beautiful.ai",
+  "slug": "beautiful-ai",
+  "image": "/beautifulai.png",
+  "url": "https://www.beautiful.ai",
+  "category": ["Design & Media", "Productivity & Tools"],
+  "price": "Freemium (Pro: $12/month, Team: $40/user/month)",
+  "description": "An AI-powered presentation software that automatically designs beautiful slides as you add content, making professional presentations effortless.",
+  "tags": ["presentations", "design automation", "templates", "collaboration"],
+  "rating": 4.4,
+  "keywords": ["beautiful ai", "presentation maker", "ai presentation tool"],
+  "isFeatured": true,
+  "overview": "Beautiful.ai is an innovative presentation platform that uses AI to automatically format and design slides, helping users create professional presentations without design expertise.",
+  "faqs": [
+    {
+      "question": "How does Beautiful.ai's smart design work?",
+      "answer": "Beautiful.ai uses AI to automatically adjust layouts, fonts, colors, and spacing as you add content, ensuring your presentations always look professionally designed."
+    },
+    {
+      "question": "Can I collaborate with team members on Beautiful.ai?",
+      "answer": "Yes, Beautiful.ai offers real-time collaboration features, allowing multiple team members to work on presentations simultaneously with commenting and review capabilities."
+    }
+  ]
+},
+{
+  "name": "Obsidian",
+  "slug": "obsidian",
+  "image": "/obsidian.png",
+  "url": "https://obsidian.md",
+  "category": ["Productivity & Tools"],
+  "price": "Free (Commercial license: $50/user/year)",
+  "description": "A powerful knowledge management and note-taking app that creates a web of interconnected notes, helping you think and organize ideas effectively.",
+  "tags": ["note-taking", "knowledge management", "linked notes", "personal knowledge base"],
+  "rating": 4.8,
+  "keywords": ["obsidian app", "note taking software", "knowledge graph"],
+  "isFeatured": true,
+  "overview": "Obsidian is a powerful note-taking application that helps users build a personal knowledge base through interconnected notes and visual knowledge graphs, popular among researchers, writers, and knowledge workers.",
+  "faqs": [
+    {
+      "question": "Is Obsidian free to use?",
+      "answer": "Obsidian is free for personal use. Commercial use requires a license at $50/user/year. Additional services like Obsidian Sync and Publish have separate pricing."
+    },
+    {
+      "question": "What makes Obsidian different from other note-taking apps?",
+      "answer": "Obsidian focuses on creating connections between notes through bidirectional linking and provides a visual graph view of your knowledge network, making it ideal for building comprehensive knowledge bases."
+    }
+  ]
+},
+{
+  "name": "RemNote",
+  "slug": "remnote",
+  "image": "/remnote.png",
+  "url": "https://www.remnote.com",
+  "category": ["Education & Learning", "Productivity & Tools"],
+  "price": "Freemium (Pro: $6/month)",
+  "description": "A spaced-repetition powered note-taking tool that combines hierarchical note-taking with flashcard generation for effective learning and knowledge retention.",
+  "tags": ["note-taking", "spaced repetition", "flashcards", "knowledge management"],
+  "rating": 4.6,
+  "keywords": ["remnote app", "note taking with flashcards", "spaced repetition notes"],
+  "isFeatured": true,
+  "overview": "RemNote is an innovative note-taking platform that integrates spaced repetition learning directly into your notes, automatically generating flashcards and helping with long-term knowledge retention.",
+  "faqs": [
+    {
+      "question": "How does RemNote integrate spaced repetition with note-taking?",
+      "answer": "RemNote automatically converts parts of your notes into flashcards using spaced repetition algorithms, helping you remember key information while you study and review your notes."
+    },
+    {
+      "question": "What's included in RemNote Pro?",
+      "answer": "RemNote Pro ($6/month) includes unlimited documents, advanced formatting, PDF annotation, custom CSS, and enhanced spaced repetition features for serious learners and professionals."
+    }
+  ]
+},
+  {
     "name": "Jasper AI",
     "slug": "jasper-ai",
     "image": "/jasper.png",
@@ -707,6 +1019,222 @@ export const tools = [
     {
       "question": "Is WriteSonic free?",
       "answer": "Yes, WriteSonic offers a free trial with limited word credits. Paid plans begin at $16/month, with more features and higher word limits available at higher tiers."
+    }
+  ]
+},
+{
+  "name": "Calendly",
+  "slug": "calendly",
+  "image": "/calendly.png",
+  "url": "https://calendly.com/",
+  "category": [
+    "Business & Productivity",
+    "Scheduling & Automation",
+    "Team Collaboration"
+  ],
+  "price": "Free plan available. Paid plans start at $10/month per user.",
+  "description": "Calendly is the world's #1 scheduling platform used by 20+ million professionals to eliminate back-and-forth emails and automate meeting bookings with seamless calendar integration and customizable booking pages.",
+  "tags": [
+    "appointment scheduling",
+    "meeting automation",
+    "calendar booking",
+    "team scheduling",
+    "crm integration"
+  ],
+  "rating": 4.7,
+  "keywords": [
+    "calendly scheduling tool",
+    "appointment booking software",
+    "meeting scheduler",
+    "calendly vs acuity"
+  ],
+  "isFeatured": true,
+  "overview": "Calendly revolutionizes scheduling by making it effortless to book meetings without the back-and-forth. Trusted by 86% of Fortune 500 companies and over 20 million professionals worldwide, it connects up to 6 calendars, offers real-time availability, automated reminders, and seamless integrations with 100+ tools including Salesforce, HubSpot, and Zoom. Perfect for individuals, teams, and enterprises who want to streamline their scheduling process.",
+  "faqs": [
+    {
+      "question": "Is Calendly free to use?",
+      "answer": "Yes, Calendly offers a free plan that includes one event type, unlimited meetings, basic integrations, and mobile app access. Paid plans start at $10/month for unlimited event types and advanced features."
+    },
+    {
+      "question": "What makes Calendly different from other scheduling tools?",
+      "answer": "Calendly stands out with its intuitive interface, powerful automation features, extensive integrations (100+), team scheduling capabilities, and enterprise-grade security. It's designed to scale from individual users to large organizations."
+    },
+    {
+      "question": "Who should use Calendly?",
+      "answer": "Calendly is perfect for sales teams, consultants, recruiters, customer success managers, marketers, and any professional who regularly schedules meetings. It's ideal for businesses wanting to automate their scheduling process."
+    }
+  ]
+},
+{
+  "name": "Zoom AI Companion",
+  "slug": "zoom-ai-companion",
+  "image": "/zoom-ai-companion.png",
+  "url": "https://www.zoom.com/en/products/ai-assistant/",
+  "category": [
+    "AI & Machine Learning",
+    "Video Conferencing",
+    "Business & Productivity"
+  ],
+  "price": "Included free with paid Zoom plans. Basic plans start at $14.99/month per license.",
+  "description": "Zoom AI Companion is an intelligent AI assistant integrated into Zoom's platform that automatically generates meeting summaries, drafts emails, creates action items, and enhances productivity across meetings, chats, and whiteboard collaboration.",
+  "tags": [
+    "ai assistant",
+    "meeting summaries",
+    "automated transcription",
+    "productivity ai",
+    "zoom integration"
+  ],
+  "rating": 4.6,
+  "keywords": [
+    "zoom ai features",
+    "meeting summarization",
+    "ai companion zoom",
+    "automatic meeting notes"
+  ],
+  "isFeatured": true,
+  "overview": "Zoom AI Companion transforms how you work by automatically detecting action items across meetings, chats, emails, and docs. It provides intelligent meeting summaries, smart recording highlights, real-time catch-up assistance, email composition help, and whiteboard content generation. Available at no additional cost with paid Zoom plans, it's designed to help teams get more done and strengthen relationships through AI-powered automation.",
+  "faqs": [
+    {
+      "question": "Is Zoom AI Companion free?",
+      "answer": "Yes, Zoom AI Companion is included at no additional cost with all paid Zoom plans (Basic, Pro, Business, Enterprise). It's not available with free Zoom accounts and must be enabled by your IT administrator."
+    },
+    {
+      "question": "What can Zoom AI Companion do?",
+      "answer": "AI Companion can generate meeting summaries and next steps, help catch up on missed content during meetings, compose and reply to emails, draft chat messages, create whiteboard content, and automatically detect action items across Zoom Workplace apps."
+    },
+    {
+      "question": "Who should use Zoom AI Companion?",
+      "answer": "Perfect for remote teams, sales professionals, project managers, executives, and anyone who attends frequent meetings. It's ideal for businesses looking to automate note-taking, improve meeting productivity, and streamline communication workflows."
+    }
+  ]
+},
+{
+  "name": "LinkedIn Sales Navigator Free",
+  "slug": "linkedin-sales-navigator-free",
+  "image": "/linkedin-sales-navigator-free.png",
+  "url": "https://business.linkedin.com/sales-solutions/sales-navigator",
+  "category": [
+    "Sales & Lead Generation",
+    "B2B Marketing",
+    "Professional Networking"
+  ],
+  "price": "30-day free trial available. Paid plans start at $79.99/month.",
+  "description": "LinkedIn Sales Navigator Free Trial gives you 30 days of premium access to LinkedIn's powerful B2B sales platform with advanced search filters, unlimited lead searches, InMail credits, and AI-powered prospect insights to accelerate your sales pipeline.",
+  "tags": [
+    "b2b lead generation",
+    "sales prospecting",
+    "linkedin search",
+    "sales navigator",
+    "lead qualification"
+  ],
+  "rating": 4.5,
+  "keywords": [
+    "linkedin sales navigator free trial",
+    "b2b prospecting tool",
+    "sales navigator features",
+    "linkedin lead generation"
+  ],
+  "isFeatured": true,
+  "overview": "LinkedIn Sales Navigator Free Trial unlocks the full power of LinkedIn's 900+ million professional network for 30 days. Access advanced search filters, save unlimited leads and accounts, get real-time insights and alerts, send InMail messages, and leverage AI-powered recommendations. Used by sales professionals to drive 8% increase in annual revenue and save 65 hours per year, it's the ultimate B2B prospecting tool for finding and connecting with high-quality leads.",
+  "faqs": [
+    {
+      "question": "How long is the LinkedIn Sales Navigator free trial?",
+      "answer": "The free trial lasts 30 days and gives you full access to all Sales Navigator features including advanced search, unlimited lead saves, InMail credits, and premium insights. You'll need a credit card to sign up but won't be charged during the trial."
+    },
+    {
+      "question": "What happens after the free trial ends?",
+      "answer": "After 30 days, you'll be automatically charged for the plan you selected unless you cancel. You'll lose access to saved searches, lead lists, and premium features if you don't continue with a paid subscription."
+    },
+    {
+      "question": "Who should use LinkedIn Sales Navigator Free Trial?",
+      "answer": "Perfect for B2B sales professionals, SDRs, business developers, recruiters, and entrepreneurs who want to test advanced LinkedIn prospecting features before committing to a paid plan. Ideal for building targeted prospect lists and testing outreach strategies."
+    }
+  ]
+},
+{
+  "name": "Google Workspace",
+  "slug": "google-workspace",
+  "image": "/google-workspace.png",
+  "url": "https://workspace.google.com/",
+  "category": [
+    "Business & Productivity",
+    "Team Collaboration",
+    "Cloud Storage"
+  ],
+  "price": "14-day free trial. Plans start at $7/month per user (annual) or $8.40/month (flexible).",
+  "description": "Google Workspace is a comprehensive cloud-based productivity suite that includes Gmail, Drive, Docs, Sheets, Meet, Calendar, and more – all integrated with AI-powered Gemini features to help teams collaborate, communicate, and get work done efficiently.",
+  "tags": [
+    "google workspace",
+    "business email",
+    "cloud collaboration",
+    "document editing",
+    "video conferencing"
+  ],
+  "rating": 4.6,
+  "keywords": [
+    "google workspace vs office 365",
+    "business email gmail",
+    "google drive business",
+    "google meet enterprise"
+  ],
+  "isFeatured": true,
+  "overview": "Google Workspace empowers millions of businesses worldwide with professional email, unlimited cloud storage, real-time collaboration tools, and enterprise-grade security. With built-in Gemini AI, teams can create content faster, automate workflows, and make data-driven decisions. From startups to Fortune 500 companies, Google Workspace provides everything needed to work smarter with seamless integration across Gmail, Drive, Docs, Sheets, Slides, Meet, and Calendar.",
+  "faqs": [
+    {
+      "question": "What's included in Google Workspace?",
+      "answer": "Google Workspace includes professional Gmail with custom domain, Google Drive cloud storage, Docs/Sheets/Slides for collaboration, Google Meet for video calls, Calendar for scheduling, and now Gemini AI for enhanced productivity. All apps work seamlessly together with enterprise security."
+    },
+    {
+      "question": "How much does Google Workspace cost in 2025?",
+      "answer": "Pricing starts at $7/month per user (annual) or $8.40/month (flexible) for Business Starter. Business Standard is $14/$16.80, and Business Plus is $22/$26.40. Prices increased in 2025 to include built-in AI features across all plans."
+    },
+    {
+      "question": "Who should use Google Workspace?",
+      "answer": "Perfect for businesses of all sizes - from solopreneurs to large enterprises. Ideal for remote teams, educational institutions, nonprofits, and any organization needing professional email, cloud collaboration, and integrated productivity tools with AI assistance."
+    }
+  ]
+},
+{
+  "name": "HubSpot Free CRM",
+  "slug": "hubspot-free-crm",
+  "image": "/hubspot.png",
+  "url": "https://www.hubspot.com/products/crm",
+  "category": [
+    "Sales & Productivity",
+    "CRM & Automation",
+    "Contact Creatio"
+  ],
+  "price": "Free forever. Paid plans start at $15/month per seat.",
+  "description": "HubSpot Free CRM is a powerful customer relationship management platform that unifies all your customer data on one AI-powered platform. Manage contacts, deals, tasks, and customer interactions without any time restrictions or hidden fees.",
+  "tags": [
+    "free crm",
+    "contact management",
+    "sales pipeline",
+    "deal tracking",
+    "email tracking"
+  ],
+  "rating": 4.7,
+  "keywords": [
+    "hubspot free crm",
+    "free crm software",
+    "contact management",
+    "hubspot vs salesforce",
+    "sales pipeline management"
+  ],
+  "isFeatured": true,
+  "overview": "HubSpot Free CRM is a comprehensive customer relationship management solution used by over 194,000 companies worldwide. It offers unlimited users, up to 1 million contacts storage, deal pipeline management, email tracking, and integrated marketing tools. Unlike free trials, this is genuinely free forever with no expiration date. The platform seamlessly integrates with Gmail and Outlook, provides AI-powered insights, and scales with your business as you grow.",
+  "faqs": [
+    {
+      "question": "Is HubSpot CRM really free forever?",
+      "answer": "Yes, HubSpot CRM is 100% free with no expiration date, no credit card required. You get unlimited users, contact management for up to 1 million contacts, deal tracking, and essential sales tools permanently."
+    },
+    {
+      "question": "What's the difference between free and paid HubSpot plans?",
+      "answer": "The free plan includes core CRM features like contact management, deals, and basic reporting. Paid plans (starting at $15/month) add advanced automation, custom reporting, email sequences, and premium integrations."
+    },
+    {
+      "question": "Who should use HubSpot Free CRM?",
+      "answer": "Perfect for startups, small businesses, solopreneurs, and growing teams who need robust contact management and sales pipeline tracking without upfront costs. It's ideal for businesses just starting with CRM or those with basic sales processes."
     }
   ]
 },
@@ -2811,29 +3339,176 @@ export const tools = [
     "isFeatured": false
   },
   {
-    "name": "Claude",
-    "slug": "claude",
-    "image": "/claude.png",
-    "url": "https://www.anthropic.com/claude",
-    "category": [
-      "Coding & Development",
-      "Chatbots & Virtual Companions",
-      "Office & Productivity"
-    ],
-    "price": "Unknown",
-    "description": "Claude is an AI assistant from Anthropic that helps with tasks via natural language.",
-    "tags": [
-      "ai assistant",
-      "natural language processing",
-      "anthropic"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai assistant",
-      "natural language"
-    ],
-    "isFeatured": false
-  },
+  "name": "Stable Diffusion",
+  "slug": "stable-diffusion",
+  "image": "/stable.png",
+  "url": "https://stability.ai/stable-diffusion",
+  "category": [
+    "AI Image Generation",
+    "Design & Graphics", 
+    "Art & Creative Design"
+  ],
+  "price": "Open Source (Free; Commercial API pricing available; Various hosting services from $10-50/month)",
+  "description": "An open-source deep learning text-to-image model that generates high-quality images from text prompts. Stable Diffusion can create realistic photos, artwork, and illustrations while running efficiently on consumer hardware.",
+  "tags": [
+    "stable diffusion",
+    "text-to-image",
+    "open source ai",
+    "diffusion model",
+    "image generation",
+    "stability ai",
+    "local ai",
+    "customizable ai"
+  ],
+  "rating": 4.4,
+  "keywords": [
+    "stable diffusion",
+    "stability ai",
+    "open source image ai",
+    "diffusion model",
+    "local image generation"
+  ],
+  "isFeatured": true,
+  "overview": "Stable Diffusion is a revolutionary open-source text-to-image AI model developed by Stability AI. Unlike proprietary alternatives, it can run locally on consumer hardware, offering complete control and customization. The model supports fine-tuning, custom training, and various artistic styles. It's widely adopted by developers and artists for its flexibility, with numerous community-created models and extensions available.",
+  "faqs": [
+    {
+      "question": "What makes Stable Diffusion different from other AI image generators?",
+      "answer": "Stable Diffusion is open-source and can run locally on your own hardware, giving you complete control and privacy. It's highly customizable with support for fine-tuning, custom models, and extensions. Unlike closed-source alternatives, there are no usage restrictions or content filters beyond basic safety measures."
+    },
+    {
+      "question": "What are the system requirements for running Stable Diffusion?",
+      "answer": "Stable Diffusion can run on most modern computers with at least 8GB of RAM and a dedicated GPU with 4GB+ VRAM for optimal performance. It also supports CPU-only generation (though much slower) and various cloud hosting options for users without suitable hardware."
+    }
+  ]
+},
+  {
+  "name": "DALL-E",
+  "slug": "dall-e",
+  "image": "/dale.png",
+  "url": "https://openai.com/dall-e-3",
+  "category": [
+    "AI Image Generation",
+    "Design & Graphics",
+    "Art & Creative Design"
+  ],
+  "price": "Freemium (Free tier via ChatGPT; ChatGPT Plus: $20/month; API has separate per-image pricing)",
+  "description": "A powerful AI image generator by OpenAI that creates original, realistic images and art from text descriptions. DALL-E can combine concepts, attributes, and styles to produce high-quality visual content.",
+  "tags": [
+    "ai image generator",
+    "text-to-image",
+    "openai",
+    "digital art",
+    "image creation",
+    "generative ai",
+    "visual ai"
+  ],
+  "rating": 4.5,
+  "keywords": [
+    "dall-e",
+    "openai dall-e",
+    "ai art generator",
+    "text to image",
+    "image ai"
+  ],
+  "isFeatured": true,
+  "overview": "DALL-E is OpenAI's revolutionary text-to-image AI model that generates high-quality images from natural language descriptions. The latest version, DALL-E 3, is integrated with ChatGPT and offers enhanced natural language understanding, producing more accurate and detailed images with 4x greater resolution than its predecessor. It supports multiple artistic styles and includes built-in editing capabilities.",
+  "faqs": [
+    {
+      "question": "What's the difference between DALL-E versions?",
+      "answer": "DALL-E 3 is the latest version with significantly improved accuracy, detail, and natural language understanding compared to DALL-E 2. It generates 4x higher resolution images and is integrated with ChatGPT for conversational image creation."
+    },
+    {
+      "question": "How can I access DALL-E?",
+      "answer": "DALL-E 3 is available through ChatGPT's free plan with limited usage, ChatGPT Plus ($20/month) for more generations, and via OpenAI's API for developers. It's also accessible through various platforms including web and mobile applications."
+    }
+  ]
+},
+  {
+  "name": "Bard",
+  "slug": "bard",
+  "image": "/bar.png",
+  "url": "https://bard.google.com",
+  "category": [
+    "Chatbots & Virtual Companions",
+    "Research & Data Analysis",
+    "Writing & Content Creation",
+    "Office & Productivity"
+  ],
+  "price": "Free",
+  "description": "An experimental conversational AI service powered by Google's LaMDA and later Gemini models. Bard helps with creative and informational tasks, from writing and planning to learning and brainstorming.",
+  "tags": [
+    "ai assistant",
+    "google ai",
+    "conversational ai",
+    "lamda",
+    "gemini",
+    "natural language processing",
+    "text generation"
+  ],
+  "rating": 4.2,
+  "keywords": [
+    "bard",
+    "google bard",
+    "gemini ai",
+    "chat assistant",
+    "ai chatbot"
+  ],
+  "isFeatured": true,
+  "overview": "Bard is Google's experimental conversational AI service, initially powered by LaMDA (Language Model for Dialogue Applications) and later upgraded to use Gemini models. It's designed to be helpful, harmless, and honest, offering assistance with writing, planning, learning, and creative tasks. Bard integrates with Google's ecosystem and can access real-time information from the web.",
+  "faqs": [
+    {
+      "question": "What is the difference between Bard and other AI chatbots?",
+      "answer": "Bard is built on Google's advanced language models and has direct access to current information from Google Search. It's designed to provide helpful, creative, and informative responses while being integrated with Google's ecosystem of services."
+    },
+    {
+      "question": "Is Bard completely free to use?",
+      "answer": "Yes, Bard is currently free to use. Google provides access to Bard without charging users, though there may be usage limits during high-demand periods."
+    }
+  ]
+},
+{
+  "name": "Claude",
+  "slug": "claude",
+  "image": "/claude.png",
+  "url": "https://www.anthropic.com/claude",
+  "category": [
+    "Chatbots & Virtual Companions",
+    "Office & Productivity",
+    "Writing & Content Creation",
+    "Coding & Development"
+  ],
+  "price": "Freemium (Free tier with usage limits; Claude Pro: $20/month; API has separate per-token pricing)",
+  "description": "A next-generation AI assistant from Anthropic, capable of a wide range of conversational and text-processing tasks. It excels at summarization, writing, coding, and thoughtful dialogue.",
+  "tags": [
+    "ai assistant",
+    "natural language processing",
+    "anthropic",
+    "large language model",
+    "conversational ai",
+    "text generation",
+    "summarization"
+  ],
+  "rating": 4.7,
+  "keywords": [
+    "claude",
+    "anthropic ai",
+    "generative ai",
+    "chat assistant",
+    "ai writer"
+  ],
+  "isFeatured": true,
+  "overview": "Claude is a family of large language models developed by Anthropic, with a strong emphasis on AI safety through its 'Constitutional AI' approach. It can perform sophisticated tasks such as nuanced conversation, content creation, code generation, and complex reasoning. The model family includes Claude 3 Opus, Sonnet, and Haiku, each offering a different balance of intelligence, speed, and cost.",
+  "faqs": [
+    {
+      "question": "What is the difference between the Claude 3 models?",
+      "answer": "The Claude 3 family includes three models: Opus is the most powerful model for highly complex tasks. Sonnet offers a balanced blend of intelligence and speed for enterprise workloads. Haiku is the fastest and most compact model for near-instant responsiveness."
+    },
+    {
+      "question": "What are the benefits of the paid Claude Pro plan?",
+      "answer": "Claude Pro, which costs $20 per month, offers at least 5 times the usage capacity of the free version, priority access during high-traffic periods, and early access to new features."
+    }
+  ]
+},
   {
     "name": "Google AI Studio",
     "slug": "google-ai-studio",
@@ -3896,32 +4571,6 @@ export const tools = [
     "isFeatured": false
   },
   {
-    "name": "HubSpot",
-    "slug": "hubspot",
-    "image": "/hub.png",
-    "url": "https://www.hubspot.com/",
-    "category": [
-      "Business Management",
-      "Marketing & Advertising",
-      "Office & Productivity"
-    ],
-    "price": "Unknown",
-    "description": "Customer platform with marketing, sales, service, and CRM software.",
-    "tags": [
-      "customer platform",
-      "marketing",
-      "sales",
-      "crm",
-      "software"
-    ],
-    "rating": null,
-    "keywords": [
-      "crm software",
-      "marketing platform"
-    ],
-    "isFeatured": false
-  },
-  {
     "name": "Miro",
     "slug": "miro-1",
     "image": "/miro.png",
@@ -4088,32 +4737,6 @@ export const tools = [
     "isFeatured": false
   },
   {
-    "name": "HubSpot",
-    "slug": "hubspot-1",
-    "image": "/hubspot.png",
-    "url": "https://www.hubspot.com/",
-    "category": [
-      "Marketing & Advertising",
-      "Business Management",
-      "Office & Productivity"
-    ],
-    "price": "Unknown",
-    "description": "Customer platform with marketing, sales, service, and CRM software.",
-    "tags": [
-      "customer platform",
-      "marketing",
-      "sales",
-      "crm",
-      "software"
-    ],
-    "rating": null,
-    "keywords": [
-      "crm software",
-      "marketing platform"
-    ],
-    "isFeatured": false
-  },
-  {
     "name": "Miro",
     "slug": "miro-2",
     "image": "/miro.png",
@@ -4157,30 +4780,6 @@ export const tools = [
     "keywords": [
       "email marketing",
       "ai automation"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "Otter.ai",
-    "slug": "otter-ai-1",
-    "image": "/otter.png",
-    "url": "https://otter.ai/",
-    "category": [
-      "Marketing & Advertising",
-      "Voice Generation & Conversion"
-    ],
-    "price": "Unknown",
-    "description": "AI meeting assistant for real-time transcription, summaries, and action items.",
-    "tags": [
-      "meeting assistant",
-      "transcription",
-      "summaries",
-      "productivity"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai meeting tool",
-      "transcription service"
     ],
     "isFeatured": false
   },

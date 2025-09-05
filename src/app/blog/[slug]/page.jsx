@@ -38,12 +38,12 @@ export async function generateMetadata({ params }) {
       title: pageTitle,
       description: pageDescription,
       alternates: {
-        canonical: `https://www.yourwebsite.com/blog/${params.slug}`,
+        canonical: `https://www.thetoolsverse.com/blog/${params.slug}`,
       },
       openGraph: {
         title: pageTitle,
         description: pageDescription,
-        url: `https://www.yourwebsite.com/blog/${params.slug}`,
+        url: `https://www.thetoolsverse.com/blog/${params.slug}`,
         siteName: 'Your Site Name',
         type: 'article',
         publishedTime: post.publishedAt,

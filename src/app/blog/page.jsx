@@ -21,7 +21,7 @@ export async function generateMetadata() {
         'position': index + 1,
         'item': {
           '@type': 'BlogPosting',
-          '@id': `https://www.yourwebsite.com/blog/${post.slug}`, // Fixed: removed .current
+          '@id': `https://www.thetoolsverse.com/blog/${post.slug}`, // Fixed: removed .current
           'headline': post.title,
           'datePublished': post.publishedAt,
           'image': post.mainImage ? urlFor(post.mainImage).width(1200).height(630).url() : null,
@@ -37,17 +37,17 @@ export async function generateMetadata() {
       title: pageTitle,
       description: pageDescription,
       alternates: {
-        canonical: 'https://www.yourwebsite.com/blog',
+        canonical: 'https://www.thetoolsverse.com/blog',
       },
       openGraph: {
         title: pageTitle,
         description: pageDescription,
-        url: 'https://www.yourwebsite.com/blog',
+        url: 'https://www.thetoolsverse.com/blog',
         siteName: 'Your Site Name',
         type: 'website',
         images: [
           {
-            url: 'https://www.yourwebsite.com/og-blog.jpg',
+            url: 'https://www.thetoolsverse.com/og-blog.jpg',
             width: 1200,
             height: 630,
           },

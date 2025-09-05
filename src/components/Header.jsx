@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
+import { ChevronDown } from "lucide-react"; // dropdown icon
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,41 +44,105 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-4">
-<Link href="/" className="group font-spaceGrotesk  relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
-  Home
-  <span className="absolute left-0  font-spaceGrotesk -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
-</Link>
+         
+<nav className="hidden md:flex items-center space-x-4">
+  <Link
+    href="/"
+    className="group font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors"
+  >
+    Home
+    <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
+  </Link>
 
-<Link href="/browse-tools" className="group font-spaceGrotesk  relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
-  Browse Tools
-  <span className="absolute left-0 font-spaceGrotesk  -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
-</Link>
+  {/* Free AI Tools with Dropdown */}
+  <div className="relative group">
+    <button className="flex cursor-pointer items-center font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
+      Free AI Tools
+      <ChevronDown className="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" />
+      
+    </button>
+    <div className="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
+      <Link
+        href="/free-ai-tools/students"
+        className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+      >
+        Free AI Tools for Students
+      </Link>
+      <Link
+        href="/free-ai-tools/business"
+        className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+      >
+        Free AI Tools for Business
+      </Link>
+      
+    </div>
+  </div>
+  {/* ////////////////// */}
+  <div className="relative group">
+  <button className="flex items-center font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
+    Compare AI Tools
+    <ChevronDown className="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" />
+  </button>
+  <div className="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
+    <Link
+      href="/compare/chatgpt-vs-claude"
+      className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+    >
+      ChatGPT vs Claude
+    </Link>
+    <Link
+      href="/compare/chatgpt-vs-bard"
+      className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+    >
+      ChatGPT vs Bard
+    </Link>
+    <Link
+      href="/compare/midjourney-vs-dalle"
+      className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+    >
+      Midjourney vs DALL·E
+    </Link>
+    <Link
+      href="/compare/midjourney-vs-stable-diffusion"
+      className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+    >
+      Midjourney vs Stable Diffusion
+    </Link>
+    <Link
+      href="/compare/chatgpt-vs-copilot"
+      className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+    >
+      ChatGPT vs GitHub Copilot
+    </Link>
+  </div>
+</div>
 
-<Link href="/blog" className="group font-spaceGrotesk  relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
-  Insights
-  <span className="absolute left-0 font-spaceGrotesk  -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
-</Link>
-  
+  {/* /////////////////////// */}
+  <Link
+    href="/browse-tools"
+    className="group font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors"
+  >
+    Browse Tools
+    <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
+  </Link>
 
-{/* <Link href="/how-it-works" className="group font-spaceGrotesk  relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
-  How It Works
-  <span className="absolute left-0 -bottom-1 font-spaceGrotesk  w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
-</Link> */}
-
-<Link href="/featured" className="group font-spaceGrotesk  relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
-  Featured
-  <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
-</Link>
+  <Link
+    href="/blog"
+    className="group font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors"
+  >
+    Insights
+    <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
+  </Link>
 
 
-            {/* <Link href="/sign-in" className="px-3 py-2 text-[18px]  cursor-pointer text-purple-600 hover:text-purple-700 transition-colors">
-              Sign in
-            </Link> */}
-            {/* <Link href="/browse-tools " className="px-5 py-2 cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-[30px] hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101">
-              Get Started
-            </Link> */}
-          </nav>
+  <Link
+    href="/featured"
+    className="group font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors"
+  >
+    Featured
+    <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
+  </Link>
+</nav>
 
           {/* Mobile Hamburger Icon */}
           <div className="md:hidden">

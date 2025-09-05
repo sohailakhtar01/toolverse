@@ -1,5 +1,5 @@
 // ✅ No "use client" here – this is a server component
-import LandingClient from '@/components/LandingClient';
+import LandingClient from "@components/LandingClient";
 
 export const metadata = {
   // 🔥 HOMEPAGE TITLE - MOST IMPORTANT SEO ELEMENT
