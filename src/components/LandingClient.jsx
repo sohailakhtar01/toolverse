@@ -83,17 +83,54 @@ export default function LandingClient() {
           <p className="text-base sm:text-lg md:text-xl font-spaceGrotesk text-gray-600 max-w-2xl mx-auto mb-8">
             Explore thousands of carefully curated digital tools, software, and services to grow your business.
           </p>
-<div className="p-[2px] rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 shadow-xl text-center">
-  <div className="bg-gradient-to-r from-[#F3F7FF] to-[#F6F5FE] rounded-lg py-5 px-4 sm:py-6 sm:px-6 lg:py-8 lg:px-8">
-    <p className="text-black font-spaceGrotesk text-base sm:text-lg md:text-xl lg:text-2xl font-semibold leading-snug sm:leading-normal">
-      We've partnered with industry leaders like
-      <span className="block sm:inline font-bold"> Writesonic</span>
-      <span className="block sm:inline font-bold"> Pictory</span>
-      <span className="block sm:inline font-bold mr-1"> Scalenut</span>
-       to help you achieve your goals faster.
-    </p>
+          {/* /////////////////////////// */}
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+  
+  {/* Semrush */}
+  <div className="p-[1px] rounded-md bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg">
+    <a 
+      href="https://www.thetoolsverse.com/tools/semrush"
+      target="_blank"
+      rel="noopener noreferrer" 
+      className="block w-full bg-gradient-to-r from-[#F3F7FF] to-[#F6F5FE] rounded-md py-3 px-4 hover:from-white hover:to-white transition-all text-center"
+    >
+      <span className="text-black font-spaceGrotesk text-base font-semibold">
+        Try Semrush Free →
+      </span>
+    </a>
   </div>
+
+  {/* Grammarly */}
+  <div className="p-[1px] rounded-md bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg">
+    <a 
+      href="https://www.thetoolsverse.com/tools/grammarly"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block w-full bg-gradient-to-r from-[#F3F7FF] to-[#F6F5FE] rounded-md py-3 px-4 hover:from-white hover:to-white transition-all text-center"
+    >
+      <span className="text-black font-spaceGrotesk text-base font-semibold">
+        Get Grammarly Free →
+      </span>
+    </a>
+  </div>
+
+  {/* HubSpot */}
+  <div className="p-[1px] rounded-md bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg">
+    <a 
+      href="https://www.thetoolsverse.com/tools/hubspot-free-crm"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block w-full bg-gradient-to-r from-[#F3F7FF] to-[#F6F5FE] rounded-md py-3 px-4 hover:from-white hover:to-white transition-all text-center"
+    >
+      <span className="text-black font-spaceGrotesk text-base font-semibold">
+        Start HubSpot Free →
+      </span>
+    </a>
+  </div>
+
 </div>
+
+{/* ////////////////////////////////// */}
 
         </div>
       </section>
