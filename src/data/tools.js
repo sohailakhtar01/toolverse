@@ -453,6 +453,54 @@ export const tools = [
   ]
 },
 {
+  "name": "Monday.com",
+  "slug": "monday",
+  "image": "/monday.jpeg",
+  "url": "https://monday.com",
+  "category": ["Project Management", "Productivity", "Collaboration"],
+  "price": "Freemium (Basic: $9/month, Standard: $12/month, Pro: $19/month, Enterprise: Custom)",
+  "description": "An AI-powered Work OS that helps teams manage projects, workflows, and collaboration with customizable dashboards, automation, and built-in AI features.",
+  "tags": ["project management", "team collaboration", "workflow automation", "AI assistant"],
+  "rating": 4.7,
+  "keywords": ["monday.com", "work management", "team collaboration", "project tracking"],
+  "isFeatured": true,
+  "overview": "Monday.com is a comprehensive Work OS platform that combines project management, CRM, and team collaboration tools with AI-powered automation and customizable workflows, serving over 150,000+ customers worldwide.",
+  "faqs": [
+    {
+      "question": "What makes Monday.com different from other project management tools?",
+      "answer": "Monday.com offers a highly visual, customizable Work OS with built-in AI assistant, advanced automation (25,000+ actions per month on Pro plan), and multi-product integration including CRM, dev tools, and service management."
+    },
+    {
+      "question": "What's included in the free trial?",
+      "answer": "Monday.com offers a 14-day free trial of the Pro plan with full access to key features including AI credits (500 monthly), unlimited viewers, timeline/Gantt views, and advanced automation capabilities."
+    }
+  ]
+},
+{
+  "name": "Apollo.io",
+  "slug": "apollo",
+  "image": "/appolo.png",
+  "url": "https://apollo.io",
+  "category": ["Sales Intelligence", "Lead Generation", "Email Automation"],
+  "price": "Freemium (Basic: $49/month, Professional: $99/month, Organization: $119/month)",
+  "description": "An AI-powered B2B sales platform with 275M+ contacts database, email automation, call dialer, and CRM integration for end-to-end sales engagement.",
+  "tags": ["sales intelligence", "lead generation", "email outreach", "B2B sales"],
+  "rating": 4.7,
+  "keywords": ["apollo.io", "sales prospecting", "email automation", "lead generation"],
+  "isFeatured": true,
+  "overview": "Apollo.io is an all-in-one AI sales platform providing access to 275M+ B2B contacts and 73M+ companies, with advanced email sequencing, call automation, and CRM integrations used by 500,000+ businesses worldwide.",
+  "faqs": [
+    {
+      "question": "What makes Apollo.io different from other sales tools?",
+      "answer": "Apollo.io combines the world's largest B2B database (275M+ contacts) with AI-powered email personalization, built-in dialer, meeting scheduler, and comprehensive sales analytics in one platform, eliminating the need for multiple tools."
+    },
+    {
+      "question": "What's included in the free plan?",
+      "answer": "The free plan includes unlimited email credits (fair usage policy), 5 mobile credits monthly, 10 export credits, basic contact search, 2 email sequences, and Chrome extension for prospecting."
+    }
+  ]
+},
+{
   "name": "Elicit",
   "slug": "elicit",
   "image": "/elicit.jpeg",
