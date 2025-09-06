@@ -8,7 +8,9 @@ import { Menu, X } from 'lucide-react';
 import { ChevronDown } from "lucide-react"; // dropdown icon
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const [mobileToolsOpen, setMobileToolsOpen] = useState(false);
+    const [mobileCompareOpen, setMobileCompareOpen] = useState(false);
 
   // Effect to manage body scroll when mobile menu is open
   useEffect(() => {
@@ -181,22 +183,61 @@ const Header = () => {
             </div>
 
             {/* Mobile Navigation Links */}
-            <nav className="flex flex-col space-y-2 flex-grow"> {/* flex-grow to push last link to bottom */}
-              <Link href="/" className="px-3 font-spaceGrotesk py-2 text-xl text-gray-700  hover:text-purple-600 transition-colors">Home</Link>
-              <Link href="/browse-tools" onClick={() => setIsOpen(false)} className="text-left font-spaceGrotesk text-xl  px-4 py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">Browse Tools</Link>
-                            <Link href="/blog" onClick={() => setIsOpen(false)} className="text-left font-spaceGrotesk text-xl  px-4 py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">Insights</Link>
+            {/* Mobile Navigation Links */}
+<nav className="flex flex-col space-y-2 flex-grow">
+  <Link href="/" onClick={() => setIsOpen(false)} className="px-3 font-spaceGrotesk py-2 text-xl text-gray-700 hover:text-purple-600 transition-colors">
+    Home
+  </Link>
 
-              {/* <Link href="/how-it-works" onClick={() => setIsOpen(false)} className="text-left text-xl font-spaceGrotesk px-4 py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">How It Works</Link> */}
-              <Link href="/featured" onClick={() => setIsOpen(false)} className="text-left px-4 text-xl font-spaceGrotesk py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">Featured</Link>
-              {/* <Link href="/sign-in" onClick={() => setIsOpen(false)} className="text-left px-4 text-xl  py-3 text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all duration-200">
-                Sign in
-              </Link> */}
-<div className="pt-4 mb-[50px] border-t font-spaceGrotesk border-purple-100 flex justify-center items-center h-full">
-                {/* <Link href="/browse-tools" onClick={() => setIsOpen(false)} className="block w-[80%] text-center px-3 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105 shadow-lg">
-                  Get Started
-                </Link> */}
-              </div>
-            </nav>
+  {/* Free AI Tools Dropdown */}
+  <div>
+    <button
+      onClick={() => setMobileToolsOpen(!mobileToolsOpen)}
+      className="flex justify-between items-center w-full px-4 py-3 text-xl font-spaceGrotesk text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all"
+    >
+      Free AI Tools
+      <ChevronDown className={`ml-2 w-5 h-5 transition-transform ${mobileToolsOpen ? "rotate-180" : ""}`} />
+    </button>
+    {mobileToolsOpen && (
+      <div className="pl-6">
+        <Link href="/free-ai-tools/students" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-purple-600">Students</Link>
+        <Link href="/free-ai-tools/business" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-purple-600">Business</Link>
+      </div>
+    )}
+  </div>
+
+  {/* Compare AI Tools Dropdown */}
+  <div>
+    <button
+      onClick={() => setMobileCompareOpen(!mobileCompareOpen)}
+      className="flex justify-between items-center w-full px-4 py-3 text-xl font-spaceGrotesk text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all"
+    >
+      Compare AI Tools
+      <ChevronDown className={`ml-2 w-5 h-5 transition-transform ${mobileCompareOpen ? "rotate-180" : ""}`} />
+    </button>
+    {mobileCompareOpen && (
+      <div className="pl-6">
+        <Link href="/compare/chatgpt-vs-claude" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-purple-600">ChatGPT vs Claude</Link>
+        <Link href="/compare/chatgpt-vs-bard" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-purple-600">ChatGPT vs Bard</Link>
+        <Link href="/compare/midjourney-vs-dalle" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-purple-600">Midjourney vs DALL·E</Link>
+        <Link href="/compare/midjourney-vs-stable-diffusion" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-purple-600">Midjourney vs Stable Diffusion</Link>
+        <Link href="/compare/chatgpt-vs-copilot" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-purple-600">ChatGPT vs Copilot</Link>
+      </div>
+    )}
+  </div>
+
+  {/* Rest of links */}
+  <Link href="/browse-tools" onClick={() => setIsOpen(false)} className="px-4 py-3 text-xl font-spaceGrotesk text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all">
+    Browse Tools
+  </Link>
+  <Link href="/blog" onClick={() => setIsOpen(false)} className="px-4 py-3 text-xl font-spaceGrotesk text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all">
+    Insights
+  </Link>
+  <Link href="/featured" onClick={() => setIsOpen(false)} className="px-4 py-3 text-xl font-spaceGrotesk text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all">
+    Featured
+  </Link>
+</nav>
+
           </div>
         </div>
       </div>
