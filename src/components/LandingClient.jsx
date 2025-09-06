@@ -2,6 +2,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import tools from '@/data/tools';
+import Image from 'next/image';
 import ToolList from '@/components/ToolList';
 import {
   Search, Star, Users, Eye, MessageCircle, Code, Palette, BarChart3, Headphones, Database, Globe, Zap, Heart, Wrench
@@ -42,8 +43,32 @@ export default function LandingClient() {
 
   return (
     <main className="flex-grow mt-[16px]">
+     <div
+  className={`absolute top-0 left-0 w-full h-screen rounded-br-[60px]
+    bg-gradient-to-br from-white/8  to-transparent
+    before:content-[''] before:absolute before:inset-0
+    before:bg-[linear-gradient(to_right,rgba(255,105,180,0.25)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,105,180,0.25)_1px,transparent_1px)]
+    before:bg-[size:40px_40px]
+    before:rounded-br-[60px]
+    before:mask-image-[radial-gradient(ellipse_at_top_left,black_40%,transparent_80%)]
+    z-0`}
+/>
+{/* Torch Light Effect - Top Right Corner */}
+
+  {/* Grid Pattern (existing) */}
+  <div className="absolute top-0 left-0 w-1/2 h-1/2 rounded-br-3xl bg-white/5 z-0">
+    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:30px_30px] rounded-br-3xl"></div>
+  </div>
+
+  {/* Soft Light Effect - Like Cards */}
+{/* Main Torch Light */}
+
+
+
+
       {/* Hero Section */}
       <section className="px-4 sm:px-6 py-16 md:py-20 text-center">
+        
         <div className="max-w-full mx-auto">
           <div className="mb-6">
             <span className="px-3 py-1.5 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
@@ -107,6 +132,7 @@ export default function LandingClient() {
         </div>
         <ToolList tools={tools} title="Browse AI Tools" showSearch={true} showFilters={true} />
       </div>
+     
 
       {/* Stats */}
       <div className="flex flex-wrap justify-center gap-6 mt-10 md:gap-12 text-center">
@@ -164,3 +190,4 @@ export default function LandingClient() {
     </main>
   );
 }
+
