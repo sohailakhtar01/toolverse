@@ -84,7 +84,7 @@ export default function LandingClient() {
             Explore thousands of carefully curated digital tools, software, and services to grow your business.
           </p>
           {/* /////////////////////////// */}
-<div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+<div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-8">
   
   {/* Semrush */}
   <div className="p-[1px] rounded-md bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg">
@@ -110,6 +110,18 @@ export default function LandingClient() {
     >
       <span className="text-black font-spaceGrotesk text-base font-semibold">
         Get Grammarly Free →
+      </span>
+    </a>
+  </div>
+  <div className="p-[1px] rounded-md bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg">
+    <a 
+      href="https://www.thetoolsverse.com/tools/brevo"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block w-full bg-gradient-to-r from-[#F3F7FF] to-[#F6F5FE] rounded-md py-3 px-4 hover:from-white hover:to-white transition-all text-center"
+    >
+      <span className="text-black font-spaceGrotesk text-base font-semibold">
+        Get Brevo Free →
       </span>
     </a>
   </div>
