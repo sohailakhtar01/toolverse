@@ -1,0 +1,485 @@
+{
+    "name": "Photoleap",
+    "slug": "photoleap",
+    "image": "/photoela.png",
+    "url": "https://photoleap.com/",
+    "category": [
+      "Interior & Architectural Design",
+      "Image Generation & Editing"
+    ],
+    "price": "Unknown",
+    "description": "Creative photo editing app with AI tools for quick edits and pro designs.",
+    "tags": [
+      "photo editing",
+      "ai tools",
+      "pro designs",
+      "app"
+    ],
+    "rating": null,
+    "keywords": [
+      "ai photo editor",
+      "photo editing app"
+    ],
+    "isFeatured": false
+  },
+  {
+    "name": "Prolific",
+    "slug": "prolific",
+    "image": "/porlific.png",
+    "url": "https://www.prolific.com/",
+    "category": [
+      "Research & Data Analysis",
+      "Business Research"
+    ],
+    "price": "Unknown",
+    "description": "A platform connecting researchers with verified participants for high-quality data collection.",
+    "tags": [
+      "research platform",
+      "data collection",
+      "participants"
+    ],
+    "rating": null,
+    "keywords": [
+      "research data",
+      "data collection"
+    ],
+    "isFeatured": false
+  },
+  {
+    "name": "Thomson Reuters",
+    "slug": "thomson-reuters-2",
+    "image": "/thomsong.png",
+    "url": "https://www.thomsonreuters.com/",
+    "category": [
+      "Research & Data Analysis",
+      "Daily Life",
+      "Legal & Finance"
+    ],
+    "price": "Unknown",
+    "description": "Thomson Reuters: Technology solutions and expertise for professionals across various industries.",
+    "tags": [
+      "technology solutions",
+      "expertise",
+      "industry"
+    ],
+    "rating": null,
+    "keywords": [
+      "technology services",
+      "professional solutions"
+    ],
+    "isFeatured": false
+  },
+  {
+    "name": "LINER AI",
+    "slug": "liner-ai",
+    "image": "/liner.png",
+    "url": "https://getliner.com/",
+    "category": [
+      "Research & Data Analysis",
+      "Office & Productivity"
+    ],
+    "price": "Unknown",
+    "description": "AI-powered search assistant and digital highlighter for reliable information discovery and annotation.",
+    "tags": [
+      "ai search assistant",
+      "digital highlighter",
+      "information discovery",
+      "annotation"
+    ],
+    "rating": null,
+    "keywords": [
+      "ai search",
+      "research assistant"
+    ],
+    "isFeatured": false
+  },
+  {
+    "name": "Runway",
+    "slug": "runway",
+    "image": "/runway.png",
+    "url": "https://runwayml.com/",
+    "category": [
+      "Research & Data Analysis",
+      "Video & Animation"
+    ],
+    "price": "Unknown",
+    "description": "Runway is an AI research company providing tools for media generation and creative workflows.",
+    "tags": [
+      "ai research",
+      "media generation",
+      "creative workflows",
+      "video tools"
+    ],
+    "rating": null,
+    "keywords": [
+      "ai media tools",
+      "video generation"
+    ],
+    "isFeatured": false
+  },
+  {
+    "name": "文心一言 (Wénxīn Yīyán)",
+    "slug": "wenxin-yiyan-1",
+    "image": "/chsfklsj.png",
+    "url": null,
+    "category": [
+      "Research & Data Analysis",
+      "Image Analysis"
+    ],
+    "price": "Unknown",
+    "description": "文心一言 is an AI assistant for chatting, answering questions, and helping with work and study.",
+    "tags": [
+      "ai assistant",
+      "chatting",
+      "q&a",
+      "work assistance"
+    ],
+    "rating": null,
+    "keywords": [
+      "ai assistant",
+      "chat tool"
+    ],
+    "isFeatured": false
+  },
+  {
+    "name": "Google AI for Developers",
+    "slug": "google-ai-for-developers",
+    "image": "/google.png",
+    "url": "https://developers.google.com/ai",
+    "category": [
+      "Research & Data Analysis",
+      "Coding & Development"
+    ],
+    "price": "Unknown",
+    "description": "Resources and tools for building with Google's AI models.",
+    "tags": [
+      "google ai",
+      "ai models",
+      "development tools",
+      "resources"
+    ],
+    "rating": null,
+    "keywords": [
+      "ai development",
+      "google ai"
+    ],
+    "isFeatured": false
+  },
+  {
+    "name": "Glasp",
+    "slug": "glasp-1",
+    "image": "/glasp.png",
+    "url": "https://glasp.co/",
+    "category": [
+      "Research & Data Analysis",
+      "Social Media"
+    ],
+    "price": "Unknown",
+    "description": "Social web highlighter to organize ideas, build AI clone, and share learning.",
+    "tags": [
+      "web highlighter",
+      "idea organization",
+      "ai clone",
+      "learning"
+    ],
+    "rating": null,
+    "keywords": [
+      "web highlighting",
+      "ai learning"
+    ],
+    "isFeatured": false
+  },
+  {
+    "name": "Rubii.ai",
+    "slug": "rubii-ai",
+    "image": "/rubii.png",
+    "url": null,
+    "category": [
+      "Featured",
+      "Chatbots & Virtual Companions",
+      "Art & Creative Design"
+    ],
+    "price": "Unknown",
+    "description": "AI character chat, AI companion, and AI art creation platform.",
+    "tags": [
+      "ai character chat",
+      "ai companion",
+      "ai art creation"
+    ],
+    "rating": null,
+    "keywords": [
+      "ai chat",
+      "ai art generator"
+    ],
+    "isFeatured": true
+  },
+  {
+    "name": "Lufe AI Translator",
+    "slug": "lufe-ai-translator",
+    "image": "/lufe.jpg",
+    "url": null,
+    "category": [
+      "Featured",
+      "Education & Translation"
+    ],
+    "price": "Unknown",
+    "description": "AI-powered bilingual translation extension for web, PDF, and images.",
+    "tags": [
+      "ai translation",
+      "bilingual",
+      "extension",
+      "web",
+      "pdf",
+      "images"
+    ],
+    "rating": null,
+    "keywords": [
+      "ai translator",
+      "bilingual translation"
+    ],
+    "isFeatured": true
+  },
+  {
+    "name": "Canny",
+    "slug": "canny",
+    "image": "/canny.png",
+    "url": "https://canny.io/",
+    "category": [
+      "Featured",
+      "Business Management"
+    ],
+    "price": "Unknown",
+    "description": "Customer feedback management software to collect, analyze, and prioritize feature requests.",
+    "tags": [
+      "customer feedback",
+      "feedback management",
+      "feature requests",
+      "software"
+    ],
+    "rating": null,
+    "keywords": [
+      "feedback management",
+      "customer service"
+    ],
+    "isFeatured": true
+  },
+  {
+    "name": "VideoToWords AI",
+    "slug": "videotowords-ai",
+    "image": "/vdotowords.png",
+    "url": null,
+    "category": [
+      "Featured",
+      "Voice Generation & Conversion"
+    ],
+    "price": "Unknown",
+    "description": "AI-powered transcription service for audio and video to text conversion.",
+    "tags": [
+      "transcription",
+      "audio to text",
+      "video to text",
+      "ai tools"
+    ],
+    "rating": null,
+    "keywords": [
+      "ai transcription",
+      "video transcription"
+    ],
+    "isFeatured": true
+  },
+  {
+    "name": "Autocoder.cc",
+    "slug": "autocoder-cc",
+    "image": "/autocoder.jpeg",
+    "url": null,
+    "category": [
+      "Featured",
+      "Coding & Development"
+    ],
+    "price": "Unknown",
+    "description": "The 1st full stack vibe coding tool",
+    "tags": [
+      "full stack",
+      "vibe coding",
+      "coding tool"
+    ],
+    "rating": null,
+    "keywords": [
+      "ai coding",
+      "full stack development"
+    ],
+    "isFeatured": true
+  },
+  {
+    "name": "MusicCreator AI",
+    "slug": "musiccreator-ai",
+    "image": "/multi.png",
+    "url": null,
+    "category": [
+      "Featured",
+      "Music & Audio"
+    ],
+    "price": "Unknown",
+    "description": "AI platform for generating royalty-free music and lyrics.",
+    "tags": [
+      "music generation",
+      "royalty-free music",
+      "lyrics generation",
+      "ai platform"
+    ],
+    "rating": null,
+    "keywords": [
+      "ai music generator",
+      "royalty-free music"
+    ],
+    "isFeatured": true
+  },
+  {
+    "name": "15Minutes",
+    "slug": "15minutes",
+    "image": "/15Minutes.jpeg",
+    "url": null,
+    "category": [
+      "Featured",
+      "Education & Translation"
+    ],
+    "price": "Unknown",
+    "description": "Provides 15-minute book summaries, analysis, and audiobooks for over 10,000 titles.",
+    "tags": [
+      "book summaries",
+      "analysis",
+      "audiobooks",
+      "education"
+    ],
+    "rating": null,
+    "keywords": [
+      "book summary",
+      "audiobook"
+    ],
+    "isFeatured": true
+  },
+  {
+    "name": "Fotol AI",
+    "slug": "fotol-ai",
+    "image": "/fotol.png",
+    "url": null,
+    "category": [
+      "Featured",
+      "Image Generation & Editing",
+      "Video & Animation"
+    ],
+    "price": "Unknown",
+    "description": "All-in-one AI image & video processing and editing platform.",
+    "tags": [
+      "ai image processing",
+      "video processing",
+      "editing platform"
+    ],
+    "rating": null,
+    "keywords": [
+      "ai image editor",
+      "video editor"
+    ],
+    "isFeatured": true
+  },
+  {
+    "name": "SMART TOOLS",
+    "slug": "smart-tools",
+    "image": "/smart.png",
+    "url": null,
+    "category": [
+      "Featured",
+      "Marketing & Advertising",
+      "Business Management"
+    ],
+    "price": "Unknown",
+    "description": "Smart Tools: Unlock Predictable B2B Growth with Your All-in-One AI Sales & Marketing Suite",
+    "tags": [
+      "b2b growth",
+      "ai sales",
+      "marketing suite",
+      "sales tools"
+    ],
+    "rating": null,
+    "keywords": [
+      "ai sales tools",
+      "b2b marketing"
+    ],
+    "isFeatured": true
+  },
+  {
+    "name": "Fluxx.AI",
+    "slug": "fluxx-ai",
+    "image": "/flux.png",
+    "url": null,
+    "category": [
+      "Featured",
+      "Image Generation & Editing"
+    ],
+    "price": "Free",
+    "description": "Free FLUX.1 Kontext: AI Context Image Editing & Generation",
+    "tags": [
+      "ai image editing",
+      "image generation",
+      "context",
+      "free tool"
+    ],
+    "rating": null,
+    "keywords": [
+      "ai image editor",
+      "fluxx"
+    ],
+    "isFeatured": true
+  },
+  {
+    "name": "BrowserAct",
+    "slug": "browseract",
+    "image": "/browser-act.png",
+    "url": null,
+    "category": [
+      "Featured",
+      "Coding & Development",
+      "Office & Productivity"
+    ],
+    "price": "Unknown",
+    "description": "BrowserAct is an AI-powered cloud browser automation tool that enables effortless data extraction and task automation from any website without coding - providing high-quality data for your AI Agents!",
+    "tags": [
+      "browser automation",
+      "data extraction",
+      "task automation",
+      "no coding",
+      "ai agents"
+    ],
+    "rating": null,
+    "keywords": [
+      "ai automation",
+      "data extraction"
+    ],
+    "isFeatured": true
+  },
+  {
+    "name": "Shoplauncher AI",
+    "slug": "shoplauncher-ai",
+    "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
+    "url": null,
+    "category": [
+      "Featured",
+      "Business Management",
+      "Marketing & Advertising"
+    ],
+    "price": "Free",
+    "description": "A fully optimized AI Shopify store with winning products, ready-to-sell product pages & free high quality logo",
+    "tags": [
+      "shopify store",
+      "winning products",
+      "product pages",
+      "logo",
+      "ecommerce"
+    ],
+    "rating": null,
+    "keywords": [
+      "ai shopify store",
+      "ecommerce solutions"
+    ],
+    "isFeatured": true
+  }

@@ -230,18 +230,19 @@ export default function LandingClient() {
 
             
             // here i am changing this
-            <Link
+            <div
   key={category.name}
-  href={`/categories/${encodeURIComponent(category.name)}`}
-  className="block group p-4 sm:p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer border border-purple-100"
+  className="block group p-4 sm:p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:scale-101  border border-purple-100"
 >
-  <div className={`w-16 h-16 ${category.color} rounded-2xl flex items-center justify-center mb-4 text-white`}>
+  <div
+    className={`w-16 h-16 ${category.color} rounded-2xl flex items-center justify-center mb-4 text-white`}
+  >
     {category.icon}
   </div>
   <h3 className="text-xl font-semibold text-gray-800 mb-1">{category.name}</h3>
   <p className="text-purple-600 font-medium text-sm">{category.count}</p>
-</Link>
-          ))}
+</div>
+   ))}
         </div>
       </section>
 

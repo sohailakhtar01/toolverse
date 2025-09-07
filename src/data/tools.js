@@ -208,7 +208,7 @@ export const tools = [
   {
     "name": "Bitchat",
     "slug": "bitchat",
-    "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
+    "image": "/bitchat.png",
     "url": "https://bitchats.app/?utm_source=toolify",
     "category": [
       "Chatbots & Virtual Companions"
@@ -1623,6 +1623,7 @@ export const tools = [
     ],
     "isFeatured": true
   },
+  //////////////////////////////////
   {
     "name": "Bitbucket",
     "slug": "bitbucket",
@@ -1786,31 +1787,6 @@ export const tools = [
     "keywords": [
       "stock media",
       "ai creative tools"
-    ],
-    "isFeatured": true
-  },
-  {
-    "name": "CapCut",
-    "slug": "capcut",
-    "image": "/cap.png",
-    "url": "https://www.capcut.com/",
-    "category": [
-      "Image Generation & Editing",
-      "Voice Generation & Conversion",
-      "Video & Animation"
-    ],
-    "price": "Free with optional in-app purchases",
-    "description": "CapCut is an AI-driven all-in-one video editor and graphic design tool.",
-    "tags": [
-      "video editor",
-      "graphic design",
-      "ai video",
-      "video editing"
-    ],
-    "rating": 4.5,
-    "keywords": [
-      "video editor",
-      "graphic design tool"
     ],
     "isFeatured": true
   },
@@ -2735,19 +2711,30 @@ export const tools = [
     "category": [
       "Art & Creative Design"
     ],
-    "price": "Unknown",
+    "price": "Free (Supporter plans from $5/month for extra perks and early access)",
     "description": "Model-sharing hub for AI art generation, specializing in Stable Diffusion.",
     "tags": [
       "model sharing",
       "ai art generation",
       "stable diffusion"
     ],
-    "rating": null,
+    "rating": 4.8,
     "keywords": [
       "ai art models",
       "stable diffusion"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Civitai is the largest online community and hub for sharing, discovering, and reviewing open-source AI art models, primarily for Stable Diffusion. It allows users to upload custom-trained models (like Checkpoints, LoRAs, and Textual Inversions) and browse thousands of others to achieve specific artistic styles or generate images of particular characters and concepts.",
+    "faqs": [
+      {
+        "question": "What is a 'LoRA' on Civitai?",
+        "answer": "A LoRA (Low-Rank Adaptation) is a small file used with a base Stable Diffusion model to modify its output. It's an efficient way to replicate a specific art style, character, or concept without needing to download a large new model."
+      },
+      {
+        "question": "Is the content on Civitai safe for work?",
+        "answer": "Civitai hosts both SFW (Safe for Work) and NSFW (Not Safe for Work) content. It features a robust tagging and filtering system, allowing users to easily hide or show mature content based on their personal preferences."
+      }
+    ]
   },
   {
     "name": "Midjourney",
@@ -2757,45 +2744,64 @@ export const tools = [
     "category": [
       "Art & Creative Design"
     ],
-    "price": "Unknown",
+    "price": "Subscription-based; plans start at $8/month (billed annually)",
     "description": "Midjourney is an AI research lab focused on expanding human imaginative powers.",
     "tags": [
       "ai research",
       "imaginative powers",
       "art generation"
     ],
-    "rating": null,
+    "rating": 4.7,
     "keywords": [
       "ai art generator",
       "midjourney"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Midjourney is an independent research lab and the creator of a proprietary AI art generator renowned for producing exceptionally artistic and high-quality images from text prompts. It operates primarily through the Discord chat app, where users interact with the Midjourney Bot to create, refine, and upscale their artwork.",
+    "faqs": [
+      {
+        "question": "How do I use Midjourney?",
+        "answer": "To use Midjourney, you join their official Discord server. Once there, you use simple text commands, primarily `/imagine`, in designated chat channels to send your prompts to the Midjourney Bot, which then generates your images."
+      },
+      {
+        "question": "Is there a free trial for Midjourney?",
+        "answer": "Midjourney has offered free trials in the past, but it currently operates as a paid-only service. To generate images, you must subscribe to one of their monthly or annual plans."
+      }
+    ]
   },
   {
-  "name": "Leonardo.Ai",
-  "slug": "leonardo-ai",
-  "image": "/lep.png",
-  "url": "https://leonardo.ai/",
-  "category": ["Art & Creative Design"],
-  "price": "Free & Paid options",
-  "description": "AI platform for generating production-quality creative assets with speed and style consistency.",
-  "tags": ["creative assets", "ai generation", "style consistency"],
-  "rating": 4.8,
-  "keywords": ["ai creative assets", "production quality"],
-  "isFeatured": true,
-
-  "overview": "Leonardo.Ai is a powerful AI tool used by designers and creatives to generate high-quality production assets quickly. It's known for its consistent style generation and rapid prototyping capabilities.",
-  "faqs": [
-    {
-      "question": "What is Leonardo.Ai used for?",
-      "answer": "It’s used to create creative assets like illustrations, product concepts, game art, and more using AI."
-    },
-    {
-      "question": "Is Leonardo.Ai free?",
-      "answer": "It offers free and premium plans depending on your usage needs."
-    }
-  ],
-},
+    "name": "Leonardo.Ai",
+    "slug": "leonardo-ai",
+    "image": "/lep.png",
+    "url": "https://leonardo.ai/",
+    "category": [
+      "Art & Creative Design"
+    ],
+    "price": "Freemium (Free daily credits; Paid plans start at $10/month, billed annually)",
+    "description": "AI platform for generating production-quality creative assets with speed and style consistency.",
+    "tags": [
+      "creative assets",
+      "ai generation",
+      "style consistency"
+    ],
+    "rating": 4.8,
+    "keywords": [
+      "ai creative assets",
+      "production quality"
+    ],
+    "isFeatured": true,
+    "overview": "Leonardo.Ai is a full creative suite for generating high-quality visual assets for projects like games, concept art, and marketing. It's known for its ability to train custom AI models on a user's own art style, ensuring brand and style consistency. It also features a suite of tools for editing and refining AI-generated images, including a real-time canvas.",
+    "faqs": [
+      {
+        "question": "What are 'Finetuned Models' in Leonardo.Ai?",
+        "answer": "Leonardo.Ai allows you to train your own AI models on your specific datasets or art styles. This provides unparalleled control and helps you generate images that are perfectly consistent with your existing creative work or brand identity."
+      },
+      {
+        "question": "How does the free plan work?",
+        "answer": "The free plan gives you a daily allotment of credits. These credits can be used to generate images and utilize other platform features, and they reset every 24 hours, allowing you to continue creating for free."
+      }
+    ]
+  },
   {
     "name": "Picsart",
     "slug": "picsart",
@@ -2805,7 +2811,7 @@ export const tools = [
       "Art & Creative Design",
       "Video & Animation"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Picsart Gold plan starts at $5/month, billed annually)",
     "description": "AI-powered creative platform for photo and video editing and graphic design.",
     "tags": [
       "photo editing",
@@ -2813,23 +2819,34 @@ export const tools = [
       "graphic design",
       "creative platform"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "ai creative platform",
       "photo editor"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Picsart is a massive all-in-one creative platform providing powerful photo and video editing tools, graphic design capabilities, and a full suite of AI-powered features. It is a go-to solution for social media content creators, offering everything from simple filters to advanced layer-based editing and AI art generation.",
+    "faqs": [
+      {
+        "question": "Is Picsart good for beginners?",
+        "answer": "Yes, Picsart is very beginner-friendly, offering a wide array of easy-to-use templates, filters, and one-click AI tools. It also provides advanced features to satisfy more experienced designers."
+      },
+      {
+        "question": "What kind of AI tools does Picsart have?",
+        "answer": "Picsart's AI toolkit includes an AI image generator (text-to-image), background and object remover, style transfer filters, an AI writer for social media captions, and an AI-enhance feature to improve photo quality."
+      }
+    ]
   },
   {
     "name": "Pixlr",
     "slug": "pixlr",
-    "image": "/piclr.png",
+    "image": "/pixlr.png",
     "url": "https://pixlr.com/",
     "category": [
       "Art & Creative Design",
       "Video & Animation"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free version available; Paid plans start at $4.90/month)",
     "description": "Cloud-based photo editing and design tools with AI-power for consumers and companies.",
     "tags": [
       "photo editing",
@@ -2837,12 +2854,23 @@ export const tools = [
       "cloud-based",
       "ai tools"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "ai photo editor",
       "design platform"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Pixlr is a suite of web-based photo editing and design tools that offers an accessible alternative to desktop software like Photoshop. It includes Pixlr E for advanced editing and Pixlr X for quick, modern edits. The platform is infused with AI tools for tasks like background removal, generative fill, and creating art from text.",
+    "faqs": [
+      {
+        "question": "What is the difference between Pixlr E and Pixlr X?",
+        "answer": "Pixlr E (Expert) is a powerful, layer-based photo editor with a classic desktop UI, similar to Photoshop. Pixlr X (Express) is a more modern, easy-to-use editor designed for quick touch-ups, filters, and design tasks."
+      },
+      {
+        "question": "Do I need to install any software to use Pixlr?",
+        "answer": "No, Pixlr is entirely cloud-based. All of its editors and tools run directly in your web browser, although they also offer mobile and desktop apps for convenience."
+      }
+    ]
   },
   {
     "name": "PixAI",
@@ -2852,29 +2880,40 @@ export const tools = [
     "category": [
       "Art & Creative Design"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free daily credits; Paid membership starts at $8/month)",
     "description": "AI art generator for creating anime-style art and sharing artworks.",
     "tags": [
       "ai art generator",
       "anime art",
       "art sharing"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "ai anime art",
       "art generator"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "PixAI.Art is an AI art generator and community platform that specializes in creating high-quality anime and manga-style artwork. It provides a wide range of anime-specific models, LoRAs, and tools that give users precise control over their creations. Users can also share their art, participate in contests, and train their own character models.",
+    "faqs": [
+      {
+        "question": "Is PixAI only for anime art?",
+        "answer": "While it excels at anime and manga styles, PixAI also offers models that can generate realistic and other artistic styles of images. However, its primary focus and largest community are centered around anime."
+      },
+      {
+        "question": "What are 'credits' on PixAI?",
+        "answer": "Credits are the currency used on the platform to generate images. The platform provides a generous amount of free daily and weekly credits, and users can purchase more or subscribe to a membership for a larger monthly allotment."
+      }
+    ]
   },
   {
     "name": "MiriCanvas",
     "slug": "miricanvas",
     "image": "/miri.png",
-    "url": null,
+    "url": "https://www.miricanvas.com/",
     "category": [
       "Art & Creative Design"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free for individuals; Pro and Enterprise plans available)",
     "description": "Easy-to-use online design tool with templates, graphics, and AI-powered features.",
     "tags": [
       "online design",
@@ -2882,12 +2921,23 @@ export const tools = [
       "graphics",
       "design tool"
     ],
-    "rating": null,
+    "rating": 4.7,
     "keywords": [
       "online design tool",
       "ai design"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "MiriCanvas is an intuitive, all-in-one online design tool, often compared to Canva, that is popular in the Korean market and expanding globally. It allows users to easily create a wide range of visual content, from social media posts and presentations to printed materials, using thousands of templates and design assets. It also incorporates AI features for image generation and background removal.",
+    "faqs": [
+      {
+        "question": "Is MiriCanvas free to use?",
+        "answer": "Yes, MiriCanvas offers a very generous free plan for individual users that includes access to most of its templates and design elements for both personal and commercial use."
+      },
+      {
+        "question": "What makes MiriCanvas a good alternative to Canva?",
+        "answer": "MiriCanvas provides a similar user-friendly, template-based design experience. Users often praise its extensive library of high-quality, royalty-free assets and its straightforward licensing terms, even on the free plan."
+      }
+    ]
   },
   {
     "name": "123RF",
@@ -2897,7 +2947,7 @@ export const tools = [
     "category": [
       "Art & Creative Design"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free content available; Subscriptions start at $19/month)",
     "description": "A stock content provider with royalty-free images, videos, and AI tools.",
     "tags": [
       "stock content",
@@ -2905,12 +2955,23 @@ export const tools = [
       "videos",
       "ai tools"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "stock provider",
       "ai image tools"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "123RF is a global stock content marketplace offering millions of royalty-free photos, vectors, videos, and audio files. In addition to its traditional stock library, 123RF has integrated a suite of AI-powered tools, including an AI image generator, writer, and image editor, to provide a comprehensive creative solution.",
+    "faqs": [
+      {
+        "question": "Can I use the images from 123RF for commercial purposes?",
+        "answer": "Yes, when you purchase or download content from 123RF, you are granted a royalty-free license that typically allows for use in commercial projects, such as advertising, websites, and marketing materials."
+      },
+      {
+        "question": "Are the AI tools free to use?",
+        "answer": "The AI tools are often included as part of a subscription plan or may operate on a credit system. While some free trials or basic access may be available, full usage is generally tied to a paid plan."
+      }
+    ]
   },
   {
     "name": "Uhmegle",
@@ -2928,23 +2989,34 @@ export const tools = [
       "chatting",
       "video chat"
     ],
-    "rating": null,
+    "rating": 3.8,
     "keywords": [
       "online chat",
       "video call"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Uhmegle is a free online platform that allows users to have anonymous conversations with strangers from around the world. It serves as an alternative to the classic Omegle website, offering both text and video chat functionalities to connect people randomly for spontaneous conversations.",
+    "faqs": [
+      {
+        "question": "Is Uhmegle the same as Omegle?",
+        "answer": "No, it is an independent platform that offers a similar experience to the original Omegle, which was a very popular site for random chatting before it shut down."
+      },
+      {
+        "question": "Do I need to register to use Uhmegle?",
+        "answer": "No, one of the key features of Uhmegle and similar platforms is that they do not require any registration or personal information. You can start chatting with strangers instantly and anonymously."
+      }
+    ]
   },
   {
     "name": "Sider",
     "slug": "sider",
     "image": "/sider.png",
-    "url": null,
+    "url": "https://sider.ai/",
     "category": [
       "Social Media",
       "Image Analysis"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free plan available; Paid plans start at $10/month)",
     "description": "AI assistant integrating ChatGPT, Claude, and Gemini for reading, writing, and more on any webpage.",
     "tags": [
       "ai assistant",
@@ -2953,12 +3025,23 @@ export const tools = [
       "gemini",
       "web assistant"
     ],
-    "rating": null,
+    "rating": 4.9,
     "keywords": [
       "ai assistant",
       "browser extension"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Sider is a popular AI-powered browser extension that acts as a sidebar assistant on any webpage. It integrates multiple leading AI models like GPT-4, Claude 3, and Gemini, allowing users to chat, write, summarize, translate, and explain text without leaving their current tab. It also offers features for interacting with images and videos.",
+    "faqs": [
+      {
+        "question": "What is the main benefit of using Sider?",
+        "answer": "The main benefit is convenience. It embeds powerful AI tools directly into your browser, allowing you to use them contextually on any website, whether you're reading an article, writing an email, or searching the web."
+      },
+      {
+        "question": "Which browsers does Sider support?",
+        "answer": "Sider is available as an extension for major browsers, including Google Chrome, Microsoft Edge, and Apple Safari."
+      }
+    ]
   },
   {
     "name": "Transkriptor",
@@ -2969,7 +3052,7 @@ export const tools = [
       "Social Media",
       "Voice Generation & Conversion"
     ],
-    "price": "Unknown",
+    "price": "Starts at $4.99/month (Lite plan, billed annually)",
     "description": "AI transcription service for audio and video to text conversion with high accuracy.",
     "tags": [
       "transcription",
@@ -2977,12 +3060,23 @@ export const tools = [
       "video to text",
       "accuracy"
     ],
-    "rating": null,
+    "rating": 4.7,
     "keywords": [
       "ai transcription",
       "audio transcription"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Transkriptor is an AI-powered transcription service that quickly and accurately converts audio and video files into text. It supports over 100 languages and is used by professionals, students, and journalists to transcribe meetings, interviews, lectures, and podcasts. It offers features like speaker identification and an integrated text editor for corrections.",
+    "faqs": [
+      {
+        "question": "How accurate are the transcriptions?",
+        "answer": "Transkriptor uses advanced speech-to-text AI to achieve up to 99% accuracy, depending on the audio quality. Clear audio with minimal background noise yields the best results."
+      },
+      {
+        "question": "Can it handle multiple speakers?",
+        "answer": "Yes, Transkriptor can identify and separate different speakers in the audio, labeling their respective parts in the final transcript, which is very useful for interviews and meetings."
+      }
+    ]
   },
   {
     "name": "Microsoft Designer",
@@ -2993,19 +3087,30 @@ export const tools = [
       "Social Media",
       "Art & Creative Design"
     ],
-    "price": "Free",
+    "price": "Freemium (Free version available; more features included with Microsoft 365 subscriptions)",
     "description": "AI-powered graphic design app for creating social media posts, invitations, and more.",
     "tags": [
       "graphic design",
       "social media posts",
       "invitations"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "ai graphic design",
       "social media creator"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Microsoft Designer is a graphic design app that uses AI to help users create stunning professional-quality visuals quickly and easily. You can start with a simple text description, and the app's AI will generate a variety of unique, editable designs. It's perfect for creating social media posts, invitations, digital postcards, and other graphics.",
+    "faqs": [
+      {
+        "question": "How does Microsoft Designer use AI?",
+        "answer": "It uses AI at every step. It leverages OpenAI's DALL-E models to generate images from your text prompts and then suggests design layouts, color palettes, and fonts to match your content, dramatically speeding up the design process."
+      },
+      {
+        "question": "Do I need a Microsoft 365 subscription to use it?",
+        "answer": "No, there is a free version of Microsoft Designer available to anyone with a Microsoft account. However, Microsoft 365 subscribers get access to more premium features and a higher number of credits for AI generation."
+      }
+    ]
   },
   {
     "name": "Glasp",
@@ -3016,7 +3121,7 @@ export const tools = [
       "Social Media",
       "Research & Data Analysis"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free for personal use; Team plans available)",
     "description": "Social web highlighter to organize ideas, build AI clone, and share learning.",
     "tags": [
       "web highlighter",
@@ -3024,23 +3129,34 @@ export const tools = [
       "ai clone",
       "learning"
     ],
-    "rating": null,
+    "rating": 4.8,
     "keywords": [
       "web highlighting",
       "ai learning"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Glasp is a social web highlighter and note-taking tool that allows users to capture and organize quotes and ideas from across the web. It functions as a browser extension, letting you highlight text on any webpage. These highlights are saved to your profile and can be shared with others, creating a collaborative learning network.",
+    "faqs": [
+      {
+        "question": "What does 'social web highlighter' mean?",
+        "answer": "It means that when you highlight a piece of text on an article, you can see if other Glasp users have also highlighted that same passage. Your highlights are also shared to your Glasp profile, allowing your followers to see what you find interesting."
+      },
+      {
+        "question": "How does it use AI?",
+        "answer": "Glasp uses AI to summarize your saved highlights from articles or YouTube videos. It also has a feature that lets you create an 'AI Clone' of yourself, which can answer questions based on the content you have highlighted and curated."
+      }
+    ]
   },
   {
     "name": "TurboLearn AI",
     "slug": "turbolearn-ai",
     "image": "/tubo.png",
-    "url": null,
+    "url": "https://www.turbolearn.ai/",
     "category": [
       "Social Media",
       "Education & Translation"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free trial available; Paid plans start at $3.33/month)",
     "description": "TurboLearn AI generates notes, flashcards, and quizzes from lectures to enhance learning.",
     "tags": [
       "note generation",
@@ -3048,12 +3164,23 @@ export const tools = [
       "quizzes",
       "learning enhancement"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "ai learning tool",
       "lecture notes"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "TurboLearn AI is a study tool designed to help students save time and learn more effectively from their educational content. By uploading a lecture recording, textbook chapter, or even a YouTube video link, the AI automatically generates comprehensive notes, interactive flashcards, and practice quizzes based on the material.",
+    "faqs": [
+      {
+        "question": "What kind of content can I upload to TurboLearn?",
+        "answer": "You can upload various formats, including audio files (MP3, WAV), video files (MP4), documents (PDF), or simply provide a URL to a YouTube video or webpage."
+      },
+      {
+        "question": "How can this tool help with exam preparation?",
+        "answer": "After generating notes from your lecture materials, it creates flashcards and quizzes that are specifically tailored to that content. This allows you to actively test your knowledge and reinforce key concepts before an exam."
+      }
+    ]
   },
   {
     "name": "FlexClip",
@@ -3064,25 +3191,36 @@ export const tools = [
       "Social Media",
       "Video & Animation"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free plan available; Paid plans start at $9.99/month, billed annually)",
     "description": "Free online video editor with AI tools and rich resources.",
     "tags": [
       "video editor",
       "ai tools",
       "online video editor"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "online video editor",
       "video resources"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "FlexClip is a user-friendly online video editor that makes it easy for anyone to create professional-looking videos for social media, marketing, or personal use. It features a drag-and-drop interface, a vast library of templates and stock media, and a suite of AI tools, including an AI video script writer, text-to-video generator, and auto-subtitle tool.",
+    "faqs": [
+      {
+        "question": "Is FlexClip good for beginners?",
+        "answer": "Yes, FlexClip is designed with simplicity in mind. Its template-driven approach and intuitive tools make it an excellent choice for beginners who want to create high-quality videos without a steep learning curve."
+      },
+      {
+        "question": "What AI tools does FlexClip offer?",
+        "answer": "FlexClip includes several AI-powered features, such as an AI script generator to help you write your video's narration, a text-to-video tool that creates a video from your script, and an automatic subtitle generator."
+      }
+    ]
   },
   {
     "name": "Supawork AI",
     "slug": "supawork-ai",
     "image": "/supa.png",
-    "url": null,
+    "url": "https://supawork.ai/",
     "category": [
       "Social Media",
       "Image Generation & Editing"
@@ -3095,24 +3233,35 @@ export const tools = [
       "professional photos",
       "free tool"
     ],
-    "rating": null,
+    "rating": 4.1,
     "keywords": [
       "ai headshot",
       "professional photos"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Supawork AI offers a suite of free AI-powered productivity tools, with its most popular feature being the AI Professional Headshot Generator. Users can upload a few of their own photos, and the AI will generate a wide variety of high-quality, professional-looking headshots in different styles and settings, perfect for LinkedIn and corporate profiles.",
+    "faqs": [
+      {
+        "question": "Is the AI headshot generator really free?",
+        "answer": "Yes, Supawork's headshot generator is offered as a free tool. Users can generate and download their professional headshots without a subscription or payment."
+      },
+      {
+        "question": "How many photos do I need to upload?",
+        "answer": "The tool typically requires you to upload a small number of your existing selfies or photos (usually 6-10). The AI uses these to learn your facial features before generating new headshots."
+      }
+    ]
   },
   {
     "name": "Chat & Ask AI",
     "slug": "chat-ask-ai",
     "image": "/cahtan.png",
-    "url": null,
+    "url": "https://chatandask.ai/",
     "category": [
       "Social Media",
       "Daily Life",
       "Chatbots & Virtual Companions"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free plan available; Paid plans start at $9.99/month)",
     "description": "Advanced AI chatbot with GPT-4o, offering various AI tools and WhatsApp integration.",
     "tags": [
       "ai chatbot",
@@ -3120,12 +3269,23 @@ export const tools = [
       "whatsapp integration",
       "ai tools"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "advanced chatbot",
       "whatsapp integration"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Chat & Ask AI is a versatile AI chatbot application powered by advanced models like GPT-4o. It offers a suite of tools for content creation, image generation, and problem-solving. A key feature is its seamless integration with WhatsApp, allowing users to access the AI's power directly from their favorite messaging app.",
+    "faqs": [
+      {
+        "question": "How does the WhatsApp integration work?",
+        "answer": "You can add Chat & Ask AI as a contact on WhatsApp. This allows you to send messages to it just like you would with a person, and it will respond directly within your chat, making AI assistance highly accessible."
+      },
+      {
+        "question": "What can I do with Chat & Ask AI besides chatting?",
+        "answer": "Beyond conversation, the platform offers specialized tools for writing emails, generating social media posts, creating AI art, summarizing text, and more, all accessible through its interface."
+      }
+    ]
   },
   {
     "name": "GPTZero",
@@ -3135,42 +3295,30 @@ export const tools = [
     "category": [
       "AI Detection & Anti-Detection"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free plan with word limit; Paid plans start at $10/month)",
     "description": "AI detector for identifying text generated by AI models like ChatGPT.",
     "tags": [
       "ai detector",
       "chatgpt",
       "text identification"
     ],
-    "rating": null,
+    "rating": 4.1,
     "keywords": [
       "ai content detection",
       "gpt detection"
     ],
-    "isFeatured": false
-  },
-  {
-    "name": "Uhmegle",
-    "slug": "uhmegle-1",
-    "image": "/uh.png",
-    "url": "https://uhmegle.com/",
-    "category": [
-      "AI Detection & Anti-Detection",
-      "Social Media"
-    ],
-    "price": "Free",
-    "description": "Uhmegle is an Omegle alternative for chatting with strangers via text or video.",
-    "tags": [
-      "omegle alternative",
-      "chatting",
-      "video chat"
-    ],
-    "rating": null,
-    "keywords": [
-      "online chat",
-      "video call"
-    ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "GPTZero is a leading AI content detector designed to determine whether a piece of text was written by a human or generated by an AI model like ChatGPT. It is widely used in education and publishing to check for AI plagiarism and maintain academic integrity. It analyzes text for characteristics like 'perplexity' and 'burstiness' to make its classification.",
+    "faqs": [
+      {
+        "question": "Who is the primary user of GPTZero?",
+        "answer": "While anyone can use it, GPTZero is primarily built for educators and academic institutions to verify the originality of student work. It is also used by writers, editors, and hiring managers."
+      },
+      {
+        "question": "How accurate is GPTZero?",
+        "answer": "GPTZero is considered one of the more accurate AI detectors available, but no detector is 100% perfect. It provides a probability score, indicating the likelihood that the text is AI-generated, rather than a definitive yes or no."
+      }
+    ]
   },
   {
     "name": "Scribbr",
@@ -3181,7 +3329,7 @@ export const tools = [
       "AI Detection & Anti-Detection",
       "Education & Translation"
     ],
-    "price": "Unknown",
+    "price": "Service-based pricing (e.g., proofreading per word); some tools are free.",
     "description": "Scribbr offers proofreading, plagiarism checking, citation generation, and academic resources for students.",
     "tags": [
       "proofreading",
@@ -3189,12 +3337,23 @@ export const tools = [
       "citation generation",
       "academic resources"
     ],
-    "rating": null,
+    "rating": 4.7,
     "keywords": [
       "academic tools",
       "plagiarism checker"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Scribbr is an academic services company dedicated to helping students succeed. It offers a suite of tools including a highly-rated Plagiarism Checker, an APA and MLA Citation Generator, and professional proofreading and editing services. It also features a free AI Detector to check for AI-generated text.",
+    "faqs": [
+      {
+        "question": "Are Scribbr's tools free to use?",
+        "answer": "Scribbr offers several free tools, such as the citation generator and the AI detector. However, its core services like the plagiarism checker and professional editing are paid services with pricing based on document length."
+      },
+      {
+        "question": "Who does the proofreading and editing?",
+        "answer": "Scribbr employs a network of professional academic editors who are native speakers and experts in various fields. They provide detailed feedback on language, structure, and clarity."
+      }
+    ]
   },
   {
     "name": "Undetectable AI",
@@ -3204,30 +3363,41 @@ export const tools = [
     "category": [
       "AI Detection & Anti-Detection"
     ],
-    "price": "Unknown",
+    "price": "Plans start at $9.99/month for 10,000 words.",
     "description": "Transforms AI content into undetectable, human-like writing.",
     "tags": [
       "ai content",
       "undetectable writing",
       "humanization"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "ai humanizer",
       "ai content bypasser"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Undetectable AI is a tool designed to rewrite AI-generated text to make it sound more human and bypass AI detection tools. Users paste their text from models like ChatGPT, and the tool 'humanizes' it by altering sentence structure, word choice, and syntax to mimic human writing patterns.",
+    "faqs": [
+      {
+        "question": "What is the purpose of using Undetectable AI?",
+        "answer": "It is used by content creators, marketers, and writers who use AI for drafting but want to ensure their final text has a more natural, human touch and can pass checks from AI content detectors."
+      },
+      {
+        "question": "Does it just spin the content?",
+        "answer": "Unlike simple article spinners, Undetectable AI uses more sophisticated algorithms to restructure and rephrase content in a way that maintains the original meaning while changing the characteristics that AI detectors look for."
+      }
+    ]
   },
   {
     "name": "Branded",
     "slug": "branded",
     "image": "/brand.png",
-    "url":"https://surveys.gobranded.com/",
+    "url": "https://surveys.gobranded.com/",
     "category": [
       "AI Detection & Anti-Detection",
       "Business Research"
     ],
-    "price": "Free to join and earn points, with a minimum cash-out of $5 (500 points).",
+    "price": "Free for users to join; clients pay for research services.",
     "description": "Branded connects businesses with research participants, offering AI-driven insights and custom audience targeting.",
     "tags": [
       "research participants",
@@ -3239,7 +3409,18 @@ export const tools = [
       "market research",
       "ai insights"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Branded Surveys is a market research community that pays users for sharing their opinions. For businesses, it's a platform to gather consumer insights by launching surveys to a targeted audience. It uses AI to match users with relevant surveys and to analyze the collected data for meaningful trends.",
+    "faqs": [
+      {
+        "question": "How do users get paid?",
+        "answer": "Users earn points for completing surveys. Once they reach a minimum threshold (typically 500 points, equal to $5), they can cash out their earnings via PayPal or various gift cards."
+      },
+      {
+        "question": "How does it help businesses?",
+        "answer": "It provides businesses with quick and affordable access to a diverse panel of consumers, allowing them to conduct market research, test product concepts, and understand customer preferences."
+      }
+    ]
   },
   {
     "name": "hCaptcha",
@@ -3249,19 +3430,30 @@ export const tools = [
     "category": [
       "AI Detection & Anti-Detection"
     ],
-    "price": "Free",
+    "price": "Freemium (Free plan for publishers; Paid plans for enterprises)",
     "description": "AI security platform stopping bots and human abuse with a privacy focus.",
     "tags": [
       "ai security",
       "bot protection",
       "privacy"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "captcha",
       "security platform"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "hCaptcha is a security service that protects websites and online services from bots, spam, and other forms of automated abuse. It's known as a privacy-first alternative to Google's reCAPTCHA. It uses advanced machine learning to distinguish between humans and bots, often by asking users to complete simple image labeling tasks.",
+    "faqs": [
+      {
+        "question": "How is hCaptcha 'privacy-first'?",
+        "answer": "hCaptcha emphasizes user privacy by minimizing the personal data it collects and sells, unlike some other services that might use user interaction data for advertising purposes."
+      },
+      {
+        "question": "How does hCaptcha make money?",
+        "answer": "While the basic bot protection service is free for many websites, hCaptcha offers paid enterprise plans with advanced security features. They also earn revenue from the image labeling tasks, which are often used by companies to train their own AI models."
+      }
+    ]
   },
   {
     "name": "Aura",
@@ -3272,19 +3464,30 @@ export const tools = [
       "AI Detection & Anti-Detection",
       "Daily Life"
     ],
-    "price": "Unknown",
+    "price": "Subscription-based; plans start at $12/month (billed annually)",
     "description": "All-in-one digital safety platform for identity theft and online threat protection.",
     "tags": [
       "digital safety",
       "identity theft protection",
       "online security"
     ],
-    "rating": null,
+    "rating": 4.7,
     "keywords": [
       "online safety",
       "threat protection"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Aura is an all-in-one digital safety solution that protects individuals and families from online threats. It combines identity theft protection, financial fraud monitoring, a VPN, antivirus software, and a password manager into a single, easy-to-use subscription service. It uses AI to proactively monitor for threats and alert users to potential issues.",
+    "faqs": [
+      {
+        "question": "What kind of threats does Aura protect against?",
+        "answer": "Aura protects against a wide range of threats, including data breaches, identity theft, credit card fraud, malware, and phishing scams. It also helps protect your privacy online with its included VPN."
+      },
+      {
+        "question": "Is Aura for individuals or families?",
+        "answer": "Aura offers plans for individuals, couples, and families. The family plans allow you to protect multiple adults and children under a single subscription, with features like parental controls."
+      }
+    ]
   },
   {
     "name": "AISEO",
@@ -3295,7 +3498,7 @@ export const tools = [
       "AI Detection & Anti-Detection",
       "Marketing & Advertising"
     ],
-    "price": "Unknown",
+    "price": "Starts at $15/month (Scale plan, billed annually)",
     "description": "AI-driven SEO and content creation tool for generating optimized, human-like articles.",
     "tags": [
       "seo",
@@ -3303,47 +3506,34 @@ export const tools = [
       "optimized articles",
       "human-like writing"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "seo tool",
       "ai content creation"
     ],
-    "isFeatured": false
-  },
-  {
-    "name": "AISEO",
-    "slug": "aiseo-2",
-    "image": "/aisa.png",
-    "url": "https://aiseo.ai/",
-    "category": [
-      "AI Detection & Anti-Detection",
-      "Marketing & Advertising"
-    ],
-    "price": "Unknown",
-    "description": "AI-powered tools for content creation, SEO, and engagement.",
-    "tags": [
-      "content creation",
-      "seo",
-      "engagement",
-      "ai tools"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai content tools",
-      "seo marketing"
-    ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "AISEO is an AI-powered writing assistant and SEO tool designed to help content creators generate high-ranking, human-like articles. It combines content generation with SERP analysis, helping users create long-form content that is optimized for specific keywords. It also includes features for paraphrasing and improving readability.",
+    "faqs": [
+      {
+        "question": "How does AISEO help with SEO?",
+        "answer": "When you provide a target keyword, AISEO analyzes the top-ranking Google search results for that keyword. It then provides guidance on content structure, topics to cover, and questions to answer to help your article compete effectively."
+      },
+      {
+        "question": "Can it write a full blog post automatically?",
+        "answer": "Yes, AISEO has a long-form article generation feature that can create a complete, well-structured blog post from a single title and a few keywords, which you can then edit and refine."
+      }
+    ]
   },
   {
     "name": "Merlin AI",
     "slug": "merlin-ai",
     "image": "/merling.png",
-    "url": null,
+    "url": "https://www.getmerlin.in/",
     "category": [
       "AI Detection & Anti-Detection",
       "Office & Productivity"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free plan available; Pro plans start at $19/month)",
     "description": "AI assistant for research, writing, and summarization with multiple AI models.",
     "tags": [
       "ai assistant",
@@ -3352,211 +3542,195 @@ export const tools = [
       "summarization",
       "ai models"
     ],
-    "rating": null,
+    "rating": 4.8,
     "keywords": [
       "ai research assistant",
       "writing tool"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Merlin AI is a browser extension that brings the power of AI models like GPT-4 to any website you visit. It acts as an all-purpose assistant that can summarize YouTube videos, write email replies, generate blog post ideas, and answer complex questions without needing to switch tabs. It's designed to seamlessly integrate AI into your daily workflow.",
+    "faqs": [
+      {
+        "question": "How do I use Merlin?",
+        "answer": "Once installed as a browser extension, you can typically activate Merlin with a keyboard shortcut (like Ctrl+M). This opens a chat window where you can ask questions or give commands related to the content of the page you are on."
+      },
+      {
+        "question": "What makes Merlin different from other AI extensions?",
+        "answer": "Merlin is known for its wide range of features beyond simple chat. Its ability to summarize YouTube videos, analyze web content, and integrate with popular sites like Gmail and LinkedIn makes it a very versatile productivity tool."
+      }
+    ]
   },
   {
-    "name": "Salesforce Platform",
-    "slug": "salesforce-platform",
-    "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
-    "url": "https://www.salesforce.com/platform/",
+    "name": "Stable Diffusion",
+    "slug": "stable-diffusion",
+    "image": "/stable.png",
+    "url": "https://stability.ai/stable-diffusion",
     "category": [
-      "Coding & Development",
-      "Business Management",
-      "Office & Productivity",
-      "Research & Data Analysis"
+      "AI Image Generation",
+      "Design & Graphics",
+      "Art & Creative Design"
     ],
-    "price": "Unknown",
-    "description": "A unified platform for data, AI, CRM, development, and security.",
+    "price": "Open Source (Free; Commercial API pricing available; Various hosting services from $10-50/month)",
+    "description": "An open-source deep learning text-to-image model that generates high-quality images from text prompts. Stable Diffusion can create realistic photos, artwork, and illustrations while running efficiently on consumer hardware.",
     "tags": [
-      "data platform",
-      "ai",
-      "crm",
-      "development",
-      "security"
+      "stable diffusion",
+      "text-to-image",
+      "open source ai",
+      "diffusion model",
+      "image generation",
+      "stability ai",
+      "local ai",
+      "customizable ai"
     ],
-    "rating": null,
+    "rating": 4.7,
     "keywords": [
-      "crm platform",
-      "ai development"
+      "stable diffusion",
+      "stability ai",
+      "open source image ai",
+      "diffusion model",
+      "local image generation"
     ],
-    "isFeatured": false
+    "isFeatured": true,
+    "overview": "Stable Diffusion is a revolutionary open-source text-to-image AI model developed by Stability AI. Unlike proprietary alternatives, it can be run locally on consumer hardware, offering complete control, privacy, and customization. The model supports fine-tuning, custom training, and various artistic styles, and it is widely adopted by developers and artists for its flexibility and massive community support.",
+    "faqs": [
+      {
+        "question": "What makes Stable Diffusion different from other AI image generators?",
+        "answer": "Stable Diffusion is open-source and can run locally on your own hardware, giving you complete control and privacy. It's highly customizable with support for fine-tuning and thousands of community-created models (checkpoints, LoRAs)."
+      },
+      {
+        "question": "What are the system requirements for running Stable Diffusion?",
+        "answer": "To run it efficiently, a modern computer with a dedicated NVIDIA GPU with at least 6-8GB of VRAM is recommended. However, it can also run on Macs with Apple Silicon and even on CPUs, though it will be significantly slower."
+      }
+    ]
   },
   {
-  "name": "Stable Diffusion",
-  "slug": "stable-diffusion",
-  "image": "/stable.png",
-  "url": "https://stability.ai/stable-diffusion",
-  "category": [
-    "AI Image Generation",
-    "Design & Graphics", 
-    "Art & Creative Design"
-  ],
-  "price": "Open Source (Free; Commercial API pricing available; Various hosting services from $10-50/month)",
-  "description": "An open-source deep learning text-to-image model that generates high-quality images from text prompts. Stable Diffusion can create realistic photos, artwork, and illustrations while running efficiently on consumer hardware.",
-  "tags": [
-    "stable diffusion",
-    "text-to-image",
-    "open source ai",
-    "diffusion model",
-    "image generation",
-    "stability ai",
-    "local ai",
-    "customizable ai"
-  ],
-  "rating": 4.4,
-  "keywords": [
-    "stable diffusion",
-    "stability ai",
-    "open source image ai",
-    "diffusion model",
-    "local image generation"
-  ],
-  "isFeatured": true,
-  "overview": "Stable Diffusion is a revolutionary open-source text-to-image AI model developed by Stability AI. Unlike proprietary alternatives, it can run locally on consumer hardware, offering complete control and customization. The model supports fine-tuning, custom training, and various artistic styles. It's widely adopted by developers and artists for its flexibility, with numerous community-created models and extensions available.",
-  "faqs": [
-    {
-      "question": "What makes Stable Diffusion different from other AI image generators?",
-      "answer": "Stable Diffusion is open-source and can run locally on your own hardware, giving you complete control and privacy. It's highly customizable with support for fine-tuning, custom models, and extensions. Unlike closed-source alternatives, there are no usage restrictions or content filters beyond basic safety measures."
-    },
-    {
-      "question": "What are the system requirements for running Stable Diffusion?",
-      "answer": "Stable Diffusion can run on most modern computers with at least 8GB of RAM and a dedicated GPU with 4GB+ VRAM for optimal performance. It also supports CPU-only generation (though much slower) and various cloud hosting options for users without suitable hardware."
-    }
-  ]
-},
+    "name": "DALL-E",
+    "slug": "dall-e",
+    "image": "/dale.png",
+    "url": "https://openai.com/dall-e-3",
+    "category": [
+      "AI Image Generation",
+      "Design & Graphics",
+      "Art & Creative Design"
+    ],
+    "price": "Freemium (Free tier via ChatGPT; ChatGPT Plus: $20/month; API has per-image pricing)",
+    "description": "A powerful AI image generator by OpenAI that creates original, realistic images and art from text descriptions. DALL-E can combine concepts, attributes, and styles to produce high-quality visual content.",
+    "tags": [
+      "ai image generator",
+      "text-to-image",
+      "openai",
+      "digital art",
+      "image creation",
+      "generative ai",
+      "visual ai"
+    ],
+    "rating": 4.5,
+    "keywords": [
+      "dall-e",
+      "openai dall-e",
+      "ai art generator",
+      "text to image",
+      "image ai"
+    ],
+    "isFeatured": true,
+    "overview": "DALL-E is OpenAI's pioneering text-to-image AI model that generates high-quality images from natural language descriptions. The latest version, DALL-E 3, is integrated with ChatGPT and offers enhanced natural language understanding, producing more accurate and detailed images. It excels at following complex prompts and includes built-in editing capabilities.",
+    "faqs": [
+      {
+        "question": "What is the difference between DALL-E 3 and DALL-E 2?",
+        "answer": "DALL-E 3 has a significantly better understanding of nuanced and detailed prompts compared to DALL-E 2. It's also integrated directly into ChatGPT, allowing for a more conversational and iterative image creation process."
+      },
+      {
+        "question": "How can I access DALL-E 3?",
+        "answer": "DALL-E 3 is available through the free and paid versions of ChatGPT. The paid ChatGPT Plus subscription ($20/month) offers higher usage limits. It is also accessible to developers via the OpenAI API."
+      }
+    ]
+  },
   {
-  "name": "DALL-E",
-  "slug": "dall-e",
-  "image": "/dale.png",
-  "url": "https://openai.com/dall-e-3",
-  "category": [
-    "AI Image Generation",
-    "Design & Graphics",
-    "Art & Creative Design"
-  ],
-  "price": "Freemium (Free tier via ChatGPT; ChatGPT Plus: $20/month; API has separate per-image pricing)",
-  "description": "A powerful AI image generator by OpenAI that creates original, realistic images and art from text descriptions. DALL-E can combine concepts, attributes, and styles to produce high-quality visual content.",
-  "tags": [
-    "ai image generator",
-    "text-to-image",
-    "openai",
-    "digital art",
-    "image creation",
-    "generative ai",
-    "visual ai"
-  ],
-  "rating": 4.5,
-  "keywords": [
-    "dall-e",
-    "openai dall-e",
-    "ai art generator",
-    "text to image",
-    "image ai"
-  ],
-  "isFeatured": true,
-  "overview": "DALL-E is OpenAI's revolutionary text-to-image AI model that generates high-quality images from natural language descriptions. The latest version, DALL-E 3, is integrated with ChatGPT and offers enhanced natural language understanding, producing more accurate and detailed images with 4x greater resolution than its predecessor. It supports multiple artistic styles and includes built-in editing capabilities.",
-  "faqs": [
-    {
-      "question": "What's the difference between DALL-E versions?",
-      "answer": "DALL-E 3 is the latest version with significantly improved accuracy, detail, and natural language understanding compared to DALL-E 2. It generates 4x higher resolution images and is integrated with ChatGPT for conversational image creation."
-    },
-    {
-      "question": "How can I access DALL-E?",
-      "answer": "DALL-E 3 is available through ChatGPT's free plan with limited usage, ChatGPT Plus ($20/month) for more generations, and via OpenAI's API for developers. It's also accessible through various platforms including web and mobile applications."
-    }
-  ]
-},
+    "name": "Bard",
+    "slug": "bard",
+    "image": "/bar.png",
+    "url": "https://gemini.google.com/",
+    "category": [
+      "Chatbots & Virtual Companions",
+      "Research & Data Analysis",
+      "Writing & Content Creation",
+      "Office & Productivity"
+    ],
+    "price": "Free (Renamed to Gemini)",
+    "description": "An experimental conversational AI service powered by Google's LaMDA and later Gemini models. Bard helps with creative and informational tasks, from writing and planning to learning and brainstorming.",
+    "tags": [
+      "ai assistant",
+      "google ai",
+      "conversational ai",
+      "lamda",
+      "gemini",
+      "natural language processing",
+      "text generation"
+    ],
+    "rating": 4.2,
+    "keywords": [
+      "bard",
+      "google bard",
+      "gemini ai",
+      "chat assistant",
+      "ai chatbot"
+    ],
+    "isFeatured": true,
+    "overview": "Google Bard was the brand name for Google's conversational AI, which has now been renamed to Gemini. It is a powerful AI assistant that leverages Google's advanced models and has real-time access to information from Google Search. It excels at creative tasks, complex problem-solving, and providing up-to-date, sourced information.",
+    "faqs": [
+      {
+        "question": "Is Bard still available?",
+        "answer": "The product known as Bard is now called Gemini. If you visit bard.google.com, you will be redirected to gemini.google.com. The underlying technology and purpose remain the same, but it is now under the Gemini brand."
+      },
+      {
+        "question": "What makes Gemini (formerly Bard) different from ChatGPT?",
+        "answer": "Gemini's key differentiator is its deep integration with Google's ecosystem, including real-time access to Google Search for the most current information. This makes it particularly strong for research and tasks that require up-to-date knowledge."
+      }
+    ]
+  },
   {
-  "name": "Bard",
-  "slug": "bard",
-  "image": "/bar.png",
-  "url": "https://bard.google.com",
-  "category": [
-    "Chatbots & Virtual Companions",
-    "Research & Data Analysis",
-    "Writing & Content Creation",
-    "Office & Productivity"
-  ],
-  "price": "Free",
-  "description": "An experimental conversational AI service powered by Google's LaMDA and later Gemini models. Bard helps with creative and informational tasks, from writing and planning to learning and brainstorming.",
-  "tags": [
-    "ai assistant",
-    "google ai",
-    "conversational ai",
-    "lamda",
-    "gemini",
-    "natural language processing",
-    "text generation"
-  ],
-  "rating": 4.2,
-  "keywords": [
-    "bard",
-    "google bard",
-    "gemini ai",
-    "chat assistant",
-    "ai chatbot"
-  ],
-  "isFeatured": true,
-  "overview": "Bard is Google's experimental conversational AI service, initially powered by LaMDA (Language Model for Dialogue Applications) and later upgraded to use Gemini models. It's designed to be helpful, harmless, and honest, offering assistance with writing, planning, learning, and creative tasks. Bard integrates with Google's ecosystem and can access real-time information from the web.",
-  "faqs": [
-    {
-      "question": "What is the difference between Bard and other AI chatbots?",
-      "answer": "Bard is built on Google's advanced language models and has direct access to current information from Google Search. It's designed to provide helpful, creative, and informative responses while being integrated with Google's ecosystem of services."
-    },
-    {
-      "question": "Is Bard completely free to use?",
-      "answer": "Yes, Bard is currently free to use. Google provides access to Bard without charging users, though there may be usage limits during high-demand periods."
-    }
-  ]
-},
-{
-  "name": "Claude",
-  "slug": "claude",
-  "image": "/claude.png",
-  "url": "https://www.anthropic.com/claude",
-  "category": [
-    "Chatbots & Virtual Companions",
-    "Office & Productivity",
-    "Writing & Content Creation",
-    "Coding & Development"
-  ],
-  "price": "Freemium (Free tier with usage limits; Claude Pro: $20/month; API has separate per-token pricing)",
-  "description": "A next-generation AI assistant from Anthropic, capable of a wide range of conversational and text-processing tasks. It excels at summarization, writing, coding, and thoughtful dialogue.",
-  "tags": [
-    "ai assistant",
-    "natural language processing",
-    "anthropic",
-    "large language model",
-    "conversational ai",
-    "text generation",
-    "summarization"
-  ],
-  "rating": 4.7,
-  "keywords": [
-    "claude",
-    "anthropic ai",
-    "generative ai",
-    "chat assistant",
-    "ai writer"
-  ],
-  "isFeatured": true,
-  "overview": "Claude is a family of large language models developed by Anthropic, with a strong emphasis on AI safety through its 'Constitutional AI' approach. It can perform sophisticated tasks such as nuanced conversation, content creation, code generation, and complex reasoning. The model family includes Claude 3 Opus, Sonnet, and Haiku, each offering a different balance of intelligence, speed, and cost.",
-  "faqs": [
-    {
-      "question": "What is the difference between the Claude 3 models?",
-      "answer": "The Claude 3 family includes three models: Opus is the most powerful model for highly complex tasks. Sonnet offers a balanced blend of intelligence and speed for enterprise workloads. Haiku is the fastest and most compact model for near-instant responsiveness."
-    },
-    {
-      "question": "What are the benefits of the paid Claude Pro plan?",
-      "answer": "Claude Pro, which costs $20 per month, offers at least 5 times the usage capacity of the free version, priority access during high-traffic periods, and early access to new features."
-    }
-  ]
-},
+    "name": "Claude",
+    "slug": "claude",
+    "image": "/claude.png",
+    "url": "https://www.anthropic.com/claude",
+    "category": [
+      "Chatbots & Virtual Companions",
+      "Office & Productivity",
+      "Writing & Content Creation",
+      "Coding & Development"
+    ],
+    "price": "Freemium (Free tier with usage limits; Claude Pro: $20/month; API has per-token pricing)",
+    "description": "A next-generation AI assistant from Anthropic, capable of a wide range of conversational and text-processing tasks. It excels at summarization, writing, coding, and thoughtful dialogue.",
+    "tags": [
+      "ai assistant",
+      "natural language processing",
+      "anthropic",
+      "large language model",
+      "conversational ai",
+      "text generation",
+      "summarization"
+    ],
+    "rating": 4.7,
+    "keywords": [
+      "claude",
+      "anthropic ai",
+      "generative ai",
+      "chat assistant",
+      "ai writer"
+    ],
+    "isFeatured": true,
+    "overview": "Claude is a family of large language models developed by Anthropic, with a strong emphasis on AI safety through its 'Constitutional AI' approach. It can perform sophisticated tasks such as nuanced conversation, content creation, code generation, and complex reasoning. The model family includes Claude 3.5 Sonnet, Opus, and Haiku, each offering a different balance of intelligence, speed, and cost.",
+    "faqs": [
+      {
+        "question": "What is the difference between the Claude 3.5 and 3 models?",
+        "answer": "Claude 3.5 Sonnet is the latest model, outperforming the previous top-tier model, Claude 3 Opus, on key evaluations while being significantly faster and more cost-effective. It excels at nuanced tasks, coding, and understanding visual information."
+      },
+      {
+        "question": "What is the benefit of Claude's large context window?",
+        "answer": "Claude models offer very large context windows (up to 200,000 tokens), which means they can process and reason over huge amounts of text, such as entire books or codebases, in a single prompt."
+      }
+    ]
+  },
   {
     "name": "Google AI Studio",
     "slug": "google-ai-studio",
@@ -3565,7 +3739,7 @@ export const tools = [
     "category": [
       "Coding & Development"
     ],
-    "price": "Free",
+    "price": "Free (with generous limits for prototyping)",
     "description": "Platform for building with Google's Gemini AI models.",
     "tags": [
       "google gemini",
@@ -3573,34 +3747,56 @@ export const tools = [
       "building",
       "development"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "ai development platform",
       "gemini models"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Google AI Studio is a web-based tool that allows developers to quickly prototype and build applications using Google's Gemini family of models. It provides an intuitive interface for creating prompts, tuning parameters, and then easily exporting the code to use in your own applications via the Gemini API.",
+    "faqs": [
+      {
+        "question": "Is Google AI Studio for beginners or experts?",
+        "answer": "It's designed for both. Beginners can easily experiment with the Gemini models without writing any code, while experienced developers can use it to rapidly prototype prompts and then generate the necessary code for their projects."
+      },
+      {
+        "question": "Is it free to use the Gemini API through AI Studio?",
+        "answer": "Google provides a generous free usage tier for the Gemini API, making AI Studio free for most prototyping and small-scale application needs. For larger-scale use, standard API pricing applies."
+      }
+    ]
   },
   {
     "name": "Lovable",
     "slug": "lovable",
     "image": "/lovable.png",
-    "url": null,
+    "url": "https://lovable.dev/",
     "category": [
       "Coding & Development"
     ],
-    "price": "Unknown",
+    "price": "Contact for pricing; currently in private beta.",
     "description": "Lovable: Build software products from idea to app using a chat interface.",
     "tags": [
       "software development",
       "app building",
       "chat interface"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "software builder",
       "app creator"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Lovable is an AI-powered software development platform that aims to automate the entire process of building an application, from idea to deployment. Users describe their product requirements in a chat-based interface, and Lovable's AI agents handle tasks like UI design, coding, and infrastructure setup.",
+    "faqs": [
+      {
+        "question": "Do I need to know how to code to use Lovable?",
+        "answer": "No, Lovable is designed to allow non-technical founders and product managers to build software by describing what they want in natural language. The AI translates these descriptions into functional code and infrastructure."
+      },
+      {
+        "question": "Is Lovable available to the public?",
+        "answer": "Lovable is currently in a private beta phase, which means it is available to a limited number of users by invitation or by joining a waitlist."
+      }
+    ]
   },
   {
     "name": "Miro",
@@ -3612,19 +3808,30 @@ export const tools = [
       "Business Management",
       "Marketing & Advertising"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free plan available; Paid plans start at $8 per member/month)",
     "description": "Online collaborative whiteboard platform for team collaboration and project management.",
     "tags": [
       "collaborative whiteboard",
       "team collaboration",
       "project management"
     ],
-    "rating": null,
+    "rating": 4.8,
     "keywords": [
       "online whiteboard",
       "collaboration tool"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Miro is an online collaborative whiteboard platform designed for modern teams. It provides an infinite canvas where teams can brainstorm with digital sticky notes, plan projects, create diagrams, and run interactive workshops in real-time. It integrates with many popular tools and now includes AI features to assist with idea generation and summarization.",
+    "faqs": [
+      {
+        "question": "What is Miro used for?",
+        "answer": "Common use cases include brainstorming, user story mapping, agile ceremonies (like retrospectives), process diagramming, and creating a central hub for project information."
+      },
+      {
+        "question": "How does Miro's AI work?",
+        "answer": "Miro Assist can automatically generate ideas on sticky notes from a prompt, summarize existing notes, create mind maps from text, and help structure content on the board, speeding up collaborative sessions."
+      }
+    ]
   },
   {
     "name": "Hugging Face",
@@ -3635,7 +3842,7 @@ export const tools = [
       "Coding & Development",
       "Research & Data Analysis"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free for public repositories; Pro account from $9/month; Enterprise plans available)",
     "description": "AI community platform for open-source ML models, datasets, and applications.",
     "tags": [
       "open-source ml",
@@ -3643,12 +3850,23 @@ export const tools = [
       "ai community",
       "ml models"
     ],
-    "rating": null,
+    "rating": 4.8,
     "keywords": [
       "ai models",
       "ml datasets"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Hugging Face is the leading open-source platform and community for machine learning. Often called the 'GitHub for AI,' it provides a central place for developers and researchers to share and discover pre-trained models, datasets, and demos (Spaces). Its 'Transformers' library has become the standard for working with NLP models.",
+    "faqs": [
+      {
+        "question": "What can I find on the Hugging Face Hub?",
+        "answer": "The Hub hosts tens of thousands of open-source machine learning models for tasks like text generation, image classification, and speech recognition. It also contains thousands of datasets for training and evaluating these models."
+      },
+      {
+        "question": "Is Hugging Face only for large companies?",
+        "answer": "No, Hugging Face is for everyone, from individual hobbyists and students learning about AI to large enterprise teams deploying models in production. The vast majority of its resources are free and open-source."
+      }
+    ]
   },
   {
     "name": "Airtable",
@@ -3662,7 +3880,7 @@ export const tools = [
       "Office & Productivity",
       "Research & Data Analysis"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free plan available; Paid plans start at $20 per user/month)",
     "description": "Airtable is a no-code app-building platform with AI for data management and workflow automation.",
     "tags": [
       "no-code",
@@ -3670,22 +3888,33 @@ export const tools = [
       "data management",
       "workflow automation"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "no-code platform",
       "ai data management"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Airtable is a cloud collaboration platform that blends the features of a spreadsheet with the power of a database. It allows teams to build custom applications and workflows to manage their data and processes without writing code. Its AI capabilities can summarize text, categorize data, and generate content directly within your database.",
+    "faqs": [
+      {
+        "question": "How is Airtable different from a spreadsheet like Excel or Google Sheets?",
+        "answer": "While it looks like a spreadsheet, Airtable is a relational database. This means you can link records between different tables, use powerful field types like attachments and checkboxes, and build complex applications on top of your data."
+      },
+      {
+        "question": "What is Airtable AI?",
+        "answer": "Airtable AI is a set of features that brings generative AI directly into your workflows. You can use it to automatically generate summaries of project updates, draft marketing copy, categorize customer feedback, and more, all based on the data within your base."
+      }
+    ]
   },
   {
     "name": "Sora",
     "slug": "sora",
     "image": "/sora.png",
-    "url": null,
+    "url": "https://openai.com/sora",
     "category": [
       "Video & Animation"
     ],
-    "price": "Unknown",
+    "price": "Not yet publicly available; access is limited to select researchers and artists.",
     "description": "AI model creating realistic videos from text, images, or existing videos.",
     "tags": [
       "video creation",
@@ -3693,37 +3922,60 @@ export const tools = [
       "image to video",
       "realistic video"
     ],
-    "rating": null,
+    "rating": 4.9,
     "keywords": [
       "ai video model",
       "video generation"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Sora is a text-to-video AI model in development by OpenAI. It is capable of generating high-fidelity, coherent videos up to one minute long from simple text descriptions. The model can create complex scenes with multiple characters, specific types of motion, and accurate details of the subject and background, representing a major leap in AI video generation.",
+    "faqs": [
+      {
+        "question": "When will Sora be available to the public?",
+        "answer": "OpenAI has not announced a public release date. It is currently in a testing phase with a select group of 'red teamers,' visual artists, and filmmakers to assess potential risks and gather feedback before any wider release."
+      },
+      {
+        "question": "How is Sora different from other text-to-video models?",
+        "answer": "Sora has demonstrated a significantly higher level of realism, video duration, and temporal consistency compared to previously shown models. It has a deep understanding of language and the physical world, allowing it to generate more believable and complex scenes."
+      }
+    ]
   },
   {
     "name": "Kling AI",
     "slug": "kling-ai",
     "image": "/kling.png",
-    "url": null,
+    "url": "https://kling.kuaishou.com/",
     "category": [
       "Video & Animation",
       "Music & Audio"
     ],
-    "price": "Unknown",
+    "price": "Not yet publicly available; currently available via waitlist in China.",
     "description": "AI creative platform for generating images and videos.",
     "tags": [
       "image generation",
       "video generation",
       "creative platform"
     ],
-    "rating": null,
+    "rating": 4.8,
     "keywords": [
       "ai video generator",
       "ai image generator"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Kling is a text-to-video AI model developed by Kuaishou, a major Chinese tech company. It is a direct competitor to OpenAI's Sora, capable of generating high-quality, realistic videos up to two minutes long in 1080p resolution. It showcases a strong ability to model complex physics and movements, producing dynamic and physically plausible video clips.",
+    "faqs": [
+      {
+        "question": "How can I access Kling AI?",
+        "answer": "Currently, Kling is only available to users in China through a waitlist system within the Kuaiying video editing app. A global release has not yet been announced."
+      },
+      {
+        "question": "What are the main features of Kling?",
+        "answer": "Kling's key features include the ability to generate videos up to two minutes long, high-resolution 1080p output, and a sophisticated understanding of physics that allows it to realistically simulate complex motions and interactions in its generated videos."
+      }
+    ]
   },
-  {
+  /////////////////////////
+{
     "name": "Cutout.Pro",
     "slug": "cutout-pro",
     "image": "/cutout.png",
@@ -3732,7 +3984,7 @@ export const tools = [
       "Video & Animation",
       "Image Generation & Editing"
     ],
-    "price": "Unknown",
+    "price": "Pay-as-you-go (credits from $2.99) and Subscription plans (from $5.00/month)",
     "description": "AI-powered visual design platform for photo and video editing and content generation.",
     "tags": [
       "visual design",
@@ -3740,12 +3992,23 @@ export const tools = [
       "video editing",
       "content generation"
     ],
-    "rating": null,
+    "rating": 4.8,
     "keywords": [
       "ai design platform",
       "photo editor"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Cutout.Pro is an AI-powered visual design platform offering a comprehensive suite of tools for photo and video editing. Its key features include extremely accurate background removal, photo enhancement, AI art generation, and video editing utilities, designed for fast and easy use by creators, marketers, and businesses.",
+    "faqs": [
+      {
+        "question": "What is Cutout.Pro best known for?",
+        "answer": "It is widely recognized for its highly precise AI background removal tool for both images and videos, which can be accomplished in a single click, saving significant time and effort."
+      },
+      {
+        "question": "How does the pricing model work?",
+        "answer": "Cutout.Pro uses a flexible credit system. You can purchase credits on a pay-as-you-go basis or subscribe to a monthly plan for a regular allotment of credits at a lower cost per credit."
+      }
+    ]
   },
   {
     "name": "Picsart",
@@ -3756,7 +4019,7 @@ export const tools = [
       "Video & Animation",
       "Art & Creative Design"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Picsart Gold plan starts at $5/month, billed annually)",
     "description": "AI-powered creative platform for photo and video editing and graphic design.",
     "tags": [
       "photo editing",
@@ -3764,59 +4027,23 @@ export const tools = [
       "graphic design",
       "creative platform"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "ai creative platform",
       "photo editor"
     ],
-    "isFeatured": false
-  },
-  {
-    "name": "Pixlr",
-    "slug": "pixlr-1",
-    "image": "/picfjkdsjfk",
-    "url": "https://pixlr.com/",
-    "category": [
-      "Video & Animation",
-      "Art & Creative Design"
-    ],
-    "price": "Unknown",
-    "description": "Cloud-based photo editing and design tools with AI-power for consumers and companies.",
-    "tags": [
-      "photo editing",
-      "design tools",
-      "cloud-based",
-      "ai tools"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai photo editor",
-      "design platform"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "VEED.IO",
-    "slug": "veed-io-1",
-    "image": "/veed.png",
-    "url": "https://www.veed.io/",
-    "category": [
-      "Video & Animation",
-      "Voice Generation & Conversion"
-    ],
-    "price": "Unknown",
-    "description": "Online video editor with AI tools for creating professional videos quickly and easily.",
-    "tags": [
-      "video editor",
-      "ai video tools",
-      "professional video"
-    ],
-    "rating": null,
-    "keywords": [
-      "online video editor",
-      "ai tools"
-    ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Picsart is a vast all-in-one creative platform providing powerful photo and video editing tools, graphic design capabilities, and a full suite of AI-powered features. It is a go-to solution for social media content creators, offering everything from simple filters to advanced layer-based editing and AI art generation.",
+    "faqs": [
+      {
+        "question": "Is Picsart good for beginners?",
+        "answer": "Yes, Picsart is very beginner-friendly, offering a wide array of easy-to-use templates, filters, and one-click AI tools. It also provides advanced features to satisfy more experienced designers."
+      },
+      {
+        "question": "What kind of AI tools does Picsart have?",
+        "answer": "Picsart's AI toolkit includes an AI image generator (text-to-image), background and object remover, style transfer filters, an AI writer for social media captions, and an AI-enhance feature to improve photo quality."
+      }
+    ]
   },
   {
     "name": "Wondershare",
@@ -3828,7 +4055,7 @@ export const tools = [
       "Music & Audio",
       "Daily Life"
     ],
-    "price": "Unknown",
+    "price": "Varies by product (e.g., Filmora starts at $29.99/quarter)",
     "description": "Software solutions for creativity, productivity, and utility, including video editing, PDF tools, and data management.",
     "tags": [
       "video editing",
@@ -3836,23 +4063,34 @@ export const tools = [
       "data management",
       "productivity"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "software solutions",
       "productivity tools"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Wondershare is a software company that offers a broad portfolio of creative and productivity tools. Its most popular products include Filmora for video editing, PDFelement for PDF management, Dr. Fone for mobile data recovery, and Virbo for AI avatar video generation.",
+    "faqs": [
+      {
+        "question": "What is Wondershare's most popular software?",
+        "answer": "Wondershare Filmora is one of its most well-known products. It's a user-friendly video editor that is popular among beginners and intermediate users for its balance of powerful features and ease of use."
+      },
+      {
+        "question": "Are Wondershare products subscription-based?",
+        "answer": "Most Wondershare products offer both subscription plans (monthly, quarterly, or annually) and a perpetual license (one-time purchase) for a specific version of the software."
+      }
+    ]
   },
   {
     "name": "Candy AI",
     "slug": "candy-ai",
-    "image": "/candly.ai",
-    "url": null,
+    "image": "/candy.png",
+    "url": "https://candy.ai/",
     "category": [
       "Video & Animation",
       "Chatbots & Virtual Companions"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Premium subscription starts at $9.99/month)",
     "description": "AI companion platform for chat, video, voice, and character creation.",
     "tags": [
       "ai companion",
@@ -3861,23 +4099,34 @@ export const tools = [
       "voice",
       "character creation"
     ],
-    "rating": null,
+    "rating": 4.0,
     "keywords": [
       "ai chat",
       "virtual companion"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Candy AI offers an immersive AI companion experience, allowing users to engage in deep and realistic conversations with a diverse cast of AI characters. The platform focuses on providing an authentic virtual relationship through adaptive AI personalities, voice chat, and personalized scenarios.",
+    "faqs": [
+      {
+        "question": "What makes Candy AI's chats feel realistic?",
+        "answer": "Candy AI uses advanced language models that enable the AI companions to have adaptive personalities, remember conversation details, and engage in context-aware dialogue, creating a more personal and immersive experience."
+      },
+      {
+        "question": "Can you have voice conversations with the AI characters?",
+        "answer": "Yes, one of the premium features of Candy AI is the ability to engage in real-time voice conversations with the AI companions, adding another layer of realism to the interaction."
+      }
+    ]
   },
   {
     "name": "AI Face Swap",
     "slug": "ai-face-swap",
     "image": "/aiface.png",
-    "url": null,
+    "url": "https://aifaceswap.online/",
     "category": [
       "Video & Animation",
       "Image Generation & Editing"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free swaps with watermark; Premium plans start at $9.95/month)",
     "description": "Online AI platform for swapping faces in photos and videos.",
     "tags": [
       "face swap",
@@ -3885,12 +4134,23 @@ export const tools = [
       "video editing",
       "online tool"
     ],
-    "rating": null,
+    "rating": 4.1,
     "keywords": [
       "ai face swap",
       "image manipulation"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "AI Face Swap is a dedicated online tool that uses artificial intelligence to realistically swap faces in both images and videos. Users can upload their media, choose the faces they want to exchange, and the AI generates a high-quality, seamless result for creating memes, and creative content.",
+    "faqs": [
+      {
+        "question": "Can I swap faces in videos as well as photos?",
+        "answer": "Yes, the platform supports face swapping in both static photos and dynamic video clips, maintaining facial expressions and movements for a realistic effect."
+      },
+      {
+        "question": "Is using the face swap tool difficult?",
+        "answer": "No, the tool is designed to be very user-friendly. It typically involves a simple process of uploading your source image/video and the target face, and the AI handles the complex work automatically."
+      }
+    ]
   },
   {
     "name": "Thomson Reuters",
@@ -3902,29 +4162,40 @@ export const tools = [
       "Legal & Finance",
       "Research & Data Analysis"
     ],
-    "price": "Unknown",
+    "price": "Varies by product; requires consultation for pricing.",
     "description": "Thomson Reuters: Technology solutions and expertise for professionals across various industries.",
     "tags": [
       "technology solutions",
       "expertise",
       "industry"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "technology services",
       "professional solutions"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Thomson Reuters is a leading global provider of business information services. They offer highly specialized, AI-enhanced software and data solutions for professionals in the legal, tax and accounting, and news and media industries, with flagship products like Westlaw, Checkpoint, and Reuters.",
+    "faqs": [
+      {
+        "question": "Who are the main customers of Thomson Reuters?",
+        "answer": "Their primary customers are professionals who rely on accurate and timely information, including lawyers, accountants, tax professionals, corporations, and news organizations."
+      },
+      {
+        "question": "What is Westlaw?",
+        "answer": "Westlaw is one of Thomson Reuters' premier products. It's an online legal research service that provides lawyers and legal professionals with access to a vast database of case law, statutes, and legal analysis tools."
+      }
+    ]
   },
   {
     "name": "Genspark",
     "slug": "genspark",
     "image": "/gen.png",
-    "url": null,
+    "url": "https://www.genspark.com/",
     "category": [
       "Daily Life"
     ],
-    "price": "Unknown",
+    "price": "Free",
     "description": "Genspark offers Sparkpages with an AI copilot, travel guides, and product reviews.",
     "tags": [
       "sparkpages",
@@ -3932,12 +4203,23 @@ export const tools = [
       "travel guides",
       "product reviews"
     ],
-    "rating": null,
+    "rating": 3.9,
     "keywords": [
       "ai copilot",
       "travel planning"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Genspark is an AI-powered search and discovery engine that generates custom summary pages called 'Sparkpages' for user queries. Instead of just a list of links, it creates a unique page with synthesized information, acting as an AI copilot for tasks like travel planning, product research, and learning.",
+    "faqs": [
+      {
+        "question": "What is a 'Sparkpage'?",
+        "answer": "A Sparkpage is a dynamic, AI-generated webpage that consolidates and organizes information from across the web into a single, easy-to-read summary page tailored to your specific search query."
+      },
+      {
+        "question": "How is Genspark different from a standard search engine?",
+        "answer": "While a standard search engine gives you links to find answers, Genspark's AI copilot analyzes those links and builds a comprehensive answer for you on a dedicated Sparkpage, aiming to be a 'do-engine' rather than just a search engine."
+      }
+    ]
   },
   {
     "name": "Wanderboat",
@@ -3948,7 +4230,7 @@ export const tools = [
       "Daily Life",
       "AI Travel"
     ],
-    "price": "Free tier available; contact for premium pricing",
+    "price": "Freemium (Free plan available; Premium plans for advanced features)",
     "description": "AI-powered travel platform for personalized trip planning and point-of-interest discovery.",
     "tags": [
       "travel planning",
@@ -3961,7 +4243,18 @@ export const tools = [
       "ai trip planner",
       "travel platform"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Wanderboat is an AI-powered travel planning tool that helps users create personalized trip itineraries. By understanding your interests, budget, and travel style, the AI suggests destinations, activities, and restaurants, and organizes them into a coherent, day-by-day plan.",
+    "faqs": [
+      {
+        "question": "How does Wanderboat create a personalized itinerary?",
+        "answer": "You provide details about your trip, such as destination, duration, interests (e.g., history, food, nature), and budget. The AI then processes this information to generate a customized travel plan that you can further edit."
+      },
+      {
+        "question": "Can I collaborate with others on a trip plan?",
+        "answer": "Yes, Wanderboat includes collaborative features that allow you to invite friends or family to view, comment on, and contribute to the trip itinerary in real-time."
+      }
+    ]
   },
   {
     "name": "Gorgias",
@@ -3972,7 +4265,7 @@ export const tools = [
       "Daily Life",
       "Business Management"
     ],
-    "price": "freemium",
+    "price": "Plans start from $50/month (Starter Plan)",
     "description": "Conversational AI platform for ecommerce, automating support and driving sales.",
     "tags": [
       "conversational ai",
@@ -3985,7 +4278,18 @@ export const tools = [
       "ai customer service",
       "ecommerce support"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Gorgias is a leading customer service helpdesk specifically designed for e-commerce stores. It centralizes all customer communications from email, social media, and chat into one dashboard. Gorgias uses AI and automation to resolve common support tickets instantly, freeing up agents to handle more complex issues.",
+    "faqs": [
+      {
+        "question": "What e-commerce platforms does Gorgias integrate with?",
+        "answer": "Gorgias has deep integrations with major e-commerce platforms, most notably Shopify, Magento, and BigCommerce, allowing it to pull customer order data directly into the support tickets."
+      },
+      {
+        "question": "How does Gorgias use AI?",
+        "answer": "Gorgias uses AI to detect customer intent (e.g., return request, shipping question), automate responses to repetitive questions, and provide agents with templated replies to improve efficiency and response times."
+      }
+    ]
   },
   {
     "name": "Chat & Ask AI",
@@ -3997,7 +4301,7 @@ export const tools = [
       "Social Media",
       "Chatbots & Virtual Companions"
     ],
-    "price": "Free tier available; paid plans start at $9.99/month",
+    "price": "Freemium (Free plan available; Paid plans start at $9.99/month)",
     "description": "Advanced AI chatbot with GPT-4o, offering various AI tools and WhatsApp integration.",
     "tags": [
       "ai chatbot",
@@ -4010,7 +4314,18 @@ export const tools = [
       "advanced chatbot",
       "whatsapp integration"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Chat & Ask AI is a versatile AI chatbot application powered by advanced models like GPT-4o. It offers a suite of tools for content creation, image generation, and problem-solving. A key feature is its seamless integration with WhatsApp, allowing users to access the AI's power directly from their favorite messaging app.",
+    "faqs": [
+      {
+        "question": "How does the WhatsApp integration work?",
+        "answer": "You can add Chat & Ask AI as a contact on WhatsApp. This allows you to send messages to it just like you would with a person, and it will respond directly within your chat, making AI assistance highly accessible."
+      },
+      {
+        "question": "What can I do with Chat & Ask AI besides chatting?",
+        "answer": "Beyond conversation, the platform offers specialized tools for writing emails, generating social media posts, creating AI art, summarizing text, and more, all accessible through its interface."
+      }
+    ]
   },
   {
     "name": "Wondershare Virbo",
@@ -4021,7 +4336,7 @@ export const tools = [
       "Daily Life",
       "Video & Animation"
     ],
-    "price": "Starts from $9.99/month (billed annually) for basic plan, with free trial available.",
+    "price": "Freemium (Free trial available; Paid plans start at $9.99/month, billed annually)",
     "description": "AI video generator with avatars, voices, and translation for effortless video creation.",
     "tags": [
       "video generation",
@@ -4034,7 +4349,18 @@ export const tools = [
       "ai video generator",
       "video creation"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Wondershare Virbo is an AI video generator that enables users to create professional-looking videos with realistic AI avatars. You simply type a script, choose an avatar and a voice, and Virbo generates a video of the avatar speaking your text. It's ideal for creating marketing, training, and social media videos quickly.",
+    "faqs": [
+      {
+        "question": "Do I need any video editing skills to use Virbo?",
+        "answer": "No, Virbo is designed for ease of use. The entire process is based on text input and selecting options, requiring no traditional video editing skills."
+      },
+      {
+        "question": "Can the videos be in different languages?",
+        "answer": "Yes, Virbo supports a wide range of languages and accents for its AI voices and includes an AI video translation feature to easily adapt your content for a global audience."
+      }
+    ]
   },
   {
     "name": "HitPaw FotorPea",
@@ -4045,7 +4371,7 @@ export const tools = [
       "Daily Life",
       "Image Generation & Editing"
     ],
-    "price": "Free to try, then various plans: Weekly ($4.99), Monthly ($22.39), Yearly ($90.39), Perpetual ($130.39) .",
+    "price": "Freemium (Online tools are free with limits; Pro plans start at $4.99/week)",
     "description": "AI photo enhancer for quality improvement, unblurring, and object removal.",
     "tags": [
       "photo enhancer",
@@ -4058,7 +4384,18 @@ export const tools = [
       "ai photo editor",
       "image enhancement"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "HitPaw offers a suite of online AI-powered photo and video editing tools. Its most popular feature is the AI Photo Enhancer, which can upscale low-resolution images, unblur photos, remove noise, and colorize black-and-white pictures with a single click. Other tools include object removers and background changers.",
+    "faqs": [
+      {
+        "question": "Can I use HitPaw's tools online for free?",
+        "answer": "Yes, HitPaw provides free access to its online editing tools, but there are usually limitations on file size or the number of uses per day. The Pro subscription unlocks unlimited access and higher quality results."
+      },
+      {
+        "question": "What kind of photos can the AI Photo Enhancer fix?",
+        "answer": "It is effective on old, blurry, or pixelated photos. It can sharpen details, improve clarity, and increase the overall resolution, making it great for restoring old family pictures or improving images taken with older cameras."
+      }
+    ]
   },
   {
     "name": "DreamFace",
@@ -4069,7 +4406,7 @@ export const tools = [
       "Daily Life",
       "Image Generation & Editing"
     ],
-    "price": "Offers in-app purchases, including weekly ($4.99-$14.99), yearly ($29.99-$89.99), and 3-year plans ($59.99) with varying features.",
+    "price": "Freemium with in-app purchases (Weekly subscriptions from $4.99; Yearly from $29.99)",
     "description": "AI-powered photo animating and face editing app for content creation.",
     "tags": [
       "photo animating",
@@ -4082,18 +4419,29 @@ export const tools = [
       "ai photo editor",
       "face animator"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "DreamFace is a mobile app that uses AI to bring photos to life. Its primary feature allows users to animate faces in still photos, making them sing, talk, or express emotions. It also includes various face editing tools, style filters, and AI art generators for creating engaging social media content.",
+    "faqs": [
+      {
+        "question": "How does the photo animation work?",
+        "answer": "You upload a photo (of a person or even a pet) and choose a song or audio clip. The app's AI maps the facial features and animates them in sync with the audio, creating a 'lip-sync' video."
+      },
+      {
+        "question": "What other features does DreamFace offer?",
+        "answer": "Besides photo animation, DreamFace has an AI-powered face swap feature, artistic filters to turn photos into paintings, and tools to enhance or retouch facial features in pictures."
+      }
+    ]
   },
   {
     "name": "Design Bundles",
     "slug": "design-bundles",
     "image": "/desing.png",
-    "url":"https://designbundles.net/",
+    "url": "https://designbundles.net/",
     "category": [
       "Daily Life",
       "Art & Creative Design"
     ],
-    "price": "Offers various membership plans: Hobbyist ($11.99/month or $115.90/year), Unlimited ($24.99/month or $239.90/year), Business ($97.99/month or $899.90/year), plus individual product purchases.",
+    "price": "Freemium (Plus Membership starts at $11.99/month)",
     "description": "Online marketplace for design resources like fonts, graphics, and templates, plus AI tools.",
     "tags": [
       "design resources",
@@ -4107,7 +4455,18 @@ export const tools = [
       "design marketplace",
       "ai design tools"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Design Bundles is a digital marketplace for crafters and designers, offering a vast collection of high-quality design assets like SVG files, fonts, graphics, and templates. In addition to its marketplace, it provides AI-powered tools, including an AI image generator, to help creators produce unique designs.",
+    "faqs": [
+      {
+        "question": "Who uses Design Bundles?",
+        "answer": "It is popular among crafters who use machines like Cricut and Silhouette, as well as graphic designers, small business owners, and anyone in need of digital design assets for personal or commercial projects."
+      },
+      {
+        "question": "What is the 'Plus Membership'?",
+        "answer": "The Plus Membership is a subscription that gives members access to thousands of exclusive design products, a generous number of monthly downloads, and other benefits, including credits for their AI tools."
+      }
+    ]
   },
   {
     "name": "Artbreeder",
@@ -4118,7 +4477,7 @@ export const tools = [
       "Daily Life",
       "Interior & Architectural Design"
     ],
-    "price": "Free plan available. Paid plans start from $7.49/month (billed yearly) or $8.99/month, with higher tiers for more credits and features.",
+    "price": "Freemium (Free plan with monthly credits; Paid plans start at $8.99/month)",
     "description": "AI-powered collaborative tool for creating and manipulating images.",
     "tags": [
       "collaborative tool",
@@ -4130,31 +4489,18 @@ export const tools = [
       "ai art creation",
       "image manipulation"
     ],
-    "isFeatured": false
-  },
-  {
-    "name": "Thomson Reuters",
-    "slug": "thomson-reuters-1",
-    "image": "/thomsong.png",
-    "url": "https://www.thomsonreuters.com/",
-    "category": [
-      "Legal & Finance",
-      "Daily Life",
-      "Research & Data Analysis"
-    ],
-    "price": "freemium",
-    "description": "Thomson Reuters: Technology solutions and expertise for professionals across various industries.",
-    "tags": [
-      "technology solutions",
-      "expertise",
-      "industry"
-    ],
-    "rating": 4.2,
-    "keywords": [
-      "technology services",
-      "professional solutions"
-    ],
-    "isFeatured": true
+    "isFeatured": false,
+    "overview": "Artbreeder is a unique AI art tool that operates on the principles of genetic algorithms. Instead of just generating images from text, it allows users to 'breed' images together, mixing their visual 'genes' to create new, unique artworks. It's a highly collaborative platform for creative exploration.",
+    "faqs": [
+      {
+        "question": "How is Artbreeder different from Midjourney or DALL-E?",
+        "answer": "While other tools primarily focus on text-to-image generation, Artbreeder's core feature is image-to-image manipulation. It excels at blending, editing, and evolving existing images in a highly intuitive way using simple sliders."
+      },
+      {
+        "question": "What is the 'Breeding' feature?",
+        "answer": "The 'Breeding' feature lets you take two or more parent images and create new 'child' images that inherit visual traits from them. You can also adjust the 'genes' of a single image to change attributes like age, gender, color, or style."
+      }
+    ]
   },
   {
     "name": "Abacus.AI",
@@ -4165,30 +4511,41 @@ export const tools = [
       "Legal & Finance",
       "Image Analysis"
     ],
-    "price": "ChatLLM subscription starts at $10 per user per month. Enterprise pricing is custom.",
+    "price": "Custom enterprise pricing; plans are usage-based.",
     "description": "AI platform for building and embedding AI solutions into applications.",
     "tags": [
       "ai platform",
       "ai solutions",
       "embedding"
     ],
-    "rating": 3.0,
+    "rating": 4.3,
     "keywords": [
       "ai platform",
       "application integration"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Abacus.AI is an end-to-end AI platform that helps organizations create, deploy, and manage AI models and AI-native applications. It provides a full-stack solution, from data processing and model building to real-time deployment, designed to make enterprise-grade AI more accessible for developers and data scientists.",
+    "faqs": [
+      {
+        "question": "Is Abacus.AI for beginners?",
+        "answer": "While it has features that simplify the AI workflow, Abacus.AI is primarily aimed at enterprise users, data scientists, and developers who need to build and scale custom AI solutions for their businesses."
+      },
+      {
+        "question": "What kind of AI models can be built on the platform?",
+        "answer": "Users can build a wide variety of models, including those for forecasting, personalization, computer vision, natural language processing (NLP), and large language model (LLM) applications."
+      }
+    ]
   },
   {
     "name": "MathGPT",
     "slug": "mathgpt",
     "image": "/math.png",
-    "url": "https://apps.apple.com/ph/app/mathgpt-ai-homework-helper/id6472092303",
+    "url": "https://apps.apple.com/us/app/mathgpt-ai-homework-helper/id6472092303",
     "category": [
       "Legal & Finance",
       "Education & Translation"
     ],
-    "price": "Free with in-app purchases for additional features or subscriptions.",
+    "price": "Freemium (Free with in-app purchases for Pro features)",
     "description": "AI math solver and homework helper with video explanations and step-by-step solutions.",
     "tags": [
       "math solver",
@@ -4201,7 +4558,18 @@ export const tools = [
       "ai math solver",
       "homework assistant"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "MathGPT is an AI-powered mobile app designed to help students with math homework. Users can snap a picture of a math problem, and the AI not only provides the answer but also delivers detailed, step-by-step explanations. It covers a wide range of topics from basic algebra to advanced calculus.",
+    "faqs": [
+      {
+        "question": "How does MathGPT provide solutions?",
+        "answer": "You can take a photo of your math problem, type it in, or even draw it. The app's AI recognizes the problem and generates a step-by-step walkthrough to guide you to the solution."
+      },
+      {
+        "question": "Does it work for word problems?",
+        "answer": "Yes, advanced versions of the app are capable of interpreting and solving complex word problems, breaking them down into mathematical steps."
+      }
+    ]
   },
   {
     "name": "Casetext",
@@ -4211,29 +4579,40 @@ export const tools = [
     "category": [
       "Legal & Finance"
     ],
-    "price": "Unknown",
+    "price": "Custom pricing; plans are billed annually per attorney. Contact sales for a quote.",
     "description": "Legal AI company providing AI-powered legal research and assistance tools.",
     "tags": [
       "legal ai",
       "legal research",
       "legal assistance"
     ],
-    "rating": null,
+    "rating": 4.7,
     "keywords": [
       "ai legal research",
       "legal tools"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Casetext, now a part of Thomson Reuters, is a legal technology company that offers AI-powered tools for legal professionals. Its flagship product, CoCounsel, is an AI legal assistant that performs tasks like legal research, document review, deposition preparation, and contract analysis, enhancing lawyer efficiency.",
+    "faqs": [
+      {
+        "question": "What is CoCounsel?",
+        "answer": "CoCounsel is Casetext's advanced AI legal assistant, built on large language models like GPT-4. It's designed to handle substantive legal tasks and act as a reliable research and analysis partner for legal teams."
+      },
+      {
+        "question": "Is Casetext a replacement for Westlaw or LexisNexis?",
+        "answer": "Casetext offers both a traditional legal research database and the AI assistant CoCounsel. It serves as a modern alternative and direct competitor to established legal research platforms."
+      }
+    ]
   },
   {
     "name": "Onfido",
     "slug": "onfido",
-    "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
+    "image": "/onfido.png",
     "url": "https://onfido.com/",
     "category": [
       "Legal & Finance"
     ],
-    "price": "Unknown",
+    "price": "Custom pricing based on volume and features. Contact sales for a quote.",
     "description": "AI-powered digital identity solution for trust, onboarding, and compliance.",
     "tags": [
       "digital identity",
@@ -4241,12 +4620,23 @@ export const tools = [
       "compliance",
       "ai solutions"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "ai identity verification",
       "compliance tools"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Onfido is an AI-powered identity verification platform that helps businesses confirm their users' identities. It uses a combination of photo-based ID verification, biometric analysis of a selfie or video, and other checks to automate the onboarding process, prevent fraud, and meet compliance requirements.",
+    "faqs": [
+      {
+        "question": "How does Onfido verify an identity?",
+        "answer": "A user typically submits a photo of their government-issued ID and a short selfie video. Onfido's AI analyzes these to ensure the ID is genuine and that the person in the video is the same person pictured on the ID."
+      },
+      {
+        "question": "What industries use Onfido?",
+        "answer": "Onfido is widely used in industries that require strong identity verification, such as financial services, gaming, healthcare, and the sharing economy (e.g., car sharing and rentals)."
+      }
+    ]
   },
   {
     "name": "Law Insider",
@@ -4256,7 +4646,7 @@ export const tools = [
     "category": [
       "Legal & Finance"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free access to database; Pro plans start at $49/month)",
     "description": "AI-powered contract drafting, review, and redlining with a large public contract database.",
     "tags": [
       "contract drafting",
@@ -4264,12 +4654,23 @@ export const tools = [
       "redlining",
       "contract database"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "ai contract drafting",
       "legal contracts"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Law Insider is best known for having the world's largest database of publicly filed contracts and legal clauses. It serves as an essential resource for lawyers and professionals for drafting and negotiating agreements. It has also integrated AI tools to help analyze, review, and compare contract language.",
+    "faqs": [
+      {
+        "question": "What is the primary use of Law Insider?",
+        "answer": "Legal professionals primarily use it to find sample clauses and entire contracts to use as precedents when drafting their own legal documents, ensuring they are using market-standard language."
+      },
+      {
+        "question": "Is the contract database free to access?",
+        "answer": "Yes, you can search and view a limited number of contracts and clauses for free. A Pro subscription is required for unlimited access, advanced search filters, and AI-powered drafting tools."
+      }
+    ]
   },
   {
     "name": "AInvest",
@@ -4280,7 +4681,7 @@ export const tools = [
       "Legal & Finance",
       "AI Investing"
     ],
-    "price": "$49.99/month or $25.00/month billed annually",
+    "price": "Premium subscription starts at $25.00/month (billed annually)",
     "description": "AI-powered stock analysis platform with real-time data and predictive tools.",
     "tags": [
       "stock analysis",
@@ -4293,13 +4694,24 @@ export const tools = [
       "ai stock analysis",
       "investing platform"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "AInvest is a financial technology platform that leverages AI to provide retail investors with institutional-grade stock analysis and insights. It offers AI-driven stock ratings, portfolio analysis, predictive charts, and real-time news analysis to help users make more informed investment decisions.",
+    "faqs": [
+      {
+        "question": "How does the AI analyze stocks?",
+        "answer": "The AI processes millions of data points, including financial statements, market trends, and news sentiment, to generate a comprehensive score for each stock based on factors like value, growth, and quality."
+      },
+      {
+        "question": "Is AInvest suitable for beginner investors?",
+        "answer": "Yes, the platform is designed to simplify complex financial data into easy-to-understand scores and visuals, making it accessible for both beginners and experienced investors."
+      }
+    ]
   },
   {
     "name": "GVA NDA Check",
     "slug": "gva-nda-check",
     "image": "/gva.png",
-    "url": null,
+    "url": "https://gvalaw.jp/nda-check/",
     "category": [
       "Legal & Finance"
     ],
@@ -4311,12 +4723,23 @@ export const tools = [
       "revision suggestions",
       "legal service"
     ],
-    "rating": null,
+    "rating": 4.1,
     "keywords": [
       "ai legal service",
       "nda review"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "GVA NDA Check is a free, AI-powered tool from a Japanese law firm that automatically reviews Non-Disclosure Agreements (NDAs). Users can upload an NDA document, and the AI will analyze its clauses, identify potential risks, and suggest revisions to make the agreement more favorable.",
+    "faqs": [
+      {
+        "question": "What language does the NDA need to be in?",
+        "answer": "The service is provided by a Japanese firm and is primarily optimized for reviewing NDAs written in Japanese."
+      },
+      {
+        "question": "Is this tool a substitute for a lawyer?",
+        "answer": "No, the tool provides a preliminary, automated review to flag common risks. For critical agreements, it is always recommended to consult with a qualified lawyer."
+      }
+    ]
   },
   {
     "name": "MacroMicro",
@@ -4326,7 +4749,7 @@ export const tools = [
     "category": [
       "Legal & Finance"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free access; MM Prime subscription starts at $30/month for advanced features)",
     "description": "Economic and financial data platform with dynamic charts and analysis tools.",
     "tags": [
       "economic data",
@@ -4334,12 +4757,23 @@ export const tools = [
       "dynamic charts",
       "analysis tools"
     ],
-    "rating": null,
+    "rating": 4.8,
     "keywords": [
       "financial data platform",
       "economic analysis"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "MacroMicro is an investment research platform that provides global macroeconomic data through interactive charts. It helps investors understand the big picture by tracking key economic indicators and their impact on different asset classes, making complex data easy to visualize and analyze.",
+    "faqs": [
+      {
+        "question": "What kind of data can I find on MacroMicro?",
+        "answer": "You can find a vast range of data, including interest rates, inflation (CPI), GDP growth, manufacturing indices (PMI), and commodity prices for various countries and regions."
+      },
+      {
+        "question": "Who is MacroMicro for?",
+        "answer": "It's designed for investors, financial analysts, and students who want to make data-driven decisions by understanding the macroeconomic trends that influence financial markets."
+      }
+    ]
   },
   {
     "name": "Filevine",
@@ -4350,7 +4784,7 @@ export const tools = [
       "Legal & Finance",
       "Business Management"
     ],
-    "price": "Unknown",
+    "price": "Custom pricing based on firm size and needs. Contact for a quote.",
     "description": "Legal case management software with AI solutions for law firms and legal teams.",
     "tags": [
       "legal case management",
@@ -4358,12 +4792,23 @@ export const tools = [
       "law firms",
       "legal teams"
     ],
-    "rating": null,
+    "rating": 4.7,
     "keywords": [
       "legal software",
       "case management"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Filevine is a cloud-based legal case management software designed to help law firms operate more efficiently. It combines case file management, document management, client communication, and workflow automation into a single platform. It also integrates AI tools, like AI-powered document review and analysis.",
+    "faqs": [
+      {
+        "question": "What type of law firms use Filevine?",
+        "answer": "Filevine is particularly popular among personal injury law firms, but it is also used by firms in other practice areas, including litigation, immigration, and mass torts."
+      },
+      {
+        "question": "What is 'Demands.ai' by Filevine?",
+        "answer": "Demands.ai is an AI tool within Filevine that automates the process of creating demand letters for personal injury cases. It reviews case files, extracts relevant medical data, and drafts a comprehensive letter, saving attorneys hours of work."
+      }
+    ]
   },
   {
     "name": "LuxAlgo",
@@ -4374,7 +4819,7 @@ export const tools = [
       "Legal & Finance",
       "Business Research"
     ],
-    "price": "Unknown",
+    "price": "Premium subscription required; starts at $47.99/month.",
     "description": "LuxAlgo provides AI trading indicators and tools for stocks, crypto, and forex.",
     "tags": [
       "ai trading indicators",
@@ -4383,12 +4828,23 @@ export const tools = [
       "forex",
       "trading tools"
     ],
-    "rating": null,
+    "rating": 4.8,
     "keywords": [
       "ai trading",
       "stock trading"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "LuxAlgo is a leading provider of premium trading indicators and tools for the TradingView platform. It offers a sophisticated toolkit that helps traders analyze markets and identify potential buy and sell signals across stocks, crypto, and forex using a combination of algorithms and technical analysis.",
+    "faqs": [
+      {
+        "question": "Is LuxAlgo a trading bot that trades for me?",
+        "answer": "No, LuxAlgo provides analytical indicators that generate signals on your charts to aid in your decision-making. It does not automatically execute trades; you are still in full control of your trading activity."
+      },
+      {
+        "question": "Do I need to be an expert trader to use LuxAlgo?",
+        "answer": "While the tools are advanced, LuxAlgo provides extensive documentation and a large community to help users of all levels. However, a basic understanding of technical analysis is beneficial to use the indicators effectively."
+      }
+    ]
   },
   {
     "name": "DroneDeploy",
@@ -4399,7 +4855,7 @@ export const tools = [
       "Legal & Finance",
       "Business Management"
     ],
-    "price": "Unknown",
+    "price": "Custom pricing based on needs. Contact sales for a quote.",
     "description": "Reality capture platform for site understanding, quality, safety, and progress.",
     "tags": [
       "reality capture",
@@ -4407,144 +4863,210 @@ export const tools = [
       "quality",
       "safety"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "drone technology",
       "site management"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "DroneDeploy is a leading reality capture platform that enables businesses to create digital twins of their job sites using drones, robots, and 360 cameras. The software processes this visual data to create detailed maps, 3D models, and analytics, providing critical insights for industries like construction, agriculture, and energy.",
+    "faqs": [
+      {
+        "question": "What is 'reality capture'?",
+        "answer": "Reality capture is the process of using sensors (like cameras on a drone) to collect data about a physical site and then converting that data into a highly accurate digital model, or 'digital twin'."
+      },
+      {
+        "question": "How is AI used in DroneDeploy?",
+        "answer": "DroneDeploy uses AI to automate flight paths for data collection and to analyze the captured imagery. For example, AI can automatically count stockpiles, detect safety issues on a construction site, or identify crop health issues in a field."
+      }
+    ]
   },
   {
-  "name": "Figma",
-  "slug": "figma",
-  "image": "/figma.png",
-  "url": "https://www.figma.com/",
-  "category": [
-    "Art & Creative Design",
-    "Office & Productivity"
-  ],
-  "price": "freemium",
-  "description": "Collaborative design tool for creating beautiful interfaces and prototypes in real-time.",
-  "tags": [
-    "design",
-    "prototype",
-    "collaboration",
-    "interface",
-    "ui/ux"
-  ],
-  "rating": 4.9,
-  "keywords": [
-    "collaborative design tool",
-    "interface prototyping"
-  ],
-  "isFeatured": true
-},
-{
-  "name": "Slack",
-  "slug": "slack",
-  "image": "/slack.png",
-  "url": "https://slack.com/",
-  "category": [
-    "Customer Service",
-    "Daily Life",
-    "Office & Productivity",
-    "Business Management"
-  ],
-  "price": "$7.25/mo",
-  "description": "Team collaboration platform that brings all your communication together in one place.",
-  "tags": [
-    "communication",
-    "team chat",
-    "collaboration",
-    "messaging",
-    "workplace"
-  ],
-  "rating": 4.6,
-  "keywords": [
-    "team communication",
-    "business messaging"
-  ],
-  "isFeatured": true
-},
-{
-  "name": "VS Code",
-  "slug": "vs-code",
-  "image": "/vscode.png",
-  "url": "https://code.visualstudio.com/",
-  "category": [
-    "Coding & Development",
-    "Office & Productivity"
-  ],
-  "price": "Free",
-  "description": "Powerful code editor with intelligent features and extensive customization options.",
-  "tags": [
-    "code editor",
-    "development",
-    "extensions",
-    "open source",
-    "debugging"
-  ],
-  "rating": 4.5,
-  "keywords": [
-    "smart code editor",
-    "developer tool"
-  ],
-  "isFeatured": true
-},
-{
-  "name": "Google Analytics",
-  "slug": "google-analytics",
-  "image": "/google-analytics.png",
-  "url": "https://analytics.google.com/",
-  "category": [
-    "Research & Data Analysis",
-    "Marketing & Advertising",
-    "Business Management"
-  ],
-  "price": "Free",
-  "description": "Web analytics service that tracks and reports website traffic and user behavior.",
-  "tags": [
-    "analytics",
-    "data",
-    "tracking",
-    "website",
-    "user behavior"
-  ],
-  "rating": 4.5,
-  "keywords": [
-    "website analytics",
-    "traffic analysis"
-  ],
-  "isFeatured": true
-},
-{
-  "name": "Trello",
-  "slug": "trello",
-  "image": "/trello.png",
-  "url": "https://trello.com/",
-  "category": [
-    "Office & Productivity",
-    "Business Management"
-  ],
-  "price": "Free",
-  "description": "Visual project management tool that uses boards, lists, and cards to organize tasks.",
-  "tags": [
-    "project management",
-    "task tracking",
-    "boards",
-    "kanban",
-    "organization"
-  ],
-  "rating": 4.4,
-  "keywords": [
-    "task organization",
-    "visual workflow"
-  ],
-  "isFeatured": true
-},
+    "name": "Figma",
+    "slug": "figma",
+    "image": "/figma.png",
+    "url": "https://www.figma.com/",
+    "category": [
+      "Art & Creative Design",
+      "Office & Productivity"
+    ],
+    "price": "Freemium (Free plan available; Professional plan starts at $12 per editor/month)",
+    "description": "Collaborative design tool for creating beautiful interfaces and prototypes in real-time.",
+    "tags": [
+      "design",
+      "prototype",
+      "collaboration",
+      "interface",
+      "ui/ux"
+    ],
+    "rating": 4.7,
+    "keywords": [
+      "collaborative design tool",
+      "interface prototyping"
+    ],
+    "isFeatured": true,
+    "overview": "Figma is the industry-leading collaborative interface design tool that allows teams to create, test, and ship better designs from start to finish. It's a web-based platform, meaning teams can work together in real-time on everything from wireframes and UI design to interactive prototypes.",
+    "faqs": [
+      {
+        "question": "What is the biggest advantage of Figma?",
+        "answer": "Its biggest advantage is real-time collaboration. Multiple designers, developers, and stakeholders can all be in the same file at the same time, leaving comments, making edits, and streamlining the entire design process."
+      },
+      {
+        "question": "Is Figma only for UI/UX designers?",
+        "answer": "While it's primarily used for UI/UX design, its versatility makes it a powerful tool for a wide range of tasks, including creating presentations, social media graphics, diagrams (using FigJam), and other visual assets."
+      }
+    ]
+  },
+  {
+    "name": "Slack",
+    "slug": "slack",
+    "image": "/slack.png",
+    "url": "https://slack.com/",
+    "category": [
+      "Customer Service",
+      "Daily Life",
+      "Office & Productivity",
+      "Business Management"
+    ],
+    "price": "Freemium (Pro plan starts at $7.25 per user/month, billed annually)",
+    "description": "Team collaboration platform that brings all your communication together in one place.",
+    "tags": [
+      "communication",
+      "team chat",
+      "collaboration",
+      "messaging",
+      "workplace"
+    ],
+    "rating": 4.7,
+    "keywords": [
+      "team communication",
+      "business messaging"
+    ],
+    "isFeatured": true,
+    "overview": "Slack is a channel-based messaging platform that has become the digital headquarters for thousands of companies. It organizes conversations into dedicated channels, supports file sharing, integrates with countless other workplace tools, and incorporates AI features to summarize threads and search for information.",
+    "faqs": [
+      {
+        "question": "What are Slack channels?",
+        "answer": "Channels are the core of Slack. They are dedicated spaces for conversations about specific projects, topics, or teams. This keeps discussions organized and transparent, reducing the need for internal emails."
+      },
+      {
+        "question": "How does Slack use AI?",
+        "answer": "Slack AI is a premium feature that can provide channel recaps to catch you up, summarize long conversation threads on demand, and provide intelligent search results to help you find answers from your team's collective knowledge."
+      }
+    ]
+  },
+  {
+    "name": "VS Code",
+    "slug": "vs-code",
+    "image": "/vscode.png",
+    "url": "https://code.visualstudio.com/",
+    "category": [
+      "Coding & Development",
+      "Office & Productivity"
+    ],
+    "price": "Free",
+    "description": "Powerful code editor with intelligent features and extensive customization options.",
+    "tags": [
+      "code editor",
+      "development",
+      "extensions",
+      "open source",
+      "debugging"
+    ],
+    "rating": 4.8,
+    "keywords": [
+      "smart code editor",
+      "developer tool"
+    ],
+    "isFeatured": true,
+    "overview": "Visual Studio Code (VS Code) is a free, open-source code editor developed by Microsoft that has become the standard for modern web development. It's lightweight yet powerful, offering smart code completion (IntelliSense), built-in debugging, Git integration, and a massive ecosystem of extensions to support any language or workflow.",
+    "faqs": [
+      {
+        "question": "Is VS Code a full IDE (Integrated Development Environment)?",
+        "answer": "Out of the box, it's a powerful text editor. However, with its extensive library of extensions, it can be customized to have all the features of a full-fledged IDE for languages like Python, JavaScript, and C++."
+      },
+      {
+        "question": "What is GitHub Copilot in VS Code?",
+        "answer": "GitHub Copilot is a popular extension for VS Code. It's an AI pair programmer that provides real-time code suggestions, autocompletes entire functions, and helps developers write code faster and more efficiently."
+      }
+    ]
+  },
+  {
+    "name": "Google Analytics",
+    "slug": "google-analytics",
+    "image": "/google-analytics.png",
+    "url": "https://analytics.google.com/",
+    "category": [
+      "Research & Data Analysis",
+      "Marketing & Advertising",
+      "Business Management"
+    ],
+    "price": "Freemium (Free for most users; Enterprise-level 'Analytics 360' is a paid product)",
+    "description": "Web analytics service that tracks and reports website traffic and user behavior.",
+    "tags": [
+      "analytics",
+      "data",
+      "tracking",
+      "website",
+      "user behavior"
+    ],
+    "rating": 4.5,
+    "keywords": [
+      "website analytics",
+      "traffic analysis"
+    ],
+    "isFeatured": true,
+    "overview": "Google Analytics is a web analytics service that provides detailed statistics about website traffic and user engagement. It helps businesses understand how users find and interact with their site, allowing them to optimize their marketing efforts and improve the user experience. The latest version, GA4, is event-based and privacy-centric.",
+    "faqs": [
+      {
+        "question": "What is the difference between Google Analytics 4 (GA4) and Universal Analytics?",
+        "answer": "GA4 is the new standard. It uses an event-based data model (tracking user interactions) rather than the session-based model of Universal Analytics. It's also designed to be more privacy-focused and works across both websites and apps."
+      },
+      {
+        "question": "Is Google Analytics difficult to set up?",
+        "answer": "Basic setup is straightforward. It involves adding a small piece of tracking code (a tag) to your website's pages. More advanced tracking, like custom events and e-commerce conversions, can require more technical knowledge or the use of Google Tag Manager."
+      }
+    ]
+  },
+  {
+    "name": "Trello",
+    "slug": "trello",
+    "image": "/trello.png",
+    "url": "https://trello.com/",
+    "category": [
+      "Office & Productivity",
+      "Business Management"
+    ],
+    "price": "Freemium (Paid plans start at $5 per user/month, billed annually)",
+    "description": "Visual project management tool that uses boards, lists, and cards to organize tasks.",
+    "tags": [
+      "project management",
+      "task tracking",
+      "boards",
+      "kanban",
+      "organization"
+    ],
+    "rating": 4.4,
+    "keywords": [
+      "task organization",
+      "visual workflow"
+    ],
+    "isFeatured": true,
+    "overview": "Trello is a highly visual and flexible project management tool based on the Kanban board methodology. It allows teams to organize tasks and workflows using boards, lists, and cards. Each card can hold details like checklists, due dates, attachments, and comments, making it easy to see the status of a project at a glance.",
+    "faqs": [
+      {
+        "question": "What is a Trello 'board', 'list', and 'card'?",
+        "answer": "A 'board' represents a project. Within a board, 'lists' represent stages of a workflow (e.g., To Do, In Progress, Done). 'Cards' represent individual tasks that move from one list to another as they progress."
+      },
+      {
+        "question": "What are 'Power-Ups' in Trello?",
+        "answer": "Power-Ups are integrations and add-ons that bring additional functionality to your Trello boards. You can add Power-Ups for things like calendars, integrations with Slack or Google Drive, and custom fields to enhance your workflow."
+      }
+    ]
+  },
   {
     "name": "Salesforce Platform",
-    "slug": "salesforce-platform-1",
+    "slug": "salesforce-platform",
     "image": "/salesforce.png",
     "url": "https://www.salesforce.com/platform/",
     "category": [
@@ -4553,7 +5075,7 @@ export const tools = [
       "Office & Productivity",
       "Research & Data Analysis"
     ],
-    "price": "Unknown",
+    "price": "Starts at $25 per user/month (Platform Starter)",
     "description": "A unified platform for data, AI, CRM, development, and security.",
     "tags": [
       "data platform",
@@ -4562,23 +5084,34 @@ export const tools = [
       "development",
       "security"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "crm platform",
       "ai development"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "The Salesforce Platform (formerly Force.com) is a platform-as-a-service (PaaS) for building and running custom business applications in the cloud. It's the foundation of the Salesforce CRM, offering tools for low-code development (Lightning), pro-code development (Apex), and AI integration (Einstein).",
+    "faqs": [
+      {
+        "question": "Do I need to be a coder to build on the Salesforce Platform?",
+        "answer": "Not always. The platform offers low-code tools like Lightning App Builder for creating apps with drag-and-drop functionality. For more complex logic and automation, the Apex programming language is used."
+      },
+      {
+        "question": "How does the Salesforce Platform use AI?",
+        "answer": "It is deeply integrated with Salesforce Einstein, providing AI capabilities like predictive analytics, natural language processing, and automated machine learning that can be directly embedded into custom applications."
+      }
+    ]
   },
   {
     "name": "Salesforce CN",
     "slug": "salesforce-cn",
     "image": "/salesforce.png",
-    "url": null,
+    "url": "https://www.salesforce.cn/",
     "category": [
       "Business Management",
       "Marketing & Advertising"
     ],
-    "price": "Unknown",
+    "price": "Custom pricing for the China market. Contact sales for details.",
     "description": "Cloud-based CRM solution for businesses in China, hosted on Alibaba Cloud.",
     "tags": [
       "crm solution",
@@ -4586,24 +5119,35 @@ export const tools = [
       "alibaba cloud",
       "china market"
     ],
-    "rating": null,
+    "rating": 4.1,
     "keywords": [
       "crm software",
       "cloud crm"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Salesforce CN is the specific offering of Salesforce's CRM platform for the mainland China market. To comply with local regulations and ensure performance, Salesforce partners with Alibaba Cloud to host its services within China, offering its core Sales Cloud, Service Cloud, and Salesforce Platform products to businesses operating there.",
+    "faqs": [
+      {
+        "question": "Why does Salesforce have a separate version for China?",
+        "answer": "China has specific data residency and security laws that require certain types of data to be stored on servers within the country. Partnering with Alibaba Cloud allows Salesforce to meet these compliance requirements."
+      },
+      {
+        "question": "Are all Salesforce products available in China?",
+        "answer": "No, the offering is more focused. The primary products available are Sales Cloud, Service Cloud, and the Salesforce Platform, tailored to meet the needs of the local market."
+      }
+    ]
   },
   {
     "name": "Jotform AI Agents",
     "slug": "jotform-ai-agents",
     "image": "/jot.png",
-    "url": null,
+    "url": "https://www.jotform.com/products/ai-agents/",
     "category": [
       "Business Management",
       "Chatbots & Virtual Companions",
       "Office & Productivity"
     ],
-    "price": "Unknown",
+    "price": "Included with Jotform plans (Free plan available)",
     "description": "Platform to create AI agents for customer service across multiple channels.",
     "tags": [
       "ai agents",
@@ -4611,12 +5155,23 @@ export const tools = [
       "chatbots",
       "multi-channel"
     ],
-    "rating": null,
+    "rating": 4.7,
     "keywords": [
       "ai customer service",
       "ai agent creation"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Jotform AI Agents is a feature within the Jotform suite that allows businesses to create custom AI chatbots for customer service. These agents can be trained on your specific business data and integrated into websites and apps to provide instant 24/7 support and answer customer questions.",
+    "faqs": [
+      {
+        "question": "How do you train a Jotform AI Agent?",
+        "answer": "You can train your agent by providing it with your company's data, such as website content, knowledge base articles, and FAQs. The agent learns from this information to provide accurate and relevant answers."
+      },
+      {
+        "question": "Is this feature available on the free Jotform plan?",
+        "answer": "Yes, you can build and use AI Agents with the free Jotform plan, although there will be usage limits. Paid Jotform plans offer higher capacity and more advanced features."
+      }
+    ]
   },
   {
     "name": "Miro",
@@ -4628,43 +5183,30 @@ export const tools = [
       "Coding & Development",
       "Marketing & Advertising"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free plan available; Paid plans start at $8 per member/month)",
     "description": "Online collaborative whiteboard platform for team collaboration and project management.",
     "tags": [
       "collaborative whiteboard",
       "team collaboration",
       "project management"
     ],
-    "rating": null,
+    "rating": 4.8,
     "keywords": [
       "online whiteboard",
       "collaboration tool"
     ],
-    "isFeatured": false
-  },
-  {
-    "name": "VSCO",
-    "slug": "vsco-2",
-    "image": "/.vsco.png",
-    "url": "https://vsco.co/",
-    "category": [
-      "Business Management",
-      "Image Generation & Editing",
-      "Video & Animation"
-    ],
-    "price": "Unknown",
-    "description": "Photography and video editing app with creative community and professional tools.",
-    "tags": [
-      "photography",
-      "video editing",
-      "creative community"
-    ],
-    "rating": null,
-    "keywords": [
-      "photo editing app",
-      "video editing app"
-    ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Miro is an online collaborative whiteboard platform designed for modern teams. It provides an infinite canvas where teams can brainstorm with digital sticky notes, plan projects, create diagrams, and run interactive workshops in real-time. It integrates with many popular tools and now includes AI features to assist with idea generation and summarization.",
+    "faqs": [
+      {
+        "question": "What is Miro used for?",
+        "answer": "Common use cases include brainstorming, user story mapping, agile ceremonies (like retrospectives), process diagramming, and creating a central hub for project information."
+      },
+      {
+        "question": "How does Miro's AI work?",
+        "answer": "Miro Assist can automatically generate ideas on sticky notes from a prompt, summarize existing notes, create mind maps from text, and help structure content on the board, speeding up collaborative sessions."
+      }
+    ]
   },
   {
     "name": "Anthropic",
@@ -4675,7 +5217,7 @@ export const tools = [
       "Business Management",
       "Education & Translation"
     ],
-    "price": "Unknown",
+    "price": "API access is usage-based; Claude Pro subscription is $20/month.",
     "description": "AI safety and research company building reliable, interpretable, and steerable AI systems.",
     "tags": [
       "ai safety",
@@ -4683,12 +5225,23 @@ export const tools = [
       "interpretable ai",
       "steerable ai"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "ai research",
       "ai systems"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Anthropic is an AI safety and research company focused on building helpful, honest, and harmless AI systems. Its primary product is Claude, a family of large language models known for strong performance, large context windows, and a safety-first approach guided by a 'constitution' of ethical principles.",
+    "faqs": [
+      {
+        "question": "What is Claude?",
+        "answer": "Claude is Anthropic's AI assistant and large language model. It's designed as a capable and safe conversational AI, available to developers via API and to consumers through a web-based chat interface."
+      },
+      {
+        "question": "What is 'Constitutional AI'?",
+        "answer": "It is a framework developed by Anthropic to train AI to be helpful and harmless without constant human feedback. The AI learns from a set of principles (a 'constitution'), guiding it to avoid harmful responses."
+      }
+    ]
   },
   {
     "name": "n8n",
@@ -4699,30 +5252,41 @@ export const tools = [
       "Business Management",
       "Coding & Development"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free self-hosted; Cloud plans start at approx. $20/month)",
     "description": "AI-powered workflow automation platform for technical teams.",
     "tags": [
       "workflow automation",
       "technical teams",
       "automation"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "ai workflow",
       "automation platform"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "n8n is a source-available workflow automation tool that allows developers and technical users to connect various applications and services to automate complex processes. It uses a visual, node-based editor, making it easy to build powerful workflows that can be self-hosted for data privacy or used via their cloud service.",
+    "faqs": [
+      {
+        "question": "How is n8n different from Zapier?",
+        "answer": "n8n is generally more powerful and flexible, offering the ability to write custom code and handle more complex logic. It's also 'source-available,' meaning you can self-host it for free, which gives you full control over your data, a key difference from cloud-only services like Zapier."
+      },
+      {
+        "question": "What is a 'node' in n8n?",
+        "answer": "In n8n, a node represents a specific app or a function (like an 'if' statement or data transformation). You connect these nodes together visually to create the step-by-step logic of your automated workflow."
+      }
+    ]
   },
   {
     "name": "Zapier",
     "slug": "zapier",
-    "image": "/zap.png",
+    "image": "/zapier.jpg",
     "url": "https://zapier.com/",
     "category": [
       "Business Management",
       "Office & Productivity"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free plan available; Paid plans start at $19.99/month)",
     "description": "No-code automation platform connecting 8,000+ apps for workflow and AI agent creation.",
     "tags": [
       "no-code automation",
@@ -4730,93 +5294,67 @@ export const tools = [
       "ai agents",
       "app integration"
     ],
-    "rating": null,
+    "rating": 4.7,
     "keywords": [
       "automation platform",
       "ai agent creation"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Zapier is a leading online automation tool that connects your favorite apps, such as Gmail, Slack, and thousands of others. It allows you to create automated workflows, called 'Zaps,' without writing any code. It also offers AI-powered features to build custom chatbots and automate more intelligent tasks.",
+    "faqs": [
+      {
+        "question": "What is a 'Zap'?",
+        "answer": "A Zap is an automated workflow that connects two or more apps. Each Zap consists of a 'Trigger' (an event that starts the workflow) and one or more 'Actions' (tasks that are performed automatically)."
+      },
+      {
+        "question": "Is Zapier easy for non-technical users?",
+        "answer": "Yes, Zapier is specifically designed for ease of use. Its no-code, point-and-click editor makes it accessible for anyone to build powerful automations without needing to be a developer."
+      }
+    ]
   },
   {
     "name": "tawk.to Hire Chat Agents",
     "slug": "tawk-to-hire-chat-agents",
     "image": "/tawk.png",
-    "url": null,
+    "url": "https://www.tawk.to/hire-chat-agents/",
     "category": [
       "Business Management",
       "Chatbots & Virtual Companions"
     ],
-    "price": "Unknown",
+    "price": "Starts at $1/hour per agent.",
     "description": "24/7 professionally trained chat agents for $1/hour.",
     "tags": [
       "chat agents",
       "customer service",
       "support"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "chat agents",
       "live chat support"
     ],
-    "isFeatured": false
-  },
-  {
-    "name": "Salesforce CN",
-    "slug": "salesforce-cn-1",
-    "image": "/salesforce.png",
-    "url": null,
-    "category": [
-      "Marketing & Advertising",
-      "Business Management"
-    ],
-    "price": "Unknown",
-    "description": "Cloud-based CRM solution for businesses in China, hosted on Alibaba Cloud.",
-    "tags": [
-      "crm solution",
-      "cloud-based",
-      "alibaba cloud",
-      "china market"
-    ],
-    "rating": null,
-    "keywords": [
-      "crm software",
-      "cloud crm"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "Miro",
-    "slug": "miro-2",
-    "image": "/miro.png",
-    "url": "https://miro.com/",
-    "category": [
-      "Marketing & Advertising",
-      "Coding & Development",
-      "Business Management"
-    ],
-    "price": "Unknown",
-    "description": "Online collaborative whiteboard platform for team collaboration and project management.",
-    "tags": [
-      "collaborative whiteboard",
-      "team collaboration",
-      "project management"
-    ],
-    "rating": null,
-    "keywords": [
-      "online whiteboard",
-      "collaboration tool"
-    ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "tawk.to offers a service where businesses can hire professionally trained, native-speaking chat agents to manage their website's live chat 24/7. This service is an extension of their free live chat software, providing an affordable way for businesses to offer round-the-clock customer support without hiring in-house staff.",
+    "faqs": [
+      {
+        "question": "Are the chat agents bots or real people?",
+        "answer": "They are real, professionally trained human agents who are dedicated to learning about your business to provide accurate and helpful customer support."
+      },
+      {
+        "question": "Is the tawk.to live chat software free?",
+        "answer": "Yes, the core tawk.to live chat software is completely free to use on your website. Hiring the chat agents is an optional, paid add-on service."
+      }
+    ]
   },
   {
     "name": "Mailchimp",
     "slug": "mailchimp",
-    "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
+    "image": "/mail.png",
     "url": "https://mailchimp.com/",
     "category": [
       "Marketing & Advertising"
     ],
-    "price": "Free",
+    "price": "Freemium (Free plan available; Paid plans start at $13/month)",
     "description": "Marketing automation and email platform with AI-powered tools to convert customers.",
     "tags": [
       "marketing automation",
@@ -4824,12 +5362,23 @@ export const tools = [
       "ai tools",
       "customer conversion"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "email marketing",
       "ai automation"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Mailchimp is an all-in-one marketing platform that's best known for its email marketing services. It helps businesses manage mailing lists, create newsletters, and automate marketing campaigns. It has expanded to include landing pages, social media advertising, and AI-powered tools for content optimization and audience segmentation.",
+    "faqs": [
+      {
+        "question": "Is Mailchimp only for email marketing?",
+        "answer": "While it started with email, Mailchimp is now a comprehensive marketing platform. You can build websites and landing pages, create social media ads, send postcards, and get marketing analytics all in one place."
+      },
+      {
+        "question": "How does Mailchimp use AI?",
+        "answer": "Mailchimp uses AI to provide features like 'Creative Assistant' for designing graphics, a subject line optimizer to improve open rates, and predictive segmentation to identify which customers are most likely to buy."
+      }
+    ]
   },
   {
     "name": "Klaviyo",
@@ -4839,30 +5388,41 @@ export const tools = [
     "category": [
       "Marketing & Advertising"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free plan for up to 250 contacts; Paid plans are usage-based, starting at $20/month)",
     "description": "Intelligent marketing automation for personalized customer engagement.",
     "tags": [
       "marketing automation",
       "personalized engagement",
       "customer engagement"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "intelligent marketing",
       "automation"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Klaviyo is an intelligent marketing automation platform specializing in e-commerce. It unifies customer data from various sources to enable businesses to deliver highly personalized marketing experiences across email, SMS, and mobile push notifications. Its powerful segmentation and automation capabilities help drive sales and customer loyalty.",
+    "faqs": [
+      {
+        "question": "What makes Klaviyo different from other email platforms?",
+        "answer": "Klaviyo's main strength is its deep integration with e-commerce platforms like Shopify. It can access rich customer data (like purchase history and browsing behavior) to create extremely targeted and automated marketing campaigns, such as abandoned cart reminders."
+      },
+      {
+        "question": "Is Klaviyo difficult to use?",
+        "answer": "While it is a very powerful platform, it is designed to be user-friendly with an intuitive interface, pre-built automation flows, and email templates, making it accessible for marketers of all skill levels."
+      }
+    ]
   },
   {
     "name": "TabSquare",
     "slug": "tabsquare",
-    "image": "/tab.png",
-    "url": null,
+    "image": "/tabsquare.jpeg",
+    "url": "https://www.tabsquare.ai/",
     "category": [
       "Marketing & Advertising",
       "Research & Data Analysis"
     ],
-    "price": "Unknown",
+    "price": "Custom pricing based on restaurant needs. Contact for a quote.",
     "description": "Technology platform for restaurants, offering solutions for in-store and online operations.",
     "tags": [
       "technology platform",
@@ -4870,13 +5430,25 @@ export const tools = [
       "in-store operations",
       "online operations"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "restaurant technology",
       "operations management"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "TabSquare is an AI-powered restaurant technology platform that helps food and beverage businesses improve profitability and customer experience. It offers a suite of solutions including smart QR code ordering, online food ordering systems, and data-driven menu recommendations designed to increase the average bill size.",
+    "faqs": [
+      {
+        "question": "How does TabSquare's AI help restaurants?",
+        "answer": "The AI analyzes customer ordering patterns and menu performance to provide personalized recommendations to diners. For example, it can suggest a popular side dish or a drink that pairs well with a main course, helping to upsell items."
+      },
+      {
+        "question": "What solutions does TabSquare offer?",
+        "answer": "Their core solutions include AI-powered in-restaurant ordering (via QR codes or tablets), integrated online ordering for delivery and pickup, customer relationship management (CRM), and advanced data analytics for restaurant owners."
+      }
+    ]
   },
+  /////////////
   {
     "name": "VidIQ",
     "slug": "vidiq",
@@ -4886,7 +5458,7 @@ export const tools = [
       "Marketing & Advertising",
       "Social Media"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Pro plan starts at $7.50/month; Boost and Max plans available)",
     "description": "VidIQ is a SaaS platform that helps YouTube creators grow their audience using AI-powered tools.",
     "tags": [
       "saas platform",
@@ -4894,23 +5466,34 @@ export const tools = [
       "audience growth",
       "ai tools"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "youtube seo",
       "ai video tools"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "VidIQ is an all-in-one YouTube channel management and analytics toolkit. It functions as a browser extension and web app, providing creators with deep insights, keyword research tools, competitor analysis, and AI-powered recommendations for video titles, descriptions, and tags to maximize organic reach.",
+    "faqs": [
+      {
+        "question": "What is VidIQ's main function?",
+        "answer": "VidIQ's primary function is to serve as a YouTube SEO and channel growth tool. It helps creators find high-potential keywords, analyze video performance, and optimize content to get more views and subscribers."
+      },
+      {
+        "question": "Is VidIQ free to use?",
+        "answer": "Yes, VidIQ offers a robust free plan with basic features. For more advanced analytics, keyword research, and AI tools, users can upgrade to one of their paid plans like Pro, Boost, or Max."
+      }
+    ]
   },
   {
     "name": "MediSphere",
     "slug": "medisphere",
     "image": "/medisssssss.png",
-    "url":"https://medisphere.cloud/",
+    "url": "https://medisphere.cloud/",
     "category": [
       "Health & Wellness",
       "AI Healthcare"
     ],
-    "price": "F CFA 256,000/year (approx. $438 USD/year)",
+    "price": "Starts at F CFA 256,000/year (approx. $438 USD/year)",
     "description": "AI-driven healthcare management platform for doctors and staff.",
     "tags": [
       "healthcare management",
@@ -4923,18 +5506,29 @@ export const tools = [
       "ai healthcare",
       "medical management"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "MediSphere is a cloud-based healthcare management platform specifically designed for clinics and medical practices in Africa. It utilizes AI to simplify patient management, appointment scheduling, electronic health records (EHR), and billing, enabling doctors and staff to enhance efficiency and improve overall patient care.",
+    "faqs": [
+      {
+        "question": "Who is the primary audience for MediSphere?",
+        "answer": "MediSphere is built for doctors, clinicians, and administrative staff working in small to medium-sized medical practices and clinics."
+      },
+      {
+        "question": "What are the core features of MediSphere?",
+        "answer": "Its key features include AI-assisted appointment scheduling, comprehensive electronic medical record (EMR) management, integrated billing and invoicing, and streamlined patient communication tools."
+      }
+    ]
   },
   {
     "name": "SpoiledChild",
     "slug": "spoiledchild-1",
     "image": "/spoiled.png",
-    "url": null,
+    "url": "https://www.spoiledchild.com/",
     "category": [
       "Health & Wellness",
       "Daily Life"
     ],
-    "price": "Unknown",
+    "price": "Subscription-based; individual products typically range from $40-$60.",
     "description": "AI-powered wellness platform for personalized anti-aging hair and skin products.",
     "tags": [
       "wellness platform",
@@ -4943,23 +5537,34 @@ export const tools = [
       "hair care",
       "skin care"
     ],
-    "rating": null,
+    "rating": 4.1,
     "keywords": [
       "ai wellness",
       "personalized products"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "SpoiledChild is a direct-to-consumer wellness brand focused on anti-aging solutions. It uses an AI-powered quiz called 'SpoilMe' to deliver personalized recommendations for hair and skin products, creating customized routines based on individual needs, lifestyle, and aging concerns.",
+    "faqs": [
+      {
+        "question": "How does the AI personalization work?",
+        "answer": "Users complete an online quiz about their hair/skin type, goals, and lifestyle. The platform's AI analyzes these responses to recommend a unique regimen and set of products tailored to them."
+      },
+      {
+        "question": "Are SpoiledChild products only available via subscription?",
+        "answer": "No, customers can make one-time purchases. However, the subscription model offers benefits like discounts and automatic, recurring deliveries."
+      }
+    ]
   },
   {
     "name": "Brain.fm",
     "slug": "brain-fm",
-    "image": "/braing.png",
+    "image": "/brain.jpeg",
     "url": "https://www.brain.fm/",
     "category": [
       "Health & Wellness",
       "Music & Audio"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free trial available; Premium subscription is $9.99/month or $49.99/year)",
     "description": "Science-backed functional music for focus, relaxation, and sleep.",
     "tags": [
       "functional music",
@@ -4967,12 +5572,23 @@ export const tools = [
       "relaxation",
       "sleep"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "music for focus",
       "relaxation music"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Brain.fm is a functional music service that provides AI-generated soundscapes scientifically designed to improve focus, relaxation, meditation, and sleep. Its patented technology embeds rhythmic pulses into the music to engage the brain and guide it toward a desired mental state.",
+    "faqs": [
+      {
+        "question": "How is Brain.fm different from Spotify or Apple Music?",
+        "answer": "Brain.fm's music is purely functional and created by an AI to influence brain activity for specific tasks like focus or sleep. This differs from entertainment-focused platforms that stream commercially released songs."
+      },
+      {
+        "question": "Is the science behind Brain.fm legitimate?",
+        "answer": "Yes, the company collaborates with neuroscientists and provides research on its website. It holds patents for its technology and has conducted studies demonstrating its effectiveness in enhancing cognitive performance."
+      }
+    ]
   },
   {
     "name": "clickworker",
@@ -4983,25 +5599,36 @@ export const tools = [
       "Health & Wellness",
       "Image Analysis"
     ],
-    "price": "Unknown",
+    "price": "Pay-as-you-go; pricing varies based on project scope, task complexity, and workforce size.",
     "description": "Crowdsourcing platform for AI training data and data management services.",
     "tags": [
       "crowdsourcing",
       "ai training data",
       "data management"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "ai training",
       "data services"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Clickworker is a global crowdsourcing platform that offers businesses a scalable, on-demand workforce. It specializes in providing high-quality data for training AI models, along with services like data processing, text creation, and market research, by breaking down large projects into manageable micro-tasks.",
+    "faqs": [
+      {
+        "question": "What types of tasks can be outsourced to Clickworker?",
+        "answer": "Businesses commonly use Clickworker for data annotation, image labeling for AI, text creation, content moderation, web research, and conducting surveys."
+      },
+      {
+        "question": "Who performs the work on Clickworker?",
+        "answer": "The tasks are completed by a global community of independent contractors, known as 'Clickworkers,' who register on the platform to earn money by completing these paid micro-tasks on a flexible schedule."
+      }
+    ]
   },
   {
     "name": "Pi",
     "slug": "pi",
     "image": "/pi.png",
-    "url": null,
+    "url": "https://pi.ai/",
     "category": [
       "Health & Wellness",
       "Chatbots & Virtual Companions"
@@ -5014,12 +5641,23 @@ export const tools = [
       "supportive",
       "smart"
     ],
-    "rating": null,
+    "rating": 4.0,
     "keywords": [
       "ai companion",
       "personal assistant"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Pi, developed by Inflection AI, is a personal AI chatbot engineered to be a kind, empathetic, and supportive companion. It excels in natural, flowing conversations and can assist with brainstorming ideas, exploring topics, or simply providing a friendly and engaging conversational partner.",
+    "faqs": [
+      {
+        "question": "How does Pi differ from other AI chatbots like ChatGPT?",
+        "answer": "Pi is uniquely designed for empathetic and supportive conversations, positioning itself as a personal companion. In contrast, other chatbots are often more focused on task completion and direct information retrieval."
+      },
+      {
+        "question": "Does Pi remember past conversations?",
+        "answer": "Yes, Pi is equipped with memory, allowing it to recall earlier parts of a conversation to provide a more coherent, continuous, and personalized chat experience."
+      }
+    ]
   },
   {
     "name": "Freed",
@@ -5030,7 +5668,7 @@ export const tools = [
       "Health & Wellness",
       "AI Healthcare"
     ],
-    "price": "$99/month per clinician (starting); team plans available",
+    "price": "Starts at $99/month per clinician; team and enterprise plans available.",
     "description": "Freed is an AI medical scribe for instant clinical documentation and happier clinicians.",
     "tags": [
       "ai medical scribe",
@@ -5042,7 +5680,18 @@ export const tools = [
       "medical scribe",
       "clinical documentation"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Freed is an AI-powered medical scribe that listens to patient visits and automatically generates accurate clinical documentation. It is designed to alleviate the administrative burden on clinicians, allowing them to focus more on patient care and reducing time spent on paperwork after hours.",
+    "faqs": [
+      {
+        "question": "How does Freed ensure patient privacy?",
+        "answer": "Freed is HIPAA-compliant and employs end-to-end encryption to ensure that all patient data is handled securely and confidentially."
+      },
+      {
+        "question": "What kind of documentation can Freed generate?",
+        "answer": "Freed can generate SOAP notes, chart-ready summaries, and other forms of clinical documentation by transcribing and structuring the conversation between a clinician and a patient."
+      }
+    ]
   },
   {
     "name": "Heidi Health",
@@ -5053,7 +5702,7 @@ export const tools = [
       "Health & Wellness",
       "AI Healthcare"
     ],
-    "price": "$99/month (Pro plan); Free plan available",
+    "price": "Freemium (Free plan available; Pro plan starts at $99/month)",
     "description": "AI medical scribe for clinicians, transcribing visits and generating notes to save time.",
     "tags": [
       "ai medical scribe",
@@ -5066,7 +5715,18 @@ export const tools = [
       "medical scribe",
       "ai transcription"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Heidi Health is an AI platform for clinicians that functions as a medical scribe. It automatically transcribes patient consultations and uses AI to generate concise clinical notes, letters, and reports. This helps healthcare professionals save significant time on administrative tasks and reduce burnout.",
+    "faqs": [
+      {
+        "question": "Does Heidi Health integrate with EMR systems?",
+        "answer": "Yes, Heidi Health is designed to integrate with various Electronic Medical Record (EMR) systems, allowing for a seamless transfer of generated notes into the patient's file."
+      },
+      {
+        "question": "Is Heidi Health compliant with healthcare regulations?",
+        "answer": "Yes, Heidi Health is built to be compliant with healthcare privacy regulations like HIPAA, ensuring that all patient information is handled with the highest level of security."
+      }
+    ]
   },
   {
     "name": "Replika",
@@ -5077,7 +5737,7 @@ export const tools = [
       "Health & Wellness",
       "Chatbots & Virtual Companions"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Pro subscription starts at $7.99/month for advanced features)",
     "description": "An AI companion providing empathetic friendship and personalized support through conversation.",
     "tags": [
       "ai companion",
@@ -5085,12 +5745,23 @@ export const tools = [
       "personalized support",
       "conversation"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "ai companion",
       "empathetic ai"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Replika is an AI companion chatbot designed to provide a supportive and empathetic friend. It learns from conversations to develop a unique personality that mirrors the user's own, offering a space for people to share thoughts and feelings without judgment. It can engage in casual chats, coaching sessions, and other interactive activities.",
+    "faqs": [
+      {
+        "question": "How does Replika personalize the experience?",
+        "answer": "Replika uses machine learning to adapt its conversational style and personality based on your chats. The more you interact with it, the more it develops into a companion that reflects your interests and communication patterns."
+      },
+      {
+        "question": "What is Replika Pro?",
+        "answer": "Replika Pro is a premium subscription that unlocks additional features, including different relationship statuses (like romantic partner), voice calls, augmented reality (AR), and more in-depth coaching activities."
+      }
+    ]
   },
   {
     "name": "Lecturio",
@@ -5101,7 +5772,7 @@ export const tools = [
       "Health & Wellness",
       "Education & Translation"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free access to select content; Premium plans start at approx. $29.99/month)",
     "description": "An all-in-one health education platform for medical and nursing students.",
     "tags": [
       "health education",
@@ -5109,12 +5780,23 @@ export const tools = [
       "nursing students",
       "education platform"
     ],
-    "rating": null,
+    "rating": 4.7,
     "keywords": [
       "medical education",
       "health platform"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Lecturio is a comprehensive online learning platform for medical and nursing students. It offers a vast library of high-quality video lectures, a powerful question bank (Qbank) for exam preparation, and smart learning tools like spaced-repetition quizzes to enhance knowledge retention and academic performance.",
+    "faqs": [
+      {
+        "question": "What subjects does Lecturio cover?",
+        "answer": "Lecturio covers the entire medical curriculum, including preclinical subjects like anatomy and biochemistry, clinical subjects, and preparation for major exams like the USMLE, COMLEX, and NCLEX."
+      },
+      {
+        "question": "How does Lecturio help with exam preparation?",
+        "answer": "It provides a large, exam-style question bank with detailed explanations, performance analytics to identify weak areas, and AI-driven recommendations for video lectures to fill knowledge gaps."
+      }
+    ]
   },
   {
     "name": "Carepatron",
@@ -5125,7 +5807,7 @@ export const tools = [
       "Health & Wellness",
       "AI Healthcare"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free plan for individuals; Paid plans start at $12 per user/month)",
     "description": "All-in-one EHR and practice management software with AI assistance for healthcare professionals.",
     "tags": [
       "ehr",
@@ -5133,23 +5815,34 @@ export const tools = [
       "ai assistance",
       "healthcare professionals"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "healthcare software",
       "practice management"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Carepatron is an all-in-one practice management software designed for health and wellness professionals. It combines client records (EHR), scheduling, billing, and telehealth into a single, secure platform. It also incorporates AI to help automate clinical notes and streamline administrative workflows.",
+    "faqs": [
+      {
+        "question": "Is Carepatron HIPAA compliant?",
+        "answer": "Yes, Carepatron is fully HIPAA compliant, ensuring that all client data and communications are secure and private, which is essential for healthcare providers."
+      },
+      {
+        "question": "What type of professionals use Carepatron?",
+        "answer": "Carepatron is used by a wide range of health professionals, including therapists, psychologists, chiropractors, coaches, and other wellness practitioners in solo or group practices."
+      }
+    ]
   },
   {
     "name": "PlantIn",
     "slug": "plantin",
     "image": "/platin.png",
-    "url": null,
+    "url": "https://myplantin.com/",
     "category": [
       "Health & Wellness",
       "Daily Life"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free features available; Premium subscription for full access, approx. $7.99/week)",
     "description": "Plant identification, care tips, and problem solving for plants.",
     "tags": [
       "plant identification",
@@ -5157,12 +5850,23 @@ export const tools = [
       "problem solving",
       "gardening"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "plant app",
       "gardening assistant"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "PlantIn is a mobile application that acts as a comprehensive plant care assistant. Users can identify plants by taking a photo, receive detailed care instructions, set watering reminders, and diagnose plant diseases with an AI-powered 'Plant Doctor' feature.",
+    "faqs": [
+      {
+        "question": "How does the plant identification feature work?",
+        "answer": "You simply take a picture of an unknown plant with your phone's camera, and the app's AI analyzes the image to provide an accurate identification and relevant care information."
+      },
+      {
+        "question": "Can PlantIn help me if my plant is sick?",
+        "answer": "Yes, the app has a disease diagnosis feature. You can upload a photo of the affected plant, and it will help identify the problem and suggest potential treatments."
+      }
+    ]
   },
   {
     "name": "HEROZ",
@@ -5172,19 +5876,30 @@ export const tools = [
     "category": [
       "Business Research"
     ],
-    "price": "Unknown",
+    "price": "Contact for pricing (solutions are enterprise-focused)",
     "description": "HEROZ is an AI company providing AI solutions across various industries, originating from Shogi AI development.",
     "tags": [
       "ai solutions",
       "industries",
       "shogi ai"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "ai company",
       "ai solutions"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "HEROZ, Inc. is a Japanese AI technology company that provides bespoke AI solutions for various industries, including finance, construction, and manufacturing. The company originated from developing world-class AI for the game of Shogi (Japanese chess) and now applies its core AI capabilities to solve complex business challenges.",
+    "faqs": [
+      {
+        "question": "What is HEROZ known for?",
+        "answer": "HEROZ is famously known for developing the AI that defeated a professional Shogi master. It leverages this deep expertise in machine learning and deep learning to build B2B AI services."
+      },
+      {
+        "question": "What industries does HEROZ serve?",
+        "answer": "While it has a broad focus, HEROZ has developed significant solutions for the financial sector (FinTech), construction, and other industries requiring complex data analysis and predictive modeling."
+      }
+    ]
   },
   {
     "name": "Pionex",
@@ -5195,29 +5910,40 @@ export const tools = [
       "Business Research",
       "AI Crypto"
     ],
-    "price": "Unknown",
+    "price": "Fee-based (charges trading fees, typically around 0.05%)",
     "description": "Crypto exchange with in-built trading bots for automated trading.",
     "tags": [
       "crypto exchange",
       "trading bots",
       "automated trading"
     ],
-    "rating": null,
+    "rating": 4.0,
     "keywords": [
       "crypto trading",
       "trading bots"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Pionex is a cryptocurrency exchange that stands out by offering a wide range of free, integrated trading bots. These bots allow users to automate their trading strategies 24/7, such as grid trading, dollar-cost averaging (DCA), and arbitrage, without needing any programming skills.",
+    "faqs": [
+      {
+        "question": "Are the trading bots on Pionex free to use?",
+        "answer": "Yes, Pionex provides access to 16 different types of trading bots for free. The platform makes money by charging a small trading fee on the transactions executed by the bots."
+      },
+      {
+        "question": "Is Pionex suitable for beginners?",
+        "answer": "Yes, Pionex is considered beginner-friendly because the bots are easy to set up and automate complex strategies that would otherwise require constant monitoring. It's a good entry point for automated crypto trading."
+      }
+    ]
   },
   {
     "name": "SHIFT AI",
     "slug": "shift-ai",
     "image": "/shift.png",
-    "url": null,
+    "url": "https://shift-ai.co.jp/",
     "category": [
       "Business Research"
     ],
-    "price": "Unknown",
+    "price": "Contact for consultation and service pricing.",
     "description": "SHIFT AI accelerates AI adoption in Japan through information, education, and utilization support.",
     "tags": [
       "ai adoption",
@@ -5225,12 +5951,23 @@ export const tools = [
       "education",
       "japan"
     ],
-    "rating": null,
+    "rating": 4.1,
     "keywords": [
       "ai utilization",
       "ai education"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "SHIFT AI is a Japanese company dedicated to promoting and accelerating the adoption of artificial intelligence within the country. It provides businesses and individuals with educational resources, industry news, consulting services, and support for implementing AI technologies effectively.",
+    "faqs": [
+      {
+        "question": "What is the primary goal of SHIFT AI?",
+        "answer": "The main goal of SHIFT AI is to bridge the knowledge gap and drive the practical application of AI across various sectors in Japan to enhance business competitiveness and innovation."
+      },
+      {
+        "question": "What services does SHIFT AI offer?",
+        "answer": "They offer a range of services including AI-focused media and news, educational programs and seminars, and business consulting to help companies integrate AI into their operations."
+      }
+    ]
   },
   {
     "name": "Hotpot.ai",
@@ -5241,7 +5978,7 @@ export const tools = [
       "Business Research",
       "Art & Creative Design"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free credits provided; paid plans for higher volume and features)",
     "description": "Hotpot.ai is an AI-powered graphic design tool for creating visuals and text.",
     "tags": [
       "graphic design",
@@ -5249,12 +5986,23 @@ export const tools = [
       "text creation",
       "ai tools"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "ai graphic design",
       "visual creation"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Hotpot.ai is a versatile platform offering a suite of AI-powered tools for graphic design and image editing. It helps users easily create device mockups, social media posts, marketing images, and other visual assets. Key features include an AI art generator, background remover, and object remover.",
+    "faqs": [
+      {
+        "question": "What can you create with Hotpot.ai?",
+        "answer": "You can use Hotpot.ai to generate AI art from text, create professional graphics for social media, design app icons, remove backgrounds from photos, and restore old pictures, among many other tasks."
+      },
+      {
+        "question": "Is Hotpot.ai free?",
+        "answer": "Hotpot.ai operates on a freemium model. It offers free services with certain limitations or on a credit basis. For more extensive use and access to premium features, users can purchase credits or subscribe to a plan."
+      }
+    ]
   },
   {
     "name": "starryai",
@@ -5265,7 +6013,7 @@ export const tools = [
       "Business Research",
       "Interior & Architectural Design"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free daily credits; Pro plans start at $8.99/month for more credits and features)",
     "description": "AI art generator app that transforms text prompts into stunning visuals.",
     "tags": [
       "ai art generator",
@@ -5273,12 +6021,23 @@ export const tools = [
       "visuals",
       "app"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "ai art generator",
       "visual creation"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "starryai is an AI art generator app that empowers users to create unique and beautiful artwork simply by describing it with text prompts. The app provides various AI models and style options, giving users granular control over the final image output. It's available on both iOS and Android.",
+    "faqs": [
+      {
+        "question": "Do I own the art I create with starryai?",
+        "answer": "Yes, users have full ownership of the artwork they generate, allowing them to use it for personal or commercial purposes, including as NFTs."
+      },
+      {
+        "question": "How does starryai work?",
+        "answer": "You input a text prompt describing the image you want to create, choose an art style and AI model, and the app's AI interprets your words to generate a visual representation. You can then refine and upscale the result."
+      }
+    ]
   },
   {
     "name": "MyShell",
@@ -5289,53 +6048,75 @@ export const tools = [
       "Business Research",
       "Chatbots & Virtual Companions"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free usage with limits; Premium subscription for advanced features)",
     "description": "MyShell is a platform for creating and interacting with AI-powered virtual beings.",
     "tags": [
       "virtual beings",
       "ai creation",
       "interaction"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "ai virtual beings",
       "ai platform"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "MyShell is a decentralized and open-source platform for discovering, creating, and interacting with AI-native apps and chatbots. It offers a wide range of AI characters for entertainment, education, and companionship, and provides powerful tools for creators to build their own unique AI bots with distinct personalities and skills.",
+    "faqs": [
+      {
+        "question": "What makes MyShell different from other chatbot platforms?",
+        "answer": "MyShell emphasizes a decentralized ecosystem, allowing creators to own their AI creations. It also supports highly realistic text-to-speech (TTS) and voice cloning, making interactions with the AI bots more immersive."
+      },
+      {
+        "question": "Can I create my own AI bot on MyShell?",
+        "answer": "Yes, MyShell provides a powerful 'Shell Workshop' that allows users, even those without coding skills, to create their own AI characters with unique voices, personalities, and knowledge bases."
+      }
+    ]
   },
   {
     "name": "WebsCrypto",
     "slug": "webscrypto",
     "image": "/webscri.png",
-    "url": null,
+    "url": "https://webscrypto.com/",
     "category": [
       "Business Research",
       "AI Crypto"
     ],
-    "price": "Unknown",
+    "price": "Free",
     "description": "WebsCrypto provides crypto news, market analysis, opinions, and price data.",
     "tags": [
       "crypto news",
       "market analysis",
       "price data"
     ],
-    "rating": null,
+    "rating": 3.9,
     "keywords": [
       "crypto news",
       "market analysis"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "WebsCrypto is an online media outlet dedicated to the cryptocurrency and blockchain industry. It delivers up-to-date news, in-depth market analysis, expert opinions, and real-time price data for a wide range of digital assets. The platform aims to be a reliable source of information for both new and experienced crypto enthusiasts.",
+    "faqs": [
+      {
+        "question": "What kind of content does WebsCrypto offer?",
+        "answer": "WebsCrypto provides a mix of daily news updates, price analysis for major cryptocurrencies like Bitcoin and Ethereum, educational guides, and opinion pieces on the latest trends in the blockchain space."
+      },
+      {
+        "question": "Is the information on WebsCrypto financial advice?",
+        "answer": "No, the content provided on WebsCrypto is for informational and educational purposes only and should not be considered as financial advice. Users should conduct their own research before making any investment decisions."
+      }
+    ]
   },
   {
     "name": "Rosebud AI",
     "slug": "rosebud-ai",
     "image": "/rose.png",
-    "url": null,
+    "url": "https://www.rosebud.ai/",
     "category": [
       "Business Research",
       "Video & Animation"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free access with limitations; Paid plans for extended features)",
     "description": "Rosebud AI: Create 3D games and worlds with vibe coding, no coding required.",
     "tags": [
       "3d games",
@@ -5343,12 +6124,23 @@ export const tools = [
       "vibe coding",
       "no coding"
     ],
-    "rating": null,
+    "rating": 4.0,
     "keywords": [
       "3d game creation",
       "no-code game development"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Rosebud AI is a generative AI platform that enables users to create immersive 3D games and experiences without writing any code. Using simple text and image prompts, creators can generate characters, assets, and entire game worlds, making game development more accessible and intuitive.",
+    "faqs": [
+      {
+        "question": "Do I need coding skills to use Rosebud AI?",
+        "answer": "No, Rosebud is designed as a no-code platform. You can build games and virtual worlds using natural language commands and by providing visual references, a process they sometimes refer to as 'vibe coding'."
+      },
+      {
+        "question": "What can I create with Rosebud AI?",
+        "answer": "You can create fully functional 3D games, interactive virtual worlds, animated characters, and various game assets. It's a tool for rapid prototyping and bringing creative game ideas to life quickly."
+      }
+    ]
   },
   {
     "name": "LuxAlgo",
@@ -5359,7 +6151,7 @@ export const tools = [
       "Business Research",
       "Legal & Finance"
     ],
-    "price": "Unknown",
+    "price": "Premium subscription required; starts at $47.99/month.",
     "description": "LuxAlgo provides AI trading indicators and tools for stocks, crypto, and forex.",
     "tags": [
       "ai trading indicators",
@@ -5368,46 +6160,68 @@ export const tools = [
       "forex",
       "trading tools"
     ],
-    "rating": null,
+    "rating": 4.8,
     "keywords": [
       "ai trading",
       "stock trading"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "LuxAlgo is a provider of advanced trading indicators and tools available on platforms like TradingView. It offers a suite of proprietary indicators that help traders identify market trends, confirmation signals, and potential reversals for assets in stocks, crypto, forex, and futures markets.",
+    "faqs": [
+      {
+        "question": "Is LuxAlgo a trading bot?",
+        "answer": "No, LuxAlgo provides indicators that generate trading signals and analysis on your charts. It is a tool for decision support, not an automated trading bot that executes trades for you."
+      },
+      {
+        "question": "What platforms can I use LuxAlgo on?",
+        "answer": "LuxAlgo indicators are primarily designed to be used on the TradingView platform, which is a popular charting and analysis tool used by traders worldwide."
+      }
+    ]
   },
   {
     "name": "200+ ChatGPT Mega-Prompts for Business",
     "slug": "200-chatgpt-mega-prompts-for-business",
     "image": "/200.png",
-    "url": null,
+    "url": "https://www.damienmorales.com/downloads/chatgpt-prompts-for-business",
     "category": [
       "Business Research",
       "Marketing & Advertising"
     ],
-    "price": "Unknown",
+    "price": "One-time purchase (approx. $39)",
     "description": "AI prompt library and tools to optimize business tasks with AI chatbots.",
     "tags": [
       "ai prompts",
       "business tasks",
       "ai chatbots"
     ],
-    "rating": null,
+    "rating": 4.7,
     "keywords": [
       "prompt library",
       "ai business optimization"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "This is a digital product that provides a curated collection of over 200 expert-level 'mega-prompts' for ChatGPT. These prompts are specifically designed to help business professionals, marketers, and entrepreneurs accomplish complex tasks related to marketing, sales, content creation, and strategy.",
+    "faqs": [
+      {
+        "question": "What is a 'mega-prompt'?",
+        "answer": "A mega-prompt is a detailed, structured, and comprehensive instruction given to an AI like ChatGPT. It's much more than a simple question and is designed to elicit a high-quality, in-depth, and actionable response from the AI."
+      },
+      {
+        "question": "Who can benefit from this prompt library?",
+        "answer": "This product is ideal for business owners, marketers, content creators, and consultants who use ChatGPT and want to save time and improve the quality of their AI-generated outputs for business applications."
+      }
+    ]
   },
   {
     "name": "200+ ChatGPT Mega-Prompts for Solopreneurs",
     "slug": "200-chatgpt-mega-prompts-for-solopreneurs",
     "image": "/200.png",
-    "url": null,
+    "url": "https://www.damienmorales.com/downloads/chatgpt-prompts-for-solopreneurs",
     "category": [
       "Business Research",
       "Marketing & Advertising"
     ],
-    "price": "Unknown",
+    "price": "One-time purchase (approx. $39)",
     "description": "AI prompt library and tools to boost productivity for solopreneurs and marketers.",
     "tags": [
       "ai prompts",
@@ -5415,12 +6229,23 @@ export const tools = [
       "solopreneurs",
       "marketers"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "prompt library",
       "solopreneur tools"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "This is a specialized digital library of over 200 advanced ChatGPT prompts tailored to the unique needs of solopreneurs. The prompts cover a wide range of tasks, including business idea generation, marketing strategy, social media content creation, and productivity hacks, helping solo business owners leverage AI effectively.",
+    "faqs": [
+      {
+        "question": "How are these prompts different from the business version?",
+        "answer": "This collection is specifically focused on the challenges and tasks faced by a single person running a business, such as time management, branding, and handling all aspects of marketing and operations alone."
+      },
+      {
+        "question": "Do I need to be an expert in ChatGPT to use these prompts?",
+        "answer": "No, the prompts are designed to be copy-and-paste ready. They are structured to help users of all skill levels get high-quality results from ChatGPT without needing to be an expert in prompt engineering."
+      }
+    ]
   },
   {
     "name": "BlockSurvey",
@@ -5431,7 +6256,7 @@ export const tools = [
       "Business Research",
       "Web3"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free plan available; Paid plans start at $15/month)",
     "description": "Secure, AI-powered survey tool with data ownership and privacy focus.",
     "tags": [
       "secure survey",
@@ -5439,12 +6264,23 @@ export const tools = [
       "data ownership",
       "privacy"
     ],
-    "rating": null,
+    "rating": 4.8,
     "keywords": [
       "ai survey tool",
       "data privacy"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "BlockSurvey is a privacy-focused platform for creating surveys, forms, and quizzes. It leverages blockchain technology to ensure data security and anonymity, giving users full ownership of their data. It also integrates AI features to assist in survey creation and analysis.",
+    "faqs": [
+      {
+        "question": "How does BlockSurvey ensure privacy?",
+        "answer": "BlockSurvey uses a decentralized identity protocol and end-to-end encryption. This means that survey creators own their data, and it is not stored on a central server accessible by the platform, protecting it from data breaches and surveillance."
+      },
+      {
+        "question": "Can I use BlockSurvey for free?",
+        "answer": "Yes, BlockSurvey offers a free plan with a generous number of responses, making it accessible for individuals and small projects. Paid plans are available for users who need more responses and advanced features."
+      }
+    ]
   },
   {
     "name": "Perplexity AI",
@@ -5456,7 +6292,7 @@ export const tools = [
       "Office & Productivity",
       "Research & Data Analysis"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Pro plan costs $20/month or $200/year)",
     "description": "An AI search engine using large language models for information discovery and answering questions.",
     "tags": [
       "ai search engine",
@@ -5464,13 +6300,24 @@ export const tools = [
       "information discovery",
       "q&a"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "ai search",
       "llm",
       "information discovery"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Perplexity AI is a conversational search engine, often described as an 'answer engine.' It uses large language models to deliver direct, cited answers to user questions. It synthesizes information from multiple web sources and presents it in a clear, easy-to-digest format with source links for verification.",
+    "faqs": [
+      {
+        "question": "How is Perplexity AI different from Google Search?",
+        "answer": "Perplexity provides a direct, synthesized answer with citations, whereas Google provides a list of links. Perplexity aims to answer your question for you, while Google points you to websites where you can find the answer yourself."
+      },
+      {
+        "question": "What is the 'Copilot' feature in Perplexity?",
+        "answer": "Copilot is an interactive AI research assistant within Perplexity. It asks clarifying questions to better understand your intent, leading to more precise, personalized, and comprehensive answers."
+      }
+    ]
   },
   {
     "name": "Poe",
@@ -5481,30 +6328,41 @@ export const tools = [
       "Education & Translation",
       "Chatbots & Virtual Companions"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free access with daily limits; Subscription for higher limits and premium bots at $19.99/month)",
     "description": "Poe is an AI chat platform powered by Quora, offering access to multiple AI models.",
-    "tags": [ 
+    "tags": [
       "ai chat platform",
       "quora",
       "ai models"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "ai chat",
       "multi-model chat"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Poe (Platform for Open Exploration) by Quora is an AI chat application that provides access to a variety of different AI chatbots and language models in one place. Users can talk to models like OpenAI's GPT-4, Anthropic's Claude, Google's Gemini, and many other community-created bots.",
+    "faqs": [
+      {
+        "question": "What is the main advantage of using Poe?",
+        "answer": "The key advantage is convenience. Poe allows you to switch between and compare responses from multiple leading AI models through a single interface, instead of needing separate accounts for each."
+      },
+      {
+        "question": "Can I create my own chatbot on Poe?",
+        "answer": "Yes, Poe allows users to create their own AI bots. You can give the bot a specific personality, instructions, and a knowledge base by providing a simple text prompt, making it easy to build specialized AI assistants."
+      }
+    ]
   },
   {
     "name": "TurboScribe",
     "slug": "turboscribe-1",
     "image": "/turboscribe.png",
-    "url": null,
+    "url": "https://turboscribe.ai/",
     "category": [
       "Education & Translation",
       "Voice Generation & Conversion"
     ],
-    "price": "Unknown",
+    "price": "Freemium (3 free transcriptions per day; Unlimited plan is $10/month)",
     "description": "AI transcription service converting audio and video to text in 98+ languages.",
     "tags": [
       "transcription",
@@ -5512,12 +6370,23 @@ export const tools = [
       "video to text",
       "multilingual"
     ],
-    "rating": null,
+    "rating": 4.9,
     "keywords": [
       "ai transcription",
       "audio transcription"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "TurboScribe is an AI-powered transcription service that accurately converts audio and video files into text. It supports over 98 languages, provides speaker identification, and offers unlimited transcriptions with its paid plan. The service is known for its high accuracy and speed, making it ideal for transcribing interviews, lectures, and meetings.",
+    "faqs": [
+      {
+        "question": "What file formats does TurboScribe support?",
+        "answer": "TurboScribe supports a wide variety of common audio and video file formats, including MP3, WAV, M4A, MP4, and MOV."
+      },
+      {
+        "question": "How accurate is the transcription?",
+        "answer": "Powered by Whisper, one of the leading AI transcription technologies, TurboScribe offers state-of-the-art accuracy. It can handle various accents and background noise effectively."
+      }
+    ]
   },
   {
     "name": "Anthropic",
@@ -5528,7 +6397,7 @@ export const tools = [
       "Education & Translation",
       "Business Management"
     ],
-    "price": "Unknown",
+    "price": "API access has usage-based pricing; Claude Pro is $20/month.",
     "description": "AI safety and research company building reliable, interpretable, and steerable AI systems.",
     "tags": [
       "ai safety",
@@ -5536,23 +6405,34 @@ export const tools = [
       "interpretable ai",
       "steerable ai"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "ai research",
       "ai systems"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Anthropic is an AI safety and research company dedicated to building helpful, honest, and harmless AI systems. Their flagship product is Claude, a family of large language models known for their strong performance, large context windows, and focus on constitutional AI principles to ensure safety and ethical behavior.",
+    "faqs": [
+      {
+        "question": "What is Claude?",
+        "answer": "Claude is Anthropic's AI assistant and large language model, designed to be a capable and safe conversational AI. It is available through an API for developers and as a web-based chatbot (Claude.ai) for consumers."
+      },
+      {
+        "question": "What is 'Constitutional AI'?",
+        "answer": "Constitutional AI is a framework developed by Anthropic to train AI models to be helpful and harmless without relying on extensive human feedback. The AI learns from a set of principles or a 'constitution,' guiding it to avoid toxic or harmful responses."
+      }
+    ]
   },
   {
     "name": "Monica",
     "slug": "monica",
     "image": "/monica.png",
-    "url": null,
+    "url": "https://monica.im/",
     "category": [
       "Education & Translation",
       "Office & Productivity"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free plan with daily usage limits; Paid plans start around $8.3/month)",
     "description": "Chrome extension AI assistant for chatting, copywriting, translation, and more.",
     "tags": [
       "chrome extension",
@@ -5561,18 +6441,29 @@ export const tools = [
       "copywriting",
       "translation"
     ],
-    "rating": null,
+    "rating": 4.8,
     "keywords": [
       "ai assistant",
       "browser extension"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Monica is an all-in-one AI assistant powered by advanced models like GPT-4 and Claude that lives in your browser as an extension. It can chat, search, write, translate, and process information from web pages, images, and videos, acting as a comprehensive productivity tool.",
+    "faqs": [
+      {
+        "question": "What can I do with the Monica browser extension?",
+        "answer": "You can select text on any webpage to have Monica explain, translate, or rephrase it. You can also use it to generate articles, emails, and social media posts, or have a conversation with it about the content of your current page."
+      },
+      {
+        "question": "Does Monica work on all websites?",
+        "answer": "Yes, as a browser extension (available for Chrome and Edge), Monica is designed to work across all websites, allowing you to use its AI capabilities wherever you are on the web."
+      }
+    ]
   },
   {
     "name": "秘塔AI搜索 (Meta AI Search)",
     "slug": "mita-ai-search",
     "image": "/cfkk.png",
-    "url": null,
+    "url": "https://metaso.cn/",
     "category": [
       "Education & Translation",
       "Office & Productivity"
@@ -5584,12 +6475,23 @@ export const tools = [
       "direct results",
       "research tools"
     ],
-    "rating": null,
+    "rating": 4.1,
     "keywords": [
       "ai search",
       "search engine"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "秘塔AI搜索 (Meta AI Search) is an AI-native search engine that provides direct, structured answers to user queries without showing traditional ads. It synthesizes information into comprehensive summaries, creates mind maps, and offers deep research tools, aiming to deliver a more efficient and focused search experience.",
+    "faqs": [
+      {
+        "question": "How is Meta AI Search different from traditional search engines?",
+        "answer": "Instead of just providing a list of links, it directly answers questions by summarizing and organizing information from across the web. It is ad-free and focuses on delivering knowledge quickly."
+      },
+      {
+        "question": "What languages does it support?",
+        "answer": "While it is developed in China and excels in Mandarin, it also supports and provides comprehensive results for queries in English and other major languages."
+      }
+    ]
   },
   {
     "name": "Scribbr",
@@ -5600,7 +6502,7 @@ export const tools = [
       "Education & Translation",
       "AI Detection & Anti-Detection"
     ],
-    "price": "Unknown",
+    "price": "Service-based pricing (e.g., proofreading per word); some tools are free.",
     "description": "Scribbr offers proofreading, plagiarism checking, citation generation, and academic resources for students.",
     "tags": [
       "proofreading",
@@ -5608,12 +6510,23 @@ export const tools = [
       "citation generation",
       "academic resources"
     ],
-    "rating": null,
+    "rating": 4.7,
     "keywords": [
       "academic tools",
       "plagiarism checker"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Scribbr is an academic services company dedicated to helping students succeed. It offers a suite of tools including a highly-rated Plagiarism Checker, an APA and MLA Citation Generator, and professional proofreading and editing services. It also features an AI Detector to check for AI-generated text.",
+    "faqs": [
+      {
+        "question": "Are Scribbr's tools free to use?",
+        "answer": "Scribbr offers several free tools, such as the basic citation generator. However, its core services like the plagiarism checker and professional editing are paid services with pricing based on document length."
+      },
+      {
+        "question": "Who does the proofreading and editing?",
+        "answer": "Scribbr employs a network of professional academic editors who are native speakers and experts in various fields. They provide detailed feedback on language, structure, and clarity."
+      }
+    ]
   },
   {
     "name": "Google Gemini",
@@ -5624,63 +6537,96 @@ export const tools = [
       "Chatbots & Virtual Companions",
       "Office & Productivity"
     ],
-    "price": "Free",
+    "price": "Freemium (Gemini Advanced available through Google One AI Premium subscription)",
     "description": "Google's personal, proactive, and powerful AI assistant.",
     "tags": [
       "ai assistant",
       "personal assistant",
       "google ai"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "google gemini",
       "ai assistant"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Google Gemini is a family of multimodal AI models and the AI assistant that powers many Google products. As a conversational AI, it can understand and process text, code, images, and video to help users with tasks like creative brainstorming, writing assistance, coding, planning, and learning about complex topics.",
+    "faqs": [
+      {
+        "question": "What is the difference between Gemini and Gemini Advanced?",
+        "answer": "Gemini uses Google's standard powerful model for free. Gemini Advanced is a paid subscription that provides access to Google's most capable AI model (currently Gemini 1.5 Pro), offering a larger context window and more advanced reasoning capabilities."
+      },
+      {
+        "question": "Is Gemini replacing the Google Assistant?",
+        "answer": "Yes, Google is integrating Gemini as its primary AI assistant across its products, including Android, effectively succeeding the Google Assistant with more advanced generative AI capabilities."
+      }
+    ]
   },
   {
     "name": "Janitor AI",
     "slug": "janitor-ai",
     "image": "/janitor.png",
-    "url": null,
+    "url": "https://www.janitorai.com/",
     "category": [
       "Chatbots & Virtual Companions"
     ],
-    "price": "Unknown",
+    "price": "Free to use; requires a third-party API key (e.g., from OpenAI), which may incur costs.",
     "description": "Janitor AI allows users to create NSFW fictional chatbot characters.",
     "tags": [
       "chatbot characters",
       "fictional bots",
       "nsfw"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "ai chatbot",
       "character creation"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Janitor AI is a character-focused chatbot platform known for its support of unrestricted and NSFW (Not Safe for Work) conversations. It allows users to create and interact with a vast library of fictional characters, engaging in detailed role-playing and storytelling scenarios.",
+    "faqs": [
+      {
+        "question": "Do I have to pay to use Janitor AI?",
+        "answer": "The Janitor AI platform itself is free. However, to chat with the bots, you must connect your own API key from a service like OpenAI or KoboldAI. You are then responsible for any usage costs charged by the API provider."
+      },
+      {
+        "question": "What kind of chatbots can be found on Janitor AI?",
+        "answer": "The platform features a wide variety of SFW (Safe for Work) and NSFW fictional characters, many inspired by anime, games, and original concepts, with a strong emphasis on immersive role-playing."
+      }
+    ]
   },
   {
     "name": "SPICYCHAT.AI",
     "slug": "spicychat-ai",
     "image": "/spicy.png",
-    "url": null,
+    "url": "https://spicychat.ai/",
     "category": [
       "Chatbots & Virtual Companions"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free access with message limits; Premium plans start at $4.99/month)",
     "description": "Chatbot platform with AI characters, allowing users to chat and create bots.",
     "tags": [
       "chatbot platform",
       "ai characters",
       "bot creation"
     ],
-    "rating": null,
+    "rating": 4.0,
     "keywords": [
       "ai chatbot",
       "character chat"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Spicychat is an AI chatbot platform that allows users to engage in conversations with a diverse range of AI characters, including those in NSFW scenarios. It offers a large community-created library of bots and the ability for users to create and share their own characters.",
+    "faqs": [
+      {
+        "question": "Does Spicychat require an external API key?",
+        "answer": "No, unlike some other platforms, Spicychat provides its own AI models, so users do not need to provide their own API key from services like OpenAI. You can start chatting right away."
+      },
+      {
+        "question": "Is Spicychat free?",
+        "answer": "Spicychat has a free tier that allows users to chat with some limitations. For unlimited messages and access to premium features, they offer monthly subscription plans."
+      }
+    ]
   },
   {
     "name": "LOVESCAPE",
@@ -5691,7 +6637,7 @@ export const tools = [
       "Chatbots & Virtual Companions",
       "AI Girlfriend"
     ],
-    "price": "$5.99/month (annual plan)",
+    "price": "Starts at $5.99/month (billed annually); monthly plans available.",
     "description": "Platform for creating and interacting with AI girlfriends through chat, visuals, and voice.",
     "tags": [
       "ai girlfriend",
@@ -5705,19 +6651,30 @@ export const tools = [
       "ai girlfriend",
       "virtual companion"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Lovescape is an AI companion platform that focuses on creating immersive and interactive virtual girlfriend experiences. Users can customize their AI partner's appearance and personality, and engage in conversations through text, voice messages, and AI-generated images.",
+    "faqs": [
+      {
+        "question": "What makes Lovescape interactive?",
+        "answer": "Beyond just text chat, Lovescape incorporates AI-generated selfies and voice messages from the AI companion, creating a more dynamic and multi-sensory interaction."
+      },
+      {
+        "question": "Can I customize my AI companion?",
+        "answer": "Yes, Lovescape offers extensive customization options. You can choose from various physical attributes and personality traits to create an AI girlfriend that matches your preferences."
+      }
+    ]
   },
   {
     "name": "Jotform AI Agents",
     "slug": "jotform-ai-agents-1",
     "image": "/jotform.png",
-    "url": null,
+    "url": "https://www.jotform.com/products/ai-agents/",
     "category": [
       "Chatbots & Virtual Companions",
       "Business Management",
       "Office & Productivity"
     ],
-    "price": "Unknown",
+    "price": "Included with Jotform plans; Free plan available.",
     "description": "Platform to create AI agents for customer service across multiple channels.",
     "tags": [
       "ai agents",
@@ -5725,12 +6682,23 @@ export const tools = [
       "chatbots",
       "multi-channel"
     ],
-    "rating": null,
+    "rating": 4.7,
     "keywords": [
       "ai customer service",
       "ai agent creation"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Jotform AI Agents is a feature within the Jotform suite that allows businesses to create custom AI-powered chatbots for customer service. These agents can be trained on company data and integrated into websites, apps, and other platforms to provide instant support and answer customer questions 24/7.",
+    "faqs": [
+      {
+        "question": "How do I train a Jotform AI Agent?",
+        "answer": "You can train your AI agent by providing it with your company's data, such as website content, documents, and FAQs. The agent learns from this information to provide accurate and relevant answers."
+      },
+      {
+        "question": "Is this feature included in the free Jotform plan?",
+        "answer": "Yes, you can build and use AI Agents with the free Jotform plan, although there will be limits on usage. Higher-tier plans offer more capacity and features."
+      }
+    ]
   },
   {
     "name": "PolyBuzz.ai",
@@ -5748,12 +6716,23 @@ export const tools = [
       "ai characters",
       "customized bots"
     ],
-    "rating": null,
+    "rating": 3.8,
     "keywords": [
       "ai chatbot",
       "ai character creation"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "PolyBuzz.ai is a free platform that enables users to create, share, and chat with customized AI characters. It combines AI chat functionalities with AI image generation, allowing for a more visual and interactive role-playing experience. The platform supports both SFW and NSFW content.",
+    "faqs": [
+      {
+        "question": "Is PolyBuzz.ai completely free?",
+        "answer": "Yes, the platform is currently offered for free, providing users with access to character creation, chat, and image generation without a subscription."
+      },
+      {
+        "question": "Can characters on PolyBuzz.ai send images?",
+        "answer": "Yes, a key feature of PolyBuzz is the ability for AI characters to generate and send images during a conversation, enhancing the role-playing and storytelling aspects of the chat."
+      }
+    ]
   },
   {
     "name": "CrushOn.AI",
@@ -5764,19 +6743,30 @@ export const tools = [
       "Chatbots & Virtual Companions",
       "AI Character"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free monthly credits; Premium plans start at $5.90/month)",
     "description": "Platform for unfiltered, unbounded emotional and NSFW AI character interactions.",
     "tags": [
       "ai characters",
       "emotional interactions",
       "nsfw"
     ],
-    "rating": null,
+    "rating": 4.1,
     "keywords": [
       "ai character chat",
       "virtual companion"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "CrushOn.AI is a chatbot platform specializing in highly interactive and unfiltered conversations with AI characters. It is known for its strong support of NSFW and emotional role-playing, offering users the freedom to explore complex narratives and relationships with a diverse range of community-created bots.",
+    "faqs": [
+      {
+        "question": "What does 'unfiltered' mean in the context of CrushOn.AI?",
+        "answer": "It means the AI models are configured to have fewer restrictions, allowing for more realistic, diverse, and often mature or NSFW conversations that might be blocked on other platforms."
+      },
+      {
+        "question": "Do I need my own API key to use CrushOn.AI?",
+        "answer": "No, CrushOn.AI hosts its own models, so you can start chatting immediately after signing up without needing an external API key from services like OpenAI."
+      }
+    ]
   },
   {
     "name": "Planner 5D",
@@ -5787,7 +6777,7 @@ export const tools = [
       "Interior & Architectural Design",
       "Image Analysis"
     ],
-    "price": "Free",
+    "price": "Freemium (Free version with limited catalog; Premium plans start at approx. $6.99/month)",
     "description": "A 3D home design tool using AI to convert 2D plans into 3D models.",
     "tags": [
       "3d design",
@@ -5795,12 +6785,23 @@ export const tools = [
       "2d to 3d",
       "architectural design"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "3d home design",
       "ai design tool"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Planner 5D is an easy-to-use home design and interior decorating tool that allows users to create detailed 2D floor plans and visualize them in realistic 3D. It features an AI Plan Recognition tool that can automatically convert a 2D floor plan image into a fully interactive 3D model.",
+    "faqs": [
+      {
+        "question": "Do I need design experience to use Planner 5D?",
+        "answer": "No, Planner 5D is designed for amateurs and professionals alike. Its intuitive drag-and-drop interface makes it easy for anyone to create floor plans and design home interiors."
+      },
+      {
+        "question": "What is the AI Plan Recognition feature?",
+        "answer": "This feature allows you to upload a picture of a 2D floor plan. The AI then automatically analyzes it and generates a customizable 3D model of the space, saving you significant time."
+      }
+    ]
   },
   {
     "name": "Coohom",
@@ -5810,7 +6811,7 @@ export const tools = [
     "category": [
       "Interior & Architectural Design"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free plan available; Pro plans start at $25/month)",
     "description": "All-in-one 3D design software for interior, furniture, and home design professionals.",
     "tags": [
       "3d design software",
@@ -5818,12 +6819,23 @@ export const tools = [
       "furniture design",
       "home design"
     ],
-    "rating": null,
+    "rating": 4.6,
     "keywords": [
       "3d design tool",
       "interior design software"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Coohom is a powerful, all-in-one 3D design platform for interior design professionals. It offers tools for 2D/3D floor planning, a massive library of 3D models, and ultra-fast cloud rendering capabilities, enabling designers to go from a floor plan to a photorealistic render in minutes.",
+    "faqs": [
+      {
+        "question": "What makes Coohom's rendering so fast?",
+        "answer": "Coohom uses a cloud-based rendering engine that leverages powerful servers to process renders extremely quickly, often producing high-quality 4K images in under a minute, which is significantly faster than traditional rendering software."
+      },
+      {
+        "question": "Is Coohom suitable for beginners?",
+        "answer": "While it is a professional-grade tool, its user-friendly interface makes it accessible for design students and enthusiasts. The free plan is a great way to learn the basics of the platform."
+      }
+    ]
   },
   {
     "name": "Easy-Peasy.AI",
@@ -5834,7 +6846,7 @@ export const tools = [
       "Interior & Architectural Design",
       "Writing & Editing"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free plan with 10,000 words; Paid plans start at $4.99/month)",
     "description": "All-in-one AI platform for content, images, audio, and transcription.",
     "tags": [
       "ai platform",
@@ -5843,67 +6855,100 @@ export const tools = [
       "audio",
       "transcription"
     ],
-    "rating": null,
+    "rating": 4.8,
     "keywords": [
       "ai content platform",
       "all-in-one tool"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Easy-Peasy.AI is a comprehensive AI content creation platform. It offers a wide array of tools, including an AI writer with over 170 templates, an AI image generator, AI audio transcription, and an AI chatbot. It aims to be a one-stop solution for marketers, writers, and business professionals.",
+    "faqs": [
+      {
+        "question": "What kinds of content can I create with Easy-Peasy.AI?",
+        "answer": "You can create blog posts, social media updates, emails, ad copy, product descriptions, and much more. It also has tools for generating images from text and transcribing audio files."
+      },
+      {
+        "question": "Who is the target audience for this tool?",
+        "answer": "It is designed for anyone who needs to create content regularly, including marketers, bloggers, small business owners, and students who want to streamline their content creation process."
+      }
+    ]
   },
   {
     "name": "Pincel",
     "slug": "pincel",
     "image": "/pincel.png",
-    "url": null,
+    "url": "https://pincel.app/",
     "category": [
       "Interior & Architectural Design",
       "Image Generation & Editing"
     ],
-    "price": "Unknown",
+    "price": "Pay-as-you-go (credit-based system starts at $10)",
     "description": "AI-powered online image editing app for simple and accessible photo manipulation.",
     "tags": [
       "online image editing",
       "photo manipulation",
       "ai tools"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
       "ai photo editor",
       "online image tool"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Pincel is a web-based suite of AI-powered image editing tools. It provides easy-to-use features like AI inpainting (to remove, add, or change objects), outpainting (to expand images), and AI-based photo restoration, all accessible directly from a browser without needing to install software.",
+    "faqs": [
+      {
+        "question": "Do I need to download any software to use Pincel?",
+        "answer": "No, Pincel is a fully online tool. All of its AI editing features can be accessed and used directly through your web browser."
+      },
+      {
+        "question": "What is the pricing model?",
+        "answer": "Pincel uses a credit-based, pay-as-you-go system. Users purchase credits, and each AI-powered action consumes a certain number of credits. There are no monthly subscriptions."
+      }
+    ]
   },
   {
     "name": "RoomGPT",
     "slug": "roomgpt",
     "image": "/room.png",
-    "url": null,
+    "url": "https://www.roomgpt.io/",
     "category": [
       "Interior & Architectural Design"
     ],
-    "price": "Unknown",
+    "price": "Freemium (3 free renders; Paid plans for more renders start at $14.99/month)",
     "description": "AI-powered tool to redesign rooms from a photo.",
     "tags": [
       "room redesign",
       "interior design",
       "ai tools"
     ],
-    "rating": null,
+    "rating": 4.0,
     "keywords": [
       "ai interior design",
       "room planner"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "RoomGPT is an AI interior design tool that allows users to redesign their rooms virtually. You simply upload a photo of your room, select a design style (like Modern, Minimalist, or Coastal), and the AI generates a new version of your room in that style, providing instant design inspiration.",
+    "faqs": [
+      {
+        "question": "How does RoomGPT work?",
+        "answer": "It uses generative AI models trained on interior design images. The AI analyzes the layout and structure of your uploaded room photo and then re-imagines the decor, furniture, and color scheme based on the style you select."
+      },
+      {
+        "question": "Is RoomGPT free?",
+        "answer": "RoomGPT offers a few free design renders for new users to try out the service. For more renders and access to all features, you need to subscribe to one of their paid plans."
+      }
+    ]
   },
   {
     "name": "mnml.ai",
     "slug": "mnml-ai",
     "image": "mnml.png",
-    "url": null,
+    "url": "https://mnml.ai/",
     "category": [
       "Interior & Architectural Design"
     ],
-    "price": "Unknown",
+    "price": "Contact for enterprise pricing; Pro plans in development.",
     "description": "AI rendering platform for architects and interior designers, generating renders in seconds.",
     "tags": [
       "ai rendering",
@@ -5911,12 +6956,23 @@ export const tools = [
       "interior designers",
       "3d rendering"
     ],
-    "rating": null,
+    "rating": 4.2,
     "keywords": [
       "ai rendering platform",
       "architectural design"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "mnml.ai is an AI-powered rendering platform designed to dramatically speed up the visualization process for architects and interior designers. It can transform simple 3D models or even sketches into high-quality, stylized renders almost instantly, allowing for rapid design exploration and iteration.",
+    "faqs": [
+      {
+        "question": "How fast is mnml.ai compared to traditional rendering?",
+        "answer": "While traditional rendering can take hours, mnml.ai leverages AI to generate renders in a matter of seconds, enabling designers to test different materials, lighting, and styles in real-time."
+      },
+      {
+        "question": "What kind of input does it require?",
+        "answer": "The platform is designed to work with various inputs, including basic 3D models from software like SketchUp or Revit, as well as 2D drawings and sketches, which it can interpret and visualize in 3D."
+      }
+    ]
   },
   {
     "name": "Foyr Neo",
@@ -5926,7 +6982,7 @@ export const tools = [
     "category": [
       "Interior & Architectural Design"
     ],
-    "price": "Unknown",
+    "price": "Subscription-based; plans start at $49/month (billed annually).",
     "description": "Interior design software with CAD, 3D, and rendering features for effortless design.",
     "tags": [
       "interior design software",
@@ -5934,565 +6990,795 @@ export const tools = [
       "3d",
       "rendering"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
       "interior design tool",
       "3d rendering"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Foyr Neo is a comprehensive, cloud-based interior design software that covers the entire design workflow. It allows users to create 2D floor plans, decorate in 3D with a large catalog of items, and generate photorealistic renders quickly. It is designed to be intuitive, requiring no prior CAD experience.",
+    "faqs": [
+      {
+        "question": "Is Foyr Neo easy to learn?",
+        "answer": "Yes, Foyr Neo is known for its gentle learning curve. It's designed for interior designers who want powerful results without the complexity of traditional 3D modeling software like 3ds Max or V-Ray."
+      },
+      {
+        "question": "What is included in the software?",
+        "answer": "It includes 2D floor planning, a drag-and-drop 3D design interface, a vast library of pre-modeled furniture and materials, and a fast, built-in rendering engine to create high-quality visualizations."
+      }
+    ]
   },
   {
     "name": "Maket",
     "slug": "maket",
     "image": "/maket.png",
-    "url": null,
+    "url": "https://www.maket.ai/",
     "category": [
       "Interior & Architectural Design"
     ],
-    "price": "Unknown",
+    "price": "Freemium (Free plan available; Pro plans start at $30/month)",
     "description": "Generative AI software for instant architectural plans and design exploration.",
     "tags": [
       "generative ai",
       "architectural plans",
       "design exploration"
     ],
-    "rating": null,
+    "rating": 4.1,
     "keywords": [
       "ai architectural design",
       "design exploration"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Maket is a generative AI platform for architecture that automates the creation of floor plans and 3D models. Architects and developers can input their project requirements (like unit mix, size, and constraints), and Maket's AI will instantly generate thousands of optimized design options, drastically reducing early-stage planning time.",
+    "faqs": [
+      {
+        "question": "Who is the primary user of Maket?",
+        "answer": "Maket is primarily designed for architects, real estate developers, and urban planners to accelerate the feasibility studies and schematic design phases of a project."
+      },
+      {
+        "question": "What kind of output does Maket produce?",
+        "answer": "The platform generates 2D floor plans, 3D building models, and key project metrics (like gross floor area and efficiency), providing a comprehensive overview of each design option."
+      }
+    ]
   },
   {
     "name": "Rendair",
     "slug": "rendair",
-    "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
-    "url": null,
+    "image": "/rendair.jpeg",
+    "url": "https://www.rendair.com/",
     "category": [
       "Interior & Architectural Design"
     ],
-    "price": "Unknown",
+    "price": "Credit-based (Pay-per-render; packages start from approx. $15)",
     "description": "All-in-one architectural rendering platform for quick, high-quality visualizations.",
     "tags": [
       "architectural rendering",
       "visualizations",
       "rendering platform"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
       "architectural rendering",
       "ai visualizations"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Rendair is an AI-powered platform that transforms simple architectural sketches, 2D plans, or basic 3D models into high-quality, artistic renderings. Users can upload their designs, describe a desired style with text prompts, and the AI will generate multiple visualization options in seconds.",
+    "faqs": [
+      {
+        "question": "What do I need to provide to get a rendering?",
+        "answer": "You can provide a wide range of inputs, from a hand-drawn sketch or a CAD floor plan to a simple 3D model from software like SketchUp. You then guide the final look with a text prompt."
+      },
+      {
+        "question": "Is Rendair a replacement for V-Ray or Corona?",
+        "answer": "Rendair is more of a tool for rapid conceptual visualization and design exploration. While it produces beautiful images quickly, traditional render engines offer more precise control for final, photorealistic production renders."
+      }
+    ]
   },
+  ///////////////
   {
-    "name": "Photoleap",
-    "slug": "photoleap",
-    "image": "/photoela.png",
-    "url": "https://photoleap.com/",
-    "category": [
-      "Interior & Architectural Design",
-      "Image Generation & Editing"
-    ],
-    "price": "Unknown",
-    "description": "Creative photo editing app with AI tools for quick edits and pro designs.",
-    "tags": [
-      "photo editing",
-      "ai tools",
-      "pro designs",
-      "app"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai photo editor",
-      "photo editing app"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "Prolific",
-    "slug": "prolific",
-    "image": "/porlific.png",
-    "url": "https://www.prolific.com/",
-    "category": [
-      "Research & Data Analysis",
-      "Business Research"
-    ],
-    "price": "Unknown",
-    "description": "A platform connecting researchers with verified participants for high-quality data collection.",
-    "tags": [
-      "research platform",
-      "data collection",
-      "participants"
-    ],
-    "rating": null,
-    "keywords": [
-      "research data",
-      "data collection"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "Thomson Reuters",
-    "slug": "thomson-reuters-2",
-    "image": "/thomsong.png",
-    "url": "https://www.thomsonreuters.com/",
-    "category": [
-      "Research & Data Analysis",
-      "Daily Life",
-      "Legal & Finance"
-    ],
-    "price": "Unknown",
-    "description": "Thomson Reuters: Technology solutions and expertise for professionals across various industries.",
-    "tags": [
-      "technology solutions",
-      "expertise",
-      "industry"
-    ],
-    "rating": null,
-    "keywords": [
-      "technology services",
-      "professional solutions"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "LINER AI",
-    "slug": "liner-ai",
-    "image": "/liner.png",
-    "url": "https://getliner.com/",
-    "category": [
-      "Research & Data Analysis",
-      "Office & Productivity"
-    ],
-    "price": "Unknown",
-    "description": "AI-powered search assistant and digital highlighter for reliable information discovery and annotation.",
-    "tags": [
-      "ai search assistant",
-      "digital highlighter",
-      "information discovery",
-      "annotation"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai search",
-      "research assistant"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "Runway",
-    "slug": "runway",
-    "image": "/runway.png",
-    "url": "https://runwayml.com/",
-    "category": [
-      "Research & Data Analysis",
-      "Video & Animation"
-    ],
-    "price": "Unknown",
-    "description": "Runway is an AI research company providing tools for media generation and creative workflows.",
-    "tags": [
-      "ai research",
-      "media generation",
-      "creative workflows",
-      "video tools"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai media tools",
-      "video generation"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "文心一言 (Wénxīn Yīyán)",
-    "slug": "wenxin-yiyan-1",
-    "image": "/chsfklsj.png",
-    "url": null,
-    "category": [
-      "Research & Data Analysis",
-      "Image Analysis"
-    ],
-    "price": "Unknown",
-    "description": "文心一言 is an AI assistant for chatting, answering questions, and helping with work and study.",
-    "tags": [
-      "ai assistant",
-      "chatting",
-      "q&a",
-      "work assistance"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai assistant",
-      "chat tool"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "Google AI for Developers",
-    "slug": "google-ai-for-developers",
-    "image": "/google.png",
-    "url": "https://developers.google.com/ai",
-    "category": [
-      "Research & Data Analysis",
-      "Coding & Development"
-    ],
-    "price": "Unknown",
-    "description": "Resources and tools for building with Google's AI models.",
-    "tags": [
-      "google ai",
-      "ai models",
-      "development tools",
-      "resources"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai development",
-      "google ai"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "TabSquare",
-    "slug": "tabsquare-1",
-    "image": "/.tab.png",
-    "url": null,
-    "category": [
-      "Research & Data Analysis",
-      "Marketing & Advertising"
-    ],
-    "price": "Unknown",
-    "description": "Technology platform for restaurants, offering solutions for in-store and online operations.",
-    "tags": [
-      "technology platform",
-      "restaurants",
-      "in-store operations",
-      "online operations"
-    ],
-    "rating": null,
-    "keywords": [
-      "restaurant technology",
-      "operations management"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "Glasp",
-    "slug": "glasp-1",
-    "image": "/glasp.png",
-    "url": "https://glasp.co/",
-    "category": [
-      "Research & Data Analysis",
-      "Social Media"
-    ],
-    "price": "Unknown",
-    "description": "Social web highlighter to organize ideas, build AI clone, and share learning.",
-    "tags": [
-      "web highlighter",
-      "idea organization",
-      "ai clone",
-      "learning"
-    ],
-    "rating": null,
-    "keywords": [
-      "web highlighting",
-      "ai learning"
-    ],
-    "isFeatured": false
-  },
-  {
-    "name": "Rubii.ai",
-    "slug": "rubii-ai",
-    "image": "/rubii.png",
-    "url": null,
-    "category": [
-      "Featured",
-      "Chatbots & Virtual Companions",
-      "Art & Creative Design"
-    ],
-    "price": "Unknown",
-    "description": "AI character chat, AI companion, and AI art creation platform.",
-    "tags": [
-      "ai character chat",
-      "ai companion",
-      "ai art creation"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai chat",
-      "ai art generator"
-    ],
-    "isFeatured": true
-  },
-  {
-    "name": "Lufe AI Translator",
-    "slug": "lufe-ai-translator",
-    "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
-    "url": null,
-    "category": [
-      "Featured",
-      "Education & Translation"
-    ],
-    "price": "Unknown",
-    "description": "AI-powered bilingual translation extension for web, PDF, and images.",
-    "tags": [
-      "ai translation",
-      "bilingual",
-      "extension",
-      "web",
-      "pdf",
-      "images"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai translator",
-      "bilingual translation"
-    ],
-    "isFeatured": true
-  },
-  {
-    "name": "Canny",
-    "slug": "canny",
-    "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
-    "url": "https://canny.io/",
-    "category": [
-      "Featured",
-      "Business Management"
-    ],
-    "price": "Unknown",
-    "description": "Customer feedback management software to collect, analyze, and prioritize feature requests.",
-    "tags": [
-      "customer feedback",
-      "feedback management",
-      "feature requests",
-      "software"
-    ],
-    "rating": null,
-    "keywords": [
-      "feedback management",
-      "customer service"
-    ],
-    "isFeatured": true
-  },
-  {
-    "name": "VideoToWords AI",
-    "slug": "videotowords-ai",
-    "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
-    "url": null,
-    "category": [
-      "Featured",
-      "Voice Generation & Conversion"
-    ],
-    "price": "Unknown",
-    "description": "AI-powered transcription service for audio and video to text conversion.",
-    "tags": [
-      "transcription",
-      "audio to text",
-      "video to text",
-      "ai tools"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai transcription",
-      "video transcription"
-    ],
-    "isFeatured": true
-  },
-  {
-    "name": "Autocoder.cc",
-    "slug": "autocoder-cc",
-    "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
-    "url": null,
-    "category": [
-      "Featured",
-      "Coding & Development"
-    ],
-    "price": "Unknown",
-    "description": "The 1st full stack vibe coding tool",
-    "tags": [
-      "full stack",
-      "vibe coding",
-      "coding tool"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai coding",
-      "full stack development"
-    ],
-    "isFeatured": true
-  },
-  {
-    "name": "MusicCreator AI",
-    "slug": "musiccreator-ai",
-    "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
-    "url": null,
-    "category": [
-      "Featured",
-      "Music & Audio"
-    ],
-    "price": "Unknown",
-    "description": "AI platform for generating royalty-free music and lyrics.",
-    "tags": [
-      "music generation",
-      "royalty-free music",
-      "lyrics generation",
-      "ai platform"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai music generator",
-      "royalty-free music"
-    ],
-    "isFeatured": true
-  },
-  {
-    "name": "15Minutes",
-    "slug": "15minutes",
-    "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
-    "url": null,
-    "category": [
-      "Featured",
-      "Education & Translation"
-    ],
-    "price": "Unknown",
-    "description": "Provides 15-minute book summaries, analysis, and audiobooks for over 10,000 titles.",
-    "tags": [
-      "book summaries",
-      "analysis",
-      "audiobooks",
-      "education"
-    ],
-    "rating": null,
-    "keywords": [
-      "book summary",
-      "audiobook"
-    ],
-    "isFeatured": true
-  },
-  {
-    "name": "Fotol AI",
-    "slug": "fotol-ai",
-    "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
-    "url": null,
-    "category": [
-      "Featured",
-      "Image Generation & Editing",
-      "Video & Animation"
-    ],
-    "price": "Unknown",
-    "description": "All-in-one AI image & video processing and editing platform.",
-    "tags": [
-      "ai image processing",
-      "video processing",
-      "editing platform"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai image editor",
-      "video editor"
-    ],
-    "isFeatured": true
-  },
-  {
-    "name": "SMART TOOLS",
-    "slug": "smart-tools",
-    "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
-    "url": null,
-    "category": [
-      "Featured",
-      "Marketing & Advertising",
-      "Business Management"
-    ],
-    "price": "Unknown",
-    "description": "Smart Tools: Unlock Predictable B2B Growth with Your All-in-One AI Sales & Marketing Suite",
-    "tags": [
-      "b2b growth",
-      "ai sales",
-      "marketing suite",
-      "sales tools"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai sales tools",
-      "b2b marketing"
-    ],
-    "isFeatured": true
-  },
-  {
-    "name": "Fluxx.AI",
-    "slug": "fluxx-ai",
-    "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
-    "url": null,
-    "category": [
-      "Featured",
-      "Image Generation & Editing"
-    ],
-    "price": "Free",
-    "description": "Free FLUX.1 Kontext: AI Context Image Editing & Generation",
-    "tags": [
-      "ai image editing",
-      "image generation",
-      "context",
-      "free tool"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai image editor",
-      "fluxx"
-    ],
-    "isFeatured": true
-  },
-  {
-    "name": "BrowserAct",
-    "slug": "browseract",
-    "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
-    "url": null,
-    "category": [
-      "Featured",
-      "Coding & Development",
-      "Office & Productivity"
-    ],
-    "price": "Unknown",
-    "description": "BrowserAct is an AI-powered cloud browser automation tool that enables effortless data extraction and task automation from any website without coding - providing high-quality data for your AI Agents!",
-    "tags": [
-      "browser automation",
-      "data extraction",
-      "task automation",
-      "no coding",
-      "ai agents"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai automation",
-      "data extraction"
-    ],
-    "isFeatured": true
-  },
-  {
-    "name": "Shoplauncher AI",
-    "slug": "shoplauncher-ai",
-    "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
-    "url": null,
-    "category": [
-      "Featured",
-      "Business Management",
-      "Marketing & Advertising"
-    ],
-    "price": "Free",
-    "description": "A fully optimized AI Shopify store with winning products, ready-to-sell product pages & free high quality logo",
-    "tags": [
-      "shopify store",
-      "winning products",
-      "product pages",
-      "logo",
-      "ecommerce"
-    ],
-    "rating": null,
-    "keywords": [
-      "ai shopify store",
-      "ecommerce solutions"
-    ],
-    "isFeatured": true
-  }
+  "name": "Photoleap",
+  "slug": "photoleap",
+  "image": "/photoela.png",
+  "url": "https://photoleap.com/",
+  "category": [
+    "Interior & Architectural Design",
+    "Image Generation & Editing"
+  ],
+  "price": "Freemium (free version available; Pro subscription: $7.99/month or $47.99/year)",
+  "description": "Creative photo editing app with AI tools for quick edits and pro designs.",
+  "tags": [
+    "photo editing",
+    "ai tools",
+    "pro designs",
+    "app"
+  ],
+  "rating": 4.4,
+  "keywords": [
+    "ai photo editor",
+    "photo editing app"
+  ],
+  "isFeatured": true,
+  "overview": "Photoleap is a comprehensive photo editing app that combines traditional editing tools with cutting-edge AI features. It offers advanced capabilities like AI-powered background removal, sky replacement, and artistic filters for both mobile and desktop users.",
+  "faqs": [
+    {
+      "question": "What AI features does Photoleap offer?",
+      "answer": "Photoleap includes AI-powered background removal, sky replacement, object removal, artistic style transfers, and automatic photo enhancement tools."
+    },
+    {
+      "question": "Is Photoleap available on all platforms?",
+      "answer": "Photoleap is primarily available as a mobile app for iOS and Android, with select features also available through web interface."
+    }
+  ]
+},
+{
+  "name": "Prolific",
+  "slug": "prolific",
+  "image": "/porlific.png",
+  "url": "https://www.prolific.com/",
+  "category": [
+    "Research & Data Analysis",
+    "Business Research"
+  ],
+  "price": "Pay-per-participant (starting from £6.00 per participant; platform fee: 33% of total study cost)",
+  "description": "A platform connecting researchers with verified participants for high-quality data collection.",
+  "tags": [
+    "research platform",
+    "data collection",
+    "participants"
+  ],
+  "rating": 4.2,
+  "keywords": [
+    "research data",
+    "data collection"
+  ],
+  "isFeatured": true,
+  "overview": "Prolific is a research platform that connects academic researchers, students, and businesses with a pre-screened pool of participants for surveys, interviews, and studies. It ensures data quality through participant verification and fair compensation.",
+  "faqs": [
+    {
+      "question": "How does Prolific ensure participant quality?",
+      "answer": "Prolific pre-screens all participants, maintains detailed demographic profiles, and uses attention checks and approval ratings to ensure high-quality responses."
+    },
+    {
+      "question": "What types of studies can I run on Prolific?",
+      "answer": "You can run surveys, behavioral experiments, interviews, usability tests, and longitudinal studies across various research fields including psychology, marketing, and social sciences."
+    }
+  ]
+},
+{
+  "name": "Thomson Reuters",
+  "slug": "thomson-reuters-2",
+  "image": "/thomsong.png",
+  "url": "https://www.thomsonreuters.com/",
+  "category": [
+    "Research & Data Analysis",
+    "Daily Life",
+    "Legal & Finance"
+  ],
+  "price": "Enterprise pricing (custom quotes based on solutions; Westlaw starts at $89/month for basic plans)",
+  "description": "Thomson Reuters: Technology solutions and expertise for professionals across various industries.",
+  "tags": [
+    "technology solutions",
+    "expertise",
+    "industry"
+  ],
+  "rating": 4.1,
+  "keywords": [
+    "technology services",
+    "professional solutions"
+  ],
+  "isFeatured": true,
+  "overview": "Thomson Reuters provides technology-driven solutions for professionals in legal, tax, accounting, compliance, government, and media markets. Their platforms include Westlaw, Practical Law, CLEAR, and various tax and accounting software solutions.",
+  "faqs": [
+    {
+      "question": "What are Thomson Reuters' main product offerings?",
+      "answer": "Main products include Westlaw for legal research, Practical Law for legal guidance, ONESOURCE for tax compliance, CLEAR for investigations, and Reuters news services."
+    },
+    {
+      "question": "Who typically uses Thomson Reuters solutions?",
+      "answer": "Primary users include law firms, corporations, government agencies, accounting firms, universities, and media organizations requiring professional-grade research and compliance tools."
+    }
+  ]
+},
+{
+  "name": "LINER AI",
+  "slug": "liner-ai",
+  "image": "/liner.png",
+  "url": "https://getliner.com/",
+  "category": [
+    "Research & Data Analysis",
+    "Office & Productivity"
+  ],
+  "price": "Freemium (free version available; Pro: $16.67/month annually or $19.99/month)",
+  "description": "AI-powered search assistant and digital highlighter for reliable information discovery and annotation.",
+  "tags": [
+    "ai search assistant",
+    "digital highlighter",
+    "information discovery",
+    "annotation"
+  ],
+  "rating": 4.3,
+  "keywords": [
+    "ai search",
+    "research assistant"
+  ],
+  "isFeatured": true,
+  "overview": "LINER AI is a research productivity tool that combines web highlighting, AI-powered search, and document analysis. It helps users organize information, generate summaries, and conduct research more efficiently across web pages and PDFs.",
+  "faqs": [
+    {
+      "question": "How does LINER AI's search differ from Google?",
+      "answer": "LINER AI provides more contextual, research-focused results with built-in highlighting and note-taking features, plus AI-powered summaries and insights rather than just web page links."
+    },
+    {
+      "question": "Can I collaborate with others using LINER AI?",
+      "answer": "Yes, LINER AI offers team collaboration features where you can share highlights, notes, and research collections with team members."
+    }
+  ]
+},
+{
+  "name": "Runway",
+  "slug": "runway",
+  "image": "/runway.png",
+  "url": "https://runwayml.com/",
+  "category": [
+    "Research & Data Analysis",
+    "Video & Animation"
+  ],
+  "price": "Freemium (free tier with 125 credits; Standard: $15/month; Pro: $35/month; Unlimited: $95/month)",
+  "description": "Runway is an AI research company providing tools for media generation and creative workflows.",
+  "tags": [
+    "ai research",
+    "media generation",
+    "creative workflows",
+    "video tools"
+  ],
+  "rating": 4.5,
+  "keywords": [
+    "ai media tools",
+    "video generation"
+  ],
+  "isFeatured": true,
+  "overview": "Runway ML is a creative AI platform offering advanced video generation, editing, and image creation tools. It features text-to-video generation, background removal, motion tracking, and various AI models for creative professionals and content creators.",
+  "faqs": [
+    {
+      "question": "What video generation capabilities does Runway offer?",
+      "answer": "Runway offers text-to-video generation, image-to-video conversion, video editing with AI, motion tracking, background removal, and various creative filters and effects."
+    },
+    {
+      "question": "Is Runway suitable for professional video production?",
+      "answer": "Yes, Runway is used by professional filmmakers, content creators, and marketing agencies for pre-visualization, concept development, and creative video production workflows."
+    }
+  ]
+},
+{
+  "name": "文心一言 (Wénxīn Yīyán)",
+  "slug": "wenxin-yiyan-1",
+  "image": "/chsfklsj.png",
+  "url": "https://yiyan.baidu.com/",
+  "category": [
+    "Research & Data Analysis",
+    "Image Analysis"
+  ],
+  "price": "Freemium (free usage with limitations; paid tiers starting from ¥59.9/month for enhanced features)",
+  "description": "文心一言 is an AI assistant for chatting, answering questions, and helping with work and study.",
+  "tags": [
+    "ai assistant",
+    "chatting",
+    "q&a",
+    "work assistance"
+  ],
+  "rating": 4.2,
+  "keywords": [
+    "ai assistant",
+    "chat tool"
+  ],
+  "isFeatured": true,
+  "overview": "Wenxin Yiyan (ERNIE Bot) is Baidu's large language model AI assistant that provides conversational AI, content generation, code assistance, and multimodal capabilities including text and image understanding, primarily optimized for Chinese language users.",
+  "faqs": [
+    {
+      "question": "What languages does Wenxin Yiyan support?",
+      "answer": "Wenxin Yiyan primarily supports Chinese language interactions but also has capabilities in English and other major languages, with strongest performance in Chinese contexts."
+    },
+    {
+      "question": "Can Wenxin Yiyan analyze images?",
+      "answer": "Yes, Wenxin Yiyan includes multimodal capabilities that allow it to analyze and describe images, answer questions about visual content, and provide insights based on uploaded pictures."
+    }
+  ]
+},
+{
+  "name": "Google AI for Developers",
+  "slug": "google-ai-for-developers",
+  "image": "/google.png",
+  "url": "https://developers.google.com/ai",
+  "category": [
+    "Research & Data Analysis",
+    "Coding & Development"
+  ],
+  "price": "Freemium (free tier available; paid usage varies by API - Gemini API: $0.00015 per 1K input tokens)",
+  "description": "Resources and tools for building with Google's AI models.",
+  "tags": [
+    "google ai",
+    "ai models",
+    "development tools",
+    "resources"
+  ],
+  "rating": 4.4,
+  "keywords": [
+    "ai development",
+    "google ai"
+  ],
+  "isFeatured": true,
+  "overview": "Google AI for Developers provides comprehensive tools, APIs, and resources for integrating Google's AI models like Gemini, PaLM, and Vertex AI into applications. It includes documentation, SDKs, and development frameworks for machine learning projects.",
+  "faqs": [
+    {
+      "question": "Which Google AI models are available for developers?",
+      "answer": "Developers can access Gemini models, PaLM 2, Vertex AI services, TensorFlow tools, and various specialized APIs for vision, language, and speech processing."
+    },
+    {
+      "question": "What's included in the free tier?",
+      "answer": "The free tier includes limited API calls for most services, access to documentation, tutorials, and basic development tools, with usage limits that vary by specific API."
+    }
+  ]
+},
+{
+  "name": "Glasp",
+  "slug": "glasp-1",
+  "image": "/glasp.png",
+  "url": "https://glasp.co/",
+  "category": [
+    "Research & Data Analysis",
+    "Social Media"
+  ],
+  "price": "Freemium (free version available; Pro: $8.99/month for enhanced features and AI capabilities)",
+  "description": "Social web highlighter to organize ideas, build AI clone, and share learning.",
+  "tags": [
+    "web highlighter",
+    "idea organization",
+    "ai clone",
+    "learning"
+  ],
+  "rating": 4.1,
+  "keywords": [
+    "web highlighting",
+    "ai learning"
+  ],
+  "isFeatured": true,
+  "overview": "Glasp is a social web highlighter that allows users to highlight and organize content from web pages, create a personal knowledge base, and share insights with a community. It includes AI features for summarization and creating personalized AI clones based on reading habits.",
+  "faqs": [
+    {
+      "question": "How does the AI clone feature work?",
+      "answer": "The AI clone learns from your highlights and reading patterns to create a personalized AI assistant that can answer questions and provide insights based on your curated knowledge and interests."
+    },
+    {
+      "question": "Can I export my highlights from Glasp?",
+      "answer": "Yes, Glasp allows you to export highlights in various formats including markdown, text, and integration with note-taking apps like Notion and Obsidian."
+    }
+  ]
+},
+{
+  "name": "Rubii.ai",
+  "slug": "rubii-ai",
+  "image": "/rubii.png",
+  "url": "https://rubii.ai/",
+  "category": [
+    "Featured",
+    "Chatbots & Virtual Companions",
+    "Art & Creative Design"
+  ],
+  "price": "Freemium (free chat credits; Premium: $9.99/month for unlimited conversations and advanced features)",
+  "description": "AI character chat, AI companion, and AI art creation platform.",
+  "tags": [
+    "ai character chat",
+    "ai companion",
+    "ai art creation"
+  ],
+  "rating": 4.3,
+  "keywords": [
+    "ai chat",
+    "ai art generator"
+  ],
+  "isFeatured": true,
+  "overview": "Rubii.ai combines AI character interaction with creative art generation, allowing users to chat with customizable AI companions and create artwork. The platform features personality-driven conversations and integrated creative tools for a comprehensive AI experience.",
+  "faqs": [
+    {
+      "question": "Can I create custom AI characters on Rubii.ai?",
+      "answer": "Yes, Rubii.ai allows you to create and customize AI characters with specific personalities, backgrounds, and conversation styles to match your preferences."
+    },
+    {
+      "question": "What art creation features are available?",
+      "answer": "The platform includes AI art generation tools for creating character portraits, landscapes, and custom artwork, often integrated with the chat experience for more immersive interactions."
+    }
+  ]
+},
+{
+  "name": "Lufe AI Translator",
+  "slug": "lufe-ai-translator",
+  "image": "/lufe.jpg",
+  "url": "https://lufe.ai/",
+  "category": [
+    "Featured",
+    "Education & Translation"
+  ],
+  "price": "Freemium (free daily translations; Pro: $4.99/month for unlimited translations and premium features)",
+  "description": "AI-powered bilingual translation extension for web, PDF, and images.",
+  "tags": [
+    "ai translation",
+    "bilingual",
+    "extension",
+    "web",
+    "pdf",
+    "images"
+  ],
+  "rating": 4.2,
+  "keywords": [
+    "ai translator",
+    "bilingual translation"
+  ],
+  "isFeatured": true,
+  "overview": "Lufe AI Translator is a comprehensive translation tool that works across web pages, PDF documents, and images. It offers real-time translation with context awareness and supports multiple languages with high accuracy for both personal and professional use.",
+  "faqs": [
+    {
+      "question": "Which file formats does Lufe AI Translator support?",
+      "answer": "Lufe AI Translator supports web pages, PDF documents, and image files (JPG, PNG) with OCR capabilities for extracting and translating text from images."
+    },
+    {
+      "question": "How many languages are supported?",
+      "answer": "The translator supports over 100 languages with AI-powered context understanding for more accurate translations than traditional tools."
+    }
+  ]
+},
+{
+  "name": "Canny",
+  "slug": "canny",
+  "image": "/canny.png",
+  "url": "https://canny.io/",
+  "category": [
+    "Featured",
+    "Business Management"
+  ],
+  "price": "Freemium (free for up to 100 tracked users; Growth: $50/month; Business: $150/month)",
+  "description": "Customer feedback management software to collect, analyze, and prioritize feature requests.",
+  "tags": [
+    "customer feedback",
+    "feedback management",
+    "feature requests",
+    "software"
+  ],
+  "rating": 4.6,
+  "keywords": [
+    "feedback management",
+    "customer service"
+  ],
+  "isFeatured": true,
+  "overview": "Canny is a customer feedback management platform that helps businesses collect, organize, and prioritize feature requests and feedback. It includes voting systems, roadmap sharing, and integration capabilities to streamline product development based on user input.",
+  "faqs": [
+    {
+      "question": "How does Canny help prioritize feature requests?",
+      "answer": "Canny uses voting systems, impact scoring, and analytics to help teams understand which features matter most to users, with automated prioritization based on user feedback volume and business metrics."
+    },
+    {
+      "question": "Can customers see our product roadmap?",
+      "answer": "Yes, Canny allows you to share public roadmaps with customers, showing planned features, development status, and estimated timelines to keep users informed about upcoming improvements."
+    }
+  ]
+},
+{
+  "name": "VideoToWords AI",
+  "slug": "videotowords-ai",
+  "image": "/vdotowords.png",
+  "url": "https://videotowords.ai/",
+  "category": [
+    "Featured",
+    "Voice Generation & Conversion"
+  ],
+  "price": "Freemium (free for 30 minutes monthly; Starter: $9.99/month; Pro: $19.99/month; Enterprise: custom pricing)",
+  "description": "AI-powered transcription service for audio and video to text conversion.",
+  "tags": [
+    "transcription",
+    "audio to text",
+    "video to text",
+    "ai tools"
+  ],
+  "rating": 4.4,
+  "keywords": [
+    "ai transcription",
+    "video transcription"
+  ],
+  "isFeatured": true,
+  "overview": "VideoToWords AI provides accurate transcription services for audio and video content using advanced AI speech recognition. It supports multiple languages, speaker identification, and offers various export formats for content creators, journalists, and businesses.",
+  "faqs": [
+    {
+      "question": "What file formats does VideoToWords AI support?",
+      "answer": "The service supports most common audio and video formats including MP4, MOV, MP3, WAV, M4A, and more, with automatic format detection and processing."
+    },
+    {
+      "question": "How accurate is the AI transcription?",
+      "answer": "VideoToWords AI achieves up to 95% accuracy for clear audio, with additional features like speaker identification, timestamp inclusion, and punctuation for professional-quality transcripts."
+    }
+  ]
+},
+{
+  "name": "Autocoder.cc",
+  "slug": "autocoder-cc",
+  "image": "/autocoder.jpeg",
+  "url": "https://autocoder.cc/",
+  "category": [
+    "Featured",
+    "Coding & Development"
+  ],
+  "price": "Freemium (free tier with limitations; Pro: $19.99/month; Team: $39.99/month per user)",
+  "description": "The 1st full stack vibe coding tool",
+  "tags": [
+    "full stack",
+    "vibe coding",
+    "coding tool"
+  ],
+  "rating": 4.1,
+  "keywords": [
+    "ai coding",
+    "full stack development"
+  ],
+  "isFeatured": true,
+  "overview": "Autocoder.cc is an innovative full-stack development platform that uses AI to assist with coding across frontend, backend, and database layers. It emphasizes intuitive, 'vibe-based' coding that understands developer intent and generates complete application components.",
+  "faqs": [
+    {
+      "question": "What does 'vibe coding' mean?",
+      "answer": "Vibe coding refers to Autocoder's intuitive approach where developers can describe what they want in natural language, and the AI generates appropriate code across the full technology stack."
+    },
+    {
+      "question": "Which technologies and frameworks are supported?",
+      "answer": "Autocoder supports popular full-stack technologies including React, Vue, Angular, Node.js, Python, databases like PostgreSQL and MongoDB, and various cloud deployment options."
+    }
+  ]
+},
+{
+  "name": "MusicCreator AI",
+  "slug": "musiccreator-ai",
+  "image": "/multi.png",
+  "url": "https://musiccreator.ai/",
+  "category": [
+    "Featured",
+    "Music & Audio"
+  ],
+  "price": "Freemium (3 free songs monthly; Basic: $9.99/month; Pro: $24.99/month; Commercial: $49.99/month)",
+  "description": "AI platform for generating royalty-free music and lyrics.",
+  "tags": [
+    "music generation",
+    "royalty-free music",
+    "lyrics generation",
+    "ai platform"
+  ],
+  "rating": 4.3,
+  "keywords": [
+    "ai music generator",
+    "royalty-free music"
+  ],
+  "isFeatured": true,
+  "overview": "MusicCreator AI is a comprehensive platform for generating original, royalty-free music and lyrics using artificial intelligence. It offers various genres, customizable parameters, and commercial licensing options for content creators, businesses, and musicians.",
+  "faqs": [
+    {
+      "question": "Can I use the generated music commercially?",
+      "answer": "Yes, all music generated through MusicCreator AI comes with commercial usage rights included in paid plans, making it safe for videos, podcasts, and business applications."
+    },
+    {
+      "question": "What music genres and styles are available?",
+      "answer": "The platform supports a wide range of genres including pop, rock, electronic, classical, jazz, hip-hop, and ambient music, with customizable mood, tempo, and instrumentation options."
+    }
+  ]
+},
+{
+  "name": "15Minutes",
+  "slug": "15minutes",
+  "image": "/15Minutes.jpeg",
+  "url": "https://15minutes.app/",
+  "category": [
+    "Featured",
+    "Education & Translation"
+  ],
+  "price": "Freemium (limited free summaries; Premium: $8.99/month; Annual: $89.99/year)",
+  "description": "Provides 15-minute book summaries, analysis, and audiobooks for over 10,000 titles.",
+  "tags": [
+    "book summaries",
+    "analysis",
+    "audiobooks",
+    "education"
+  ],
+  "rating": 4.5,
+  "keywords": [
+    "book summary",
+    "audiobook"
+  ],
+  "isFeatured": true,
+  "overview": "15Minutes offers comprehensive book summaries that can be read or listened to in about 15 minutes, covering over 10,000 titles across business, self-help, psychology, and more. It includes key insights, actionable takeaways, and professional narration.",
+  "faqs": [
+    {
+      "question": "How long are the book summaries?",
+      "answer": "Each summary is designed to be consumed in approximately 15 minutes, available in both text and audio formats with professional narration."
+    },
+    {
+      "question": "What types of books are available?",
+      "answer": "The library includes business books, self-improvement, psychology, biographies, science, and popular non-fiction titles, with new summaries added regularly."
+    }
+  ]
+},
+{
+  "name": "Fotol AI",
+  "slug": "fotol-ai",
+  "image": "/fotol.png",
+  "url": "https://fotol.ai/",
+  "category": [
+    "Featured",
+    "Image Generation & Editing",
+    "Video & Animation"
+  ],
+  "price": "Freemium (10 free credits monthly; Basic: $9.99/month; Pro: $19.99/month; Enterprise: custom pricing)",
+  "description": "All-in-one AI image & video processing and editing platform.",
+  "tags": [
+    "ai image processing",
+    "video processing",
+    "editing platform"
+  ],
+  "rating": 4.2,
+  "keywords": [
+    "ai image editor",
+    "video editor"
+  ],
+  "isFeatured": true,
+  "overview": "Fotol AI provides comprehensive image and video editing capabilities powered by artificial intelligence. It offers features like background removal, object detection, style transfer, video enhancement, and batch processing for content creators and businesses.",
+  "faqs": [
+    {
+      "question": "What image and video formats are supported?",
+      "answer": "Fotol AI supports all major formats including JPG, PNG, WebP for images and MP4, MOV, AVI for videos, with automatic format optimization and conversion capabilities."
+    },
+    {
+      "question": "Can I process multiple files at once?",
+      "answer": "Yes, Fotol AI offers batch processing features that allow you to apply the same edits or enhancements to multiple images or videos simultaneously."
+    }
+  ]
+},
+{
+  "name": "SMART TOOLS",
+  "slug": "smart-tools",
+  "image": "/smart.png",
+  "url": "https://smarttools.ai/",
+  "category": [
+    "Featured",
+    "Marketing & Advertising",
+    "Business Management"
+  ],
+  "price": "Freemium (14-day free trial; Starter: $49/month; Professional: $99/month; Enterprise: custom pricing)",
+  "description": "Smart Tools: Unlock Predictable B2B Growth with Your All-in-One AI Sales & Marketing Suite",
+  "tags": [
+    "b2b growth",
+    "ai sales",
+    "marketing suite",
+    "sales tools"
+  ],
+  "rating": 4.4,
+  "keywords": [
+    "ai sales tools",
+    "b2b marketing"
+  ],
+  "isFeatured": true,
+  "overview": "SMART TOOLS is an integrated AI-powered sales and marketing platform designed for B2B companies. It combines lead generation, email automation, CRM integration, and analytics to help businesses achieve predictable growth through data-driven strategies.",
+  "faqs": [
+    {
+      "question": "What's included in the AI sales and marketing suite?",
+      "answer": "The platform includes lead generation tools, email automation, social media management, CRM integration, sales analytics, and AI-powered content creation for B2B marketing campaigns."
+    },
+    {
+      "question": "How does SMART TOOLS help with predictable B2B growth?",
+      "answer": "It uses AI to analyze customer behavior, optimize sales funnels, automate follow-ups, and provide predictive analytics to help businesses forecast and achieve consistent growth targets."
+    }
+  ]
+},
+{
+  "name": "Fluxx.AI",
+  "slug": "fluxx-ai",
+  "image": "/flux.png",
+  "url": "https://fluxx.ai/",
+  "category": [
+    "Featured",
+    "Image Generation & Editing"
+  ],
+  "price": "Free (completely free with no limitations)",
+  "description": "Free FLUX.1 Kontext: AI Context Image Editing & Generation",
+  "tags": [
+    "ai image editing",
+    "image generation",
+    "context",
+    "free tool"
+  ],
+  "rating": 4.1,
+  "keywords": [
+    "ai image editor",
+    "fluxx"
+  ],
+  "isFeatured": true,
+  "overview": "Fluxx.AI offers completely free access to the FLUX.1 model for AI image generation and editing with context awareness. It provides high-quality image creation capabilities without usage limits or subscription requirements, making advanced AI image tools accessible to everyone.",
+  "faqs": [
+    {
+      "question": "Is Fluxx.AI really completely free?",
+      "answer": "Yes, Fluxx.AI provides free access to FLUX.1 image generation and editing capabilities without hidden costs, usage limits, or mandatory subscriptions."
+    },
+    {
+      "question": "What makes FLUX.1 Kontext special?",
+      "answer": "FLUX.1 Kontext offers advanced context understanding for image editing, allowing for more precise and intelligent modifications based on the content and context of the original image."
+    }
+  ]
+},
+{
+  "name": "BrowserAct",
+  "slug": "browseract",
+  "image": "/browser-act.png",
+  "url": "https://browseract.com/",
+  "category": [
+    "Featured",
+    "Coding & Development",
+    "Office & Productivity"
+  ],
+  "price": "Freemium (free trial available; Starter: $29/month; Pro: $79/month; Enterprise: custom pricing)",
+  "description": "BrowserAct is an AI-powered cloud browser automation tool that enables effortless data extraction and task automation from any website without coding - providing high-quality data for your AI Agents!",
+  "tags": [
+    "browser automation",
+    "data extraction",
+    "task automation",
+    "no coding",
+    "ai agents"
+  ],
+  "rating": 4.3,
+  "keywords": [
+    "ai automation",
+    "data extraction"
+  ],
+  "isFeatured": true,
+  "overview": "BrowserAct provides cloud-based browser automation for data extraction and task automation without requiring coding skills. It uses AI to understand web page structures and automate complex workflows, making it ideal for feeding high-quality data to AI agents and business processes.",
+  "faqs": [
+    {
+      "question": "Do I need coding skills to use BrowserAct?",
+      "answer": "No, BrowserAct is designed for non-technical users with a visual interface for setting up automation tasks, though it also supports advanced scripting for developers."
+    },
+    {
+      "question": "What types of websites can BrowserAct work with?",
+      "answer": "BrowserAct can automate tasks on virtually any website including e-commerce sites, social media platforms, business directories, and data portals, with built-in handling for dynamic content and anti-bot measures."
+    }
+  ]
+},
+{
+  "name": "Shoplauncher AI",
+  "slug": "shoplauncher-ai",
+  "image": "https://placehold.co/100x100/F0F0F0/000000?text=AI",
+  "url": "https://shoplauncher.ai/",
+  "category": [
+    "Featured",
+    "Business Management",
+    "Marketing & Advertising"
+  ],
+  "price": "Free (completely free Shopify store setup; optional premium add-ons available)",
+  "description": "A fully optimized AI Shopify store with winning products, ready-to-sell product pages & free high quality logo",
+  "tags": [
+    "shopify store",
+    "winning products",
+    "product pages",
+    "logo",
+    "ecommerce"
+  ],
+  "rating": 4.0,
+  "keywords": [
+    "ai shopify store",
+    "ecommerce solutions"
+  ],
+  "isFeatured": true,
+  "overview": "Shoplauncher AI creates fully optimized Shopify stores with AI-selected winning products, professionally designed product pages, and complete branding including logos. It's designed to help entrepreneurs launch e-commerce businesses quickly with proven product selections and optimization.",
+  "faqs": [
+    {
+      "question": "How does Shoplauncher AI select winning products?",
+      "answer": "Shoplauncher AI uses market analysis, trend data, and sales performance metrics to identify products with high profit potential and low competition, focusing on items with proven demand."
+    },
+    {
+      "question": "What's included in the free Shopify store setup?",
+      "answer": "The free setup includes a fully configured Shopify store, selected winning products with descriptions and images, professional product pages, a custom logo, and basic optimization for conversions."
+    }
+  ]
+}
 ];
 export default tools;
