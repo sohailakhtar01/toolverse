@@ -56,15 +56,7 @@ export default function LandingClient() {
 />
 {/* Torch Light Effect - Top Right Corner */}
 
-  {/* Grid Pattern (existing) */}
-  <div className="absolute top-0 left-0 w-1/2 h-1/2 rounded-br-3xl bg-white/5 z-0">
-    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:30px_30px] rounded-br-3xl"></div>
-  </div>
-
-  {/* Soft Light Effect - Like Cards */}
-{/* Main Torch Light */}
-
-
+  
 
 
       {/* Hero Section */}
@@ -84,7 +76,7 @@ export default function LandingClient() {
             Explore thousands of carefully curated digital tools, software, and services to grow your business.
           </p>
           {/* /////////////////////////// */}
-<div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+<div className="grid grid-cols-3 md:grid-cols-3 gap-4 my-8">
   
   {/* Semrush */}
   <div className="p-[1px] rounded-md bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg">
@@ -120,7 +112,7 @@ export default function LandingClient() {
       rel="noopener noreferrer"
       className="block w-full bg-gradient-to-r from-[#F3F7FF] to-[#F6F5FE] rounded-md py-3 px-4 hover:from-white hover:to-white transition-all text-center"
     >
-      <span className="text-black font-spaceGrotesk text-base font-semibold">
+      <span className="text-black  font-spaceGrotesk text-base font-semibold">
         Get Brevo Free →
       </span>
     </a>
