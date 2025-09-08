@@ -120,13 +120,13 @@ const Header = () => {
 </div>
 
   {/* /////////////////////// */}
-  <Link
+  {/* <Link
     href="/browse-tools"
     className="group font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors"
   >
     Browse Tools
     <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
-  </Link>
+  </Link> */}
 
   <Link
     href="/blog"
@@ -144,6 +144,16 @@ const Header = () => {
     Featured
     <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
   </Link>
+  <Link
+  href="/submit-tool"
+  className="flex items-center gap-2 px-6 py-2 cursor-pointer bg-gradient-to-br font-spaceGrotesk from-purple-500 to-pink-500 text-white rounded-[25px] font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101"
+>
+  
+  Submit Tool
+</Link>
+
+
+
 </nav>
 
           {/* Mobile Hamburger Icon */}
