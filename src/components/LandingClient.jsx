@@ -44,7 +44,7 @@ export default function LandingClient() {
   return (
     <main className="flex-grow mt-[16px]">
      <div
-  className={`absolute top-12 mt-4 left-0 w-full h-screen rounded-br-[60px]
+   className={`absolute top-12 mt-4 left-0 w-full h-screen rounded-br-[60px]
     bg-gradient-to-br from-white/8 to-transparent
     before:content-[''] before:absolute before:inset-0
     before:bg-[linear-gradient(to_right,rgba(255,105,180,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,105,180,0.15)_1px,transparent_1px)]
@@ -52,6 +52,8 @@ export default function LandingClient() {
     before:bg-[size:40px_40px]
     before:rounded-br-[60px]
     before:mask-image-[radial-gradient(ellipse_at_top_left,black_40%,transparent_80%)]
+    before:mask-composite[exclude]   // 👈 ye line add karo
+    before:z-0
     z-0 pointer-events-none`}
 />
 {/* Torch Light Effect - Top Right Corner */}
