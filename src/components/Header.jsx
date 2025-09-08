@@ -81,7 +81,7 @@ const Header = () => {
   </div>
   {/* ////////////////// */}
   <div className="relative group">
-  <button className="flex items-center font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
+  <button className="flex items-center cursor-pointer font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
     Compare AI Tools
     <ChevronDown className="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" />
   </button>
@@ -237,15 +237,18 @@ const Header = () => {
   </div>
 
   {/* Rest of links */}
-  <Link href="/browse-tools" onClick={() => setIsOpen(false)} className="px-4 py-3 text-xl font-spaceGrotesk text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all">
+  {/* <Link href="/browse-tools" onClick={() => setIsOpen(false)} className="px-4 py-3 text-xl font-spaceGrotesk text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all">
     Browse Tools
-  </Link>
+  </Link> */}
   <Link href="/blog" onClick={() => setIsOpen(false)} className="px-4 py-3 text-xl font-spaceGrotesk text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all">
     Insights
   </Link>
   <Link href="/featured" onClick={() => setIsOpen(false)} className="px-4 py-3 text-xl font-spaceGrotesk text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all">
     Featured
   </Link>
+  <Link href="/submit-tool" className="flex items-center justify-center gap-2 w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-2 text-sm sm:text-base cursor-pointer bg-gradient-to-br from-purple-500 to-pink-500 text-white rounded-[20px] sm:rounded-[25px] font-semibold font-spaceGrotesk hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105">Submit Tool</Link>
+
+
 </nav>
 
           </div>

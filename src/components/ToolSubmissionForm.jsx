@@ -147,7 +147,7 @@ export default function ToolSubmissionForm() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 py-6 sm:py-12 px-4">
-      <div className="max-w-3xl mt-6 sm:mt-10 mx-auto">
+      <div className="max-w-3xl mt-15 sm:mt-10 mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
@@ -362,26 +362,27 @@ export default function ToolSubmissionForm() {
             {/* Submit Button */}
             <div className="pt-4 sm:pt-6">
               <button
-                type="submit"
-                disabled={isSubmitting}
-                className={`flex mx-auto w-[50%]  py-2 sm:py-3 px-6 sm:px-6 text-center items-center justify-center rounded-xl font-bold text-lg sm:text-xl text-white transition-all duration-300 transform  cursor-pointer hover:shadow-2xl ${
-                  isSubmitting 
-                    ? 'bg-gray-400 cursor-not-allowed' 
-                    : 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 shadow-lg'
-                }`}
-              >
-                {isSubmitting ? (
-                  <span className="flex items-center justify-center gap-3">
-                    <Loader2 className="animate-spin w-5 h-5 sm:w-6 sm:h-6" />
-                    Submitting Your Tool...
-                  </span>
-                ) : (
-                  <span className="flex items-center justify-center gap-2">
-                    <Rocket className="w-5 h-5 sm:w-6 sm:h-6" />
-                    Submit Tool for Review
-                  </span>
-                )}
-              </button>
+  type="submit"
+  disabled={isSubmitting}
+  className={`flex mx-auto w-[90%] sm:w-[50%] py-3 sm:py-3 px-4 sm:px-6 text-center items-center justify-center rounded-lg sm:rounded-xl font-semibold sm:font-bold text-base sm:text-xl text-white transition-all duration-300 transform cursor-pointer hover:shadow-2xl ${
+    isSubmitting
+      ? 'bg-gray-400 cursor-not-allowed'
+      : 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 shadow-lg'
+  }`}
+>
+  {isSubmitting ? (
+    <span className="flex items-center justify-center gap-2 sm:gap-3">
+      <Loader2 className="animate-spin w-5 h-5 sm:w-6 sm:h-6" />
+      <span className="text-sm sm:text-base">Submitting Your Tool...</span>
+    </span>
+  ) : (
+    <span className="flex items-center justify-center gap-2 sm:gap-3">
+      <Rocket className="w-5 h-5 sm:w-6 sm:h-6" />
+      <span className="text-sm sm:text-base">Submit Tool for Review</span>
+    </span>
+  )}
+</button>
+
             </div>
 
             {/* Footer Note */}
