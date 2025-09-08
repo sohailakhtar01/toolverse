@@ -30,7 +30,7 @@ export default function ToolSubmissionForm() {
     "Content Creation", "CRM & Automation", "Customer Service",
     "Daily Life", "Design & Graphics", "Design & Media",
     "Education & Learning", "Education & Translation", "Email & SMS Campaigns",
-    "Email Automation", "Featured", "Health & Wellness", "Image Analysis",
+    "Email Automation", "Health & Wellness", "Image Analysis",
     "Image Generation & Editing", "Interior & Architectural Design",
     "Lead Generation", "Legal & Finance", "Marketing & Advertising",
     "Music & Audio", "Office & Productivity", "Productivity",
