@@ -6,15 +6,13 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 3600;
 
 export async function GET() {
-  // ✅ HARDCODED domain for now - no more environment variable confusion
   const baseUrl = "https://www.thetoolsverse.com";
-  
   const today = new Date().toISOString().split('T')[0];
 
-  console.log("🚀 Sitemap base URL:", baseUrl); // Debug log
+  console.log("🚀 Sitemap base URL:", baseUrl);
 
   try {
-    // ✅ Static routes
+    // ✅ Static routes (including your missing pages)
     const staticRoutes = [
       { url: "", lastmod: today, changefreq: "daily", priority: "1.0" },
       { url: "/about", lastmod: today, changefreq: "monthly", priority: "0.8" },
@@ -22,21 +20,30 @@ export async function GET() {
       { url: "/browse-tools", lastmod: today, changefreq: "weekly", priority: "0.9" },
       { url: "/featured", lastmod: today, changefreq: "weekly", priority: "0.8" },
       { url: "/blog", lastmod: today, changefreq: "daily", priority: "0.9" },
+      
+      // ✅ NEW: Free AI Tools pages
+      { url: "/free-ai-tools", lastmod: today, changefreq: "weekly", priority: "0.9" },
+      { url: "/free-ai-tools/business", lastmod: today, changefreq: "weekly", priority: "0.8" },
+      { url: "/free-ai-tools/students", lastmod: today, changefreq: "weekly", priority: "0.8" },
+      
+      // ✅ NEW: Submit tool page
+      { url: "/submit-tool", lastmod: today, changefreq: "monthly", priority: "0.7" },
     ];
 
     // ✅ Dynamic routes
     const categoryRoutes = getCategoryRoutes(today);
     const toolRoutes = getToolRoutes(today);
     const blogRoutes = await getBlogRoutes();
+    const compareRoutes = getCompareRoutes(today); // ✅ NEW: Compare pages
 
     const allRoutes = [
       ...staticRoutes,
       ...categoryRoutes,
       ...toolRoutes,
       ...blogRoutes,
+      ...compareRoutes, // ✅ Add compare routes
     ];
 
-    // ✅ Build XML with debug
     console.log("🔍 Total routes:", allRoutes.length);
     
     const routesXml = allRoutes
@@ -59,13 +66,13 @@ export async function GET() {
     return new Response(xml, {
       headers: {
         "Content-Type": "application/xml",
-        "Cache-Control": "no-cache, no-store, must-revalidate", // Force fresh content
+        "Cache-Control": "no-cache, no-store, must-revalidate",
       },
     });
   } catch (error) {
     console.error("❌ Error generating sitemap:", error);
 
-    // ✅ Minimal fallback with correct domain
+    // ✅ Enhanced fallback with all important pages
     const fallbackXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -80,6 +87,24 @@ export async function GET() {
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>${baseUrl}/free-ai-tools/business</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/free-ai-tools/students</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/submit-tool</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>`;
 
     return new Response(fallbackXml, {
@@ -91,7 +116,27 @@ export async function GET() {
   }
 }
 
-// ✅ Category routes
+// ✅ NEW: Compare pages function
+function getCompareRoutes(lastmod) {
+  const comparePages = [
+    "chatgpt-vs-bard",
+    "chatgpt-vs-claude", 
+    "chatgpt-vs-copilot",
+    "midjourney-vs-dalle",
+    "midjourney-vs-stable-diffusion"
+  ];
+
+  console.log("⚖️ Compare pages found:", comparePages.length);
+
+  return comparePages.map((slug) => ({
+    url: `/compare/${slug}`,
+    lastmod,
+    changefreq: "monthly",
+    priority: "0.8",
+  }));
+}
+
+// ✅ Category routes (unchanged)
 function getCategoryRoutes(lastmod) {
   try {
     const categoriesSet = new Set();
@@ -120,7 +165,7 @@ function getCategoryRoutes(lastmod) {
   }
 }
 
-// ✅ Tool routes
+// ✅ Tool routes (unchanged)
 function getToolRoutes(lastmod) {
   try {
     console.log("🔧 Tools found:", toolsData.length);
@@ -137,7 +182,7 @@ function getToolRoutes(lastmod) {
   }
 }
 
-// ✅ Blog routes from Sanity
+// ✅ Blog routes from Sanity (unchanged)
 async function getBlogRoutes() {
   try {
     const posts = await getAllPosts();
