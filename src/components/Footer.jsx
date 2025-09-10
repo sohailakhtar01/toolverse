@@ -1,6 +1,7 @@
 "use client"; // This is necessary for Next.js to treat this file as a client component
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { Wrench, Facebook, Twitter, Linkedin, Instagram, ChevronUp } from "lucide-react";
 
@@ -21,9 +22,15 @@ export default function Footer() {
           {/* Logo + Description */}
           <div className="col-span-1 md:col-span-2 lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                <Wrench className="w-5 h-5 text-white" />
-              </div>
+              <div className="flex items-center justify-center">
+                            <Image
+                              src="/logo.png" // Ensure this path is correct relative to public folder
+                              alt="Toolsverse Logo"
+                              width={40}
+                              height={40}
+                              className="w-10 h-10"
+                            />
+                          </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                 ToolsVerse
               </span>
@@ -72,6 +79,8 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/about" className="text-gray-600 hover:text-purple-600">About Us</Link></li>
               <li><Link href="/how-it-works" className="text-gray-600 hover:text-purple-600">How It Works</Link></li>
+              <li><Link href="/blog" className="text-gray-600 hover:text-purple-600">AI News</Link></li>
+
             </ul>
           </div>
 
