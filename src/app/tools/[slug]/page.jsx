@@ -315,7 +315,7 @@ export default function ToolDetailPage({ params }) {
                      <img 
                       src={tool.image} 
                       alt={`${tool.name} logo`}
-                      className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl shadow-md object-cover"
+                      className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl shadow-3xl object-cover bg-white"
                       loading="lazy"
                       width="128"
                       height="128"
@@ -351,11 +351,11 @@ export default function ToolDetailPage({ params }) {
                 </div>
 
                 {/* Quick Stats Bar */}
-                <div className="bg-gradient-to-r from-gray-50 to-blue-50 p-4 sm:p-6 border-b">
+                <div className="bg-gradient-to-r from-gray-50 to-blue-50 p-4 sm:p-6 border-b-blue-500">
   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 text-center">
     
-    <div>
-      <div className="text-lg sm:text-xl font-semibold text-gray-900">{tool.price}</div>
+    <div className="">
+      <div className="text-sm sm:text-sm font-semibold text-gray-900">{tool.price}</div>
       <div className="text-xs sm:text-sm text-gray-600">Pricing</div>
     </div>
     
@@ -379,7 +379,7 @@ export default function ToolDetailPage({ params }) {
 
 
                 {/* Table of Contents */}
-                <div className="p-6 bg-blue-50 border-b">
+                <div className="p-6 bg-blue-50 ">
                   <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                     <Eye className="w-5 h-5" />
                     Table of Contents
@@ -490,14 +490,14 @@ export default function ToolDetailPage({ params }) {
 
               {/* Pricing Analysis */}
               <section id="pricing" className="bg-white rounded-3xl shadow-lg border border-gray-100 p-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3">
+                <h2 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
                   <DollarSign className="w-7 h-7 text-green-600" />
                   Pricing Analysis & Plans
                 </h2>
                 
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6 mb-8 border border-green-200">
                   <div className="flex items-center gap-4 mb-4">
-                    <span className={`text-2xl px-4 py-2 rounded-full font-bold ${getPriceBadgeStyle(tool.price)}`}>
+                    <span className={`text-sm p-3 flex justify-center items-center rounded-full font-bold ${getPriceBadgeStyle(tool.price)}`}>
                       {tool.price}
                     </span>
                     <div>
@@ -510,81 +510,9 @@ export default function ToolDetailPage({ params }) {
                     </div>
                   </div>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-gray-50 rounded-2xl p-6 border">
-                    <h4 className="text-lg font-bold text-gray-900 mb-3">Free Tier</h4>
-                    <div className="text-3xl font-bold text-gray-900 mb-4">
-                      {tool.price === 'Free' ? '$0' : tool.price === 'Freemium' ? '$0' : 'N/A'}
-                    </div>
-                    <ul className="space-y-2 text-gray-600">
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-500" />
-                        Basic features included
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-500" />
-                        Limited usage per month
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-500" />
-                        Community support
-                      </li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200 relative">
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold flex items-center gap-1">
-                        <Award className="w-4 h-4" />
-                        Most Popular
-                      </span>
-                    </div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-3">Pro Plan</h4>
-                    <div className="text-3xl font-bold text-gray-900 mb-4">$29</div>
-                    <ul className="space-y-2 text-gray-600">
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-500" />
-                        All features unlocked
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-500" />
-                        Unlimited usage
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-500" />
-                        Priority support
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-500" />
-                        Advanced analytics
-                      </li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-purple-50 rounded-2xl p-6 border border-purple-200">
-                    <h4 className="text-lg font-bold text-gray-900 mb-3">Enterprise</h4>
-                    <div className="text-3xl font-bold text-gray-900 mb-4">Custom</div>
-                    <ul className="space-y-2 text-gray-600">
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-500" />
-                        Custom integrations
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-500" />
-                        Dedicated support
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-500" />
-                        SLA guarantees
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-500" />
-                        Volume discounts
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+{/* //////////////////////////////// */}
+                
+                {/* /////////////// */}
               </section>
 
               {/* Pros and Cons */}
@@ -879,7 +807,7 @@ export default function ToolDetailPage({ params }) {
             <aside className="space-y-6">
               
               {/* Enhanced CTA Card */}
-              <div className="bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-3xl shadow-xl p-6 text-white  top-24">
+              <div className="bg-gradient-to-br from-blue-500 via-purple-600 to-pink-600 rounded-3xl shadow-xl p-6 text-white  top-24">
                 <div className="text-center mb-6">
                   <div className="w-20 h-20 mx-auto mb-4 bg-white/20 backdrop-blur rounded-full flex items-center justify-center">
                     <Zap className="w-8 h-8" />
@@ -912,7 +840,7 @@ export default function ToolDetailPage({ params }) {
                     href={tool.url}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
-                    className="flex items-center justify-center gap-2 w-full bg-white text-purple-600 font-bold py-4 px-6 rounded-2xl text-center hover:bg-gray-50 transition-all transform hover:scale-105 shadow-lg cursor-pointer"
+                    className="flex items-center justify-center gap-2 w-full bg-white text-purple-600 font-bold py-2 px-3 rounded-2xl text-center hover:bg-gray-50 transition-all transform  shadow-lg cursor-pointer"
                   >
                     Visit {tool.name}
                     <ExternalLink className="w-5 h-5" />
