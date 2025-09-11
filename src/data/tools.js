@@ -1200,6 +1200,146 @@ export const tools = [
   ]
 },
 {
+    "name": "Astrologer.bot - Free AI Astrology Assistant",
+    "slug": "astrologer-bot-free-ai-astrology",
+    "image": "/astrologer-bot-ai.webp",
+    "url": "https://yeschat.ai/gpts-ZxQ1U2RGqC-astrologer-bot",
+    "category": [
+      "AI Assistants",
+      "Lifestyle & Wellness",
+      "Personal Development"
+    ],
+    "price": "Free to use via YesChat.ai. Premium features available with YesChat Pro subscription.",
+    "description": "Astrologer.bot is a free AI-powered astrology assistant that delivers personalized natal chart readings, daily horoscopes, transit predictions, and relationship compatibility analysis using advanced AI technology to interpret cosmic patterns and provide meaningful astrological insights.",
+    "tags": [
+      "ai astrology",
+      "free birth chart",
+      "natal chart calculator",
+      "astrology ai bot",
+      "horoscope generator",
+      "zodiac compatibility",
+      "transit predictions"
+    ],
+    "rating": 4.7,
+    "keywords": [
+      "astrologer bot free",
+      "ai astrology reading free",
+      "free natal chart analysis",
+      "astrology ai assistant",
+      "birth chart calculator online",
+      "free synastry chart"
+    ],
+    "isFeatured": true,
+    "overview": "Astrologer.bot revolutionizes astrology with AI-powered precision, offering instant natal chart analysis, real-time transit predictions, and detailed compatibility readings. Access professional-grade astrological insights 24/7 without expensive consultations. The AI analyzes planetary positions, aspects, and houses to provide personalized guidance for love, career, and personal growth. With support for multiple chart systems and interpretations, it's perfect for both beginners and experienced astrology enthusiasts seeking accurate, detailed cosmic insights.",
+    "faqs": [
+      {
+        "question": "Is Astrologer.bot really free to use?",
+        "answer": "Yes, Astrologer.bot is completely free to access through YesChat.ai. You can generate unlimited natal charts, daily horoscopes, and basic compatibility readings without any payment. Premium features like detailed transit reports and advanced synastry analysis may require a YesChat Pro subscription."
+      },
+      {
+        "question": "How accurate is AI-generated astrology?",
+        "answer": "Astrologer.bot uses precise astronomical calculations combined with traditional astrological interpretations to ensure accuracy. The AI has been trained on vast astrological databases and follows established interpretation methods. While it provides remarkably accurate technical calculations, personal intuition and context should complement any reading."
+      },
+      {
+        "question": "What astrological features does Astrologer.bot offer?",
+        "answer": "The bot provides natal chart analysis, daily/weekly/monthly horoscopes, transit predictions, synastry (relationship compatibility), solar return charts, progressed charts, and aspect interpretations. It supports multiple house systems (Placidus, Whole Sign, Equal) and both Western and Vedic astrology approaches."
+      }
+    ]
+  },
+  {
+    "name": "Musicfy - AI Music Generator Free Trial",
+    "slug": "musicfy-ai-music-generator",
+    "image": "/musicfy-ai-music.png",
+    "url": "https://musicfy.lol",
+    "category": [
+      "AI Music Tools",
+      "Content Creation",
+      "Audio Production"
+    ],
+    "price": "Free trial with 5 generation credits. Paid plans from $9/month for unlimited generations.",
+    "description": "Musicfy is an revolutionary AI music generator that transforms text prompts into original songs, clones voices with AI precision, creates copyright-free vocals, and offers professional stem splitting - empowering creators to produce studio-quality music without any musical experience.",
+    "tags": [
+      "ai music generator",
+      "voice cloning",
+      "text to music",
+      "ai song maker",
+      "stem splitter",
+      "royalty free music",
+      "ai vocals"
+    ],
+    "rating": 4.6,
+    "keywords": [
+      "musicfy free trial",
+      "ai music generator free",
+      "text to song ai",
+      "voice cloning music",
+      "ai cover songs",
+      "royalty free ai music"
+    ],
+    "isFeatured": true,
+    "overview": "Musicfy revolutionizes music creation with cutting-edge AI technology that democratizes professional music production. Create original songs from text descriptions, clone any voice (including your own) for unique vocals, generate AI covers of popular songs, and access a library of copyright-free AI voices. The platform's stem splitting feature isolates vocals, drums, bass, and instruments from any track. With over 1 million users creating 10+ million songs, Musicfy empowers content creators, musicians, and hobbyists to produce commercial-quality music in minutes, not months.",
+    "faqs": [
+      {
+        "question": "What can I create with Musicfy's free trial?",
+        "answer": "The free trial includes 5 generation credits to test all features: create AI songs from text, clone voices, generate covers, use royalty-free vocals, and split audio stems. Each generation uses one credit, giving you hands-on experience with the platform's capabilities before subscribing."
+      },
+      {
+        "question": "Is the music created with Musicfy royalty-free?",
+        "answer": "Yes, all original music generated using Musicfy's AI voices and text-to-music features is royalty-free and can be used commercially. However, covers of copyrighted songs may still require licensing for commercial use. Always check the specific licensing terms for your intended use case."
+      },
+      {
+        "question": "How does voice cloning work in Musicfy?",
+        "answer": "Upload 5-10 minutes of clear vocal recordings to train your AI voice model. The AI analyzes vocal characteristics, tone, and style to create a digital clone that can sing any lyrics or melody. The cloned voice can be used across unlimited songs and styles while maintaining the original voice's unique qualities."
+      }
+    ]
+  },
+  {
+    "name": "TwainGPT - AI Humanizer & Detector Bypass",
+    "slug": "twaingpt-ai-humanizer",
+    "image": "/twaingpt-humanizer.png",
+    "url": "https://twaingpt.com",
+    "category": [
+      "AI Writing Tools",
+      "Content Optimization",
+      "Academic Tools"
+    ],
+    "price": "Free for up to 500 words/day. Premium plans from $14.99/month for unlimited humanization.",
+    "description": "TwainGPT is an advanced AI humanizer that transforms AI-generated content into naturally flowing, undetectable human-like text that bypasses all major AI detectors including Turnitin, GPTZero, and Copyleaks while preserving original meaning and improving readability.",
+    "tags": [
+      "ai humanizer",
+      "ai detector bypass",
+      "undetectable ai",
+      "ai text converter",
+      "plagiarism free",
+      "content humanization"
+    ],
+    "rating": 4.8,
+    "keywords": [
+      "twaingpt free",
+      "ai humanizer free",
+      "bypass ai detection",
+      "undetectable ai writer",
+      "ai to human text converter",
+      "turnitin ai bypass"
+    ],
+    "isFeatured": true,
+    "overview": "TwainGPT leads the AI humanization market with proprietary algorithms that achieve 99.9% human detection scores across all major AI detectors. Supporting 30+ languages, it transforms robotic AI text into engaging, natural prose while maintaining SEO optimization and academic integrity. The platform uses advanced natural language processing to vary sentence structure, adjust vocabulary sophistication, and inject human-like nuances that make content indistinguishable from human writing. Trusted by 500,000+ users including students, content creators, and professionals who need authentic-sounding content that passes the strictest AI detection systems.",
+    "faqs": [
+      {
+        "question": "How effective is TwainGPT at bypassing AI detectors?",
+        "answer": "TwainGPT achieves a 99.9% success rate in bypassing major AI detectors including Turnitin, GPTZero, Copyleaks, and Originality.ai. The humanized text consistently scores as 100% human-written while maintaining the original message's accuracy and coherence. Regular algorithm updates ensure continued effectiveness against evolving detection systems."
+      },
+      {
+        "question": "Does TwainGPT work with content in multiple languages?",
+        "answer": "Yes, TwainGPT supports over 30 languages including English, Spanish, French, German, Chinese, Japanese, and Arabic. The humanization process adapts to each language's unique grammatical structures and stylistic conventions, ensuring natural-sounding output regardless of the source language."
+      },
+      {
+        "question": "Is using TwainGPT considered plagiarism or academic dishonesty?",
+        "answer": "TwainGPT is a writing enhancement tool that improves text readability and flow. It doesn't generate new content or copy from existing sources, making the output plagiarism-free. However, users should follow their institution's guidelines regarding AI assistance in academic work and use the tool responsibly for legitimate content improvement purposes."
+      }
+    ]
+  },
+{
   "name": "Google Workspace",
   "slug": "google-workspace",
   "image": "/google-workspace.png",

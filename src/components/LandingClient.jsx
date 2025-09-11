@@ -44,7 +44,7 @@ export default function LandingClient() {
   return (
     <main className="flex-grow mt-[16px]">
      <div
-   className={`absolute top-12 mt-4 left-0 w-full h-screen rounded-br-[60px]
+   className={`absolute top-12 mt-4 left-0 w-full h-[640px] rounded-br-[60px]
     bg-gradient-to-br from-white/8 to-transparent
     before:content-[''] before:absolute before:inset-0
     before:bg-[linear-gradient(to_right,rgba(255,105,180,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,105,180,0.15)_1px,transparent_1px)]
