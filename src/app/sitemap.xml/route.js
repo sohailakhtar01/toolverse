@@ -34,14 +34,14 @@ export async function GET() {
     const categoryRoutes = getCategoryRoutes(today);
     const toolRoutes = getToolRoutes(today);
     const blogRoutes = await getBlogRoutes();
-    const compareRoutes = getCompareRoutes(today); // ✅ NEW: Compare pages
+    const compareRoutes = getCompareRoutes(today);
 
     const allRoutes = [
       ...staticRoutes,
       ...categoryRoutes,
       ...toolRoutes,
       ...blogRoutes,
-      ...compareRoutes, // ✅ Add compare routes
+      ...compareRoutes,
     ];
 
     console.log("🔍 Total routes:", allRoutes.length);
@@ -58,15 +58,21 @@ export async function GET() {
       )
       .join("");
 
+    // ✅ Enhanced XML with structured data hints
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   ${routesXml}
 </urlset>`;
 
+    // ✅ Enhanced response headers for better SEO
     return new Response(xml, {
       headers: {
-        "Content-Type": "application/xml",
-        "Cache-Control": "no-cache, no-store, must-revalidate",
+        "Content-Type": "application/xml; charset=utf-8",
+        "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
+        "X-Robots-Tag": "index, follow",
+        "Vary": "Accept-Encoding",
+        "Last-Modified": new Date().toUTCString(),
       },
     });
   } catch (error) {
@@ -109,21 +115,24 @@ export async function GET() {
 
     return new Response(fallbackXml, {
       headers: { 
-        "Content-Type": "application/xml",
-        "Cache-Control": "no-cache"
+        "Content-Type": "application/xml; charset=utf-8",
+        "Cache-Control": "no-cache, no-store, must-revalidate"
       },
     });
   }
 }
 
-// ✅ NEW: Compare pages function
+// ✅ Enhanced Compare pages function
 function getCompareRoutes(lastmod) {
   const comparePages = [
     "chatgpt-vs-bard",
     "chatgpt-vs-claude", 
     "chatgpt-vs-copilot",
     "midjourney-vs-dalle",
-    "midjourney-vs-stable-diffusion"
+    "midjourney-vs-stable-diffusion",
+    "grammarly-vs-jasper",
+    "canva-vs-figma",
+    "notion-vs-obsidian"
   ];
 
   console.log("⚖️ Compare pages found:", comparePages.length);
@@ -136,19 +145,33 @@ function getCompareRoutes(lastmod) {
   }));
 }
 
-// ✅ Category routes (unchanged)
+// ✅ Enhanced Category routes with better error handling
 function getCategoryRoutes(lastmod) {
   try {
     const categoriesSet = new Set();
+    
+    if (!toolsData || !Array.isArray(toolsData)) {
+      console.warn("⚠️ No tools data available for categories");
+      return [];
+    }
+
     toolsData.forEach((tool) => {
-      tool.category?.forEach((cat) => {
-        const slug = cat
-          .toLowerCase()
-          .replace(/&/g, "and")
-          .replace(/[^a-z0-9]+/g, "-")
-          .replace(/^-+|-+$/g, "");
-        categoriesSet.add(slug);
-      });
+      if (tool.category && Array.isArray(tool.category)) {
+        tool.category.forEach((cat) => {
+          if (typeof cat === 'string' && cat.trim()) {
+            const slug = cat
+              .toLowerCase()
+              .trim()
+              .replace(/&/g, "and")
+              .replace(/[^a-z0-9]+/g, "-")
+              .replace(/^-+|-+$/g, "");
+            
+            if (slug.length > 0) {
+              categoriesSet.add(slug);
+            }
+          }
+        });
+      }
     });
 
     console.log("📂 Categories found:", Array.from(categoriesSet));
@@ -165,24 +188,38 @@ function getCategoryRoutes(lastmod) {
   }
 }
 
-// ✅ Tool routes (unchanged)
+// ✅ Enhanced Tool routes with rating-based priority
 function getToolRoutes(lastmod) {
   try {
+    if (!toolsData || !Array.isArray(toolsData)) {
+      console.warn("⚠️ No tools data available");
+      return [];
+    }
+
     console.log("🔧 Tools found:", toolsData.length);
     
-    return toolsData.map((tool) => ({
-      url: `/tools/${tool.slug}`,
-      lastmod,
-      changefreq: "monthly",
-      priority: tool.isFeatured ? "0.9" : "0.7",
-    }));
+    return toolsData.map((tool) => {
+      // Enhanced priority based on rating and featured status
+      let priority = "0.7"; // default
+      
+      if (tool.isFeatured) priority = "0.9";
+      if (tool.rating && tool.rating >= 4.8) priority = "0.9";
+      if (tool.rating && tool.rating >= 4.9) priority = "0.95";
+      
+      return {
+        url: `/tools/${tool.slug}`,
+        lastmod,
+        changefreq: "monthly",
+        priority,
+      };
+    });
   } catch (error) {
     console.error("❌ Error generating tool routes:", error);
     return [];
   }
 }
 
-// ✅ Blog routes from Sanity (unchanged)
+// ✅ Enhanced Blog routes from Sanity
 async function getBlogRoutes() {
   try {
     const posts = await getAllPosts();

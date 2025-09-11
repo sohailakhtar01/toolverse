@@ -1,3 +1,48 @@
+# Robots.txt for TheToolsVerse.com - AI Tools Directory
+# Updated: September 2025
+
+# Default crawling permissions for all bots
 User-agent: *
 Allow: /
-Sitemap: https://thetoolsverse.com/sitemap.xml
+
+# Allow specific dynamic and static pages only
+Allow: /tools/*
+Allow: /categories/*
+Allow: /featured
+Allow: /about
+Allow: /how-it-works
+Allow: /compare/*
+Allow: /free-ai-tools/*
+
+# Block problematic URLs that cause 404s
+Disallow: /products/
+Disallow: /product/
+Disallow: /shop/
+Disallow: /cart/
+Disallow: /checkout/
+
+# Block non-existent parent directories
+Disallow: /tools$
+Disallow: /categories$
+Disallow: /blog/
+Disallow: /submit-tool/
+
+# Block technical and admin directories
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /studio/
+Disallow: /.well-known/
+Disallow: /static/
+
+# Block search and dynamic parameters
+Disallow: /*?*
+Disallow: /*&*
+Disallow: /*?variant=*
+Disallow: /*&variant=*
+
+# Crawl delay for server load management
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://www.thetoolsverse.com/sitemap.xml
