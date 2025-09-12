@@ -7038,6 +7038,130 @@ export const tools = [
   ]
 },
 {
+    "name": "PaperRed",
+    "slug": "paperred",
+    "image": "/paperred.jpeg",
+    "url": "https://paperred.com",
+    "category": [
+      "Academic Writing",
+      "Content & Writing"
+    ],
+    "price": "Free (with premium features available)",
+    "description": "AI-powered plagiarism detection and academic writing assistant with paraphrasing tools.",
+    "tags": [
+      "plagiarism checker",
+      "academic writing",
+      "ai detection",
+      "paraphrasing"
+    ],
+    "rating": 4.2,
+    "keywords": [
+      "plagiarism detection",
+      "academic writing",
+      "ai writing assistant"
+    ],
+    "isFeatured": false,
+    "overview": "PaperRed is a comprehensive academic support platform offering AI-driven plagiarism detection, intelligent paraphrasing, and formatting assistance. It helps students and researchers ensure originality in their academic work while providing tools for paper creation and editing.",
+    "faqs": [
+      {
+        "question": "How accurate is PaperRed's plagiarism detection?",
+        "answer": "PaperRed uses advanced AI algorithms to detect plagiarism by comparing submissions against billions of web pages and academic databases, providing detailed similarity reports with source identification."
+      },
+      {
+        "question": "Does PaperRed offer paraphrasing tools?",
+        "answer": "Yes, PaperRed includes intelligent paraphrasing features that help rewrite content while maintaining original meaning, making it useful for academic writing and content creation."
+      },
+      {
+        "question": "Is PaperRed free to use?",
+        "answer": "PaperRed offers free basic plagiarism checking with limited features. Premium plans are available for advanced features like detailed reports, unlimited checks, and enhanced paraphrasing tools."
+      }
+    ]
+  },
+  {
+    "name": "AppAlchemy.ai",
+    "slug": "appalchemy-ai",
+    "image": "/appalchemy.png",
+    "url": "https://appalchemy.ai",
+    "category": [
+      "Design Tools",
+      "Mobile Development"
+    ],
+    "price": "Freemium ($20/month for premium features with AI credits)",
+    "description": "AI-powered mobile app UI design tool that generates beautiful app mockups and interfaces in seconds without coding.",
+    "tags": [
+      "app design",
+      "ui design",
+      "mobile apps",
+      "no-code design",
+      "ai mockups"
+    ],
+    "rating": 4.6,
+    "keywords": [
+      "mobile app design",
+      "ui generator",
+      "app mockup",
+      "no-code design"
+    ],
+    "isFeatured": true,
+    "overview": "AppAlchemy.ai revolutionizes mobile app design by enabling users to create professional iOS and Android app interfaces instantly using AI. Simply describe your app concept, and the platform generates complete, ready-to-use designs with real-time preview and chat-based editing capabilities.",
+    "faqs": [
+      {
+        "question": "Do I need design experience to use AppAlchemy.ai?",
+        "answer": "No, AppAlchemy.ai is designed for anyone regardless of design experience. Simply describe your app idea in plain English, and the AI generates professional UI designs instantly."
+      },
+      {
+        "question": "What's included in the premium plan?",
+        "answer": "The premium plan ($20/month) includes AI credits for unlimited design generation, code export functionality, advanced customization options, and priority support with faster processing."
+      },
+      {
+        "question": "Can I export the designs for development?",
+        "answer": "Yes, AppAlchemy.ai allows you to export your designs in various formats suitable for developers, making it easy to transition from design to actual app development."
+      }
+    ]
+  },
+  {
+    "name": "Muka.ai",
+    "slug": "muka-ai",
+    "image": "/muka.png",
+    "url": "https://muka.ai",
+    "category": [
+      "Automation & Workflow",
+      "Productivity & Business"
+    ],
+    "price": "Contact for pricing (Enterprise-focused)",
+    "description": "AI agents platform that automates tasks across your existing apps and workflows using intelligent 'Spirits' that work like digital employees.",
+    "tags": [
+      "ai agents",
+      "workflow automation",
+      "business automation",
+      "task management",
+      "integration"
+    ],
+    "rating": 4.3,
+    "keywords": [
+      "ai agents",
+      "workflow automation",
+      "business productivity",
+      "task automation"
+    ],
+    "isFeatured": false,
+    "overview": "Muka.ai creates intelligent AI agents called 'Spirits' that can complete complex tasks using your existing software tools. These agents integrate with your apps and can be assigned responsibilities like sending emails, creating calendar events, conducting research, and managing workflows automatically.",
+    "faqs": [
+      {
+        "question": "What are Spirits in Muka.ai?",
+        "answer": "Spirits are AI agents that function like digital employees. They can be given specific capabilities such as sending emails, creating calendar events, conducting research, and performing various tasks across your connected applications."
+      },
+      {
+        "question": "How does Muka.ai integrate with existing tools?",
+        "answer": "Muka.ai connects to your existing software tools and can take actions within them just like you would. It uses 'Spaces' to separate different work contexts and brings only relevant apps and people into each workspace."
+      },
+      {
+        "question": "What types of tasks can Muka.ai automate?",
+        "answer": "Muka.ai can automate various business tasks including email management, research compilation, calendar scheduling, data analysis, and workflow triggers that execute on schedules or specific events like new CRM contacts."
+      }
+    ]
+},
+{
   "name": "Glasp",
   "slug": "glasp",
   "image": "/glasp.png",
