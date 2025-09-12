@@ -2069,30 +2069,6 @@ export const tools = [
     "isFeatured": true
   },
   {
-    "name": "文心一言 (Wénxīn Yīyán)",
-    "slug": "wenxin-yiyan",
-    "image": "/chian.png",
-    "url":"https://yiyan.baidu.com/",
-    "category": [
-      "Image Analysis",
-      "Research & Data Analysis"
-    ],
-    "price": "Freemium (ERNIE 3.5 free; professional ERNIE 4.x tiers)",
-    "description": "文心一言 is an AI assistant for chatting, answering questions, and helping with work and study.",
-    "tags": [
-      "ai assistant",
-      "chatting",
-      "q&a",
-      "work assistance"
-    ],
-    "rating": 4.5,
-    "keywords": [
-      "ai assistant",
-      "chat tool"
-    ],
-    "isFeatured": true
-  },
-  {
     "name": "Sider",
     "slug": "sider",
     "image": "/sider.png",
@@ -2237,30 +2213,6 @@ export const tools = [
     "isFeatured": true
   },
   {
-    "name": "Planner 5D",
-    "slug": "planner-5d",
-    "image": "/planner.png",
-    "url": "https://planner5d.com/",
-    "category": [
-      "Image Analysis",
-      "Interior & Architectural Design"
-    ],
-    "price": "Freemium",
-    "description": "A 3D home design tool using AI to convert 2D plans into 3D models.",
-    "tags": [
-      "3d design",
-      "home design",
-      "2d to 3d",
-      "architectural design"
-    ],
-    "rating": 4.3,
-    "keywords": [
-      "3d home design",
-      "ai design tool"
-    ],
-    "isFeatured": true
-  },
-  {
     "name": "Dewatermark.AI",
     "slug": "dewatermark-ai",
     "image": "/dewater.png",
@@ -2302,29 +2254,6 @@ export const tools = [
     "keywords": [
       "ai reverse image search",
       "image finder"
-    ],
-    "isFeatured": true
-  },
-  {
-    "name": "clickworker",
-    "slug": "clickworker",
-    "image": "/click.png",
-    "url": "https://www.clickworker.com/",
-    "category": [
-      "Image Analysis",
-      "Health & Wellness"
-    ],
-    "price": "Pay-per-task (rates vary)",
-    "description": "Crowdsourcing platform for AI training data and data management services.",
-    "tags": [
-      "crowdsourcing",
-      "ai training data",
-      "data management"
-    ],
-    "rating": 4.0,
-    "keywords": [
-      "ai training",
-      "data services"
     ],
     "isFeatured": true
   },
@@ -3253,41 +3182,6 @@ export const tools = [
     ]
   },
   {
-    "name": "Glasp",
-    "slug": "glasp",
-    "image": "/glasp.png",
-    "url": "https://glasp.co/",
-    "category": [
-      "Social Media",
-      "Research & Data Analysis"
-    ],
-    "price": "Freemium (Free for personal use; Team plans available)",
-    "description": "Social web highlighter to organize ideas, build AI clone, and share learning.",
-    "tags": [
-      "web highlighter",
-      "idea organization",
-      "ai clone",
-      "learning"
-    ],
-    "rating": 4.8,
-    "keywords": [
-      "web highlighting",
-      "ai learning"
-    ],
-    "isFeatured": false,
-    "overview": "Glasp is a social web highlighter and note-taking tool that allows users to capture and organize quotes and ideas from across the web. It functions as a browser extension, letting you highlight text on any webpage. These highlights are saved to your profile and can be shared with others, creating a collaborative learning network.",
-    "faqs": [
-      {
-        "question": "What does 'social web highlighter' mean?",
-        "answer": "It means that when you highlight a piece of text on an article, you can see if other Glasp users have also highlighted that same passage. Your highlights are also shared to your Glasp profile, allowing your followers to see what you find interesting."
-      },
-      {
-        "question": "How does it use AI?",
-        "answer": "Glasp uses AI to summarize your saved highlights from articles or YouTube videos. It also has a feature that lets you create an 'AI Clone' of yourself, which can answer questions based on the content you have highlighted and curated."
-      }
-    ]
-  },
-  {
     "name": "TurboLearn AI",
     "slug": "turbolearn-ai",
     "image": "/tubo.png",
@@ -4151,41 +4045,6 @@ export const tools = [
     ]
   },
   {
-    "name": "Picsart",
-    "slug": "picsart-1",
-    "image": "/pic.png",
-    "url": "https://picsart.com/",
-    "category": [
-      "Video & Animation",
-      "Art & Creative Design"
-    ],
-    "price": "Freemium (Picsart Gold plan starts at $5/month, billed annually)",
-    "description": "AI-powered creative platform for photo and video editing and graphic design.",
-    "tags": [
-      "photo editing",
-      "video editing",
-      "graphic design",
-      "creative platform"
-    ],
-    "rating": 4.5,
-    "keywords": [
-      "ai creative platform",
-      "photo editor"
-    ],
-    "isFeatured": false,
-    "overview": "Picsart is a vast all-in-one creative platform providing powerful photo and video editing tools, graphic design capabilities, and a full suite of AI-powered features. It is a go-to solution for social media content creators, offering everything from simple filters to advanced layer-based editing and AI art generation.",
-    "faqs": [
-      {
-        "question": "Is Picsart good for beginners?",
-        "answer": "Yes, Picsart is very beginner-friendly, offering a wide array of easy-to-use templates, filters, and one-click AI tools. It also provides advanced features to satisfy more experienced designers."
-      },
-      {
-        "question": "What kind of AI tools does Picsart have?",
-        "answer": "Picsart's AI toolkit includes an AI image generator (text-to-image), background and object remover, style transfer filters, an AI writer for social media captions, and an AI-enhance feature to improve photo quality."
-      }
-    ]
-  },
-  {
     "name": "Wondershare",
     "slug": "wondershare",
     "image": "/wondershare.png",
@@ -4428,42 +4287,6 @@ export const tools = [
       {
         "question": "How does Gorgias use AI?",
         "answer": "Gorgias uses AI to detect customer intent (e.g., return request, shipping question), automate responses to repetitive questions, and provide agents with templated replies to improve efficiency and response times."
-      }
-    ]
-  },
-  {
-    "name": "Chat & Ask AI",
-    "slug": "chat-ask-ai-1",
-    "image": "/chatandask.png",
-    "url": "https://chatandask.ai/",
-    "category": [
-      "Daily Life",
-      "Social Media",
-      "Chatbots & Virtual Companions"
-    ],
-    "price": "Freemium (Free plan available; Paid plans start at $9.99/month)",
-    "description": "Advanced AI chatbot with GPT-4o, offering various AI tools and WhatsApp integration.",
-    "tags": [
-      "ai chatbot",
-      "gpt-4o",
-      "whatsapp integration",
-      "ai tools"
-    ],
-    "rating": 4.3,
-    "keywords": [
-      "advanced chatbot",
-      "whatsapp integration"
-    ],
-    "isFeatured": false,
-    "overview": "Chat & Ask AI is a versatile AI chatbot application powered by advanced models like GPT-4o. It offers a suite of tools for content creation, image generation, and problem-solving. A key feature is its seamless integration with WhatsApp, allowing users to access the AI's power directly from their favorite messaging app.",
-    "faqs": [
-      {
-        "question": "How does the WhatsApp integration work?",
-        "answer": "You can add Chat & Ask AI as a contact on WhatsApp. This allows you to send messages to it just like you would with a person, and it will respond directly within your chat, making AI assistance highly accessible."
-      },
-      {
-        "question": "What can I do with Chat & Ask AI besides chatting?",
-        "answer": "Beyond conversation, the platform offers specialized tools for writing emails, generating social media posts, creating AI art, summarizing text, and more, all accessible through its interface."
       }
     ]
   },
@@ -5313,41 +5136,7 @@ export const tools = [
       }
     ]
   },
-  {
-    "name": "Miro",
-    "slug": "miro-1",
-    "image": "/miro.png",
-    "url": "https://miro.com/",
-    "category": [
-      "Business Management",
-      "Coding & Development",
-      "Marketing & Advertising"
-    ],
-    "price": "Freemium (Free plan available; Paid plans start at $8 per member/month)",
-    "description": "Online collaborative whiteboard platform for team collaboration and project management.",
-    "tags": [
-      "collaborative whiteboard",
-      "team collaboration",
-      "project management"
-    ],
-    "rating": 4.8,
-    "keywords": [
-      "online whiteboard",
-      "collaboration tool"
-    ],
-    "isFeatured": false,
-    "overview": "Miro is an online collaborative whiteboard platform designed for modern teams. It provides an infinite canvas where teams can brainstorm with digital sticky notes, plan projects, create diagrams, and run interactive workshops in real-time. It integrates with many popular tools and now includes AI features to assist with idea generation and summarization.",
-    "faqs": [
-      {
-        "question": "What is Miro used for?",
-        "answer": "Common use cases include brainstorming, user story mapping, agile ceremonies (like retrospectives), process diagramming, and creating a central hub for project information."
-      },
-      {
-        "question": "How does Miro's AI work?",
-        "answer": "Miro Assist can automatically generate ideas on sticky notes from a prompt, summarize existing notes, create mind maps from text, and help structure content on the board, speeding up collaborative sessions."
-      }
-    ]
-  },
+
   {
     "name": "Anthropic",
     "slug": "anthropic",
@@ -5661,7 +5450,7 @@ export const tools = [
   },
   {
     "name": "SpoiledChild",
-    "slug": "spoiledchild-1",
+    "slug": "spoiledchild",
     "image": "/spoiled.png",
     "url": "https://www.spoiledchild.com/",
     "category": [
@@ -5732,7 +5521,7 @@ export const tools = [
   },
   {
     "name": "clickworker",
-    "slug": "clickworker-1",
+    "slug": "clickworker",
     "image": "/clicked.png",
     "url": "https://www.clickworker.com/",
     "category": [
@@ -6283,42 +6072,6 @@ export const tools = [
     ]
   },
   {
-    "name": "LuxAlgo",
-    "slug": "luxalgo-1",
-    "image": "/luxalos.png",
-    "url": "https://luxalgo.com/",
-    "category": [
-      "Business Research",
-      "Legal & Finance"
-    ],
-    "price": "Premium subscription required; starts at $47.99/month.",
-    "description": "LuxAlgo provides AI trading indicators and tools for stocks, crypto, and forex.",
-    "tags": [
-      "ai trading indicators",
-      "stocks",
-      "crypto",
-      "forex",
-      "trading tools"
-    ],
-    "rating": 4.8,
-    "keywords": [
-      "ai trading",
-      "stock trading"
-    ],
-    "isFeatured": false,
-    "overview": "LuxAlgo is a provider of advanced trading indicators and tools available on platforms like TradingView. It offers a suite of proprietary indicators that help traders identify market trends, confirmation signals, and potential reversals for assets in stocks, crypto, forex, and futures markets.",
-    "faqs": [
-      {
-        "question": "Is LuxAlgo a trading bot?",
-        "answer": "No, LuxAlgo provides indicators that generate trading signals and analysis on your charts. It is a tool for decision support, not an automated trading bot that executes trades for you."
-      },
-      {
-        "question": "What platforms can I use LuxAlgo on?",
-        "answer": "LuxAlgo indicators are primarily designed to be used on the TradingView platform, which is a popular charting and analysis tool used by traders worldwide."
-      }
-    ]
-  },
-  {
     "name": "200+ ChatGPT Mega-Prompts for Business",
     "slug": "200-chatgpt-mega-prompts-for-business",
     "image": "/200.png",
@@ -6494,76 +6247,6 @@ export const tools = [
     ]
   },
   {
-    "name": "TurboScribe",
-    "slug": "turboscribe-1",
-    "image": "/turboscribe.png",
-    "url": "https://turboscribe.ai/",
-    "category": [
-      "Education & Translation",
-      "Voice Generation & Conversion"
-    ],
-    "price": "Freemium (3 free transcriptions per day; Unlimited plan is $10/month)",
-    "description": "AI transcription service converting audio and video to text in 98+ languages.",
-    "tags": [
-      "transcription",
-      "audio to text",
-      "video to text",
-      "multilingual"
-    ],
-    "rating": 4.9,
-    "keywords": [
-      "ai transcription",
-      "audio transcription"
-    ],
-    "isFeatured": false,
-    "overview": "TurboScribe is an AI-powered transcription service that accurately converts audio and video files into text. It supports over 98 languages, provides speaker identification, and offers unlimited transcriptions with its paid plan. The service is known for its high accuracy and speed, making it ideal for transcribing interviews, lectures, and meetings.",
-    "faqs": [
-      {
-        "question": "What file formats does TurboScribe support?",
-        "answer": "TurboScribe supports a wide variety of common audio and video file formats, including MP3, WAV, M4A, MP4, and MOV."
-      },
-      {
-        "question": "How accurate is the transcription?",
-        "answer": "Powered by Whisper, one of the leading AI transcription technologies, TurboScribe offers state-of-the-art accuracy. It can handle various accents and background noise effectively."
-      }
-    ]
-  },
-  {
-    "name": "Anthropic",
-    "slug": "anthropic-1",
-    "image": "/anthro.png",
-    "url": "https://www.anthropic.com/",
-    "category": [
-      "Education & Translation",
-      "Business Management"
-    ],
-    "price": "API access has usage-based pricing; Claude Pro is $20/month.",
-    "description": "AI safety and research company building reliable, interpretable, and steerable AI systems.",
-    "tags": [
-      "ai safety",
-      "research",
-      "interpretable ai",
-      "steerable ai"
-    ],
-    "rating": 4.5,
-    "keywords": [
-      "ai research",
-      "ai systems"
-    ],
-    "isFeatured": false,
-    "overview": "Anthropic is an AI safety and research company dedicated to building helpful, honest, and harmless AI systems. Their flagship product is Claude, a family of large language models known for their strong performance, large context windows, and focus on constitutional AI principles to ensure safety and ethical behavior.",
-    "faqs": [
-      {
-        "question": "What is Claude?",
-        "answer": "Claude is Anthropic's AI assistant and large language model, designed to be a capable and safe conversational AI. It is available through an API for developers and as a web-based chatbot (Claude.ai) for consumers."
-      },
-      {
-        "question": "What is 'Constitutional AI'?",
-        "answer": "Constitutional AI is a framework developed by Anthropic to train AI models to be helpful and harmless without relying on extensive human feedback. The AI learns from a set of principles or a 'constitution,' guiding it to avoid toxic or harmful responses."
-      }
-    ]
-  },
-  {
     "name": "Monica",
     "slug": "monica",
     "image": "/monica.png",
@@ -6630,41 +6313,6 @@ export const tools = [
       {
         "question": "What languages does it support?",
         "answer": "While it is developed in China and excels in Mandarin, it also supports and provides comprehensive results for queries in English and other major languages."
-      }
-    ]
-  },
-  {
-    "name": "Scribbr",
-    "slug": "scribbr-1",
-    "image": "/scrit.png",
-    "url": "https://www.scribbr.com/",
-    "category": [
-      "Education & Translation",
-      "AI Detection & Anti-Detection"
-    ],
-    "price": "Service-based pricing (e.g., proofreading per word); some tools are free.",
-    "description": "Scribbr offers proofreading, plagiarism checking, citation generation, and academic resources for students.",
-    "tags": [
-      "proofreading",
-      "plagiarism checking",
-      "citation generation",
-      "academic resources"
-    ],
-    "rating": 4.7,
-    "keywords": [
-      "academic tools",
-      "plagiarism checker"
-    ],
-    "isFeatured": false,
-    "overview": "Scribbr is an academic services company dedicated to helping students succeed. It offers a suite of tools including a highly-rated Plagiarism Checker, an APA and MLA Citation Generator, and professional proofreading and editing services. It also features an AI Detector to check for AI-generated text.",
-    "faqs": [
-      {
-        "question": "Are Scribbr's tools free to use?",
-        "answer": "Scribbr offers several free tools, such as the basic citation generator. However, its core services like the plagiarism checker and professional editing are paid services with pricing based on document length."
-      },
-      {
-        "question": "Who does the proofreading and editing?",
-        "answer": "Scribbr employs a network of professional academic editors who are native speakers and experts in various fields. They provide detailed feedback on language, structure, and clarity."
       }
     ]
   },
@@ -6805,76 +6453,6 @@ export const tools = [
     ]
   },
   {
-    "name": "Jotform AI Agents",
-    "slug": "jotform-ai-agents-1",
-    "image": "/jotform.png",
-    "url": "https://www.jotform.com/products/ai-agents/",
-    "category": [
-      "Chatbots & Virtual Companions",
-      "Business Management",
-      "Office & Productivity"
-    ],
-    "price": "Included with Jotform plans; Free plan available.",
-    "description": "Platform to create AI agents for customer service across multiple channels.",
-    "tags": [
-      "ai agents",
-      "customer service",
-      "chatbots",
-      "multi-channel"
-    ],
-    "rating": 4.7,
-    "keywords": [
-      "ai customer service",
-      "ai agent creation"
-    ],
-    "isFeatured": false,
-    "overview": "Jotform AI Agents is a feature within the Jotform suite that allows businesses to create custom AI-powered chatbots for customer service. These agents can be trained on company data and integrated into websites, apps, and other platforms to provide instant support and answer customer questions 24/7.",
-    "faqs": [
-      {
-        "question": "How do I train a Jotform AI Agent?",
-        "answer": "You can train your AI agent by providing it with your company's data, such as website content, documents, and FAQs. The agent learns from this information to provide accurate and relevant answers."
-      },
-      {
-        "question": "Is this feature included in the free Jotform plan?",
-        "answer": "Yes, you can build and use AI Agents with the free Jotform plan, although there will be limits on usage. Higher-tier plans offer more capacity and features."
-      }
-    ]
-  },
-  {
-    "name": "PolyBuzz.ai",
-    "slug": "polybuzz-ai-1",
-    "image": "/polybuz.png",
-    "url": "https://polybuzz.ai/",
-    "category": [
-      "Chatbots & Virtual Companions",
-      "Image Generation & Editing"
-    ],
-    "price": "Free",
-    "description": "Free AI chatbot platform for creating and chatting with customized AI characters.",
-    "tags": [
-      "chatbot",
-      "ai characters",
-      "customized bots"
-    ],
-    "rating": 3.8,
-    "keywords": [
-      "ai chatbot",
-      "ai character creation"
-    ],
-    "isFeatured": false,
-    "overview": "PolyBuzz.ai is a free platform that enables users to create, share, and chat with customized AI characters. It combines AI chat functionalities with AI image generation, allowing for a more visual and interactive role-playing experience. The platform supports both SFW and NSFW content.",
-    "faqs": [
-      {
-        "question": "Is PolyBuzz.ai completely free?",
-        "answer": "Yes, the platform is currently offered for free, providing users with access to character creation, chat, and image generation without a subscription."
-      },
-      {
-        "question": "Can characters on PolyBuzz.ai send images?",
-        "answer": "Yes, a key feature of PolyBuzz is the ability for AI characters to generate and send images during a conversation, enhancing the role-playing and storytelling aspects of the chat."
-      }
-    ]
-  },
-  {
     "name": "CrushOn.AI",
     "slug": "crushon-ai",
     "image": "/crushonai.png",
@@ -6910,7 +6488,7 @@ export const tools = [
   },
   {
     "name": "Planner 5D",
-    "slug": "planner-5d-1",
+    "slug": "planner-5d",
     "image": "/planneer.png",
     "url": "https://planner5d.com/",
     "category": [
@@ -7391,7 +6969,7 @@ export const tools = [
 },
 {
   "name": "文心一言 (Wénxīn Yīyán)",
-  "slug": "wenxin-yiyan-1",
+  "slug": "wenxin-yiyan",
   "image": "/chsfklsj.png",
   "url": "https://yiyan.baidu.com/",
   "category": [
@@ -7461,7 +7039,7 @@ export const tools = [
 },
 {
   "name": "Glasp",
-  "slug": "glasp-1",
+  "slug": "glasp",
   "image": "/glasp.png",
   "url": "https://glasp.co/",
   "category": [
