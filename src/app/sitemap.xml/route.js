@@ -22,7 +22,6 @@ export async function GET() {
       { url: "/blog", lastmod: today, changefreq: "daily", priority: "0.9" },
       
       // ✅ NEW: Free AI Tools pages
-      { url: "/free-ai-tools", lastmod: today, changefreq: "weekly", priority: "0.9" },
       { url: "/free-ai-tools/business", lastmod: today, changefreq: "weekly", priority: "0.8" },
       { url: "/free-ai-tools/students", lastmod: today, changefreq: "weekly", priority: "0.8" },
       
@@ -129,10 +128,7 @@ function getCompareRoutes(lastmod) {
     "chatgpt-vs-claude", 
     "chatgpt-vs-copilot",
     "midjourney-vs-dalle",
-    "midjourney-vs-stable-diffusion",
-    "grammarly-vs-jasper",
-    "canva-vs-figma",
-    "notion-vs-obsidian"
+    "midjourney-vs-stable-diffusion"
   ];
 
   console.log("⚖️ Compare pages found:", comparePages.length);
