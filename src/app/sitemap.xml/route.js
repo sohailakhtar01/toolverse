@@ -5,242 +5,236 @@ import { getAllPosts } from '@/lib/sanity';
 export const dynamic = 'force-dynamic';
 export const revalidate = 3600;
 
-export async function GET() {
-  const baseUrl = "https://www.thetoolsverse.com";
-  const today = new Date().toISOString().split('T')[0];
+// Toggle to pre-validate a tiny URL subset (e.g., compare pages) during debugging.
+// Keep false in production to avoid latency.
+const VALIDATE_COMPARE_URLS = false;
 
-  console.log("🚀 Sitemap base URL:", baseUrl);
+// Helpers
+const toISO = (d) => (d instanceof Date ? d.toISOString() : new Date(d).toISOString());
+const isIso = (v) => typeof v === 'string' && !Number.isNaN(Date.parse(v));
+
+// Normalize a URL path (no trailing slash except root)
+const norm = (p) => (p === '/' || p === '' ? '' : p.replace(/\/+$/, ''));
+
+// Build a URL element string with minimal, truthful fields
+const urlXml = (base, { url, lastmod }) => {
+  const loc = `${base}${norm(url)}`;
+  return `
+  <url>
+    <loc>${loc}</loc>
+    ${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}
+  </url>`;
+};
+
+// Optional live checker for a tiny set (HEAD with GET fallback)
+async function filterLiveRoutes(baseUrl, routes) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 4000);
+  try {
+    const checks = routes.map(async (r) => {
+      try {
+        let res = await fetch(`${baseUrl}${norm(r.url)}`, { method: 'HEAD', signal: controller.signal });
+        if (res.status === 405 || !res.ok) {
+          res = await fetch(`${baseUrl}${norm(r.url)}`, { method: 'GET', signal: controller.signal });
+        }
+        return res.ok ? r : null;
+      } catch {
+        return null;
+      }
+    });
+    const results = await Promise.allSettled(checks);
+    return results.map((x) => (x.status === 'fulfilled' ? x.value : null)).filter(Boolean);
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+export async function GET() {
+  const baseUrl = 'https://www.thetoolsverse.com';
 
   try {
-    // ✅ Static routes (including your missing pages)
+    // 1) Static routes (include only live pages; exclude non-working /free-ai-tools root)
     const staticRoutes = [
-      { url: "", lastmod: today, changefreq: "daily", priority: "1.0" },
-      { url: "/about", lastmod: today, changefreq: "monthly", priority: "0.8" },
-      { url: "/how-it-works", lastmod: today, changefreq: "monthly", priority: "0.7" },
-      { url: "/browse-tools", lastmod: today, changefreq: "weekly", priority: "0.9" },
-      { url: "/featured", lastmod: today, changefreq: "weekly", priority: "0.8" },
-      { url: "/blog", lastmod: today, changefreq: "daily", priority: "0.9" },
-      
-      // ✅ NEW: Free AI Tools pages
-      { url: "/free-ai-tools/business", lastmod: today, changefreq: "weekly", priority: "0.8" },
-      { url: "/free-ai-tools/students", lastmod: today, changefreq: "weekly", priority: "0.8" },
-      
-      // ✅ NEW: Submit tool page
-      { url: "/submit-tool", lastmod: today, changefreq: "monthly", priority: "0.7" },
+      { url: '', lastmod: undefined }, // home; optionally stamp separately if homepage content has a tracked updatedAt
+      { url: '/about', lastmod: undefined },
+      { url: '/how-it-works', lastmod: undefined },
+      { url: '/browse-tools', lastmod: undefined },
+      { url: '/featured', lastmod: undefined },
+      { url: '/blog', lastmod: undefined },
+      // Known working free pages (exclude /free-ai-tools if not implemented)
+      { url: '/free-ai-tools/business', lastmod: undefined },
+      { url: '/free-ai-tools/students', lastmod: undefined },
+      { url: '/submit-tool', lastmod: undefined },
     ];
 
-    // ✅ Dynamic routes
-    const categoryRoutes = getCategoryRoutes(today);
-    const toolRoutes = getToolRoutes(today);
-    const blogRoutes = await getBlogRoutes();
-    const compareRoutes = getCompareRoutes(today);
+    // 2) Dynamic: Tools
+    const toolRoutes = getToolRoutes();
 
-    const allRoutes = [
+    // 3) Dynamic: Blog
+    const blogRoutes = await getBlogRoutes();
+
+    // 4) Dynamic: Categories (lastmod = max child tool updatedAt)
+    const categoryRoutes = getCategoryRoutes(toolRoutes);
+
+    // 5) Dynamic: Compare (only implemented pages)
+    let compareRoutes = getCompareRoutes();
+    if (VALIDATE_COMPARE_URLS) {
+      compareRoutes = await filterLiveRoutes(baseUrl, compareRoutes);
+    }
+
+    // Merge and de-duplicate
+    const all = dedupe([
       ...staticRoutes,
       ...categoryRoutes,
       ...toolRoutes,
       ...blogRoutes,
       ...compareRoutes,
-    ];
+    ]);
 
-    console.log("🔍 Total routes:", allRoutes.length);
-    
-    const routesXml = allRoutes
-      .map(
-        (route) => `
-      <url>
-        <loc>${baseUrl}${route.url}</loc>
-        <lastmod>${route.lastmod}</lastmod>
-        <changefreq>${route.changefreq}</changefreq>
-        <priority>${route.priority}</priority>
-      </url>`
-      )
-      .join("");
+    // Convert to XML
+    const routesXml = all.map((r) => urlXml(baseUrl, r)).join('');
 
-    // ✅ Enhanced XML with structured data hints
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  ${routesXml}
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${routesXml}
 </urlset>`;
 
-    // ✅ Enhanced response headers for better SEO
     return new Response(xml, {
       headers: {
-        "Content-Type": "application/xml; charset=utf-8",
-        "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
-        "X-Robots-Tag": "index, follow",
-        "Vary": "Accept-Encoding",
-        "Last-Modified": new Date().toUTCString(),
+        'Content-Type': 'application/xml; charset=utf-8',
+        'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
+        'X-Robots-Tag': 'index, follow',
+        'Vary': 'Accept-Encoding',
+        'Last-Modified': new Date().toUTCString(),
       },
     });
-  } catch (error) {
-    console.error("❌ Error generating sitemap:", error);
-
-    // ✅ Enhanced fallback with all important pages
-    const fallbackXml = `<?xml version="1.0" encoding="UTF-8"?>
+  } catch (err) {
+    // Minimal fallback with only guaranteed pages
+    const fallback = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>${baseUrl}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/blog</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/free-ai-tools/business</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/free-ai-tools/students</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/submit-tool</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <url><loc>${baseUrl}</loc></url>
+  <url><loc>${baseUrl}/blog</loc></url>
 </urlset>`;
-
-    return new Response(fallbackXml, {
-      headers: { 
-        "Content-Type": "application/xml; charset=utf-8",
-        "Cache-Control": "no-cache, no-store, must-revalidate"
+    return new Response(fallback, {
+      headers: {
+        'Content-Type': 'application/xml; charset=utf-8',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
       },
     });
   }
 }
 
-// ✅ Enhanced Compare pages function
-function getCompareRoutes(lastmod) {
-  const comparePages = [
-    "chatgpt-vs-bard",
-    "chatgpt-vs-claude", 
-    "chatgpt-vs-copilot",
-    "midjourney-vs-dalle",
-    "midjourney-vs-stable-diffusion"
-  ];
+// ---- Builders ----
 
-  console.log("⚖️ Compare pages found:", comparePages.length);
-
-  return comparePages.map((slug) => ({
-    url: `/compare/${slug}`,
-    lastmod,
-    changefreq: "monthly",
-    priority: "0.8",
-  }));
-}
-
-// ✅ Enhanced Category routes with better error handling
-function getCategoryRoutes(lastmod) {
+// Returns: [{ url, lastmod? }]
+function getToolRoutes() {
   try {
-    const categoriesSet = new Set();
-    
-    if (!toolsData || !Array.isArray(toolsData)) {
-      console.warn("⚠️ No tools data available for categories");
-      return [];
-    }
-
-    toolsData.forEach((tool) => {
-      if (tool.category && Array.isArray(tool.category)) {
-        tool.category.forEach((cat) => {
-          if (typeof cat === 'string' && cat.trim()) {
-            const slug = cat
-              .toLowerCase()
-              .trim()
-              .replace(/&/g, "and")
-              .replace(/[^a-z0-9]+/g, "-")
-              .replace(/^-+|-+$/g, "");
-            
-            if (slug.length > 0) {
-              categoriesSet.add(slug);
-            }
-          }
-        });
-      }
-    });
-
-    console.log("📂 Categories found:", Array.from(categoriesSet));
-
-    return Array.from(categoriesSet).map((slug) => ({
-      url: `/categories/${slug}`,
-      lastmod,
-      changefreq: "weekly",
-      priority: "0.8",
-    }));
-  } catch (error) {
-    console.error("❌ Error generating category routes:", error);
+    if (!Array.isArray(toolsData)) return [];
+    return toolsData
+      .filter((t) => t?.slug) // must have slug
+      .map((tool) => {
+        const last =
+          tool?.updatedAt ? toISO(tool.updatedAt) :
+          tool?.publishedAt ? toISO(tool.publishedAt) :
+          undefined;
+        return { url: `/tools/${tool.slug}`, lastmod: last && isIso(last) ? last : undefined };
+      });
+  } catch {
     return [];
   }
 }
 
-// ✅ Enhanced Tool routes with rating-based priority
-function getToolRoutes(lastmod) {
-  try {
-    if (!toolsData || !Array.isArray(toolsData)) {
-      console.warn("⚠️ No tools data available");
-      return [];
-    }
-
-    console.log("🔧 Tools found:", toolsData.length);
-    
-    return toolsData.map((tool) => {
-      // Enhanced priority based on rating and featured status
-      let priority = "0.7"; // default
-      
-      if (tool.isFeatured) priority = "0.9";
-      if (tool.rating && tool.rating >= 4.8) priority = "0.9";
-      if (tool.rating && tool.rating >= 4.9) priority = "0.95";
-      
-      return {
-        url: `/tools/${tool.slug}`,
-        lastmod,
-        changefreq: "monthly",
-        priority,
-      };
-    });
-  } catch (error) {
-    console.error("❌ Error generating tool routes:", error);
-    return [];
-  }
-}
-
-// ✅ Enhanced Blog routes from Sanity
+// Returns: [{ url, lastmod? }]
 async function getBlogRoutes() {
   try {
     const posts = await getAllPosts();
-
-    if (!posts || posts.length === 0) {
-      console.warn("⚠️ No blog posts found for sitemap");
-      return [];
-    }
-
-    console.log("📝 Blog posts found:", posts.length);
-
-    return posts.map((post) => {
-      const publishDate = post.publishedAt
-        ? new Date(post.publishedAt).toISOString().split("T")[0]
-        : new Date().toISOString().split("T")[0];
-
-      return {
-        url: `/blog/${String(post.slug)}`,
-        lastmod: publishDate,
-        changefreq: "monthly",
-        priority: "0.8",
-      };
-    });
-  } catch (error) {
-    console.error("❌ Error fetching blog routes:", error);
+    if (!Array.isArray(posts) || posts.length === 0) return [];
+    return posts
+      .map((post) => {
+        const slug = typeof post?.slug === 'string' ? post.slug : post?.slug?.current;
+        if (!slug) return null;
+        const last =
+          post?.updatedAt ? toISO(post.updatedAt) :
+          post?.publishedAt ? toISO(post.publishedAt) :
+          undefined;
+        return { url: `/blog/${slug}`, lastmod: last && isIso(last) ? last : undefined };
+      })
+      .filter(Boolean);
+  } catch {
     return [];
   }
+}
+
+// Category lastmod = max lastmod of its tools
+function getCategoryRoutes(toolRoutes) {
+  try {
+    if (!Array.isArray(toolsData)) return [];
+    const catToMaxLast = new Map(); // slug -> ISO string
+    const catSlug = (txt) =>
+      txt
+        .toLowerCase()
+        .trim()
+        .replace(/&/g, 'and')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+
+    // Build a quick lookup from tool slug -> lastmod
+    const toolLastBySlug = new Map(
+      toolRoutes.map((t) => [t.url.replace('/tools/', ''), t.lastmod].filter(Boolean))
+    );
+
+    for (const tool of toolsData) {
+      if (!Array.isArray(tool?.category)) continue;
+      const tLast =
+        tool?.updatedAt ? toISO(tool.updatedAt) :
+        tool?.publishedAt ? toISO(tool.publishedAt) :
+        undefined;
+      for (const c of tool.category) {
+        if (typeof c !== 'string' || !c.trim()) continue;
+        const slug = catSlug(c);
+        if (!slug) continue;
+        const current = catToMaxLast.get(slug);
+        const next = tLast && isIso(tLast) ? tLast : current;
+        // pick the max timestamp
+        if (!current || (next && new Date(next) > new Date(current))) {
+          catToMaxLast.set(slug, next);
+        }
+      }
+    }
+
+    return Array.from(catToMaxLast.entries()).map(([slug, last]) => ({
+      url: `/categories/${slug}`,
+      lastmod: last && isIso(last) ? last : undefined,
+    }));
+  } catch {
+    return [];
+  }
+}
+
+// Only include compare pages that actually exist in your app
+function getCompareRoutes() {
+  const compareSlugs = [
+    'chatgpt-vs-bard',
+    'chatgpt-vs-claude',
+    'chatgpt-vs-copilot',
+    'midjourney-vs-dalle',
+    'midjourney-vs-stable-diffusion',
+  ];
+  const now = undefined; // only set if you track per-page updatedAt
+  return compareSlugs.map((slug) => ({ url: `/compare/${slug}`, lastmod: now }));
+}
+
+// De-duplicate by normalized URL
+function dedupe(routes) {
+  const out = [];
+  const seen = new Set();
+  for (const r of routes) {
+    const key = norm(r.url || '');
+    if (!seen.has(key)) {
+      seen.add(key);
+      out.push({ url: key, lastmod: r.lastmod && isIso(r.lastmod) ? r.lastmod : undefined });
+    }
+  }
+  return out;
 }
