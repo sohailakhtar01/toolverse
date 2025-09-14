@@ -7078,9 +7078,102 @@ export const tools = [
     ]
   },
   {
+  "name": "SurveyMonkey",
+  "slug": "surveymonkey",
+  "image": "/surveymonkey.png",
+  "url": "https://www.surveymonkey.com",
+  "category": [
+    "Marketing & Advertising"
+  ],
+  "price": "Freemium (individual plans from $39/month billed annually; team plans from ~$25/user/month billed annually; enterprise custom—pricing may vary by region and promos)",
+  "description": "Online survey and feedback platform to create surveys, quizzes, and forms, analyze responses with dashboards, and share insights.",
+  "tags": [
+    "surveys",
+    "forms",
+    "questionnaires",
+    "feedback",
+    "CSAT",
+    "NPS",
+    "market research",
+    "polls",
+    "quizzes"
+  ],
+  "rating": 4.6,
+  "keywords": [
+    "online survey tool",
+    "survey builder",
+    "customer feedback software",
+    "NPS survey",
+    "market research surveys",
+    "form builder"
+  ],
+  "isFeatured": true,
+  "overview": "SurveyMonkey helps teams design professional surveys fast, distribute them across email, link, social, or website, and turn responses into insights with filters, crosstabs, and benchmarks. Templates for CX, HR, education, and market research speed up setup while integrations push results into the tools already used by the team.",
+  "faqs": [
+    {
+      "question": "Is there a free plan?",
+      "answer": "Yes. The free plan supports basic surveys with limited questions and responses; paid plans unlock advanced logic, branding, and analytics."
+    },
+    {
+      "question": "What export and integration options are available?",
+      "answer": "Responses can be exported to CSV, XLSX, and PDF, and the platform integrates with tools like Slack, Zapier, Google Sheets, Salesforce (on eligible plans), and more."
+    },
+    {
+      "question": "Does SurveyMonkey support compliance needs?",
+      "answer": "It provides enterprise-grade security and compliance features, with admin controls, SSO, and data residency options available on higher‑tier plans."
+    }
+  ]
+},
+{
+  "name": "FreshBooks",
+  "slug": "freshbooks",
+  "image": "/freshbooks.jpeg",
+  "url": "https://www.freshbooks.com",
+  "category": [
+    "Accounting"
+  ],
+  "price": "Paid (Lite $19/month, Plus $33/month, Premium $60/month; 30‑day free trial; Select/Enterprise custom—prices and promos may vary by region)",
+  "description": "Cloud accounting and invoicing software for freelancers and small businesses with time tracking, expenses, estimates, and project billing.",
+  "tags": [
+    "accounting",
+    "invoicing",
+    "expenses",
+    "time tracking",
+    "estimates",
+    "billing",
+    "small business",
+    "freelancers"
+  ],
+  "rating": 4.5,
+  "keywords": [
+    "invoicing software",
+    "small business accounting",
+    "expense tracking",
+    "time tracking",
+    "estimates and proposals",
+    "billing and payments"
+  ],
+  "isFeatured": true,
+  "overview": "FreshBooks streamlines billing and bookkeeping with customizable invoices, online payments, automated expense capture, bank feeds, and detailed P&L and tax reports. Built‑in time tracking and project tools make it ideal for service businesses, while double‑entry accounting and accountant access keep books accurate for tax time.",
+  "faqs": [
+    {
+      "question": "Is it double‑entry accounting?",
+      "answer": "Yes. FreshBooks supports double‑entry accounting with journals, general ledger, and core financial statements."
+    },
+    {
+      "question": "Which payment and app integrations are supported?",
+      "answer": "It connects with Stripe, PayPal, and other gateways for online payments, and integrates with tools like G Suite, Zapier, Shopify, and more."
+      },
+    {
+      "question": "Does it support multi‑currency and taxes like GST/VAT?",
+      "answer": "FreshBooks supports multi‑currency invoicing and region‑specific tax rates (e.g., GST/VAT) on eligible plans."
+    }
+  ]
+},
+  {
     "name": "AppAlchemy.ai",
     "slug": "appalchemy-ai",
-    "image": "/appalchemy.png",
+    "image": "/ .png",
     "url": "https://appalchemy.ai",
     "category": [
       "Design Tools",
