@@ -1390,7 +1390,7 @@ export const tools = [
   "category": [
     "Sales & Productivity",
     "CRM & Automation",
-    "Contact Creatio"
+    "Content Creation"
   ],
   "price": "Free forever. Paid plans start at $15/month per seat.",
   "description": "HubSpot Free CRM is a powerful customer relationship management platform that unifies all your customer data on one AI-powered platform. Manage contacts, deals, tasks, and customer interactions without any time restrictions or hidden fees.",
@@ -7124,6 +7124,636 @@ export const tools = [
     }
   ]
 },
+{
+    "name": "Perchance AI Image Generator",
+    "slug": "perchance-ai-image-generator",
+    "image": "/perchance-ai-image-generator.png",
+    "url": "https://perchance.org/ai-image-generator",
+    "category": [
+      "AI Image Generators"
+    ],
+    "price": "Free",
+    "description": "A free text-to-image AI tool that allows users to create stunning images from text descriptions using advanced AI models like SDXL Turbo.",
+    "tags": [
+      "text-to-image",
+      "ai art generator",
+      "free ai tool",
+      "image generation",
+      "sdxl turbo"
+    ],
+    "rating": 4.8,
+    "keywords": [
+      "free ai image generator",
+      "text to image ai",
+      "perchance image generator",
+      "ai art generator free",
+      "sdxl turbo online"
+    ],
+    "isFeatured": false,
+    "overview": "Perchance Image Generator is a powerful and user-friendly AI tool that transforms text prompts into high-quality images. It leverages the speed and efficiency of models like SDXL Turbo to deliver visuals in seconds. The platform is designed for a wide range of users, from artists and designers to content creators and educators, offering a simple interface to explore creative possibilities without any cost.",
+    "faqs": [
+      {
+        "question": "Is Perchance AI Image Generator free to use?",
+        "answer": "Yes, Perchance AI Image Generator is completely free to use. You can generate images from text without any subscription or fees."
+      },
+      {
+        "question": "What kind of images can I create?",
+        "answer": "You can create a wide variety of images, from realistic photos to stylized and abstract art, by providing detailed text descriptions. The AI is capable of interpreting complex prompts to bring your vision to life."
+      },
+      {
+        "question": "Do I need any technical skills to use this tool?",
+        "answer": "No, the Perchance Image Generator has a user-friendly interface that is easy to navigate. You just need to type in your text description and click 'Generate' to create an image, making it accessible for everyone regardless of their technical expertise."
+      }
+    ]
+  },
+  {
+    "name": "WriteHuman",
+    "slug": "writehuman",
+    "image": "/writehuman.webp",
+    "url": "https://writehuman.ai",
+    "category": [
+      "AI Content Humanizer"
+    ],
+    "price": "Freemium (with a free trial and premium subscription plans)",
+    "description": "An AI tool that transforms AI-generated text into natural, human-like content to bypass AI detectors and enhance readability.",
+    "tags": [
+      "ai humanizer",
+      "bypass ai detection",
+      "content creation",
+      "writing assistant",
+      "natural language processing"
+    ],
+    "rating": 4.7,
+    "keywords": [
+      "humanize ai text",
+      "ai to human text converter",
+      "undetectable ai writer",
+      "bypass gptzero",
+      "ai content editor"
+    ],
+    "isFeatured": false,
+    "overview": "WriteHuman is a powerful AI humanizer designed to make AI-generated content sound more authentic and natural. It helps users to bypass AI detection tools by refining the text to be indistinguishable from human writing. The platform includes a built-in AI detector to check the content and offers a user-friendly interface to quickly humanize text for various purposes like content creation, marketing, and academic writing.",
+    "faqs": [
+      {
+        "question": "How does WriteHuman make AI text undetectable?",
+        "answer": "WriteHuman uses advanced algorithms to analyze and rewrite AI-generated text, focusing on sentence structure, word choice, and flow to mimic human writing patterns. This process helps in bypassing even sophisticated AI detectors."
+      },
+      {
+        "question": "Is there a free version of WriteHuman?",
+        "answer": "Yes, WriteHuman offers a free trial for new users to test out its features. For more advanced functionalities and higher usage limits, you can subscribe to one of their premium plans."
+      },
+      {
+        "question": "What makes WriteHuman different from other AI paraphrasing tools?",
+        "answer": "Unlike standard paraphrasing tools, WriteHuman is specifically designed to humanize AI text and make it undetectable. It focuses on producing high-quality, engaging content that resonates with readers, not just rephrasing sentences."
+      }
+    ]
+  },
+  {
+    "name": "FaceCheck ID",
+    "slug": "facecheck-id",
+    "image": "/facecheck.jpeg",
+    "url": "https://facecheck.id",
+    "category": [
+      "Facial Recognition"
+    ],
+    "price": "Credit-based (pay-per-search)",
+    "description": "A facial search engine that allows users to perform background checks by searching for a person's face across the internet from various sources.",
+    "tags": [
+      "facial recognition",
+      "reverse image search",
+      "background check",
+      "identity verification",
+      "osint"
+    ],
+    "rating": 4.8,
+    "keywords": [
+      "face search engine",
+      "reverse face search",
+      "online background check",
+      "verify identity online",
+      "facial recognition search"
+    ],
+    "isFeatured": false,
+    "overview": "FaceCheck ID is a powerful facial recognition search engine that enables users to find people online by uploading their photos. The tool scours the internet, including social media, news articles, and other public sources, to find matches and provide a confidence score for accuracy. It's a useful tool for verifying identities, conducting background checks, and ensuring online safety.",
+    "faqs": [
+      {
+        "question": "How does FaceCheck ID work?",
+        "answer": "You upload a photo of a person's face, and FaceCheck ID's advanced AI algorithms scan its vast database of images from the web to find matches. It then presents the results with a confidence score to indicate the likelihood of a match."
+      },
+      {
+        "question": "Is my data safe with FaceCheck ID?",
+        "answer": "FaceCheck ID prioritizes user privacy. Uploaded images and search data are not stored in their database and are deleted within 24 hours. Users can also request the removal of their images from the search results."
+      },
+      {
+        "question": "What can I use FaceCheck ID for?",
+        "answer": "FaceCheck ID can be used for various purposes, such as verifying the identity of someone you met online, conducting background checks for personal or professional reasons, and protecting yourself from online scams and catfishing."
+      }
+    ]
+  },
+  {
+    "name": "Sonara AI",
+    "slug": "sonara-ai",
+    "image": "/sonara.png",
+    "url": "https://sonara.ai",
+    "category": [
+      "Job Search"
+    ],
+    "price": "Freemium (Free 7-day trial, paid plans from $9.99/month)",
+    "description": "An AI-powered job search automation platform that finds and applies to relevant job openings on your behalf, acting as your personal recruiter.",
+    "tags": [
+      "job search",
+      "ai recruiter",
+      "career automation",
+      "job applications",
+      "resume builder"
+    ],
+    "rating": 4.6,
+    "keywords": [
+      "automated job applications",
+      "ai job search assistant",
+      "find jobs with ai",
+      "sonara ai reviews",
+      "career advancement tools"
+    ],
+    "isFeatured": false,
+    "overview": "Sonara AI revolutionizes the job search process by automating the discovery and application for relevant job opportunities. It uses AI to scan millions of job postings daily, identify the best matches for your profile, and submit customized applications. This saves you time and effort, allowing you to focus on preparing for interviews and landing your dream job.",
+    "faqs": [
+      {
+        "question": "How does Sonara AI find the right jobs for me?",
+        "answer": "Sonara AI uses the information you provide about your skills, experience, and job preferences to train its AI algorithm. It then scours the web for job openings that align with your profile and career goals, ensuring a high level of relevance."
+      },
+      {
+        "question": "Can I customize the applications Sonara AI sends?",
+        "answer": "Yes, Sonara AI allows you to customize your applications. While it automates the process, you have control over the information presented to potential employers, ensuring that your applications are tailored to each specific role."
+      },
+      {
+        "question": "Is Sonara AI suitable for all career levels?",
+        "answer": "Absolutely. Sonara AI is designed to assist job seekers at all stages of their careers, from recent graduates to senior executives. It can be a valuable tool for anyone looking for a more efficient and effective way to find their next job."
+      }
+    ]
+  },
+   {
+    "name": "aicut",
+    "slug": "aicut",
+    "image": "/aicut.webp",
+    "url": "https://aicut.pro/",
+    "category": [
+      "AI Video Generators"
+    ],
+    "price": "Paid (token-based pricing)",
+    "description": "An AI-driven video automation system that creates short-form, faceless videos from written content for social media platforms like YouTube, TikTok, and Instagram.",
+    "tags": [
+      "video automation",
+      "faceless videos",
+      "content creation",
+      "social media marketing",
+      "youtube shorts"
+    ],
+    "rating": 4.6,
+    "keywords": [
+      "ai video generator for tiktok",
+      "automated youtube shorts",
+      "faceless youtube channel automation",
+      "text to video ai",
+      "aicut review"
+    ],
+    "isFeatured": false,
+    "overview": "aicut is a powerful AI tool for content creators and social media managers who want to produce engaging, faceless videos with ease. It can transform blog posts, text stories, and other written content into viral-ready videos, complete with AI-generated images and captions. With its automation features, aicut helps you maintain a consistent posting schedule and grow your social media channels with minimal effort.",
+    "faqs": [
+      {
+        "question": "What kind of videos can I create with aicut?",
+        "answer": "aicut specializes in creating short-form, faceless videos, such as fake text message stories, AI image stories, and videos from blog posts. These are perfect for platforms like TikTok, YouTube Shorts, and Instagram Reels."
+      },
+      {
+        "question": "Do I need video editing skills to use aicut?",
+        "answer": "No, aicut is designed for users of all skill levels. Its AI-powered platform automates the video creation process, so you don't need any prior video editing experience to produce professional-looking content."
+      },
+      {
+        "question": "Can I schedule and post videos directly from aicut?",
+        "answer": "Yes, aicut offers scheduling and direct posting capabilities for YouTube and TikTok. This allows you to set up automated content campaigns and manage multiple social media channels efficiently from a single platform."
+      }
+    ]
+  },
+  {
+    "name": "Anara AI",
+    "slug": "anara-ai",
+    "image": "/anara.webp",
+    "url": "https://anara.ai",
+    "category": [
+      "Research Assistant"
+    ],
+    "price": "Freemium (Free plan, Pro plan at $20/month, Team plan at $30/seat/month)",
+    "description": "A cutting-edge AI tool for researchers that simplifies the research process by providing quick and accurate insights into papers, books, and audio files.",
+    "tags": [
+      "research tool",
+      "ai for academics",
+      "literature review",
+      "ai writing assistant",
+      "document analysis"
+    ],
+    "rating": 4.5,
+    "keywords": [
+      "ai research assistant",
+      "academic writing tool",
+      "literature review software",
+      "anara ai review",
+      "ai for phd students"
+    ],
+    "isFeatured": false,
+    "overview": "Anara is an AI-powered workspace designed to streamline the research workflow for academics, students, and research teams. It can understand and summarize complex documents, including PDFs, images, and audio files, providing referenced responses to ensure accuracy. Anara also offers AI writing assistance, cross-referencing capabilities, and collaborative features to make the research process more efficient and effective.",
+    "faqs": [
+      {
+        "question": "How does Anara AI ensure the accuracy of its responses?",
+        "answer": "Anara always provides referenced responses, linking the information it generates back to the original source documents. This allows you to easily verify the accuracy and context of the AI-generated content, which is crucial for academic research."
+      },
+      {
+        "question": "Can I use Anara AI for collaborative research projects?",
+        "answer": "Yes, Anara's Team plan is specifically designed for collaboration. It offers a shared workspace, an admin panel, and real-time collaborative editing, making it an excellent tool for research teams working together on projects."
+      },
+      {
+        "question": "What types of files can I upload to Anara AI?",
+        "answer": "Anara can process a wide range of file types, including PDFs, images, audio, and video files. Its advanced AI can even interpret handwritten notes and poorly formatted documents, making it a versatile tool for all your research materials."
+      }
+    ]
+  },
+  {
+    "name": "Glambase AI",
+    "slug": "glambase-ai",
+    "image": "/glambase.jpg",
+    "url": "https://glambase.ai/",
+    "category": [
+      "AI Influencer"
+    ],
+    "price": "Paid (One-time fee of $347)",
+    "description": "A platform that allows users to create, customize, and monetize AI-driven virtual influencers for digital marketing and content creation.",
+    "tags": [
+      "virtual influencer",
+      "ai avatar",
+      "digital marketing",
+      "content creation",
+      "monetization"
+    ],
+    "rating": 4.7,
+    "keywords": [
+      "create ai influencer",
+      "virtual influencer platform",
+      "ai avatar generator",
+      "glambase ai review",
+      "monetize ai character"
+    ],
+    "isFeatured": false,
+    "overview": "Glambase empowers creators, marketers, and entrepreneurs to build and monetize their own AI-powered virtual influencers. The platform provides user-friendly tools to design a unique digital persona, generate engaging content, and track earnings in real-time. It's an innovative way to explore new forms of digital engagement and tap into the growing market of virtual influencers.",
+    "faqs": [
+      {
+        "question": "What is a virtual influencer?",
+        "answer": "A virtual influencer is a digital character created with computer-generated imagery (CGI) that is given a personality and acts as a social media influencer. They can be used for branding, marketing, and entertainment purposes."
+      },
+      {
+        "question": "How can I make money with a Glambase virtual influencer?",
+        "answer": "You can monetize your virtual influencer in various ways, such as through sponsored content, brand partnerships, selling digital products, and receiving payments for interactions and exclusive content from your followers."
+      },
+      {
+        "question": "Do I need any special skills to use Glambase?",
+        "answer": "No, Glambase is designed to be user-friendly and accessible to everyone, regardless of their technical skills. The platform provides intuitive tools for character design, content creation, and monetization."
+      }
+    ]
+  },
+   {
+    "name": "Pykaso AI",
+    "slug": "pykaso-ai",
+    "image": "/pykaso.png",
+    "url": "https://pykaso.ai/",
+    "category": [
+      "AI Content Creation"
+    ],
+    "price": "Contact for pricing",
+    "description": "An AI content generation tool for creating, enhancing, and managing AI-generated images and videos, especially for AI influencer managers.",
+    "tags": [
+      "ai image generator",
+      "ai video generator",
+      "face swap",
+      "ai influencer",
+      "content creation"
+    ],
+    "rating": 4.7,
+    "keywords": [
+      "ai influencer generator",
+      "realistic face generator",
+      "video face swap ai",
+      "pykaso ai review",
+      "ai content creation tools"
+    ],
+    "isFeatured": false,
+    "overview": "Pykaso is a comprehensive AI content generation platform designed for AI influencer managers and content creators. It offers a suite of powerful tools, including an AI image and video generator, a realistic face swap feature, and an image upscaler. Pykaso integrates advanced AI models into a user-friendly interface, enabling users to generate high-quality, consistent content for their AI characters at scale.",
+    "faqs": [
+      {
+        "question": "What makes Pykaso ideal for managing AI influencers?",
+        "answer": "Pykaso allows you to train your own AI models to create consistent images of your AI characters. This, combined with its advanced image and video generation tools, makes it easy to produce a large volume of high-quality content for your AI influencer's social media presence."
+      },
+      {
+        "question": "What is the video face swap feature in Pykaso?",
+        "answer": "Pykaso's video face swap tool uses advanced face fusion technology to realistically swap faces in videos. It offers features like bulk face swapping, multiple face swapping, and high-quality 4K results, even with challenging video conditions."
+      },
+      {
+        "question": "Can I use Pykaso to improve the quality of my AI-generated images?",
+        "answer": "Yes, Pykaso includes an AI upscaler that is specifically trained to enhance the quality of AI-generated images. It can add details, improve skin texture, and increase the resolution and dimensions of your photos."
+      }
+    ]
+  },
+   {
+    "name": "Vondy AI",
+    "slug": "vondy-ai",
+    "image": "/vondy.webp",
+    "url": "https://vondy.com/",
+    "category": [
+      "AI Applications"
+    ],
+    "price": "Freemium (Free trial and subscription plans)",
+    "description": "A suite of AI tools designed to streamline complex tasks, enhance productivity, and unlock creative potential across various industries.",
+    "tags": [
+      "ai productivity",
+      "business ai",
+      "creative ai",
+      "data analysis",
+      "ai applications"
+    ],
+    "rating": 4.2,
+    "keywords": [
+      "ai tools for business",
+      "vondy ai review",
+      "ai for productivity",
+      "creative ai tools",
+      "custom ai solutions"
+    ],
+    "isFeatured": false,
+    "overview": "Vondy offers a versatile collection of AI-powered applications that cater to a wide range of needs, from business and marketing to content creation and data analysis. It provides custom AI solutions and real-time performance to help users optimize their workflows, make informed decisions, and push the boundaries of innovation. Vondy's user-centric design makes it easy for anyone to harness the power of AI.",
+    "faqs": [
+      {
+        "question": "What kind of AI applications does Vondy offer?",
+        "answer": "Vondy provides a diverse range of AI tools for tasks such as content creation, marketing, data analysis, and business process optimization. It also allows for the creation of custom AI models tailored to specific user needs."
+      },
+      {
+        "question": "Who can benefit from using Vondy AI?",
+        "answer": "Vondy is designed for a broad audience, including business professionals, content creators, data scientists, tech startups, and educational institutions. Its scalable and versatile tools can be adapted to various use cases."
+      },
+      {
+        "question": "Does Vondy offer any integrations with other platforms?",
+        "answer": "Yes, Vondy is built on a cloud-based architecture and offers a robust API for developers. This allows for custom integrations and extensions of Vondy's capabilities, as well as interoperability with other systems."
+      }
+    ]
+  },
+  {
+    "name": "Dispute Panda",
+    "slug": "dispute-panda",
+    "image": "/dispute.jpeg",
+    "url": "https://disputepanda.com/",
+    "category": [
+      "Credit Repair"
+    ],
+    "price": "Freemium (Free plan and pay-as-you-go options)",
+    "description": "An AI-powered platform for credit repair professionals that automates and streamlines the dispute process with its unique AI-driven letter generation engine.",
+    "tags": [
+      "credit repair",
+      "dispute letters",
+      "ai for finance",
+      "credit score",
+      "fintech"
+    ],
+    "rating": 4.7,
+    "keywords": [
+      "ai credit repair software",
+      "automated dispute letters",
+      "dispute panda review",
+      "credit repair business tools",
+      "best credit repair software"
+    ],
+    "isFeatured": false,
+    "overview": "Dispute Panda is a game-changing tool for the credit repair industry. Its AI-powered engine generates unique and effective dispute letters, eliminating the need for templates and significantly increasing the chances of successful disputes. The platform is designed for efficiency, allowing credit repair professionals to process client reports and generate letters up to 70% faster, making it a valuable asset for any credit repair business.",
+    "faqs": [
+      {
+        "question": "How does Dispute Panda's AI letter generator work?",
+        "answer": "Dispute Panda uses machine learning to analyze client credit reports and generate unique dispute letters tailored to each specific situation. This approach is more effective than using generic templates and leads to better results in dispute resolutions."
+      },
+      {
+        "question": "Is Dispute Panda easy to use?",
+        "answer": "Yes, Dispute Panda features a user-friendly interface that simplifies the entire dispute process, from processing credit reports to generating and tracking dispute letters. It's designed to be intuitive for both seasoned professionals and those new to the credit repair industry."
+      },
+      {
+        "question": "What pricing plans does Dispute Panda offer?",
+        "answer": "Dispute Panda offers a flexible pricing structure, including a free plan with limited features and pay-as-you-go options for generating dispute letters. This makes it an accessible and cost-effective solution for credit repair businesses of all sizes."
+      }
+    ]
+  },
+   {
+    "name": "Vsub",
+    "slug": "vsub",
+    "image": "/vsub.jpg",
+    "url": "https://vsub.ai/",
+    "category": [
+      "AI Video Generators"
+    ],
+    "price": "Freemium (Free trial and lifetime access plans)",
+    "description": "An AI tool that specializes in quickly generating faceless channel content, such as Reddit story videos, with auto-captioning and AI voice generation.",
+    "tags": [
+      "faceless videos",
+      "reddit stories",
+      "video automation",
+      "content creation",
+      "ai voice generator"
+    ],
+    "rating": 4.2,
+    "keywords": [
+      "reddit story video maker",
+      "faceless youtube channel ideas",
+      "ai video generator with subtitles",
+      "vsub ai review",
+      "automated video creation"
+    ],
+    "isFeatured": false,
+    "overview": "Vsub is an innovative AI video creation tool designed for content creators who focus on faceless, narrative-driven content, particularly for platforms like Reddit and TikTok. It automates the process of turning stories into engaging videos with features like auto-captioning with animated emojis and a variety of AI-generated voices. Vsub helps creators produce content 10x faster, making it easier to maintain a consistent online presence.",
+    "faqs": [
+      {
+        "question": "What kind of content is Vsub best for?",
+        "answer": "Vsub is ideal for creating faceless, storytelling videos, such as narrating Reddit stories, personal anecdotes, or other text-based content. Its features are tailored to make this type of content engaging and shareable on social media."
+      },
+      {
+        "question": "Does Vsub offer a free trial?",
+        "answer": "Yes, you can start with a free trial to explore Vsub's features. They also offer a one-time purchase for lifetime access, which provides unlimited video creation and long-term cost-effectiveness."
+      },
+      {
+        "question": "How does the auto-captioning feature work?",
+        "answer": "Vsub automatically generates captions for your videos and enhances them with animated emojis to make them more visually appealing and engaging for viewers. This is a great way to capture attention on platforms where users often watch videos without sound."
+      }
+    ]
+  },
+   {
+    "name": "Deep Realms AI",
+    "slug": "deep-realms-ai",
+    "image": "/deep-realms-ai.png",
+    "url": "https://deeprealms.io/",
+    "category": [
+      "AI Storytelling"
+    ],
+    "price": "Freemium (Free tier and token-based pricing)",
+    "description": "An AI-powered storytelling and writing platform that allows users to create and explore rich narratives, characters, and worlds with the help of AI.",
+    "tags": [
+      "ai storytelling",
+      "creative writing",
+      "worldbuilding",
+      "interactive fiction",
+      "ai writer"
+    ],
+    "rating": 4.7,
+    "keywords": [
+      "ai story generator",
+      "interactive storytelling platform",
+      "ai worldbuilding tool",
+      "deep realms ai review",
+      "creative writing with ai"
+    ],
+    "isFeatured": false,
+    "overview": "Deep Realms is an innovative AI platform that empowers writers, game developers, and creative enthusiasts to craft immersive and interactive stories. It provides an AI writer to assist in developing characters, worlds, and narratives across various genres. With features like the World Engine for intricate worldbuilding and support for NSFW content, Deep Realms offers a flexible and powerful tool for unleashing your creativity.",
+    "faqs": [
+      {
+        "question": "What is the World Engine in Deep Realms?",
+        "answer": "The World Engine is a feature that allows you to create, manage, and share detailed story worlds. You can develop the lore, locations, and characters of your world and even collaborate with other users by sharing your creations in the Gallery."
+      },
+      {
+        "question": "Can I use Deep Realms for free?",
+        "answer": "Yes, Deep Realms offers a free tier that allows you to experience the platform and its basic features. For more advanced capabilities and higher usage, the pricing is based on the number of tokens you use for generating content with different AI models."
+      },
+      {
+        "question": "Does Deep Realms have any content filters?",
+        "answer": "No, Deep Realms provides an unfiltered AI writing experience, including options for generating NSFW content. This gives writers the freedom to explore any type of story they wish to create without restrictions."
+      }
+    ]
+  },
+  {
+    "name": "Dezgo AI",
+    "slug": "dezgo-ai",
+    "image": "/dezgo-ai.jpeg",
+    "url": "https://dezgo.com/",
+    "category": [
+      "AI Image Generators"
+    ],
+    "price": "Freemium (Free plan and pay-as-you-go Power Mode)",
+    "description": "A text-to-image AI generator that uses Stable Diffusion to create high-resolution images from text descriptions, with additional tools for image editing and video generation.",
+    "tags": [
+      "text-to-image",
+      "stable diffusion",
+      "ai art generator",
+      "image editing",
+      "ai video generator"
+    ],
+    "rating": 4.6,
+    "keywords": [
+      "free ai image generator stable diffusion",
+      "dezgo ai review",
+      "text to video ai free",
+      "ai inpainting tool",
+      "background remover ai"
+    ],
+    "isFeatured": false,
+    "overview": "Dezgo is a versatile and powerful AI-powered platform for visual content creation. It leverages the Stable Diffusion model to generate stunning, high-quality images from text prompts. In addition to its text-to-image capabilities, Dezgo offers a suite of tools for image-to-image transformation, inpainting, background removal, and even a beta version of a text-to-video generator. It's a comprehensive solution for creatives, developers, and businesses.",
+    "faqs": [
+      {
+        "question": "Is Dezgo AI free to use?",
+        "answer": "Yes, Dezgo offers a free plan with unlimited text-to-image generation at standard resolution. For higher resolution images, faster processing, and access to premium features, you can use the pay-as-you-go Power Mode."
+      },
+      {
+        "question": "What is Stable Diffusion?",
+        "answer": "Stable Diffusion is a deep learning, text-to-image model that can generate detailed images based on text descriptions. Dezgo utilizes this powerful model to provide high-quality image generation capabilities to its users."
+      },
+      {
+        "question": "What other tools does Dezgo AI offer besides text-to-image generation?",
+        "answer": "Dezgo provides a range of tools to enhance your creative workflow, including an image-to-image transformer, an inpainting tool to edit parts of an image, a background remover, an image upscaler, and a text-to-video generator that is currently in beta."
+      }
+    ]
+  },
+   {
+    "name": "NoiSee.AI",
+    "slug": "noisee-ai",
+    "image": "/noisee-ai.png",
+    "url": "https://noisee.ai/",
+    "category": [
+      "AI Video Generators"
+    ],
+    "price": "Contact for pricing",
+    "description": "An AI tool that transforms music into customized videos, generating visual content based on audio from various sources for musicians and content creators.",
+    "tags": [
+      "music visualization",
+      "ai video generator",
+      "music video maker",
+      "audio to video",
+      "content creation"
+    ],
+    "rating": 4.6,
+    "keywords": [
+      "ai music video generator",
+      "audio to video converter ai",
+      "visualize music with ai",
+      "noisee.ai review",
+      "ai tools for musicians"
+    ],
+    "isFeatured": false,
+    "overview": "NoiSee.AI is a unique AI tool that brings music to life by transforming audio tracks into engaging and customized videos. It's designed for musicians and content creators who want to create compelling visual content for their music. By interpreting the rhythm, mood, and elements of the audio, NoiSee.AI generates videos that are perfectly synchronized with the music, offering a new way for artists to share their work.",
+    "faqs": [
+      {
+        "question": "How does NoiSee.AI create videos from music?",
+        "answer": "NoiSee.AI uses advanced AI algorithms to analyze your music track and generate visuals that match its rhythm, mood, and other musical elements. You can also provide prompts and reference images to guide the AI in creating a video that aligns with your artistic vision."
+      },
+      {
+        "question": "Can I create videos for specific social media platforms?",
+        "answer": "Yes, NoiSee.AI supports various aspect ratios, allowing you to create videos that are optimized for different platforms like YouTube, TikTok, and Instagram. This ensures that your music videos look great no matter where you share them."
+      },
+      {
+        "question": "Is NoiSee.AI easy to use?",
+        "answer": "NoiSee.AI is accessible through a user-friendly Discord bot interface. This makes it easy for users to interact with the tool, provide their music and prompts, and generate their customized music videos with just a few commands."
+      }
+    ]
+  },
+  {
+    "name": "AITarot",
+    "slug": "aitarot",
+    "image": "/aitarot.webp",
+    "url": "https://apps.apple.com/ie/app/aitarot/id1661556298",
+    "category": [
+      "Entertainment"
+    ],
+    "price": "Free (with in-app purchases)",
+    "description": "An AI-powered app that provides tarot card readings and helps users learn the meanings of the cards through an interactive and personalized experience.",
+    "tags": [
+      "tarot reading",
+      "ai psychic",
+      "divination",
+      "spirituality",
+      "self-discovery"
+    ],
+    "rating": 4.7,
+    "keywords": [
+      "ai tarot card reading",
+      "free tarot reading app",
+      "learn tarot cards",
+      "daily tarot reading",
+      "aitarot app review"
+    ],
+    "isFeatured": false,
+    "overview": "AITarot is an innovative mobile app that combines the ancient art of tarot with the power of artificial intelligence. It offers personalized tarot readings, a comprehensive guide to card meanings, and an interactive way to learn and practice tarot. Whether you're a seasoned tarot reader or a curious beginner, AITarot provides a portal to self-discovery and guidance on life's questions.",
+    "faqs": [
+      {
+        "question": "How does the AI in AITarot work?",
+        "answer": "The app uses cutting-edge AI to provide insightful and accurate interpretations of the tarot cards you draw. The AI considers your question and the traditional meanings of the cards to deliver a personalized reading that resonates with your situation."
+      },
+      {
+        "question": "Is AITarot suitable for beginners?",
+        "answer": "Yes, AITarot is designed to be user-friendly for beginners. It includes a detailed guide to tarot card meanings and offers a virtual tarot deck for practice. The AI-enhanced readings can also help you learn and understand the cards more deeply."
+      },
+      {
+        "question": "Can I get a daily tarot reading with this app?",
+        "answer": "Yes, AITarot offers a free daily tarot card reading to provide you with guidance and a moment of reflection at the start of your day. You can also perform more detailed readings for specific questions about love, career, or personal growth."
+      }
+    ]
+  },
 {
   "name": "FreshBooks",
   "slug": "freshbooks",
