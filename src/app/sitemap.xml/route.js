@@ -202,7 +202,7 @@ function getCategoryRoutes(toolRoutes) {
         }
       }
     }
-
+    
     return Array.from(catToMaxLast.entries()).map(([slug, last]) => ({
       url: `/categories/${slug}`,
       lastmod: last && isIso(last) ? last : undefined,
