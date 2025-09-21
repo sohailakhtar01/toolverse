@@ -280,7 +280,7 @@ export default async function BlogPost({ params }) {
 
         <div className="bg-white">
           {/* 🔥 SEO-OPTIMIZED BREADCRUMB NAVIGATION */}
-          <nav className="bg-gray-50 py-4" aria-label="Breadcrumb">
+          <nav className="bg-gray-50 py-4 mt-13" aria-label="Breadcrumb">
             <div className="container mx-auto px-4 max-w-4xl">
               <ol className="flex items-center space-x-2 text-sm">
                 <li>
@@ -295,7 +295,7 @@ export default async function BlogPost({ params }) {
                 <li>
                   <Link 
                     href="/blog" 
-                    className="text-blue-600 hover:text-blue-800 font-medium"
+                    className="text-blue-600 w-16 hover:text-blue-800 font-medium"
                   >
                     AI Tools Blog
                   </Link>
