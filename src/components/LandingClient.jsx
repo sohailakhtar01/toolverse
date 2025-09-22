@@ -78,92 +78,10 @@ export default function LandingClient() {
             Explore thousands of carefully curated digital tools, software, and services to grow your business.
           </p>
           {/* /////////////////////////// */}
-<div className="grid grid-cols-3 md:grid-cols-3 gap-4 my-2">
-  
-  {/* Semrush */}
-  
-
-  {/* Grammarly */}
-  <div className="p-[1px] rounded-md bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg">
-    <a 
-      href="https://www.thetoolsverse.com/tools/grammarly"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block w-full bg-gradient-to-r from-[#F3F7FF] to-[#F6F5FE] rounded-md py-3 px-4 hover:from-white hover:to-white transition-all text-center"
-    >
-      <span className="text-black font-spaceGrotesk text-base font-semibold">
-        Get Grammarly Free →
-      </span>
-    </a>
-  </div>
-  
-
-  {/* HubSpot */}
-  <div className="p-[1px] rounded-md bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg">
-    <a 
-      href="https://www.thetoolsverse.com/tools/hubspot-free-crm"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block w-full bg-gradient-to-r from-[#F3F7FF] to-[#F6F5FE] rounded-md py-3 px-4 hover:from-white hover:to-white transition-all text-center"
-    >
-      <span className="text-black font-spaceGrotesk text-base font-semibold">
-        Start HubSpot Free →
-      </span>
-    </a>
-  </div>
-  <div className="p-[1px] rounded-md bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg">
-    <a 
-      href="https://www.thetoolsverse.com/tools/hubspot-free-crm"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block w-full bg-gradient-to-r from-[#F3F7FF] to-[#F6F5FE] rounded-md py-3 px-4 hover:from-white hover:to-white transition-all text-center"
-    >
-      <span className="text-black font-spaceGrotesk text-base font-semibold">
-        Try Monday Free →
-      </span>
-    </a>
-  </div>
-  <div className="p-[1px] rounded-md bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg">
-    <a 
-      href="https://www.thetoolsverse.com/tools/apollo"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block w-full bg-gradient-to-r from-[#F3F7FF] to-[#F6F5FE] rounded-md py-3 px-4 hover:from-white hover:to-white transition-all text-center"
-    >
-      <span className="text-black font-spaceGrotesk text-base font-semibold">
-        Start Apollo Free →
-      </span>
-    </a>
-  </div>
-  {/* //////////////// */}
-  <div className="p-[1px] rounded-md bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg">
-    <a 
-      href="https://www.thetoolsverse.com/tools/surveymonkey"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block w-full bg-gradient-to-r from-[#F3F7FF] to-[#F6F5FE] rounded-md py-3 px-4 hover:from-white hover:to-white transition-all text-center"
-    >
-      <span className="text-black font-spaceGrotesk text-sm sm:text-base font-semibold">
-        Start SurveyMonkey Free →
-      </span>
-    </a>
-  </div>
-  <div className="p-[1px] rounded-md bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg">
-    <a 
-      href="https://www.thetoolsverse.com/tools/freshbooks"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block w-full bg-gradient-to-r from-[#F3F7FF] to-[#F6F5FE] rounded-md py-3 px-4 hover:from-white hover:to-white transition-all text-center"
-    >
-      <span className="text-black font-spaceGrotesk text-base font-semibold">
-        Start FreshBooks Free →
-      </span>
-    </a>
-  </div>
 
 
+          
 
-</div>
 
 {/* ////////////////////////////////// */}
 
@@ -174,7 +92,7 @@ export default function LandingClient() {
 <div className="flex flex-wrap gap-4 sm:gap-10 mb-[30px] justify-center mt-[-50px]">
   <a
   href="/browse-tools"
-  className="flex items-center gap-2 px-6 py-3 cursor-pointer bg-gradient-to-r font-spaceGrotesk from-purple-500 to-pink-500 text-white rounded-2xl font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101"
+  className="flex items-center gap-2 px-8 py-3 cursor-pointer bg-gradient-to-r font-spaceGrotesk from-purple-500 to-pink-500 text-white rounded-2xl font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101"
 >
   <Search size={18} />
   Browse All AI Tools
@@ -182,7 +100,7 @@ export default function LandingClient() {
 
   <a
   href="/featured"
-  className="flex items-center gap-2 px-6 py-3 cursor-pointer bg-gradient-to-r font-spaceGrotesk from-purple-500 to-pink-500 text-white rounded-2xl font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101"
+  className="flex items-center gap-2 px-8 py-3 cursor-pointer bg-gradient-to-r font-spaceGrotesk from-purple-500 to-pink-500 text-white rounded-2xl font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101"
 >
   <Star size={18} />
   Featured Tools of the Week

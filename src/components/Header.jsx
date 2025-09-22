@@ -169,7 +169,7 @@ const Header = () => {
           <div
             onClick={() => setIsOpen(false)}
             className="fixed inset-0 bg-gradient-to-r from-purple-500 to-pink-500 bg-opacity-10 backdrop-blur-sm z-40 md:hidden"
-
+            
           />
         )}
 
@@ -188,7 +188,7 @@ const Header = () => {
                 className="p-2 text-purple-600 hover:text-purple-700 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-md"
                 aria-label="Close mobile menu"
               >
-                <X className="w-5 h-5" />
+                <X className="w-7 h-7" />
               </button>
             </div>
 
