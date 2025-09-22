@@ -96,7 +96,7 @@ export default function HowItWorksPage() {
       title: "Expert Curation",
       description: "All tools are carefully reviewed by our expert team",
       icon: "⭐",
-      stats: "2,500+ tools reviewed"
+      stats: "1200+ tools reviewed"
     },
     {
       title: "Unbiased Reviews",

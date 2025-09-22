@@ -128,8 +128,8 @@ export default function LandingClient() {
       {/* Stats */}
       <div className="flex flex-wrap justify-center gap-6 mt-10 md:gap-12 text-center">
         {[
-          { icon: <Wrench className="text-purple-600" />, value: '2,500+', label: 'Tools Listed', bg: 'bg-purple-100' },
-          { icon: <Users className="text-orange-600" />, value: '50K+', label: 'Happy Users', bg: 'bg-orange-100' },
+          { icon: <Wrench className="text-purple-600" />, value: '1200+', label: 'Tools Listed', bg: 'bg-purple-100' },
+          { icon: <Users className="text-orange-600" />, value: '5K+', label: 'Happy Users', bg: 'bg-orange-100' },
           { icon: <Star className="text-yellow-600" />, value: '4.9', label: 'Average Rating', bg: 'bg-yellow-100' },
         ].map((stat, i) => (
           <div key={i} className="flex flex-col items-center space-y-2">
