@@ -498,9 +498,9 @@ export default function StudentsAIToolsPage() {
             {/* Main Headlines */}
             <div className="text-center mb-12">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                <GraduationCap className="w-12 h-12  sm:w-16 inline-block text-blue-600 mb-2" />
+                <GraduationCap className="w-32 h-30  sm:w-16 inline-block text-blue-600 mb-2" />
                 
-                <span className="text-blue-600">GAME CHANGER:</span> These FREE AI Tools Are Helping Students Get A+ Grades
+                <span className="text-blue-600 ml-1">GAME CHANGER:</span> These FREE AI Tools Are Helping Students Get A+ Grades
               </h1>
               
               <p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
@@ -509,17 +509,17 @@ export default function StudentsAIToolsPage() {
 
               {/* Hero Stats */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
-                <div className="bg-white rounded-xl p-6 shadow-lg border">
+                <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-blue-500">
                   <Users className="w-8 h-8 text-blue-600 mx-auto mb-2" />
                   <div className="text-2xl font-bold text-gray-900">5M+</div>
                   <div className="text-gray-600">Students Using</div>
                 </div>
-                <div className="bg-white rounded-xl p-6 shadow-lg border">
+                <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-blue-500">
                   <TrendingUp className="w-8 h-8 text-green-600 mx-auto mb-2" />
                   <div className="text-2xl font-bold text-gray-900">2 Levels</div>
                   <div className="text-gray-600">Grade Improvement</div>
                 </div>
-                <div className="bg-white rounded-xl p-6 shadow-lg border">
+                <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-blue-500">
                   <Gift className="w-8 h-8 text-purple-600 mx-auto mb-2" />
                   <div className="text-2xl font-bold text-gray-900">100%</div>
                   <div className="text-gray-600">FREE Forever</div>
