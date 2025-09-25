@@ -340,7 +340,7 @@ export default function CategoryPage({ params, searchParams }) {
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
         
         {/* Hero Section - COMPETITOR-LEVEL DESIGN */}
-        <div className="relative overflow-hidden bg-white shadow-sm border-b">
+        <div className="relative overflow-hidden bg-white shadow-sm ">
           {/* Background Pattern */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-indigo-600/5"></div>
           <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
@@ -370,16 +370,19 @@ export default function CategoryPage({ params, searchParams }) {
             <div className="text-center lg:text-left">
               
               {/* Category Badge */}
-              <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 mb-6 border border-blue-200">
-                <Zap className="w-4 h-4 mr-2" />
-                {stats.total}+ AI {capitalizedCategory} Tools • Updated 2025
-                <span className="ml-2 px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">
-                  {stats.free} Free
-                </span>
-              </div>
+              <div className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 px-3 py-2 rounded-full text-xs sm:text-sm font-medium bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 mb-6 border border-blue-200">
+  <Zap className="w-4 h-4 mr-1 sm:mr-2 flex-shrink-0" />
+  <span>
+    {stats.total}+ AI {capitalizedCategory} Tools • Updated 2025
+  </span>
+  <span className="ml-auto sm:ml-2 px-2 py-0.5 bg-green-100 text-green-800 rounded-full text-[10px] sm:text-xs font-bold">
+    {stats.free} Free
+  </span>
+</div>
+
               
               {/* Main Heading - SEO Optimized */}
-              <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent mb-6 leading-tight">
+              <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-6 leading-tight">
                 Best AI {capitalizedCategory} Tools 2025
               </h1>
               
@@ -389,57 +392,61 @@ export default function CategoryPage({ params, searchParams }) {
               </div>
               
               {/* Description - Keyword Rich */}
-              <p className="text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto lg:mx-0 leading-relaxed mb-8">
+              <p className="text-lg lg:text-xl  text-gray-600 max-w-4xl mx-auto lg:mx-0 leading-relaxed mb-8">
                 Discover the complete directory of <strong>{stats.total}+ best AI {readableCategory} tools for 2025</strong>. 
                 Compare top AI {readableCategory} software with expert reviews, pricing analysis, and feature comparisons. 
-                Find {stats.free} free AI tools and {stats.paid} premium solutions for business, productivity, and creativity. 
-                <span className="text-blue-600 font-semibold">{stats.avgRating.toFixed(1)}⭐ average rating</span> from verified users.
+                Find {stats.free} free AI tools and {stats.paid} premium solutions for business, productivity, and creativity. <br />⭐⭐⭐⭐⭐<span className='text-blue-600 ml-1'>|</span>
+                <span className="text-blue-600 font-semibold ml-2">{stats.avgRating.toFixed(1)}  average rating</span> from verified users.
               </p>
               
               {/* Stats Row - Enhanced */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-8 mb-8">
-                <div className="text-center">
-                  <div className="flex items-center justify-center gap-2 text-3xl font-bold text-blue-600 mb-1">
-                    <BarChart3 className="w-8 h-8" />
-                    {stats.total}+
-                  </div>
-                  <div className="text-sm text-gray-500 font-medium">AI Tools</div>
-                </div>
-                <div className="text-center">
-                  <div className="flex items-center justify-center gap-2 text-3xl font-bold text-emerald-600 mb-1">
-                    <CheckCircle className="w-8 h-8" />
-                    {stats.free}
-                  </div>
-                  <div className="text-sm text-gray-500 font-medium">Free Options</div>
-                </div>
-                <div className="text-center">
-                  <div className="flex items-center justify-center gap-2 text-3xl font-bold text-amber-600 mb-1">
-                    <Star className="w-8 h-8 fill-current" />
-                    {stats.avgRating.toFixed(1)}
-                  </div>
-                  <div className="text-sm text-gray-500 font-medium">Avg Rating</div>
-                </div>
-                <div className="text-center">
-                  <div className="flex items-center justify-center gap-2 text-3xl font-bold text-purple-600 mb-1">
-                    <Award className="w-8 h-8" />
-                    {stats.topRated}
-                  </div>
-                  <div className="text-sm text-gray-500 font-medium">Top Rated</div>
-                </div>
-              </div>
+              <div className="flex flex-row  gap-4 sm:gap-6 lg:gap-8 mb-8">
+  <div className="w-1/2 sm:w-auto text-center">
+    <div className="flex items-center justify-center gap-2 text-2xl sm:text-3xl font-bold text-blue-600 mb-1">
+      <BarChart3 className="w-5 h-5 sm:w-6 sm:h-6" />
+      {stats.total}+
+    </div>
+    <div className="text-xs sm:text-sm text-gray-500 font-medium">AI Tools</div>
+  </div>
+
+  <div className="w-1/2 sm:w-auto text-center">
+    <div className="flex items-center justify-center gap-2 text-2xl sm:text-3xl font-bold text-emerald-600 mb-1">
+      <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+      {stats.free}
+    </div>
+    <div className="text-xs sm:text-sm text-gray-500 font-medium">Free Options</div>
+  </div>
+
+  <div className="w-1/2 sm:w-auto text-center">
+    <div className="flex items-center justify-center gap-2 text-2xl sm:text-3xl font-bold text-amber-600 mb-1">
+      <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
+      {stats.avgRating.toFixed(1)}
+    </div>
+    <div className="text-xs sm:text-sm text-gray-500 font-medium">Avg Rating</div>
+  </div>
+
+  <div className="w-1/2 sm:w-auto text-center">
+    <div className="flex items-center justify-center gap-2 text-2xl sm:text-3xl font-bold text-purple-600 mb-1">
+      <Award className="w-4 h-4 sm:w-5 sm:h-5" />
+      {stats.topRated}
+    </div>
+    <div className="text-xs sm:text-sm text-gray-500 font-medium">Top Rated</div>
+  </div>
+</div>
+
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
                   href="#tools-directory"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl hover:from-blue-700 hover:to-indigo-700 transform  transition-all shadow-lg cursor-pointer"
+                  className="inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl hover:from-blue-700 hover:to-indigo-700 transform  transition-all shadow-lg cursor-pointer"
                 >
                   <Eye className="w-5 h-5 mr-2" />
                   Browse {stats.total}+ Tools
                 </a>
                 <a
                   href="#free-tools"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-700 font-bold rounded-xl border-2 border-gray-200 hover:border-blue-300 hover:text-blue-600 transition-all cursor-pointer"
+                  className="inline-flex items-center justify-center px-8 py-3 bg-white text-gray-700 font-bold rounded-xl border-2 border-gray-200 hover:border-blue-300 hover:text-blue-600 transition-all cursor-pointer"
                 >
                   <Zap className="w-5 h-5 mr-2" />
                   See {stats.free} Free Tools
@@ -448,121 +455,139 @@ export default function CategoryPage({ params, searchParams }) {
             </div>
           </div>
         </div>
+        {/* ///////////// */}
 
         {/* Quick Navigation Bar */}
-        {/* Quick Navigation Bar */}
-<div className="   sticky top-0 z-30">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="flex items-center justify-between py-3">
+    <div className="sticky top-0 z-30 bg-white/80 backdrop-blur-md border-b border-gray-200">
+  <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+    <div className="flex items-center justify-between py-2 sm:py-3">
       
       {/* Left Side: Links */}
-      <div className="flex items-center gap-4 sm:gap-6">
-        <span className="hidden sm:inline text-sm font-medium text-gray-600">Jump to:</span>
+      <div className="flex items-center gap-3 sm:gap-6 overflow-x-auto scrollbar-hide">
+        <span className="hidden sm:inline text-sm font-medium text-gray-600 whitespace-nowrap">Jump to:</span>
         
         <a 
           href="#tools-directory" 
-          className="px-3 py-1.5 rounded-full text-sm font-medium text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors"
+          className="px-3 py-1 rounded-full text-xs sm:text-sm font-medium text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors whitespace-nowrap"
         >
           Directory
         </a>
         <a 
           href="#popular-picks" 
-          className="px-3 py-1.5 rounded-full text-sm font-medium text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors"
+          className="px-3 py-1 rounded-full text-xs sm:text-sm font-medium text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors whitespace-nowrap"
         >
           Popular
         </a>
         <a 
           href="#free-tools" 
-          className="px-3 py-1.5 rounded-full text-sm font-medium text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors"
+          className="px-3 py-1 rounded-full text-xs sm:text-sm font-medium text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors whitespace-nowrap"
         >
           Free Tools
         </a>
         <a 
           href="#buying-guide" 
-          className="px-3 py-1.5 rounded-full text-sm font-medium text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors"
+          className="px-3 py-1 rounded-full text-xs sm:text-sm font-medium text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors whitespace-nowrap"
         >
           Guide
         </a>
       </div>
 
       {/* Right Side: Status */}
-      <div className="flex items-center gap-2 text-gray-500">
-        <Clock className="w-4 h-4" />
+      <div className="hidden xs:flex items-center gap-1.5 sm:gap-2 text-gray-500 ml-3 flex-shrink-0">
+        <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
         <span className="text-xs sm:text-sm">Updated Daily</span>
       </div>
     </div>
   </div>
 </div>
 
+
         
         {/* Popular Picks Section */}
-        <section id="popular-picks" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4 flex items-center justify-center gap-3">
-              <TrendingUp className="w-8 h-8 text-orange-500" />
-              Most Popular AI {capitalizedCategory} Tools
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Top-rated and most used AI {readableCategory} tools by our community of {Math.floor(Math.random() * 50000) + 10000}+ users
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {popularTools.map((tool, index) => (
-              <div
-  key={tool.slug}
-  className="relative bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all transform hover:scale-105"
+        <section
+  id="popular-picks"
+  className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12"
 >
-  <div className="absolute -top-3 -right-3">
-    <div className="bg-gradient-to-r from-orange-400 to-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
-      #{index + 1}
-    </div>
+  {/* Heading */}
+  <div className="text-center mb-8 sm:mb-12">
+    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 flex items-center justify-center gap-2 sm:gap-3 leading-none">
+  <TrendingUp className="w-7 h-7 sm:w-8 sm:h-8 text-orange-500" />
+  <span>Most Popular AI {capitalizedCategory} Tools</span>
+</h2>
+
+    <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
+      Top-rated and most used AI {readableCategory} tools by our community of{" "}
+      {Math.floor(Math.random() * 50000) + 10000}+ users
+    </p>
   </div>
 
-  <div className="flex items-start gap-4">
-    <img
-      src={tool.image}
-      alt={tool.name}
-      className="w-16 h-16 rounded-xl object-cover flex-shrink-0"
-      loading="lazy"
-      width="64"
-      height="64"
-    />
-
-    <div className="flex-1">
-      <h3 className="text-xl font-bold text-gray-900 mb-2">{tool.name}</h3>
-      <p className="text-gray-600 text-sm mb-3">
-        {tool.description.slice(0, 100)}...
-      </p>
-
-      <div className="flex items-center justify-between flex-wrap gap-2">
-        <div className="flex items-center gap-2">
-          <Star className="w-4 h-4 text-yellow-500 fill-current" />
-          <span className="font-medium">{tool.rating || "4.5"}</span>
+  {/* Cards Grid */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
+    {popularTools.map((tool, index) => (
+      <article
+        key={tool.slug}
+        className="relative bg-white rounded-2xl shadow-md hover:shadow-xl border border-gray-100 p-5 sm:p-6 transition-all duration-300 transform hover:scale-[1.02] hover:-translate-y-1"
+      >
+        {/* Ranking Badge */}
+        <div className="absolute -top-3 -right-3">
+          <div className="bg-gradient-to-r from-orange-400 to-red-500 text-white px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-bold shadow">
+            #{index + 1}
+          </div>
         </div>
 
-        <span className="px-4 py-1 sm:px-5 sm:py-1 bg-blue-100 text-blue-800 rounded-full text-sm sm:text-base font-semibold inline-block break-words text-center max-w-full sm:max-w-md md:max-w-lg">{tool.price}</span>
+        {/* Image + Content */}
+        <div className="flex items-start gap-3 sm:gap-4">
+          <img
+            src={tool.image}
+            alt={tool.name}
+            className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl object-cover flex-shrink-0 shadow-sm"
+            loading="lazy"
+            width="64"
+            height="64"
+          />
 
-      </div>
-    </div>
-  </div>
+          <div className="flex-1 min-w-0">
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1.5 truncate">
+              {tool.name}
+            </h3>
+            <p className="text-gray-600 text-xs sm:text-sm mb-3 line-clamp-2">
+              {tool.description}
+            </p>
 
-  <a
-    href={`/tools/${tool.slug}`}
-    className="absolute inset-0 rounded-2xl cursor-pointer"
-    aria-label={`View ${tool.name} details`}
-  />
-</div>
+            {/* Rating + Price */}
+            <div className="flex items-center justify-between flex-wrap gap-2">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <Star className="w-4 h-4 text-yellow-500 fill-current flex-shrink-0" />
+                <span className="font-medium text-sm sm:text-base">
+                  {tool.rating || "4.5"}
+                </span>
+              </div>
 
-            ))}
+              <span className="px-3 py-0.5 sm:px-4 sm:py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm font-semibold truncate max-w-[120px] sm:max-w-[150px] text-center">
+                {tool.price}
+              </span>
+            </div>
           </div>
-        </section>
+        </div>
+
+        {/* Clickable Overlay */}
+        <a
+          href={`/tools/${tool.slug}`}
+          className="absolute inset-0 rounded-2xl"
+          aria-label={`View ${tool.name} details`}
+        />
+      </article>
+    ))}
+  </div>
+</section>
+
+        {/* ///////////////////////////////////////// */}
 
         {/* Tools Directory Section */}
         <main id="tools-directory" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           
           {/* Section Header */}
-          <div className="text-center mb-12">
+          <div className="text-center -mt-12 mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Complete AI {capitalizedCategory} Tools Directory
             </h2>
@@ -709,42 +734,51 @@ export default function CategoryPage({ params, searchParams }) {
             </div>
 
             {/* Quick Stats */}
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-12 border border-blue-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                <BarChart3 className="w-6 h-6 text-blue-600" />
-                AI {capitalizedCategory} Market Overview 2025
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">{stats.total}+</div>
-                  <div className="text-sm text-gray-600">Available Tools</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600 mb-2">{((stats.free / stats.total) * 100).toFixed(0)}%</div>
-                  <div className="text-sm text-gray-600">Offer Free Plans</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-amber-600 mb-2">{stats.avgRating.toFixed(1)}</div>
-                  <div className="text-sm text-gray-600">Average Rating</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600 mb-2">{((stats.topRated / stats.total) * 100).toFixed(0)}%</div>
-                  <div className="text-sm text-gray-600">Top Rated (4.5+)</div>
-                </div>
-              </div>
-            </div>
+<div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 sm:p-8 mb-12 border border-blue-200">
+ <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-2 sm:gap-3 leading-snug">
+  <BarChart3 className="w-6 h-6 sm:w-6 sm:h-6 text-blue-600 flex-shrink-0" />
+  AI {capitalizedCategory} Market Overview 2025
+</h3>
+
+
+  <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+    <div className="text-center">
+      <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">{stats.total}+</div>
+      <div className="text-xs sm:text-sm text-gray-600">Available Tools</div>
+    </div>
+    <div className="text-center">
+      <div className="text-2xl sm:text-3xl font-bold text-green-600 mb-1 sm:mb-2">{((stats.free / stats.total) * 100).toFixed(0)}%</div>
+      <div className="text-xs sm:text-sm text-gray-600">Offer Free Plans</div>
+    </div>
+    <div className="text-center">
+      <div className="text-2xl sm:text-3xl font-bold text-amber-600 mb-1 sm:mb-2">{stats.avgRating.toFixed(1)}</div>
+      <div className="text-xs sm:text-sm text-gray-600">Average Rating</div>
+    </div>
+    <div className="text-center">
+      <div className="text-2xl sm:text-3xl font-bold text-purple-600 mb-1 sm:mb-2">{((stats.topRated / stats.total) * 100).toFixed(0)}%</div>
+      <div className="text-xs sm:text-sm text-gray-600">Top Rated (4.5+)</div>
+    </div>
+  </div>
+</div>
+
 
             {/* What Are AI Tools Section */}
-            <h3 id="what-are-ai-tools" className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <Target className="w-7 h-7 text-purple-600" />
-              What Are AI {capitalizedCategory} Tools?
-            </h3>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              AI {readableCategory} tools are intelligent software applications that leverage artificial intelligence, machine learning, and natural language processing to revolutionize how we approach {readableCategory} tasks. Unlike traditional software that follows pre-programmed rules, these AI-powered solutions can learn, adapt, and make intelligent decisions based on data patterns and user behavior.
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-8">
-              In 2025, AI {readableCategory} tools have evolved beyond simple automation. They now offer predictive capabilities, contextual understanding, and personalized experiences that dramatically improve efficiency, creativity, and results. Our directory features <strong>{stats.total}+ carefully vetted AI {readableCategory} tools</strong>, each tested and reviewed by our expert team.
-            </p>
+            <h3
+  id="what-are-ai-tools"
+  className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3 leading-snug"
+>
+  <Target className="w-5 h-5 sm:w-6 sm:h-7 text-purple-600 flex-shrink-0" />
+  What Are AI {capitalizedCategory} Tools?
+</h3>
+
+<p className="text-md sm:text-lg text-gray-700 leading-relaxed mb-4 sm:mb-6">
+  AI {readableCategory} tools are intelligent software applications that leverage artificial intelligence, machine learning, and natural language processing to revolutionize how we approach {readableCategory} tasks. Unlike traditional software that follows pre-programmed rules, these AI-powered solutions can learn, adapt, and make intelligent decisions based on data patterns and user behavior.
+</p>
+
+<p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6 sm:mb-8">
+  In 2025, AI {readableCategory} tools have evolved beyond simple automation. They now offer predictive capabilities, contextual understanding, and personalized experiences that dramatically improve efficiency, creativity, and results. Our directory features <strong>{stats.total}+ carefully vetted AI {readableCategory} tools</strong>, each tested and reviewed by our expert team.
+</p>
+
 
             {/* Why Use AI Tools */}
             <h3 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
@@ -792,47 +826,36 @@ export default function CategoryPage({ params, searchParams }) {
               </div>
             </div>
 
-            {/* How to Choose */}
-            <h3 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <BookOpen className="w-7 h-7 text-blue-600" />
-              How to Choose the Perfect AI {capitalizedCategory} Tool
-            </h3>
-            <p className="text-lg text-gray-700 mb-6">
-              With {stats.total}+ options available, selecting the right AI {readableCategory} tool requires a strategic approach. Follow this comprehensive evaluation framework:
-            </p>
-            
-            <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8 mb-8 border border-gray-200">
-              <ol className="space-y-6">
-                <li className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
-                  <div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-2">Define Your AI Requirements</h4>
-                    <p className="text-gray-700">Identify specific tasks you want AI to handle: content generation, data analysis, process automation, or creative assistance. Be specific about your AI needs rather than general automation.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
-                  <div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-2">Evaluate AI Maturity</h4>
-                    <p className="text-gray-700">Look for proven AI capabilities with transparent model information, training data quality, and performance metrics. Avoid tools with AI marketing claims but limited actual intelligence.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
-                  <div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-2">Test AI Accuracy</h4>
-                    <p className="text-gray-700">Use free trials to test the AI's performance with your specific {readableCategory} tasks. AI accuracy can vary significantly based on use case and data type.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">4</div>
-                  <div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-2">Consider Integration & Scalability</h4>
-                    <p className="text-gray-700">Ensure the AI tool integrates with your existing workflow and can scale as your needs grow. The best AI tools become more valuable as they process more data.</p>
-                  </div>
-                </li>
-              </ol>
-            </div>
+           {/* How to Choose */}
+<h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3 leading-snug">
+  <BookOpen className="w-5 h-5 sm:w-6 sm:h-7 text-blue-600 flex-shrink-0" />
+  How to Choose the Perfect AI {capitalizedCategory} Tool
+</h3>
+
+<p className="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6">
+  With {stats.total}+ options available, selecting the right AI {readableCategory} tool requires a strategic approach. Follow this comprehensive evaluation framework:
+</p>
+
+<div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-6 sm:p-8 mb-8 border border-gray-200">
+  <ol className="space-y-4 sm:space-y-6">
+    {[ 
+      {title: "Define Your AI Requirements", desc: `Identify specific tasks you want AI to handle: content generation, data analysis, process automation, or creative assistance. Be specific about your AI needs rather than general automation.`},
+      {title: "Evaluate AI Maturity", desc: `Look for proven AI capabilities with transparent model information, training data quality, and performance metrics. Avoid tools with AI marketing claims but limited actual intelligence.`},
+      {title: "Test AI Accuracy", desc: `Use free trials to test the AI's performance with your specific ${readableCategory} tasks. AI accuracy can vary significantly based on use case and data type.`},
+      {title: "Consider Integration & Scalability", desc: `Ensure the AI tool integrates with your existing workflow and can scale as your needs grow. The best AI tools become more valuable as they process more data.`}
+    ].map((item, index) => (
+      <li key={index} className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+        <div className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm sm:text-base">
+          {index + 1}
+        </div>
+        <div>
+          <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2">{item.title}</h4>
+          <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{item.desc}</p>
+        </div>
+      </li>
+    ))}
+  </ol>
+</div>
 
             {/* Top Features */}
             <h3 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
@@ -1014,14 +1037,14 @@ export default function CategoryPage({ params, searchParams }) {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#tools-directory"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-600 font-bold rounded-xl hover:bg-gray-50 transform hover:scale-105 transition-all shadow-lg cursor-pointer"
+                className="inline-flex items-center justify-center px-8 py-3 bg-white text-purple-600 font-bold rounded-xl hover:bg-gray-50 transform  transition-all shadow-lg cursor-pointer"
               >
                 <Eye className="w-5 h-5 mr-2" />
                 Browse All {stats.total} Tools
               </a>
               <a
                 href="/featured"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white/20 text-white font-bold rounded-xl border-2 border-white/30 hover:bg-white/30 transition-all cursor-pointer backdrop-blur"
+                className="inline-flex items-center justify-center px-8 py-3 bg-white/20 text-white font-bold rounded-xl border-2 border-white/30 hover:bg-white/30 transition-all cursor-pointer backdrop-blur"
               >
                 <Star className="w-5 h-5 mr-2" />
                 View Featured Tools

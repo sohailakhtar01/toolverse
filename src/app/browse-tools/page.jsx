@@ -51,23 +51,23 @@ export default function BrowseToolsPage() {
                 <div className="text-3xl font-bold text-purple-600 mb-1">
                   {tools.length}+
                 </div>
-                <div className="text-sm text-gray-500 uppercase tracking-wide">
+                <div className="text-sm font-spaceGrotesk text-gray-500 uppercase tracking-wide">
                   Tools Listed
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-pink-600 mb-1">
+                <div className="text-3xl font-spaceGrotesk font-bold text-pink-600 mb-1">
                   5K+
                 </div>
-                <div className="text-sm text-gray-500 uppercase tracking-wide">
+                <div className="text-sm font-spaceGrotesk text-gray-500 uppercase tracking-wide">
                   Happy Users
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">
+                <div className="text-3xl font-spaceGrotesk font-bold text-blue-600 mb-1">
                   4.9
                 </div>
-                <div className="text-sm text-gray-500 uppercase tracking-wide">
+                <div className="text-sm font-spaceGrotesk text-gray-500 uppercase tracking-wide">
                   Average Rating
                 </div>
               </div>
@@ -105,7 +105,7 @@ export default function BrowseToolsPage() {
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
             <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-gray-200 shadow-sm">
               <span className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></span>
-              <span className="text-sm font-medium text-gray-600">Explore Tools</span>
+              <span className="text-sm font-medium font-spaceGrotesk text-gray-600">Explore Tools</span>
             </div>
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
           </div>
@@ -124,10 +124,10 @@ export default function BrowseToolsPage() {
       <div className="relative bg-gradient-to-r from-purple-600 to-pink-600 py-16">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
+          <h2 className="text-3xl font-spaceGrotesk font-bold text-white mb-4">
             Can't Find What You're Looking For?
           </h2>
-          <p className="text-xl text-purple-100 mb-8">
+          <p className="text-xl font-spaceGrotesk text-purple-100 mb-8">
             Submit your favorite AI tool and help the community discover amazing new resources.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -65,12 +65,12 @@ const ToolList = ({ tools, title = "Featured Tools", showSearch = true, showFilt
     <div className="w-full">
       {/* Header Section */}
       <div className="mb-8">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-6">
+        <div className="flex font-spaceGrotesk flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-6">
           <div>
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
+            <h2 className="text-3xl font-spaceGrotesk font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
               {title}
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 font-spaceGrotesk">
               Discover {filteredTools.length} amazing tools to boost your productivity
             </p>
           </div>
@@ -110,20 +110,39 @@ const ToolList = ({ tools, title = "Featured Tools", showSearch = true, showFilt
             {/* Search */}
             {showSearch && (
               <div className="flex-1 relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </div>
-                <input
-                  type="text"
-  placeholder="Search tools..."
-  value={searchTerm}
-  onChange={(e) => setSearchTerm(e.target.value)}
+  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+    <svg
+      className="h-5 w-5 text-gray-400"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+      />
+    </svg>
+  </div>
 
-                  className="w-full pl-10 pr-4 py-3 border border-gray-200 ring-1 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all"
-                />
-              </div>
+  <input
+    type="text"
+    placeholder="Search tools..."
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+    className="
+      w-full 
+      pl-10 pr-4 py-3 
+       border-purple-500 border-1
+      rounded-xl 
+      focus:border-2 focus:border-purple-500 
+      outline-none 
+      transition-all
+    "
+  />
+</div>
+
             )}
 
             {/* Filters */}
