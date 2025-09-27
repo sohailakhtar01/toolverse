@@ -1,6 +1,6 @@
 // src/app/browse-tools/page.jsx
 // <--- Keep this at the very top!
-
+import Link from 'next/link';
 import React from 'react'; // Only React is needed here
 import tools from '@/data/tools'; // <--- Import tools data
 import ToolList from '@/components/ToolList'; // <--- Import ToolList component
@@ -99,7 +99,7 @@ export default function BrowseToolsPage() {
 
       {/* Tools List Section */}
       <div className="relative mt-[-66px]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="max-w-8xl mx-auto px-7  pb-20">
           {/* Section Divider */}
           <div className="flex items-center gap-4 mb-12">
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
@@ -131,13 +131,22 @@ export default function BrowseToolsPage() {
             Submit your favorite AI tool and help the community discover amazing new resources.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-5 py-2 cursor-pointer bg-white text-purple-600 rounded-[30px] font-semibold hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl">
-              Submit a Tool
-            </button>
-            <button className="px-5 py-2 cursor-pointer border-2 border-white text-white rounded-[30px] font-semibold hover:bg-white hover:text-purple-600 transition-all">
-              Contact Us
-            </button>
-          </div>
+                    <Link
+                      href="/featured"
+                      className="inline-flex items-center justify-center px-7 py-3 text-lg font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-50 transition-all duration-200 shadow-xl"
+                    >
+                      Featured Tools
+                      <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </Link>
+                    <Link
+                      href="/submit-tool"
+                      className="inline-flex items-center justify-center px-7 py-3 text-lg font-semibold text-white bg-white/20 backdrop-blur-sm rounded-lg hover:bg-white/30 transition-all duration-200 border border-white/30"
+                    >
+                      Submit Your AI Tool
+                    </Link>
+                  </div>
         </div>
       </div>
     </div>
