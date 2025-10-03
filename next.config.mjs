@@ -27,26 +27,12 @@ const nextConfig = {
         permanent: true,
       },
       
-      // 🚫 Block ALL /products/ URLs (main fix for 404 issues)
+      // 🚫 Block /products/ URLs
       {
         source: '/products/:path*',
         destination: '/',
         permanent: true,
       },
-      
-      // 🚫 Block parent directories that don't exist
-      {
-        source: '/tools',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/categories',
-        destination: '/',
-        permanent: true,
-      },
-      
-      // 🚫 Block other common e-commerce patterns
       {
         source: '/product/:path*',
         destination: '/',
@@ -62,8 +48,13 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/checkout/:path*',
+        destination: '/',
+        permanent: true,
+      },
       
-      // 📱 Handle common mobile/subdomain redirects
+      // 📱 Mobile redirect
       {
         source: '/:path*',
         has: [
@@ -76,7 +67,7 @@ const nextConfig = {
         permanent: true,
       },
       
-      // 🔄 Handle HTTP to HTTPS (if needed)
+      // 🔄 HTTP to HTTPS
       {
         source: '/:path*',
         has: [
@@ -92,10 +83,9 @@ const nextConfig = {
     ];
   },
   
-  // 🎯 SEO Headers for better crawling control
   async headers() {
     return [
-      // ✅ Default headers for all pages
+      // ✅ Default headers
       {
         source: '/:path*',
         headers: [
@@ -114,7 +104,7 @@ const nextConfig = {
         ],
       },
       
-      // ❌ Block problematic URLs from being indexed
+      // ❌ Block bad URLs
       {
         source: '/products/:path*',
         headers: [
@@ -124,10 +114,8 @@ const nextConfig = {
           },
         ],
       },
-      
-      // ❌ Block parent directories
       {
-        source: '/tools',
+        source: '/product/:path*',
         headers: [
           {
             key: 'X-Robots-Tag',
@@ -136,7 +124,7 @@ const nextConfig = {
         ],
       },
       {
-        source: '/categories',
+        source: '/shop/:path*',
         headers: [
           {
             key: 'X-Robots-Tag',
@@ -145,9 +133,9 @@ const nextConfig = {
         ],
       },
       
-      // 🎯 Enhanced headers for tool pages
+      // ✅ Tool pages - YOUR 250+ DYNAMIC PAGES
       {
-        source: '/tools/:path*',
+        source: '/tools/:slug*',
         headers: [
           {
             key: 'X-Robots-Tag',
@@ -160,9 +148,9 @@ const nextConfig = {
         ],
       },
       
-      // 🎯 Enhanced headers for category pages
+      // ✅ Category pages - YOUR 40+ DYNAMIC PAGES
       {
-        source: '/categories/:path*',
+        source: '/categories/:slug*',
         headers: [
           {
             key: 'X-Robots-Tag',
@@ -175,7 +163,7 @@ const nextConfig = {
         ],
       },
       
-      // 🚀 Optimize static assets
+      // 🚀 Static assets
       {
         source: '/images/:path*',
         headers: [
@@ -185,22 +173,40 @@ const nextConfig = {
           },
         ],
       },
-    ];
-  },
-  
-  // 🔧 Additional optimizations
-  async rewrites() {
-    return [
-      // Handle sitemap requests
+      
+      // 📄 Sitemap & Robots
       {
         source: '/sitemap.xml',
-        destination: '/api/sitemap',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/xml',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, stale-while-revalidate=86400',
+          },
+        ],
       },
       {
         source: '/robots.txt',
-        destination: '/api/robots',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/plain',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600',
+          },
+        ],
       },
     ];
+  },
+  
+  // NO REWRITES NEEDED - sitemap.xml.js handles it automatically
+  async rewrites() {
+    return [];
   },
 };
 

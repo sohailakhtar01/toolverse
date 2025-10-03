@@ -70,6 +70,8 @@ export default function Footer() {
               <li><Link href="/browse-tools" className="text-gray-600 hover:text-purple-600">Browse Tools</Link></li>
               
               <li><Link href="/featured" className="text-gray-600 hover:text-purple-600">Featured</Link></li>              <li><Link href="/submit-tool" className="text-gray-600 hover:text-purple-600">Submit Tool</Link></li>
+                            <li><Link href="/pricing" className="text-gray-600 hover:text-purple-600">Pricing</Link></li>              
+
             </ul>
           </div>
 
@@ -80,7 +82,7 @@ export default function Footer() {
               <li><Link href="/about" className="text-gray-600 hover:text-purple-600">About Us</Link></li>
               <li><Link href="/how-it-works" className="text-gray-600 hover:text-purple-600">How It Works</Link></li>
               <li><Link href="/blog" className="text-gray-600 hover:text-purple-600">AI News</Link></li>
-
+              <li><Link href="/terms" className="text-gray-600 hover:text-purple-600">Terms</Link></li>
             </ul>
           </div>
 
