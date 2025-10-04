@@ -83,6 +83,8 @@ export default function Footer() {
               <li><Link href="/how-it-works" className="text-gray-600 hover:text-purple-600">How It Works</Link></li>
               <li><Link href="/blog" className="text-gray-600 hover:text-purple-600">AI News</Link></li>
               <li><Link href="/terms" className="text-gray-600 hover:text-purple-600">Terms</Link></li>
+                            <li><Link href="/privacy-policy" className="text-gray-600 hover:text-purple-600">Privacy & Policy</Link></li>
+
             </ul>
           </div>
 
