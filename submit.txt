@@ -123,7 +123,7 @@ export default function ToolSubmissionForm() {
                 Your tool has been submitted for review. We'll get back to you within 48 hours!
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col gap-3">
                 <button 
                   onClick={() => setIsSubmitted(false)}
                   className="w-full py-3 px-6 bg-gradient-to-r from-purple-500 cursor-pointer to-pink-500 text-white rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-200 font-semibold"
@@ -260,63 +260,60 @@ export default function ToolSubmissionForm() {
                 </span>
               </label>
               <div className="flex gap-2 items-start">
-  <select
-    id="category"
-    name="category"
-    required
-    value={selectedCategory}
-    onChange={(e) => setSelectedCategory(e.target.value)}
-    className="flex-grow max-w-[90%] sm:max-w-[95%] cursor-pointer px-4 sm:px-6 py-3 sm:py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-purple-100 focus:border-purple-400 transition-all duration-200 text-base sm:text-lg bg-white"
-  >
-    <option value="">Select Category</option>
-    {categories.map((cat) => (
-      <option key={cat} value={cat.toLowerCase().replace(/\s+/g, '-')}>
-        {cat}
-      </option>
-    ))}
-  </select>
-  <button
-    type="button"
-    onClick={() => setShowNewCategory(!showNewCategory)}
-    className="flex-shrink-0 p-3 sm:p-4 text-purple-600 hover:text-purple-800 hover:bg-purple-50 rounded-xl transition-all duration-200"
-    title="Add New Category"
-  >
-    <PlusCircle className="w-6 h-6 cursor-pointer" />
-  </button>
-</div>
-
+                <select
+                  id="category"
+                  name="category"
+                  required
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  className="flex-grow cursor-pointer px-4 sm:px-6 py-3 sm:py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-purple-100 focus:border-purple-400 transition-all duration-200 text-base sm:text-lg bg-white"
+                >
+                  <option value="">Select Category</option>
+                  {categories.map((cat) => (
+                    <option key={cat} value={cat.toLowerCase().replace(/\s+/g, '-')}>
+                      {cat}
+                    </option>
+                  ))}
+                </select>
+                <button
+                  type="button"
+                  onClick={() => setShowNewCategory(!showNewCategory)}
+                  className="flex-shrink-0 p-3 sm:p-4 text-purple-600 hover:text-purple-800 hover:bg-purple-50 rounded-xl transition-all duration-200"
+                  title="Add New Category"
+                >
+                  <PlusCircle className="w-6 h-6 cursor-pointer" />
+                </button>
+              </div>
 
               {/* Add New Category Input */}
               {showNewCategory && (
-              <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:gap-3 sm:items-center">
-  <input
-    type="text"
-    placeholder="Enter new category"
-    value={newCategory}
-    onChange={(e) => setNewCategory(e.target.value)}
-    onKeyPress={(e) => e.key === 'Enter' && addCategory()}
-    className="w-full flex-1 px-4 py-3 sm:px-6 sm:py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-purple-100 focus:border-purple-400 focus:outline-none transition-all duration-200 text-base sm:text-lg placeholder-gray-400"
-  />
-  <div className="flex gap-2 sm:gap-3">
-    <button
-      type="button"
-      onClick={addCategory}
-      className="flex-1 sm:flex-none sm:w-auto px-4 py-3 sm:px-6 sm:py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-semibold hover:from-purple-600 hover:to-pink-600 active:scale-95 transition-all duration-200 shadow-md hover:shadow-lg"
-    >
-      Add
-    </button>
-    <button
-      type="button"
-      onClick={() => {
-        setShowNewCategory(false);
-        setNewCategory('');
-      }}
-      className="px-4 py-3 sm:p-4 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-xl active:scale-95 transition-all duration-200 flex items-center justify-center"
-    >
-      <X className="w-5 h-5" />
-    </button>
-  </div>
-</div>
+                <div className="mt-3 flex gap-2 sm:gap-3 items-center">
+                  <input
+                    type="text"
+                    placeholder="Enter new category"
+                    value={newCategory}
+                    onChange={(e) => setNewCategory(e.target.value)}
+                    onKeyPress={(e) => e.key === 'Enter' && addCategory()}
+                    className="flex-grow px-4 sm:px-6 py-3 sm:py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-purple-100 focus:border-purple-400 transition-all duration-200 text-base sm:text-lg placeholder-gray-400"
+                  />
+                  <button
+                    type="button"
+                    onClick={addCategory}
+                    className="px-4 cursor-pointer sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-200"
+                  >
+                    Add
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowNewCategory(false);
+                      setNewCategory('');
+                    }}
+                    className="p-3 sm:p-4 text-gray-400 hover:text-gray-600 transition-colors"
+                  >
+                    <X className="w-5 h-5 cursor-pointer" />
+                  </button>
+                </div>
               )}
             </div>
 
