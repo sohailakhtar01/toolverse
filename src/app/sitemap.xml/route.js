@@ -64,6 +64,8 @@ export async function GET() {
       // Known working free pages (exclude /free-ai-tools if not implemented)
       { url: '/free-ai-tools/business', lastmod: undefined },
       { url: '/free-ai-tools/students', lastmod: undefined },
+      { url: '/pricing', lastmod: undefined },          // 👈 added
+  { url: '/privacy-policy', lastmod: undefined },  // 👈 added
       { url: '/submit-tool', lastmod: undefined },
     ];
 
