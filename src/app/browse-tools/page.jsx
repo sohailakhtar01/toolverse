@@ -57,7 +57,7 @@ export default function BrowseToolsPage() {
               </div>
               <div className="text-center">
                 <div className="text-3xl font-spaceGrotesk font-bold text-pink-600 mb-1">
-                  5K+
+                  1K+
                 </div>
                 <div className="text-sm font-spaceGrotesk text-gray-500 uppercase tracking-wide">
                   Happy Users
