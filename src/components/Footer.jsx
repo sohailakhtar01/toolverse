@@ -71,6 +71,7 @@ export default function Footer() {
               
               <li><Link href="/featured" className="text-gray-600 hover:text-purple-600">Featured</Link></li>              <li><Link href="/submit-tool" className="text-gray-600 hover:text-purple-600">Submit Tool</Link></li>
                             <li><Link href="/pricing" className="text-gray-600 hover:text-purple-600">Pricing</Link></li>              
+                            <li><Link href="/contact" className="text-gray-600 hover:text-purple-600">Contact</Link></li>
 
             </ul>
           </div>

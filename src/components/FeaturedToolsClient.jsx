@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Star, Users, ArrowRight, Sparkles, TrendingUp } from 'lucide-react';
+import Image from 'next/image';
 
 export default function FeaturedToolsClient({ toolsData }) {
   const [selectedCategory, setSelectedCategory] = useState('Featured');
@@ -85,10 +86,16 @@ const categories = ["Featured","AI Writing", "AI Art", "AI Assistant", "AI Codin
                 <div className="p-6 sm:p-8">
                   <div className="flex items-start justify-between mb-6">
                     <div className="flex items-center space-x-4">
-                      <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
-                        {tool.icon}
-                      </div>
-                      <div className="flex-1">
+                      <div className="w-16 h-16 rounded-2xl overflow-hidden flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+  <img
+    src={tool.image}
+    alt={tool.name}
+    width={64}   // match w-16
+    height={64}  // match h-16
+    className="object-contain"
+  />
+</div>
+                <div className="flex-1">
                         <h2 className="text-xl sm:text-2xl font-bold text-gray-800 group-hover:text-purple-600 transition-colors">
                           {tool.name}
                         </h2>
@@ -138,12 +145,17 @@ const categories = ["Featured","AI Writing", "AI Art", "AI Assistant", "AI Codin
          <div className="flex items-center justify-center space-x-4">
       {/* View All Tools Button */}
       <Link
-        href="/browse-tools"
-        className="px-6 sm:px-6 py-2 sm:py-2 cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl flex items-center space-x-3"
-      >
-        <span>View All Tools</span>
-        <ArrowRight className="w-5 h-5" />
-      </Link>
+  href="/pricing"
+  className="relative px-6 sm:px-6 py-2 sm:py-2 cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl flex items-center space-x-3"
+>
+  {/* 🔥 Lifetime Badge */}
+  <span className="absolute -top-3 -left-3 bg-white  border-1 border-pink-600 text-black text-xs font-bold px-2 py-1 rounded-full shadow-md">
+    Lifetime
+  </span>
+
+  <span>Get Featured @ $19</span>
+  <ArrowRight className="w-5 h-5" />
+</Link>
 
       {/* AI News Button */}
       <Link

@@ -68,11 +68,11 @@ export default function PricingPage() {
   const pricingPlans = [
     {
       id: "free",
-      name: "Free Listing",
+      name: "BASIC",
       iconName: "Star",
       tagline: "Get discovered for free",
       price: "0",
-      description: "Submit your AI tool and get listed in our directory with basic visibility",
+      description: "Perfect for getting started",
       popular: false,
       features: [
         { name: "Listed in AI Tools Directory", included: true },
@@ -85,38 +85,37 @@ export default function PricingPage() {
         { name: "Priority placement", included: false },
         { name: "Dofollow backlink", included: false },
         { name: "Social media promotion", included: false },
-        { name: "Priority support", included: false },
       ],
-      cta: "Submit Tool Free",
+      cta: "SELECT",
       ctaLink: "/submit-tool",
       recommended: false,
     },
     {
       id: "featured",
-      name: "Featured Listing",
+      name: "PRO",
       iconName: "Zap",
       tagline: "Maximum visibility & traffic",
-      price: "49",
+      price: "19",
       period: "one-time",
-      description: "Get premium placement, dofollow backlinks, and maximum exposure for your AI tool",
+      description: "Best for maximum exposure",
       popular: true,
       features: [
-        { name: "Everything in Free Listing", included: true },
+        { name: "Everything in Basic Listing", included: true },
         { name: "Featured badge on listing", included: true },
         { name: "Priority homepage placement", included: true },
         { name: "Top of category placement", included: true },
         { name: "Dofollow backlink (SEO boost)", included: true },
         { name: "Up to 5 images/screenshots", included: true },
         { name: "Social media promotion", included: true },
-        { name: "Newsletter feature (10K+ subscribers)", included: true },
+        { name: "Newsletter feature", included: true },
         { name: "Fast-track review (24-48 hours)", included: true },
         { name: "Priority customer support", included: true },
-        { name: "Lifetime featured status", included: true },
       ],
-      cta: "Get Featured Now",
+      cta: "SELECT",
       ctaLink: "/submit-tool?plan=featured",
       recommended: true,
       badge: "Most Popular",
+      discount: "-62%",
     },
   ];
 
@@ -187,7 +186,7 @@ export default function PricingPage() {
               {
                 "@type": "Offer",
                 "name": "Featured Listing",
-                "price": "49",
+                "price": "19",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
                 "url": "https://thetoolsverse.com/submit-tool?plan=featured"
@@ -230,7 +229,7 @@ export default function PricingPage() {
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-1">

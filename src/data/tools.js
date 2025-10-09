@@ -6968,6 +6968,71 @@ export const tools = [
   ]
 },
 {
+  "name": "FastLipsync",
+  "slug": "fastlipsync",
+  "image": "/fastlipsync.png",
+  "url": "https://fastlipsync.com/",
+  "category": [
+    "Video & Animation",
+    "AI & Machine Learning",
+    "Content Creation"
+  ],
+  "price": "Freemium (Free: 15 credits/month; Starter: $7/month; Pro: $14/month; Premium: $42/month)",
+  "description": "FastLipsync is an AI-powered lip sync video generator that automatically matches mouth movements to audio, creating realistic lip-synced videos in minutes.",
+  "tags": [
+    "lip sync",
+    "video generation",
+    "ai video",
+    "dubbing",
+    "multilingual content",
+    "video marketing",
+    "talking avatar",
+    "audio sync"
+  ],
+  "rating": 4.7,
+  "keywords": [
+    "ai lip sync",
+    "video lip sync generator",
+    "automatic lip sync",
+    "multilingual video",
+    "talking photo",
+    "video dubbing ai",
+    "natural lip movements"
+  ],
+  "isFeatured": false,
+  "overview": "FastLipsync is an advanced AI lip sync tool that transforms videos with effortless synchronization between audio and mouth movements. It supports both real people and virtual characters, offers 4K video quality, and enables creators to produce multilingual content with natural-looking lip movements. Perfect for video marketing, social media content, dubbing, and global audience reach without manual editing.",
+  "faqs": [
+    {
+      "question": "What is AI Lip Sync and how does it work?",
+      "answer": "AI Lip Sync uses advanced artificial intelligence to automatically match a character's mouth movements to spoken audio in your video. The technology analyzes the audio and video to create completely natural lip movements, making it look as if your character is truly speaking those words."
+    },
+    {
+      "question": "What are the main features of FastLipsync?",
+      "answer": "FastLipsync offers precise natural lip movements for any video and audio regardless of face angle or facial hair, supports both real people and virtual characters, provides ultra-fast processing with high-quality results, supports up to 4K resolution with Pro 4k model, and is ideal for translation, dubbing, and multilingual content creation."
+    },
+    {
+      "question": "How long does it take to process a video?",
+      "answer": "Processing time depends on video length and complexity. Most projects take from a few minutes up to half an hour. You can check the status of your lip-synced video in 'My Creations' once it's ready to view and download."
+    },
+    {
+      "question": "What video formats are supported?",
+      "answer": "FastLipsync supports the most common video formats including MP4, MOV, and WebM. You don't need to worry about conversions or compatibility issues - just upload your file and the AI handles the rest."
+    },
+    {
+      "question": "Can I use generated videos for commercial purposes?",
+      "answer": "Yes, all videos created using FastLipsync can be used commercially. Whether you're making social media content, advertisements, or business presentations, you own the results and are free to use them however you need."
+    },
+    {
+      "question": "What's the difference between Pro and Pro 4k models?",
+      "answer": "Both Pro and Pro 4k provide high-quality production-ready results. Pro 4k offers better video resolution support up to 4K, delivering sharper details and higher fidelity than the standard Pro model."
+    },
+    {
+      "question": "Is there a free plan available?",
+      "answer": "Yes, FastLipsync offers free credits to get started with no upfront cost. The free plan includes 15 monthly credits and supports up to 5 seconds of lip-synced video output. You can upgrade anytime for more credits and premium features."
+    }
+  ]
+},
+{
   "name": "文心一言 (Wénxīn Yīyán)",
   "slug": "wenxin-yiyan",
   "image": "/chsfklsj.png",

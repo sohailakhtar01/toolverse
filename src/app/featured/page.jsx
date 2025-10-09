@@ -12,7 +12,7 @@ const toolsData = [
     users: "100M+",
     price: "Free",
     featured: true,
-    icon: "🤖",
+    image: "/chatgpt.png",
     trending: true
   },
   {
@@ -25,7 +25,7 @@ const toolsData = [
     users: "15M+",
     price: "$10/mo",
     featured: true,
-    icon: "🎨",
+    image: "/mid.png",
     trending: true
   },
   {
@@ -38,7 +38,7 @@ const toolsData = [
     users: "5M+",
     price: "Free",
     featured: true,
-    icon: "🧠",
+    image: "/calude.png",
     trending: true
   },
   {
@@ -51,7 +51,7 @@ const toolsData = [
     users: "8M+",
     price: "$10/mo",
     featured: true,
-    icon: "⚡",
+    image: "/githubcopilot.png",
     trending: true
   },
   {
@@ -64,7 +64,7 @@ const toolsData = [
     users: "2M+",
     price: "$39/mo",
     featured: true,
-    icon: "✍️",
+    image: "/jasper.png",
     trending: false
   },
   {
@@ -77,7 +77,7 @@ const toolsData = [
     users: "120M+",
     price: "Free",
     featured: true,
-    icon: "🎯",
+    image: "/canvaai.jpeg",
     trending: true
   },
   {
@@ -90,7 +90,7 @@ const toolsData = [
     users: "30M+",
     price: "Free",
     featured: true,
-    icon: "📝",
+    image: "/grammarly.png",
     trending: false
   },
   {
@@ -103,7 +103,7 @@ const toolsData = [
     users: "3M+",
     price: "$15/mo",
     featured: true,
-    icon: "🎬",
+    image: "/runway.png",
     trending: true
   }
 ];
