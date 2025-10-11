@@ -1,3 +1,5 @@
+import RelatedTools from '@/components/RelatedTools';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { Star, MapPin,CreditCard, Calendar, Users, CheckCircle, XCircle, ExternalLink, 
@@ -65,7 +67,7 @@ export async function generateMetadata({ params }) {
         }
       ],
       type: 'article',
-      url: `/tools/${tool.slug}`,
+      url: `https://www.thetoolsverse.com/tools/${tool.slug}`, // ✅ Fixed
       siteName: 'TheToolsVerse - AI Tools Directory',
       locale: 'en_US',
     },
@@ -82,7 +84,7 @@ export async function generateMetadata({ params }) {
     
     // Advanced SEO metadata
     alternates: {
-      canonical: `https://thetoolsverse.com/tools/${tool.slug}`,
+      canonical: `https://www.thetoolsverse.com/tools/${tool.slug}`,
     },
     
     robots: {
@@ -104,7 +106,7 @@ export async function generateMetadata({ params }) {
       'article:tag': tool.tags.join(','),
       'article:published_time': '2024-01-01T00:00:00Z',
       'article:modified_time': new Date().toISOString(),
-      'og:see_also': `https://thetoolsverse.com/category/${tool.category[0].toLowerCase()}`,
+      'og:see_also': `https://www.thetoolsverse.com/category/${tool.category[0].toLowerCase()}`,
     }
   };
 }
@@ -282,22 +284,14 @@ export default function ToolDetailPage({ params }) {
         
         {/* Enhanced Header with Rich Breadcrumbs */}
         <header className="bg-white shadow-sm border-b border-gray-100 relative top-0 z-40">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <nav className="flex items-center space-x-2 text-sm text-gray-500" aria-label="Breadcrumb">
-              <a href="/" className="hover:text-blue-600 transition-colors font-medium cursor-pointer flex items-center gap-1">
-                <MapPin className="w-4 h-4" />
-                Home
-              </a>
-              <ChevronRight className="w-4 h-4 text-gray-300" />
-              <a href="/tools" className="hover:text-blue-600 transition-colors font-medium cursor-pointer">AI Tools</a>
-              <ChevronRight className="w-4 h-4 text-gray-300" />
-              <a href={`/category/${tool.category[0].toLowerCase()}`} className="hover:text-blue-600 transition-colors font-medium cursor-pointer">
-                {tool.category[0]}
-              </a>
-              <ChevronRight className="w-4 h-4 text-gray-300" />
-              <span className="text-gray-900 font-semibold">{tool.name}</span>
-            </nav>
-          </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <Breadcrumbs items={[
+    { name: 'Home', path: '/' },
+    { name: 'AI Tools', path: '/browse-tools' },
+    { name: tool.category[0], path: `/categories/${tool.category[0].toLowerCase().replace(/\s+/g, '-')}` },
+    { name: tool.name, path: `/tools/${tool.slug}` }
+  ]} />
+</div>
         </header>
 
         {/* Main Content Container */}
@@ -1109,6 +1103,9 @@ export default function ToolDetailPage({ params }) {
                   )}
                 </div>
               </section>
+<RelatedTools currentTool={tool} allTools={tools} />
+
+
 
               {/* Final Verdict Section */}
               <section className="bg-gradient-to-r mt-3 from-blue-500 to-purple-600 rounded-3xl shadow-xl p-8 text-white">
