@@ -283,19 +283,27 @@ export default function ToolDetailPage({ params }) {
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
         
         {/* Enhanced Header with Rich Breadcrumbs */}
-        <header className="bg-white shadow-sm border-b border-gray-100 relative top-0 z-40">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-  <Breadcrumbs items={[
-    { name: 'Home', path: '/' },
-    { name: 'AI Tools', path: '/browse-tools' },
-    { name: tool.category[0], path: `/categories/${tool.category[0].toLowerCase().replace(/\s+/g, '-')}` },
-    { name: tool.name, path: `/tools/${tool.slug}` }
-  ]} />
-</div>
-        </header>
+        <header className="bg-white mt-20 w-full ">
+  <div className="max-w-7xl mx-auto px-4 py-2">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', path: '/' },
+        { name: 'AI Tools', path: '/browse-tools' },
+        {
+          name: tool.category[0],
+          path: `/categories/${tool.category[0]
+            .toLowerCase()
+            .replace(/\s+/g, '-')}`,
+        },
+        { name: tool.name, path: `/tools/${tool.slug}` },
+      ]}
+    />
+  </div>
+</header>
+
 
         {/* Main Content Container */}
-        <main className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+        <main className="max-w-full -mt-12  mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
             
             {/* Left Column - Main Content (3/4 width) */}
