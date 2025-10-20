@@ -7033,6 +7033,394 @@ export const tools = [
   ]
 },
 {
+  "name": "Coursology",
+  "slug": "coursology",
+  "image": "/coursology.svg",
+  "url": "https://coursology.com/",
+  "category": [
+    "Education & Learning",
+    "AI & Machine Learning",
+    "Productivity Tools"
+  ],
+  "price": "Freemium (Free plan available; Premium plans start at approximately $8.99/month)",
+  "description": "Coursology is an AI-powered homework helper and study companion that helps students solve math, science, history, and other academic problems with instant step-by-step explanations and personalized learning support.",
+  "tags": [
+    "homework help",
+    "ai tutor",
+    "study assistant",
+    "math solver",
+    "academic support",
+    "learning tool",
+    "student helper",
+    "education ai"
+  ],
+  "rating": 4.6,
+  "keywords": [
+    "coursology ai",
+    "ai homework helper",
+    "online tutor",
+    "study companion",
+    "math problem solver",
+    "instant homework help",
+    "academic assistance"
+  ],
+  "isFeatured": false,
+  "overview": "Coursology is an advanced AI study companion that revolutionizes the way students learn and complete assignments. Using cutting-edge artificial intelligence, Coursology provides instant answers, step-by-step explanations, and personalized tutoring across multiple subjects including mathematics, science, history, and languages. Available as a web platform, Chrome extension, and mobile app, Coursology helps millions of students worldwide improve their grades, understand complex concepts faster, and build confidence in their academic abilities. Perfect for high school and college students seeking 24/7 homework support without expensive human tutors.",
+  "faqs": [
+    {
+      "question": "What is Coursology and how does it help students?",
+      "answer": "Coursology is an AI-powered homework helper that provides instant answers and step-by-step explanations for academic problems across multiple subjects. It acts as a 24/7 personal tutor, helping students understand concepts, complete assignments faster, and improve their grades through intelligent, personalized learning support."
+    },
+    {
+      "question": "What subjects does Coursology support?",
+      "answer": "Coursology supports a wide range of subjects including mathematics (algebra, calculus, geometry), sciences (physics, chemistry, biology), history, English, foreign languages, and more. The AI is trained on millions of academic problems and can handle questions from middle school through college level."
+    },
+    {
+      "question": "Is Coursology free to use?",
+      "answer": "Yes, Coursology offers a free plan that allows students to access basic homework help features. Premium plans with unlimited questions, priority support, and advanced features are available starting at approximately $8.99/month, making it affordable compared to traditional tutoring services."
+    },
+    {
+      "question": "How accurate are Coursology's answers?",
+      "answer": "Coursology uses advanced AI algorithms trained on millions of verified academic problems and solutions, providing highly accurate answers with detailed step-by-step explanations. The platform continuously learns and improves, ensuring students receive reliable academic support for their homework and study needs."
+    },
+    {
+      "question": "Can I use Coursology on my phone?",
+      "answer": "Yes, Coursology is available as a mobile app on both iOS and Android platforms, as well as a Chrome browser extension and web platform. This allows students to get homework help anytime, anywhere, whether they're studying at home, in the library, or on the go."
+    },
+    {
+      "question": "Does Coursology help with exam preparation?",
+      "answer": "Absolutely. Coursology not only helps with daily homework but also serves as an excellent exam preparation tool. Students can practice problems, review concepts with AI-generated explanations, and test their understanding across multiple subjects to boost their confidence before exams."
+    },
+    {
+      "question": "Is Coursology safe for students to use?",
+      "answer": "Yes, Coursology is designed as an educational tool to enhance learning, not enable cheating. It provides explanations and teaches problem-solving methods rather than just giving answers. The platform is safe, private, and complies with educational standards, making it a trusted study companion for millions of students."
+    }
+  ]
+},
+{
+  "name": "Tarotoo",
+  "slug": "tarotoo",
+  "image": "/tarotoo.png",
+  "url": "https://tarotoo.com/",
+  "category": [
+    "Lifestyle & Entertainment",
+    "AI & Machine Learning",
+    "Spirituality & Wellness"
+  ],
+  "price": "Freemium (Free tarot readings available; Premium features with subscription plans)",
+  "description": "Tarotoo is an AI-powered online tarot reading platform that provides free personalized tarot card readings, love predictions, career guidance, and spiritual insights using advanced artificial intelligence and traditional tarot wisdom.",
+  "tags": [
+    "tarot reading",
+    "ai tarot",
+    "psychic reading",
+    "fortune telling",
+    "spiritual guidance",
+    "love tarot",
+    "career reading",
+    "daily horoscope"
+  ],
+  "rating": 4.5,
+  "keywords": [
+    "free tarot reading",
+    "ai tarot cards",
+    "online psychic",
+    "tarot card meanings",
+    "love tarot reading",
+    "3 card spread",
+    "daily tarot"
+  ],
+  "isFeatured": false,
+  "overview": "Tarotoo combines ancient tarot wisdom with cutting-edge artificial intelligence to deliver personalized, accurate tarot card readings instantly. Whether you're seeking guidance on love, career, finances, or life decisions, Tarotoo's AI analyzes your questions and draws cards that resonate with your unique situation. The platform offers various reading types including 3-card spreads, Celtic Cross, love readings, and career forecasts. With beautifully designed cards, detailed interpretations, and the ability to save your reading history, Tarotoo makes spiritual guidance accessible to everyone. Perfect for both tarot beginners exploring their spirituality and experienced readers seeking quick, insightful guidance without scheduling appointments with human psychics.",
+  "faqs": [
+    {
+      "question": "What is Tarotoo and how does AI tarot reading work?",
+      "answer": "Tarotoo is an AI-powered tarot reading platform that uses artificial intelligence to provide personalized tarot card readings. The AI analyzes your question or situation, selects relevant cards from the tarot deck, and interprets their meanings based on traditional tarot wisdom combined with your unique circumstances, delivering instant spiritual guidance."
+    },
+    {
+      "question": "Are Tarotoo's AI tarot readings accurate?",
+      "answer": "Tarotoo's AI is trained on extensive tarot knowledge, card meanings, and interpretative methods used by professional readers. While tarot readings are inherently subjective and meant for guidance rather than prediction, many users find Tarotoo's AI-generated insights remarkably accurate and helpful for self-reflection and decision-making."
+    },
+    {
+      "question": "Is Tarotoo free to use?",
+      "answer": "Yes, Tarotoo offers free tarot readings including basic spreads and daily card draws. Users can access core features without payment. Premium subscription plans are available for those seeking unlimited readings, advanced spreads, detailed interpretations, and personalized guidance."
+    },
+    {
+      "question": "What types of tarot readings does Tarotoo offer?",
+      "answer": "Tarotoo provides various reading types including single-card daily guidance, 3-card spreads (past-present-future), Celtic Cross (comprehensive life reading), love and relationship readings, career and finance predictions, yes/no questions, and specialized spreads for specific life situations."
+    },
+    {
+      "question": "Can Tarotoo predict my future?",
+      "answer": "Tarot cards, whether read by AI or humans, offer guidance and insights rather than definitive predictions. Tarotoo helps you explore possibilities, understand current energies, and make informed decisions. The readings reflect potential outcomes based on your current path and can help guide your choices for the future you desire."
+    },
+    {
+      "question": "Do I need tarot knowledge to use Tarotoo?",
+      "answer": "No prior tarot knowledge is required. Tarotoo is designed for everyone, from complete beginners to experienced readers. Each card drawn comes with detailed explanations of its meaning in your specific context, making it an excellent learning tool as well as a guidance platform."
+    },
+    {
+      "question": "How is Tarotoo different from human tarot readers?",
+      "answer": "Tarotoo offers instant, available 24/7 readings without appointments or waiting, at a fraction of the cost of human readers. While it may lack the personal intuition of experienced human psychics, the AI provides consistent, unbiased interpretations based on traditional tarot meanings, making spiritual guidance accessible and affordable to everyone."
+    }
+  ]
+},
+{
+  "name": "Studyable",
+  "slug": "studyable",
+  "image": "/studyable.png",
+  "url": "https://studyable.app/",
+  "category": [
+    "Education & Learning",
+    "AI & Machine Learning",
+    "Productivity Tools"
+  ],
+  "price": "Freemium (Free plan available; Premium plans starting at approximately $9.99/month)",
+  "description": "Studyable is an AI-powered study platform trusted by over 1 million students from Harvard, Cambridge, and top universities worldwide. Create flashcards, get homework help, grade essays, and master any subject with intelligent AI tutoring.",
+  "tags": [
+    "ai study tool",
+    "flashcards",
+    "homework helper",
+    "essay grader",
+    "exam preparation",
+    "note taking",
+    "learning assistant",
+    "academic success"
+  ],
+  "rating": 4.7,
+  "keywords": [
+    "studyable ai",
+    "ai flashcard generator",
+    "homework help app",
+    "essay grading tool",
+    "exam prep",
+    "study assistant",
+    "smart learning"
+  ],
+  "isFeatured": false,
+  "overview": "Studyable is a comprehensive AI-powered study platform designed to help students achieve academic excellence. Trusted by over 1 million students from prestigious institutions like Harvard, Cambridge, and Stanford, Studyable combines multiple learning tools in one platform: AI-generated flashcards from any content, instant homework help with step-by-step explanations, automated essay grading with detailed feedback, and personalized study plans. The platform uses advanced AI to understand your learning style and adapts to help you master concepts faster. Whether you're preparing for exams, completing assignments, or building long-term knowledge retention, Studyable transforms the way you study with smart, efficient tools that save time and boost grades. Available on web and mobile apps for studying anywhere, anytime.",
+  "faqs": [
+    {
+      "question": "What is Studyable and who uses it?",
+      "answer": "Studyable is an AI-powered study platform that helps students learn more efficiently through flashcards, homework help, and essay grading. It's trusted by over 1 million students from top universities including Harvard, Cambridge, Stanford, and MIT, as well as high school students worldwide seeking to improve their academic performance."
+    },
+    {
+      "question": "What features does Studyable offer?",
+      "answer": "Studyable offers AI-generated flashcards from any content (notes, PDFs, lectures), instant homework help with step-by-step solutions, automated essay grading with constructive feedback, personalized study plans, progress tracking, spaced repetition learning, and collaborative study tools. All features work together to create a comprehensive learning experience."
+    },
+    {
+      "question": "How does Studyable's AI flashcard generator work?",
+      "answer": "Simply upload your study materials—lecture notes, PDFs, textbook chapters, or even paste text—and Studyable's AI automatically creates comprehensive flashcards with questions and answers. The AI identifies key concepts and creates effective study cards that help you retain information using proven spaced repetition techniques."
+    },
+    {
+      "question": "Can Studyable help me with homework?",
+      "answer": "Yes, Studyable provides instant homework assistance across multiple subjects. Ask questions, upload problems, or scan assignments, and the AI provides step-by-step explanations that help you understand concepts rather than just copying answers. It's like having a personal tutor available 24/7."
+    },
+    {
+      "question": "Does Studyable grade essays?",
+      "answer": "Absolutely. Studyable's AI essay grader analyzes your writing for grammar, structure, argumentation, and content quality, providing detailed feedback and suggested improvements. This helps you refine your writing skills and submit better essays, similar to having an English teacher review your work before submission."
+    },
+    {
+      "question": "Is Studyable free for students?",
+      "answer": "Studyable offers a generous free plan that includes basic flashcard creation, limited homework help, and core study features. Premium plans starting at approximately $9.99/month unlock unlimited AI tutoring, advanced flashcards, essay grading, and priority support—still far more affordable than traditional tutoring."
+    },
+    {
+      "question": "How effective is Studyable for exam preparation?",
+      "answer": "Extremely effective. Students using Studyable report significant grade improvements thanks to AI-powered spaced repetition, comprehensive practice materials, and personalized study plans. The platform identifies your weak areas and focuses your study time where it matters most, helping you ace exams with confidence."
+    }
+  ]
+},
+
+{
+  "name": "CleverSpinner",
+  "slug": "cleverspinner",
+  "image": "/cleverspinner.jpg",
+  "url": "https://cleverspinner.com/",
+  "category": [
+    "Content & Writing",
+    "SEO & SEM"
+  ],
+  "price": "Paid (Plans starting at approximately $9.90/month; 3-day trial available)",
+  "description": "CleverSpinner is an AI-powered article rewriter, text humanizer, and content spinner that transforms AI-generated or existing content into unique, natural-sounding articles that bypass AI detection while maintaining readability and SEO value.",
+  "tags": [
+    "ai rewriter",
+    "article spinner",
+    "content humanizer",
+    "paraphrasing tool",
+    "seo content",
+    "text rewriter",
+    "ai humanizer",
+    "plagiarism bypass"
+  ],
+  "rating": 4.5,
+  "keywords": [
+    "cleverspinner ai",
+    "article rewriter",
+    "ai text humanizer",
+    "content spinning tool",
+    "paraphrase generator",
+    "seo article writer",
+    "undetectable ai"
+  ],
+  "isFeatured": false,
+  "overview": "CleverSpinner is a professional AI-powered content rewriting and humanization tool designed for content creators, SEO professionals, and digital marketers. Using advanced natural language processing, CleverSpinner transforms existing articles, blog posts, or AI-generated content into unique, human-like variations that maintain original meaning while improving readability and bypassing AI detection systems. Unlike simple synonym replacers, CleverSpinner rewrites entire sentences with contextual understanding, ensuring your content sounds natural and engaging. The platform helps you scale content production, refresh existing articles for SEO, create multiple versions for A/B testing, and humanize AI-written text to pass AI detectors like GPTZero and Turnitin. With one-click rewriting, batch processing, and integration with popular SEO tools, CleverSpinner saves hours of manual editing while producing high-quality, unique content that ranks well and connects with readers.",
+  "faqs": [
+    {
+      "question": "What is CleverSpinner and how does it work?",
+      "answer": "CleverSpinner is an AI-powered content rewriting tool that uses advanced natural language processing to rewrite articles, blog posts, and text into unique versions. Unlike basic spinners, it understands context and rewrites entire sentences naturally, making content sound human-written while maintaining the original meaning and improving readability."
+    },
+    {
+      "question": "Can CleverSpinner help bypass AI detection?",
+      "answer": "Yes, CleverSpinner includes an AI humanizer feature specifically designed to transform AI-generated content into natural, human-like text that bypasses AI detection tools like GPTZero, Turnitin, and Originality.ai. It rewrites with human patterns, varied sentence structures, and natural language flow that detection systems cannot flag as AI-written."
+    },
+    {
+      "question": "Is CleverSpinner good for SEO?",
+      "answer": "Absolutely. CleverSpinner is widely used by SEO professionals to create unique variations of content for multiple pages, refresh old articles to maintain rankings, generate alternative versions for A/B testing, and scale content production without duplicate content penalties. The rewritten text maintains keyword relevance while improving readability signals."
+    },
+    {
+      "question": "How is CleverSpinner different from other spinners?",
+      "answer": "Unlike basic spinning tools that simply replace words with synonyms (creating awkward, unreadable text), CleverSpinner uses AI to understand context and rewrite entire sentences naturally. The result is professional-quality content that reads smoothly, maintains meaning, and passes both human review and plagiarism detection."
+    },
+    {
+      "question": "What types of content can I rewrite with CleverSpinner?",
+      "answer": "CleverSpinner works with any text content including blog articles, product descriptions, web copy, social media posts, academic writing, marketing materials, press releases, and AI-generated content. You can rewrite individual paragraphs, full articles up to thousands of words, or batch-process multiple documents."
+    },
+    {
+      "question": "Does CleverSpinner offer a free trial?",
+      "answer": "Yes, CleverSpinner typically offers a 3-day trial period allowing you to test the platform's rewriting quality and features before committing. Paid plans start at approximately $9.90/month, making it affordable for freelancers, bloggers, and agencies looking to scale content production."
+    },
+    {
+      "question": "Will rewritten content be plagiarism-free?",
+      "answer": "Yes, CleverSpinner creates unique variations that pass plagiarism checkers like Copyscape. The AI rewrites content comprehensively enough to produce original text while preserving your intended message. However, always review output for quality and accuracy before publishing, as with any AI tool."
+    }
+  ]
+},
+{
+  "name": "DocuClipper",
+  "slug": "docuclipper",
+  "image": "/docuclipper.png",
+  "url": "https://www.docuclipper.com/",
+  "category": [
+    "Productivity Tools",
+  ],
+  "price": "Paid (Custom pricing based on usage; Contact for enterprise quotes)",
+  "description": "DocuClipper is an AI-powered document processing and data extraction platform that automatically clips, extracts, and organizes information from PDFs, invoices, receipts, forms, and business documents, saving businesses hours of manual data entry.",
+  "tags": [
+    "document processing",
+    "data extraction",
+    "invoice processing",
+    "pdf extraction",
+    "ocr tool",
+    "receipt scanner",
+    "business automation",
+    "document management"
+  ],
+  "rating": 4.6,
+  "keywords": [
+    "docuclipper ai",
+    "document data extraction",
+    "invoice automation",
+    "pdf data extractor",
+    "receipt processing",
+    "document clipping tool",
+    "business document automation"
+  ],
+  "isFeatured": false,
+  "overview": "DocuClipper is an enterprise-grade AI document processing platform that revolutionizes how businesses handle paperwork and data extraction. Using advanced optical character recognition (OCR) and machine learning, DocuClipper automatically extracts structured data from invoices, receipts, purchase orders, contracts, forms, and any business document—eliminating tedious manual data entry. The platform intelligently identifies key fields like dates, amounts, vendor names, line items, and custom data points, then exports them to your preferred format (Excel, CSV, JSON) or directly integrates with accounting software, CRMs, and ERPs. Perfect for accounting firms, finance departments, legal offices, and any organization processing high volumes of documents, DocuClipper reduces processing time by up to 90%, minimizes human errors, and enables staff to focus on higher-value work. With secure cloud processing, API access, and batch document handling, DocuClipper scales effortlessly from small businesses to large enterprises.",
+  "faqs": [
+    {
+      "question": "What is DocuClipper and how does it help businesses?",
+      "answer": "DocuClipper is an AI-powered document processing platform that automatically extracts data from invoices, receipts, forms, contracts, and other business documents. It eliminates manual data entry by using advanced OCR and machine learning to identify and extract key information, saving businesses significant time and reducing costly manual errors."
+    },
+    {
+      "question": "What types of documents can DocuClipper process?",
+      "answer": "DocuClipper handles a wide variety of business documents including invoices, purchase orders, receipts, bank statements, contracts, tax forms, insurance documents, shipping labels, and custom forms. The AI adapts to different document formats, layouts, and languages, making it versatile for diverse business needs."
+    },
+    {
+      "question": "How accurate is DocuClipper's data extraction?",
+      "answer": "DocuClipper achieves industry-leading accuracy rates typically above 95% for standard documents, using advanced AI models trained on millions of business documents. The platform continuously learns and improves, and includes validation rules to flag potential errors for human review, ensuring reliable data extraction for critical business processes."
+    },
+    {
+      "question": "Can DocuClipper integrate with my existing systems?",
+      "answer": "Yes, DocuClipper offers robust integration options including direct connections to popular accounting software (QuickBooks, Xero, Sage), ERPs, CRMs, and cloud storage platforms. It also provides API access for custom integrations, allowing extracted data to flow seamlessly into your existing business workflows without manual transfers."
+    },
+    {
+      "question": "Is DocuClipper secure for sensitive business documents?",
+      "answer": "Absolutely. DocuClipper employs enterprise-grade security including encrypted data transmission, secure cloud storage, compliance with data protection regulations (GDPR, SOC 2), and optional on-premise deployment for organizations with strict security requirements. Your confidential business documents are processed and stored with bank-level security."
+    },
+    {
+      "question": "How much does DocuClipper cost?",
+      "answer": "DocuClipper uses custom pricing based on document volume, features required, and integration needs. Pricing typically starts with pay-per-document models for small businesses and scales to monthly subscriptions for enterprises. Contact their sales team for a personalized quote based on your specific document processing requirements."
+    },
+    {
+      "question": "How quickly can DocuClipper process documents?",
+      "answer": "DocuClipper processes most documents in seconds, with batch processing capabilities handling hundreds or thousands of documents simultaneously. What would take employees days of manual data entry can be completed in minutes, dramatically accelerating invoice processing, expense reporting, and document management workflows."
+    }
+  ]
+},
+{
+  "name": "EduBrain",
+  "slug": "edubrain",
+  "image": "/edubrain.png",
+  "url": "https://www.edubrain.ai/",
+  "category": [
+    "Education & Learning",
+    "AI & Machine Learning",
+    "Productivity Tools"
+  ],
+  "price": "Freemium (Free plan available; Premium plans starting at approximately $20/month)",
+  "description": "EduBrain is an AI-powered education platform and homework helper that provides instant answers, detailed explanations, essay assistance, and personalized tutoring across all academic subjects, helping students learn smarter and achieve better grades.",
+  "tags": [
+    "homework help",
+    "ai tutor",
+    "study assistant",
+    "academic support",
+    "essay help",
+    "math solver",
+    "learning platform",
+    "student tool"
+  ],
+  "rating": 4.6,
+  "keywords": [
+    "edubrain ai",
+    "ai homework helper",
+    "online tutoring",
+    "instant homework answers",
+    "essay writing help",
+    "study help app",
+    "academic assistant"
+  ],
+  "isFeatured": false,
+  "overview": "EduBrain is a comprehensive AI-powered education platform designed to support students at every level of their academic journey. Combining advanced artificial intelligence with proven educational methodologies, EduBrain offers instant homework help, step-by-step problem solving, essay writing assistance, concept explanations, and personalized tutoring across mathematics, sciences, humanities, languages, and more. Unlike simple answer generators, EduBrain teaches students how to think critically and solve problems independently by providing detailed explanations, alternative approaches, and learning resources. The platform adapts to each student's learning pace and style, identifying knowledge gaps and recommending targeted practice. Available 24/7 through web and mobile apps, EduBrain serves as an affordable alternative to expensive human tutors while providing the same depth of academic support. Perfect for high school and college students who want to improve grades, understand challenging concepts, complete assignments faster, and build lasting academic confidence.",
+  "faqs": [
+    {
+      "question": "What is EduBrain and how does it help students?",
+      "answer": "EduBrain is an AI-powered education platform that provides comprehensive homework help, tutoring, and learning support across all subjects. It offers instant answers with detailed step-by-step explanations, essay writing assistance, concept clarifications, and personalized study guidance—helping students understand material deeply, complete assignments correctly, and improve their grades."
+    },
+    {
+      "question": "What subjects does EduBrain cover?",
+      "answer": "EduBrain supports virtually all academic subjects including mathematics (algebra, calculus, statistics, geometry), sciences (physics, chemistry, biology), computer science, engineering, English literature, history, economics, languages, and more. The AI is trained on extensive educational content from middle school through university level."
+    },
+    {
+      "question": "How is EduBrain different from other homework help apps?",
+      "answer": "EduBrain stands out by focusing on deep learning rather than just providing answers. It explains concepts thoroughly, shows multiple solution methods, identifies common mistakes, and adapts to your learning style. The platform also offers essay assistance, reading comprehension help, and personalized study plans—making it a complete academic support system."
+    },
+    {
+      "question": "Can EduBrain help with essay writing?",
+      "answer": "Yes, EduBrain provides comprehensive essay writing support including brainstorming ideas, creating outlines, improving grammar and style, citing sources properly, and structuring arguments effectively. It helps you become a better writer through constructive feedback rather than writing essays for you, ensuring you develop genuine writing skills."
+    },
+    {
+      "question": "Is EduBrain suitable for exam preparation?",
+      "answer": "Absolutely. EduBrain is excellent for exam prep, offering practice problems, concept reviews, quiz generation, and focused study sessions on weak areas. The AI identifies topics you struggle with and provides targeted practice, helping you build confidence and master material before tests and finals."
+    },
+    {
+      "question": "Does EduBrain offer a free plan?",
+      "answer": "Yes, EduBrain provides a free plan with access to basic homework help and limited daily questions. Premium plans starting around $20/month unlock unlimited questions, priority response times, advanced features like essay feedback, personalized study plans, and expert-level explanations—still more affordable than traditional tutoring."
+    },
+    {
+      "question": "Is using EduBrain considered cheating?",
+      "answer": "No, EduBrain is designed as a learning tool, not a cheating shortcut. It teaches concepts and problem-solving methods through detailed explanations, similar to working with a tutor. Students are encouraged to understand the reasoning behind answers and apply that knowledge independently, promoting genuine learning and academic integrity."
+    }
+  ]
+},
+{
   "name": "文心一言 (Wénxīn Yīyán)",
   "slug": "wenxin-yiyan",
   "image": "/chsfklsj.png",
