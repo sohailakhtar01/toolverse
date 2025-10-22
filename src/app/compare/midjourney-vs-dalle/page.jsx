@@ -954,7 +954,7 @@ export default function MidjourneyVsDALLE() {
                   Many professionals use both tools complementarily - Midjourney for creative inspiration and high-quality artistic work, and DALL-E for precise commercial applications and workflow integration.
                 </p>
                 <p className="text-sm text-gray-500">
-                  Last updated: September 2025 | Comparison based on latest model versions and pricing
+                  Last updated: October 2025 | Comparison based on latest model versions and pricing
                 </p>
               </div>
             </div>

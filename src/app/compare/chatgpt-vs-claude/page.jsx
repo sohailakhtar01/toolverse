@@ -549,7 +549,7 @@ const ChatGPTvsClaudePage = () => {
               <div className="mt-8 space-y-4">
                 <div className="inline-flex items-center bg-white bg-opacity-20 rounded-full px-6 py-2 backdrop-blur-sm">
                   <Sparkles className="w-5 h-5 text-yellow-300 mr-2" />
-                  <span className="text-black font-semibold">Based on 10,000+ tested queries • Updated September 2025</span>
+                  <span className="text-black font-semibold">Based on 10,000+ tested queries • Updated October 2025</span>
                 </div>
                 <p className="text-xl text-purple-100 max-w-4xl mx-auto leading-relaxed">
                   Comprehensive analysis reveals <span className="font-bold text-yellow-300">Claude outperforms ChatGPT in 9 out of 10 categories</span>. 
@@ -741,7 +741,7 @@ const ChatGPTvsClaudePage = () => {
         <footer className="bg-gray-900 text-gray-400 py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-lg">&copy; 2025 Toolsverse - India's #1 AI Tools Directory. All Rights Reserved.</p>
-            <p className="mt-2">Independent analysis • Not affiliated with OpenAI or Anthropic • Updated September 2025</p>
+            <p className="mt-2">Independent analysis • Not affiliated with OpenAI or Anthropic • Updated October 2025</p>
           </div>
         </footer>
       </div>

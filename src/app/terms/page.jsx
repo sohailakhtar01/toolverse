@@ -20,7 +20,7 @@ export async function generateMetadata() {
 }
 
 export default function TermsOfServicePage() {
-  const lastUpdated = "September 9, 2025";
+  const lastUpdated = "October 9, 2025";
   const effectiveDate = "January 1, 2024";
 
   return (

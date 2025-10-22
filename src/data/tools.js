@@ -357,6 +357,86 @@ export const tools = [
     ]
   },
   {
+  "name": "ChatFAI",
+  "slug": "chatfai",
+  "image": "/chatfai.jpg",
+  "url": "https://chatfai.com/",
+  "category": [
+    "Entertainment & Media",
+    "AI & Machine Learning",
+    "Social & Communication"
+  ],
+  "price": "Freemium (Free: 500 messages/month; Basic: $8.25/month; Premium: $24.17/month)",
+  "description": "ChatFAI is an AI-powered character chat platform where you can have lifelike conversations with your favorite characters from movies, TV shows, books, history, and more. Create custom AI personalities or chat with thousands of pre-built characters using advanced natural language processing.",
+  "tags": [
+    "ai character chat",
+    "character ai",
+    "ai roleplay",
+    "fictional character chat",
+    "custom ai characters",
+    "chatbot platform",
+    "conversational ai",
+    "ai companions",
+    "movie character chat",
+    "chatfai characters"
+  ],
+  "rating": 4.5,
+  "keywords": [
+    "chatfai",
+    "ai character chat",
+    "character ai alternative",
+    "chat with fictional characters",
+    "create ai personality",
+    "chatfai free",
+    "ai roleplay chat",
+    "custom chatbot characters"
+  ],
+  "isFeatured": false,
+  "overview": "ChatFAI is a powerful AI-powered platform that enables you to have realistic, engaging conversations with characters from movies, TV shows, books, comics, historical figures, and more. Using advanced natural language processing (NLP), ChatFAI creates lifelike interactions where characters respond contextually and naturally, emulating real conversation. The platform offers two main features: an extensive Character Library with thousands of pre-built characters across diverse categories (anime, literature, history, entertainment, pop culture), and Personalized Character Creation where users can design custom AI personalities with unique traits, backstories, and response patterns. ChatFAI's standout Chatbot Memory feature ensures characters remember all previous conversations, allowing continuity across sessions - you can return weeks later and pick up exactly where you left off with your AI friend. Characters can be trained to respond in specific ways to certain situations, making interactions highly customizable. Whether you want to chat with your favorite fictional hero, discuss history with famous figures, roleplay scenarios, or create an AI companion for entertainment and conversation, ChatFAI delivers natural, authentic dialogue. Free users get 500 messages per month (recently increased from 250), while premium plans unlock character creation, extended memory, voice messages, and unlimited conversations. Available as a web platform, ChatFAI makes interactive AI storytelling and companionship accessible to everyone.",
+  "faqs": [
+    {
+      "question": "What is ChatFAI and how does it work?",
+      "answer": "ChatFAI is an AI-powered platform for having realistic conversations with fictional, historical, and custom AI characters. Using advanced natural language processing (NLP), ChatFAI creates lifelike interactions where characters understand context and respond naturally. You can chat with pre-built characters from an extensive library or create your own custom AI personalities with unique traits and behaviors."
+    },
+    {
+      "question": "What types of characters can I chat with on ChatFAI?",
+      "answer": "ChatFAI offers thousands of characters across diverse categories including movie characters, TV show personalities, book heroes, anime characters, comic book icons, historical figures, celebrities, and fictional personas. The library spans entertainment, literature, history, pop culture, and more - providing endless conversation possibilities for any interest or fandom."
+    },
+    {
+      "question": "Can I create my own characters on ChatFAI?",
+      "answer": "Yes, ChatFAI allows you to create fully custom AI characters with personalized traits, characteristics, backstories, and response patterns. You can train your character to respond in specific ways to certain situations, embed unique personality qualities, and design exactly the conversation partner you envision. Character creation is available with premium subscriptions (not included in the free plan)."
+    },
+    {
+      "question": "Does ChatFAI remember previous conversations?",
+      "answer": "Yes, ChatFAI features advanced Chatbot Memory that remembers all previous interactions with each character. You don't have to start over or re-explain context when you return - even if you log in weeks later, the character remembers your conversation history and can continue naturally from where you left off, creating a more meaningful and continuous relationship with your AI friend."
+    },
+    {
+      "question": "Is ChatFAI free to use?",
+      "answer": "ChatFAI offers a generous free plan with 500 messages per month (recently increased from 250), allowing you to chat with characters from the library without payment. Premium plans start at $8.25/month (Basic) for character creation, extended memory, and more features, or $24.17/month (Premium) for unlimited conversations, voice messages, priority responses, and advanced customization options."
+    },
+    {
+      "question": "How realistic are conversations on ChatFAI?",
+      "answer": "ChatFAI uses sophisticated natural language processing to create highly realistic, contextually-aware conversations. Characters capture the essence, personality, and speech patterns of their source material, responding naturally and authentically. The AI understands nuance, maintains conversation flow, remembers context, and adapts to your communication style - delivering lifelike interactions that feel genuinely engaging."
+    },
+    {
+      "question": "Can I use ChatFAI for roleplay scenarios?",
+      "answer": "Absolutely. ChatFAI is perfect for roleplay scenarios, creative storytelling, and interactive fiction. You can engage characters in various situations, explore different narratives, and create immersive experiences. The AI's contextual understanding and character memory make it ideal for ongoing storylines, character development, and imaginative conversations across multiple sessions."
+    },
+    {
+      "question": "What if I can't find my favorite character?",
+      "answer": "If your preferred character isn't in the library, ChatFAI makes it easy to create them yourself with the character creation feature (available with premium plans). You can bring any character to life - from obscure book characters to original personalities - by defining their traits, background, and response style. You can also report missing characters for potential addition to the library."
+    },
+    {
+      "question": "Are chats on ChatFAI private?",
+      "answer": "Yes, ChatFAI offers private chat functionality where your conversations with characters remain confidential and personal. Your interactions, character customizations, and chat history are kept secure, allowing you to have open, comfortable conversations with AI characters without privacy concerns."
+    },
+    {
+      "question": "Does ChatFAI support voice messages?",
+      "answer": "Yes, premium ChatFAI plans include voice message features, allowing you to hear characters speak and receive audio responses in addition to text. This adds another layer of realism and immersion to conversations. Voice messages are included in higher-tier subscriptions along with other advanced features like extended memory and unlimited conversations."
+    }
+  ]
+},
+  {
   "name": "Anki",
   "slug": "anki",
   "image": "/anki.png",
@@ -9398,7 +9478,7 @@ export const tools = [
       "answer": "Most AI travel planners including AicoTravel allow saving generated itineraries for reference, exporting to PDF or other formats for offline access, and sharing with travel companions via links or files. Check AicoTravel's specific features for current sharing capabilities. This enables collaborative planning where friends or family can review, comment on, and contribute to travel plans before departure."
     }
   ]
-},
+},  
 {
   "name": "Shoplauncher AI",
   "slug": "shoplauncher-ai",
