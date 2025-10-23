@@ -8335,7 +8335,7 @@ export const tools = [
   {
     "name": "AppAlchemy.ai",
     "slug": "appalchemy-ai",
-    "image": "/ .png",
+    "image": "/appalchemyai.png",
     "url": "https://appalchemy.ai",
     "category": [
       "Design Tools",
