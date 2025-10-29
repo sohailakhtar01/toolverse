@@ -276,9 +276,10 @@ export default function AboutPage() {
             "founder": [
               {
                 "@type": "Person",
-                "name": "Arjun Sharma",
+                "name": "Sohail Akhtar",
                 "jobTitle": "Founder & CEO",
-                "alumniOf": "IIT Delhi"
+                "Studentof": "Siddaganga Institute of Technology"
+                
               }
             ],
             "numberOfEmployees": {
