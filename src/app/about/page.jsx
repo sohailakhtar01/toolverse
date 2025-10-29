@@ -95,32 +95,33 @@ const companyInfo = {
 // Realistic team members for an Indian startup
 const teamMembers = [
   {
-    name: "Arjun Sharma",
+    name: "Sohail Akhtar",
     role: "Founder & CEO",
-    image: "👨‍💼",
-    bio: "Former product manager at Flipkart with 6+ years in tech. Passionate about helping Indian startups discover the right tools to scale efficiently.",
-    expertise: ["Product Strategy", "Startup Operations", "AI Tools"],
-    education: "IIT Delhi, Computer Science",
-    previousWork: "Ex-Flipkart, Ex-Paytm"
+    image: "/sohail.jpg",
+    bio: "Tech enthusiast and visionary behind the platform. Focused on building impactful digital products that simplify how businesses discover and use technology.",
+    expertise: ["Product Development", "Web Technologies", "Team Leadership"],
+    education: "Siddaganga Institute of Technology, Computer Science and Engineering",
+    previousWork: "Student Innovator, Team SARK"
   },
   {
     name: "Priya Patel",
     role: "Head of Content & Curation", 
-    image: "👩‍💻",
+    image: "/priya.jpg",
     bio: "Content strategist with deep expertise in evaluating SaaS tools. Ensures every tool in our directory meets quality standards for Indian businesses.",
     expertise: ["Content Strategy", "Tool Analysis", "Technical Writing"],
     education: "NIT Surat, Information Technology",
     previousWork: "Ex-Zomato, Ex-Razorpay"
   },
   {
-    name: "Rohit Kumar",
-    role: "Lead Developer",
-    image: "👨‍💻", 
-    bio: "Full-stack developer passionate about creating seamless user experiences. Built our platform from ground up using modern web technologies.",
-    expertise: ["Next.js", "React", "Node.js", "Database Design"],
-    education: "BITS Pilani, Computer Science", 
-    previousWork: "Ex-Swiggy, Ex-PhonePe"
-  }
+  name: "Sameer Akhtar",
+  role: "E-mail Marketing Expert",
+  image: "/sameer.jpg",
+  bio: "Entrepreneur and email marketing expert helping e-commerce brands boost customer retention and revenue through high-performing email strategies. Leads BadRetention.com with a focus on results-driven campaigns and brand growth.",
+  expertise: ["Email Marketing", "E-commerce Growth", "Customer Retention", "Copywriting", "Automation"],
+  education: "Bachelor’s in Business Administration",
+  previousWork: "Founder - BadRetention.com"
+}
+
 ];
 
 // Updated values reflecting Indian startup ethos
@@ -226,15 +227,15 @@ const timeline = [
     year: "Mid 2024",
     title: "Community Growth",
     description: "Expanded to 500+ tools across 25+ categories. Launched user reviews and comparison features. Reached our first 1,000 monthly users.",
-    milestone: "First 1K users",
-    metrics: "500+ tools, 1K users"
+    milestone: "First 10K users",
+    metrics: "500+ tools, 10K users"
   },
   {
     year: "Q4 2024",
     title: "AI Tools Focus",
     description: "Became India's go-to platform for AI tool discovery. Added detailed pricing analysis and India-specific feature comparisons. Growing rapidly.",
     milestone: "AI specialization",
-    metrics: "1K+ tools, 5K monthly users"
+    metrics: "10K+ tools, 5K monthly users"
   },
   {
     year: "2025",
@@ -324,57 +325,76 @@ export default function AboutPage() {
       <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
         <main role="main">
           {/* Hero Section */}
-          <header className="px-4 sm:px-6 py-16 md:py-24">
-            <div className="max-w-7xl mx-auto text-center">
-              {/* Trust indicators in header */}
-              <div className="flex justify-center items-center space-x-6 mb-6">
-                <div className="flex items-center space-x-2 text-sm text-gray-600">
-                  <MapPin className="w-4 h-4" />
-                  <span>Made in India</span>
-                </div>
-                <div className="flex items-center space-x-2 text-sm text-gray-600">
-                  <Calendar className="w-4 h-4" />
-                  <span>Founded 2024</span>
-                </div>
-                <div className="flex items-center space-x-2 text-sm text-gray-600">
-                  <Users className="w-4 h-4" />
-                  <span>5,000+ Users</span>
-                </div>
-              </div>
+<header className="px-4 sm:px-6 py-16 md:py-24 bg-white">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12">
 
-              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 rounded-full mb-6">
-                <Building2 className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-700">Indian Startup • Bangalore Based</span>
-              </div>
-              
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                India's{' '}
-                <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Trusted Directory
-                </span>{' '}
-                for AI & Productivity Tools
-              </h1>
-              
-              <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed">
-                Founded by Indian professionals, for Indian professionals. We curate, evaluate, and recommend 
-                the best digital tools to help businesses and individuals succeed in the modern economy.
-              </p>
+    {/* Left side text (always first on mobile, first on desktop too) */}
+    <div className="order-1 md:order-1 text-center md:text-left">
+      {/* Trust indicators */}
+      <div className="flex justify-center md:justify-start items-center space-x-6 mb-6">
+        <div className="flex items-center space-x-2 text-sm text-gray-600">
+          <MapPin className="w-4 h-4" />
+          <span>Made in India</span>
+        </div>
+        <div className="flex items-center space-x-2 text-sm text-gray-600">
+          <Calendar className="w-4 h-4" />
+          <span>Founded 2024</span>
+        </div>
+        <div className="flex items-center space-x-2 text-sm text-gray-600">
+          <Users className="w-4 h-4" />
+          <span>5,000+ Users</span>
+        </div>
+      </div>
 
-              {/* Contact information for trust */}
-              <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-gray-600">
-                <div className="flex items-center space-x-2">
-                  <Mail className="w-4 h-4" />
-                  <a href="mailto:sohail@thetoolsverse.com" className="hover:text-purple-600">
-                    sohail@thetoolsverse.com
-                  </a>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <FileCheck className="w-4 h-4" />
-                  <span>Registered Indian Entity</span>
-                </div>
-              </div>
-            </div>
-          </header>
+      <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 rounded-full mb-6">
+        <Building2 className="w-4 h-4 text-purple-600" />
+        <span className="text-sm font-medium text-purple-700">
+          Indian Startup • Bangalore Based
+        </span>
+      </div>
+
+      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        India's{" "}
+        <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+          Trusted Directory
+        </span>{" "}
+        for AI & Productivity Tools
+      </h1>
+
+      <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mb-8 leading-relaxed mx-auto md:mx-0">
+        Founded by Indian professionals, for Indian professionals. We curate, evaluate, and
+        recommend the best digital tools to help businesses and individuals succeed in the modern
+        economy.
+      </p>
+
+      {/* Contact information */}
+      <div className="flex flex-wrap justify-center md:justify-start gap-6 mt-8 text-sm text-gray-600">
+        <div className="flex items-center space-x-2">
+          <Mail className="w-4 h-4" />
+          <a href="mailto:sohail@thetoolsverse.com" className="hover:text-purple-600">
+            sohail@thetoolsverse.com
+          </a>
+        </div>
+        <div className="flex items-center space-x-2">
+          <FileCheck className="w-4 h-4" />
+          <span>Registered Indian Entity</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Image section (comes after text on mobile, right side on desktop) */}
+    <div className="order-2 md:order-2 flex justify-center mt-10 md:mt-0">
+      <img
+        src="/sohail.jpg"
+        alt="TheToolsVerse - Empowering Indian professionals"
+        className="w-full max-w-md rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 object-cover"
+      />
+    </div>
+
+  </div>
+</header>
+
+
 
           {/* Stats Section */}
           <section className="px-4 sm:px-6 py-16 bg-white">
@@ -546,32 +566,48 @@ export default function AboutPage() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {teamMembers.map((member, index) => (
-                  <article key={index} className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-purple-100 text-center">
-                    <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl flex items-center justify-center text-3xl">
-                      {member.image}
-                    </div>
-                    <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-                    <p className="text-purple-600 font-medium mb-1">{member.role}</p>
-                    <p className="text-sm text-gray-500 mb-3">{member.previousWork}</p>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{member.bio}</p>
-                    
-                    <div className="mb-4">
-                      <div className="text-xs text-gray-500 mb-2">Education & Experience:</div>
-                      <p className="text-xs text-purple-600 mb-2">{member.education}</p>
-                      <div className="flex flex-wrap justify-center gap-1">
-                        {member.expertise.map((skill, i) => (
-                          <span key={i} className="text-xs bg-purple-100 text-purple-600 px-2 py-1 rounded">
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    
-                  </article>
-                ))}
-              </div>
+  {teamMembers.map((member, index) => (
+    <article
+      key={index}
+      className="bg-white rounded-3xl p-8 shadow-md hover:shadow-2xl border border-purple-100 transition-all duration-300 transform hover:-translate-y-2 text-center"
+    >
+      <div className="w-24 h-24 mx-auto mb-5 rounded-2xl overflow-hidden shadow-md">
+  <img
+    src={member.image}
+    alt={member.name}
+    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+  />
+</div>
+
+
+      <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
+      <p className="text-purple-600 font-medium">{member.role}</p>
+      <p className="text-xs text-gray-500 mt-1 mb-3">{member.previousWork}</p>
+
+      <p className="text-gray-600 text-sm leading-relaxed mb-6">{member.bio}</p>
+
+      <div className="mb-3">
+        <p className="text-xs text-gray-500 mb-1">Education:</p>
+        <p className="text-xs text-purple-700 font-medium">{member.education}</p>
+      </div>
+
+      <div>
+        <p className="text-xs text-gray-500 mb-2">Expertise:</p>
+        <div className="flex flex-wrap justify-center gap-2">
+          {member.expertise.map((skill, i) => (
+            <span
+              key={i}
+              className="text-xs bg-purple-50 text-purple-700 px-3 py-1 rounded-full border border-purple-100"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+    </article>
+  ))}
+</div>
+
 
               {/* Team credentials */}
               <div className="mt-12 text-center">
