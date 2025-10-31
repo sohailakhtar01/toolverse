@@ -1,4 +1,5 @@
 // components/ToolSubmissionForm.jsx
+
 'use client';
 import { useState } from 'react';
 import {
@@ -16,8 +17,14 @@ import {
   X
 } from 'lucide-react';
 
+
 export default function ToolSubmissionForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Pricing Section States
+  const [toolPricingModel, setToolPricingModel] = useState("");
+  const [selectedPlan, setSelectedPlan] = useState("");
+  const [hoveredPlan, setHoveredPlan] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [categories, setCategories] = useState([
     "3D Generation", "AI & Machine Learning", "AI Character", "AI Crypto",
@@ -42,6 +49,37 @@ export default function ToolSubmissionForm() {
     "Voice Generation & Conversion", "Web3", "Writing & Content",
     "Writing & Content Creation", "Writing & Editing"
   ]);
+   const toolPricingOptions = [
+    "Free",
+    "Freemium",
+    "Paid",
+    "Subscription",
+    "One-time Purchase",
+  ];
+
+  const toolsversePlans = [
+    {
+      name: "Free",
+      price: "₹0/month",
+      description: "Basic listing with limited visibility on The Toolsverse.",
+    },
+    {
+      name: "Starter",
+      price: "$5/month",
+      description: "Better reach and appearance in recommended tools.",
+    },
+    {
+      name: "Pro",
+      price: "$20/month",
+      description: "Priority listing, verified badge, and analytics access.",
+    },
+    {
+      name: "Enterprise",
+      price: "Custom",
+      description: "For large teams with full promotional support.",
+    },
+  ];
+
 
   const [newCategory, setNewCategory] = useState('');
   const [showNewCategory, setShowNewCategory] = useState(false);
@@ -67,6 +105,8 @@ export default function ToolSubmissionForm() {
     // Add Web3Forms configuration
     formData.append("access_key", "bda71378-34ab-45ca-84da-31ae5ca278ea");
     formData.append("subject", "🚀 New Tool Submission - TheToolsVerse");
+    formData.append("toolPricingModel", toolPricingModel || "Not selected");
+    formData.append("toolsversePlan", selectedPlan || "Not selected");
 
     console.log("=== SUBMITTING FORM ===");
     for (let [key, value] of formData.entries()) {
@@ -126,13 +166,13 @@ export default function ToolSubmissionForm() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <button 
                   onClick={() => setIsSubmitted(false)}
-                  className="w-full py-3 px-6 bg-gradient-to-r from-purple-500 cursor-pointer to-pink-500 text-white rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-200 font-semibold"
+                  className="w-full py-3 px-4 bg-gradient-to-r text-sm from-purple-500 cursor-pointer to-pink-500 text-white rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-200 font-semibold"
                 >
                   Submit Another Tool
                 </button>
                 <button 
   onClick={() => window.location.href = '/'}
-  className="w-full py-3 px-6 bg-gray-100 text-gray-600 rounded-xl cursor-pointer hover:bg-gray-200 transition-all duration-200 font-semibold flex items-center justify-center gap-2"
+  className="w-full py-3 px-4 text-sm bg-gray-100 text-gray-600 rounded-xl cursor-pointer hover:bg-gray-200 transition-all duration-200 font-semibold flex items-center justify-center gap-2"
 >
   <ArrowLeft className="w-5 h-5" />
   Back to Home
@@ -321,27 +361,67 @@ export default function ToolSubmissionForm() {
             </div>
 
             {/* Pricing Model */}
-            <div className="group">
-              <label htmlFor="pricing" className="block text-sm font-semibold text-gray-700 mb-3 group-focus-within:text-purple-600 transition-colors">
-                <span className="flex items-center gap-2">
-                  <DollarSign className="w-5 h-5" />
-                  Pricing Model *
-                </span>
-              </label>
-              <select
-                id="pricing"
-                name="pricing"
-                required
-                className="w-full cursor-pointer px-4 sm:px-6 py-3 sm:py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-purple-100 focus:border-purple-400 transition-all duration-200 text-base sm:text-lg bg-white"
-              >
-                <option value="">Select Pricing Model</option>
-                <option value="free">🆓 Free</option>
-                <option value="freemium">🎯 Freemium (Free + Paid Plans)</option>
-                <option value="paid">💎 Paid Only</option>
-                <option value="subscription">🔄 Subscription Based</option>
-                <option value="one-time">💳 One-time Purchase</option>
-              </select>
+             <div className="w-full max-w-4xl mx-auto space-y-10 mt-10">
+              {/* 1️⃣ Pricing model of your tool */}
+              <div>
+                <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+                  Pricing model of your tool
+                </h2>
+                <p className="text-gray-600 mb-4">
+                  Choose how your tool is priced for users.
+                </p>
+
+                <select
+                  value={toolPricingModel}
+                  onChange={(e) => setToolPricingModel(e.target.value)}
+                  className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                >
+                  <option value="">Select pricing model</option>
+                  {toolPricingOptions.map((option) => (
+                    <option key={option}>{option}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* 2️⃣ Select The Toolsverse plan */}
+              <div>
+                <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+                  Select the pricing model of The Toolsverse
+                </h2>
+                <p className="text-gray-600 mb-6">
+                  List your tool at your preferred plan below.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {toolsversePlans.map((plan) => (
+                    <div
+                      key={plan.name}
+                      className={`relative bg-white border rounded-2xl shadow-sm p-5 text-center transition-all cursor-pointer ${
+                        selectedPlan === plan.name
+                          ? "border-blue-600 ring-2 ring-blue-100"
+                          : "hover:border-blue-600"
+                      }`}
+                      onClick={() => setSelectedPlan(plan.name)}
+                      onMouseEnter={() => setHoveredPlan(plan.name)}
+                      onMouseLeave={() => setHoveredPlan(null)}
+                    >
+                      <h3 className="text-lg font-semibold text-gray-900">
+                        {plan.name}
+                      </h3>
+                      <p className="text-gray-500">{plan.price}</p>
+
+                      {hoveredPlan === plan.name && (
+                        <div className="absolute bottom-[-70px] left-1/2 -translate-x-1/2 w-56 bg-gray-900 text-white text-sm rounded-lg p-3 shadow-lg z-10">
+                          {plan.description}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
+           
+
 
             {/* Contact Email */}
             <div className="group">
