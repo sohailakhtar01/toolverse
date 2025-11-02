@@ -135,6 +135,8 @@ export default function RootLayout({ children }) {
         <meta property="og:site_name" content="ToolsVerse - AI Tools Directory" />
         <meta name="application-name" content="ToolsVerse" />
         <meta name="apple-mobile-web-app-title" content="ToolsVerse" />
+        <meta name="google-adsense-account" content="ca-pub-9468891564981720" />
+
         
         {/* 🔥 ADDITIONAL SEO META TAGS */}
         <meta name="author" content="ToolsVerse Team" />
