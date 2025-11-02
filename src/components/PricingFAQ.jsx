@@ -1,45 +1,53 @@
 // components/PricingFAQ.jsx
 "use client";
 
-import { useState } from 'react';
-import { ChevronDown, HelpCircle } from 'lucide-react';
+import { useState } from "react";
+import { ChevronDown, HelpCircle } from "lucide-react";
 
 export default function PricingFAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const faqs = [
     {
-      question: "What's the difference between Free and Featured listing?",
-      answer: "Free listing gets your tool in our directory with basic visibility. Featured listing gives you premium placement at the top of categories, homepage visibility, dofollow backlinks, social media promotion, and priority support - helping you get 10x more traffic and exposure."
+      question: "What’s included in the Free plan?",
+      answer:
+        "The Free plan gives your AI tool a basic listing with standard category placement. It includes search visibility and a review within 7 days — ideal if you’re just starting out and want some exposure on The Toolsverse.",
     },
     {
-      question: "Is the Featured listing a one-time payment or recurring?",
-      answer: "Featured listing is a one-time payment of $19 with lifetime featured status. No monthly fees, no hidden charges. Your tool stays featured permanently once approved."
+      question: "What are the benefits of the Starter plan?",
+      answer:
+        "Starter plan users get priority placement in the directory, featured recommendations, and up to 2 screenshots for better presentation. Reviews are completed within 3 days, helping your tool get noticed faster.",
     },
     {
-      question: "How long does it take to get listed?",
-      answer: "Free listings are reviewed within 5-7 business days. Featured listings get fast-track review within 24-48 hours, so you can start getting traffic quickly."
+      question: "What makes the Pro plan special?",
+      answer:
+        "The Pro plan gives your listing a verified badge, top placement on the homepage and in categories, up to 5 screenshots, and access to an analytics dashboard. It’s designed for serious founders who want visibility and insights.",
     },
     {
-      question: "What is a dofollow backlink and why does it matter?",
-      answer: "A dofollow backlink passes SEO value from our directory to your website, helping improve your search engine rankings and domain authority. This can significantly boost your organic traffic over time."
+      question: "Who should choose the Enterprise plan?",
+      answer:
+        "Enterprise is for established companies or teams that want full-scale promotion. It includes a dedicated account manager, newsletter and social media promotion, and custom integrations based on your goals.",
     },
     {
-      question: "Can I upgrade from Free to Featured later?",
-      answer: "Yes! You can upgrade your free listing to featured at any time by paying the $19 fee. All featured benefits will be applied to your existing listing immediately."
+      question: "Can I upgrade my plan later?",
+      answer:
+        "Yes. You can upgrade from any plan to a higher tier anytime. Your listing and benefits will update instantly after confirmation — no need to resubmit your tool.",
     },
     {
-      question: "Will my tool be promoted on social media?",
-      answer: "Featured listings are promoted on our social media channels (Twitter, LinkedIn) and included in our weekly newsletter sent to 10,000+ subscribers, giving your tool massive exposure."
+      question: "How does the review process work?",
+      answer:
+        "Every submission is manually reviewed to ensure quality and relevance. Free plans are reviewed within 7 days, Starter within 3 days, and Pro/Enterprise listings within 24–48 hours.",
     },
     {
-      question: "What happens if my tool is not approved?",
-      answer: "If your tool doesn't meet our quality guidelines, we'll provide feedback and give you a chance to resubmit. For Featured listings, if we cannot list your tool, you'll receive a full refund."
+      question: "What happens if my tool isn’t approved?",
+      answer:
+        "If your submission doesn’t meet our guidelines, we’ll send feedback so you can make updates and resubmit. For paid plans, if we can’t approve your listing, you’ll receive a full refund.",
     },
     {
-      question: "Can I update my listing after submission?",
-      answer: "Yes! Both Free and Featured listings can be updated. Featured listings get priority handling for updates, while Free listings are updated within a few days via email request."
-    }
+      question: "Can I make changes after my listing goes live?",
+      answer:
+        "Yes. You can update your listing details anytime. Pro and Enterprise users get priority updates, while Free and Starter plan updates are handled within a few business days.",
+    },
   ];
 
   const toggleFAQ = (index) => {
@@ -47,20 +55,20 @@ export default function PricingFAQ() {
   };
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="max-w-4xl mx-auto">
-        
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <div className="max-w-5xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
             <HelpCircle className="w-4 h-4" />
             FAQ
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-spaceGrotesk mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-spaceGrotesk mb-3 text-gray-900">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-gray-600">
-            Everything you need to know about submitting your AI tool
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Everything you need to know about Toolsverse pricing plans and
+            submissions
           </p>
         </div>
 
@@ -81,14 +89,14 @@ export default function PricingFAQ() {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 text-gray-600 flex-shrink-0 transition-transform duration-300 ${
-                    openIndex === index ? 'rotate-180' : ''
+                    openIndex === index ? "rotate-180" : ""
                   }`}
                 />
               </button>
-              
+
               <div
                 className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? 'max-h-96' : 'max-h-0'
+                  openIndex === index ? "max-h-96" : "max-h-0"
                 }`}
               >
                 <div className="px-6 pb-5 text-gray-600 leading-relaxed text-sm md:text-base">
@@ -99,13 +107,14 @@ export default function PricingFAQ() {
           ))}
         </div>
 
-        {/* Still have questions CTA */}
-        <div className="mt-12 text-center p-8 bg-white rounded-xl border border-gray-200">
-          <h3 className="text-xl font-bold text-gray-900 mb-2">
+        {/* CTA */}
+        <div className="mt-14 text-center p-10 bg-white rounded-2xl border border-gray-200 shadow-sm">
+          <h3 className="text-2xl font-bold text-gray-900 mb-3">
             Still have questions?
           </h3>
-          <p className="text-gray-600 mb-4">
-            Can&apos;t find the answer you&apos;re looking for? Our team is here to help.
+          <p className="text-gray-600 mb-5">
+            Can’t find what you’re looking for? Our team will be happy to guide
+            you through the right plan for your AI tool.
           </p>
           <a
             href="/contact"
@@ -114,7 +123,6 @@ export default function PricingFAQ() {
             Contact Us
           </a>
         </div>
-
       </div>
     </section>
   );

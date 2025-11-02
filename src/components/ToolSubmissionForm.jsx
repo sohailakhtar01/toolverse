@@ -75,7 +75,7 @@ export default function ToolSubmissionForm() {
     },
     {
       name: "Enterprise",
-      price: "Custom",
+      price: "$199/month",
       description: "For large teams with full promotional support.",
     },
   ];

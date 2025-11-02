@@ -21,17 +21,17 @@ const SubmitToolPricingSection = () => {
     },
     {
       name: "Starter",
-      price: "₹499/month",
+      price: "$5/month",
       description: "Better reach and appearance in recommended tools.",
     },
     {
       name: "Pro",
-      price: "₹999/month",
+      price: "$20/month",
       description: "Priority listing, verified badge, and analytics access.",
     },
     {
       name: "Enterprise",
-      price: "Custom",
+      price: "$199/month",
       description: "For large teams with full promotional support.",
     },
   ];

@@ -6083,6 +6083,170 @@ export const tools = [
     ]
   },
   {
+    "name": "Try Nano Banana",
+    "slug": "try-nano-banana",
+    "image": "/trynanobanana.png",
+    "url": "https://trynanobanana.io/",
+    "category": [
+      "AI Image Generation",
+      "Art & Creative Design"
+    ],
+    "price": "Freemium (One free generation per new account; paid plans for extended use)",
+    "description": "Try Nano Banana is a browser-based, prompt-first text-to-image tool built for fast creative drafts and lightweight editing.",
+    "tags": [
+      "text to image",
+      "prompt tool",
+      "ai art",
+      "image editing",
+      "visual draft"
+    ],
+    "rating": 4.4,
+    "keywords": [
+      "ai image generator",
+      "text to image",
+      "prompt based art tool"
+    ],
+    "isFeatured": false,
+    "overview": "Try Nano Banana is a quick and intuitive AI image generation platform designed for creators who need usable visual drafts in seconds. It supports text-to-image generation, simple image editing, and multi-image fusion, all within a minimal browser interface that works across desktop and mobile. Each new user gets one free trial generation, with stable cloud delivery for commercial-ready downloads.",
+    "faqs": [
+      {
+        "question": "What can you do with Try Nano Banana?",
+        "answer": "You can generate AI images from short prompts, make simple edits, combine multiple images, and export finished visuals as PNG or JPEG files."
+      },
+      {
+        "question": "Is Try Nano Banana free?",
+        "answer": "It operates on a freemium model that provides one free generation for new users. Additional usage and premium features are available through paid plans."
+      },
+      {
+        "question": "What makes Try Nano Banana unique?",
+        "answer": "Its lightweight interface, instant rendering, and built-in editing tools make it ideal for quick creative workflows without switching between apps."
+      }
+    ]
+  },
+  {
+    "name": "Seedream Pro",
+    "slug": "seedream-pro",
+    "image": "/seedreampro.png",
+    "url": "https://www.seedreampro.com/",
+    "category": [
+      "AI Image Generation",
+      "Design & Marketing"
+    ],
+    "price": "Freemium (Free credits with limitations; paid plans for commercial volume or higher resolution)",
+    "description": "Seedream Pro offers a unified, browser-based AI image creation workflow for text-to-image generation, editing, and brand-consistent output.",
+    "tags": [
+      "ai image generation",
+      "image editing",
+      "masking",
+      "design workflow",
+      "brand assets"
+    ],
+    "rating": 4.6,
+    "keywords": [
+      "ai design workflow",
+      "text to image generator",
+      "image editing tool"
+    ],
+    "isFeatured": false,
+    "overview": "Seedream Pro streamlines AI image creation into one seamless screen—with prompt input, mask editing, image fusion, and export tools built in. Tailored for marketing and design teams, it helps create coherent visuals for ads, product shots, and campaigns without juggling multiple apps. The platform supports 2K/4K exports, reliable cloud processing, and familiar Google sign-in for ease of use.",
+    "faqs": [
+      {
+        "question": "What can you create with Seedream Pro?",
+        "answer": "You can generate high-resolution images from text, perform on-canvas edits, and blend multiple references to maintain brand consistency across visuals."
+      },
+      {
+        "question": "Why is Seedream Pro ideal for teams?",
+        "answer": "It unifies the entire creative workflow into one browser screen, improving speed, consistency, and reproducibility across campaigns."
+      },
+      {
+        "question": "How does pricing work?",
+        "answer": "Seedream Pro follows a freemium plan offering limited free credits, with premium options for higher-resolution outputs and expanded usage."
+      }
+    ]
+  },
+  {
+    "name": "Editpal",
+    "slug": "editpal",
+    "image": "/editpal.jpeg",
+    "url": "https://editpal.im/",
+    "category": [
+      "Image Generation & Editing",
+      "AI Photo Editing"
+    ],
+    "price": "Freemium (Free edits with usage limits; paid options for full features)",
+    "description": "Editpal is an AI-powered image editor that transforms photos with natural text prompts while maintaining consistency across edits.",
+    "tags": [
+      "ai photo editor",
+      "image editing",
+      "multi image fusion",
+      "background removal",
+      "character consistency"
+    ],
+    "rating": 4.5,
+    "keywords": [
+      "ai image editing",
+      "ai photo generator",
+      "natural language editing"
+    ],
+    "isFeatured": false,
+    "overview": "Editpal enables users to edit and create images through natural language prompts. It preserves character and object consistency across scenes, supports background changes, color adjustments, and merges elements from multiple images. With its AI Canvas workspace, users can create cohesive compositions, while built-in upscaling and background removal tools simplify complex workflows.",
+    "faqs": [
+      {
+        "question": "How does Editpal work?",
+        "answer": "You describe desired changes in everyday language, and the AI applies edits such as background swaps, pose changes, or color adjustments directly to your image."
+      },
+      {
+        "question": "Can I maintain the same character across edits?",
+        "answer": "Yes, Editpal ensures character and object consistency across multiple images, even in different scenes or angles."
+      },
+      {
+        "question": "What extra tools are available?",
+        "answer": "It includes upscaling, watermark and background removal, and a multi-image fusion system to design complex visuals easily."
+      }
+    ]
+  },
+  {
+  "name": "Bank Statement Generators",
+  "slug": "bank-statement-generators",
+  "image": "/bankstatement.png",
+  "url": "https://bankstatementgenerators.com/",
+  "category": [
+    "Legal & Finance",
+    "Document Automation"
+  ],
+  "price": "Free (No cost for using core services)",
+  "description": "Bank Statement Generators is an online platform for creating, managing, and downloading financial documents such as bank statements, pay stubs, tax return forms, and credit card reports.",
+  "tags": [
+    "bank statements",
+    "pay stub generator",
+    "tax forms",
+    "financial documents",
+    "document automation"
+  ],
+  "rating": 4.1,
+  "keywords": [
+    "bank statement generator",
+    "pay stub generation",
+    "online tax forms"
+  ],
+  "isFeatured": false,
+  "overview": "Bank Statement Generators provides a reliable and accurate solution for individuals and businesses needing to produce key financial documents quickly. The service supports creation of authentic bank statements, detailed pay stubs, 1099 and W-2 tax forms, and credit card reports, all with a focus on usability and compliance.",
+  "faqs": [
+    {
+      "question": "What financial documents can I generate?",
+      "answer": "You can generate bank statements, pay stubs, 1099 tax return forms, W-2 forms, and credit card reports for your records or business needs."
+    },
+    {
+      "question": "Is this tool truly free?",
+      "answer": "Yes, the platform offers free generation for its supported financial documents."
+    },
+    {
+      "question": "Are the generated documents suitable for official use?",
+      "answer": "Generated documents are designed for usability and record-keeping, but users should review site and legal terms before official submission."
+    }
+  ]
+},
+  {
     "name": "WebsCrypto",
     "slug": "webscrypto",
     "image": "/webscri.png",
