@@ -6246,6 +6246,50 @@ export const tools = [
     }
   ]
 },
+{
+  "name": "SEO AI Agent",
+  "slug": "seo-ai-agent",
+  "image": "/seoaiagent.png",
+  "url": "https://www.seoaiagent.ai/",
+  "category": [
+    "SEO & SEM",
+    "Content Marketing"
+  ],
+  "price": "Paid (Starting at $49/month for Essentials plan; Complete package at $89/month)",
+  "description": "SEO AI Agent automates SEO blog creation, keyword research, competitor analysis, and internal linking—helping founders and site owners effortlessly grow organic traffic.",
+  "tags": [
+    "AI SEO assistant",
+    "blog automation",
+    "keyword research",
+    "content gap analysis",
+    "competitor analysis",
+    "internal linking",
+    "seo tools"
+  ],
+  "rating": 4.7,
+  "keywords": [
+    "ai seo content",
+    "seo automation",
+    "competitor monitoring",
+    "domain audit"
+  ],
+  "isFeatured": false,
+  "overview": "SEO AI Agent is an automated platform that delivers monthly SEO blogs, keyword research, content gap analysis, competitor strategy tracking, and internal linking for ongoing traffic growth. The tool analyzes performance using real search console data, builds content plans for topical authority, and offers daily directory submission opportunities—all designed for hands-off SEO implemented by founders for founders.",
+  "faqs": [
+    {
+      "question": "What does SEO AI Agent do?",
+      "answer": "It creates and delivers SEO-optimized blogs based on real keyword research, tracks competitors, analyzes content gaps, and automates weekly internal linking to boost your site's organic traffic."
+    },
+    {
+      "question": "Who is SEO AI Agent designed for?",
+      "answer": "It's built for founders, marketers, and website owners who want to grow traffic with minimal manual effort and high-quality, research-driven content."
+    },
+    {
+      "question": "What are the pricing plans?",
+      "answer": "Essentials: $49/month for 10 blogs, competitor/content analysis, and support. Complete: $89/month for 20 blogs, advanced domain audits, daily directories, and all advanced features."
+    }
+  ]
+},
   {
     "name": "WebsCrypto",
     "slug": "webscrypto",
