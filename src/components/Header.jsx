@@ -146,11 +146,16 @@ const Header = () => {
   </Link>
   <Link
   href="/submit-tool"
-  className="flex items-center gap-2 px-6 py-2 cursor-pointer bg-gradient-to-br font-spaceGrotesk from-purple-500 to-pink-500 text-white rounded-[25px] font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-101"
+  className="relative group flex items-center justify-center gap-2 px-6 py-2 font-spaceGrotesk font-semibold rounded-[25px] text-white bg-gradient-to-br from-purple-500 to-pink-500 shadow-sm overflow-hidden transition-all duration-500 hover:scale-[1.02]"
 >
-  
-  Submit Tool
+  {/* Hover white background animation */}
+  <span className="absolute inset-0 bg-white scale-x-0 origin-center transform transition-transform duration-700 ease-in-out group-hover:scale-x-100 rounded-[25px] -z-10"></span>
+
+  <span className="relative z-10 transition-colors duration-500 group-hover:text-black">
+    Submit Tool
+  </span>
 </Link>
+
 
 
 

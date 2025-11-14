@@ -1,3 +1,4 @@
+import categories from '@/data/categories';
 import Link from 'next/link';
 
 const ToolCard = ({ tool, viewMode }) => {
@@ -25,12 +26,16 @@ const ToolCard = ({ tool, viewMode }) => {
             {tool.description}
           </p>
           <div className="flex flex-wrap gap-2 justify-center mb-3">
-            {tool.keywords.map(tag => (
-              <span key={tag} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full whitespace-nowrap">
-                {tag}
-              </span>
-            ))}
-          </div>
+  {tool.category?.map((category) => (
+    <span 
+      key={category} 
+      className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full whitespace-nowrap"
+    >
+      #{category}
+    </span>
+  ))}
+</div>
+
           <div className="flex justify-between items-center text-sm mt-auto">
             <span className="font-medium text-purple-600">{tool.price}</span>
             <span className="flex items-center text-yellow-500">
@@ -42,7 +47,7 @@ const ToolCard = ({ tool, viewMode }) => {
           </div>
       </div>
    </div>
-   </Link>
+ </Link>
  );
 };
 

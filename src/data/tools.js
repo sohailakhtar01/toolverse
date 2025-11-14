@@ -5,7 +5,7 @@ export const tools = [
     "image": "/tripo.png",
     "url": "https://tripo3d.ai/",
     "category": [
-      "3D Generation"
+      "3D Model"
     ],
     "price": "Freemium (Basic free; Pro $15.9/mo; Advanced $39.9/mo; Premium $111.9/mo)",
     "description": "AI-powered 3D model generator from images and text.",
@@ -9136,7 +9136,7 @@ export const tools = [
   "category": [
     "Creative & Design",
     "AI & Machine Learning",
-    "3D & Animation"
+    "3D Model"
   ],
   "price": "Freemium (Free avatar creation; Premium plans for commercial use and advanced features)",
   "description": "Me.Meshcapade is an AI-powered 3D digital human creator that generates realistic, fully-rigged 3D avatars from photos, videos, or body scans in minutes. Create photorealistic digital humans for games, metaverse, e-commerce, and virtual reality with accurate body measurements and animations.",
