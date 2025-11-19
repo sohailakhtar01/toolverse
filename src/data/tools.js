@@ -9766,7 +9766,131 @@ export const tools = [
       "answer": "Absolutely. Shoplauncher AI is perfect for dropshippers who need to launch product stores quickly and test multiple niches. The fast setup, AI-generated product images, conversion-optimized layouts, and ability to build stores from single products make it ideal for the agile, test-and-scale approach that successful dropshippers use."
     }
   ]
+},
+{
+  "name": "Trndr",
+  "slug": "trndr",
+  "image": "/trndr.png",
+  "url": "https://www.trndr.app/",
+  "category": [
+    "Social & Communication"
+  ],
+  "price": "Freemium (Free plan available; Pro starts at $19/month)",
+  "description": "Trndr is a trend discovery and competitor-tracking tool for TikTok and Instagram. It shows viral videos in any niche along with hooks, scripts, transcripts, posting patterns, and competitor analytics. Creators use it to spot trends early and recreate proven viral ideas without manual scrolling.",
+  "tags": [
+    "tiktok trends",
+    "instagram trends",
+    "viral content finder",
+    "competitor analysis",
+    "social media research",
+    "content ideation",
+    "trend detector",
+    "script breakdown",
+    "creator tools",
+    "influencer marketing"
+  ],
+  "rating": 4.8,
+  "keywords": [
+    "trndr app",
+    "tiktok trend tool",
+    "instagram trend finder",
+    "viral video research",
+    "competitor tracking ig tiktok",
+    "content hooks library",
+    "trend discovery ai"
+  ],
+  "isFeatured": true,
+  "overview": "Trndr makes content research effortless by showing viral TikTok and Instagram videos ranked by engagement. Simply type your niche or add competitor accounts, and Trndr instantly displays top-performing clips with detailed breakdowns of hooks, scripts, captions, and posting patterns. Instead of spending hours scrolling for inspiration, creators get a curated feed of what’s trending today and why it's performing. Trndr is used by creators, UGC artists, agencies, and brands that want to copy proven formulas without guesswork. With content breakdowns, competitor tracking, trend alerts, and virality scoring, it helps users produce scroll-stopping content that actually works.",
+  "faqs": [
+    {
+      "question": "What does Trndr do?",
+      "answer": "Trndr tracks viral content on TikTok and Instagram. It shows you trending videos in your niche, complete with hooks, scripts, transcripts, and performance data."
+    },
+    {
+      "question": "How does competitor tracking work?",
+      "answer": "You can add competitor accounts, and Trndr will sort all their posts by virality so you can see what content style, hook, or format is driving their growth."
+    },
+    {
+      "question": "Who is Trndr best for?",
+      "answer": "It's ideal for creators, UGC artists, agencies, social media managers, and brands that want fast content ideas and proven viral formats."
+    },
+    {
+      "question": "Does Trndr help with scripting content?",
+      "answer": "Yes. Every viral video includes a hook breakdown, scripting formula, key moments, and the full transcript to help you recreate the style."
+    },
+    {
+      "question": "Is there a free plan?",
+      "answer": "Yes, Trndr offers a free plan allowing basic trend discovery. Advanced filters and competitor tracking are on the Pro plan."
+    }
+  ]
+},
+{
+  "name": "Codesync Club",
+  "slug": "codesync-club",
+  "image": "/codesyncclub.png",
+  "url": "https://codesync.club",
+  "category": [
+    "Education & Learning"
+  ],
+  "price": "Freemium (Free basic plan; Premium plans starting at $9.99/month for full access, rewards, and mentorship features)",
+  "description": "Codesync Club is an AI-powered learning platform where students learn HTML, CSS, and JavaScript by building real apps and games with interactive lessons. It features AI teachers, trackable progress, cash rewards for course completion, personalized resumes, and an in-screen coding editor. Students can also create custom courses in their native language like Hindi or Bengali.",
+  "tags": [
+    "learn coding",
+    "html css javascript courses",
+    "ai teacher",
+    "student coding platform",
+    "interactive coding",
+    "coding games",
+    "coding courses for beginners",
+    "build apps",
+    "coding rewards",
+    "live coding editor"
+  ],
+  "rating": 4.6,
+  "keywords": [
+    "codesync club",
+    "ai coding teacher",
+    "learn coding with ai",
+    "coding for students",
+    "beginner coding platform",
+    "build games with javascript",
+    "interactive coding editor"
+  ],
+  "isFeatured": true,
+  "overview": "Codesync Club teaches coding through interactive, project-based learning guided by AI teachers. Students learn HTML, CSS, and JavaScript by building real apps and fun games, not just reading theory. The platform includes a built-in code editor, instant feedback, and progress tracking. Learners can also create custom AI-generated courses in their native languages. Codesync rewards students with cash bonuses for completing lessons and generates personalized resumes that highlight their completed courses and projects. For students who want deeper guidance, Codesync offers 1:1 mentorship programs to help them build full-stack applications in 30 days using no-code and low-code tools.",
+  "faqs": [
+    {
+      "question": "What is Codesync Club?",
+      "answer": "Codesync Club is an AI-driven coding platform where students learn HTML, CSS, and JavaScript by building projects inside an interactive editor."
+    },
+    {
+      "question": "Which languages can students learn?",
+      "answer": "Currently, Codesync focuses on HTML, CSS, and JavaScript, with project-based learning and AI-generated courses."
+    },
+    {
+      "question": "Does it support native languages?",
+      "answer": "Yes. Students can create custom courses in languages such as Hindi or Bengali using AI-generated course creation tools."
+    },
+    {
+      "question": "Is there a reward system?",
+      "answer": "Codesync offers cash rewards for completing certain courses and challenges, motivating students to stay consistent."
+    },
+    {
+      "question": "What is included in the mentorship program?",
+      "answer": "Students can work 1:1 with a mentor to build a full-stack app in 30 days using no-code tools and guided instruction."
+    },
+    {
+      "question": "Is Codesync free?",
+      "answer": "Codesync has a free tier for basic learning. Premium plans unlock all courses, rewards, full editor features, and mentorship options."
+    },
+    {
+      "question": "Can students track progress?",
+      "answer": "Yes. The platform includes full progress tracking, course milestones, certificates, and a personalized resume generator."
+    }
+  ]
 }
+
+
 
 ];
 export default tools;
