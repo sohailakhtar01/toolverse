@@ -45,11 +45,12 @@ export default function LandingClient() {
       <section className="relative z-10 flex flex-col md:flex-row items-center justify-center min-h-screen px-6 lg:px-12 gap-10 pt-20">
 
   {/* Top Badge - Centered */}
-  <div className="absolute top-20 sm:top-20 left-1/2 transform -translate-x-1/2 z-20">
-    <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-xs sm:text-sm md:text-base font-medium shadow-sm">
-      🎯 Featured Tool Directory
-    </span>
-  </div>
+  <div className="absolute top-20 sm:top-16 md:top-20 w-full flex justify-center z-20 px-2">
+  <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-purple-100 text-purple-700 rounded-full text-[10px] sm:text-xs md:text-sm font-medium shadow-sm text-center whitespace-nowrap">
+    🎯 Featured Tool Directory
+  </span>
+</div>
+
 
   {/* Left Content */}
   <div className="w-full md:w-1/2 text-center lg:ml-10 md:text-left flex flex-col justify-center mt-16 md:-mt-30">
