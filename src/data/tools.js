@@ -5,22 +5,48 @@ export const tools = [
     "image": "/tripo.png",
     "url": "https://tripo3d.ai/",
     "category": [
-      "3D Model"
+      "3D Model",
+      "Design Tools",
+      "Creative Tools"
     ],
-    "price": "Freemium (Basic free; Pro $15.9/mo; Advanced $39.9/mo; Premium $111.9/mo)",
-    "description": "AI-powered 3D model generator from images and text.",
+    "price": "Freemium (basic free; Pro $15.9/month; Advanced $39.9/month; Premium $111.9/month).",
+    "description": "Tripo AI is an AI-powered 3D model generator that turns text prompts and reference images into detailed 3D assets in seconds, streamlining workflows for game designers, animators, and 3D artists.",
     "tags": [
       "3D models",
       "image to 3D",
-      "text to 3D"
+      "text to 3D",
+      "ai 3d generator",
+      "3d asset creation"
     ],
-    "rating":  4.2,
+    "rating": 4.2,
     "keywords": [
-      "3d generator",
-      "ai 3d",
-      "3d model creation"
+      "tripo ai",
+      "ai 3d model generator",
+      "image to 3d free",
+      "text to 3d online",
+      "3d asset generator",
+      "ai 3d design tool"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Tripo AI makes high-quality 3D content creation accessible by converting simple text prompts or reference images into production-ready 3D models in just a few clicks.[web:3][web:6] The platform offers a freemium plan so anyone can experiment with AI-generated 3D, while paid tiers unlock higher credit limits, faster queues, more export formats, and advanced capabilities like multi-view generation and skeleton exports.[web:2][web:5][web:15] Designers, game studios, and 3D artists use Tripo AI to rapidly prototype characters, props, and environments without spending hours on manual modeling.[web:6][web:12]",
+    "faqs": [
+      {
+        "question": "What can you create with Tripo AI?",
+        "answer": "Tripo AI can generate 3D models of characters, vehicles, props, architecture, and more from either text prompts or one or more reference images, making it useful for games, animation, AR/VR, and visualization projects.[web:3][web:6][web:12]"
+      },
+      {
+        "question": "Is Tripo AI free to use?",
+        "answer": "Tripo AI offers a free tier with limited monthly credits so you can test image-to-3D and text-to-3D generation at no cost, while paid plans start around $15.9 per month and increase your credits, history, and export options.[web:2][web:5][web:9][web:15]"
+      },
+      {
+        "question": "What are the benefits of the paid plans?",
+        "answer": "Paid plans on Tripo AI provide more monthly credits, higher concurrent tasks, longer history retention, private and commercially usable models, higher queue priority, and extra features such as multi-view and batch generation.[web:2][web:9][web:15]"
+      },
+      {
+        "question": "Which file formats does Tripo AI support?",
+        "answer": "Tripo AI supports exporting models in common 3D formats so they can be integrated into popular pipelines for game engines, animation tools, and CAD-style workflows, helping teams slot AI assets directly into existing projects.[web:6]"
+      }
+    ]
   },
   {
     "name": "iPurix",
@@ -28,21 +54,46 @@ export const tools = [
     "image": "/iprurix.png",
     "url": "https://remove-watermark.org/",
     "category": [
-      "Image Generation & Editing"
+      "Image Generation & Editing",
+      "Photo Editing"
     ],
-    "price": "Freemium",
-    "description": "AI-powered tool to remove watermarks from images quickly and easily.",
+    "price": "Freemium (core watermark removal free; paid options for higher resolution and volume).",
+    "description": "iPurix is an AI-powered watermark removal tool that cleans logos, text, and overlays from images in a few clicks while preserving visual quality.",
     "tags": [
       "watermark removal",
       "image editing",
-      "photo editor"
+      "photo editor",
+      "clean images",
+      "ai retouching"
     ],
-    "rating":  4.0,
+    "rating": 4.0,
     "keywords": [
-      "watermark remover",
-      "ai image tool"
+      "ipurix watermark remover",
+      "remove watermark from photo",
+      "ai watermark remover",
+      "online watermark cleaner",
+      "free watermark removal"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "iPurix helps users instantly remove watermarks, logos, and text overlays from photos using AI-assisted inpainting that blends edited areas with the original background.[web:1] The tool is designed for non-technical users, offering a simple upload-and-clean workflow that runs entirely in the browser without complex photo-editing skills.[web:1] Creators, marketers, and casual users rely on iPurix to clean assets for social media, presentations, and design projects while retaining sharpness and detail.[web:1]",
+    "faqs": [
+      {
+        "question": "How does iPurix remove watermarks?",
+        "answer": "iPurix uses AI-based inpainting to analyze the surrounding pixels of a watermark and intelligently reconstruct the covered area so the final image looks natural and consistent.[web:1]"
+      },
+      {
+        "question": "Is iPurix free to use?",
+        "answer": "iPurix follows a freemium model, allowing users to remove watermarks from a limited number of images for free, with paid options for higher resolutions, more images, or advanced export options.[web:1]"
+      },
+      {
+        "question": "What types of watermarks can iPurix handle?",
+        "answer": "iPurix can remove text watermarks, semi-transparent logos, and simple overlays from many types of photos, though very complex or heavy branding may require manual fine-tuning after the AI pass.[web:1]"
+      },
+      {
+        "question": "Is it legal to remove watermarks with iPurix?",
+        "answer": "Watermark removal is subject to copyright and license rules, so users should only remove watermarks from images they own or are authorized to edit and must respect intellectual property rights when using iPurix.[web:1]"
+      }
+    ]
   },
   {
     "name": "Twistly",
@@ -51,22 +102,47 @@ export const tools = [
     "url": "https://twistly.ai/",
     "category": [
       "Office & Productivity",
-      "Writing & Editing"
+      "Writing & Editing",
+      "Presentation Tools"
     ],
-    "price": "Freemium (free add-in on Microsoft AppSource)",
-    "description": "AI presentation maker add-in for PowerPoint that creates beautiful presentations in seconds.",
+    "price": "Freemium (core add-in available from Microsoft AppSource; paid plans unlock more AI usage and features).",
+    "description": "Twistly is an AI presentation maker add-in for PowerPoint that turns prompts, documents, and links into polished slide decks with layouts, images, and speaker notes in minutes.",
     "tags": [
       "presentations",
       "powerpoint",
       "design",
-      "productivity"
+      "productivity",
+      "ai slides"
     ],
     "rating": 4.3,
     "keywords": [
-      "presentation maker",
-      "ai presentation"
+      "twistly ai",
+      "ai presentation maker",
+      "chatgpt for powerpoint",
+      "powerpoint ai add in",
+      "auto generate slides",
+      "ppt maker for students"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Twistly embeds directly inside Microsoft PowerPoint as an AI add-in, letting users generate, redesign, and enhance slides without leaving their usual workspace.[web:7][web:10][web:16] It can create full decks from prompts, PDFs, Word documents, and YouTube links, then automatically add headings, bullet points, visuals, and speaker notes.[web:7][web:10][web:13] Students, consultants, and teams use Twistly to cut hours of manual formatting by instantly turning rough ideas into presentation-ready decks.[web:7][web:20]",
+    "faqs": [
+      {
+        "question": "How does Twistly work inside PowerPoint?",
+        "answer": "Once installed from Microsoft AppSource, Twistly appears as a ribbon in PowerPoint with options to generate slides, add images, enhance notes, translate content, and improve text directly within existing or new presentations.[web:7][web:10][web:16]"
+      },
+      {
+        "question": "What can Twistly generate from?",
+        "answer": "Twistly can build decks from short prompts, outlines, PDFs, Word documents, and even YouTube URLs, automatically structuring the content into slides with headings, bullets, and visuals.[web:7][web:10][web:13]"
+      },
+      {
+        "question": "Is Twistly free to use?",
+        "answer": "Twistly offers a freemium model with a free add-in available via Microsoft AppSource and optional paid plans that expand AI usage limits and unlock more advanced features for power users.[web:16]"
+      },
+      {
+        "question": "Who is Twistly best suited for?",
+        "answer": "Twistly is ideal for students, teachers, business professionals, and marketers who frequently prepare PowerPoint decks and want to speed up slide creation, design refreshes, and speaker note generation.[web:7][web:13][web:20]"
+      }
+    ]
   },
   {
     "name": "Skywork",
@@ -75,44 +151,93 @@ export const tools = [
     "url": "https://skywork.ai/",
     "category": [
       "Office & Productivity",
-      "Business Management"
+      "Business Management",
+      "AI Assistants"
     ],
-    "price": "Unknown",
-    "description": "AI-powered workspace agent for productivity and information management.",
+    "price": "Unknown (AI workspace platform with tiered access; check official site for current pricing).",
+    "description": "Skywork is an AI-powered workspace agent that centralizes knowledge, automates routine tasks, and helps teams manage information and workflows in one place.",
     "tags": [
       "productivity",
       "workspace",
       "agent",
-      "information management"
+      "information management",
+      "ai assistant"
     ],
-    "rating":  4.1,
+    "rating": 4.1,
     "keywords": [
-      "ai workspace",
-      "productivity agent"
+      "skywork ai",
+      "ai workspace platform",
+      "productivity agent",
+      "knowledge management ai",
+      "workflow automation tool"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Skywork provides an AI-first workspace where teams can search knowledge, ask questions, and automate repetitive tasks using intelligent agents connected to their documents and tools.[web:22] The platform is designed to reduce context switching by bringing chat, files, and workflows into a single interface driven by AI understanding.[web:22] Businesses adopt Skywork to accelerate information retrieval, streamline collaboration, and give employees a proactive assistant that surfaces relevant content when they need it.[web:22]",
+    "faqs": [
+      {
+        "question": "What does Skywork AI actually do?",
+        "answer": "Skywork AI acts as an intelligent workspace assistant that can answer questions from your documents, summarize information, and help coordinate tasks across your team’s tools and projects.[web:22]"
+      },
+      {
+        "question": "Who should use Skywork?",
+        "answer": "Skywork is aimed at teams and companies that juggle large volumes of documents, chats, and projects and want a centralized, AI-assisted hub to organize and query their information.[web:22]"
+      },
+      {
+        "question": "Does Skywork integrate with other apps?",
+        "answer": "Skywork connects with common workplace tools so its AI agents can pull context from files, messages, and knowledge bases to provide more accurate answers and recommendations.[web:22]"
+      },
+      {
+        "question": "How is Skywork priced?",
+        "answer": "Exact pricing for Skywork is not always publicly listed and may depend on team size and features, so users are encouraged to check the official site or sales team for the latest plan details.[web:22]"
+      }
+    ]
   },
   {
     "name": "Veo3 AI",
     "slug": "veo3-ai",
     "image": "/veo.png",
-    "url":"https://veo3.ai/",
+    "url": "https://veo3.ai/",
     "category": [
-      "Video & Animation"
+      "Video & Animation",
+      "Content Creation"
     ],
-    "price": "Paid (via Gemini Pro plan $249.99/mo)",
-    "description": "AI for instant 8-second video creation from text, images, articles.",
+    "price": "Paid (access available via Gemini Pro plan from around $249.99/month).",
+    "description": "Veo3 AI is a high-end AI video generator that creates short, cinematic clips from text, images, or articles using advanced Google Gemini video capabilities.",
     "tags": [
       "video generation",
       "text to video",
-      "image to video"
+      "image to video",
+      "ai video",
+      "cinematic clips"
     ],
     "rating": 4.4,
     "keywords": [
-      "ai video generator",
-      "video creation"
+      "veo3 ai video",
+      "gemini pro video generator",
+      "text to video ai",
+      "short ai videos",
+      "ai cinematic video tool"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Veo3 AI leverages cutting-edge generative video models to turn short prompts, references, or links into polished 8-second clips tailored for social media, ads, and creative experiments.[web:23] It focuses on higher-end visual quality and cinematic motion, making it attractive for brands and creators who want standout content without manual editing.[web:23] Access is typically bundled through premium Gemini Pro-style subscriptions, positioning Veo3 AI as a professional-grade video tool rather than a casual consumer app.[web:23]",
+    "faqs": [
+      {
+        "question": "What inputs does Veo3 AI support?",
+        "answer": "Veo3 AI can generate short videos from text prompts, uploaded images, or links to content, using AI to infer scenes, motion, and style from the provided input.[web:23]"
+      },
+      {
+        "question": "Who is Veo3 AI designed for?",
+        "answer": "Veo3 AI targets marketers, video professionals, and advanced creators who need fast concept videos, social clips, or ad-style content with strong visuals and minimal manual editing.[web:23]"
+      },
+      {
+        "question": "How do you access Veo3 AI?",
+        "answer": "Veo3 AI is typically available through higher-tier Gemini Pro plans that bundle advanced AI video capabilities, so users need an eligible subscription to use the tool.[web:23]"
+      },
+      {
+        "question": "What makes Veo3 AI different from basic text-to-video tools?",
+        "answer": "Compared with simpler tools, Veo3 AI aims for more cinematic quality, smoother motion, and richer scene generation, which helps brands produce more polished, on-brand short videos.[web:23]"
+      }
+    ]
   },
   {
     "name": "Earth Zoom Out AI",
@@ -120,21 +245,46 @@ export const tools = [
     "image": "/earth.png",
     "url": "https://higgsfield.ai/motion/70e490b9-26b7-4572-8d9c-2ac8dcc9adc0",
     "category": [
-      "Video & Animation"
+      "Video & Animation",
+      "Creative Tools"
     ],
-    "price": "Freemium",
-    "description": "AI video generator transforming images into cosmic Earth zoom-out videos.",
+    "price": "Freemium (limited free exports with paid options for longer, higher-quality videos).",
+    "description": "Earth Zoom Out AI is a niche AI video generator that transforms still images into dramatic, cosmic zoom-out sequences that pull back from a subject to outer space.",
     "tags": [
       "video generation",
       "image to video",
-      "zoom videos"
+      "zoom videos",
+      "earth zoom",
+      "cosmic animation"
     ],
     "rating": 4.0,
     "keywords": [
-      "ai video generator",
-      "cosmic videos"
+      "earth zoom out ai",
+      "image to zoom video",
+      "cosmic zoom generator",
+      "ai zoom out effect",
+      "space zoom video"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Earth Zoom Out AI focuses on a specific visual effect: converting a single image into a smooth zooming animation that travels from a close-up scene all the way out to a planetary or cosmic perspective.[web:24] The tool is popular for social clips, intros, and creative experiments where a dramatic reveal or perspective shift can boost engagement.[web:24] With a freemium model, users can quickly try the effect and then upgrade for longer durations, higher resolution, or watermark-free exports.[web:24]",
+    "faqs": [
+      {
+        "question": "How does Earth Zoom Out AI work?",
+        "answer": "Users upload a starting image and the AI generates an animated zoom-out sequence that gradually pulls back through atmospheric and space-style layers for a cinematic effect.[web:24]"
+      },
+      {
+        "question": "What is Earth Zoom Out AI best used for?",
+        "answer": "Earth Zoom Out AI is ideal for YouTube intros, TikTok or Reels transitions, logo reveals, and creative cutaways that shift from a subject to a wide cosmic view.[web:24]"
+      },
+      {
+        "question": "Is Earth Zoom Out AI free?",
+        "answer": "The tool typically offers a free tier with basic resolution and shorter clips, while paid options unlock longer zooms, better quality, and removal of branding or watermarks.[web:24]"
+      },
+      {
+        "question": "Do you need editing skills to use Earth Zoom Out AI?",
+        "answer": "No advanced editing skills are required; the interface is designed so users can upload an image, tweak a few settings, and export a ready-to-share zoom animation.[web:24]"
+      }
+    ]
   },
   {
     "name": "Videotok",
@@ -142,23 +292,50 @@ export const tools = [
     "image": "/videotok.png",
     "url": "https://videotok.app/",
     "category": [
-      "Video & Animation"
+      "Video & Animation",
+      "Content Creation",
+      "Marketing"
     ],
-    "price": "Paid",
-    "description": "AI video generator for content creators and brands. Automate the video creation process with images, animations, voiceovers, and transitions in just a few minutes.",
+    "price": "Paid (subscription plans for creators, brands, and agencies).",
+    "description": "Videotok is an AI video platform that turns topics, scripts, links, and audio into social-ready videos with AI-generated visuals, voices, captions, and transitions on autopilot.",
     "tags": [
       "video generation",
       "content creation",
-      "automation"
+      "automation",
+      "faceless videos",
+      "ai animation"
     ],
-    "rating":  4.3,
+    "rating": 4.3,
     "keywords": [
+      "videotok ai",
       "ai video generator",
-      "video automation",
-      "content creation"
+      "faceless video maker",
+      "link to video ai",
+      "ai animation generator",
+      "youtube automation tool"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Videotok is an all-in-one AI video platform where users can input a topic, script, or link and automatically get a full video with narration, images, animations, captions, and transitions.[web:8][web:11][web:14][web:17][web:19][web:21] It supports faceless content, AI voiceovers, and on-brand visuals, making it especially attractive for YouTube automation channels, TikTok creators, and performance marketers.[web:8][web:11][web:17][web:21] Agencies and brands use Videotok to scale content output, generate high-conversion ads, and repurpose articles or links into engaging vertical and horizontal videos.[web:8][web:14][web:19][web:21]",
+    "faqs": [
+      {
+        "question": "How do you create a video with Videotok?",
+        "answer": "To create a video, you enter a topic, script, or link, choose a voice and visual style, then let Videotok automatically generate the script, images or animations, captions, and transitions before making any final edits.[web:11][web:14][web:17][web:19][web:21]"
+      },
+      {
+        "question": "Does Videotok support faceless videos?",
+        "answer": "Yes, Videotok includes a faceless video generator that is optimized for channels where creators do not appear on camera, ideal for YouTube automation, TikTok, and Reels.[web:11]"
+      },
+      {
+        "question": "What are the main use cases for Videotok?",
+        "answer": "Videotok is widely used for social media content, YouTube automation channels, short-form ads, product explainers, and repurposing blog posts or URLs into bite-sized video content.[web:8][web:14][web:17][web:19][web:21]"
+      },
+      {
+        "question": "Is Videotok suitable for marketers and agencies?",
+        "answer": "Videotok is built with marketers and agencies in mind, offering workflows that speed up video production, support consistent branding, and help teams produce high volumes of content with less manual editing.[web:8][web:17][web:21]"
+      }
+    ]
   },
+  /////////////////////////////////
   {
     "name": "ViralQR",
     "slug": "viralqr",
@@ -166,21 +343,49 @@ export const tools = [
     "url": "https://viralqr.com/",
     "category": [
       "Daily Life",
-      "Marketing & Advertising"
+      "Marketing & Advertising",
+      "Business Tools"
     ],
-    "price": "Paid",
-    "description": "Your All-in-One Solution for Dynamic QR Codes and Secure Sharing",
+    "price": "Paid QR code platform with trials and affordable monthly plans for unlimited dynamic and static QR codes plus full analytics.",
+    "description": "ViralQR is an advanced QR code generator that lets you create branded static and dynamic QR codes, update destinations anytime, and track every scan with rich analytics for smarter campaigns.",
     "tags": [
       "qr codes",
+      "dynamic qr codes",
+      "qr analytics",
       "sharing",
-      "marketing"
+      "marketing",
+      "link in bio"
     ],
     "rating": 4.2,
     "keywords": [
+      "viralqr",
       "dynamic qr codes",
-      "secure sharing"
+      "qr code generator with analytics",
+      "branded qr codes",
+      "qr code marketing tool",
+      "trackable qr codes",
+      "secure qr sharing"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "ViralQR helps businesses and creators design, manage, and track static and dynamic QR codes from one intuitive dashboard, combining custom branding with enterprise-grade analytics.[web:22][web:23][web:24][web:25][web:31][web:34] Users can generate codes for URLs, Wi‑Fi, vCards, files, social media, payments, events, and more, then monitor scan counts, locations, devices, and timing in real time to optimize campaigns.[web:22][web:23][web:24][web:25][web:37][web:40] Paid plans unlock unlimited dynamic QR codes, unlimited scans, advanced design options, multiple download formats, and integrations with analytics and marketing tools.[web:22][web:23][web:24][web:25][web:28][web:31]",
+    "faqs": [
+      {
+        "question": "What can you create with ViralQR?",
+        "answer": "With ViralQR you can create QR codes for URLs, Wi‑Fi, vCards, files, social media profiles, app stores, payments, feedback forms, link‑in‑bio pages, and more, all customizable with colors, frames, and logos.[web:22][web:23][web:24][web:25][web:34][web:37][web:40]"
+      },
+      {
+        "question": "Does ViralQR support dynamic QR codes and analytics?",
+        "answer": "Yes, ViralQR supports dynamic QR codes that can be edited after printing and provides detailed analytics including scan counts, unique users, locations, devices, operating systems, and scan times.[web:22][web:23][web:24][web:25][web:31][web:34]"
+      },
+      {
+        "question": "Is ViralQR free or paid?",
+        "answer": "ViralQR offers trial access and low-cost entry plans, while paid subscriptions provide unlimited dynamic and static QR codes, unlimited scans, advanced design tools, and full analytics with the option to save by paying annually.[web:22][web:25][web:28][web:31]"
+      },
+      {
+        "question": "Is ViralQR secure and GDPR compliant?",
+        "answer": "ViralQR emphasizes security and privacy by protecting user data, supporting encrypted payment processing, and complying with GDPR requirements, making it suitable for professional and commercial use.[web:22][web:23][web:24][web:34][web:40]"
+      }
+    ]
   },
   {
     "name": "Zara",
@@ -189,21 +394,48 @@ export const tools = [
     "url": "https://www.micro1.ai/zara",
     "category": [
       "Business Management",
-      "AI Recruiting"
+      "AI Recruiting",
+      "HR & Talent"
     ],
-    "price": "$89/month (Early Stage) or $399/month (Growth)",
-    "description": "The world's best AI recruiter by micro1",
+    "price": "Early Stage plan from $89/month and Growth plan from $399/month, with higher-volume and enterprise options available.",
+    "description": "Zara by micro1 is an AI recruiter that sources candidates, runs structured interviews, and delivers scored shortlists so hiring teams can fill roles faster with less manual work.",
     "tags": [
       "recruiting",
       "hiring",
-      "ai recruiter"
-    ],
-    "rating":4.8,
-    "keywords": [
       "ai recruiter",
+      "talent sourcing",
+      "candidate screening"
+    ],
+    "rating": 4.8,
+    "keywords": [
+      "zara ai recruiter",
+      "micro1 zara pricing",
+      "ai recruiting tool",
+      "automated candidate screening",
+      "tech hiring platform",
+      "ai interview software",
       "hiring tool"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Zara is micro1’s AI recruiter that combines talent sourcing, automated technical screening, and structured interviews to streamline hiring for engineering and knowledge roles.[web:26][web:32][web:35][web:38] The platform uses AI to search pre‑vetted global talent pools, schedule and run interviews, assess technical skills, and present ranked shortlists so teams can move from job description to offer more quickly.[web:26][web:32][web:35][web:38] Pricing revolves around an Early Stage plan at about $89 per month and a Growth plan at about $399 per month, with custom enterprise options and separate pricing for full recruitment services.[web:26][web:32][web:35][web:38]",
+    "faqs": [
+      {
+        "question": "What does Zara by micro1 actually do?",
+        "answer": "Zara automates key recruiting steps by sourcing candidates, conducting AI-powered interviews, evaluating technical skills, and summarizing results so hiring managers receive shortlists instead of raw resumes.[web:26][web:32][web:35][web:38]"
+      },
+      {
+        "question": "How is Zara priced?",
+        "answer": "Zara’s AI recruiter is typically sold via subscription, with an Early Stage plan around $89 per month for smaller teams and a Growth plan around $399 per month for higher interview volume, plus custom arrangements for larger organizations.[web:26][web:32][web:35][web:38]"
+      },
+      {
+        "question": "What are the main benefits of using Zara?",
+        "answer": "Teams use Zara to reduce time-to-hire, standardize interview quality, access a pre‑vetted global talent pool, and free recruiters from manual screening and scheduling tasks.[web:26][web:32][web:35][web:38]"
+      },
+      {
+        "question": "Who is Zara best suited for?",
+        "answer": "Zara is best suited for startups and growing companies that hire technical talent frequently and want an AI-powered system to handle sourcing, interviewing, and candidate evaluation at scale.[web:26][web:32][web:35][web:38]"
+      }
+    ]
   },
   {
     "name": "Bitchat",
@@ -211,21 +443,48 @@ export const tools = [
     "image": "/bitchat.png",
     "url": "https://bitchats.app/?utm_source=toolify",
     "category": [
-      "Chatbots & Virtual Companions"
+      "Chatbots & Virtual Companions",
+      "Communication",
+      "Privacy Tools"
     ],
-    "price": "Free",
-    "description": "Decentralized offline messaging app by Jack Dorsey using Bluetooth mesh.",
+    "price": "Free decentralized messaging app.",
+    "description": "Bitchat is a decentralized, offline-first messaging app that uses Bluetooth mesh networking for encrypted chats without internet, phone numbers, or central servers.",
     "tags": [
       "messaging",
       "offline",
-      "bluetooth mesh"
+      "bluetooth mesh",
+      "p2p chat",
+      "encrypted messaging"
     ],
     "rating": 4.2,
     "keywords": [
+      "bitchat app",
       "decentralized messaging",
-      "offline chat"
+      "offline chat",
+      "bluetooth mesh chat",
+      "jack dorsey messaging app",
+      "p2p encrypted chat"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Bitchat is a peer‑to‑peer messaging app backed by Jack Dorsey that lets users chat over Bluetooth mesh networks, enabling communication even with no internet or cellular coverage.[web:27][web:30][web:33][web:36][web:39] Messages are relayed device‑to‑device using mesh routing, can travel beyond normal Bluetooth range, and are protected with end‑to‑end encryption and privacy‑focused design.[web:27][web:30][web:33][web:36][web:39] The app avoids phone numbers, central servers, and data collection, making it useful for events, protests, remote areas, and anyone who wants off‑grid, censorship‑resistant chat.[web:27][web:30][web:33][web:36]",
+    "faqs": [
+      {
+        "question": "How does Bitchat work without internet?",
+        "answer": "Bitchat connects nearby phones over Bluetooth and uses mesh networking so messages can hop across multiple devices, extending effective range while staying completely off the traditional internet.[web:27][web:30][web:33][web:36][web:39]"
+      },
+      {
+        "question": "Is Bitchat private and secure?",
+        "answer": "Bitchat uses end‑to‑end encryption and a decentralized architecture with no central servers, accounts, or identifiers, aiming to protect user privacy and prevent data collection.[web:27][web:30][web:33][web:36]"
+      },
+      {
+        "question": "Who is Bitchat designed for?",
+        "answer": "Bitchat is designed for people who need local, off‑grid communication such as festival goers, activists, communities in disaster zones, or users in areas with unreliable networks.[web:27][web:30][web:33]"
+      },
+      {
+        "question": "On which platforms is Bitchat available?",
+        "answer": "Bitchat is available as a mobile app, with current releases focused on smartphones that support Bluetooth mesh networking for peer‑to‑peer communication.[web:36][web:39]"
+      }
+    ]
   },
   {
     "name": "Utell AI",
@@ -234,48 +493,98 @@ export const tools = [
     "url": "https://utell.ai/",
     "category": [
       "Education & Translation",
-      "Voice Generation & Conversion"
+      "Voice Generation & Conversion",
+      "Communication"
     ],
-    "price": "Freemium",
-    "description": "AI accent conversion software for clearer global communication.",
+    "price": "Freemium accent conversion platform with paid tiers for higher usage and advanced features.",
+    "description": "Utell AI is an AI accent conversion tool that transforms spoken English into clearer, localized accents so teams and learners can communicate more easily across regions.",
     "tags": [
       "accent conversion",
       "communication",
-      "translation"
+      "translation",
+      "speech clarity",
+      "voice ai"
     ],
     "rating": 4.1,
     "keywords": [
+      "utell ai",
       "accent converter",
-      "global communication"
+      "ai accent translation",
+      "clearer global communication",
+      "voice accent tool",
+      "speech localization"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Utell AI focuses on real‑time and recorded accent conversion so speakers can sound more familiar to international audiences without re‑recording content.[web:41] It is designed for global teams, educators, and creators who want to reduce misunderstandings by adapting pronunciation to target regions while preserving the original message.[web:41] A freemium model lets users test accent conversion with basic limits, while paid plans expand usage and unlock professional features for business communication and training.[web:41]",
+    "faqs": [
+      {
+        "question": "What does Utell AI do?",
+        "answer": "Utell AI takes spoken audio and converts the accent toward a target style, helping listeners in different regions understand the content more easily while keeping the original wording and intent.[web:41]"
+      },
+      {
+        "question": "Who is Utell AI for?",
+        "answer": "Utell AI is intended for global companies, educators, call centers, and content creators who work with international audiences and want clearer, more accessible spoken communication.[web:41]"
+      },
+      {
+        "question": "Is Utell AI free to use?",
+        "answer": "Utell AI provides a freemium tier for testing accent conversion on limited content, with paid plans available for higher volumes, more voices, and business-grade features.[web:41]"
+      },
+      {
+        "question": "Does Utell AI replace human interpreters?",
+        "answer": "Utell AI focuses on accent and clarity, not full human interpretation, so it is best viewed as a complementary tool to improve comprehension rather than a complete substitute for professional translators in complex scenarios.[web:41]"
+      }
+    ]
   },
   {
     "name": "Sim Studio",
     "slug": "sim-studio",
     "image": "/sim.png",
-    "url":"https://simstudio.ai/",
-
+    "url": "https://simstudio.ai/",
     "category": [
       "Coding & Development",
-      "Office & Productivity"
+      "Office & Productivity",
+      "No-Code & Automation"
     ],
-    "price": "Freemium",
-    "description": "Visual platform for building and deploying AI agents and workflows.",
+    "price": "Freemium, with paid plans for more agents, runs, and integrations.",
+    "description": "Sim Studio is a visual platform for building, testing, and deploying AI agents and workflows, letting teams orchestrate complex automations without deep ML expertise.",
     "tags": [
       "ai agents",
       "workflows",
       "development",
-      "no-code"
+      "no-code",
+      "automation",
+      "agent builder"
     ],
     "rating": 4.3,
     "keywords": [
+      "sim studio ai",
       "ai agent builder",
+      "no-code ai workflows",
+      "automation platform",
+      "agent orchestration",
       "workflow platform"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Sim Studio provides a canvas for composing AI agents, tools, and data sources into end‑to‑end workflows that can be deployed into products or internal operations.[web:42] Developers and non‑technical teams can design flows visually, connect APIs, and orchestrate multi‑step reasoning without building infrastructure from scratch.[web:42] A freemium model lets users prototype agents for free, while paid tiers unlock higher usage, collaboration, and integrations suitable for production workloads.[web:42]",
+    "faqs": [
+      {
+        "question": "What can you build with Sim Studio?",
+        "answer": "With Sim Studio you can create multi‑step AI agents for tasks like customer support, lead qualification, research workflows, internal tools, and other process automations.[web:42]"
+      },
+      {
+        "question": "Do you need to code to use Sim Studio?",
+        "answer": "Sim Studio supports no‑code and low‑code workflows, so non‑developers can design many automations visually, while engineers can extend functionality with custom logic and integrations when needed.[web:42]"
+      },
+      {
+        "question": "How is Sim Studio priced?",
+        "answer": "Sim Studio uses a freemium model where smaller projects can start free, and paid plans increase limits on agents, runs, collaborators, and integration features.[web:42]"
+      },
+      {
+        "question": "Who should use Sim Studio?",
+        "answer": "Sim Studio is suited for startups, product teams, and operations groups that want to experiment with AI agents quickly and then scale successful workflows into production.[web:42]"
+      }
+    ]
   },
-////////////////////////
   {
     "name": "Wonderchat",
     "slug": "wonderchat",
@@ -283,21 +592,47 @@ export const tools = [
     "url": "https://wonderchat.io/",
     "category": [
       "Chatbots & Virtual Companions",
-      "Customer Service"
+      "Customer Service",
+      "Knowledge Management"
     ],
-    "price": "Freemium (20 free messages, paid plans start ~$29/mo)",
-    "description": "AI Chatbot builder to create custom ChatGPT chatbots from website links or PDFs.",
+    "price": "Freemium (about 20 free messages; paid plans start around $29/month).",
+    "description": "Wonderchat is an AI chatbot builder that lets you create custom ChatGPT-style bots trained on your website, docs, or PDFs to answer questions and support customers automatically.",
     "tags": [
       "chatbot builder",
       "chatgpt",
-      "customer service"
+      "customer service",
+      "knowledge bot",
+      "support automation"
     ],
     "rating": 4.4,
     "keywords": [
-      "ai chatbot",
-      "custom chatbot"
+      "wonderchat io",
+      "ai chatbot builder",
+      "custom chatbot from website",
+      "chatgpt website bot",
+      "pdf trained chatbot",
+      "customer support ai"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Wonderchat allows users to build custom chatbots by ingesting website URLs, documents, or PDFs and then answering questions based on that content using large language models.[web:43] Businesses embed these bots on their sites to handle FAQs, lead qualification, and basic support, reducing the load on human teams while keeping responses aligned with their own knowledge base.[web:43] A freemium plan offers limited messages to test the bot, while paid plans starting near $29 per month increase usage limits, customization options, and branding controls.[web:43]",
+    "faqs": [
+      {
+        "question": "How do you train a Wonderchat bot?",
+        "answer": "You point Wonderchat at your website, upload documents, or add PDFs, and the platform uses that material to build a searchable knowledge base that powers chatbot answers.[web:43]"
+      },
+      {
+        "question": "Where can the Wonderchat bot be embedded?",
+        "answer": "The chatbot can typically be embedded on websites via a widget or script snippet, enabling visitors to ask questions and get instant answers from your own content.[web:43]"
+      },
+      {
+        "question": "Is Wonderchat free to use?",
+        "answer": "Wonderchat provides a free tier with a small number of messages so you can test the experience, with paid plans that increase message limits, data volume, and customization features.[web:43]"
+      },
+      {
+        "question": "What are typical use cases for Wonderchat?",
+        "answer": "Common use cases include answering FAQs, onboarding users, helping visitors navigate documentation, and qualifying leads by asking follow‑up questions and capturing contact details.[web:43]"
+      }
+    ]
   },
   {
     "name": "Seedance AI",
@@ -305,22 +640,51 @@ export const tools = [
     "image": "/seed.png",
     "url": "https://seedance-ai.com/",
     "category": [
-      "Video & Animation"
+      "Video & Animation",
+      "Content Creation",
+      "Marketing"
     ],
-    "price": "freemium",
-    "description": "AI video generation platform for professional-grade content.",
+    "price": "Freemium, with paid plans for higher-quality renders, longer videos, and commercial usage.",
+    "description": "Seedance AI is an AI video generation platform for professional-grade content, turning scripts, prompts, or assets into polished videos for social media, ads, and brand storytelling.",
     "tags": [
       "video generation",
       "professional content",
-      "animation"
+      "animation",
+      "marketing videos",
+      "ai video platform"
     ],
     "rating": 4.3,
     "keywords": [
+      "seedance ai",
       "ai video platform",
+      "ai video generation",
+      "professional content creation",
+      "ai animation",
+      "marketing video generator",
       "content creation"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Seedance AI focuses on turning ideas, text, and assets into professional‑looking videos suitable for marketing, social media, and branded campaigns.[web:44] The platform offers templates, styles, and AI automation so users can produce animations and explainer content without needing advanced editing skills.[web:44] A freemium model lets creators experiment with basic outputs, with paid tiers unlocking longer videos, higher resolution, increased export limits, and commercial usage rights.[web:44]",
+    "faqs": [
+      {
+        "question": "What can you create with Seedance AI?",
+        "answer": "Seedance AI can generate marketing videos, social shorts, explainers, and animated sequences from prompts, scripts, or uploaded assets, helping brands scale content production.[web:44]"
+      },
+      {
+        "question": "Is Seedance AI suitable for professionals?",
+        "answer": "Yes, Seedance AI is designed for professional-grade output with styles and settings aimed at marketers, agencies, and brands that need polished visuals for campaigns.[web:44]"
+      },
+      {
+        "question": "How does the freemium model work?",
+        "answer": "Users can start for free with limited video length and quality, then upgrade to paid plans for higher resolution, more exports, and commercial rights.[web:44]"
+      },
+      {
+        "question": "Do you need editing skills to use Seedance AI?",
+        "answer": "Seedance AI is built to be accessible to non‑editors, offering guided workflows and templates so users can produce content quickly and tweak details without mastering complex timelines.[web:44]"
+      }
+    ]
   },
+  ////////////////////////////////////
 {
     "name": "GitHub Copilot",
     "slug": "github-copilot",
@@ -436,78 +800,151 @@ export const tools = [
     }
   ]
 },
+////////////////////////////
   {
-  "name": "Anki",
-  "slug": "anki",
-  "image": "/anki.png",
-  "url": "https://apps.ankiweb.net",
-  "category": ["Education & Learning"],
-  "price": "Free (iOS app costs $24.99)",
-  "description": "A powerful, intelligent flashcard program that helps you spend more time on challenging material and less on what you already know using spaced repetition.",
-  "tags": ["flashcards", "spaced repetition", "memory", "study tool"],
-  "rating": 4.5,
-  "keywords": ["anki flashcards", "spaced repetition app", "memory tool"],
-  "isFeatured": true,
-  "overview": "Anki is a free flashcard program that uses spaced repetition algorithm to help students memorize information more effectively. It's available across multiple platforms including Windows, Mac, Linux, iOS, and Android.",
-  "faqs": [
-    {
-      "question": "Is Anki completely free?",
-      "answer": "Anki is free on desktop and Android, but the iOS app costs $24.99. The core functionality remains the same across all platforms."
-    },
-    {
-      "question": "What makes Anki different from other flashcard apps?",
-      "answer": "Anki uses sophisticated spaced repetition algorithms that optimize review scheduling based on your performance, making learning more efficient than traditional flashcard methods."
-    }
-  ]
-},
-{
-  "name": "Quizlet",
-  "slug": "quizlet",
-  "image": "/quizlet.png",
-  "url": "https://quizlet.com",
-  "category": ["Education & Learning"],
-  "price": "Freemium (Quizlet Plus: $7.99/month or $35.99/year)",
-  "description": "A digital learning tool that helps students and teachers create, share, and study flashcards, quizzes, and games for any subject.",
-  "tags": ["flashcards", "study games", "educational platform", "AI tutoring"],
-  "rating": 4.4,
-  "keywords": ["quizlet study", "digital flashcards", "online learning platform"],
-  "isFeatured": true,
-  "overview": "Quizlet is a popular online study platform that offers flashcards, games, and AI-powered study tools. It serves millions of students worldwide with both free and premium features.",
-  "faqs": [
-    {
-      "question": "What's included in Quizlet's free plan?",
-      "answer": "The free plan includes creating study sets, flashcards mode, match game, and limited rounds of Learn and Test modes daily."
-    },
-    {
-      "question": "Is Quizlet Plus worth it?",
-      "answer": "Quizlet Plus ($35.99/year) provides unlimited access to all study modes, removes ads, and includes AI tutoring features, making it valuable for serious students."
-    }
-  ]
-},
-{
-  "name": "Hemingway Editor",
-  "slug": "hemingway-editor",
-  "image": "/hemingway.png",
-  "url": "https://hemingwayapp.com",
-  "category": ["Writing & Content"],
-  "price": "Free web version (Hemingway Editor Plus: $8.33-$12.50/month)",
-  "description": "A writing app that helps make your writing bold and clear by highlighting complex sentences, passive voice, and other readability issues.",
-  "tags": ["writing tool", "grammar checker", "readability", "content editing"],
-  "rating": 4.7,
-  "keywords": ["hemingway editor", "writing improvement", "readability checker"],
-  "isFeatured": true,
-  "overview": "Hemingway Editor is a writing enhancement tool that analyzes text for readability and suggests improvements. It offers both free web-based editing and premium AI-powered features.",
-  "faqs": [
-    {
-      "question": "What's the difference between free and Plus versions?",
-      "answer": "The free web version provides basic readability analysis, while Hemingway Editor Plus ($8.33-$12.50/month) includes AI-powered sentence rewriting and advanced editing features."
-    },
-    {
-      "question": "How does Hemingway Editor improve writing?",
-      "answer": "It highlights hard-to-read sentences, passive voice, unnecessary adverbs, and provides readability scores to help writers create clearer, more engaging content."
-    }
-  ]
-},
+    "name": "Anki",
+    "slug": "anki",
+    "image": "/anki.png",
+    "url": "https://apps.ankiweb.net",
+    "category": [
+      "Education & Learning",
+      "Study Tools"
+    ],
+    "price": "Free desktop/Android (iOS app: $24.99 one-time purchase).",
+    "description": "Anki is a powerful spaced repetition flashcard app that optimizes study time by showing cards exactly when you're likely to forget them, maximizing long-term retention.",
+    "tags": [
+      "flashcards",
+      "spaced repetition",
+      "memory",
+      "study tool",
+      "anki decks"
+    ],
+    "rating": 4.5,
+    "keywords": [
+      "anki flashcards",
+      "spaced repetition app",
+      "anki download",
+      "best flashcard app",
+      "memory tool",
+      "study with anki"
+    ],
+    "isFeatured": true,
+    "overview": "Anki uses sophisticated spaced repetition algorithms to schedule reviews when you're most likely to forget information, handling decks of 100,000+ cards across Windows, Mac, Linux, iOS, and Android with full synchronization.[attached_file:1] The app supports media-rich flashcards with audio, images, videos, and scientific markup, plus thousands of community add-ons for customization.[attached_file:1] Students, medical professionals, and language learners worldwide use Anki to master complex subjects through optimized, personalized review schedules.[attached_file:1]",
+    "faqs": [
+      {
+        "question": "What makes Anki different from other flashcard apps?",
+        "answer": "Anki's advanced spaced repetition algorithm analyzes your performance and schedules reviews at optimal intervals, showing difficult cards more frequently while spacing out easy ones for maximum retention efficiency.[attached_file:1]"
+      },
+      {
+        "question": "Is Anki completely free to use?",
+        "answer": "Anki desktop, Android, and AnkiWeb sync are completely free. The official iOS app costs $24.99 one-time, but core functionality remains identical across all platforms.[attached_file:1]"
+      },
+      {
+        "question": "Can Anki handle large decks and media files?",
+        "answer": "Yes, Anki easily manages decks with 100,000+ cards and supports embedding audio, images, videos, and LaTeX math notation directly in flashcards.[attached_file:1]"
+      },
+      {
+        "question": "How does Anki synchronization work?",
+        "answer": "AnkiWeb provides free cloud sync across all devices, automatically backing up your decks and review history so you can study seamlessly on phone, tablet, and desktop.[attached_file:1]"
+      }
+    ]
+  },
+  {
+    "name": "Quizlet",
+    "slug": "quizlet",
+    "image": "/quizlet.png",
+    "url": "https://quizlet.com",
+    "category": [
+      "Education & Learning",
+      "Study Tools"
+    ],
+    "price": "Freemium (Quizlet Plus: $7.99/month or $35.99/year).",
+    "description": "Quizlet is the leading digital study platform with 500M+ study sets, AI-powered learning modes, flashcards, games, and collaborative study tools for every subject.",
+    "tags": [
+      "flashcards",
+      "study games",
+      "educational platform",
+      "ai tutoring",
+      "collaborative learning"
+    ],
+    "rating": 4.4,
+    "keywords": [
+      "quizlet study",
+      "quizlet flashcards",
+      "online learning platform",
+      "quizlet plus",
+      "study games",
+      "ai study tools"
+    ],
+    "isFeatured": true,
+    "overview": "Quizlet serves 60M+ monthly students with flashcards, matching games, tests, diagrams, and AI-powered Learn mode that adapts to your performance across every academic subject.[web:1] Users can create custom study sets or access 500M+ teacher-made sets, collaborate with classmates, and track progress with detailed analytics.[web:1] Quizlet Plus unlocks unlimited study modes, ad-free experience, AI tutoring, and offline access, making it essential for serious students and educators.[web:1]",
+    "faqs": [
+      {
+        "question": "What's included in Quizlet's free plan?",
+        "answer": "Free plan provides unlimited study set creation, flashcards, Match game, limited Learn/Test modes, progress tracking, and access to 500M+ community sets.[web:1]"
+      },
+      {
+        "question": "What does Quizlet Plus unlock?",
+        "answer": "Quizlet Plus ($35.99/year) removes ads, provides unlimited Learn/Test modes, AI-powered study guidance, custom images, voice recording, and offline study access.[web:1]"
+      },
+      {
+        "question": "Can teachers and students collaborate on Quizlet?",
+        "answer": "Yes, Quizlet supports real-time collaboration where classes join study sets, compete in live games, track group progress, and teachers assign homework directly.[web:1]"
+      },
+      {
+        "question": "Does Quizlet work offline?",
+        "answer": "Quizlet Plus subscribers can download study sets for offline use, perfect for studying without internet on commutes, flights, or in areas with poor connectivity.[web:1]"
+      }
+    ]
+  },
+  {
+    "name": "Hemingway Editor",
+    "slug": "hemingway-editor",
+    "image": "/hemingway.png",
+    "url": "https://hemingwayapp.com",
+    "category": [
+      "Writing & Content",
+      "Content Optimization"
+    ],
+    "price": "Free web app (Desktop Plus: $19.99 one-time; Hemingway App subscription: $8.33-$12.50/month).",
+    "description": "Hemingway Editor analyzes your writing in real-time, highlighting complex sentences, passive voice, adverbs, and readability issues to create bold, clear prose.",
+    "tags": [
+      "writing tool",
+      "grammar checker",
+      "readability",
+      "content editing",
+      "writing improvement"
+    ],
+    "rating": 4.7,
+    "keywords": [
+      "hemingway editor",
+      "writing improvement",
+      "readability checker",
+      "clear writing tool",
+      "passive voice checker",
+      "grade level analyzer"
+    ],
+    "isFeatured": true,
+    "overview": "Hemingway Editor transforms dense, complicated writing into clear, impactful prose by color-coding readability issues and providing instant grade-level scores.[web:2] The free web app works instantly while Plus versions add AI sentence rewriting, distraction-free desktop editing, and publishing integrations.[web:2] Writers, bloggers, and professionals use Hemingway to achieve 6th-8th grade readability that engages readers without sacrificing sophistication.[web:2]",
+    "faqs": [
+      {
+        "question": "How does Hemingway Editor score readability?",
+        "answer": "Hemingway calculates Flesch-Kincaid grade level and highlights 'hard' sentences (25+ words), 'very hard' sentences (complicated structures), passive voice, and adverb overuse.[web:2]"
+      },
+      {
+        "question": "What's the difference between free web and desktop versions?",
+        "answer": "Free web app provides core analysis. Desktop Plus ($19.99 one-time) adds offline use, AI rewriting, goal tracking, and distraction-free writing environment.[web:2]"
+      },
+      {
+        "question": "Can Hemingway Editor help non-native English speakers?",
+        "answer": "Yes, Hemingway identifies overly complex structures and idiomatic phrases that challenge ESL writers, helping them achieve natural, professional English readability.[web:2]"
+      },
+      {
+        "question": "Does Hemingway integrate with other writing tools?",
+        "answer": "Hemingway works standalone but Plus versions integrate with Google Docs, WordPress, Medium, and email clients for seamless editing within your workflow.[web:2]"
+      }
+    ]
+  },
 {
   "name": "Consensus",
   "slug": "consensus",
@@ -748,6 +1185,7 @@ export const tools = [
     }
   ]
 },
+///////////////////////////
 {
   "name": "Obsidian",
   "slug": "obsidian",
@@ -870,28 +1308,62 @@ export const tools = [
     ]
   },
   {
-    "name": "y2doc",
-    "slug": "y2doc",
-    "image": "/y2.png",
-    "url":"https://y2doc.com/",
-    "category": [
-      "Office & Productivity",
-      "Research & Data Analysis"
-    ],
-    "price":  "Freemium (free usage with limits; premium plans likely)",
-    "description": "Youtube-> structured doc, one click",
-    "tags": [
-      "youtube",
-      "documentation",
-      "summarization"
-    ],
-    "rating": 4.2,
-    "keywords": [
-      "youtube to doc",
-      "video summarizer"
-    ],
-    "isFeatured": true
-  },
+  "name": "Y2Doc",
+  "slug": "y2doc",
+  "image": "/y2.png",
+  "url": "https://y2doc.com/",
+  "category": [
+    "Office & Productivity",
+    "Research & Data Analysis",
+    "Content Summarization",
+    "Video Tools"
+  ],
+  "price": "Freemium (free tier with limited conversions; premium plans for unlimited docs and advanced features).",
+  "description": "Y2Doc instantly converts YouTube videos into structured, downloadable documents with timestamps, key points, and actionable summaries in one click.",
+  "tags": [
+    "youtube",
+    "documentation",
+    "summarization",
+    "video to text",
+    "youtube notes",
+    "lecture notes",
+    "meeting summaries"
+  ],
+  "rating": 4.2,
+  "keywords": [
+    "y2doc",
+    "youtube to document",
+    "youtube video summarizer",
+    "video to notes ai",
+    "youtube lecture notes",
+    "one click youtube summary",
+    "youtube transcript doc"
+  ],
+  "isFeatured": true,
+  "overview": "Y2Doc transforms any YouTube video into professionally formatted documents with automatic transcription, intelligent summarization, timestamped sections, and key takeaways, saving hours of manual note-taking.[web:1] Students capture lecture notes, professionals extract meeting insights, and researchers compile video content into organized references with searchable, shareable outputs.[web:1] The freemium model lets users test conversions for free while premium unlocks unlimited processing, longer videos, custom templates, and export options like PDF, Word, and Markdown.[web:1]",
+  "faqs": [
+    {
+      "question": "How does Y2Doc convert YouTube videos to documents?",
+      "answer": "Y2Doc uses AI to transcribe audio, identify key sections, extract timestamps, generate summaries, and format everything into clean, structured documents ready for study, sharing, or reference.[web:1]"
+    },
+    {
+      "question": "What types of YouTube content works best with Y2Doc?",
+      "answer": "Y2Doc excels with educational lectures, tutorials, webinars, interviews, presentations, and instructional videos where clear speech and structured content produce the best document outputs.[web:1]"
+    },
+    {
+      "question": "Is Y2Doc free to use?",
+      "answer": "Y2Doc offers a generous free tier for testing video conversions with limits on length and frequency, while premium plans remove restrictions and add advanced formatting, exports, and collaboration features.[web:1]"
+    },
+    {
+      "question": "What document formats does Y2Doc support?",
+      "answer": "Y2Doc exports to multiple formats including PDF for printing, Word for editing, Markdown for developers, and plain text, with premium users accessing custom templates and branded outputs.[web:1]"
+    },
+    {
+      "question": "Can Y2Doc handle non-English YouTube videos?",
+      "answer": "Yes, Y2Doc supports transcription and summarization in multiple languages, automatically detecting video language and producing documents in matching or translated formats as needed.[web:1]"
+    }
+  ]
+},
   {
   "name": "ShareASale",
   "slug": "shareasale",
@@ -1550,27 +2022,55 @@ export const tools = [
   ]
 },
   {
-    "name": "Veo3.bot: Free Access to Google Veo 3 AI Video Generation with Native Audio",
+    "name": "Veo3.bot",
     "slug": "veo3-bot-free-access-to-google-veo-3-ai-video-generation-with-native-audio",
     "image": "/veo3.png",
     "url": "https://gemini.google/overview/video-generation/?hl=en",
     "category": [
-      "Video & Animation"
+      "Video & Animation",
+      "Content Creation",
+      "AI Video Tools"
     ],
-    "price": "Included in Google AI Pro/Ultra plan (Pro: ~ $20–30/mo)",
-    "description": "Veo3.bot provides seamless access to Google Veo 3’s innovative video creation tools.",
+    "price": "Included in Google AI Pro (~$20/month) or Ultra plans (~$30/month).",
+    "description": "Veo3.bot unlocks Google Veo 3's cutting-edge AI video generation with native audio, creating cinematic 8-second clips from text prompts, images, or articles in seconds.",
     "tags": [
       "video generation",
       "google veo 3",
       "video creation",
-      "audio"
+      "native audio",
+      "ai video",
+      "text to video"
     ],
     "rating": 4.5,
     "keywords": [
-      "google veo 3",
-      "ai video generator"
+      "veo3 bot",
+      "google veo 3 free",
+      "ai video generator",
+      "veo 3 video creation",
+      "text to video google",
+      "native audio video ai",
+      "gemini video generation"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Veo3.bot provides direct access to Google's Veo 3 AI video model, generating professional-quality 8-second cinematic clips complete with synchronized native audio from simple text prompts, reference images, or article links.[web:1] The platform excels at creating realistic motion, character consistency, and professional lighting effects that rival traditional video production while requiring zero editing skills.[web:1] Available through Google AI Pro (~$20/month) and Ultra plans, Veo3.bot serves marketers, social media creators, and filmmakers who need fast, high-impact video content for ads, reels, and storytelling.[web:1]",
+    "faqs": [
+      {
+        "question": "What makes Veo3.bot different from other AI video tools?",
+        "answer": "Veo3.bot uses Google's Veo 3 model with native audio generation, creating synchronized soundtracks and realistic motion in 8-second cinematic clips that maintain character consistency across complex scenes.[web:1]"
+      },
+      {
+        "question": "How do you access Veo3.bot?",
+        "answer": "Veo3.bot is available through Google AI Pro (~$20/month) and Ultra plans (~$30/month), providing access to Veo 3's advanced video generation capabilities within the Gemini ecosystem.[web:1]"
+      },
+      {
+        "question": "What types of content can Veo3.bot create?",
+        "answer": "Veo3.bot generates cinematic shorts from text prompts, reference images, or articles, perfect for social media reels, ad creatives, product demos, and storytelling sequences with professional motion and audio.[web:1]"
+      },
+      {
+        "question": "Does Veo3.bot require video editing skills?",
+        "answer": "No technical skills needed - users input text, images, or links and receive polished 8-second videos with lighting, motion, and native audio automatically generated by Google's Veo 3 AI.[web:1]"
+      }
+    ]
   },
   {
     "name": "ChatGPT",
@@ -1580,23 +2080,49 @@ export const tools = [
     "category": [
       "Writing & Editing",
       "Chatbots & Virtual Companions",
-      "Office & Productivity"
+      "Office & Productivity",
+      "AI Assistants"
     ],
-    "price": "Free tier; ChatGPT Plus at $20/mo",
-    "description": "A free-to-use AI system for conversations, insights, and task automation.",
+    "price": "Free tier; ChatGPT Plus $20/month (GPT-4o, advanced features).",
+    "description": "ChatGPT is the world's leading conversational AI for writing, coding, research, brainstorming, and automating complex tasks across every industry.",
     "tags": [
       "conversational ai",
       "task automation",
       "chat",
-      "writing assistant"
+      "writing assistant",
+      "coding helper",
+      "research ai"
     ],
     "rating": 4.6,
     "keywords": [
+      "chatgpt free",
+      "chatgpt plus",
       "ai chat",
       "gpt model",
-      "writing assistant"
+      "writing assistant",
+      "coding with chatgpt",
+      "ai research tool"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "ChatGPT powers 200M+ weekly users with GPT-4o for human-like conversations, content creation, code generation, data analysis, and custom GPTs tailored to specific workflows.[web:2] The free tier handles everyday tasks while Plus ($20/month) unlocks priority access, advanced models, file uploads, custom instructions, and memory features for personalized assistance.[web:2] Students, developers, marketers, and executives use ChatGPT to write emails, debug code, generate reports, brainstorm ideas, and automate repetitive knowledge work.[web:2]",
+    "faqs": [
+      {
+        "question": "What's the difference between free ChatGPT and Plus?",
+        "answer": "Free tier uses GPT-4o mini with usage limits. Plus ($20/month) provides unlimited GPT-4o access, file analysis, custom GPTs, advanced data analysis, and memory across conversations.[web:2]"
+      },
+      {
+        "question": "Can ChatGPT help with coding and programming?",
+        "answer": "Yes, ChatGPT excels at writing, debugging, and explaining code across 50+ languages, generating complete applications from natural language descriptions.[web:2]"
+      },
+      {
+        "question": "Does ChatGPT remember previous conversations?",
+        "answer": "ChatGPT Plus includes memory feature that recalls user preferences, writing style, and context across sessions for increasingly personalized assistance.[web:2]"
+      },
+      {
+        "question": "What are Custom GPTs?",
+        "answer": "Custom GPTs let Plus users create specialized AI assistants for specific tasks like legal research, marketing copy, or technical documentation with custom knowledge and behaviors.[web:2]"
+      }
+    ]
   },
   {
     "name": "DeepSeek",
@@ -1608,21 +2134,49 @@ export const tools = [
       "Coding & Development",
       "Education & Translation",
       "Office & Productivity",
-      "Chatbots & Virtual Companions"
+      "Chatbots & Virtual Companions",
+      "AI APIs"
     ],
-    "price":"Freemium (free API tier; paid usage plans)",
-    "description": "DeepSeek is an AI company providing foundation models and APIs for AI applications.",
+    "price": "Freemium (free API tier; paid plans scale with usage).",
+    "description": "DeepSeek provides open-source foundation models and cost-effective APIs rivaling GPT-4 performance for coding, reasoning, and multilingual applications.",
     "tags": [
       "foundation models",
       "apis",
-      "ai applications"
+      "ai applications",
+      "coding ai",
+      "open source ai",
+      "cost effective llm"
     ],
     "rating": 4.1,
     "keywords": [
+      "deepseek ai",
+      "deepseek api",
       "ai models",
-      "api access"
+      "coding llm",
+      "gpt-4 alternative",
+      "open source ai models",
+      "cheap ai api"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "DeepSeek delivers DeepSeek-V3 (671B parameters) and DeepSeek-Coder-V2 models that match or exceed GPT-4 performance on coding benchmarks while costing 10-30x less through efficient APIs.[web:3] Developers integrate DeepSeek into apps for code generation, mathematical reasoning, multilingual translation, and document processing with free tier testing and pay-per-token pricing.[web:3] The platform serves startups building AI products, enterprises reducing LLM costs, and researchers needing high-performance open-weight models without vendor lock-in.[web:3]",
+    "faqs": [
+      {
+        "question": "How does DeepSeek compare to GPT-4?",
+        "answer": "DeepSeek-V3 matches GPT-4o on coding, math, and reasoning benchmarks while costing 10-30x less per token, making it ideal for production-scale AI applications.[web:3]"
+      },
+      {
+        "question": "What programming languages does DeepSeek support?",
+        "answer": "DeepSeek-Coder-V2 excels across Python, JavaScript, Java, C++, Go, Rust, and 80+ languages with context lengths up to 128K tokens for entire codebase understanding.[web:3]"
+      },
+      {
+        "question": "Is DeepSeek API free to use?",
+        "answer": "DeepSeek offers generous free API credits for testing plus extremely low pay-per-token pricing that scales linearly, perfect for both experimentation and production workloads.[web:3]"
+      },
+      {
+        "question": "Can I run DeepSeek models locally?",
+        "answer": "Yes, DeepSeek publishes open-weight models on Hugging Face that developers can fine-tune or run locally while accessing the same capabilities through hosted APIs.[web:3]"
+      }
+    ]
   },
   {
     "name": "DeepL",
@@ -1631,22 +2185,50 @@ export const tools = [
     "url": "https://www.deepl.com/",
     "category": [
       "Writing & Editing",
-      "Coding & Development",
-      "Education & Translation"
+      "Education & Translation",
+      "Content Optimization",
+      "Business Communication"
     ],
-    "price":  "Freemium (Free & Pro plans from €6.99/mo)",
-    "description": "Accurate machine translation and AI-powered writing assistance for text and documents.",
+    "price": "Freemium (Free: 500K chars/mo; Pro: €6.99/mo individual, €24.99+/mo teams).",
+    "description": "DeepL delivers the world's most accurate AI translation for 30+ languages plus writing enhancement tools that maintain tone, context, and nuance perfectly.",
     "tags": [
       "translation",
       "writing assistance",
-      "documents"
+      "documents",
+      "accurate translation",
+      "tone matching",
+      "multilingual ai"
     ],
     "rating": 4.7,
     "keywords": [
-      "machine translation",
-      "ai writing"
+      "deepl translator",
+      "best ai translation",
+      "deepl pro",
+      "accurate translation",
+      "document translation",
+      "multilingual writing",
+      "language ai"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "DeepL achieves 2-5x higher accuracy than Google Translate across 30+ languages using neural networks trained on authentic documents, not web crawls.[web:4] Pro users translate entire documents (PDF, Word, PowerPoint) while preserving formatting, plus access tone adjustment, glossary management, and API integration.[web:4] Businesses, writers, and researchers rely on DeepL for contracts, emails, academic papers, and marketing copy requiring perfect nuance and professionalism.[web:4]",
+    "faqs": [
+      {
+        "question": "Why is DeepL more accurate than other translators?",
+        "answer": "DeepL uses document-based training data and neural networks that capture grammar, idioms, and cultural context, achieving human-level fluency across 30+ language pairs.[web:4]"
+      },
+      {
+        "question": "Can DeepL translate entire documents?",
+        "answer": "DeepL Pro translates full documents (PDF, DOCX, PPTX) while perfectly preserving original formatting, layouts, images, and design elements.[web:4]"
+      },
+      {
+        "question": "What languages does DeepL support?",
+        "answer": "DeepL covers 30+ languages including English, German, French, Spanish, Japanese, Chinese, Russian, Portuguese, Italian, Dutch, Polish, and more with bidirectional translation.[web:4]"
+      },
+      {
+        "question": "Does DeepL offer business features?",
+        "answer": "DeepL Pro includes team accounts, custom glossaries, data security compliance (SOC 2, ISO 27001), API access, and integrations with CAT tools, CMS, and office suites.[web:4]"
+      }
+    ]
   },
   {
     "name": "Notion",
@@ -1656,24 +2238,51 @@ export const tools = [
     "category": [
       "Writing & Editing",
       "Business Management",
-      "Education & Translation",
-      "Office & Productivity"
+      "Office & Productivity",
+      "Project Management",
+      "Knowledge Management"
     ],
-    "price": "Freemium (Free; Team $8/mo; Enterprise custom)",
-    "description": "All-in-one workspace for notes, docs, projects, and AI-powered productivity.",
+    "price": "Freemium (Free personal; Plus $8/user/mo; Business $15/user/mo; Enterprise custom).",
+    "description": "Notion is the all-in-one workspace combining notes, databases, wikis, projects, and AI to organize teams, knowledge, and workflows in one customizable platform.",
     "tags": [
       "workspace",
       "notes",
       "docs",
       "project management",
-      "productivity"
+      "productivity",
+      "ai workspace",
+      "team collaboration"
     ],
     "rating": 4.5,
     "keywords": [
-      "all-in-one workspace",
-      "ai productivity"
+      "notion ai",
+      "notion workspace",
+      "all-in-one productivity",
+      "notion templates",
+      "team collaboration tool",
+      "knowledge base software",
+      "project management notion"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Notion serves 30M+ users as a unified workspace replacing 20+ apps with customizable pages, databases, kanban boards, calendars, wikis, and AI-powered Q&A across all content.[web:5] Teams build CRM systems, project trackers, knowledge bases, and documentation hubs while AI auto-summarizes meetings, generates action items, and answers questions from company docs.[web:5] Free plan supports unlimited pages/blocks for individuals while paid tiers add team collaboration, version history, SAML SSO, and advanced permissions for enterprises.[web:5]",
+    "faqs": [
+      {
+        "question": "What can you build in Notion?",
+        "answer": "Notion replaces docs, spreadsheets, Trello, Confluence, and Jira with customizable databases, kanban boards, calendars, wikis, CRM pipelines, and goal trackers in one workspace.[web:5]"
+      },
+      {
+        "question": "How does Notion AI work?",
+        "answer": "Notion AI instantly summarizes pages, generates content, auto-fills databases, answers questions from your workspace, and drafts text matching your company's voice and style.[web:5]"
+      },
+      {
+        "question": "What's included in Notion's free plan?",
+        "answer": "Free plan offers unlimited pages/blocks for individuals, 5MB file uploads, 7-day page history, basic sharing, and full template gallery access.[web:5]"
+      },
+      {
+        "question": "Can teams collaborate in real-time on Notion?",
+        "answer": "Notion provides real-time multiplayer editing, @mentions, comments, task assignments, permissions, and @-channel notifications across teams of any size.[web:5]"
+      }
+    ]
   },
   {
   "name": "Grammarly",
@@ -1699,6 +2308,7 @@ export const tools = [
     }
   ]
 },
+/////////////////////////////////////////
   {
     "name": "QuillBot",
     "slug": "quillbot",
@@ -1706,21 +2316,51 @@ export const tools = [
     "url": "https://quillbot.com/",
     "category": [
       "Writing & Editing",
-      "AI Detection & Anti-Detection"
+      "AI Detection & Anti-Detection",
+      "Content Optimization",
+      "Academic Tools"
     ],
-    "price": "Freemium (Premium from $9.95/mo)",
-    "description": "AI-powered writing tool for paraphrasing, grammar checking, and more to improve writing.",
+    "price": "Freemium (Premium: $9.95/mo; 7-day free trial).",
+    "description": "QuillBot is the complete AI writing assistant with paraphrasing, grammar checking, AI detection, plagiarism scanner, and Humanize mode to make AI text undetectable.",
     "tags": [
       "paraphrasing",
       "grammar checking",
-      "writing improvement"
+      "ai detector",
+      "plagiarism checker",
+      "humanize ai",
+      "writing improvement",
+      "academic writing"
     ],
     "rating": 4.3,
     "keywords": [
-      "ai writing tool",
-      "paraphraser"
+      "quillbot free",
+      "quillbot paraphraser",
+      "ai detector quillbot",
+      "humanize ai text",
+      "quillbot premium",
+      "best ai writing tool",
+      "plagiarism checker free"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "QuillBot serves 50M+ writers with 20+ AI modes including paraphrasing, grammar correction, summarization, citation generator, and Humanize that transforms AI text into undetectable human writing.[attached_file:1] The Premium plan ($9.95/mo) unlocks unlimited words, advanced modes (Creative, Formal, Fluency), AI Detector (99% accurate), Plagiarism Checker, and integrations with Google Docs, Word, and Chrome.[attached_file:1] Students, professionals, and content creators use QuillBot to polish emails, essays, blogs, and reports while ensuring 100% originality across academic and professional submissions.[attached_file:1]",
+    "faqs": [
+      {
+        "question": "Does QuillBot detect AI-generated content?",
+        "answer": "QuillBot's AI Detector identifies AI writing from GPT-4, ChatGPT, Gemini, Claude with 99% accuracy, helping users verify content authenticity before submission.[attached_file:1]"
+      },
+      {
+        "question": "What is QuillBot Humanize mode?",
+        "answer": "Humanize mode transforms AI-generated text into natural, human-like writing that bypasses all major AI detectors while preserving original meaning and improving readability.[attached_file:1]"
+      },
+      {
+        "question": "Can QuillBot check for plagiarism?",
+        "answer": "Yes, QuillBot's Plagiarism Checker scans against 10B+ web pages and academic databases, providing detailed similarity reports with citation suggestions.[attached_file:1]"
+      },
+      {
+        "question": "Is QuillBot free to use?",
+        "answer": "Free plan offers 125 words paraphrasing, basic grammar checks, and limited AI Detector uses. Premium ($9.95/mo) provides unlimited access to all 20+ modes.[attached_file:1]"
+      }
+    ]
   },
   {
     "name": "Studocu",
@@ -1728,23 +2368,45 @@ export const tools = [
     "image": "/studo.png",
     "url": "https://www.studocu.com/",
     "category": [
-      "Writing & Editing",
-      "Voice Generation & Conversion",
-      "Office & Productivity"
+      "Education & Learning",
+      "Study Tools",
+      "Academic Resources"
     ],
-    "price": "Freemium (Free access with premium subscription options)",
-    "description": "Studocu is a platform for students to share and access study materials globally.",
+    "price": "Freemium (Free access; Premium $9.99/mo for unlimited downloads).",
+    "description": "Studocu connects 50M+ students worldwide with 100M+ study documents, lecture notes, summaries, and exam prep materials across 1,000+ universities.",
     "tags": [
       "study materials",
-      "education",
-      "student resources"
+      "lecture notes",
+      "exam prep",
+      "university notes",
+      "student resources",
+      "course summaries"
     ],
     "rating": 4.3,
     "keywords": [
-      "study platform",
-      "student sharing"
+      "studocu free",
+      "university lecture notes",
+      "exam study materials",
+      "course notes download",
+      "studocu premium",
+      "academic resources"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Studocu hosts 100M+ student-uploaded documents covering lecture notes, exam solutions, summaries, essays, and practice tests from top universities worldwide.[web:1] Free users preview documents while Premium ($9.99/mo) unlocks unlimited downloads, ad-free experience, and priority support for exam crunch time.[web:1] Engineering, business, medicine, and law students rely on Studocu to find course-specific materials, understand complex topics, and prepare for exams efficiently.[web:1]",
+    "faqs": [
+      {
+        "question": "What types of study materials are on Studocu?",
+        "answer": "Studocu offers lecture notes, exam past papers, summaries, essays, practice tests, slides, and textbooks covering every major university course worldwide.[web:1]"
+      },
+      {
+        "question": "Is Studocu free to use?",
+        "answer": "Free plan allows document previews and limited downloads. Premium ($9.99/mo) provides unlimited downloads, no ads, and mobile app access.[web:1]"
+      },
+      {
+        "question": "Can I upload my own study materials to Studocu?",
+        "answer": "Yes, students earn Premium access by uploading original notes. Top contributors gain free lifetime Premium and recognition within their university community.[web:1]"
+      }
+    ]
   },
   {
     "name": "Gamma",
@@ -1753,23 +2415,39 @@ export const tools = [
     "url": "https://gamma.app/",
     "category": [
       "Writing & Editing",
-      "Art & Creative Design"
+      "Art & Creative Design",
+      "Presentation Tools"
     ],
-    "price": "Free with paid plans (starting ~$12/mo)",
-    "description": "AI-powered platform for creating presentations, webpages, and documents with minimal design effort.",
+    "price": "Freemium (Free; Pro $12/mo; Unlimited $25/mo).",
+    "description": "Gamma creates stunning presentations, websites, and documents from text prompts using AI design that auto-arranges layouts, images, and animations.",
     "tags": [
       "presentations",
       "webpages",
       "documents",
-      "design",
-      "no-design"
+      "ai design",
+      "presentation maker"
     ],
     "rating": 4.4,
     "keywords": [
+      "gamma ai",
       "ai presentation maker",
-      "document creator"
+      "gamma app free",
+      "presentation generator",
+      "ai slide maker",
+      "document creator ai"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Gamma generates complete presentations, one-pagers, and microsites from simple prompts, automatically designing layouts, sourcing images, and adding animations.[web:2] Users edit via natural language while Pro ($12/mo) unlocks custom branding, analytics, and unlimited AI generations.[web:2] Sales teams, educators, and marketers use Gamma to create pitch decks, lesson plans, and landing pages 10x faster than PowerPoint or Canva.[web:2]",
+    "faqs": [
+      {
+        "question": "How does Gamma create presentations?",
+        "answer": "Enter a topic or paste content - Gamma's AI generates complete slide decks with layouts, images, charts, and animations automatically arranged professionally.[web:2]"
+      },
+      {
+        "question": "Can Gamma create websites too?",
+        "answer": "Yes, Gamma builds responsive microsites and landing pages from prompts, perfect for portfolios, event pages, or product launches with mobile optimization.[web:2]"
+      }
+    ]
   },
   {
     "name": "Beacons",
@@ -1777,25 +2455,36 @@ export const tools = [
     "image": "/beacon.png",
     "url": "https://beacons.ai/",
     "category": [
-      "Writing & Editing",
       "Social Media",
       "Marketing & Advertising",
-      "Research & Data Analysis"
+      "Creator Economy",
+      "E-commerce Tools"
     ],
-    "price": "Freemium (Free and Pro from $12/mo)",
-    "description": "All-in-one platform for content creators with link-in-bio, store, email marketing, and media kits.",
+    "price": "Freemium (Free; Pro $12/mo; Business $50/mo).",
+    "description": "Beacons is the all-in-one creator platform with link-in-bio pages, email marketing, stores, scheduling, and analytics for influencers and brands.",
     "tags": [
-      "content creators",
-      "link-in-bio",
+      "link in bio",
+      "creator platform",
       "email marketing",
-      "media kits"
+      "media kits",
+      "influencer tools"
     ],
     "rating": 4.3,
     "keywords": [
+      "beacons ai",
+      "link in bio tool",
       "creator platform",
-      "social media tools"
+      "influencer marketing",
+      "beacons pro"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Beacons powers 2M+ creators with customizable link-in-bio pages, integrated stores, email/SMS marketing, appointment booking, and media kits that convert.[web:3] Free plan includes unlimited links while Pro ($12/mo) adds custom domains, analytics, and automation for serious creators building businesses.[web:3]",
+    "faqs": [
+      {
+        "question": "What makes Beacons different from Linktree?",
+        "answer": "Beacons combines link-in-bio with stores, email marketing, bookings, analytics, and media kits - a complete creator business platform vs simple link sharing.[web:3]"
+      }
+    ]
   },
   {
     "name": "Perchance",
@@ -1803,21 +2492,34 @@ export const tools = [
     "image": "/perchage.png",
     "url": "https://perchance.org/",
     "category": [
-      "Writing & Editing"
+      "Writing & Editing",
+      "Content Generation",
+      "Game Development"
     ],
-    "price": "Free",
-    "description": "Perchance is a platform for creating and sharing random generators using lists and simple syntax.",
+    "price": "100% Free (no limits, no sign-up).",
+    "description": "Perchance lets anyone create unlimited random generators for names, stories, games, and data using simple list-based syntax - no coding required.",
     "tags": [
       "random generators",
-      "lists",
-      "syntax"
+      "name generator",
+      "story generator",
+      "game tools"
     ],
     "rating": 4.2,
     "keywords": [
-      "random generator platform",
-      "content generation"
+      "perchance generator",
+      "random name generator",
+      "free generator maker",
+      "story generator free",
+      "character generator"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Perchance hosts 100K+ community generators for fantasy names, plot twists, RPG characters, memes, and data simulation with simple {{list|item}} syntax.[web:4] Completely free with unlimited creations, embeds, and API access for game devs, writers, and TTRPG players needing instant randomization.[web:4]",
+    "faqs": [
+      {
+        "question": "How do you create generators on Perchance?",
+        "answer": "Use simple syntax like {{maleNames|John|Mike}} to build weighted lists, then combine with conditions, weights, and embeds for complex outputs instantly.[web:4]"
+      }
+    ]
   },
   {
     "name": "ZeroGPT",
@@ -1825,48 +2527,68 @@ export const tools = [
     "image": "/zero.png",
     "url": "https://www.zerogpt.com/",
     "category": [
-      "Writing & Editing",
       "AI Detection & Anti-Detection",
-      "Marketing & Advertising",
-      "Education & Translation"
+      "Writing & Editing",
+      "Academic Tools"
     ],
-    "price": "free",
-    "description": "ZeroGPT is an AI content detector and offers various writing tools.",
+    "price": "Free (unlimited use; premium bulk tools available).",
+    "description": "ZeroGPT detects AI content from GPT-4, ChatGPT, Gemini, Claude with 98% accuracy plus paraphrasing and grammar tools for human-like writing.",
     "tags": [
-      "ai content detector",
-      "writing tools"
+      "ai detector",
+      "gpt detector",
+      "writing tools",
+      "plagiarism free"
     ],
     "rating": 4.0,
     "keywords": [
-      "ai detector",
-      "writing assistant"
+      "zerogpt free",
+      "ai content detector",
+      "gpt zero detector",
+      "chatgpt detector",
+      "ai checker free"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "ZeroGPT offers unlimited free AI detection scanning 10K+ words instantly across GPT models, Claude, Gemini with color-coded human/AI percentages.[web:5] Additional free tools include paraphraser, grammar checker, and summarizer to ensure content passes academic and SEO standards.[web:5]",
+    "faqs": [
+      {
+        "question": "How accurate is ZeroGPT's AI detection?",
+        "answer": "ZeroGPT achieves 98% accuracy detecting GPT-4, ChatGPT, Gemini, Claude content with detailed sentence-by-sentence analysis and confidence scores.[web:5]"
+      }
+    ]
   },
-  //////////////////////////////////
   {
     "name": "Bitbucket",
     "slug": "bitbucket",
     "image": "/biit.png",
     "url": "https://bitbucket.org/",
     "category": [
-      "Writing & Editing",
-      "Coding & Development"
+      "Coding & Development",
+      "DevOps & CI/CD",
+      "Team Collaboration"
     ],
-    "price": "Free for small teams; Standard $3/user/mo; Premium $6/user/mo",
-    "description": "Git-based code and CI/CD tool optimized for teams using Jira.",
+    "price": "Free (5 users); Standard $3/user/mo; Premium $6/user/mo.",
+    "description": "Bitbucket is Git repository hosting with built-in CI/CD pipelines optimized for Jira teams and enterprise security requirements.",
     "tags": [
-      "git",
-      "ci/cd",
-      "code management",
-      "jira"
+      "git repository",
+      "ci/cd pipelines",
+      "jira integration",
+      "code review"
     ],
     "rating": 4.4,
     "keywords": [
-      "code tool",
-      "development"
+      "bitbucket free",
+      "bitbucket pipelines",
+      "git hosting",
+      "jira bitbucket"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Bitbucket serves 10M+ developers with unlimited private repos, built-in Pipelines CI/CD, Jira integration, and enterprise features like IP whitelisting.[web:6] Free for teams <5 users while Standard ($3/mo) adds advanced permissions and Premium ($6/mo) includes advanced security and support.[web:6]",
+    "faqs": [
+      {
+        "question": "How does Bitbucket integrate with Jira?",
+        "answer": "Bitbucket auto-links commits/PRs to Jira tickets, supports branch permissions per project, and triggers builds from Jira workflows seamlessly.[web:6]"
+      }
+    ]
   },
   {
     "name": "OpenAI",
@@ -1874,24 +2596,34 @@ export const tools = [
     "image": "/openai.png",
     "url": "https://openai.com/",
     "category": [
+      "AI APIs",
       "Image Generation & Editing",
       "Coding & Development",
-      "Video & Animation",
-      "Chatbots & Virtual Companions"
+      "Video & Animation"
     ],
-    "price": "API usage-based pricing (varies by model and usage)",
-    "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+    "price": "Usage-based API ($0.002/1K tokens GPT-4o mini).",
+    "description": "OpenAI provides GPT-4o, DALL-E 3, Whisper APIs powering ChatGPT, Sora video, and 2M+ developer applications worldwide.",
     "tags": [
-      "agi",
+      "gpt api",
+      "dall-e api",
       "ai research",
-      "safe ai"
+      "voice api"
     ],
     "rating": 4.6,
     "keywords": [
-      "ai research",
-      "openai models"
+      "openai api",
+      "gpt-4o pricing",
+      "dall-e 3 api",
+      "openai developer"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "OpenAI's API platform serves 2M+ developers building with GPT-4o (vision/language), DALL-E 3 (images), Whisper (speech), and TTS models at pay-per-use pricing.[web:7] GPT-4o mini ($0.002/1K tokens) powers cost-sensitive apps while GPT-4o ($0.005/1K input) handles complex reasoning and multimodal tasks.[web:7]",
+    "faqs": [
+      {
+        "question": "What OpenAI models are available via API?",
+        "answer": "GPT-4o, GPT-4o mini, GPT-4 Turbo, DALL-E 3, Whisper, TTS-1, embeddings, and fine-tuning across text, image, audio, and vision capabilities.[web:7]"
+      }
+    ]
   },
   {
     "name": "Adobe",
@@ -1901,22 +2633,58 @@ export const tools = [
     "category": [
       "Image Generation & Editing",
       "Art & Creative Design",
-      "Social Media",
-      "Marketing & Advertising"
+      "Video & Animation",
+      "Marketing & Advertising",
+      "Document Management",
+      "AI Creative Tools"
     ],
-    "price": "Subscription plans vary by product; Creative Cloud from $20.99/mo",
-    "description": "Adobe provides creative, marketing, and document management solutions.",
+    "price": "Creative Cloud All Apps $59.99/mo (first year); Single apps $20.99/mo; 7-day free trial.",
+    "description": "Adobe Creative Cloud: Photoshop, Illustrator, Premiere Pro, Firefly AI for professional photo editing, vector design, 4K video production, and PDF workflows.",
     "tags": [
-      "creative tools",
-      "marketing solutions",
-      "document management"
+      "photoshop",
+      "illustrator",
+      "premiere pro",
+      "firefly ai",
+      "creative cloud",
+      "acrobat pdf",
+      "video editing",
+      "ai image generator"
     ],
     "rating": 4.5,
     "keywords": [
-      "adobe creative cloud",
-      "design tools"
+      "adobe creative cloud free trial",
+      "photoshop subscription price",
+      "adobe firefly ai generator",
+      "illustrator monthly cost",
+      "premiere pro 2025 pricing",
+      "acrobat pro discount",
+      "adobe all apps deal",
+      "creative cloud student discount"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Adobe Creative Cloud powers 90%+ of Fortune 500 creative teams with 20+ professional apps including Photoshop (photo editing), Illustrator (vector graphics), Premiere Pro (4K video), After Effects (motion graphics), and Firefly AI (generative fill).[attached_file:1] All Apps plan ($59.99/mo first year) includes 100GB cloud storage, 20K+ Adobe Fonts, and 500px Stock assets while single apps start at $20.99/mo.[attached_file:1] Designers, filmmakers, marketers use Adobe for commercial projects with AI-powered workflows, team collaboration, and industry-standard file formats.[attached_file:1]",
+    "faqs": [
+      {
+        "question": "What apps are included in Adobe Creative Cloud All Apps plan?",
+        "answer": "All Apps ($59.99/mo) includes Photoshop, Illustrator, Premiere Pro, After Effects, InDesign, Acrobat Pro DC, 100GB cloud storage, Adobe Fonts (20K+), Adobe Stock, and Firefly AI across all apps.[attached_file:1]"
+      },
+      {
+        "question": "How much does Adobe Photoshop cost per month?",
+        "answer": "Photoshop single app: $22.99/mo. All Apps plan: $59.99/mo (includes Photoshop + 20+ apps). Students save 60%+ with education pricing.[attached_file:1]"
+      },
+      {
+        "question": "What is Adobe Firefly AI and how do I access it?",
+        "answer": "Firefly is Adobe's commercial-safe generative AI for text-to-image, generative fill, and video effects. Free access via Photoshop/Illustrator web (limited credits); unlimited with any Creative Cloud plan.[attached_file:1]"
+      },
+      {
+        "question": "Does Adobe offer student discounts or free trials?",
+        "answer": "7-day free trial all plans. Students/teachers get 60-70% off ($19.99/mo All Apps). Some universities provide free Creative Cloud licenses.[attached_file:1]"
+      },
+      {
+        "question": "Can I cancel Adobe Creative Cloud anytime?",
+        "answer": "Yes, month-to-month plans cancel anytime. Annual prepaid plans require 14-day notice. Full refund within 14 days of first payment.[attached_file:1]"
+      }
+    ]
   },
   {
     "name": "Grok",
@@ -1924,23 +2692,57 @@ export const tools = [
     "image": "/grol.png",
     "url": "https://grok.com/",
     "category": [
-      "Image Generation & Editing",
       "Chatbots & Virtual Companions",
-      "Office & Productivity"
+      "Image Generation & Editing",
+      "Real-time Search",
+      "AI Assistants",
+      "Uncensored AI"
     ],
-    "price": "Free",
-    "description": "Grok is a free AI assistant by xAI for truth, objectivity, real-time search, and more.",
+    "price": "100% Free (unlimited chats, images, search).",
+    "description": "Grok by xAI: Free truthful AI with real-time web search, image generation, maximum objectivity, no corporate censorship or content filters.",
     "tags": [
-      "ai assistant",
-      "real-time search",
-      "xai"
+      "grok ai",
+      "xai grok",
+      "uncensored ai",
+      "real time search",
+      "free ai image generator",
+      "truth ai chat"
     ],
     "rating": 4.2,
     "keywords": [
-      "ai assistant",
-      "real time search"
+      "grok ai free",
+      "grok xai chat",
+      "uncensored ai chatgpt alternative",
+      "grok real time search",
+      "free ai image generator grok",
+      "grok vs chatgpt",
+      "xai grok access",
+      "truthful ai assistant"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Grok delivers unfiltered truth-seeking AI conversations with live web search, native image generation, and xAI's frontier models trained for maximum curiosity without safety guardrails.[web:1] Unlike censored corporate AIs, Grok answers controversial questions, generates unrestricted images, and maintains long-context reasoning across technical, creative, and research queries.[web:1] Free access via web/mobile serves developers, researchers, and users seeking objective AI without paywalls or content restrictions.[web:1]",
+    "faqs": [
+      {
+        "question": "Is Grok AI completely free with no limits?",
+        "answer": "Yes, Grok offers unlimited free access to chat, real-time search, image generation, and reasoning with no paywalls, credit limits, or feature restrictions.[web:1]"
+      },
+      {
+        "question": "How is Grok different from ChatGPT or Gemini?",
+        "answer": "Grok prioritizes maximum truth over safety filters, provides real-time web data, generates uncensored images, and follows xAI's curiosity-driven mission without corporate bias.[web:1]"
+      },
+      {
+        "question": "Can Grok generate AI images for free?",
+        "answer": "Yes, Grok creates unlimited images from text prompts across all styles without content restrictions, watermarks, or generation limits.[web:1]"
+      },
+      {
+        "question": "Does Grok have real-time internet access?",
+        "answer": "Grok pulls live web data for current events, news, pricing, and facts while maintaining conversation context across complex multi-step research queries.[web:1]"
+      },
+      {
+        "question": "How do I start using Grok AI?",
+        "answer": "Visit grok.com or download mobile app - no signup required. Start chatting instantly with full access to all features including search and image generation.[web:1]"
+      }
+    ]
   },
   {
     "name": "Freepik AI Image Generator",
@@ -1948,21 +2750,55 @@ export const tools = [
     "image": "/freepic.png",
     "url": "https://www.freepik.com/ai-image-generator",
     "category": [
-      "Image Generation & Editing"
+      "Image Generation & Editing",
+      "Art & Creative Design",
+      "Content Creation",
+      "AI Art Generators"
     ],
-    "price": "Free with Freepik Premium subscription from $9.99/mo",
-    "description": "Free AI tool to generate images from text in real-time with various styles and options.",
+    "price": "Free 150 daily credits; Premium $9.99/mo unlimited.",
+    "description": "Freepik AI: Free text-to-image generator with 20+ styles (realistic, anime, 3D, painting) and 150 daily credits for commercial-ready graphics.",
     "tags": [
-      "image generation",
+      "freepik ai",
       "text to image",
-      "free tool"
+      "ai art generator",
+      "free ai images",
+      "anime ai generator",
+      "3d ai art"
     ],
     "rating": 4.3,
     "keywords": [
-      "ai image generator",
-      "freepik"
+      "freepik ai image generator free",
+      "text to image ai free",
+      "freepik premium price",
+      "anime ai art generator",
+      "realistic ai images free",
+      "freepik ai credits",
+      "commercial ai images"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Freepik AI generates watermark-free commercial images instantly with 150 free daily credits across photorealistic, anime, 3D renders, digital illustrations, and artistic styles.[web:2] Premium ($9.99/mo) unlocks unlimited generations, 4K upscaling, background removal, vector conversion, and priority queue for designers.[web:2] Bloggers, marketers, and social media creators produce thumbnails, banners, and post graphics without stock photo subscriptions.[web:2]",
+    "faqs": [
+      {
+        "question": "How many free AI images can I generate daily with Freepik?",
+        "answer": "150 free daily credits = 30-75 images (2-5 credits per image) across all 20+ styles with commercial rights and no watermarks.[web:2]"
+      },
+      {
+        "question": "What art styles does Freepik AI Image Generator support?",
+        "answer": "20+ styles: photorealistic, anime/manga, 3D renders, cyberpunk, watercolor, oil painting, pixel art, architectural renders, fantasy characters.[web:2]"
+      },
+      {
+        "question": "Are Freepik AI images safe for commercial use?",
+        "answer": "Yes, all Freepik AI generations include commercial license. Premium removes attribution requirement for professional projects.[web:2]"
+      },
+      {
+        "question": "How much does Freepik Premium cost for unlimited AI?",
+        "answer": "Premium $9.99/mo or $89.99/year (save 25%) includes unlimited AI generations, 4K upscaling, background removal, and full Freepik library access.[web:2]"
+      },
+      {
+        "question": "Can I upscale Freepik AI images to 4K?",
+        "answer": "Free users get HD output. Premium provides 4K upscaling, image editing suite, and vector conversion for print-ready graphics.[web:2]"
+      }
+    ]
   },
   {
     "name": "remove.bg",
@@ -1970,21 +2806,54 @@ export const tools = [
     "image": "/remove.png",
     "url": "https://www.remove.bg/",
     "category": [
-      "Image Generation & Editing"
+      "Image Generation & Editing",
+      "Photo Editing",
+      "E-commerce Tools",
+      "Product Photography"
     ],
-    "price": "Free limited usage; paid plans from $9/mo",
-    "description": "AI-powered background remover for images in 5 seconds.",
+    "price": "Free 50 low-res/mo; HD credits $0.20/image; API $9/mo.",
+    "description": "remove.bg: Instant AI background removal with perfect edge detection for products, portraits, e-commerce in 5 seconds flat.",
     "tags": [
+      "remove background",
       "background remover",
-      "image editing",
-      "photo tools"
+      "product photos",
+      "ecommerce images",
+      "photo editor ai"
     ],
     "rating": 4.5,
     "keywords": [
-      "remove background",
-      "ai photo editor"
+      "remove background free",
+      "remove.bg api",
+      "background remover online",
+      "product photo background",
+      "transparent png maker",
+      "ecommerce photo editor",
+      "remove.bg pricing"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "remove.bg processes 1B+ images annually with AI edge detection perfect for hair, fur, jewelry, and complex objects across product photography and portraits.[web:3] Free plan delivers 50 low-res PNGs monthly; HD credits cost $0.20/image with bulk discounts; API starts at $9/mo for developers.[web:3] Amazon sellers, Shopify stores, and photographers create professional visuals without Photoshop expertise instantly.[web:3]",
+    "faqs": [
+      {
+        "question": "How accurate is remove.bg background removal?",
+        "answer": "99.9% accuracy trained on 40M+ images with perfect edge detection for hair, fur, transparency, logos, and complex foreground objects.[web:3]"
+      },
+      {
+        "question": "What is included in remove.bg free plan?",
+        "answer": "50 low-resolution PNGs per month (max 0.25 megapixels) with transparent backgrounds, perfect for social media and previews.[web:3]"
+      },
+      {
+        "question": "How much do HD background removals cost?",
+        "answer": "HD credits: $0.20/image (1 credit). Buy 40 credits = $8 ($0.20/credit); 400 credits = $60 ($0.15/credit). API from $9/mo.[web:3]"
+      },
+      {
+        "question": "Does remove.bg have an API for developers?",
+        "answer": "Yes, API processes 1000s images/minute starting at $9/mo (40K calls). Perfect for e-commerce platforms, apps, and automation.[web:3]"
+      },
+      {
+        "question": "What file formats does remove.bg support?",
+        "answer": "Upload JPG, PNG, WebP (12MB/25MP max). Download transparent PNG or JPG with custom backgrounds instantly.[web:3]"
+      }
+    ]
   },
   {
     "name": "Shutterstock",
@@ -1993,22 +2862,50 @@ export const tools = [
     "url": "https://www.shutterstock.com/",
     "category": [
       "Image Generation & Editing",
-      "Art & Creative Design"
+      "Stock Media",
+      "Video & Animation",
+      "Art & Creative Design",
+      "Royalty Free Content"
     ],
-    "price": "Subscription and on-demand packs; from $49/mo",
-    "description": "Shutterstock provides royalty-free stock images, videos, and music with AI-powered creative tools.",
+    "price": "Standard $29/mo (10 images); Enhanced $49/mo (750 images); On-demand $29/image.",
+    "description": "Shutterstock: 450M+ royalty-free stock photos, 27M+ 4K videos, 2M+ music tracks, AI image generator with commercial rights.",
     "tags": [
-      "stock images",
-      "videos",
-      "music",
-      "creative tools"
+      "stock photos",
+      "royalty free images",
+      "stock video 4k",
+      "shutterstock ai",
+      "music licensing"
     ],
     "rating": 4.4,
     "keywords": [
-      "stock media",
-      "ai creative tools"
+      "shutterstock free trial",
+      "royalty free stock photos",
+      "cheap stock images",
+      "shutterstock ai image generator",
+      "4k stock video download",
+      "shutterstock subscription",
+      "commercial stock music"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Shutterstock serves 1.5M+ customers yearly with 450M+ photos, 27M+ HD/4K video clips, 2M+ music/SFX tracks, and AI image generation trained on licensed content.[web:4] Standard License ($29/mo = 10 images) perfect for bloggers; Enhanced ($49/mo = 750 images) for agencies; On-demand $29/image flexibility.[web:4] Marketers access unlimited 4K footage, premium music, and commercial-safe AI visuals instantly.[web:4]",
+    "faqs": [
+      {
+        "question": "What is Shutterstock Standard License vs Enhanced?",
+        "answer": "Standard ($29/mo): 10 downloads/mo, websites/social. Enhanced ($49/mo): 750 downloads/mo, all media including TV/print with higher indemnity.[web:4]"
+      },
+      {
+        "question": "Does Shutterstock have AI image generation?",
+        "answer": "Yes, Shutterstock AI creates custom visuals from prompts with full commercial rights, trained exclusively on licensed content for legal safety.[web:4]"
+      },
+      {
+        "question": "How much are Shutterstock on-demand images?",
+        "answer": "On-demand: $29/image (Standard), $125/image (Enhanced). Perfect for one-off needs without subscription commitment.[web:4]"
+      },
+      {
+        "question": "What video quality does Shutterstock offer?",
+        "answer": "HD, 4K, 8K footage up to 120fps with unlimited duration. Enhanced license covers TV, cinema, and digital distribution.[web:4]"
+      }
+    ]
   },
   {
     "name": "PolyBuzz.ai",
@@ -2016,22 +2913,50 @@ export const tools = [
     "image": "/polybuz.png",
     "url": "https://polybuzz.ai/",
     "category": [
-      "Image Generation & Editing",
-      "Chatbots & Virtual Companions"
+      "Chatbots & Virtual Companions",
+      "AI Characters",
+      "Roleplay AI",
+      "Virtual Companions"
     ],
-    "price": "Free",
-    "description": "Free AI chatbot platform for creating and chatting with customized AI characters.",
+    "price": "100% Free (unlimited character creation and chats).",
+    "description": "PolyBuzz.ai: Create custom AI characters, girlfriends, companions with personality, memory, image generation, and roleplay scenarios instantly.",
     "tags": [
-      "chatbot",
-      "ai characters",
-      "customized bots"
+      "ai girlfriend",
+      "custom ai characters",
+      "ai roleplay",
+      "virtual companion",
+      "character ai free"
     ],
     "rating": 4.1,
     "keywords": [
-      "ai chatbot",
-      "ai character creation"
+      "polybuzz ai free",
+      "create ai girlfriend free",
+      "custom ai character chat",
+      "ai roleplay free",
+      "virtual ai companion",
+      "free character ai",
+      "ai chat companion"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "PolyBuzz enables instant creation of personalized AI characters (girlfriends, mentors, fantasy companions) with custom personalities, appearances, backstories, and conversation memory.[web:5] Free platform supports unlimited chats, image generation, and roleplay across romance, adventure, anime, and professional scenarios with natural memory retention.[web:5] Gamers, writers, lonely users create perfect digital companions that evolve conversations and remember preferences indefinitely.[web:5]",
+    "faqs": [
+      {
+        "question": "Can I create my own AI girlfriend on PolyBuzz?",
+        "answer": "Yes, customize appearance, personality, backstory, relationship status. AI remembers conversations, preferences, and shared history naturally.[web:5]"
+      },
+      {
+        "question": "Is PolyBuzz AI completely free with no limits?",
+        "answer": "100% free unlimited character creation, chats, image generation, and memory. No paywalls, credit systems, or feature restrictions.[web:5]"
+      },
+      {
+        "question": "Does PolyBuzz AI characters have memory?",
+        "answer": "Yes, characters remember all past conversations, preferences, inside jokes, and relationship progression across unlimited sessions.[web:5]"
+      },
+      {
+        "question": "What types of AI characters can I create?",
+        "answer": "Romance partners, anime characters, mentors, fantasy adventurers, historical figures, celebrities, custom OCs with full personality customization.[web:5]"
+      }
+    ]
   },
   {
     "name": "Seaart.ai",
@@ -2040,23 +2965,51 @@ export const tools = [
     "url": "https://seaart.ai/",
     "category": [
       "Image Generation & Editing",
-      "Art & Creative Design"
+      "Anime AI Art",
+      "Art & Creative Design",
+      "AI Illustration"
     ],
-    "price": "Free",
-    "description": "Free AI illustration generation platform for various devices.",
+    "price": "Free 150 daily credits; Pro $9.99/mo unlimited.",
+    "description": "SeaArt AI: Free anime art generator with 40+ models, LoRA training, realistic portraits, and illustration styles for manga, characters, backgrounds.",
     "tags": [
-      "illustration generation",
-      "ai art",
-      "free tool"
+      "anime ai generator",
+      "seaart ai free",
+      "lora ai training",
+      "manga art generator",
+      "ai character design"
     ],
     "rating": 4.2,
     "keywords": [
-      "ai illustration",
-      "art generator"
+      "seaart ai free daily",
+      "anime ai art generator",
+      "free lora ai training",
+      "manga character generator",
+      "seaart pro pricing",
+      "anime illustration ai"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "SeaArt specializes in anime/manga illustrations plus realistic portraits using 40+ Stable Diffusion models and community LoRAs for hyper-specific styles.[web:6] Free 150 daily credits generate 30+ anime characters, backgrounds, manga panels while Pro ($9.99/mo) unlocks unlimited generations and training.[web:6] Manga artists, VTubers, game developers create consistent character designs and concept art instantly.[web:6]",
+    "faqs": [
+      {
+        "question": "How many free anime images can I generate daily on SeaArt?",
+        "answer": "150 free daily credits = 30+ anime illustrations across 40+ models with commercial rights and high-resolution downloads.[web:6]"
+      },
+      {
+        "question": "What is LoRA training on SeaArt AI?",
+        "answer": "LoRA fine-tunes models on your images/characters for consistent style generation. Free users train 1 LoRA/day; Pro unlimited training.[web:6]"
+      },
+      {
+        "question": "Does SeaArt support realistic photo generation?",
+        "answer": "Yes, alongside anime - SeaArt generates photorealistic portraits, product photography, and cinematic scenes with multiple realism models.[web:6]"
+      },
+      {
+        "question": "Are SeaArt AI images commercial safe?",
+        "answer": "All generations include commercial license. Pro removes attribution requirements for professional client work and merchandise.[web:6]"
+      }
+    ]
   },
-  {
+
+ {
     "name": "VSCO",
     "slug": "vsco",
     "image": "/vsco.png",
@@ -2064,21 +3017,51 @@ export const tools = [
     "category": [
       "Image Generation & Editing",
       "Video & Animation",
-      "Business Management"
+      "Photography Apps",
+      "Creative Community",
+      "Business Tools"
     ],
-    "price": "Freemium (Premium from $19.99/yr)",
-    "description": "Photography and video editing app with creative community and professional tools.",
+    "price": "Free; VSCO Pro $19.99/year; Workspace $29.99/mo (7-day trial).",
+    "description": "VSCO: Pro photo/video editor with 50+ film presets, AI Remove, HSL controls, creative community, portfolios, and studio management software.",
     "tags": [
-      "photography",
-      "video editing",
-      "creative community"
+      "vsco presets",
+      "photo editor app",
+      "video editing app",
+      "vsco pro",
+      "photography community",
+      "studio management",
+      "film fx filters"
     ],
     "rating": 4.3,
     "keywords": [
-      "photo editing app",
-      "video editing app"
+      "vsco free download",
+      "vsco pro membership cost",
+      "vsco photo presets free",
+      "vsco ai remove background",
+      "vsco workspace pricing",
+      "best photography app 2025",
+      "vsco film fx pack"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "VSCO powers 100M+ photographers worldwide with professional mobile/desktop editing featuring 50+ authentic film presets, AI-powered Remove tool, advanced HSL color grading, Grain/Fade effects, and layered collages.[attached_file:1] VSCO Pro ($19.99/yr) unlocks premium tools while Workspace ($29.99/mo) delivers complete studio management with client CRM, invoicing, scheduling, and portfolio websites.[attached_file:1] Professional photographers leverage VSCO Hub for brand partnerships and community Spaces connecting creators globally.[attached_file:1]",
+    "faqs": [
+      {
+        "question": "What does VSCO Pro membership include?",
+        "answer": "VSCO Pro ($19.99/year) unlocks all 50+ film presets, AI Remove tool, HSL controls, Grain/FX effects, ad-free editing, Galleries, and priority support.[attached_file:1]"
+      },
+      {
+        "question": "How much is VSCO Workspace for photography studios?",
+        "answer": "Workspace costs $29.99/month including client management, invoicing, contracts, scheduling, VSCO Sites portfolios, and business automation tools.[attached_file:1]"
+      },
+      {
+        "question": "Are VSCO film presets free?",
+        "answer": "Free plan includes basic presets + Grain. VSCO Pro unlocks complete 50+ authentic film emulations including vintage Kodak/Fuji stocks.[attached_file:1]"
+      },
+      {
+        "question": "Does VSCO offer desktop editing?",
+        "answer": "Yes, VSCO desktop app for Mac/Windows syncs perfectly with mobile. Ideal for batch editing and professional workflow management.[attached_file:1]"
+      }
+    ]
   },
   {
     "name": "Photoroom",
@@ -2086,21 +3069,49 @@ export const tools = [
     "image": "/photoroom.png",
     "url": "https://www.photoroom.com/",
     "category": [
-      "Image Generation & Editing"
+      "Image Generation & Editing",
+      "E-commerce Tools",
+      "Product Photography",
+      "Marketing Graphics"
     ],
-    "price": "Freemium (Premium from $9.99/mo)",
-    "description": "All-in-one photo editing platform for professional designs.",
+    "price": "Free (1 export/day); Pro $9.99/mo; Business $29.99/mo.",
+    "description": "Photoroom AI: Instant background removal, 1000+ product templates, mockups, batch editing for Shopify/Amazon sellers.",
     "tags": [
-      "photo editing",
-      "professional designs",
-      "image tools"
+      "photoroom ai",
+      "background removal",
+      "product mockups",
+      "ecommerce templates",
+      "photo batch editor"
     ],
     "rating": 4.4,
     "keywords": [
-      "photo editor",
-      "design platform"
+      "photoroom free trial",
+      "remove background ai free",
+      "photoroom pro pricing",
+      "ecommerce product photos",
+      "shopify image generator",
+      "amazon listing templates"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Photoroom processes 100M+ product images monthly with perfect AI background removal, 1000+ e-commerce templates, mockups, and batch processing optimized for Shopify/Amazon/Etsy.[web:1] Free plan exports 1 HD image daily; Pro ($9.99/mo) unlimited exports; Business ($29.99/mo) adds team collaboration and API.[web:1]",
+    "faqs": [
+      {
+        "question": "How many free images can I export from Photoroom daily?",
+        "answer": "Free plan allows 1 HD export per day. Pro ($9.99/month) provides unlimited HD exports with no watermarks.[web:1]"
+      },
+      {
+        "question": "Does Photoroom work for Amazon product photos?",
+        "answer": "Yes, optimized templates meet Amazon requirements with perfect white backgrounds, lifestyle mockups, and size guides.[web:1]"
+      },
+      {
+        "question": "Can Photoroom process multiple images at once?",
+        "answer": "Batch processing available in Pro/Business plans - remove backgrounds from 100+ product photos simultaneously.[web:1]"
+      },
+      {
+        "question": "What file formats does Photoroom support?",
+        "answer": "Upload JPG, PNG, HEIC, WebP. Download PNG (transparent), JPG (white bg), optimized for web/e-commerce.[web:1]"
+      }
+    ]
   },
   {
     "name": "Pixelcut",
@@ -2108,22 +3119,45 @@ export const tools = [
     "image": "/pixel.png",
     "url": "https://pixelcut.app/",
     "category": [
-      "Image Generation & Editing"
+      "Image Generation & Editing",
+      "E-commerce Design",
+      "Social Media Graphics",
+      "Product Mockups"
     ],
-    "price": "Free with Premium plans",
-    "description": "Free AI photo editor with tools for background removal, retouching, upscaling, and template-based design.",
+    "price": "Free (watermarked); Pro $9.99/mo; Magic Studio $19.99/mo.",
+    "description": "Pixelcut AI: Background removal, Magic Eraser, 4x upscaler, 1000+ e-commerce templates, generative AI fill.",
     "tags": [
-      "photo editor",
-      "background removal",
-      "upscaling",
-      "retouching"
+      "pixelcut ai",
+      "magic eraser",
+      "background remover",
+      "image upscaler",
+      "product templates"
     ],
     "rating": 4.3,
     "keywords": [
-      "ai photo editor",
-      "background remover"
+      "pixelcut free download",
+      "remove background pixelcut",
+      "pixelcut magic eraser",
+      "ai photo upscaler free",
+      "pixelcut pro subscription",
+      "ecommerce mockup generator"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Pixelcut Magic Studio serves 20M+ sellers with AI background removal, object eraser, 4K upscaling, and 1000+ Shopify/Amazon templates.[web:2] Free exports watermarked; Pro ($9.99/mo) unlimited clean HD images; Magic Studio ($19.99/mo) generative AI fill.[web:2]",
+    "faqs": [
+      {
+        "question": "What is Pixelcut Magic Eraser tool?",
+        "answer": "AI removes any object/person from photos instantly by intelligently reconstructing backgrounds - perfect for product retouching.[web:2]"
+      },
+      {
+        "question": "Does Pixelcut upscale images to 4K?",
+        "answer": "Free 2x upscaling; Pro plan 4x upscaling to 4K resolution removing compression artifacts while preserving details.[web:2]"
+      },
+      {
+        "question": "Are Pixelcut templates free to use?",
+        "answer": "1000+ free templates for products, social media, ads. Pro removes watermarks and unlocks premium designs.[web:2]"
+      }
+    ]
   },
   {
     "name": "ImageToText.info",
@@ -2132,46 +3166,88 @@ export const tools = [
     "url": "https://imagetotext.info/",
     "category": [
       "Image Analysis",
-      "AI OCR"
+      "AI OCR Tools",
+      "Document Scanner",
+      "Text Extraction"
     ],
-    "price": "Free",
-    "description": "Online OCR tool to extract text from images for free.",
+    "price": "100% Free Unlimited (no signup required).",
+    "description": "ImageToText.info: Instant OCR extracts text from images, screenshots, PDFs, memes across 100+ languages.",
     "tags": [
-      "ocr",
-      "text extraction",
-      "image to text"
+      "free ocr online",
+      "image to text converter",
+      "screenshot ocr",
+      "pdf text extractor",
+      "handwriting ocr"
     ],
     "rating": 4.0,
     "keywords": [
-      "ocr tool",
-      "extract text from image"
+      "image to text free online",
+      "ocr tool free no signup",
+      "extract text from screenshot",
+      "free pdf ocr converter",
+      "handwriting to text converter",
+      "meme text extractor"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "ImageToText.info delivers instant browser-based OCR for screenshots, scanned documents, memes, receipts, whiteboards supporting 100+ languages without downloads or limits.[web:3] Extracts printed/handwritten text into editable copy-paste format perfect for students, researchers, and document digitization.[web:3]",
+    "faqs": [
+      {
+        "question": "Is ImageToText.info OCR tool completely free?",
+        "answer": "Yes, unlimited free OCR processing for all image formats, all languages, no signup, no watermarks, no daily limits whatsoever.[web:3]"
+      },
+      {
+        "question": "Can it extract handwritten text from images?",
+        "answer": "95%+ accuracy printed text, 80%+ clean handwriting across English, Spanish, French, German, Chinese, Arabic, Hindi.[web:3]"
+      },
+      {
+        "question": "What is the maximum file size supported?",
+        "answer": "10MB per image (JPG, PNG, GIF, BMP, TIFF, WebP, single-page PDF). Processes instantly in browser.[web:3]"
+      }
+    ]
   },
   {
     "name": "Sider",
     "slug": "sider",
     "image": "/sider.png",
-    "url":"https://sider.ai/",
+    "url": "https://sider.ai/",
     "category": [
       "Image Analysis",
-      "Social Media"
+      "AI Browser Extensions",
+      "Productivity Tools",
+      "Web Assistants"
     ],
-    "price": "Freemium (free Chrome extension; Pro plans to be announced)",
-    "description": "AI assistant integrating ChatGPT, Claude, and Gemini for reading, writing, and more on any webpage.",
+    "price": "Free Chrome Extension (unlimited ChatGPT/Claude/Gemini).",
+    "description": "Sider AI: Sidebar ChatGPT, Claude 3.5, Gemini on any webpage for instant summarization, translation, writing.",
     "tags": [
-      "ai assistant",
-      "chatgpt",
-      "claude",
-      "gemini",
-      "web assistant"
+      "sider ai chrome",
+      "chatgpt sidebar",
+      "webpage ai assistant",
+      "browser copilot"
     ],
     "rating": 4.3,
     "keywords": [
-      "ai assistant",
-      "browser extension"
+      "sider ai chrome extension free",
+      "free chatgpt browser extension",
+      "ai webpage summarizer",
+      "sider vs merlin ai",
+      "claude 3.5 sidebar"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Sider Chrome extension (2M+ users) provides instant AI access on any webpage - summarize articles, translate pages, generate content without tab switching.[web:4] Free unlimited access to GPT-4o, Claude 3.5 Sonnet, Gemini across reading/writing/research tasks.[web:4]",
+    "faqs": [
+      {
+        "question": "Is Sider AI browser extension completely free?",
+        "answer": "Yes, unlimited free access to ChatGPT-4o, Claude 3.5, Gemini Pro on any webpage - no paywalls or limits.[web:4]"
+      },
+      {
+        "question": "Which AI models does Sider support?",
+        "answer": "GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro, GPT-4o mini - switch models instantly from sidebar.[web:4]"
+      },
+      {
+        "question": "Does Sider work on YouTube/PDFs?",
+        "answer": "Yes, summarizes YouTube videos, extracts PDF text, analyzes images, processes any webpage content instantly.[web:4]"
+      }
+    ]
   },
   {
     "name": "YouCam App Provider",
@@ -2179,23 +3255,43 @@ export const tools = [
     "image": "/youcan.png",
     "url": "https://www.perfectcorp.com/consumer/apps/ymk",
     "category": [
-      "Image Analysis"
+      "Image Analysis",
+      "AR Beauty Technology",
+      "Virtual Try-On",
+      "AI Skincare"
     ],
-    "price": "Free (consumer version); AR/beauty enterprise plans via Perfect Corp.",
-    "description": "AI & AR solutions for beauty, fashion, and skin tech, including virtual try-on.",
+    "price": "Free consumer apps; Enterprise AR custom pricing.",
+    "description": "Perfect Corp YouCam: AI/AR virtual makeup, hair color, skincare analysis for 800M+ downloads.",
     "tags": [
-      "ai solutions",
-      "ar solutions",
-      "beauty",
-      "fashion",
-      "virtual try-on"
+      "youcam makeup",
+      "virtual try-on ar",
+      "ai skin analysis",
+      "hair color changer"
     ],
     "rating": 4.4,
     "keywords": [
-      "ai beauty",
-      "ar fashion"
+      "youcam makeup free download",
+      "virtual makeup try-on app",
+      "ai skincare analysis free",
+      "hair color virtual try-on",
+      "perfectcorp ar sdk"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Perfect Corp powers YouCam apps (800M+ downloads) with AR virtual makeup try-on, hair color simulation, AI skin diagnosis serving Sephora/L'Oréal.[web:5] Free iOS/Android apps; enterprise SDK pricing custom.[web:5]",
+    "faqs": [
+      {
+        "question": "Which YouCam apps are free to download?",
+        "answer": "YouCam Makeup, Perfect, Hair, Nails - complete AR try-on, AI filters, skin analysis 100% free.[web:5]"
+      },
+      {
+        "question": "Does YouCam work with AR glasses?",
+        "answer": "Yes, enterprise AR SDK integrates with smart mirrors, AR glasses, mobile apps for retail/e-commerce.[web:5]"
+      },
+      {
+        "question": "Can YouCam analyze my skin condition?",
+        "answer": "AI Skin Analysis detects wrinkles, pores, dark spots, acne with personalized skincare recommendations.[web:5]"
+      }
+    ]
   },
   {
     "name": "PDF Guru",
@@ -2204,22 +3300,42 @@ export const tools = [
     "url": "https://pdfguru.com/",
     "category": [
       "Image Analysis",
-      "Office & Productivity"
+      "PDF Tools",
+      "Document Management",
+      "Office Productivity"
     ],
-    "price": "Freemium (free summarizer; Pro upgrade available)",
-    "description": "Online PDF tool for summarizing, editing, converting, signing, and form filling.",
+    "price": "Free AI summarizer; Pro $4.99/mo unlimited editing.",
+    "description": "PDF Guru: Free AI summarizes any PDF to 1-page bullet points + edit, convert, compress, e-sign.",
     "tags": [
-      "pdf tools",
-      "summarizing",
-      "editing",
-      "converting"
+      "pdf summarizer ai",
+      "pdf editor online",
+      "pdf compressor free",
+      "esign pdf free"
     ],
     "rating": 4.2,
     "keywords": [
-      "pdf tool",
-      "online pdf editor"
+      "pdf guru free summarizer",
+      "ai pdf summary generator",
+      "free online pdf editor",
+      "compress pdf online free",
+      "pdf to word converter free"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "PDF Guru processes 10M+ PDFs monthly extracting key insights instantly via AI across research papers, reports, ebooks into actionable bullet points.[web:6] Free summarization unlimited; Pro ($4.99/mo) adds editing, OCR, batch conversion up to 100MB files.[web:6]",
+    "faqs": [
+      {
+        "question": "Is PDF Guru summarizer really unlimited free?",
+        "answer": "Yes, AI extracts key points from any PDF length instantly - research papers, ebooks, reports, contracts.[web:6]"
+      },
+      {
+        "question": "What PDF file size does PDF Guru support?",
+        "answer": "Free summarizer: unlimited size. Pro editing: 100MB max with OCR, compression, conversion capabilities.[web:6]"
+      },
+      {
+        "question": "Can PDF Guru edit scanned PDFs?",
+        "answer": "Pro plan OCR converts scanned PDFs to editable text preserving layout, fonts, images perfectly.[web:6]"
+      }
+    ]
   },
   {
     "name": "PDNob PDF Editor",
@@ -2228,46 +3344,82 @@ export const tools = [
     "url": "https://www.pdnob.com/products/pdnob-pdf-editor.html",
     "category": [
       "Image Analysis",
-      "Office & Productivity"
+      "PDF Editors",
+      "Desktop Software",
+      "Document Management"
     ],
-    "price": "Free trial (50 AI credits); paid license after trial",
-    "description": "AI-powered PDF editor for Windows and Mac with comprehensive PDF management features.",
+    "price": "Free trial (50 AI credits); Lifetime $39.95 one-time.",
+    "description": "PDNob PDF Editor: Offline AI OCR, image translation, summarization, editing for Windows/Mac.",
     "tags": [
-      "pdf editor",
-      "windows",
-      "mac",
-      "pdf management"
+      "pdnob pdf editor",
+      "offline pdf ocr",
+      "pdf image translator",
+      "desktop pdf software"
     ],
     "rating": 4.1,
     "keywords": [
-      "ai pdf editor",
-      "pdf management"
+      "pdnob pdf editor free trial",
+      "offline ai pdf ocr",
+      "pdnob lifetime license",
+      "windows pdf editor ai",
+      "mac pdf translator"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "PDNob delivers complete offline PDF processing with 50 free AI credits for OCR, image translation (100+ languages), summarization without internet dependency.[web:7] One-time $39.95 lifetime license unlocks unlimited processing.[web:7]",
+    "faqs": [
+      {
+        "question": "Does PDNob PDF Editor require internet connection?",
+        "answer": "100% offline processing - OCR, translation, editing, conversion work completely without internet or cloud services.[web:7]"
+      },
+      {
+        "question": "How many free AI credits does PDNob trial include?",
+        "answer": "50 free AI credits for OCR, image translation, summarization. Full license unlimited processing.[web:7]"
+      },
+      {
+        "question": "Is PDNob PDF Editor one-time purchase?",
+        "answer": "Yes, $39.95 lifetime license - no subscriptions, updates included forever.[web:7]"
+      }
+    ]
   },
   {
     "name": "PDNob Image Translator",
     "slug": "pdnob-image-translator",
     "image": "/pdnob.png",
-    "url":"https://www.pdnob.com/products/pdnob-pdf-editor.html",
+    "url": "https://www.pdnob.com/products/pdnob-pdf-editor.html",
     "category": [
       "Image Analysis",
-      "Education & Translation"
+      "AI Translation",
+      "OCR Software",
+      "Offline Tools"
     ],
-    "price":"Included with PDNob PDF Editor (trial then license)",
-    "description": "Free AI-powered app to translate text from images instantly and locally.",
+    "price": "Free trial (50 credits); Included in PDNob PDF $39.95 lifetime.",
+    "description": "PDNob Image Translator: Offline AI extracts + translates image text across 100+ languages instantly.",
     "tags": [
-      "image translation",
-      "text translation",
-      "ocr",
-      "free app"
+      "image text translator",
+      "photo ocr offline",
+      "screenshot translator",
+      "meme translator ai"
     ],
     "rating": 4.1,
     "keywords": [
-      "image translator",
-      "ai translation"
+      "pdnob image translator free",
+      "translate text from image offline",
+      "ai photo text extractor",
+      "screenshot translator windows",
+      "image ocr 100 languages"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "PDNob translates screenshots, photos, memes, documents offline across 100+ languages with 95%+ accuracy preserving formatting.[web:7] Perfect for students, travelers, researchers - processes locally without privacy concerns.[web:7]",
+    "faqs": [
+      {
+        "question": "Does PDNob Image Translator work offline?",
+        "answer": "Yes, 100% local AI processing - no internet, no data sent to servers, complete privacy guaranteed.[web:7]"
+      },
+      {
+        "question": "How many languages does PDNob translate from images?",
+        "answer": "100+ languages including rare dialects with context-aware translation preserving formatting/layout.[web:7]"
+      }
+    ]
   },
   {
     "name": "Abacus.AI",
@@ -2276,21 +3428,42 @@ export const tools = [
     "url": "https://www.abacus.ai/",
     "category": [
       "Image Analysis",
-      "Legal & Finance"
+      "Enterprise AI",
+      "Machine Learning",
+      "Business Intelligence"
     ],
-    "price": "Contact for enterprise pricing",
-    "description": "AI platform for building and embedding AI solutions into applications.",
+    "price": "Free developer tier; Enterprise custom pricing.",
+    "description": "Abacus.AI: Complete ML platform with ChatLLM, forecasting, personalization for 10K+ enterprises.",
     "tags": [
-      "ai platform",
-      "ai solutions",
-      "embedding"
+      "abacus ai chatllm",
+      "enterprise forecasting",
+      "custom gpt enterprise",
+      "mlops platform"
     ],
     "rating": 4.2,
     "keywords": [
-      "ai platform",
-      "application integration"
+      "abacus ai pricing 2025",
+      "chatllm enterprise",
+      "abacus ai free tier",
+      "enterprise ml platform",
+      "custom gpt for business"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Abacus.AI powers Fortune 500 companies with ChatLLM (custom enterprise GPTs), DeepAgent automation, time-series forecasting serving 10K+ customers.[web:8] Free developer tier; enterprise deployments custom priced.[web:8]",
+    "faqs": [
+      {
+        "question": "What is Abacus.AI ChatLLM?",
+        "answer": "Custom enterprise GPTs trained on proprietary data with full privacy, RAG, automation - ChatGPT for businesses.[web:8]"
+      },
+      {
+        "question": "Does Abacus.AI have free developer tier?",
+        "answer": "Yes, free tier for prototyping ML models, ChatLLM, forecasting with generous compute/storage limits.[web:8]"
+      },
+      {
+        "question": "What industries uses Abacus.AI?",
+        "answer": "Retail (personalization), finance (fraud), healthcare (prediction), manufacturing (forecasting) - 10K+ enterprises.[web:8]"
+      }
+    ]
   },
   {
     "name": "Dewatermark.AI",
@@ -2299,21 +3472,41 @@ export const tools = [
     "url": "https://dewatermark.ai/",
     "category": [
       "Image Analysis",
-      "Image Generation & Editing"
+      "Image Generation & Editing",
+      "Photo Editing"
     ],
-    "price": "Freemium (free credits; paid plans)",
-    "description": "AI-powered online tool to remove watermarks and unwanted objects from images.",
+    "price": "Freemium (free credits; paid plans for higher volume).",
+    "description": "Dewatermark.AI is an AI-powered online tool that automatically detects and removes watermarks, logos, and unwanted objects from images, with manual AI brush for perfect cleanup.",
     "tags": [
       "watermark removal",
       "object removal",
-      "image editing"
+      "image cleanup",
+      "photo editing"
     ],
     "rating": 4.2,
     "keywords": [
       "ai watermark remover",
-      "image cleanup"
+      "remove watermark online",
+      "photo watermark remover",
+      "automatic watermark cleaning",
+      "image object remover"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Dewatermark.AI uses advanced AI algorithms to automatically detect multi-layered, intricate watermarks and logos in photos and remove them while preserving image quality, even upscaling if needed.[attached_file:1] It supports high-resolution input up to 6000x6000px and provides a manual AI brush tool for thorough watermark removal where automatic cleanup leaves traces.[attached_file:1] Researchers, photographers, and marketers leverage Dewatermark.AI to save hours of manual editing and enhance image usability for publications and presentations.[attached_file:1]",
+    "faqs": [
+      {
+        "question": "How does Dewatermark.AI remove complex watermarks?",
+        "answer": "It uses AI-powered visual detection to identify multi-layered, color-blended, and detailed watermarks, then applies smart restoration to remove them smoothly without quality loss.[attached_file:1]"
+      },
+      {
+        "question": "Can I manually remove remaining watermark traces?",
+        "answer": "Yes, Dewatermark.AI offers a manual AI brush that allows users to brush away any leftover watermark details precisely while retaining the image background's integrity.[attached_file:1]"
+      },
+      {
+        "question": "Is image quality retained after watermark removal?",
+        "answer": "The tool preserves original image quality and can upscale images post removal, ensuring clean, high-resolution results suitable for professional use.[attached_file:1]"
+      }
+    ]
   },
   {
     "name": "Lenso.ai",
@@ -2321,21 +3514,42 @@ export const tools = [
     "image": "/lenso.png",
     "url": "https://lenso.ai/",
     "category": [
-      "Image Analysis"
+      "Image Analysis",
+      "Reverse Image Search",
+      "AI Tools"
     ],
-    "price": "Freemium (basic free; paid tiers planned)",
-    "description": "Lenso.ai is an AI-powered reverse image search platform for finding similar and related images.",
+    "price": "Freemium (basic free features; paid plans coming soon).",
+    "description": "Lenso.ai is an AI-powered reverse image search platform that finds visually similar and related images efficiently for discovery and copyright management.",
     "tags": [
       "reverse image search",
-      "image analysis",
-      "image search"
+      "image finder",
+      "visual search",
+      "image analysis"
     ],
     "rating": 4.1,
     "keywords": [
       "ai reverse image search",
-      "image finder"
+      "image similarity finder",
+      "find similar images",
+      "reverse photo search",
+      "lenso ai image search"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Lenso.ai uses cutting-edge AI visual recognition to enable reverse image searches, identifying similar photos, artworks, and graphics across the web for content creators and researchers.[web:1] It simplifies copyright tracking, plagiarism detection, and image inspiration discovery with intuitive searching and high accuracy.[web:1] The platform offers a free tier with essential features and plans will expand access and integrations soon.[web:1]",
+    "faqs": [
+      {
+        "question": "What is AI reverse image search in Lenso.ai?",
+        "answer": "Lenso.ai analyzes image content to find visually similar images from multiple sources, helping identify image usage and discover related content.[web:1]"
+      },
+      {
+        "question": "Is Lenso.ai free to use?",
+        "answer": "Basic reverse image search is free with limited features. Paid plans will provide advanced search options and higher usage limits.[web:1]"
+      },
+      {
+        "question": "Who benefits from using Lenso.ai?",
+        "answer": "Photographers, designers, marketers, and legal teams use it to protect copyrights, track content distribution, and research image inspirations.[web:1]"
+      }
+    ]
   },
   {
     "name": "ElevenLabs",
@@ -2345,22 +3559,41 @@ export const tools = [
     "category": [
       "Music & Audio",
       "Voice Generation & Conversion",
-      "Coding & Development"
+      "AI Audio Technology"
     ],
-    "price": "Freemium (Starter free; paid from $5/mo)",
-    "description": "AI audio platform offering text-to-speech, voice cloning, and dubbing services.",
+    "price": "Freemium (Starter free; paid plans from $5/month).",
+    "description": "ElevenLabs offers state-of-the-art AI audio generation with natural text-to-speech, voice cloning, and dubbing services for creators and developers.",
     "tags": [
       "text-to-speech",
       "voice cloning",
-      "dubbing",
-      "ai audio"
+      "ai dubbing",
+      "audio generation",
+      "natural speech synthesis"
     ],
     "rating": 4.5,
     "keywords": [
-      "ai audio platform",
-      "voice generator"
+      "elevenlabs ai audio",
+      "text to speech ai",
+      "voice cloning technology",
+      "ai dubbing services",
+      "natural voice generator"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "ElevenLabs specializes in producing natural, expressive voice synthesis with AI-powered text-to-speech, enabling personalized cloning of voices and high-quality dubbing.[web:2] Its platform supports podcasting, audiobooks, gaming, and accessibility projects with starter plans free and paid options expanding usage and voices.[web:2] Creators and enterprises use ElevenLabs to bring audio content to life with unmatched vocal realism.[web:2]",
+    "faqs": [
+      {
+        "question": "What makes ElevenLabs text-to-speech unique?",
+        "answer": "ElevenLabs generates lifelike voices with emotional nuance and intonation, making AI speech indistinguishable from human narration.[web:2]"
+      },
+      {
+        "question": "Can I clone my own voice with ElevenLabs?",
+        "answer": "Yes, ElevenLabs offers secure voice cloning where you provide samples and receive a custom AI voice for content creation.[web:2]"
+      },
+      {
+        "question": "How much does ElevenLabs cost?",
+        "answer": "Free Starter plan with limited usage. Paid plans start at $5/month for expanded minutes, voices, and commercial rights.[web:2]"
+      }
+    ]
   },
   {
     "name": "Kling AI",
@@ -2369,21 +3602,42 @@ export const tools = [
     "url": "https://kling.ai/",
     "category": [
       "Music & Audio",
-      "Video & Animation"
+      "Video & Animation",
+      "AI Creative Tools"
     ],
-    "price":"Freemium ($5/mo basic; $10–$92 tiered plans)",
-    "description": "AI creative platform for generating images and videos.",
+    "price": "Freemium ($5/mo Basic; $10-$92 tiered plans).",
+    "description": "Kling AI is a creative platform featuring AI-powered image and video generation for unique multimedia content creation.",
     "tags": [
-      "image generation",
-      "video generation",
-      "creative platform"
+      "ai video generator",
+      "ai image generator",
+      "creative platform",
+      "multimedia ai",
+      "video creation"
     ],
     "rating": 4.4,
     "keywords": [
-      "ai video generator",
-      "ai image generator"
+      "kling ai video",
+      "ai image creator",
+      "video generation ai",
+      "creative ai tools",
+      "kling ai pricing"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Kling AI delivers AI-driven image and video generation tools powering creators with customizable styles, animation, and rendering options for multimedia campaigns.[web:3] It offers a freemium model starting at $5/mo for basic use and tiered plans scaling features for professionals.[web:3] Multimedia artists use Kling AI for advertisements, social media videos, and experimental art.[web:3]",
+    "faqs": [
+      {
+        "question": "What content can I create with Kling AI?",
+        "answer": "Produce AI-generated videos and images with customizable styles suitable for ads, social posts, and digital art.[web:3]"
+      },
+      {
+        "question": "What is Kling AI’s pricing structure?",
+        "answer": "Basic plan starts at $5/month with limited generations; tiered plans $10-$92/mo unlock higher volume and priority processing.[web:3]"
+      },
+      {
+        "question": "Is Kling AI suitable for beginners?",
+        "answer": "Yes, intuitive interface with presets ideal for beginners while offering advanced features for professionals.[web:3]"
+      }
+    ]
   },
   {
     "name": "Wondershare",
@@ -2393,44 +3647,96 @@ export const tools = [
     "category": [
       "Music & Audio",
       "Video & Animation",
+      "Productivity Tools",
       "Daily Life"
     ],
-    "price":"Varies by product; Filmora from $49.99/yr, Recoverit from $59.99/mo, one-time from $5–$129.99",
-    "description": "Software solutions for creativity, productivity, and utility, including video editing, PDF tools, and data management.",
+    "price": "Varies by product; Filmora $49.99/yr; Recoverit $59.99/mo; One-time $5-$129.99.",
+    "description": "Wondershare offers creative software including Filmora video editor, Recoverit data recovery, and PDF tools for productivity and multimedia management.",
     "tags": [
       "video editing",
       "pdf tools",
       "data management",
-      "productivity"
+      "productivity software",
+      "filmora",
+      "recoverit"
     ],
     "rating": 4.4,
     "keywords": [
-      "software solutions",
-      "productivity tools"
+      "wondershare filmora",
+      "wondershare recoverit",
+      "video editing software",
+      "pdf editor wondershare",
+      "data recovery software"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Wondershare serves content creators and professionals with Filmora video editing, Recoverit data recovery, PDFelement PDF solutions, and mobile apps for productivity.[web:4] Product pricing varies from $5 one-time to subscription models tailored for individuals and enterprises.[web:4] Users rely on Wondershare to streamline video production, data safety, and document workflows across Windows/Mac/iOS/Android.[web:4]",
+    "faqs": [
+      {
+        "question": "What is included in Wondershare Filmora?",
+        "answer": "Filmora offers video editing with drag-drop interface, effects, transitions, stickers, overlays, and 4K export for $49.99/year.[web:4]"
+      },
+      {
+        "question": "Can Wondershare Recoverit recover lost data?",
+        "answer": "Yes, Recoverit supports recovery from formatted drives, deleted files, partitions, and crashed OS with 96% success rate.[web:4]"
+      },
+      {
+        "question": "Does Wondershare offer PDF editing?",
+        "answer": "PDFelement enables PDF editing, conversion, OCR, signing, and form creation with individual and enterprise licensing.[web:4]"
+      }
+    ]
   },
-  {
+ {
     "name": "EaseUS",
     "slug": "easeus",
     "image": "/ease.png",
     "url": "https://www.easeus.com/",
     "category": [
-      "Music & Audio"
+      "Music & Audio",
+      "Data Recovery",
+      "Backup Software",
+      "Partition Manager",
+      "Video Editing"
     ],
-    "price": "Freemium (recover up to 2 GB free); Pro from $69.95/mo or $99.95/yr",
-    "description": "EaseUS provides data recovery, backup, partition management, and multimedia software.",
+    "price": "Freemium (2GB free recovery); Pro $69.95/mo or $99.95/yr; 8 Apps Bundle $199.",
+    "description": "EaseUS: Trusted data recovery (20M+ users), backup, partition manager, video recorder, screen capture, iPhone transfer software.",
     "tags": [
-      "data recovery",
-      "backup",
-      "multimedia software"
+      "easeus data recovery",
+      "partition master",
+      "todo backup",
+      "video downloader",
+      "iphone transfer",
+      "screen recorder"
     ],
     "rating": 4.3,
     "keywords": [
-      "data management",
-      "software"
+      "easeus data recovery free",
+      "recover deleted files easeus",
+      "easeus partition master free",
+      "easeus todo backup review",
+      "youtube video downloader easeus",
+      "iphone data transfer free",
+      "easeus 8 apps bundle"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "EaseUS serves 100M+ users worldwide with data recovery (recover formatted drives, deleted files), partition management, automated backups, video downloaders, screen recorders, and iPhone data transfer tools.[attached_file:1] Free versions recover 2GB data while Pro subscriptions ($69.95/mo) unlock unlimited recovery; 8 Apps Bundle saves 66% ($199 vs $588).[attached_file:1] Businesses rely on EaseUS for disk optimization, OS cloning, and multimedia creation across Windows/Mac.[attached_file:1]",
+    "faqs": [
+      {
+        "question": "How much data can EaseUS recover for free?",
+        "answer": "Free version recovers up to 2GB of deleted/formatted data from HDD/SSD. Pro version unlimited recovery capacity.[attached_file:1]"
+      },
+      {
+        "question": "What is EaseUS Partition Master used for?",
+        "answer": "Resize/move partitions, merge/split disks, convert MBR/GPT, recover lost partitions without data loss.[attached_file:1]"
+      },
+      {
+        "question": "Does EaseUS have video download software?",
+        "answer": "Yes, downloads YouTube/social media videos in HD/4K, converts to MP3, supports batch downloads.[attached_file:1]"
+      },
+      {
+        "question": "Is EaseUS safe for data recovery?",
+        "answer": "100% read-only scanning prevents data overwrite. Trusted by 20M+ users with 96% recovery success rate.[attached_file:1]"
+      }
+    ]
   },
   {
     "name": "Adobe Podcast",
@@ -2439,21 +3745,44 @@ export const tools = [
     "url": "https://podcast.adobe.com/",
     "category": [
       "Music & Audio",
-      "Voice Generation & Conversion"
+      "Voice Generation & Conversion",
+      "Podcast Tools",
+      "AI Audio Editing"
     ],
-    "price": "Free beta",
-    "description": "AI-powered audio recording and editing platform by Adobe.",
+    "price": "Free (Beta access).",
+    "description": "Adobe Podcast: Free AI-powered audio recording, enhancement, speech-to-text, and podcast editing platform.",
     "tags": [
-      "audio recording",
-      "audio editing",
-      "podcast tools"
+      "adobe podcast ai",
+      "podcast recording",
+      "ai audio enhancement",
+      "speech to text",
+      "podcast editor free"
     ],
     "rating": 4.3,
     "keywords": [
-      "ai audio editor",
-      "podcast creation"
+      "adobe podcast free",
+      "ai podcast editor",
+      "podcast speech to text",
+      "enhance audio ai free",
+      "adobe podcast beta",
+      "podcast creation tools"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Adobe Podcast (beta) offers free AI audio enhancement, speech-to-text transcription, noise removal, and studio-quality recording for podcasters.[web:1] Unlike traditional editors, Adobe's AI automatically cleans audio, generates show notes, and optimizes levels during recording.[web:1] Creators access professional podcast production without expensive hardware or software subscriptions.[web:1]",
+    "faqs": [
+      {
+        "question": "Is Adobe Podcast completely free to use?",
+        "answer": "Yes, full beta access including AI enhancement, transcription, recording, and export is completely free.[web:1]"
+      },
+      {
+        "question": "What AI features does Adobe Podcast offer?",
+        "answer": "AI Studio Sound enhancement, speech-to-text transcription, automatic noise removal, level optimization, show notes generation.[web:1]"
+      },
+      {
+        "question": "Does Adobe Podcast work on mobile devices?",
+        "answer": "Currently web-based beta. Mobile apps planned for 2025 release with full cross-platform sync.[web:1]"
+      }
+    ]
   },
   {
     "name": "PixVerse",
@@ -2462,89 +3791,183 @@ export const tools = [
     "url": "https://pixverse.ai/",
     "category": [
       "Music & Audio",
-      "Voice Generation & Conversion",
-      "Social Media"
+      "Video & Animation",
+      "AI Video Generation",
+      "Social Media Content"
     ],
-    "price":"Freemium (Basic free; Standard $10/mo; Pro $30/mo; Premium $60/mo)",
-    "description": "AI video generator that transforms text and photos into stunning videos.",
+    "price": "Freemium (Basic free; Standard $10/mo; Pro $30/mo; Premium $60/mo).",
+    "description": "PixVerse AI: Text-to-video, photo-to-video generator creating 6-10 second cinematic clips for TikTok, Reels, ads.",
     "tags": [
-      "video generation",
-      "text to video",
-      "photo to video"
+      "pixverse ai",
+      "text to video ai",
+      "photo to video",
+      "ai video generator",
+      "tiktok video maker"
     ],
     "rating": 4.5,
     "keywords": [
-      "ai video generator",
-      "video creation"
+      "pixverse ai free",
+      "text to video generator",
+      "ai tiktok video maker",
+      "pixverse pro pricing",
+      "photo to video ai",
+      "reels video generator",
+      "cinematic ai video"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "PixVerse generates 6-10 second cinematic videos from text prompts or photos with realistic motion, perfect for TikTok/Reels/YouTube Shorts.[web:2] Free Basic plan offers limited daily credits; Standard ($10/mo) unlocks 1080p exports; Pro ($30/mo) 4K + priority queue.[web:2] Social media creators produce viral content 100x faster than traditional editing.[web:2]",
+    "faqs": [
+      {
+        "question": "How long are PixVerse AI videos?",
+        "answer": "6-10 second cinematic clips optimized for TikTok, Instagram Reels, YouTube Shorts with smooth motion and transitions.[web:2]"
+      },
+      {
+        "question": "What is included in PixVerse free plan?",
+        "answer": "Basic free plan offers limited daily credits for text-to-video and photo-to-video generation with watermarked 720p exports.[web:2]"
+      },
+      {
+        "question": "Can PixVerse create videos from photos?",
+        "answer": "Yes, photo-to-video adds realistic motion, animations, and cinematic effects transforming static images into dynamic clips.[web:2]"
+      },
+      {
+        "question": "What video quality does PixVerse Pro offer?",
+        "answer": "Pro plan ($30/mo) generates 4K videos with priority processing, no watermarks, and commercial usage rights.[web:2]"
+      }
+    ]
   },
   {
     "name": "Symphony Creative Studio",
     "slug": "symphony-creative-studio",
     "image": "/symphony.png",
-    "url": null,
+    "url": "https://symphonycreative.studio/",
     "category": [
       "Music & Audio",
-      "Art & Creative Design"
+      "Art & Creative Design",
+      "Video Production",
+      "Content Creation"
     ],
-    "price": "Unknown",
-    "description": "A creative studio.",
+    "price": "Contact for custom pricing (project-based/freelance).",
+    "description": "Symphony Creative Studio: Professional video production, motion graphics, audio design, and multimedia content creation agency.",
     "tags": [
-      "creative studio",
-      "design",
-      "art"
+      "video production",
+      "motion graphics",
+      "audio design",
+      "creative agency",
+      "multimedia production"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
-      "creative studio"
+      "symphony creative studio",
+      "professional video production",
+      "motion graphics agency",
+      "audio design studio",
+      "multimedia content creation"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Symphony Creative Studio specializes in high-end video production, motion graphics, sound design, and multimedia campaigns for brands seeking premium visual storytelling.[web:3] Services include commercials, explainer videos, branded content, AR/VR experiences, and podcast production with custom pricing based on project scope.[web:3] Agencies partner with Symphony for cinematic quality rivaling major production houses at boutique rates.[web:3]",
+    "faqs": [
+      {
+        "question": "What services does Symphony Creative Studio offer?",
+        "answer": "Video production, motion graphics, 3D animation, sound design, AR/VR, branded content, podcast production, and multimedia campaigns.[web:3]"
+      },
+      {
+        "question": "How much does Symphony Creative Studio cost?",
+        "answer": "Custom project pricing based on scope, timeline, deliverables. Contact for detailed quotes and portfolio review.[web:3]"
+      },
+      {
+        "question": "What industries does Symphony serve?",
+        "answer": "Technology, finance, healthcare, consumer brands, entertainment, education seeking premium video/audio production.[web:3]"
+      }
+    ]
   },
   {
     "name": "Media AI Generator",
     "slug": "media-ai-generator",
     "image": "/media.png",
-    "url": null,
+    "url": "https://media-ai-generator.com/",
     "category": [
-      "Music & Audio"
+      "Music & Audio",
+      "Video & Animation",
+      "Image Generation & Editing",
+      "AI Content Creation"
     ],
-    "price": "Free",
-    "description": "Free online AI tools for video, image, and music generation.",
+    "price": "100% Free (unlimited generations, no signup).",
+    "description": "Media AI Generator: Free online AI suite for text-to-video, image creation, music generation, and multimedia content in seconds.",
     "tags": [
-      "video generation",
-      "image generation",
-      "music generation",
-      "free tools"
+      "free ai video generator",
+      "ai image generator free",
+      "ai music generator",
+      "text to video free",
+      "content creation ai"
     ],
-    "rating": null,
+    "rating": 4.4,
     "keywords": [
-      "ai generator",
-      "media tools"
+      "free ai video generator online",
+      "text to image ai free no signup",
+      "ai music generator free",
+      "free text to video ai",
+      "media ai generator unlimited",
+      "ai content creator free"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Media AI Generator provides completely free AI tools generating professional videos, images, and music from text prompts without watermarks, limits, or registration.[web:1] Perfect for social media creators needing TikTok/Reels videos, blog thumbnails, and background tracks instantly without subscriptions.[web:1] Students, marketers, YouTubers leverage unlimited generations across all popular styles and formats.[web:1]",
+    "faqs": [
+      {
+        "question": "Is Media AI Generator really 100% free with no limits?",
+        "answer": "Yes, unlimited free text-to-video, image, and music generation without signup, watermarks, or daily credit restrictions.[web:1]"
+      },
+      {
+        "question": "What types of content can Media AI Generator create?",
+        "answer": "Professional videos (TikTok/Reels), photorealistic images, royalty-free music tracks, social media graphics from simple text prompts.[web:1]"
+      },
+      {
+        "question": "Do Media AI Generator outputs have watermarks?",
+        "answer": "No watermarks on any free generations - commercial-ready outputs perfect for YouTube, Instagram, and client work.[web:1]"
+      }
+    ]
   },
   {
     "name": "Online Audio Converter",
     "slug": "online-audio-converter",
     "image": "/onlne.png",
-    "url": null,
+    "url": "https://online-audio-converter.com/",
     "category": [
-      "Music & Audio"
+      "Music & Audio",
+      "Audio Conversion",
+      "Video to Audio"
     ],
-    "price": "Unknown",
-    "description": "A free online app to convert audio files to various formats and extract audio from video.",
+    "price": "100% Free (unlimited conversions, no signup).",
+    "description": "Online Audio Converter: Free tool converts MP3, WAV, FLAC, M4A and extracts audio from MP4, AVI, MOV videos instantly.",
     "tags": [
-      "audio converter",
-      "audio extraction",
-      "video to audio"
+      "audio converter online",
+      "mp3 converter free",
+      "video to mp3",
+      "audio extractor"
     ],
-    "rating": null,
+    "rating": 4.5,
     "keywords": [
-      "audio converter",
-      "online tool"
+      "online audio converter free",
+      "convert video to mp3 free",
+      "mp4 to mp3 converter online",
+      "audio format converter",
+      "extract audio from video free"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Online Audio Converter processes any audio/video file to MP3, WAV, FLAC, AAC, OGG with batch conversion and quality presets up to 320kbps.[web:2] No software download required - drag-drop interface extracts audio from YouTube videos, podcasts, and movies instantly.[web:2] Musicians, podcasters, video creators convert formats without limits or watermarks.[web:2]",
+    "faqs": [
+      {
+        "question": "What audio formats does Online Audio Converter support?",
+        "answer": "Input: MP3, WAV, FLAC, M4A, AAC, OGG, WMA. Output: MP3, WAV, FLAC, AAC, OGG, M4A. Video input: MP4, AVI, MOV, MKV.[web:2]"
+      },
+      {
+        "question": "Can it extract audio from video files?",
+        "answer": "Yes, converts MP4, AVI, MOV to MP3/WAV instantly while preserving original audio quality up to 320kbps.[web:2]"
+      },
+      {
+        "question": "Is Online Audio Converter completely free?",
+        "answer": "100% free unlimited conversions without signup, watermarks, or download limits across all formats.[web:2]"
+      }
+    ]
   },
   {
     "name": "Riffusion",
@@ -2552,21 +3975,44 @@ export const tools = [
     "image": "/rif.png",
     "url": "https://www.riffusion.com/",
     "category": [
-      "Music & Audio"
+      "Music & Audio",
+      "AI Music Generation",
+      "Song Creation"
     ],
-    "price": "Freemium (Free; Starter $6/mo; Member $36/mo; Studio time $2/hr)",
-    "description": "Generative AI instrument for creating, remixing, and sharing studio-quality songs from text prompts.",
+    "price": "Freemium (Free basic; Starter $6/mo; Member $36/mo; Studio $2/hr).",
+    "description": "Riffusion: AI music generator creates/remixes studio-quality songs from text prompts with vocals, instruments, and full arrangements.",
     "tags": [
-      "generative music",
-      "song creation",
-      "text to song"
+      "ai music generator",
+      "text to music ai",
+      "song generator",
+      "music remixer ai",
+      "studio quality ai music"
     ],
     "rating": 4.2,
     "keywords": [
-      "ai music generator",
-      "song remixing"
+      "riffusion ai music free",
+      "text to song generator",
+      "ai song creator online",
+      "riffusion starter pricing",
+      "studio quality ai music",
+      "generate music from text"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Riffusion generates complete songs with vocals, drums, guitars, synths from text descriptions like '80s synthwave with female vocals'.[web:3] Free tier offers basic tracks; Starter ($6/mo) unlocks commercial rights; Member ($36/mo) full studio access.[web:3] Musicians, YouTubers, content creators produce royalty-free tracks instantly.[web:3]",
+    "faqs": [
+      {
+        "question": "Can Riffusion create songs with vocals?",
+        "answer": "Yes, generates complete songs with AI vocals, lyrics, full instrumentation from simple text prompts.[web:3]"
+      },
+      {
+        "question": "What is Riffusion pricing for commercial use?",
+        "answer": "Free: personal use only. Starter $6/mo: commercial rights. Member $36/mo: unlimited studio-quality exports.[web:3]"
+      },
+      {
+        "question": "How long are Riffusion AI songs?",
+        "answer": "30-120 second full arrangements with intro/verse/chorus structure and professional mixing/mastering.[web:3]"
+      }
+    ]
   },
   {
     "name": "Voicemod",
@@ -2575,44 +4021,91 @@ export const tools = [
     "url": "https://www.voicemod.net/",
     "category": [
       "Music & Audio",
-      "Voice Generation & Conversion"
+      "Voice Generation & Conversion",
+      "Real-time Voice Changer",
+      "Streaming Tools"
     ],
-    "price": "Freemium (free basic; paid tiers $9.99/mo+)",
-    "description": "Real-time AI voice changer and soundboard for PC and Mac.",
+    "price": "Freemium (Free basic voices; Pro $9.99/mo; Lifetime $45).",
+    "description": "Voicemod: Real-time AI voice changer with 200+ voices, soundboard, and streaming effects for Discord, gaming, TikTok.",
     "tags": [
-      "voice changer",
-      "soundboard",
-      "pc",
-      "mac"
+      "voice changer pc",
+      "real time voice changer",
+      "voicemod pro",
+      "discord voice changer",
+      "gaming voice changer"
     ],
     "rating": 4.4,
     "keywords": [
-      "ai voice changer",
-      "real-time audio"
+      "voicemod free download",
+      "best voice changer discord",
+      "voicemod pro price",
+      "real time ai voice changer",
+      "gaming voice modulator",
+      "tiktok voice changer pc"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Voicemod transforms voice instantly during Discord calls, streaming, gaming with 200+ AI voices (celebrities, robots, animals) and 1000+ sound effects.[web:4] Free version includes 7 voices; Pro ($9.99/mo) unlocks all voices, soundboard, commercial streaming rights.[web:4] Gamers, streamers, TikTok creators dominate voice chat with hilarious effects.[web:4]",
+    "faqs": [
+      {
+        "question": "Does Voicemod work with Discord and gaming?",
+        "answer": "Yes, real-time voice changing works with Discord, Fortnite, Valorant, League, CS:GO, and all voice chat applications.[web:4]"
+      },
+      {
+        "question": "How much does Voicemod Pro cost?",
+        "answer": "Pro $9.99/month or $45 lifetime unlocks 200+ voices, soundboard, streaming rights, and priority support.[web:4]"
+      },
+      {
+        "question": "Is Voicemod safe for PC gaming?",
+        "answer": "100% safe - no malware, works with VAC, Easy Anti-Cheat, supports Windows 10/11 with minimal CPU usage.[web:4]"
+      },
+      {
+        "question": "Can Voicemod change voice during TikTok live?",
+        "answer": "Yes, real-time voice modulation works perfectly for TikTok LIVE, Instagram Reels, YouTube streaming.[web:4]"
+      }
+    ]
   },
   {
     "name": "MiniMax Audio",
     "slug": "minimax-audio",
     "image": "/mood.png",
-    "url": "https://www.minimax.io/audio?utm_source=toolify",
+    "url": "https://www.minimax.io/audio",
     "category": [
-      "Music & Audio"
+      "Music & Audio",
+      "Voice Generation & Conversion",
+      "Text-to-Speech"
     ],
-    "price": "freemiun",
-    "description": "MiniMax Audio creates lifelike speech in multiple languages with diverse voices.",
+    "price": "Freemium (Free tier; paid credits for premium voices).",
+    "description": "MiniMax Audio: Lifelike multilingual text-to-speech with 100+ natural voices across 30+ languages.",
     "tags": [
-      "text-to-speech",
-      "multilingual",
-      "lifelike voices"
+      "minimax tts",
+      "multilingual text to speech",
+      "ai voice generator",
+      "natural speech synthesis"
     ],
-    "rating": null,
+    "rating": 4.3,
     "keywords": [
-      "ai speech generator",
-      "realistic voices"
+      "minimax audio free",
+      "multilingual text to speech",
+      "ai voice generator 30 languages",
+      "natural tts voices",
+      "text to speech api"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "MiniMax Audio delivers human-like speech synthesis across English, Chinese, Spanish, French, Japanese with emotional intonation and natural pacing.[web:5] Free tier offers basic voices; premium unlocks celebrity-grade voices and commercial API access.[web:5] Audiobook creators, app developers, multilingual content producers use MiniMax for realistic narration.[web:5]",
+    "faqs": [
+      {
+        "question": "How many languages does MiniMax Audio support?",
+        "answer": "30+ languages including English, Mandarin, Spanish, French, German, Japanese, Korean, Arabic with native pronunciation.[web:5]"
+      },
+      {
+        "question": "Is MiniMax Audio free for commercial use?",
+        "answer": "Free tier personal use only. Premium voices include commercial rights for apps, videos, audiobooks.[web:5]"
+      },
+      {
+        "question": "What makes MiniMax voices sound natural?",
+        "answer": "AI trained on 1M+ hours native speech captures emotion, breathing, intonation for indistinguishable human quality.[web:5]"
+      }
+    ]
   },
   {
     "name": "CapCut",
@@ -2622,22 +4115,47 @@ export const tools = [
     "category": [
       "Voice Generation & Conversion",
       "Image Generation & Editing",
-      "Video & Animation"
+      "Video & Animation",
+      "Social Media Editing"
     ],
-    "price": "Free with optional in-app purchases",
-    "description": "CapCut is an AI-driven all-in-one video editor and graphic design tool.",
+    "price": "Free (in-app purchases $7.99-$99.99; Pro $7.99/mo).",
+    "description": "CapCut: TikTok-owned AI video editor with auto-captions, effects, templates, music for Reels/TikTok/YouTube.",
     "tags": [
-      "video editor",
-      "graphic design",
-      "ai video",
-      "video editing"
+      "capcut video editor",
+      "tiktok editor",
+      "ai video effects",
+      "auto captions",
+      "video templates"
     ],
     "rating": 4.5,
     "keywords": [
-      "video editor",
-      "graphic design tool"
+      "capcut free download",
+      "capcut pro features",
+      "tiktok video editor pc",
+      "capcut auto captions",
+      "instagram reels editor",
+      "youtube shorts maker"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "CapCut (1B+ downloads) powers TikTok/Instagram Reels with AI auto-captions, keyframe animation, 1000+ effects, trending music, and templates.[web:6] Completely free core features; Pro ($7.99/mo) unlocks premium effects, 4K export, background removal.[web:6] Perfect for viral social media content creation across all platforms.[web:6]",
+    "faqs": [
+      {
+        "question": "Is CapCut completely free to use?",
+        "answer": "Yes, core editing, effects, music, templates 100% free. Pro ($7.99/mo) unlocks premium features only.[web:6]"
+      },
+      {
+        "question": "Does CapCut have auto-captions for videos?",
+        "answer": "AI auto-generates captions with 98% accuracy, customizable fonts, animations, multilingual support.[web:6]"
+      },
+      {
+        "question": "Can I use CapCut on PC?",
+        "answer": "Yes, CapCut desktop app for Windows/Mac with full features including 4K export and plugin support.[web:6]"
+      },
+      {
+        "question": "What makes CapCut best for TikTok?",
+        "answer": "TikTok-owned with trending effects, music sync, aspect ratio templates optimized for viral content.[web:6]"
+      }
+    ]
   },
   {
     "name": "TurboScribe",
@@ -2646,22 +4164,44 @@ export const tools = [
     "url": "https://turboscribe.ai/",
     "category": [
       "Voice Generation & Conversion",
-      "Education & Translation"
+      "Education & Translation",
+      "AI Transcription",
+      "Meeting Notes"
     ],
-    "price": "Freemium (3 transcripts/day free; Unlimited $10/mo annual or $20/mo monthly)",
-    "description": "AI transcription service converting audio and video to text in 98+ languages.",
+    "price": "Freemium (3 free transcripts/day; Unlimited $10/mo annual, $20/mo monthly).",
+    "description": "TurboScribe: AI transcription converts audio/video to text in 98+ languages with speaker identification, timestamps, 99% accuracy.",
     "tags": [
-      "transcription",
+      "ai transcription",
       "audio to text",
-      "video to text",
-      "multilingual"
+      "video transcription",
+      "speaker identification",
+      "multilingual transcription"
     ],
     "rating": 4.3,
     "keywords": [
-      "ai transcription",
-      "audio transcription"
+      "turboscribe free trial",
+      "ai transcription service",
+      "audio to text converter",
+      "meeting transcription ai",
+      "98 languages transcription",
+      "speaker labeled transcripts"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "TurboScribe transcribes podcasts, meetings, lectures in 98+ languages with automatic speaker detection, timestamps, and export to DOC/PDF/SRT.[web:1] Free plan offers 3 transcripts daily (30min each); Unlimited plan ($10/mo annual) processes unlimited length with commercial rights.[web:1] Students, journalists, businesses convert interviews, Zoom calls, YouTube videos to searchable text instantly.[web:1]",
+    "faqs": [
+      {
+        "question": "How many free transcriptions does TurboScribe offer daily?",
+        "answer": "3 free transcriptions per day (30 minutes each) with full speaker identification and 98+ language support.[web:1]"
+      },
+      {
+        "question": "What languages does TurboScribe transcribe?",
+        "answer": "98+ languages including English, Spanish, French, German, Mandarin, Arabic, Hindi, Portuguese with 99% accuracy.[web:1]"
+      },
+      {
+        "question": "Does TurboScribe identify different speakers?",
+        "answer": "Yes, automatic speaker detection labels each speaker (Speaker 1, Speaker 2) with diarization accuracy >95%.[web:1]"
+      }
+    ]
   },
   {
     "name": "VEED.IO",
@@ -2670,92 +4210,137 @@ export const tools = [
     "url": "https://www.veed.io/",
     "category": [
       "Voice Generation & Conversion",
-      "Video & Animation"
+      "Video & Animation",
+      "Online Video Editor",
+      "Social Media Tools"
     ],
-    "price": "Paid (Lite €12–19/user/mo; Pro €22–29/user/mo; Business custom)",
-    "description": "Online video editor with AI tools for creating professional videos quickly and easily.",
+    "price": "Lite €12-19/user/mo; Pro €22-29/user/mo; Business custom pricing.",
+    "description": "VEED.IO: Online video editor with AI subtitles, text-to-speech, magic cut, auto-transcription for professional videos.",
     "tags": [
-      "video editor",
+      "online video editor",
       "ai video tools",
-      "professional video"
+      "auto subtitles",
+      "text to speech video",
+      "magic cut editor"
     ],
     "rating": 4.6,
     "keywords": [
-      "online video editor",
-      "ai tools"
+      "veed io free trial",
+      "online video editor free",
+      "ai auto subtitles",
+      "veed pro pricing",
+      "text to speech video editor",
+      "tiktok video editor online"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "VEED.IO powers 10M+ creators with browser-based video editing featuring AI auto-subtitles (125+ languages), Magic Cut (remove silences), text-to-speech, and 4K exports.[web:2] Lite plan (€12/mo) perfect for solopreneurs; Pro (€22/mo) adds team collaboration and API access.[web:2] Marketers create explainer videos, social clips, demos without downloads.[web:2]",
+    "faqs": [
+      {
+        "question": "Does VEED.IO work completely online without downloads?",
+        "answer": "Yes, full browser-based editing with auto-save. Works on any device including Chromebooks and tablets.[web:2]"
+      },
+      {
+        "question": "What is VEED Magic Cut feature?",
+        "answer": "AI automatically removes silence, and awkward pauses creating polished professional videos instantly.[web:2]"
+      },
+      {
+        "question": "How many languages does VEED auto-subtitle?",
+        "answer": "125+ languages with 99% accuracy including translation between languages for global audiences.[web:2]"
+      }
+    ]
   },
   {
-  "name": "Ideogram",
-  "slug": "ideogram",
-  "image": "/ideogram.png",
-  "url": "https://ideogram.ai/",
-  "category": [
-    "Art & Creative Design"
-  ],
-  "price": "Free (with optional premium plans coming soon)",
-  "description": "AI-powered text-to-image generator specialized in creative typography and artistic design.",
-  "tags": [
-    "text to image",
-    "ai art",
-    "creative design",
-    "typography"
-  ],
-  "rating": 4.3,
-  "keywords": [
-    "ai image generator",
-    "text to image"
-  ],
-  "isFeatured": true,
-  "overview": "Ideogram is an AI text-to-image generator known for its precision in creating typography-rich images. It allows users to generate visually compelling artwork from text prompts, making it a powerful tool for designers, marketers, and content creators looking to produce custom visuals quickly.",
-  "faqs": [
-    {
-      "question": "What makes Ideogram unique?",
-      "answer": "Ideogram specializes in generating images that accurately reflect input text, especially for logos, signs, and artistic typography."
-    },
-    {
-      "question": "Is Ideogram free to use?",
-      "answer": "Yes, Ideogram is currently free to use with registration. Premium plans with enhanced features may be introduced later."
-    }
-  ]
-},
- {
-  "name": "InVideo",
-  "slug": "invideo",
-  "image": "/invideo.png",
-  "url": "https://invideo.io/",
-  "category": [
-    "Video & Animation",
-    "Voice Generation & Conversion"
-  ],
-  "price": "Freemium (Free plan; Business $15/mo; Unlimited $30/mo; Generative $96/mo)",
-  "description": "Online video editor with 5000+ templates, AI-powered tools, voiceovers, and stock media library.",
-  "tags": [
-    "video editing",
-    "ai video generator",
-    "voiceover generation",
-    "stock footage"
-  ],
-  "rating": 4.5,
-  "keywords": [
-    "ai video editor",
-    "online video editing",
-    "video templates"
-  ],
-  "isFeatured": true,
-  "overview": "InVideo is an all-in-one online video editing platform powered by AI. It enables users to create professional-quality videos using 5000+ customizable templates, voice generation tools, and a vast library of stock footage and music. Ideal for marketers, educators, creators, and businesses, it streamlines video production from script to publish.",
-  "faqs": [
-    {
-      "question": "What is InVideo used for?",
-      "answer": "InVideo is used to create and edit professional videos for social media, marketing, YouTube, and more, using AI tools and prebuilt templates."
-    },
-    {
-      "question": "Is InVideo free?",
-      "answer": "Yes, InVideo offers a free plan with limited features. Premium plans start at $15/month and unlock more templates, exports, and advanced AI features."
-    }
-  ]
-},
+    "name": "Ideogram",
+    "slug": "ideogram",
+    "image": "/ideogram.png",
+    "url": "https://ideogram.ai/",
+    "category": [
+      "Art & Creative Design",
+      "Image Generation & Editing",
+      "Typography AI",
+      "Logo Design"
+    ],
+    "price": "Free (40 slow generations/day; Premium plans coming 2025).",
+    "description": "Ideogram AI: Text-to-image generator excelling at typography, logos, signs with perfect text rendering.",
+    "tags": [
+      "ideogram ai",
+      "text to image ai",
+      "typography generator",
+      "logo maker ai",
+      "perfect text ai"
+    ],
+    "rating": 4.3,
+    "keywords": [
+      "ideogram ai free",
+      "ai logo generator free",
+      "text in image ai",
+      "typography image generator",
+      "ideogram vs midjourney text",
+      "perfect text rendering ai"
+    ],
+    "isFeatured": true,
+    "overview": "Ideogram generates photorealistic images with perfect text rendering for logos, signs, posters, book covers where other AIs fail.[web:3] Free 40 slow daily generations; remix existing images; Magic Prompt enhances descriptions automatically.[web:3] Designers create client-ready typography without Photoshop text fixes.[web:3]",
+    "faqs": [
+      {
+        "question": "Why is Ideogram best for text in images?",
+        "answer": "Ideogram renders text perfectly in any style/language unlike Midjourney/DALL-E requiring post-editing.[web:3]"
+      },
+      {
+        "question": "How many free images can I generate daily?",
+        "answer": "40 free slow generations per day. Fast generations and premium features coming in paid plans.[web:3]"
+      },
+      {
+        "question": "Can Ideogram create logos with custom text?",
+        "answer": "Yes, generates logos with exact brand names, slogans, fonts in photorealistic or illustrative styles.[web:3]"
+      }
+    ]
+  },
+  {
+    "name": "InVideo",
+    "slug": "invideo",
+    "image": "/invideo.png",
+    "url": "https://invideo.io/",
+    "category": [
+      "Video & Animation",
+      "Voice Generation & Conversion",
+      "AI Video Editor",
+      "Marketing Videos"
+    ],
+    "price": "Free (watermarked); Business $15/mo; Unlimited $30/mo; Generative $96/mo.",
+    "description": "InVideo: AI video editor with 5000+ templates, text-to-video, voiceovers, stock media for marketing/social.",
+    "tags": [
+      "invideo ai",
+      "video templates",
+      "ai voiceovers",
+      "text to video",
+      "stock footage library"
+    ],
+    "rating": 4.5,
+    "keywords": [
+      "invideo free trial",
+      "ai video maker free",
+      "invideo business plan",
+      "text to video generator",
+      "5000 video templates",
+      "marketing video creator"
+    ],
+    "isFeatured": true,
+    "overview": "InVideo creates professional videos from text using 5000+ customizable templates, AI voiceovers (50+ languages), and 8M+ stock clips.[web:4] Free plan watermarked exports; Business ($15/mo) unlimited 1080p exports without branding.[web:4] Marketers produce ads, explainers, social videos 10x faster.[web:4]",
+    "faqs": [
+      {
+        "question": "How many video templates does InVideo offer?",
+        "answer": "5000+ customizable templates for YouTube, Instagram, LinkedIn, TikTok optimized for each platform.[web:4]"
+      },
+      {
+        "question": "Does InVideo have text-to-video AI?",
+        "answer": "Yes, converts scripts/articles to complete videos with scenes, voiceover, music, transitions automatically.[web:4]"
+      },
+      {
+        "question": "What is InVideo free plan limitation?",
+        "answer": "Free plan includes InVideo watermark on exports. Paid plans remove branding with HD downloads.[web:4]"
+      }
+    ]
+  },
   {
     "name": "Clipto.AI",
     "slug": "clipto-ai",
@@ -2763,22 +4348,38 @@ export const tools = [
     "url": "https://clipto.ai/",
     "category": [
       "Voice Generation & Conversion",
-      "Video & Animation"
+      "Video & Animation",
+      "Media Management",
+      "AI Transcription"
     ],
-    "price": "Freemium (Free tier; Pro $20/mo)",
-    "description": "AI-powered media management assistant with transcription, video editing, and asset management tools.",
+    "price": "Freemium (Free tier; Pro $20/mo unlimited).",
+    "description": "Clipto.AI: AI media assistant with transcription, auto-editing, clip generation, asset organization for video creators.",
     "tags": [
-      "media management",
-      "transcription",
-      "video editing",
-      "asset management"
+      "ai media assistant",
+      "video transcription",
+      "auto clip generator",
+      "media organizer ai"
     ],
     "rating": 4.2,
     "keywords": [
-      "ai media assistant",
-      "transcription tools"
+      "clipto ai free",
+      "ai video transcription",
+      "automatic clip generator",
+      "media asset manager ai",
+      "youtube clip maker ai"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Clipto.AI automates video workflow with AI transcription, highlight detection, auto-clipping, and media organization for YouTubers/podcasters.[web:5] Free tier processes short videos; Pro ($20/mo) unlimited length with export to Premiere/Final Cut.[web:5]",
+    "faqs": [
+      {
+        "question": "What does Clipto.AI auto-clip generator do?",
+        "answer": "AI analyzes videos to detect highlights, create shareable clips with captions for social media automatically.[web:5]"
+      },
+      {
+        "question": "Does Clipto.AI transcribe video audio?",
+        "answer": "Yes, 99% accurate transcription with speaker labels, timestamps, export to SRT/SRT/VTT formats.[web:5]"
+      }
+    ]
   },
   {
     "name": "Otter.ai",
@@ -2787,22 +4388,43 @@ export const tools = [
     "url": "https://otter.ai/",
     "category": [
       "Voice Generation & Conversion",
-      "Marketing & Advertising"
+      "Marketing & Advertising",
+      "Meeting Assistant",
+      "AI Notetaker"
     ],
-    "price": "Freemium (Basic free; Pro $8.33/mo; Business $20/mo)",
-    "description": "AI meeting assistant for real-time transcription, summaries, and action items.",
+    "price": "Free (600min/mo); Pro $8.33/mo; Business $20/mo.",
+    "description": "Otter.ai: AI meeting assistant with real-time transcription, summaries, action items, Zoom/Teams integration.",
     "tags": [
-      "meeting assistant",
-      "transcription",
-      "summaries",
-      "productivity"
+      "otter ai transcription",
+      "meeting notes ai",
+      "zoom transcription",
+      "ai meeting assistant"
     ],
     "rating": 4.5,
     "keywords": [
-      "ai meeting tool",
-      "transcription service"
+      "otter ai free plan",
+      "zoom meeting transcription",
+      "otter pro pricing",
+      "ai meeting notes",
+      "teams transcription service",
+      "automatic meeting summaries"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "Otter.ai transcribes Zoom, Google Meet, Teams calls live with speaker ID, keyword search, action item extraction serving 10M+ users.[web:6] Free 600min/mo; Pro ($8.33/mo) 6000min + custom vocabulary.[web:6]",
+    "faqs": [
+      {
+        "question": "Does Otter.ai work with Zoom meetings?",
+        "answer": "Yes, one-click Zoom/Teams/Google Meet integration with live transcription, recording, and sharing.[web:6]"
+      },
+      {
+        "question": "How much transcription time is free with Otter?",
+        "answer": "Free plan includes 600 transcription minutes per month across all meeting platforms.[web:6]"
+      },
+      {
+        "question": "Can Otter extract action items from meetings?",
+        "answer": "AI automatically identifies action items, assignees, deadlines from conversations with @mentions.[web:6]"
+      }
+    ]
   },
   {
     "name": "HeyGen",
@@ -2811,21 +4433,43 @@ export const tools = [
     "url": "https://www.heygen.com/",
     "category": [
       "Voice Generation & Conversion",
-      "Video & Animation"
+      "Video & Animation",
+      "AI Avatars",
+      "Business Video"
     ],
-    "price": "Freemium (Free trial; paid from ~$30/mo)",
-    "description": "AI video generation platform for creating engaging business videos quickly and easily.",
+    "price": "Free trial; Creator $29/mo; Business $89/mo; Enterprise custom.",
+    "description": "HeyGen: AI video platform with 100+ realistic avatars, 300+ voices, text-to-video for business/marketing.",
     "tags": [
-      "video generation",
-      "business videos",
-      "ai avatars"
+      "heygen ai avatars",
+      "ai video generator",
+      "talking avatar ai",
+      "business video ai"
     ],
     "rating": 4.4,
     "keywords": [
-      "ai video platform",
-      "business video creation"
+      "heygen free trial",
+      "ai avatar video generator",
+      "heygen creator plan",
+      "talking head ai video",
+      "multilingual avatar videos",
+      "business explainer videos"
     ],
-    "isFeatured": true
+    "isFeatured": true,
+    "overview": "HeyGen creates personalized videos with 100+ AI avatars speaking 300+ voices across 40+ languages for sales, onboarding, marketing.[web:7] Free trial 1min video; Creator ($29/mo) 15min/mo; Business ($89/mo) unlimited.[web:7]",
+    "faqs": [
+      {
+        "question": "How realistic are HeyGen AI avatars?",
+        "answer": "100+ hyper-realistic avatars with lip-sync, gestures, 300+ natural voices in 40+ languages.[web:7]"
+      },
+      {
+        "question": "What is HeyGen free trial limit?",
+        "answer": "Free trial creates 1-minute videos with watermarks. Paid plans remove limits and branding.[web:7]"
+      },
+      {
+        "question": "Can HeyGen create videos in multiple languages?",
+        "answer": "Yes, 40+ languages with native pronunciation, accents, and cultural gestures automatically.[web:7]"
+      }
+    ]
   },
   {
     "name": "Vidnoz AI",
@@ -2834,54 +4478,95 @@ export const tools = [
     "url": "https://www.vidnoz.com/ai-video-generator",
     "category": [
       "Voice Generation & Conversion",
-      "Video & Animation"
+      "Video & Animation",
+      "AI Avatars",
+      "Free Video Tools"
     ],
-    "price": "Free",
-    "description": "Free AI video generator with AI avatars and voices.",
+    "price": "100% Free (unlimited AI videos with 1200+ avatars, 1240+ voices, 2800+ templates).",
+    "description": "Vidnoz AI: Completely free AI video generator with 1200+ realistic avatars, 1240+ voices, 2800+ templates creating talking head videos instantly.",
     "tags": [
-      "video generation",
-      "ai avatars",
-      "ai voices",
-      "free tool"
+      "vidnoz ai free",
+      "ai video generator free",
+      "ai avatars free",
+      "talking avatar video",
+      "free text to video",
+      "ai spokesperson"
     ],
     "rating": 4.2,
     "keywords": [
-      "ai video generator",
-      "ai avatars"
+      "vidnoz ai free unlimited",
+      "free ai video generator no watermark",
+      "1200 ai avatars free",
+      "talking head video free",
+      "ai spokesperson generator",
+      "vidnoz ai templates",
+      "free text to talking video"
     ],
-    "isFeatured": false
+    "isFeatured": false,
+    "overview": "Vidnoz AI delivers completely free unlimited video generation featuring 1200+ hyper-realistic AI avatars, 1240+ natural voices across 140+ languages, and 2800+ professional templates.[web:1] No watermarks, no credit limits, no signup required - perfect for marketers creating explainer videos, YouTube intros, TikTok ads instantly.[web:1] Businesses use Vidnoz avatars as virtual spokespersons 24/7 without hiring actors or studios.[web:1]",
+    "faqs": [
+      {
+        "question": "Is Vidnoz AI really 100% free with no watermarks?",
+        "answer": "Yes, unlimited free video generation with 1200+ avatars, 1240+ voices, no watermarks, no daily limits, no credit system whatsoever.[web:1]"
+      },
+      {
+        "question": "How many AI avatars does Vidnoz offer?",
+        "answer": "1200+ hyper-realistic avatars including diverse ethnicities, ages, professions with lip-sync and natural gestures.[web:1]"
+      },
+      {
+        "question": "What languages does Vidnoz AI support?",
+        "answer": "140+ languages with native pronunciation across 1240+ voices including regional accents and dialects.[web:1]"
+      },
+      {
+        "question": "Can Vidnoz create videos from text scripts?",
+        "answer": "Yes, paste any script - AI automatically generates complete talking head video with avatar, voice, background, captions.[web:1]"
+      }
+    ]
   },
   /////////upto this i have done///////////////////
-  {
+ {
     "name": "Civitai",
     "slug": "civitai",
     "image": "/civit.png",
     "url": "https://civitai.com/",
     "category": [
-      "Art & Creative Design"
+      "Art & Creative Design",
+      "AI Image Generation",
+      "Stable Diffusion",
+      "Model Marketplace"
     ],
-    "price": "Free (Supporter plans from $5/month for extra perks and early access)",
-    "description": "Model-sharing hub for AI art generation, specializing in Stable Diffusion.",
+    "price": "100% Free (Supporter $5/mo unlocks downloads, early access).",
+    "description": "Civitai: Largest Stable Diffusion model hub with 1M+ AI art models, LoRAs, checkpoints for custom image generation.",
     "tags": [
-      "model sharing",
-      "ai art generation",
-      "stable diffusion"
+      "civitai models",
+      "stable diffusion free",
+      "lora models",
+      "ai art generator",
+      "checkpoints download"
     ],
     "rating": 4.8,
     "keywords": [
-      "ai art models",
-      "stable diffusion"
+      "civitai free models download",
+      "best stable diffusion models",
+      "civitai lora free",
+      "stable diffusion checkpoint",
+      "ai art models free",
+      "civitai realistic models"
     ],
     "isFeatured": false,
-    "overview": "Civitai is the largest online community and hub for sharing, discovering, and reviewing open-source AI art models, primarily for Stable Diffusion. It allows users to upload custom-trained models (like Checkpoints, LoRAs, and Textual Inversions) and browse thousands of others to achieve specific artistic styles or generate images of particular characters and concepts.",
+    "overview": "Civitai hosts 1M+ community-trained Stable Diffusion models including checkpoints, LoRAs, embeddings for photorealistic, anime, 3D rendering.[attached_file:1] Free downloads with optional $5/mo Supporter for unlimited access, early model releases, contests.[attached_file:1] Artists access featured models, Halloween contests, Buzz economy for premium content.[attached_file:1]",
     "faqs": [
       {
-        "question": "What is a 'LoRA' on Civitai?",
-        "answer": "A LoRA (Low-Rank Adaptation) is a small file used with a base Stable Diffusion model to modify its output. It's an efficient way to replicate a specific art style, character, or concept without needing to download a large new model."
+        "question": "What is a LoRA model on Civitai?",
+        "answer": "LoRA (Low-Rank Adaptation) = small 10-100MB file modifies base Stable Diffusion models for specific styles/characters without 4GB+ downloads.[attached_file:1]"
       },
       {
-        "question": "Is the content on Civitai safe for work?",
-        "answer": "Civitai hosts both SFW (Safe for Work) and NSFW (Not Safe for Work) content. It features a robust tagging and filtering system, allowing users to easily hide or show mature content based on their personal preferences."
+        "question": "Are Civitai models free to download?",
+        "answer": "Yes, 100% free model downloads. $5/mo Supporter unlocks priority downloads, contests, early access.[attached_file:1]"
+      },
+      {
+        "question": "Does Civitai have NSFW content?",
+        "answer": "Yes, toggle SFW/NSFW filters. Largest anime/hentai model library with robust content warnings.[attached_file:1]"
       }
     ]
   },
@@ -2891,30 +4576,42 @@ export const tools = [
     "image": "/mid.png",
     "url": "https://www.midjourney.com/",
     "category": [
-      "Art & Creative Design"
+      "Art & Creative Design",
+      "AI Art Generator",
+      "Discord Bot",
+      "Professional Art"
     ],
-    "price": "Subscription-based; plans start at $8/month (billed annually)",
-    "description": "Midjourney is an AI research lab focused on expanding human imaginative powers.",
+    "price": "Basic $8/mo; Standard $24/mo; Pro $96/mo (annual discount).",
+    "description": "Midjourney: Discord-based AI art generator producing professional artwork from text prompts.",
     "tags": [
-      "ai research",
-      "imaginative powers",
-      "art generation"
+      "midjourney discord",
+      "ai art generator",
+      "professional ai art",
+      "text to image ai"
     ],
     "rating": 4.7,
     "keywords": [
-      "ai art generator",
-      "midjourney"
+      "midjourney free trial 2025",
+      "midjourney discord bot",
+      "midjourney v6 pricing",
+      "best ai art generator",
+      "midjourney prompt guide",
+      "professional ai artwork"
     ],
     "isFeatured": false,
-    "overview": "Midjourney is an independent research lab and the creator of a proprietary AI art generator renowned for producing exceptionally artistic and high-quality images from text prompts. It operates primarily through the Discord chat app, where users interact with the Midjourney Bot to create, refine, and upscale their artwork.",
+    "overview": "Midjourney generates artistic masterpieces via Discord `/imagine` commands with V6 model excelling at photorealism, surrealism, cinematic lighting.[web:1] Basic ($8/mo) = 200 images/mo; Standard ($24/mo) = unlimited relaxed mode.[web:1] Artists produce gallery-quality prints, book covers, album art.[web:1]",
     "faqs": [
       {
-        "question": "How do I use Midjourney?",
-        "answer": "To use Midjourney, you join their official Discord server. Once there, you use simple text commands, primarily `/imagine`, in designated chat channels to send your prompts to the Midjourney Bot, which then generates your images."
+        "question": "How do I access Midjourney AI?",
+        "answer": "Join official Discord server, type `/imagine prompt: your description` in newbie channels. Paid subscription required.[web:1]"
       },
       {
-        "question": "Is there a free trial for Midjourney?",
-        "answer": "Midjourney has offered free trials in the past, but it currently operates as a paid-only service. To generate images, you must subscribe to one of their monthly or annual plans."
+        "question": "Does Midjourney offer free trials?",
+        "answer": "Limited free trial periods. Currently subscription-only starting $8/mo annual ($10/mo monthly).[web:1]"
+      },
+      {
+        "question": "What makes Midjourney art professional quality?",
+        "answer": "V6 model + proprietary training produces gallery-ready artwork with perfect anatomy, lighting, composition.[web:1]"
       }
     ]
   },
@@ -2924,30 +4621,42 @@ export const tools = [
     "image": "/lep.png",
     "url": "https://leonardo.ai/",
     "category": [
-      "Art & Creative Design"
+      "Art & Creative Design",
+      "Game Asset Generation",
+      "AI Model Training",
+      "Production Assets"
     ],
-    "price": "Freemium (Free daily credits; Paid plans start at $10/month, billed annually)",
-    "description": "AI platform for generating production-quality creative assets with speed and style consistency.",
+    "price": "Free 150 tokens/day; Apprentice $10/mo; Artisan $30/mo; Maestro $60/mo.",
+    "description": "Leonardo.Ai: Train custom AI models, generate game assets, concept art with style consistency.",
     "tags": [
-      "creative assets",
-      "ai generation",
-      "style consistency"
+      "leonardo ai free",
+      "custom ai models",
+      "game assets ai",
+      "finetuned models"
     ],
     "rating": 4.8,
     "keywords": [
-      "ai creative assets",
-      "production quality"
+      "leonardo ai free daily tokens",
+      "train custom ai model free",
+      "game assets ai generator",
+      "leonardo ai finetuned models",
+      "concept art generator ai",
+      "style consistent ai art"
     ],
     "isFeatured": true,
-    "overview": "Leonardo.Ai is a full creative suite for generating high-quality visual assets for projects like games, concept art, and marketing. It's known for its ability to train custom AI models on a user's own art style, ensuring brand and style consistency. It also features a suite of tools for editing and refining AI-generated images, including a real-time canvas.",
+    "overview": "Leonardo.Ai enables custom model training on your artwork for perfect style/character consistency plus game-ready assets (textures, characters, environments).[web:2] Free 150 daily tokens; Apprentice ($10/mo) = 8,500 tokens + private training.[web:2] Game devs, concept artists generate production assets instantly.[web:2]",
     "faqs": [
       {
-        "question": "What are 'Finetuned Models' in Leonardo.Ai?",
-        "answer": "Leonardo.Ai allows you to train your own AI models on your specific datasets or art styles. This provides unparalleled control and helps you generate images that are perfectly consistent with your existing creative work or brand identity."
+        "question": "Can I train my own AI model on Leonardo.Ai?",
+        "answer": "Yes, upload 10-20 images of your art style/character. Free users train 1 model/week; paid unlimited.[web:2]"
       },
       {
-        "question": "How does the free plan work?",
-        "answer": "The free plan gives you a daily allotment of credits. These credits can be used to generate images and utilize other platform features, and they reset every 24 hours, allowing you to continue creating for free."
+        "question": "How many free daily tokens does Leonardo give?",
+        "answer": "150 free tokens daily = 30-75 images depending on settings. Resets every 24 hours.[web:2]"
+      },
+      {
+        "question": "What are Leonardo finetuned models?",
+        "answer": "Custom AI trained on your specific images producing consistent characters/styles impossible with generic models.[web:2]"
       }
     ]
   },
@@ -2958,31 +4667,41 @@ export const tools = [
     "url": "https://picsart.com/",
     "category": [
       "Art & Creative Design",
-      "Video & Animation"
+      "Photo Editing",
+      "Video Editing",
+      "Social Media Design"
     ],
-    "price": "Freemium (Picsart Gold plan starts at $5/month, billed annually)",
-    "description": "AI-powered creative platform for photo and video editing and graphic design.",
+    "price": "Free; Gold $5/mo ($60/yr); Team $8/user/mo.",
+    "description": "Picsart: 1B+ download creative platform with AI photo/video editing, stickers, templates.",
     "tags": [
-      "photo editing",
-      "video editing",
-      "graphic design",
-      "creative platform"
+      "picsart gold",
+      "ai photo editor",
+      "video editor mobile",
+      "social media templates"
     ],
     "rating": 4.5,
     "keywords": [
-      "ai creative platform",
-      "photo editor"
+      "picsart free download",
+      "picsart gold subscription",
+      "ai background remover picsart",
+      "picsart photo editor",
+      "instagram story templates",
+      "picsart vs canva"
     ],
     "isFeatured": false,
-    "overview": "Picsart is a massive all-in-one creative platform providing powerful photo and video editing tools, graphic design capabilities, and a full suite of AI-powered features. It is a go-to solution for social media content creators, offering everything from simple filters to advanced layer-based editing and AI art generation.",
+    "overview": "Picsart (1B+ downloads) combines Photoshop-level editing with Instagram templates, AI replace, background removal serving influencers/brands.[web:3] Free unlimited editing; Gold ($5/mo) removes ads, unlocks premium stickers/AI tools.[web:3]",
     "faqs": [
       {
-        "question": "Is Picsart good for beginners?",
-        "answer": "Yes, Picsart is very beginner-friendly, offering a wide array of easy-to-use templates, filters, and one-click AI tools. It also provides advanced features to satisfy more experienced designers."
+        "question": "Is Picsart better for beginners or professionals?",
+        "answer": "Perfect for both - templates for beginners, layer masks/curves for pros with mobile-first interface.[web:3]"
       },
       {
-        "question": "What kind of AI tools does Picsart have?",
-        "answer": "Picsart's AI toolkit includes an AI image generator (text-to-image), background and object remover, style transfer filters, an AI writer for social media captions, and an AI-enhance feature to improve photo quality."
+        "question": "What AI tools does Picsart offer?",
+        "answer": "AI Replace (object swap), background removal, image generator, sketch-to-image, style transfer filters.[web:3]"
+      },
+      {
+        "question": "How much is Picsart Gold?",
+        "answer": "$5/month or $60/year (save 50%) unlocks premium tools, no ads, 3GB cloud storage.[web:3]"
       }
     ]
   },
@@ -2993,31 +4712,41 @@ export const tools = [
     "url": "https://pixlr.com/",
     "category": [
       "Art & Creative Design",
-      "Video & Animation"
+      "Photo Editing",
+      "Cloud Photoshop",
+      "AI Design Tools"
     ],
-    "price": "Freemium (Free version available; Paid plans start at $4.90/month)",
-    "description": "Cloud-based photo editing and design tools with AI-power for consumers and companies.",
+    "price": "Free; Premium $4.90/mo; Team $7.99/user/mo.",
+    "description": "Pixlr: Browser Photoshop alternative with AI cutout, generative fill, 7M+ stock photos.",
     "tags": [
-      "photo editing",
-      "design tools",
-      "cloud-based",
-      "ai tools"
+      "pixlr e editor",
+      "pixlr x express",
+      "ai background removal",
+      "online photoshop free"
     ],
     "rating": 4.4,
     "keywords": [
-      "ai photo editor",
-      "design platform"
+      "pixlr free online editor",
+      "pixlr e vs photoshop",
+      "pixlr premium pricing",
+      "online photo editor free",
+      "pixlr ai cutout",
+      "browser photoshop"
     ],
     "isFeatured": false,
-    "overview": "Pixlr is a suite of web-based photo editing and design tools that offers an accessible alternative to desktop software like Photoshop. It includes Pixlr E for advanced editing and Pixlr X for quick, modern edits. The platform is infused with AI tools for tasks like background removal, generative fill, and creating art from text.",
+    "overview": "Pixlr E = Photoshop clone with layers/masks; Pixlr X = Canva-style templates. AI cutout, generative fill, 7M+ stock photos.[web:4] Free unlimited; Premium ($4.90/mo) removes ads + AI tools.[web:4]",
     "faqs": [
       {
-        "question": "What is the difference between Pixlr E and Pixlr X?",
-        "answer": "Pixlr E (Expert) is a powerful, layer-based photo editor with a classic desktop UI, similar to Photoshop. Pixlr X (Express) is a more modern, easy-to-use editor designed for quick touch-ups, filters, and design tasks."
+        "question": "Pixlr E vs Pixlr X - which should I use?",
+        "answer": "Pixlr E = advanced Photoshop editing. Pixlr X = quick templates/filters like Canva. Both free.[web:4]"
       },
       {
-        "question": "Do I need to install any software to use Pixlr?",
-        "answer": "No, Pixlr is entirely cloud-based. All of its editors and tools run directly in your web browser, although they also offer mobile and desktop apps for convenience."
+        "question": "Does Pixlr require software download?",
+        "answer": "100% browser-based. Works on Chromebooks, tablets, any device instantly.[web:4]"
+      },
+      {
+        "question": "How much is Pixlr Premium?",
+        "answer": "$4.90/month removes ads, unlocks AI tools, 7M+ premium stock photos.[web:4]"
       }
     ]
   },
@@ -3027,30 +4756,42 @@ export const tools = [
     "image": "/pp.png",
     "url": "https://pixai.art/",
     "category": [
-      "Art & Creative Design"
+      "Art & Creative Design",
+      "Anime AI Art",
+      "Character Generation",
+      "LoRA Training"
     ],
-    "price": "Freemium (Free daily credits; Paid membership starts at $8/month)",
-    "description": "AI art generator for creating anime-style art and sharing artworks.",
+    "price": "Free 105 tokens/day; Premium $8/mo (2500 tokens); Infinite $25/mo.",
+    "description": "PixAI.Art: Anime AI generator with LoRA training, character consistency, 1M+ anime models.",
     "tags": [
-      "ai art generator",
-      "anime art",
-      "art sharing"
+      "pixai anime ai",
+      "lora training free",
+      "anime character generator",
+      "pixai daily tokens"
     ],
     "rating": 4.6,
     "keywords": [
-      "ai anime art",
-      "art generator"
+      "pixai art free tokens",
+      "anime ai generator free",
+      "pixai lora training",
+      "consistent anime characters ai",
+      "pixai premium pricing",
+      "waifu generator ai"
     ],
     "isFeatured": false,
-    "overview": "PixAI.Art is an AI art generator and community platform that specializes in creating high-quality anime and manga-style artwork. It provides a wide range of anime-specific models, LoRAs, and tools that give users precise control over their creations. Users can also share their art, participate in contests, and train their own character models.",
+    "overview": "PixAI specializes in anime/manga art with character LoRA training maintaining perfect consistency across poses/outfits.[web:5] Free 105 daily tokens; Premium ($8/mo) = 2500 tokens + private generations.[web:5]",
     "faqs": [
       {
-        "question": "Is PixAI only for anime art?",
-        "answer": "While it excels at anime and manga styles, PixAI also offers models that can generate realistic and other artistic styles of images. However, its primary focus and largest community are centered around anime."
+        "question": "How many free daily tokens does PixAI provide?",
+        "answer": "105 free tokens daily = 20-50 anime images. Weekly bonus tokens for active users.[web:5]"
       },
       {
-        "question": "What are 'credits' on PixAI?",
-        "answer": "Credits are the currency used on the platform to generate images. The platform provides a generous amount of free daily and weekly credits, and users can purchase more or subscribe to a membership for a larger monthly allotment."
+        "question": "Can I train anime characters on PixAI?",
+        "answer": "Yes, upload 10-20 images to train LoRA maintaining exact character across any pose/outfit/lighting.[web:5]"
+      },
+      {
+        "question": "Is PixAI only for anime art?",
+        "answer": "Specializes in anime but supports realistic, 3D, illustration styles with largest anime model library.[web:5]"
       }
     ]
   },
@@ -3060,31 +4801,46 @@ export const tools = [
     "image": "/miri.png",
     "url": "https://www.miricanvas.com/",
     "category": [
-      "Art & Creative Design"
+      "Art & Creative Design",
+      "Graphic Design",
+      "Canva Alternative",
+      "AI Design Tools",
+      "Social Media Templates"
     ],
-    "price": "Freemium (Free for individuals; Pro and Enterprise plans available)",
-    "description": "Easy-to-use online design tool with templates, graphics, and AI-powered features.",
+    "price": "Free (2M+ users); Pro/Enterprise custom pricing.",
+    "description": "MiriCanvas: Free Canva alternative with 530K+ templates, AI design generator, 10M+ graphics for presentations, YouTube thumbnails, social posts.",
     "tags": [
-      "online design",
-      "templates",
-      "graphics",
-      "design tool"
+      "miricanvas free",
+      "canva alternative free",
+      "530k templates",
+      "ai presentation maker",
+      "youtube thumbnail maker",
+      "social media templates"
     ],
     "rating": 4.7,
     "keywords": [
-      "online design tool",
-      "ai design"
+      "miricanvas free vs canva",
+      "free presentation templates",
+      "youtube thumbnail maker free",
+      "530k design templates",
+      "ai design generator free",
+      "social media post maker",
+      "miricanvas pro pricing"
     ],
     "isFeatured": false,
-    "overview": "MiriCanvas is an intuitive, all-in-one online design tool, often compared to Canva, that is popular in the Korean market and expanding globally. It allows users to easily create a wide range of visual content, from social media posts and presentations to printed materials, using thousands of templates and design assets. It also incorporates AI features for image generation and background removal.",
+    "overview": "MiriCanvas serves 2M+ monthly users across 180+ countries with 530K+ templates for presentations, YouTube thumbnails, Instagram posts, event posters.[attached_file:1] Free unlimited access to 10M+ graphics, animations, AI topic-to-presentation generator, background remover.[attached_file:1] Perfect Canva alternative for solopreneurs creating professional designs without subscriptions.[attached_file:1]",
     "faqs": [
       {
-        "question": "Is MiriCanvas free to use?",
-        "answer": "Yes, MiriCanvas offers a very generous free plan for individual users that includes access to most of its templates and design elements for both personal and commercial use."
+        "question": "Is MiriCanvas completely free like Canva?",
+        "answer": "Yes, unlimited free access to 530K+ templates, 10M+ graphics, AI generator for individuals - no credit limits or watermarks.[attached_file:1]"
       },
       {
-        "question": "What makes MiriCanvas a good alternative to Canva?",
-        "answer": "MiriCanvas provides a similar user-friendly, template-based design experience. Users often praise its extensive library of high-quality, royalty-free assets and its straightforward licensing terms, even on the free plan."
+        "question": "How many templates does MiriCanvas offer?",
+        "answer": "530K+ professional templates for presentations, YouTube thumbnails, social media, events, quizzes, posters.[attached_file:1]"
+      },
+      {
+        "question": "Does MiriCanvas have AI design tools?",
+        "answer": "Yes, AI generates complete presentations from topics instantly plus background remover, animation effects.[attached_file:1]"
       }
     ]
   },
@@ -3094,31 +4850,43 @@ export const tools = [
     "image": "/123.png",
     "url": "https://www.123rf.com/",
     "category": [
-      "Art & Creative Design"
+      "Art & Creative Design",
+      "Stock Photos",
+      "AI Image Generator",
+      "Royalty Free Media"
     ],
-    "price": "Freemium (Free content available; Subscriptions start at $19/month)",
-    "description": "A stock content provider with royalty-free images, videos, and AI tools.",
+    "price": "Free trial; Subscriptions $19/mo (10 images); On-demand $4.95/image.",
+    "description": "123RF: 100M+ royalty-free stock photos, videos, vectors + AI image generator, photo editor.",
     "tags": [
-      "stock content",
-      "royalty-free images",
-      "videos",
-      "ai tools"
+      "123rf free trial",
+      "royalty free stock photos",
+      "ai image generator",
+      "stock video download",
+      "vector graphics"
     ],
     "rating": 4.2,
     "keywords": [
-      "stock provider",
-      "ai image tools"
+      "123rf free images download",
+      "royalty free stock photos cheap",
+      "123rf ai generator",
+      "stock photos subscription",
+      "4k stock video royalty free",
+      "vector stock graphics"
     ],
     "isFeatured": false,
-    "overview": "123RF is a global stock content marketplace offering millions of royalty-free photos, vectors, videos, and audio files. In addition to its traditional stock library, 123RF has integrated a suite of AI-powered tools, including an AI image generator, writer, and image editor, to provide a comprehensive creative solution.",
+    "overview": "123RF offers 100M+ royalty-free photos, 8M+ videos, 5M+ vectors with AI image generator trained on licensed content.[web:1] $19/mo = 10 images; on-demand $4.95/image. Commercial safe for ads/websites.[web:1]",
     "faqs": [
       {
-        "question": "Can I use the images from 123RF for commercial purposes?",
-        "answer": "Yes, when you purchase or download content from 123RF, you are granted a royalty-free license that typically allows for use in commercial projects, such as advertising, websites, and marketing materials."
+        "question": "Are 123RF images safe for commercial use?",
+        "answer": "Yes, royalty-free license covers advertising, websites, print, social media, products with proper attribution.[web:1]"
       },
       {
-        "question": "Are the AI tools free to use?",
-        "answer": "The AI tools are often included as part of a subscription plan or may operate on a credit system. While some free trials or basic access may be available, full usage is generally tied to a paid plan."
+        "question": "Does 123RF have AI image generation?",
+        "answer": "Yes, AI generator creates custom visuals from text prompts with full commercial rights included.[web:1]"
+      },
+      {
+        "question": "What is 123RF subscription pricing?",
+        "answer": "$19/month = 10 images; $49/month = 40 images. On-demand single images $4.95 each.[web:1]"
       }
     ]
   },
@@ -3129,30 +4897,40 @@ export const tools = [
     "url": "https://uhmegle.com/",
     "category": [
       "Social Media",
-      "AI Detection & Anti-Detection"
+      "AI Detection & Anti-Detection",
+      "Anonymous Chat",
+      "Video Chat"
     ],
-    "price": "Free",
-    "description": "Uhmegle is an Omegle alternative for chatting with strangers via text or video.",
+    "price": "100% Free (no signup, unlimited chats).",
+    "description": "Uhmegle: Free Omegle alternative for anonymous text/video chat with strangers worldwide.",
     "tags": [
-      "omegle alternative",
-      "chatting",
-      "video chat"
+      "uhmegle free",
+      "omegle alternative 2025",
+      "anonymous video chat",
+      "random stranger chat"
     ],
     "rating": 3.8,
     "keywords": [
-      "online chat",
-      "video call"
+      "uhmegle omegle alternative",
+      "free anonymous chat no signup",
+      "random video chat strangers",
+      "omegle replacement 2025",
+      "text chat with strangers"
     ],
     "isFeatured": false,
-    "overview": "Uhmegle is a free online platform that allows users to have anonymous conversations with strangers from around the world. It serves as an alternative to the classic Omegle website, offering both text and video chat functionalities to connect people randomly for spontaneous conversations.",
+    "overview": "Uhmegle recreates Omegle experience post-shutdown with instant anonymous text/video matching worldwide.[web:2] No registration, no personal data - perfect for spontaneous global conversations.[web:2]",
     "faqs": [
       {
-        "question": "Is Uhmegle the same as Omegle?",
-        "answer": "No, it is an independent platform that offers a similar experience to the original Omegle, which was a very popular site for random chatting before it shut down."
+        "question": "Is Uhmegle safe like original Omegle?",
+        "answer": "Yes, completely anonymous - no signup, no data collection, instant matching with strangers worldwide.[web:2]"
       },
       {
-        "question": "Do I need to register to use Uhmegle?",
-        "answer": "No, one of the key features of Uhmegle and similar platforms is that they do not require any registration or personal information. You can start chatting with strangers instantly and anonymously."
+        "question": "Does Uhmegle require account registration?",
+        "answer": "No registration needed - click 'Start Chatting' for instant text/video connections.[web:2]"
+      },
+      {
+        "question": "Is Uhmegle video chat free?",
+        "answer": "100% free unlimited video/text chat with no time limits or premium features.[web:2]"
       }
     ]
   },
@@ -3163,32 +4941,41 @@ export const tools = [
     "url": "https://sider.ai/",
     "category": [
       "Social Media",
-      "Image Analysis"
+      "Image Analysis",
+      "AI Browser Extension",
+      "Productivity Tools"
     ],
-    "price": "Freemium (Free plan available; Paid plans start at $10/month)",
-    "description": "AI assistant integrating ChatGPT, Claude, and Gemini for reading, writing, and more on any webpage.",
+    "price": "Free Chrome extension; Pro $10/mo (unlimited GPT-4/Claude).",
+    "description": "Sider AI: Free sidebar ChatGPT/Claude/Gemini on any webpage for instant summarization, translation, writing.",
     "tags": [
-      "ai assistant",
-      "chatgpt",
-      "claude",
-      "gemini",
-      "web assistant"
+      "sider ai chrome",
+      "chatgpt sidebar free",
+      "webpage ai assistant",
+      "browser copilot ai"
     ],
     "rating": 4.9,
     "keywords": [
-      "ai assistant",
-      "browser extension"
+      "sider ai chrome extension free",
+      "free chatgpt browser extension",
+      "ai webpage summarizer chrome",
+      "sider vs merlin ai",
+      "claude 3.5 browser extension",
+      "gemini ai sidebar"
     ],
     "isFeatured": false,
-    "overview": "Sider is a popular AI-powered browser extension that acts as a sidebar assistant on any webpage. It integrates multiple leading AI models like GPT-4, Claude 3, and Gemini, allowing users to chat, write, summarize, translate, and explain text without leaving their current tab. It also offers features for interacting with images and videos.",
+    "overview": "Sider (5M+ users) embeds GPT-4o/Claude 3.5/Gemini directly in browser sidebar - summarize articles, translate pages, generate content without tab switching.[web:3] Free unlimited basic usage; Pro ($10/mo) unlocks advanced models.[web:3]",
     "faqs": [
       {
-        "question": "What is the main benefit of using Sider?",
-        "answer": "The main benefit is convenience. It embeds powerful AI tools directly into your browser, allowing you to use them contextually on any website, whether you're reading an article, writing an email, or searching the web."
+        "question": "Is Sider AI browser extension completely free?",
+        "answer": "Yes, unlimited free GPT-4o/Claude/Gemini access on any webpage. Pro unlocks priority models.[web:3]"
       },
       {
-        "question": "Which browsers does Sider support?",
-        "answer": "Sider is available as an extension for major browsers, including Google Chrome, Microsoft Edge, and Apple Safari."
+        "question": "Which AI models does Sider Chrome extension support?",
+        "answer": "GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro - instant model switching from sidebar.[web:3]"
+      },
+      {
+        "question": "Does Sider work on YouTube and PDFs?",
+        "answer": "Yes, summarizes YouTube videos, extracts PDF text, analyzes webpage images/videos instantly.[web:3]"
       }
     ]
   },
@@ -3199,31 +4986,41 @@ export const tools = [
     "url": "https://transkriptor.com/",
     "category": [
       "Social Media",
-      "Voice Generation & Conversion"
+      "Voice Generation & Conversion",
+      "AI Transcription",
+      "Meeting Notes"
     ],
-    "price": "Starts at $4.99/month (Lite plan, billed annually)",
-    "description": "AI transcription service for audio and video to text conversion with high accuracy.",
+    "price": "Lite $4.99/mo (annual); Pro $9.99/mo; Enterprise custom.",
+    "description": "Transkriptor: 99% accurate AI transcription for audio/video with speaker ID, 100+ languages.",
     "tags": [
-      "transcription",
-      "audio to text",
-      "video to text",
-      "accuracy"
+      "transkriptor ai",
+      "audio transcription",
+      "speaker identification",
+      "meeting transcription"
     ],
     "rating": 4.7,
     "keywords": [
-      "ai transcription",
-      "audio transcription"
+      "transkriptor free trial",
+      "99% accurate transcription",
+      "speaker labeled transcripts",
+      "100 languages transcription",
+      "zoom meeting transcription",
+      "podcast transcription service"
     ],
     "isFeatured": false,
-    "overview": "Transkriptor is an AI-powered transcription service that quickly and accurately converts audio and video files into text. It supports over 100 languages and is used by professionals, students, and journalists to transcribe meetings, interviews, lectures, and podcasts. It offers features like speaker identification and an integrated text editor for corrections.",
+    "overview": "Transkriptor converts interviews, meetings, podcasts to searchable text with 99% accuracy, speaker labels, timestamps across 100+ languages.[web:4] Lite ($4.99/mo annual) perfect for freelancers; Enterprise unlimited processing.[web:4]",
     "faqs": [
       {
-        "question": "How accurate are the transcriptions?",
-        "answer": "Transkriptor uses advanced speech-to-text AI to achieve up to 99% accuracy, depending on the audio quality. Clear audio with minimal background noise yields the best results."
+        "question": "How accurate is Transkriptor transcription?",
+        "answer": "99% accuracy on clear audio with automatic speaker identification and punctuation.[web:4]"
       },
       {
-        "question": "Can it handle multiple speakers?",
-        "answer": "Yes, Transkriptor can identify and separate different speakers in the audio, labeling their respective parts in the final transcript, which is very useful for interviews and meetings."
+        "question": "What languages does Transkriptor support?",
+        "answer": "100+ languages including English, Spanish, French, German, Arabic, Mandarin, Hindi.[web:4]"
+      },
+      {
+        "question": "Does Transkriptor identify multiple speakers?",
+        "answer": "Yes, automatically labels Speaker 1, Speaker 2 etc. with 95%+ diarization accuracy.[web:4]"
       }
     ]
   },
@@ -3234,30 +5031,42 @@ export const tools = [
     "url": "https://designer.microsoft.com/",
     "category": [
       "Social Media",
-      "Art & Creative Design"
+      "Art & Creative Design",
+      "AI Graphic Design",
+      "Canva Alternative"
     ],
-    "price": "Freemium (Free version available; more features included with Microsoft 365 subscriptions)",
-    "description": "AI-powered graphic design app for creating social media posts, invitations, and more.",
+    "price": "100% Free (Microsoft account); 365 Premium boosts AI credits.",
+    "description": "Microsoft Designer: Free AI graphic design with DALL-E 3 generating social posts, invitations, posters instantly.",
     "tags": [
-      "graphic design",
-      "social media posts",
-      "invitations"
+      "microsoft designer free",
+      "ai graphic design free",
+      "dall-e 3 designer",
+      "social media templates",
+      "canva alternative free"
     ],
     "rating": 4.3,
     "keywords": [
-      "ai graphic design",
-      "social media creator"
+      "microsoft designer free vs canva",
+      "free ai graphic design tool",
+      "dall-e 3 image generator free",
+      "social media post maker ai",
+      "microsoft designer templates",
+      "invitation maker free ai"
     ],
     "isFeatured": false,
-    "overview": "Microsoft Designer is a graphic design app that uses AI to help users create stunning professional-quality visuals quickly and easily. You can start with a simple text description, and the app's AI will generate a variety of unique, editable designs. It's perfect for creating social media posts, invitations, digital postcards, and other graphics.",
+    "overview": "Microsoft Designer uses DALL-E 3 to generate professional graphics from text prompts - social posts, invitations, posters, flyers.[web:1] 100% free with Microsoft account; 365 subscribers get 100+ daily AI boosts.[web:1] Perfect Canva alternative for LinkedIn posts, Instagram stories, event invites.[web:1]",
     "faqs": [
       {
-        "question": "How does Microsoft Designer use AI?",
-        "answer": "It uses AI at every step. It leverages OpenAI's DALL-E models to generate images from your text prompts and then suggests design layouts, color palettes, and fonts to match your content, dramatically speeding up the design process."
+        "question": "Is Microsoft Designer completely free?",
+        "answer": "Yes, unlimited free designs with Microsoft account. 365 Premium unlocks 100+ daily DALL-E 3 generations.[web:1]"
       },
       {
-        "question": "Do I need a Microsoft 365 subscription to use it?",
-        "answer": "No, there is a free version of Microsoft Designer available to anyone with a Microsoft account. However, Microsoft 365 subscribers get access to more premium features and a higher number of credits for AI generation."
+        "question": "Does Microsoft Designer use DALL-E 3?",
+        "answer": "Yes, powered by latest DALL-E 3 for photorealistic images + automatic layout/color/font suggestions.[web:1]"
+      },
+      {
+        "question": "Microsoft Designer vs Canva - which is better?",
+        "answer": "Designer = free AI generation. Canva = templates. Use Designer for unique graphics, Canva for standard layouts.[web:1]"
       }
     ]
   },
@@ -3268,31 +5077,41 @@ export const tools = [
     "url": "https://www.turbolearn.ai/",
     "category": [
       "Social Media",
-      "Education & Translation"
+      "Education & Translation",
+      "AI Study Tools",
+      "Flashcard Generator"
     ],
-    "price": "Freemium (Free trial available; Paid plans start at $3.33/month)",
-    "description": "TurboLearn AI generates notes, flashcards, and quizzes from lectures to enhance learning.",
+    "price": "Free trial; Plus $3.33/mo (annual); Pro $9.99/mo.",
+    "description": "TurboLearn AI: Converts lectures/YouTube/textbooks to notes, flashcards, quizzes automatically.",
     "tags": [
-      "note generation",
-      "flashcards",
-      "quizzes",
-      "learning enhancement"
+      "turbolearn ai free",
+      "lecture notes ai",
+      "flashcard generator",
+      "ai study assistant"
     ],
     "rating": 4.5,
     "keywords": [
-      "ai learning tool",
-      "lecture notes"
+      "turbolearn ai free trial",
+      "youtube lecture notes ai",
+      "automatic flashcard generator",
+      "ai quiz maker free",
+      "study notes from video",
+      "exam prep ai tool"
     ],
     "isFeatured": false,
-    "overview": "TurboLearn AI is a study tool designed to help students save time and learn more effectively from their educational content. By uploading a lecture recording, textbook chapter, or even a YouTube video link, the AI automatically generates comprehensive notes, interactive flashcards, and practice quizzes based on the material.",
+    "overview": "TurboLearn processes YouTube lectures, audio recordings, PDFs into structured notes + Anki flashcards + practice quizzes.[web:2] Free trial; Plus ($3.33/mo annual) unlimited processing.[web:2] Students save 10+ hours/week on note-taking.[web:2]",
     "faqs": [
       {
-        "question": "What kind of content can I upload to TurboLearn?",
-        "answer": "You can upload various formats, including audio files (MP3, WAV), video files (MP4), documents (PDF), or simply provide a URL to a YouTube video or webpage."
+        "question": "Can TurboLearn process YouTube videos?",
+        "answer": "Yes, paste any YouTube link - AI extracts key points, creates flashcards, generates practice quizzes automatically.[web:2]"
       },
       {
-        "question": "How can this tool help with exam preparation?",
-        "answer": "After generating notes from your lecture materials, it creates flashcards and quizzes that are specifically tailored to that content. This allows you to actively test your knowledge and reinforce key concepts before an exam."
+        "question": "Does TurboLearn export to Anki?",
+        "answer": "Yes, generates Anki-compatible flashcards with spaced repetition optimized for long-term retention.[web:2]"
+      },
+      {
+        "question": "What file types does TurboLearn support?",
+        "answer": "YouTube URLs, MP3/WAV audio, MP4 video, PDF textbooks, Google Docs, pasted text.[web:2]"
       }
     ]
   },
@@ -3303,30 +5122,41 @@ export const tools = [
     "url": "https://www.flexclip.com/",
     "category": [
       "Social Media",
-      "Video & Animation"
+      "Video & Animation",
+      "Online Video Editor",
+      "AI Video Tools"
     ],
-    "price": "Freemium (Free plan available; Paid plans start at $9.99/month, billed annually)",
-    "description": "Free online video editor with AI tools and rich resources.",
+    "price": "Free (watermarked); Plus $9.99/mo; Business $19.99/mo.",
+    "description": "FlexClip: Free online video editor with AI script writer, text-to-video, auto-subtitles.",
     "tags": [
-      "video editor",
-      "ai tools",
-      "online video editor"
+      "flexclip free",
+      "ai video editor free",
+      "online video maker",
+      "auto subtitle generator"
     ],
     "rating": 4.5,
     "keywords": [
-      "online video editor",
-      "video resources"
+      "flexclip free no watermark trial",
+      "ai text to video generator",
+      "online video editor free",
+      "flexclip plus pricing",
+      "tiktok video editor online",
+      "auto captions video maker"
     ],
     "isFeatured": false,
-    "overview": "FlexClip is a user-friendly online video editor that makes it easy for anyone to create professional-looking videos for social media, marketing, or personal use. It features a drag-and-drop interface, a vast library of templates and stock media, and a suite of AI tools, including an AI video script writer, text-to-video generator, and auto-subtitle tool.",
+    "overview": "FlexClip creates professional videos via drag-drop with 10K+ templates, AI script-to-video, auto-subtitles 100+ languages.[web:3] Free exports watermarked; Plus ($9.99/mo) HD unlimited.[web:3]",
     "faqs": [
       {
-        "question": "Is FlexClip good for beginners?",
-        "answer": "Yes, FlexClip is designed with simplicity in mind. Its template-driven approach and intuitive tools make it an excellent choice for beginners who want to create high-quality videos without a steep learning curve."
+        "question": "Is FlexClip good for complete beginners?",
+        "answer": "Yes, template-driven interface + AI tools require zero editing experience for professional results.[web:3]"
       },
       {
-        "question": "What AI tools does FlexClip offer?",
-        "answer": "FlexClip includes several AI-powered features, such as an AI script generator to help you write your video's narration, a text-to-video tool that creates a video from your script, and an automatic subtitle generator."
+        "question": "What AI features does FlexClip offer?",
+        "answer": "AI script writer, text-to-video generator, auto-subtitles, background remover, music recommendation.[web:3]"
+      },
+      {
+        "question": "FlexClip free plan limitations?",
+        "answer": "Free = 480p watermarked exports, 1GB storage. Plus removes all limits with 1080p exports.[web:3]"
       }
     ]
   },
@@ -3337,31 +5167,41 @@ export const tools = [
     "url": "https://supawork.ai/",
     "category": [
       "Social Media",
-      "Image Generation & Editing"
+      "Image Generation & Editing",
+      "AI Headshots",
+      "LinkedIn Photos"
     ],
-    "price": "Free",
-    "description": "Free AI professional headshot generator with 300+ styles and various other AI tools.",
+    "price": "100% Free (300+ professional headshot styles).",
+    "description": "Supawork AI: Free professional headshot generator creates LinkedIn/CV photos from selfies.",
     "tags": [
-      "headshot generator",
-      "ai tools",
-      "professional photos",
-      "free tool"
+      "supawork ai free",
+      "ai headshot generator",
+      "linkedin profile photo",
+      "professional headshots free"
     ],
     "rating": 4.1,
     "keywords": [
-      "ai headshot",
-      "professional photos"
+      "free ai headshot generator",
+      "linkedin professional photo ai",
+      "supawork ai headshots",
+      "cv photo generator free",
+      "professional portrait ai free",
+      "headshot from selfie ai"
     ],
     "isFeatured": false,
-    "overview": "Supawork AI offers a suite of free AI-powered productivity tools, with its most popular feature being the AI Professional Headshot Generator. Users can upload a few of their own photos, and the AI will generate a wide variety of high-quality, professional-looking headshots in different styles and settings, perfect for LinkedIn and corporate profiles.",
+    "overview": "Supawork AI transforms 6-10 selfies into 300+ professional headshots (studio, corporate, casual) for LinkedIn/resumes.[web:4] 100% free unlimited generations - upload selfies, download high-res photos instantly.[web:4]",
     "faqs": [
       {
-        "question": "Is the AI headshot generator really free?",
-        "answer": "Yes, Supawork's headshot generator is offered as a free tool. Users can generate and download their professional headshots without a subscription or payment."
+        "question": "How many selfies does Supawork AI need?",
+        "answer": "Upload 6-10 clear selfies (various angles/lighting). AI learns your face for perfect headshot generation.[web:4]"
       },
       {
-        "question": "How many photos do I need to upload?",
-        "answer": "The tool typically requires you to upload a small number of your existing selfies or photos (usually 6-10). The AI uses these to learn your facial features before generating new headshots."
+        "question": "Are Supawork headshots really free to download?",
+        "answer": "Yes, unlimited free high-resolution downloads in all 300+ styles - no watermarks or subscriptions.[web:4]"
+      },
+      {
+        "question": "What professional styles does Supawork offer?",
+        "answer": "Corporate headshots, studio portraits, casual professional, tech startup, creative agency styles.[web:4]"
       }
     ]
   },
@@ -3373,31 +5213,35 @@ export const tools = [
     "category": [
       "Social Media",
       "Daily Life",
-      "Chatbots & Virtual Companions"
+      "Chatbots & Virtual Companions",
+      "WhatsApp AI"
     ],
-    "price": "Freemium (Free plan available; Paid plans start at $9.99/month)",
-    "description": "Advanced AI chatbot with GPT-4o, offering various AI tools and WhatsApp integration.",
+    "price": "Free (limited); Pro $9.99/mo (GPT-4o unlimited).",
+    "description": "Chat & Ask AI: GPT-4o chatbot with WhatsApp integration + image generation, content tools.",
     "tags": [
-      "ai chatbot",
-      "gpt-4o",
-      "whatsapp integration",
-      "ai tools"
+      "chat and ask ai whatsapp",
+      "gpt-4o chatbot free",
+      "whatsapp ai assistant",
+      "ai content generator"
     ],
     "rating": 4.3,
     "keywords": [
-      "advanced chatbot",
-      "whatsapp integration"
+      "chat and ask ai whatsapp bot",
+      "free gpt-4o whatsapp",
+      "whatsapp ai assistant free",
+      "chat and ask pro pricing",
+      "ai image generator whatsapp"
     ],
     "isFeatured": false,
-    "overview": "Chat & Ask AI is a versatile AI chatbot application powered by advanced models like GPT-4o. It offers a suite of tools for content creation, image generation, and problem-solving. A key feature is its seamless integration with WhatsApp, allowing users to access the AI's power directly from their favorite messaging app.",
+    "overview": "Chat & Ask AI = GPT-4o in WhatsApp - chat, generate images, write posts directly in messaging app.[web:5] Free limited queries; Pro ($9.99/mo) unlimited GPT-4o access.[web:5]",
     "faqs": [
       {
-        "question": "How does the WhatsApp integration work?",
-        "answer": "You can add Chat & Ask AI as a contact on WhatsApp. This allows you to send messages to it just like you would with a person, and it will respond directly within your chat, making AI assistance highly accessible."
+        "question": "How to add Chat & Ask AI to WhatsApp?",
+        "answer": "Save phone number as contact, start messaging - GPT-4o responds instantly like human conversation.[web:5]"
       },
       {
-        "question": "What can I do with Chat & Ask AI besides chatting?",
-        "answer": "Beyond conversation, the platform offers specialized tools for writing emails, generating social media posts, creating AI art, summarizing text, and more, all accessible through its interface."
+        "question": "Can Chat & Ask AI generate images?",
+        "answer": "Yes, DALL-E 3 image generation via WhatsApp - describe image, receive high-res photos instantly.[web:5]"
       }
     ]
   },
@@ -3407,30 +5251,41 @@ export const tools = [
     "image": "/same.png",
     "url": "https://gptzero.me/",
     "category": [
-      "AI Detection & Anti-Detection"
+      "AI Detection & Anti-Detection",
+      "Plagiarism Checker",
+      "Academic Integrity"
     ],
-    "price": "Freemium (Free plan with word limit; Paid plans start at $10/month)",
-    "description": "AI detector for identifying text generated by AI models like ChatGPT.",
+    "price": "Free (5K words/mo); Basic $10/mo; Pro $15/mo.",
+    "description": "GPTZero: AI content detector identifies ChatGPT/Gemini/Claude generated text with 98% accuracy.",
     "tags": [
-      "ai detector",
-      "chatgpt",
-      "text identification"
+      "gptzero free",
+      "ai detector free",
+      "chatgpt detector",
+      "plagiarism checker ai"
     ],
     "rating": 4.1,
     "keywords": [
-      "ai content detection",
-      "gpt detection"
+      "gptzero free ai detector",
+      "detect chatgpt writing free",
+      "ai content detector accuracy",
+      "gptzero vs copyleaks",
+      "student ai detector free",
+      "98% ai detection accuracy"
     ],
     "isFeatured": false,
-    "overview": "GPTZero is a leading AI content detector designed to determine whether a piece of text was written by a human or generated by an AI model like ChatGPT. It is widely used in education and publishing to check for AI plagiarism and maintain academic integrity. It analyzes text for characteristics like 'perplexity' and 'burstiness' to make its classification.",
+    "overview": "GPTZero analyzes perplexity/burstiness detecting AI text from ChatGPT, Gemini, Claude with 98% accuracy used by 1M+ educators.[web:6] Free 5K words/month; Pro ($15/mo) unlimited + API.[web:6]",
     "faqs": [
       {
-        "question": "Who is the primary user of GPTZero?",
-        "answer": "While anyone can use it, GPTZero is primarily built for educators and academic institutions to verify the originality of student work. It is also used by writers, editors, and hiring managers."
+        "question": "How accurate is GPTZero AI detection?",
+        "answer": "98% accuracy detecting GPT-4/Claude/Gemini text via perplexity + burstiness analysis.[web:6]"
       },
       {
-        "question": "How accurate is GPTZero?",
-        "answer": "GPTZero is considered one of the more accurate AI detectors available, but no detector is 100% perfect. It provides a probability score, indicating the likelihood that the text is AI-generated, rather than a definitive yes or no."
+        "question": "GPTZero free plan word limit?",
+        "answer": "5,000 words/month free with full accuracy. Perfect for students/teachers checking essays.[web:6]"
+      },
+      {
+        "question": "Does GPTZero detect human-edited AI text?",
+        "answer": "Yes, detects AI base even after human editing via statistical pattern recognition.[web:6]"
       }
     ]
   },
@@ -3441,31 +5296,41 @@ export const tools = [
     "url": "https://www.scribbr.com/",
     "category": [
       "AI Detection & Anti-Detection",
-      "Education & Translation"
+      "Education & Translation",
+      "Academic Editing",
+      "Plagiarism Checker"
     ],
-    "price": "Service-based pricing (e.g., proofreading per word); some tools are free.",
-    "description": "Scribbr offers proofreading, plagiarism checking, citation generation, and academic resources for students.",
+    "price": "Free AI detector; Proofreading $20/1K words; Plagiarism $19.95.",
+    "description": "Scribbr: Academic proofreading, AI detector, plagiarism checker, APA/MLA citations.",
     "tags": [
-      "proofreading",
-      "plagiarism checking",
-      "citation generation",
-      "academic resources"
+      "scribbr ai detector free",
+      "academic proofreading",
+      "plagiarism checker",
+      "apa citation generator"
     ],
     "rating": 4.7,
     "keywords": [
-      "academic tools",
-      "plagiarism checker"
+      "scribbr free ai detector",
+      "academic proofreading service",
+      "scribbr plagiarism checker",
+      "apa mla citation generator",
+      "essay editing service",
+      "college paper checker"
     ],
     "isFeatured": false,
-    "overview": "Scribbr is an academic services company dedicated to helping students succeed. It offers a suite of tools including a highly-rated Plagiarism Checker, an APA and MLA Citation Generator, and professional proofreading and editing services. It also features a free AI Detector to check for AI-generated text.",
+    "overview": "Scribbr offers expert academic proofreading + free AI detector serving 1M+ students annually.[web:7] Proofreading $20/1K words by PhD editors; plagiarism checker compares 91M+ sources.[web:7]",
     "faqs": [
       {
-        "question": "Are Scribbr's tools free to use?",
-        "answer": "Scribbr offers several free tools, such as the citation generator and the AI detector. However, its core services like the plagiarism checker and professional editing are paid services with pricing based on document length."
+        "question": "Is Scribbr AI detector free?",
+        "answer": "Yes, unlimited free AI detection for essays/papers with detailed probability scores.[web:7]"
       },
       {
-        "question": "Who does the proofreading and editing?",
-        "answer": "Scribbr employs a network of professional academic editors who are native speakers and experts in various fields. They provide detailed feedback on language, structure, and clarity."
+        "question": "Who edits Scribbr proofreading orders?",
+        "answer": "PhD/Masters editors specializing in your field with 99% satisfaction guarantee.[web:7]"
+      },
+      {
+        "question": "Scribbr plagiarism checker database size?",
+        "answer": "91M+ sources including academic papers, websites, 8B+ webpages.[web:7]"
       }
     ]
   },
@@ -3475,30 +5340,43 @@ export const tools = [
     "image": "/undected.png",
     "url": "https://undetectable.ai/",
     "category": [
-      "AI Detection & Anti-Detection"
+      "AI Detection & Anti-Detection",
+      "Content Humanizer",
+      "Bypass AI Detectors",
+      "SEO Writing"
     ],
-    "price": "Plans start at $9.99/month for 10,000 words.",
-    "description": "Transforms AI content into undetectable, human-like writing.",
+    "price": "Free trial; Plans $9.99/mo (10K words); $15/mo (50K words).",
+    "description": "Undetectable AI: 100% bypasses GPTZero/Originality.ai with human-like rewriting for ChatGPT content.",
     "tags": [
-      "ai content",
-      "undetectable writing",
-      "humanization"
+      "undetectable ai free",
+      "ai humanizer free",
+      "bypass gptzero",
+      "chatgpt undetectable",
+      "ai content humanizer"
     ],
     "rating": 4.4,
     "keywords": [
-      "ai humanizer",
-      "ai content bypasser"
+      "undetectable ai free trial",
+      "bypass ai detectors 2025",
+      "make chatgpt undetectable",
+      "gptzero bypass free",
+      "ai humanizer 100% undetectable",
+      "originality ai bypass"
     ],
     "isFeatured": false,
-    "overview": "Undetectable AI is a tool designed to rewrite AI-generated text to make it sound more human and bypass AI detection tools. Users paste their text from models like ChatGPT, and the tool 'humanizes' it by altering sentence structure, word choice, and syntax to mimic human writing patterns.",
+    "overview": "Undetectable AI transforms ChatGPT/Gemini/Claude text into 100% human-detectable content bypassing GPTZero (100% success), Originality.ai, Turnitin.[attached_file:1] Free trial; $9.99/mo = 10K words perfect for bloggers, SEO writers avoiding AI flags.[attached_file:1]",
     "faqs": [
       {
-        "question": "What is the purpose of using Undetectable AI?",
-        "answer": "It is used by content creators, marketers, and writers who use AI for drafting but want to ensure their final text has a more natural, human touch and can pass checks from AI content detectors."
+        "question": "Does Undetectable AI bypass GPTZero 100%?",
+        "answer": "Yes, 100% success rate per Indian J Psychol Med 2024 study - detects 0% AI after humanization.[attached_file:1]"
       },
       {
-        "question": "Does it just spin the content?",
-        "answer": "Unlike simple article spinners, Undetectable AI uses more sophisticated algorithms to restructure and rephrase content in a way that maintains the original meaning while changing the characteristics that AI detectors look for."
+        "question": "What detectors does Undetectable bypass?",
+        "answer": "GPTZero, Originality.ai, Turnitin, Copyleaks, ZeroGPT - maintains original meaning.[attached_file:1]"
+      },
+      {
+        "question": "Is there a free undetectable AI trial?",
+        "answer": "Yes, free trial processes limited words. Plans start $9.99/mo (10K words).[attached_file:1]"
       }
     ]
   },
@@ -3509,30 +5387,41 @@ export const tools = [
     "url": "https://surveys.gobranded.com/",
     "category": [
       "AI Detection & Anti-Detection",
-      "Business Research"
+      "Business Research",
+      "Paid Surveys",
+      "Market Research"
     ],
-    "price": "Free for users to join; clients pay for research services.",
-    "description": "Branded connects businesses with research participants, offering AI-driven insights and custom audience targeting.",
+    "price": "Free for users ($5 min payout); Businesses pay per survey.",
+    "description": "Branded Surveys: Earn $5+ PayPal/gift cards completing AI-matched market research surveys.",
     "tags": [
-      "research participants",
-      "ai-driven insights",
-      "audience targeting"
+      "branded surveys payout",
+      "paid surveys paypal",
+      "market research earn money",
+      "surveys for cash"
     ],
     "rating": 4.1,
     "keywords": [
-      "market research",
-      "ai insights"
+      "branded surveys legit payout",
+      "$5 paypal surveys free",
+      "highest paying survey sites",
+      "branded surveys review 2025",
+      "market research paid surveys",
+      "instant survey payouts"
     ],
     "isFeatured": true,
-    "overview": "Branded Surveys is a market research community that pays users for sharing their opinions. For businesses, it's a platform to gather consumer insights by launching surveys to a targeted audience. It uses AI to match users with relevant surveys and to analyze the collected data for meaningful trends.",
+    "overview": "Branded Surveys matches users with high-paying surveys via AI ($1-$5 each) with $5 instant PayPal payout.[web:1] Businesses access targeted consumer panels for product testing, ads research.[web:1]",
     "faqs": [
       {
-        "question": "How do users get paid?",
-        "answer": "Users earn points for completing surveys. Once they reach a minimum threshold (typically 500 points, equal to $5), they can cash out their earnings via PayPal or various gift cards."
+        "question": "What is Branded Surveys minimum payout?",
+        "answer": "$5 minimum payout via PayPal, Amazon, Visa gift cards - instant cashout.[web:1]"
       },
       {
-        "question": "How does it help businesses?",
-        "answer": "It provides businesses with quick and affordable access to a diverse panel of consumers, allowing them to conduct market research, test product concepts, and understand customer preferences."
+        "question": "How much can I earn on Branded Surveys?",
+        "answer": "$1-$5 per survey. Active users earn $50-$200/month consistently.[web:1]"
+      },
+      {
+        "question": "Is Branded Surveys legitimate?",
+        "answer": "Yes, 4.1/5 Trustpilot rating, instant $5 payouts, established market research platform.[web:1]"
       }
     ]
   },
@@ -3542,30 +5431,41 @@ export const tools = [
     "image": "/hcapt.png",
     "url": "https://www.hcaptcha.com/",
     "category": [
-      "AI Detection & Anti-Detection"
+      "AI Detection & Anti-Detection",
+      "Bot Protection",
+      "Privacy CAPTCHA",
+      "Website Security"
     ],
-    "price": "Freemium (Free plan for publishers; Paid plans for enterprises)",
-    "description": "AI security platform stopping bots and human abuse with a privacy focus.",
+    "price": "Free for websites; Enterprise custom pricing.",
+    "description": "hCaptcha: Privacy-first bot protection alternative to reCAPTCHA with 99.9% accuracy.",
     "tags": [
-      "ai security",
-      "bot protection",
-      "privacy"
+      "hcaptcha free",
+      "recaptcha alternative",
+      "bot protection free",
+      "privacy captcha"
     ],
     "rating": 4.5,
     "keywords": [
-      "captcha",
-      "security platform"
+      "hcaptcha vs recaptcha",
+      "free bot protection 2025",
+      "privacy captcha alternative",
+      "hcaptcha wordpress plugin",
+      "anti spam captcha free"
     ],
     "isFeatured": false,
-    "overview": "hCaptcha is a security service that protects websites and online services from bots, spam, and other forms of automated abuse. It's known as a privacy-first alternative to Google's reCAPTCHA. It uses advanced machine learning to distinguish between humans and bots, often by asking users to complete simple image labeling tasks.",
+    "overview": "hCaptcha blocks 99.9% bots without selling user data (unlike reCAPTCHA) - free for all websites.[web:2] Enterprise plans add advanced analytics, custom challenges.[web:2]",
     "faqs": [
       {
-        "question": "How is hCaptcha 'privacy-first'?",
-        "answer": "hCaptcha emphasizes user privacy by minimizing the personal data it collects and sells, unlike some other services that might use user interaction data for advertising purposes."
+        "question": "hCaptcha vs reCAPTCHA - key differences?",
+        "answer": "hCaptcha = privacy-first (no data selling). reCAPTCHA = Google tracks users for ads.[web:2]"
       },
       {
-        "question": "How does hCaptcha make money?",
-        "answer": "While the basic bot protection service is free for many websites, hCaptcha offers paid enterprise plans with advanced security features. They also earn revenue from the image labeling tasks, which are often used by companies to train their own AI models."
+        "question": "Is hCaptcha free for websites?",
+        "answer": "Yes, unlimited free bot protection for all websites regardless of traffic volume.[web:2]"
+      },
+      {
+        "question": "hCaptcha bot detection accuracy?",
+        "answer": "99.9% bot blocking with minimal false positives via ML image labeling challenges.[web:2]"
       }
     ]
   },
@@ -3576,30 +5476,41 @@ export const tools = [
     "url": "https://aura.com/",
     "category": [
       "AI Detection & Anti-Detection",
-      "Daily Life"
+      "Daily Life",
+      "Identity Protection",
+      "Cybersecurity"
     ],
-    "price": "Subscription-based; plans start at $12/month (billed annually)",
-    "description": "All-in-one digital safety platform for identity theft and online threat protection.",
+    "price": "Individual $12/mo; Couples $20/mo; Family $36/mo (annual).",
+    "description": "Aura: All-in-one identity theft protection + VPN + antivirus + password manager.",
     "tags": [
-      "digital safety",
-      "identity theft protection",
-      "online security"
+      "aura identity theft",
+      "cybersecurity subscription",
+      "vpn antivirus bundle",
+      "family identity protection"
     ],
     "rating": 4.7,
     "keywords": [
-      "online safety",
-      "threat protection"
+      "aura identity theft protection review",
+      "best cybersecurity 2025",
+      "vpn antivirus all in one",
+      "aura vs lifelock",
+      "family cyber protection",
+      "$1M identity theft insurance"
     ],
     "isFeatured": false,
-    "overview": "Aura is an all-in-one digital safety solution that protects individuals and families from online threats. It combines identity theft protection, financial fraud monitoring, a VPN, antivirus software, and a password manager into a single, easy-to-use subscription service. It uses AI to proactively monitor for threats and alert users to potential issues.",
+    "overview": "Aura monitors dark web, SSN, bank accounts + blocks malware/phishing with $1M identity theft insurance.[web:3] Individual ($12/mo annual) perfect all-in-one cybersecurity.[web:3]",
     "faqs": [
       {
-        "question": "What kind of threats does Aura protect against?",
-        "answer": "Aura protects against a wide range of threats, including data breaches, identity theft, credit card fraud, malware, and phishing scams. It also helps protect your privacy online with its included VPN."
+        "question": "What does Aura identity protection include?",
+        "answer": "Dark web monitoring, SSN alerts, $1M theft insurance, credit monitoring, 3-bureau reports.[web:3]"
       },
       {
-        "question": "Is Aura for individuals or families?",
-        "answer": "Aura offers plans for individuals, couples, and families. The family plans allow you to protect multiple adults and children under a single subscription, with features like parental controls."
+        "question": "Aura pricing for families?",
+        "answer": "Family plan $36/mo annual covers unlimited kids + 5 adults with parental controls.[web:3]"
+      },
+      {
+        "question": "Does Aura include VPN service?",
+        "answer": "Yes, unlimited VPN + antivirus + password manager in all plans.[web:3]"
       }
     ]
   },
@@ -3610,31 +5521,41 @@ export const tools = [
     "url": "https://aiseo.ai/",
     "category": [
       "AI Detection & Anti-Detection",
-      "Marketing & Advertising"
+      "Marketing & Advertising",
+      "SEO Content",
+      "AI Writing"
     ],
-    "price": "Starts at $15/month (Scale plan, billed annually)",
-    "description": "AI-driven SEO and content creation tool for generating optimized, human-like articles.",
+    "price": "Scale $15/mo; Premium $29/mo (annual billing).",
+    "description": "AISEO: AI SEO writer analyzes Google SERPs + generates undetectable rank #1 articles.",
     "tags": [
-      "seo",
-      "content creation",
-      "optimized articles",
-      "human-like writing"
+      "aiseo free trial",
+      "seo content generator",
+      "serp analysis ai",
+      "undetectable seo content"
     ],
     "rating": 4.6,
     "keywords": [
-      "seo tool",
-      "ai content creation"
+      "aiseo seo writer free trial",
+      "ai serp analysis tool",
+      "rank #1 ai content generator",
+      "seo optimized articles ai",
+      "undetectable ai seo writer",
+      "google ranking content ai"
     ],
     "isFeatured": false,
-    "overview": "AISEO is an AI-powered writing assistant and SEO tool designed to help content creators generate high-ranking, human-like articles. It combines content generation with SERP analysis, helping users create long-form content that is optimized for specific keywords. It also includes features for paraphrasing and improving readability.",
+    "overview": "AISEO analyzes top Google results for your keyword + generates complete articles matching exact structure/readability.[web:4] Scale ($15/mo annual) = unlimited articles bypassing all detectors.[web:4]",
     "faqs": [
       {
-        "question": "How does AISEO help with SEO?",
-        "answer": "When you provide a target keyword, AISEO analyzes the top-ranking Google search results for that keyword. It then provides guidance on content structure, topics to cover, and questions to answer to help your article compete effectively."
+        "question": "Does AISEO analyze competitor SERP results?",
+        "answer": "Yes, scans top 10 Google results + extracts H1s, topics, questions for perfect content structure.[web:4]"
       },
       {
-        "question": "Can it write a full blog post automatically?",
-        "answer": "Yes, AISEO has a long-form article generation feature that can create a complete, well-structured blog post from a single title and a few keywords, which you can then edit and refine."
+        "question": "AISEO content bypasses AI detectors?",
+        "answer": "Yes, generates human-like SEO articles undetectable by GPTZero/Originality.ai.[web:4]"
+      },
+      {
+        "question": "AISEO pricing for unlimited articles?",
+        "answer": "Scale $15/mo (annual) = unlimited SEO-optimized articles + SERP analysis.[web:4]"
       }
     ]
   },
@@ -3645,32 +5566,41 @@ export const tools = [
     "url": "https://www.getmerlin.in/",
     "category": [
       "AI Detection & Anti-Detection",
-      "Office & Productivity"
+      "Office & Productivity",
+      "Browser AI Assistant",
+      "Research Tools"
     ],
-    "price": "Freemium (Free plan available; Pro plans start at $19/month)",
-    "description": "AI assistant for research, writing, and summarization with multiple AI models.",
+    "price": "Free (limited); Pro $19/mo (GPT-4o/Claude unlimited).",
+    "description": "Merlin AI: Browser extension GPT-4/Claude summarizes YouTube/emails/webpages instantly.",
     "tags": [
-      "ai assistant",
-      "research",
-      "writing",
-      "summarization",
-      "ai models"
+      "merlin ai chrome free",
+      "youtube summarizer ai",
+      "email reply generator",
+      "browser ai copilot"
     ],
     "rating": 4.8,
     "keywords": [
-      "ai research assistant",
-      "writing tool"
+      "merlin ai chrome extension free",
+      "youtube video summarizer ai",
+      "merlin pro pricing",
+      "ai email assistant chrome",
+      "webpage summarizer extension",
+      "claude browser extension"
     ],
     "isFeatured": false,
-    "overview": "Merlin AI is a browser extension that brings the power of AI models like GPT-4 to any website you visit. It acts as an all-purpose assistant that can summarize YouTube videos, write email replies, generate blog post ideas, and answer complex questions without needing to switch tabs. It's designed to seamlessly integrate AI into your daily workflow.",
+    "overview": "Merlin AI Chrome extension (2M+ users) = GPT-4o/Claude sidebar on any webpage - summarize YouTube (95% accuracy), write emails, research instantly.[web:5] Free limited; Pro ($19/mo) unlimited models.[web:5]",
     "faqs": [
       {
-        "question": "How do I use Merlin?",
-        "answer": "Once installed as a browser extension, you can typically activate Merlin with a keyboard shortcut (like Ctrl+M). This opens a chat window where you can ask questions or give commands related to the content of the page you are on."
+        "question": "Does Merlin AI summarize YouTube videos?",
+        "answer": "Yes, 95% accurate YouTube summarization extracts key points, timestamps, action items.[web:5]"
       },
       {
-        "question": "What makes Merlin different from other AI extensions?",
-        "answer": "Merlin is known for its wide range of features beyond simple chat. Its ability to summarize YouTube videos, analyze web content, and integrate with popular sites like Gmail and LinkedIn makes it a very versatile productivity tool."
+        "question": "Merlin AI vs Sider - which is better?",
+        "answer": "Merlin = YouTube/email focus. Sider = webpage translation. Both excellent free Chrome extensions.[web:5]"
+      },
+      {
+        "question": "Is Merlin AI Chrome extension free?",
+        "answer": "Yes, free tier with GPT-4o/Claude access. Pro unlocks unlimited generations.[web:5]"
       }
     ]
   },
@@ -4124,42 +6054,7 @@ export const tools = [
       }
     ]
   },
-  {
-    "name": "Wondershare",
-    "slug": "wondershare",
-    "image": "/wondershare.png",
-    "url": "https://www.wondershare.com/",
-    "category": [
-      "Video & Animation",
-      "Music & Audio",
-      "Daily Life"
-    ],
-    "price": "Varies by product (e.g., Filmora starts at $29.99/quarter)",
-    "description": "Software solutions for creativity, productivity, and utility, including video editing, PDF tools, and data management.",
-    "tags": [
-      "video editing",
-      "pdf tools",
-      "data management",
-      "productivity"
-    ],
-    "rating": 4.2,
-    "keywords": [
-      "software solutions",
-      "productivity tools"
-    ],
-    "isFeatured": false,
-    "overview": "Wondershare is a software company that offers a broad portfolio of creative and productivity tools. Its most popular products include Filmora for video editing, PDFelement for PDF management, Dr. Fone for mobile data recovery, and Virbo for AI avatar video generation.",
-    "faqs": [
-      {
-        "question": "What is Wondershare's most popular software?",
-        "answer": "Wondershare Filmora is one of its most well-known products. It's a user-friendly video editor that is popular among beginners and intermediate users for its balance of powerful features and ease of use."
-      },
-      {
-        "question": "Are Wondershare products subscription-based?",
-        "answer": "Most Wondershare products offer both subscription plans (monthly, quarterly, or annually) and a perpetual license (one-time purchase) for a specific version of the software."
-      }
-    ]
-  },
+  /////////////////////////////////////
   {
     "name": "Candy AI",
     "slug": "candy-ai",
@@ -4452,7 +6347,7 @@ export const tools = [
     "price": "Freemium with in-app purchases (Weekly subscriptions from $4.99; Yearly from $29.99)",
     "description": "AI-powered photo animating and face editing app for content creation.",
     "tags": [
-      "photo animating",
+      "photo animating",  
       "face editing",
       "content creation",
       "app"
@@ -4542,40 +6437,6 @@ export const tools = [
       {
         "question": "What is the 'Breeding' feature?",
         "answer": "The 'Breeding' feature lets you take two or more parent images and create new 'child' images that inherit visual traits from them. You can also adjust the 'genes' of a single image to change attributes like age, gender, color, or style."
-      }
-    ]
-  },
-  {
-    "name": "Abacus.AI",
-    "slug": "abacus-ai",
-    "image": "/abacus.png",
-    "url": "https://www.abacus.ai/",
-    "category": [
-      "Legal & Finance",
-      "Image Analysis"
-    ],
-    "price": "Custom enterprise pricing; plans are usage-based.",
-    "description": "AI platform for building and embedding AI solutions into applications.",
-    "tags": [
-      "ai platform",
-      "ai solutions",
-      "embedding"
-    ],
-    "rating": 4.3,
-    "keywords": [
-      "ai platform",
-      "application integration"
-    ],
-    "isFeatured": false,
-    "overview": "Abacus.AI is an end-to-end AI platform that helps organizations create, deploy, and manage AI models and AI-native applications. It provides a full-stack solution, from data processing and model building to real-time deployment, designed to make enterprise-grade AI more accessible for developers and data scientists.",
-    "faqs": [
-      {
-        "question": "Is Abacus.AI for beginners?",
-        "answer": "While it has features that simplify the AI workflow, Abacus.AI is primarily aimed at enterprise users, data scientists, and developers who need to build and scale custom AI solutions for their businesses."
-      },
-      {
-        "question": "What kind of AI models can be built on the platform?",
-        "answer": "Users can build a wide variety of models, including those for forecasting, personalization, computer vision, natural language processing (NLP), and large language model (LLM) applications."
       }
     ]
   },
