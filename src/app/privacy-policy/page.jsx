@@ -86,7 +86,7 @@ export default function PrivacyPolicy() {
               Privacy Policy
             </h1>
             <p className="text-lg text-gray-600">
-              Last Updated: October 4, 2025
+              Last Updated: December 4, 2025
             </p>
             <p className="text-base text-gray-700 mt-4">
               At Toolsverse, accessible from{" "}

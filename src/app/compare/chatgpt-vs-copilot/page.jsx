@@ -1092,7 +1092,7 @@ const ComparisonPage = () => {
         <footer className="bg-gray-900 text-gray-400 py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-lg">&copy; 2025 Toolsverse - India's #1 AI Tools Directory. All Rights Reserved.</p>
-            <p className="mt-2">Independent analysis • Not affiliated with OpenAI, Microsoft, or GitHub • Updated October 2025</p>
+            <p className="mt-2">Independent analysis • Not affiliated with OpenAI, Microsoft, or GitHub • Updated December 2025</p>
           </div>
         </footer>
       </div>
