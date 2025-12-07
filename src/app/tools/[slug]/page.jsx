@@ -14,102 +14,167 @@ export async function generateStaticParams() {
 }
 
 // 1000% SEO-Optimized Metadata
+// export async function generateMetadata({ params }) {
+//   const tool = tools.find(t => t.slug === params.slug);
+  
+//   if (!tool) {
+//     return {
+//       title: 'AI Tool Not Found - TheToolsVerse',
+//       description: 'The AI tool you are looking for could not be found. Discover 1000+ AI tools at TheToolsVerse.',
+//     };
+//   }
+
+//   // Generate dynamic keywords based on tool data
+//   const dynamicKeywords = [
+//     `${tool.name} review 2025`,
+//     `${tool.name} alternative`,
+//     `${tool.name} vs competitors`,
+//     `${tool.name} pricing`,
+//     `${tool.name} features`,
+//     `${tool.name} tutorial`,
+//     `${tool.name} discount`,
+//     `${tool.name} free trial`,
+//     `best ${tool.category[0]} AI tool`,
+//     `${tool.category[0]} AI tools`,
+//     `free AI ${tool.category[0]} tools`,
+//     `${tool.name} user reviews`,
+//     `${tool.name} pros and cons`,
+//     `how to use ${tool.name}`,
+//     `${tool.name} for business`,
+//     `${tool.name} for beginners`,
+//     ...tool.tags.map(tag => `${tag} AI tool`),
+//     ...tool.category.flatMap(cat => [`${cat} tools`, `best ${cat} software`]),
+//   ];
+
+//   const title = `${tool.name} Review 2025: Features, Pricing & ${tool.rating ? `${tool.rating}⭐ Rating` : 'User Reviews'} | TheToolsVerse`;
+//   const description = `${tool.name} Complete Review ✅ ${tool.description.slice(0, 100)}... ⭐ ${tool.rating || 'User'} Rating 💰 ${tool.price} 🔥 ${tool.category.join(', ')} | Compare features, pricing & alternatives.`;
+
+//   return {
+//     title,
+//     description,
+//     keywords: dynamicKeywords.join(', '),
+    
+//     // Enhanced Open Graph
+//     openGraph: {
+//       title: `${tool.name} - Complete AI Tool Review & Analysis`,
+//       description: `Discover ${tool.name}: Features, Pricing, Pros & Cons. ${tool.rating ? `${tool.rating}⭐ rated` : 'Highly rated'} ${tool.category[0]} AI tool.`,
+//       images: [
+//         {
+//           url: tool.image,
+//           width: 1200,
+//           height: 630,
+//           alt: `${tool.name} AI Tool - Features & Review`,
+//         }
+//       ],
+//       type: 'article',
+//       url: `https://www.thetoolsverse.com/tools/${tool.slug}`, // ✅ Fixed
+//       siteName: 'TheToolsVerse - AI Tools Directory',
+//       locale: 'en_US',
+//     },
+    
+//     // Enhanced Twitter Card
+//     twitter: {
+//       card: 'summary_large_image',
+//       title: `${tool.name} Review: ${tool.rating ? `${tool.rating}⭐` : 'Top Rated'} AI Tool`,
+//       description: `${tool.description.slice(0, 140)}... | ${tool.price} | TheToolsVerse`,
+//       images: [tool.image],
+//       creator: '@thetoolsverse',
+//       site: '@thetoolsverse',
+//     },
+    
+//     // Advanced SEO metadata
+//     alternates: {
+//       canonical: `https://www.thetoolsverse.com/tools/${tool.slug}`,
+//     },
+    
+//     robots: {
+//       index: true,
+//       follow: true,
+//       googleBot: {
+//         index: true,
+//         follow: true,
+//         'max-video-preview': -1,
+//         'max-image-preview': 'large',
+//         'max-snippet': -1,
+//       },
+//     },
+    
+//     // Additional metadata for AI search optimization
+//     other: {
+//       'article:author': 'TheToolsVerse Editorial Team',
+//       'article:section': tool.category[0],
+//       'article:tag': tool.tags.join(','),
+//       'article:published_time': '2024-01-01T00:00:00Z',
+//       'article:modified_time': new Date().toISOString(),
+//       'og:see_also': `https://www.thetoolsverse.com/category/${tool.category[0].toLowerCase()}`,
+//     }
+//   };
+// }
+// ------------------ REPLACE ENTIRE generateMetadata() ------------------
 export async function generateMetadata({ params }) {
   const tool = tools.find(t => t.slug === params.slug);
-  
+
   if (!tool) {
     return {
       title: 'AI Tool Not Found - TheToolsVerse',
       description: 'The AI tool you are looking for could not be found. Discover 1000+ AI tools at TheToolsVerse.',
+      robots: { index: true, follow: true }
     };
   }
 
-  // Generate dynamic keywords based on tool data
-  const dynamicKeywords = [
-    `${tool.name} review 2025`,
-    `${tool.name} alternative`,
-    `${tool.name} vs competitors`,
-    `${tool.name} pricing`,
-    `${tool.name} features`,
-    `${tool.name} tutorial`,
-    `${tool.name} discount`,
-    `${tool.name} free trial`,
-    `best ${tool.category[0]} AI tool`,
-    `${tool.category[0]} AI tools`,
-    `free AI ${tool.category[0]} tools`,
-    `${tool.name} user reviews`,
-    `${tool.name} pros and cons`,
-    `how to use ${tool.name}`,
-    `${tool.name} for business`,
-    `${tool.name} for beginners`,
-    ...tool.tags.map(tag => `${tag} AI tool`),
-    ...tool.category.flatMap(cat => [`${cat} tools`, `best ${cat} software`]),
-  ];
+  // make a short brand-safe name (strip "Review 2025" if present)
+  const safeShortName = tool.name.replace(/\s*Review.*$/i, '').trim();
 
-  const title = `${tool.name} Review 2025: Features, Pricing & ${tool.rating ? `${tool.rating}⭐ Rating` : 'User Reviews'} | TheToolsVerse`;
-  const description = `${tool.name} Complete Review ✅ ${tool.description.slice(0, 100)}... ⭐ ${tool.rating || 'User'} Rating 💰 ${tool.price} 🔥 ${tool.category.join(', ')} | Compare features, pricing & alternatives.`;
+  // Intent-based short title (keeps it under ~60 characters)
+  const title = `${safeShortName} — ${tool.category[0] || 'AI Tool'}`;
+
+  // Intent-focused, human meta descriptions per tool (short, no emojis, no stuffing)
+  const descriptions = {
+    'me-meshcapade': 'Create realistic 3D avatars from photos, video, or scans. Me.Meshcapade outputs production-ready, fully-rigged models for games, VR, and e-commerce.',
+    'twaingpt-ai-humanizer': 'Turn AI text into natural human-sounding writing. TwainGPT improves readability while preserving meaning. Free tier available.',
+    'uhmegle': 'Free anonymous text & video chat. Uhmegle requires no signup — start chatting instantly.'
+  };
+
+  // default fallback description if not one of the three
+  const description = descriptions[tool.slug] || `${safeShortName} — ${tool.description.slice(0, 140)}.`;
+
+  // keep a concise keywords list (first 6 useful keywords)
+  const keywords = (tool.keywords || []).slice(0, 6).join(', ');
 
   return {
     title,
     description,
-    keywords: dynamicKeywords.join(', '),
-    
-    // Enhanced Open Graph
+    keywords,
     openGraph: {
-      title: `${tool.name} - Complete AI Tool Review & Analysis`,
-      description: `Discover ${tool.name}: Features, Pricing, Pros & Cons. ${tool.rating ? `${tool.rating}⭐ rated` : 'Highly rated'} ${tool.category[0]} AI tool.`,
-      images: [
-        {
-          url: tool.image,
-          width: 1200,
-          height: 630,
-          alt: `${tool.name} AI Tool - Features & Review`,
-        }
-      ],
-      type: 'article',
-      url: `https://www.thetoolsverse.com/tools/${tool.slug}`, // ✅ Fixed
-      siteName: 'TheToolsVerse - AI Tools Directory',
-      locale: 'en_US',
+      title,
+      description,
+      images: [{ url: tool.image, alt: `${safeShortName} preview`, width: 1200, height: 630 }],
+      url: `https://www.thetoolsverse.com/tools/${tool.slug}`,
+      type: 'website',
+      siteName: 'TheToolsVerse'
     },
-    
-    // Enhanced Twitter Card
     twitter: {
       card: 'summary_large_image',
-      title: `${tool.name} Review: ${tool.rating ? `${tool.rating}⭐` : 'Top Rated'} AI Tool`,
-      description: `${tool.description.slice(0, 140)}... | ${tool.price} | TheToolsVerse`,
-      images: [tool.image],
-      creator: '@thetoolsverse',
-      site: '@thetoolsverse',
+      title,
+      description,
+      images: [tool.image]
     },
-    
-    // Advanced SEO metadata
     alternates: {
-      canonical: `https://www.thetoolsverse.com/tools/${tool.slug}`,
+      canonical: `https://www.thetoolsverse.com/tools/${tool.slug}`
     },
-    
     robots: {
       index: true,
       follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
+      googleBot: { index: true, follow: true }
     },
-    
-    // Additional metadata for AI search optimization
     other: {
-      'article:author': 'TheToolsVerse Editorial Team',
-      'article:section': tool.category[0],
-      'article:tag': tool.tags.join(','),
-      'article:published_time': '2024-01-01T00:00:00Z',
-      'article:modified_time': new Date().toISOString(),
-      'og:see_also': `https://www.thetoolsverse.com/category/${tool.category[0].toLowerCase()}`,
+      'article:section': tool.category[0] || '',
+      'article:tag': (tool.tags || []).slice(0, 6).join(','),
+      'article:modified_time': new Date().toISOString()
     }
   };
 }
+// ------------------ END generateMetadata() ------------------
 
 export default function ToolDetailPage({ params }) {
   const tool = tools.find(t => t.slug === params.slug);
@@ -172,13 +237,6 @@ export default function ToolDetailPage({ params }) {
         "availability": "https://schema.org/InStock",
         "category": tool.price
       },
-      "aggregateRating": tool.rating ? {
-        "@type": "AggregateRating",
-        "ratingValue": tool.rating,
-        "ratingCount": Math.floor(Math.random() * 1000) + 250,
-        "bestRating": "5",
-        "worstRating": "1"
-      } : undefined,
       "review": tool.rating ? [{
         "@type": "Review",
         "author": {
@@ -327,11 +385,31 @@ export default function ToolDetailPage({ params }) {
                     </div>
                     <div className="flex-1">
                       <h1 className="text-3xl sm:text-5xl font-bold mb-4 leading-tight">
-                        {tool.name} Review 2025
-                      </h1>
-                      <p className="text-md sm:text-xl text-blue-100 mb-4 leading-relaxed">
-                        {tool.description}
-                      </p>
+  {tool.name}
+</h1>
+
+<p className="text-md sm:text-xl text-blue-100 mb-4 leading-relaxed">
+  {tool.slug === 'me-meshcapade' && 'Me.Meshcapade creates realistic 3D avatars from photos, video or scans.'}
+  {tool.slug === 'twaingpt-ai-humanizer' && 'TwainGPT converts AI-generated text into natural, human-sounding writing.'}
+  {tool.slug === 'uhmegle' && 'Uhmegle is a free anonymous chat service for text and video — no signup needed.'}
+  {(!['me-meshcapade','twaingpt-ai-humanizer','uhmegle'].includes(tool.slug)) && tool.description}
+</p>
+{/* Top CTA - direct official site link (for branded search intent) */}
+{tool.url && (
+  <div className="mt-4">
+    <a
+      href={tool.url}
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      className="inline-flex items-center gap-2 bg-white text-purple-700 font-semibold px-4 py-2 rounded-lg shadow-md hover:opacity-95"
+    >
+      Visit Official Site
+      <ExternalLink className="w-4 h-4" />
+    </a>
+  </div>
+)}
+
+
                       {/* ////////////////// */}
                       {/* Enhanced Badge System - Mobile First Approach */}
 <div className="w-full">
