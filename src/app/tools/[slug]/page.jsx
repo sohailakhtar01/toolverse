@@ -342,7 +342,7 @@ export default function ToolDetailPage({ params }) {
         
         {/* Enhanced Header with Rich Breadcrumbs */}
         <header className="bg-white mt-20 w-full ">
-  <div className="max-w-7xl mx-auto px-4 py-2">
+  <div className="max-w-7xl  mx-auto px-3 py-2">
     <Breadcrumbs
       items={[
         { name: 'Home', path: '/' },
@@ -369,124 +369,149 @@ export default function ToolDetailPage({ params }) {
               
               {/* Hero Section with Tool Header */}
               <article className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
-                {/* /////////////////// */}
                 <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-6 text-white">
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                    <div className="flex-shrink-0">
-                     <img 
-                      src={tool.image} 
-                      alt={`${tool.name} logo`}
-                      className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl shadow-3xl object-cover bg-white"
-                      loading="lazy"
-                      width="128"
-                      height="128"
-                    />
-                      {/* /////////////////// */}
-                    </div>
-                    <div className="flex-1">
-                      <h1 className="text-3xl sm:text-5xl font-bold mb-4 leading-tight">
-  {tool.name}
-</h1>
-
-<p className="text-md sm:text-xl text-blue-100 mb-4 leading-relaxed">
-  {tool.slug === 'me-meshcapade' && 'Me.Meshcapade creates realistic 3D avatars from photos, video or scans.'}
-  {tool.slug === 'twaingpt-ai-humanizer' && 'TwainGPT converts AI-generated text into natural, human-sounding writing.'}
-  {tool.slug === 'uhmegle' && 'Uhmegle is a free anonymous chat service for text and video — no signup needed.'}
-  {(!['me-meshcapade','twaingpt-ai-humanizer','uhmegle'].includes(tool.slug)) && tool.description}
-</p>
-{/* Top CTA - direct official site link (for branded search intent) */}
-{tool.url && (
-  <div className="mt-4">
-    <a
-      href={tool.url}
-      target="_blank"
-      rel="noopener noreferrer nofollow"
-      className="inline-flex items-center gap-2 bg-white text-purple-700 font-semibold px-4 py-2 rounded-lg shadow-md hover:opacity-95"
-    >
-      Visit Official Site
-      <ExternalLink className="w-4 h-4" />
-    </a>
-  </div>
-)}
-
-
-                      {/* ////////////////// */}
-                      {/* Enhanced Badge System - Mobile First Approach */}
-<div className="w-full">
-  {/* Mobile Layout - Stacked vertically */}
-  <div className="flex flex-col gap-3 sm:hidden">
-    
-    {/* Pricing Badge - Full width on mobile */}
-    <div className="w-full">
-      <span className="inline-flex items-center justify-center w-full px-3 py-2.5 rounded-xl text-sm font-semibold bg-white/20 backdrop-blur border border-white/30 text-white shadow-lg">
-        <DollarSign className="w-4 h-4 mr-2 text-green-200 flex-shrink-0" />
-        <span className="text-center leading-tight">{tool.price}</span>
-      </span>
+  <div className="space-y-4">
+    {/* Mobile: Logo left + Name right row */}
+    <div className="flex items-start gap-4 sm:hidden">
+      <div className="flex-shrink-0">
+        <img 
+          src={tool.image} 
+          alt={`${tool.name} logo`}
+          className="w-20 h-20 rounded-2xl shadow-3xl object-cover bg-white"
+          loading="lazy"
+          width="70"
+          height="70"
+        />
+      </div>
+      <div className="flex-1 min-w-0">
+        <h1 className="text-[22px] sm:text-2xl font-bold leading-tight">
+          {tool.name}
+        </h1>
+      </div>
     </div>
-    
-    {/* Rating Badge - Full width on mobile */}
-    {tool.rating && (
-      <div className="w-full">
-        <div className="flex items-center justify-center gap-2 w-full bg-purple-500/20 backdrop-blur rounded-xl px-3 py-2.5 border border-amber-300/30 text-white shadow-lg">
-          <Star className="w-4 h-4 text-amber-300 fill-current flex-shrink-0" />
-          <span className="font-bold">{tool.rating}/5</span>
-          <span className="text-sm text-amber-100">
-            ({Math.floor(Math.random() * 1000) + 250} reviews)
+
+    {/* Desktop: Logo + Name + Description row */}
+    <div className="hidden sm:flex flex-row items-start sm:items-center gap-6">
+      <div className="flex-shrink-0">
+        <img 
+          src={tool.image} 
+          alt={`${tool.name} logo`}
+          className="w-32 h-32 rounded-2xl shadow-3xl object-cover bg-white"
+          loading="lazy"
+          width="128"
+          height="128"
+        />
+      </div>
+      <div className="flex-1">
+        <h1 className="text-5xl font-bold mb-4 leading-tight">
+          {tool.name}
+        </h1>
+        <p className="text-sm sm:text-xl text-blue-100 mb-4 leading-relaxed">
+          {tool.slug === 'me-meshcapade' && 'Me.Meshcapade creates realistic 3D avatars from photos, video or scans.'}
+          {tool.slug === 'twaingpt-ai-humanizer' && 'TwainGPT converts AI-generated text into natural, human-sounding writing.'}
+          {tool.slug === 'uhmegle' && 'Uhmegle is a free anonymous chat service for text and video — no signup needed.'}
+          {(!['me-meshcapade','twaingpt-ai-humanizer','uhmegle'].includes(tool.slug)) && tool.description}
+        </p>
+      </div>
+    </div>
+
+    {/* Mobile Description */}
+    <div className="sm:hidden">
+      <p className="text-md text-blue-100 leading-relaxed">
+        {tool.slug === 'me-meshcapade' && 'Me.Meshcapade creates realistic 3D avatars from photos, video or scans.'}
+        {tool.slug === 'twaingpt-ai-humanizer' && 'TwainGPT converts AI-generated text into natural, human-sounding writing.'}
+        {tool.slug === 'uhmegle' && 'Uhmegle is a free anonymous chat service for text and video — no signup needed.'}
+        {(!['me-meshcapade','twaingpt-ai-humanizer','uhmegle'].includes(tool.slug)) && tool.description}
+      </p>
+    </div>
+
+    {/* Mobile Visit Button - Below logo+name */}
+    {tool.url && (
+      <div className="sm:hidden flex justify-center">
+        <a
+          href={tool.url}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          className="inline-flex items-center gap-2 bg-white text-purple-700 font-semibold px-6 py-3 rounded-lg shadow-md hover:opacity-95 transition-all duration-200"
+        >
+          Visit Official Site
+          <ExternalLink className="w-5 h-5" />
+        </a>
+      </div>
+    )}
+
+    {/* Enhanced Badge System */}
+    <div className="w-full">
+      {/* Mobile Layout - Stacked vertically */}
+      <div className="flex flex-col gap-3 sm:hidden">
+        {/* Pricing Badge */}
+        <div className="w-full">
+          <span className="inline-flex items-center justify-center w-full px-4 py-3 rounded-xl text-base font-semibold bg-white/20 backdrop-blur border border-white/30 text-white shadow-xl">
+            <DollarSign className="w-5 h-5 mr-2 text-green-200 flex-shrink-0" />
+            <span className="text-center leading-tight">{tool.price}</span>
+          </span>
+        </div>
+        
+        {/* Rating Badge */}
+        {tool.rating && (
+          <div className="w-full">
+            <div className="flex items-center justify-center gap-2 w-full bg-purple-500/20 backdrop-blur rounded-xl px-4 py-3 border border-amber-300/30 text-white shadow-xl">
+              <Star className="w-5 h-5 text-amber-300 fill-current flex-shrink-0" />
+              <span className="font-bold text-lg">{tool.rating}/5</span>
+              <span className="text-base text-amber-100">
+                ({Math.floor(Math.random() * 1000) + 250} reviews)
+              </span>
+            </div>
+          </div>
+        )}
+        
+        {/* Category Badge */}
+        <div className="w-full">
+          <div className="flex items-center justify-center gap-2 w-full bg-purple-500/20 backdrop-blur rounded-xl px-4 py-3 border border-purple-300/30 text-white shadow-xl">
+            <Users className="w-5 h-5 text-purple-200 flex-shrink-0" />
+            <span className="font-semibold text-base text-center leading-tight">
+              {tool.category.join(', ')}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Layout - Horizontal */}
+      <div className="hidden sm:flex flex-wrap items-center gap-4 lg:gap-5">
+        {/* Pricing Badge */}
+        <span className="inline-flex items-center px-4 py-2.5 lg:px-5 lg:py-3 rounded-full text-sm lg:text-base font-semibold bg-white/20 backdrop-blur border border-white/30 text-white shadow-xl hover:bg-white/25 transition-all duration-200">
+          <DollarSign className="w-4 h-4 lg:w-5 lg:h-5 mr-2 lg:mr-2.5 text-green-200 flex-shrink-0" />
+          <span className="whitespace-nowrap">{tool.price}</span>
+        </span>
+        
+        {/* Rating Badge */}
+        {tool.rating && (
+          <div className="inline-flex items-center gap-2 lg:gap-2.5 bg-purple-500/20 backdrop-blur rounded-full px-4 py-2.5 lg:px-5 lg:py-3 border border-amber-300/30 transition-all duration-200">
+            <Star className="w-4 h-4 lg:w-5 lg:h-5 text-amber-300 fill-current flex-shrink-0" />
+            <span className="font-bold text-white text-sm lg:text-base whitespace-nowrap">
+              {tool.rating}/5
+            </span>
+            <span className="text-sm text-amber-100 whitespace-nowrap hidden md:inline">
+              ({Math.floor(Math.random() * 1000) + 250} reviews)
+            </span>
+          </div>
+        )}
+        
+        {/* Category Badge */}
+        <div className="inline-flex items-center gap-2 lg:gap-2.5 bg-purple-500/20 backdrop-blur rounded-full px-4 py-2.5 lg:px-5 lg:py-3 border border-purple-300/30 shadow-xl hover:bg-purple-500/25 transition-all duration-200">
+          <Users className="w-4 h-4 lg:w-5 lg:h-5 text-purple-200 flex-shrink-0" />
+          <span className="font-semibold text-white text-sm lg:text-base">
+            {tool.category.length > 2 ? 
+              `${tool.category.slice(0, 2).join(', ')} +${tool.category.length - 2}` : 
+              tool.category.join(', ')
+            }
           </span>
         </div>
       </div>
-    )}
-    
-    {/* Category Badge - Full width on mobile */}
-    <div className="w-full">
-      <div className="flex items-center justify-center gap-2 w-full bg-purple-500/20 backdrop-blur rounded-xl px-3 py-2.5 border border-purple-300/30 text-white shadow-lg">
-        <Users className="w-4 h-4 text-purple-200 flex-shrink-0" />
-        <span className="font-medium text-center leading-tight">
-          {tool.category.join(', ')}
-        </span>
-      </div>
-    </div>
-  </div>
-
-  {/* Desktop & Tablet Layout - Horizontal flex wrap */}
-  <div className="hidden sm:flex flex-wrap items-center gap-3 lg:gap-4">
-    
-    {/* Pricing Badge */}
-    <span className="inline-flex items-center px-3 py-2 lg:px-4 lg:py-2.5 rounded-full text-xs lg:text-sm font-semibold bg-white/20 backdrop-blur border border-white/30 text-white shadow-lg hover:bg-white/25 transition-all duration-200">
-      <DollarSign className="w-3 h-3 lg:w-4 lg:h-4 mr-1.5 lg:mr-2 text-green-200 flex-shrink-0" />
-      <span className="whitespace-nowrap">{tool.price}</span>
-    </span>
-    
-    {/* Rating Badge */}
-    {tool.rating && (
-      <div className="inline-flex items-center gap-1.5 lg:gap-2 bg-purple-500/20 backdrop-blur rounded-full px-3 py-2 lg:px-4 lg:py-2.5 border border-amber-300/30  transition-all duration-200">
-        <Star className="w-3 h-3 lg:w-4 lg:h-4 text-amber-300 fill-current flex-shrink-0" />
-        <span className="font-bold text-white text-xs lg:text-sm whitespace-nowrap">
-          {tool.rating}/5
-        </span>
-        <span className="text-xs text-amber-100 whitespace-nowrap hidden md:inline">
-          ({Math.floor(Math.random() * 1000) + 250} reviews)
-        </span>
-      </div>
-    )}
-    
-    {/* Category Badge */}
-    <div className="inline-flex items-center gap-1.5 lg:gap-2 bg-purple-500/20 backdrop-blur rounded-full px-3 py-2 lg:px-4 lg:py-2.5 border border-purple-300/30 shadow-lg hover:bg-purple-500/25 transition-all duration-200">
-      <Users className="w-3 h-3 lg:w-4 lg:h-4 text-purple-200 flex-shrink-0" />
-      <span className="font-medium text-white text-xs lg:text-sm">
-        {tool.category.length > 2 ? 
-          `${tool.category.slice(0, 2).join(', ')}${tool.category.length > 2 ? '...' : ''}` : 
-          tool.category.join(', ')
-        }
-      </span>
     </div>
   </div>
 </div>
 
-                      {/* ///////////////////////// */}
-                    </div>
-                  </div>
-                </div>
 
                 {/* Quick Stats Bar */}
                 {/* Enhanced Stats Cards Section - Full Content Display */}
