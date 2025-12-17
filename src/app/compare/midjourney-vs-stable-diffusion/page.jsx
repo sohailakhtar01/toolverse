@@ -320,7 +320,7 @@ export default function MidjourneyVsStableDiffusion() {
     <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-sm md:text-base text-gray-400">
       <span className="font-semibold text-white">By TheToolsVerse Team</span>
       <span className="hidden text-white sm:inline">•</span>
-      <span className='text-white'>Last updated December 2025</span>
+      <span className='text-white'>Last updated October 2025</span>
     </div>
   </div>
   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
@@ -559,7 +559,7 @@ export default function MidjourneyVsStableDiffusion() {
                 You can always switch platforms as your needs change. Many creative professionals learn both—start simple, then grow your toolkit over time.
               </p>
               <p className="text-sm text-gray-500">
-                Last updated: December 2025 — A TheToolsVerse Expert Guide
+                Last updated: October 2025 — A TheToolsVerse Expert Guide
               </p>
             </div>
           </div>

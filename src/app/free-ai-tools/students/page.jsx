@@ -233,7 +233,7 @@ const aiToolsData = {
     {
       name: "Consensus",
       slug: "consensus",
-      description: "AI-powered scientific research search engine",
+      description: "AI-powered scientific research Search Engine",
       benefits: "Find peer-reviewed papers, extract key insights",
       pricing: "FREE for students",
       useCase: "Science projects, research papers, evidence-based arguments",

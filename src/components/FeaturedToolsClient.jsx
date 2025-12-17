@@ -125,7 +125,7 @@ const categories = ["Featured","AI Writing", "AI Art", "AI Assistant", "AI Codin
                     </div>
                     <div className="text-right">
                       <div className="text-lg font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                        {tool.price}
+                        {tool.pricingType}
                       </div>
                     </div>
                   </div>

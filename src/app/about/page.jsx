@@ -227,22 +227,22 @@ const timeline = [
     year: "Mid 2024",
     title: "Community Growth",
     description: "Expanded to 500+ tools across 25+ categories. Launched user reviews and comparison features. Reached our first 1,000 monthly users.",
-    milestone: "First 20K users",
-    metrics: "500+ tools, 20K users"
+    milestone: "First 10K users",
+    metrics: "500+ tools, 10K users"
   },
   {
     year: "Q4 2024",
     title: "AI Tools Focus",
     description: "Became India's go-to platform for AI tool discovery. Added detailed pricing analysis and India-specific feature comparisons. Growing rapidly.",
     milestone: "AI specialization",
-    metrics: "10K+ tools, 20K monthly users"
+    metrics: "10K+ tools, 5K monthly users"
   },
   {
     year: "2025",
     title: "Scaling Up",
     description: "Expanding team, building partnerships with tool vendors, and planning mobile app launch. Aiming to become India's #1 tools directory.",
     milestone: "Growth phase",
-    metrics: "Targeting 20K+ monthly users"
+    metrics: "Targeting 10K+ monthly users"
   }
 ];
 

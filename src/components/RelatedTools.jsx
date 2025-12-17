@@ -7,7 +7,7 @@ export default function RelatedTools({ currentTool, allTools }) {
   const relatedTools = allTools
     .filter(tool => 
       tool.slug !== currentTool.slug && 
-      (tool.category.some(cat => currentTool.category.includes(cat)) ||
+      (tool.categories.some(cat => currentTool.categories.includes(cat)) ||
        tool.tags.some(tag => currentTool.tags.includes(tag)))
     )
     .slice(0, 6); // Show max 6 related tools
@@ -31,7 +31,7 @@ export default function RelatedTools({ currentTool, allTools }) {
           Similar AI Tools You Should Check Out
         </h2>
         <p className="text-gray-600 text-sm sm:text-base">
-          Explore these {currentTool.category[0]} alternatives and complementary tools
+          Explore these {currentTool.categories[0]} alternatives and complementary tools
         </p>
       </div>
 
@@ -46,7 +46,7 @@ export default function RelatedTools({ currentTool, allTools }) {
               {/* Tool Image */}
               <div className="flex items-start gap-4 mb-4">
                 <img 
-                  src={tool.image} 
+                  src={tool.logo} 
                   alt={`${tool.name} - ${currentTool.name} alternative`}
                   className="w-16 h-16 rounded-xl object-cover flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
                   loading="lazy"
@@ -58,8 +58,8 @@ export default function RelatedTools({ currentTool, allTools }) {
                     {tool.name}
                   </h3>
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPriceBadgeStyle(tool.price)}`}>
-                      {tool.price}
+                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPriceBadgeStyle(tool.pricingType)}`}>
+                      {tool.pricingType}
                     </span>
                     {tool.rating && (
                       <div className="flex items-center gap-1 text-xs">
@@ -103,10 +103,10 @@ export default function RelatedTools({ currentTool, allTools }) {
       {/* View All Link */}
       <div className="mt-8 text-center">
         <Link 
-          href={`/categories/${currentTool.category[0].toLowerCase().replace(/\s+/g, '-')}`}
+          href={`/categories/${currentTool.categories[0].toLowerCase().replace(/\s+/g, '-')}`}
           className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold text-base hover:gap-3 transition-all"
         >
-          View All {currentTool.category[0]} Tools
+          View All {currentTool.categories[0]} Tools
           <ArrowRight className="w-5 h-5" />
         </Link>
       </div>

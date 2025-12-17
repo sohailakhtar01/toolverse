@@ -1,197 +1,194 @@
 import RelatedTools from '@/components/RelatedTools';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { notFound } from "next/navigation";
+import dbConnect from "@/lib/mongodb";
+import Tool from "@/models/Tool";
+
 import { Metadata } from "next";
-import { Star, MapPin,CreditCard, Calendar, Users, CheckCircle, XCircle, ExternalLink, 
-         Share2, Bookmark, ArrowRight, ChevronRight, Mail, 
-         Award, Zap, Clock, DollarSign, TrendingUp, Eye } from "lucide-react";
-import tools from "@/data/tools";
+import {
+  Star, MapPin, CreditCard, Calendar, Users, CheckCircle, XCircle, ExternalLink,
+  Share2, Bookmark, ArrowRight, ChevronRight, Mail,
+  Award, Zap, Clock, DollarSign, TrendingUp, Eye
+} from "lucide-react";
 
 // Enhanced static generation with ISR
+// Revalidate every hour (adjust as you like)
+export const revalidate = 3600;
+
+// Optional prebuild: only most important tools, not all 2000+
 export async function generateStaticParams() {
-  console.log(`Generating static params for ${tools.length} tools`);
-  return tools.map(tool => ({ slug: tool.slug }));
+  await dbConnect();
+
+  // If you have a popularity/featured field, sort by it.
+  // Otherwise, just limit by createdAt or _id.
+  const tools = await Tool.find({}, "slug")
+    .sort({ createdAt: -1 })   // or { popularity: -1 }
+    .limit(200)                // prebuild 200; the rest use ISR on first hit
+    .lean();
+
+  return tools.map((tool) => ({ slug: tool.slug }));
 }
 
-// 1000% SEO-Optimized Metadata
-// export async function generateMetadata({ params }) {
-//   const tool = tools.find(t => t.slug === params.slug);
-  
-//   if (!tool) {
-//     return {
-//       title: 'AI Tool Not Found - TheToolsVerse',
-//       description: 'The AI tool you are looking for could not be found. Discover 1000+ AI tools at TheToolsVerse.',
-//     };
-//   }
 
-//   // Generate dynamic keywords based on tool data
-//   const dynamicKeywords = [
-//     `${tool.name} review 2025`,
-//     `${tool.name} alternative`,
-//     `${tool.name} vs competitors`,
-//     `${tool.name} pricing`,
-//     `${tool.name} features`,
-//     `${tool.name} tutorial`,
-//     `${tool.name} discount`,
-//     `${tool.name} free trial`,
-//     `best ${tool.category[0]} AI tool`,
-//     `${tool.category[0]} AI tools`,
-//     `free AI ${tool.category[0]} tools`,
-//     `${tool.name} user reviews`,
-//     `${tool.name} pros and cons`,
-//     `how to use ${tool.name}`,
-//     `${tool.name} for business`,
-//     `${tool.name} for beginners`,
-//     ...tool.tags.map(tag => `${tag} AI tool`),
-//     ...tool.category.flatMap(cat => [`${cat} tools`, `best ${cat} software`]),
-//   ];
-
-//   const title = `${tool.name} Review 2025: Features, Pricing & ${tool.rating ? `${tool.rating}⭐ Rating` : 'User Reviews'} | TheToolsVerse`;
-//   const description = `${tool.name} Complete Review ✅ ${tool.description.slice(0, 100)}... ⭐ ${tool.rating || 'User'} Rating 💰 ${tool.price} 🔥 ${tool.category.join(', ')} | Compare features, pricing & alternatives.`;
-
-//   return {
-//     title,
-//     description,
-//     keywords: dynamicKeywords.join(', '),
-    
-//     // Enhanced Open Graph
-//     openGraph: {
-//       title: `${tool.name} - Complete AI Tool Review & Analysis`,
-//       description: `Discover ${tool.name}: Features, Pricing, Pros & Cons. ${tool.rating ? `${tool.rating}⭐ rated` : 'Highly rated'} ${tool.category[0]} AI tool.`,
-//       images: [
-//         {
-//           url: tool.image,
-//           width: 1200,
-//           height: 630,
-//           alt: `${tool.name} AI Tool - Features & Review`,
-//         }
-//       ],
-//       type: 'article',
-//       url: `https://www.thetoolsverse.com/tools/${tool.slug}`, // ✅ Fixed
-//       siteName: 'TheToolsVerse - AI Tools Directory',
-//       locale: 'en_US',
-//     },
-    
-//     // Enhanced Twitter Card
-//     twitter: {
-//       card: 'summary_large_image',
-//       title: `${tool.name} Review: ${tool.rating ? `${tool.rating}⭐` : 'Top Rated'} AI Tool`,
-//       description: `${tool.description.slice(0, 140)}... | ${tool.price} | TheToolsVerse`,
-//       images: [tool.image],
-//       creator: '@thetoolsverse',
-//       site: '@thetoolsverse',
-//     },
-    
-//     // Advanced SEO metadata
-//     alternates: {
-//       canonical: `https://www.thetoolsverse.com/tools/${tool.slug}`,
-//     },
-    
-//     robots: {
-//       index: true,
-//       follow: true,
-//       googleBot: {
-//         index: true,
-//         follow: true,
-//         'max-video-preview': -1,
-//         'max-image-preview': 'large',
-//         'max-snippet': -1,
-//       },
-//     },
-    
-//     // Additional metadata for AI search optimization
-//     other: {
-//       'article:author': 'TheToolsVerse Editorial Team',
-//       'article:section': tool.category[0],
-//       'article:tag': tool.tags.join(','),
-//       'article:published_time': '2024-01-01T00:00:00Z',
-//       'article:modified_time': new Date().toISOString(),
-//       'og:see_also': `https://www.thetoolsverse.com/category/${tool.category[0].toLowerCase()}`,
-//     }
-//   };
-// }
-// ------------------ REPLACE ENTIRE generateMetadata() ------------------
+// 1000% SEO-Optimized Metadata (SAFE)
 export async function generateMetadata({ params }) {
-  const tool = tools.find(t => t.slug === params.slug);
+  await dbConnect();
+  const tool = await Tool.findOne({ slug: params.slug }).lean();
 
   if (!tool) {
     return {
-      title: 'AI Tool Not Found - TheToolsVerse',
-      description: 'The AI tool you are looking for could not be found. Discover 1000+ AI tools at TheToolsVerse.',
-      robots: { index: true, follow: true }
+      title: "AI Tool Not Found - TheToolsVerse",
+      description:
+        "The AI tool you are looking for could not be found. Discover 1000+ AI tools at TheToolsVerse.",
     };
   }
 
-  // make a short brand-safe name (strip "Review 2025" if present)
-  const safeShortName = tool.name.replace(/\s*Review.*$/i, '').trim();
+  // Safe fallbacks
+  const categories =
+    Array.isArray(tool.categories) && tool.categories.length > 0
+      ? tool.categories
+      : ["Uncategorized"];
 
-  // Intent-based short title (keeps it under ~60 characters)
-  const title = `${safeShortName} — ${tool.category[0] || 'AI Tool'}`;
+  const tags = Array.isArray(tool.tags)
+    ? tool.tags
+    : Array.isArray(tool.features)
+    ? tool.features
+    : [];
 
-  // Intent-focused, human meta descriptions per tool (short, no emojis, no stuffing)
-  const descriptions = {
-    'me-meshcapade': 'Create realistic 3D avatars from photos, video, or scans. Me.Meshcapade outputs production-ready, fully-rigged models for games, VR, and e-commerce.',
-    'twaingpt-ai-humanizer': 'Turn AI text into natural human-sounding writing. TwainGPT improves readability while preserving meaning. Free tier available.',
-    'uhmegle': 'Free anonymous text & video chat. Uhmegle requires no signup — start chatting instantly.'
-  };
+  const baseDescription =
+    tool.longDescription ||
+    tool.shortDescription ||
+    tool.description ||
+    "";
 
-  // default fallback description if not one of the three
-  const description = descriptions[tool.slug] || `${safeShortName} — ${tool.description.slice(0, 140)}.`;
+  const descForMeta = baseDescription.slice(0, 140);
 
-  // keep a concise keywords list (first 6 useful keywords)
-  const keywords = (tool.keywords || []).slice(0, 6).join(', ');
+  const dynamicKeywords = [
+    `${tool.name} review 2025`,
+    `${tool.name} alternative`,
+    `${tool.name} vs competitors`,
+    `${tool.name} pricing`,
+    `${tool.name} features`,
+    `${tool.name} tutorial`,
+    `${tool.name} discount`,
+    `${tool.name} free trial`,
+    `best ${categories[0]} AI tool`,
+    `${categories[0]} AI tools`,
+    `free AI ${categories[0]} tools`,
+    `${tool.name} user reviews`,
+    `${tool.name} pros and cons`,
+    `how to use ${tool.name}`,
+    `${tool.name} for business`,
+    `${tool.name} for beginners`,
+    ...tags.map((tag) => `${tag} AI tool`),
+    ...categories.flatMap((cat) => [`${cat} tools`, `best ${cat} software`]),
+  ];
+
+  const title = `${tool.name} Review 2025: Features, Pricing & ${
+    tool.rating ? `${tool.rating}⭐ Rating` : "User Reviews"
+  } | TheToolsVerse`;
+
+  const description = `${tool.name} Complete Review ✅ ${descForMeta}... ⭐ ${
+    tool.rating || "User"
+  } Rating 💰 ${tool.pricingType || "Flexible"} 🔥 ${categories.join(
+    ", "
+  )} | Compare features, pricing & alternatives.`;
 
   return {
     title,
     description,
-    keywords,
+    keywords: dynamicKeywords.join(", "),
     openGraph: {
-      title,
-      description,
-      images: [{ url: tool.image, alt: `${safeShortName} preview`, width: 1200, height: 630 }],
+      title: `${tool.name} - Complete AI Tool Review & Analysis`,
+      description: `Discover ${tool.name}: Features, Pricing, Pros & Cons. ${
+        tool.rating ? `${tool.rating}⭐ rated` : "Highly rated"
+      } ${categories[0]} AI tool.`,
+      images: [
+        {
+          url: tool.logo,
+          width: 1200,
+          height: 630,
+          alt: `${tool.name} AI Tool - Features & Review`,
+        },
+      ],
+      type: "article",
       url: `https://www.thetoolsverse.com/tools/${tool.slug}`,
-      type: 'website',
-      siteName: 'TheToolsVerse'
+      siteName: "TheToolsVerse - AI Tools Directory",
+      locale: "en_US",
     },
     twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [tool.image]
+      card: "summary_large_image",
+      title: `${tool.name} Review: ${
+        tool.rating ? `${tool.rating}⭐` : "Top Rated"
+      } AI Tool`,
+      description: `${descForMeta}... | ${tool.pricingType || "Flexible"} | TheToolsVerse`,
+      images: [tool.logo],
+      creator: "@thetoolsverse",
+      site: "@thetoolsverse",
     },
     alternates: {
-      canonical: `https://www.thetoolsverse.com/tools/${tool.slug}`
+      canonical: `https://www.thetoolsverse.com/tools/${tool.slug}`,
     },
     robots: {
       index: true,
       follow: true,
-      googleBot: { index: true, follow: true }
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
     other: {
-      'article:section': tool.category[0] || '',
-      'article:tag': (tool.tags || []).slice(0, 6).join(','),
-      'article:modified_time': new Date().toISOString()
-    }
+      "article:author": "TheToolsVerse Editorial Team",
+      "article:section": categories[0],
+      "article:tag": tags.join(","),
+      "article:published_time": "2024-01-01T00:00:00Z",
+      "article:modified_time": new Date().toISOString(),
+      "og:see_also": `https://www.thetoolsverse.com/category/${categories[0]
+        .toLowerCase()
+        .replace(/\s+/g, "-")}`,
+    },
   };
 }
-// ------------------ END generateMetadata() ------------------
 
-export default function ToolDetailPage({ params }) {
-  const tool = tools.find(t => t.slug === params.slug);
-  
+
+export default async function ToolDetailPage({ params }) {
+  await dbConnect();
+  const toolDoc = await Tool.findOne({ slug: params.slug }).lean();
+
+  if (!toolDoc) {
+    return notFound();
+  }
+
+  const tool = {
+    ...toolDoc,
+    categories: toolDoc.categories || toolDoc.category || ["Uncategorized"],
+    tags: toolDoc.features || toolDoc.tags || [],
+    description: toolDoc.longDescription || toolDoc.shortDescription || "",
+    faqs: toolDoc.faqs || [],
+  };
+
   if (!tool) {
     return notFound();
   }
 
   // Enhanced utility functions
-  const getPriceBadgeStyle = (price) => {
-    const styles = {
-      'Free': 'bg-emerald-100 text-emerald-800 border border-emerald-200',
-      'Paid': 'bg-blue-100 text-blue-800 border border-blue-200',
-      'Freemium': 'bg-purple-100 text-purple-800 border border-purple-200',
-    };
-    return styles[price] || 'bg-gray-100 text-gray-800 border border-gray-200';
+ const getPriceBadgeStyle = (pricingType = '') => {
+  const key = pricingType.toLowerCase();
+
+  const styles = {
+    free: 'bg-emerald-100 text-emerald-800 border border-emerald-200',
+    freemium: 'bg-purple-100 text-purple-800 border border-purple-200',
+    paid: 'bg-blue-100 text-blue-800 border border-blue-200',
+    'free-trial': 'bg-amber-100 text-amber-800 border border-amber-200',
   };
+
+  return styles[key] || 'bg-gray-100 text-gray-800 border border-gray-200';
+};
+
+
 
   const getRatingColor = (rating) => {
     if (rating >= 4.5) return 'text-emerald-500';
@@ -200,15 +197,22 @@ export default function ToolDetailPage({ params }) {
     return 'text-red-500';
   };
 
-  // Generate related tools (for internal linking)
-  const relatedTools = tools
-    .filter(t => t.slug !== tool.slug && t.category.some(cat => tool.category.includes(cat)))
-    .slice(0, 6);
+const projection = "name slug logo pricingType rating categories tags shortDescription";
 
-  // Generate AI-optimized alternatives
-  const alternatives = tools
-    .filter(t => t.slug !== tool.slug && t.category[0] === tool.category[0])
-    .slice(0, 4);
+const relatedTools = await Tool.find(
+  { slug: { $ne: tool.slug }, categories: { $in: tool.categories } },
+  projection
+)
+  .limit(6)
+  .lean();
+
+const alternatives = await Tool.find(
+  { slug: { $ne: tool.slug }, categories: tool.categories[0] },
+  projection
+)
+  .limit(4)
+  .lean();
+
 
   // Enhanced JSON-LD with multiple schemas
   const jsonLdSchemas = [
@@ -218,7 +222,7 @@ export default function ToolDetailPage({ params }) {
       "@type": "SoftwareApplication",
       "name": tool.name,
       "description": tool.description,
-      "image": tool.image,
+      "image": tool.logo,
       "url": tool.url,
       "applicationCategory": "AI Tool",
       "operatingSystem": "Web",
@@ -232,11 +236,19 @@ export default function ToolDetailPage({ params }) {
       },
       "offers": {
         "@type": "Offer",
-        "price": tool.price === 'Free' ? "0" : "29.99",
+        "price": tool.pricingType?.toLowerCase() === 'free' ? "0" : "29.99",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "category": tool.price
+        "category": tool.pricingType
       },
+      "aggregateRating": tool.rating ? {
+  "@type": "AggregateRating",
+  "ratingValue": tool.rating,
+  "ratingCount": tool.ratingCount || 250,  // add ratingCount field in DB later
+  "bestRating": "5",
+  "worstRating": "1"
+} : undefined,
+
       "review": tool.rating ? [{
         "@type": "Review",
         "author": {
@@ -248,7 +260,7 @@ export default function ToolDetailPage({ params }) {
           "ratingValue": tool.rating,
           "bestRating": "5"
         },
-        "reviewBody": `${tool.name} is an excellent ${tool.category[0]} AI tool that offers ${tool.tags.slice(0, 3).join(', ')}. ${tool.price} pricing makes it accessible for various use cases.`
+        "reviewBody": `${tool.name} is an excellent ${tool.categories[0]} AI tool that offers ${tool.tags.slice(0, 3).join(', ')}. ${tool.pricingType} pricing makes it accessible for various use cases.`
       }] : undefined,
     },
     
@@ -258,7 +270,7 @@ export default function ToolDetailPage({ params }) {
       "@type": "Article",
       "headline": `${tool.name} Review 2025: Complete Guide & Analysis`,
       "description": tool.description,
-      "image": tool.image,
+      "image": tool.logo,
       "author": {
         "@type": "Organization",
         "name": "TheToolsVerse Editorial Team",
@@ -314,8 +326,8 @@ export default function ToolDetailPage({ params }) {
         {
           "@type": "ListItem",
           "position": 3,
-          "name": tool.category[0],
-          "item": `https://thetoolsverse.com/category/${tool.category[0].toLowerCase()}`
+          "name": tool.categories[0],
+          "item": `https://thetoolsverse.com/category/${tool.categories[0].toLowerCase()}`
         },
         {
           "@type": "ListItem",
@@ -342,14 +354,14 @@ export default function ToolDetailPage({ params }) {
         
         {/* Enhanced Header with Rich Breadcrumbs */}
         <header className="bg-white mt-20 w-full ">
-  <div className="max-w-7xl  mx-auto px-3 py-2">
+  <div className="max-w-7xl mx-auto px-4 py-2">
     <Breadcrumbs
       items={[
         { name: 'Home', path: '/' },
         { name: 'AI Tools', path: '/browse-tools' },
         {
-          name: tool.category[0],
-          path: `/categories/${tool.category[0]
+          name: tool.categories[0],
+          path: `/categories/${tool.categories[0]
             .toLowerCase()
             .replace(/\s+/g, '-')}`,
         },
@@ -369,149 +381,104 @@ export default function ToolDetailPage({ params }) {
               
               {/* Hero Section with Tool Header */}
               <article className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+                {/* /////////////////// */}
                 <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-6 text-white">
-  <div className="space-y-4">
-    {/* Mobile: Logo left + Name right row */}
-    <div className="flex items-start gap-4 sm:hidden">
-      <div className="flex-shrink-0">
-        <img 
-          src={tool.image} 
-          alt={`${tool.name} logo`}
-          className="w-20 h-20 rounded-2xl shadow-3xl object-cover bg-white"
-          loading="lazy"
-          width="70"
-          height="70"
-        />
-      </div>
-      <div className="flex-1 min-w-0">
-        <h1 className="text-[22px] sm:text-2xl font-bold leading-tight">
-          {tool.name}
-        </h1>
-      </div>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                    <div className="flex-shrink-0">
+                     <img 
+                      src={tool.logo} 
+                      alt={`${tool.name} logo`}
+                      className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl shadow-3xl object-cover bg-white"
+                      loading="lazy"
+                      width="128"
+                      height="128"
+                    />
+                      {/* /////////////////// */}
+                    </div>
+                    <div className="flex-1">
+                      <h1 className="text-3xl sm:text-5xl font-bold mb-4 leading-tight">
+                        {tool.name} Review 2025
+                      </h1>
+                      <p className="text-md sm:text-xl text-blue-100 mb-4 leading-relaxed">
+                        {tool.description}
+                      </p>
+                      {/* ////////////////// */}
+                      {/* Enhanced Badge System - Mobile First Approach */}
+<div className="w-full">
+  {/* Mobile Layout - Stacked vertically */}
+  <div className="flex flex-col gap-3 sm:hidden">
+    
+    {/* Pricing Badge - Full width on mobile */}
+    <div className="w-full">
+      <span className="inline-flex items-center justify-center w-full px-3 py-2.5 rounded-xl text-sm font-semibold bg-white/20 backdrop-blur border border-white/30 text-white shadow-lg">
+        <DollarSign className="w-4 h-4 mr-2 text-green-200 flex-shrink-0" />
+        <span className="text-center leading-tight">{tool.pricingType}</span>
+      </span>
     </div>
-
-    {/* Desktop: Logo + Name + Description row */}
-    <div className="hidden sm:flex flex-row items-start sm:items-center gap-6">
-      <div className="flex-shrink-0">
-        <img 
-          src={tool.image} 
-          alt={`${tool.name} logo`}
-          className="w-32 h-32 rounded-2xl shadow-3xl object-cover bg-white"
-          loading="lazy"
-          width="128"
-          height="128"
-        />
-      </div>
-      <div className="flex-1">
-        <h1 className="text-5xl font-bold mb-4 leading-tight">
-          {tool.name}
-        </h1>
-        <p className="text-sm sm:text-xl text-blue-100 mb-4 leading-relaxed">
-          {tool.slug === 'me-meshcapade' && 'Me.Meshcapade creates realistic 3D avatars from photos, video or scans.'}
-          {tool.slug === 'twaingpt-ai-humanizer' && 'TwainGPT converts AI-generated text into natural, human-sounding writing.'}
-          {tool.slug === 'uhmegle' && 'Uhmegle is a free anonymous chat service for text and video — no signup needed.'}
-          {(!['me-meshcapade','twaingpt-ai-humanizer','uhmegle'].includes(tool.slug)) && tool.description}
-        </p>
-      </div>
-    </div>
-
-    {/* Mobile Description */}
-    <div className="sm:hidden">
-      <p className="text-md text-blue-100 leading-relaxed">
-        {tool.slug === 'me-meshcapade' && 'Me.Meshcapade creates realistic 3D avatars from photos, video or scans.'}
-        {tool.slug === 'twaingpt-ai-humanizer' && 'TwainGPT converts AI-generated text into natural, human-sounding writing.'}
-        {tool.slug === 'uhmegle' && 'Uhmegle is a free anonymous chat service for text and video — no signup needed.'}
-        {(!['me-meshcapade','twaingpt-ai-humanizer','uhmegle'].includes(tool.slug)) && tool.description}
-      </p>
-    </div>
-
-    {/* Mobile Visit Button - Below logo+name */}
-    {tool.url && (
-      <div className="sm:hidden flex justify-center">
-        <a
-          href={tool.url}
-          target="_blank"
-          rel="noopener noreferrer nofollow"
-          className="inline-flex items-center gap-2 bg-white text-purple-700 font-semibold px-6 py-3 rounded-lg shadow-md hover:opacity-95 transition-all duration-200"
-        >
-          Visit Official Site
-          <ExternalLink className="w-5 h-5" />
-        </a>
+    
+    {/* Rating Badge - Full width on mobile */}
+    {tool.rating && (
+      <div className="w-full">
+        <div className="flex items-center justify-center gap-2 w-full bg-purple-500/20 backdrop-blur rounded-xl px-3 py-2.5 border border-amber-300/30 text-white shadow-lg">
+          <Star className="w-4 h-4 text-amber-300 fill-current flex-shrink-0" />
+          <span className="font-bold">{tool.rating}/5</span>
+          <span className="text-sm text-amber-100">
+            ({Math.floor(Math.random() * 1000) + 250} reviews)
+          </span>
+        </div>
       </div>
     )}
-
-    {/* Enhanced Badge System */}
+    
+    {/* Category Badge - Full width on mobile */}
     <div className="w-full">
-      {/* Mobile Layout - Stacked vertically */}
-      <div className="flex flex-col gap-3 sm:hidden">
-        {/* Pricing Badge */}
-        <div className="w-full">
-          <span className="inline-flex items-center justify-center w-full px-4 py-3 rounded-xl text-base font-semibold bg-white/20 backdrop-blur border border-white/30 text-white shadow-xl">
-            <DollarSign className="w-5 h-5 mr-2 text-green-200 flex-shrink-0" />
-            <span className="text-center leading-tight">{tool.price}</span>
-          </span>
-        </div>
-        
-        {/* Rating Badge */}
-        {tool.rating && (
-          <div className="w-full">
-            <div className="flex items-center justify-center gap-2 w-full bg-purple-500/20 backdrop-blur rounded-xl px-4 py-3 border border-amber-300/30 text-white shadow-xl">
-              <Star className="w-5 h-5 text-amber-300 fill-current flex-shrink-0" />
-              <span className="font-bold text-lg">{tool.rating}/5</span>
-              <span className="text-base text-amber-100">
-                ({Math.floor(Math.random() * 1000) + 250} reviews)
-              </span>
-            </div>
-          </div>
-        )}
-        
-        {/* Category Badge */}
-        <div className="w-full">
-          <div className="flex items-center justify-center gap-2 w-full bg-purple-500/20 backdrop-blur rounded-xl px-4 py-3 border border-purple-300/30 text-white shadow-xl">
-            <Users className="w-5 h-5 text-purple-200 flex-shrink-0" />
-            <span className="font-semibold text-base text-center leading-tight">
-              {tool.category.join(', ')}
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Desktop Layout - Horizontal */}
-      <div className="hidden sm:flex flex-wrap items-center gap-4 lg:gap-5">
-        {/* Pricing Badge */}
-        <span className="inline-flex items-center px-4 py-2.5 lg:px-5 lg:py-3 rounded-full text-sm lg:text-base font-semibold bg-white/20 backdrop-blur border border-white/30 text-white shadow-xl hover:bg-white/25 transition-all duration-200">
-          <DollarSign className="w-4 h-4 lg:w-5 lg:h-5 mr-2 lg:mr-2.5 text-green-200 flex-shrink-0" />
-          <span className="whitespace-nowrap">{tool.price}</span>
+      <div className="flex items-center justify-center gap-2 w-full bg-purple-500/20 backdrop-blur rounded-xl px-3 py-2.5 border border-purple-300/30 text-white shadow-lg">
+        <Users className="w-4 h-4 text-purple-200 flex-shrink-0" />
+        <span className="font-medium text-center leading-tight">
+          {tool.categories.join(', ')}
         </span>
-        
-        {/* Rating Badge */}
-        {tool.rating && (
-          <div className="inline-flex items-center gap-2 lg:gap-2.5 bg-purple-500/20 backdrop-blur rounded-full px-4 py-2.5 lg:px-5 lg:py-3 border border-amber-300/30 transition-all duration-200">
-            <Star className="w-4 h-4 lg:w-5 lg:h-5 text-amber-300 fill-current flex-shrink-0" />
-            <span className="font-bold text-white text-sm lg:text-base whitespace-nowrap">
-              {tool.rating}/5
-            </span>
-            <span className="text-sm text-amber-100 whitespace-nowrap hidden md:inline">
-              ({Math.floor(Math.random() * 1000) + 250} reviews)
-            </span>
-          </div>
-        )}
-        
-        {/* Category Badge */}
-        <div className="inline-flex items-center gap-2 lg:gap-2.5 bg-purple-500/20 backdrop-blur rounded-full px-4 py-2.5 lg:px-5 lg:py-3 border border-purple-300/30 shadow-xl hover:bg-purple-500/25 transition-all duration-200">
-          <Users className="w-4 h-4 lg:w-5 lg:h-5 text-purple-200 flex-shrink-0" />
-          <span className="font-semibold text-white text-sm lg:text-base">
-            {tool.category.length > 2 ? 
-              `${tool.category.slice(0, 2).join(', ')} +${tool.category.length - 2}` : 
-              tool.category.join(', ')
-            }
-          </span>
-        </div>
       </div>
+    </div>
+  </div>
+
+  {/* Desktop & Tablet Layout - Horizontal flex wrap */}
+  <div className="hidden sm:flex flex-wrap items-center gap-3 lg:gap-4">
+    
+    {/* Pricing Badge */}
+    <span className="inline-flex items-center px-3 py-2 lg:px-4 lg:py-2.5 rounded-full text-xs lg:text-sm font-semibold bg-white/20 backdrop-blur border border-white/30 text-white shadow-lg hover:bg-white/25 transition-all duration-200">
+      <DollarSign className="w-3 h-3 lg:w-4 lg:h-4 mr-1.5 lg:mr-2 text-green-200 flex-shrink-0" />
+      <span className="whitespace-nowrap">{tool.pricingType}</span>
+    </span>
+    
+    {/* Rating Badge */}
+    {tool.rating && (
+      <div className="inline-flex items-center gap-1.5 lg:gap-2 bg-purple-500/20 backdrop-blur rounded-full px-3 py-2 lg:px-4 lg:py-2.5 border border-amber-300/30  transition-all duration-200">
+        <Star className="w-3 h-3 lg:w-4 lg:h-4 text-amber-300 fill-current flex-shrink-0" />
+        <span className="font-bold text-white text-xs lg:text-sm whitespace-nowrap">
+          {tool.rating}/5
+        </span>
+        <span className="text-xs text-amber-100 whitespace-nowrap hidden md:inline">
+          ({Math.floor(Math.random() * 1000) + 250} reviews)
+        </span>
+      </div>
+    )}
+    
+    {/* Category Badge */}
+    <div className="inline-flex items-center gap-1.5 lg:gap-2 bg-purple-500/20 backdrop-blur rounded-full px-3 py-2 lg:px-4 lg:py-2.5 border border-purple-300/30 shadow-lg hover:bg-purple-500/25 transition-all duration-200">
+      <Users className="w-3 h-3 lg:w-4 lg:h-4 text-purple-200 flex-shrink-0" />
+      <span className="font-medium text-white text-xs lg:text-sm">
+        {tool.categories.length > 2 ? 
+          `${tool.categories.slice(0, 2).join(', ')}${tool.categories.length > 2 ? '...' : ''}` : 
+          tool.categories.join(', ')
+        }
+      </span>
     </div>
   </div>
 </div>
 
+                      {/* ///////////////////////// */}
+                    </div>
+                  </div>
+                </div>
 
                 {/* Quick Stats Bar */}
                 {/* Enhanced Stats Cards Section - Full Content Display */}
@@ -548,7 +515,7 @@ export default function ToolDetailPage({ params }) {
             </h3>
             <div className="flex-grow flex items-start">
               <p className="text-md sm:text-base font-bold text-gray-900 leading-tight group-hover:text-green-700 transition-colors duration-300 break-words hyphens-auto text-wrap">
-                {tool.price}
+                {tool.pricingType}
               </p>
             </div>
           </div>
@@ -620,14 +587,14 @@ export default function ToolDetailPage({ params }) {
             <div className="flex-grow flex flex-col justify-start">
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-purple-700 transition-colors duration-300">
-                  {tool.category.length}
+                  {tool.categories.length}
                 </span>
                 <span className="text-sm text-gray-500">
-                  categor{tool.category.length === 1 ? 'y' : 'ies'}
+                  categor{tool.categories.length === 1 ? 'y' : 'ies'}
                 </span>
               </div>
               <div className="flex flex-wrap gap-1.5">
-                {tool.category.map((cat, index) => (
+                {tool.categories.map((cat, index) => (
                   <span key={index} className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full break-words">
                     {cat}
                   </span>
@@ -716,14 +683,14 @@ export default function ToolDetailPage({ params }) {
                       <CheckCircle className="w-6 h-6 text-emerald-600 mt-1 flex-shrink-0" />
                       <div>
                         <h3 className="font-bold text-gray-900">Best For</h3>
-                        <p className="text-gray-700 text-sm">{tool.category.join(', ')} professionals and {tool.price.toLowerCase()} users</p>
+                        <p className="text-gray-700 text-sm">{tool.categories.join(', ')} professionals and {tool.pricingType.toLowerCase()} users</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <DollarSign className="w-6 h-6 text-emerald-600 mt-1 flex-shrink-0" />
                       <div>
                         <h3 className="font-bold text-gray-900">Pricing</h3>
-                        <p className="text-gray-700 text-sm">{tool.price} model with {tool.price === 'Free' ? 'no cost' : 'flexible plans'}</p>
+                        <p className="text-gray-700 text-sm">{tool.pricing} model with {tool.pricingType?.toLowerCase() === 'free' ? 'no cost' : 'flexible plans'}</p>
                       </div>
                     </div>
                   </div>
@@ -751,21 +718,21 @@ export default function ToolDetailPage({ params }) {
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">What is {tool.name}?</h2>
                 <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
                   <p className="text-md sm:text-md leading-relaxed">
-                    <strong>{tool.name}</strong> is a {tool.category[0].toLowerCase()} AI tool that {tool.description.toLowerCase()}. 
-                    Launched in 2024, it has quickly become one of the most popular {tool.category[0].toLowerCase()} solutions 
+                    <strong>{tool.name}</strong> is a {tool.categories[0].toLowerCase()} AI tool that {tool.description.toLowerCase()}. 
+                    Launched in 2024, it has quickly become one of the most popular {tool.categories[0].toLowerCase()} solutions 
                     with a {tool.rating ? `${tool.rating}-star rating` : 'high user satisfaction score'}.
                   </p>
                   
                   <p>
-                    The platform offers {tool.price.toLowerCase()} access to {tool.tags.length} core features including {tool.tags.slice(0, 5).join(', ')}, 
-                    making it ideal for both beginners and professionals in the {tool.category.join(', ').toLowerCase()} space.
+                    The platform offers {tool.pricingType.toLowerCase()} access to {tool.tags.length} core features including {tool.tags.slice(0, 5).join(', ')}, 
+                    making it ideal for both beginners and professionals in the {tool.categories.join(', ').toLowerCase()} space.
                   </p>
 
                   <p>
                     Whether you're a small business owner, freelancer, or enterprise team, {tool.name} provides the tools you need to 
-                    {tool.category[0] === 'Writing' ? 'create compelling content' : 
-                     tool.category[0] === 'Design' ? 'design stunning visuals' :
-                     tool.category[0] === 'Development' ? 'build better applications' :
+                    {tool.categories[0] === 'Writing' ? 'create compelling content' : 
+                     tool.categories[0] === 'Design' ? 'design stunning visuals' :
+                     tool.categories[0] === 'Development' ? 'build better applications' :
                      'achieve your goals'} efficiently and effectively.
                   </p>
                 </div>
@@ -787,8 +754,8 @@ export default function ToolDetailPage({ params }) {
                         <h3 className="text-lg font-bold text-gray-900 mb-2">{feature}</h3>
                         <p className="text-gray-600">
                           Advanced {feature.toLowerCase()} capabilities that help you 
-                          {tool.category[0] === 'Writing' ? 'create better content' :
-                           tool.category[0] === 'Design' ? 'design professional visuals' :
+                          {tool.categories[0] === 'Writing' ? 'create better content' :
+                           tool.categories[0] === 'Design' ? 'design professional visuals' :
                            'achieve professional results'} faster than traditional methods.
                         </p>
                       </div>
@@ -833,9 +800,9 @@ export default function ToolDetailPage({ params }) {
             
             {/* Price Badge */}
             <div className="flex-shrink-0 ">
-              <div className={`inline-flex items-center px-4 py-3 rounded-2xl font-bold text-sm sm:text-base shadow-lg ${getPriceBadgeStyle(tool.price)}`}>
+              <div className={`inline-flex items-center px-4 py-3 rounded-2xl font-bold text-sm sm:text-base shadow-lg ${getPriceBadgeStyle(tool.pricingType)}`}>
                 <div className="w-2 h-2 bg-current rounded-full mr-3 animate-pulse"></div>
-                {tool.price}
+                {tool.pricingType}
               </div>
             </div>
             
@@ -845,14 +812,8 @@ export default function ToolDetailPage({ params }) {
                 Current Pricing Model
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                {tool.price === 'Free' ? 
-                  '🎉 Completely free to use with all features included - no hidden costs or limitations.' :
-                 tool.price === 'Freemium' ? 
-                  '🚀 Free tier available with essential features, plus premium upgrades for advanced functionality.' :
-                 tool.price.toLowerCase().includes('subscription') ?
-                  '💼 Flexible subscription plans designed to scale with your needs and budget.' :
-                  '💰 Premium tool with transparent pricing and comprehensive feature access.'}
-              </p>
+  {tool.pricing || 'Pricing information not available.'}
+</p>
             </div>
           </div>
           {/* /////////////////////// */}
@@ -876,8 +837,8 @@ export default function ToolDetailPage({ params }) {
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
             <span className="text-gray-700 text-sm sm:text-base">
-              {tool.price === 'Free' ? 'Exceptional value with no cost barrier' :
-               tool.price === 'Freemium' ? 'Great entry point with upgrade flexibility' :
+              {tool.pricingType?.toLowerCase() === 'free' ? 'Exceptional value with no cost barrier' :
+               tool.pricingType === 'Freemium' ? 'Great entry point with upgrade flexibility' :
                'Competitive pricing for feature-rich solution'}
             </span>
           </div>
@@ -911,8 +872,8 @@ export default function ToolDetailPage({ params }) {
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
             <span className="text-gray-700 text-sm sm:text-base">
-              {tool.price === 'Free' ? 'No payment required' :
-               tool.price === 'Freemium' ? 'Optional premium payments' :
+              {tool.pricingType === 'Free' ? 'No payment required' :
+               tool.pricingType === 'Freemium' ? 'Optional premium payments' :
                'Multiple payment methods accepted'}
             </span>
           </div>
@@ -920,14 +881,14 @@ export default function ToolDetailPage({ params }) {
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
             <span className="text-gray-700 text-sm sm:text-base">
-              {tool.price === 'Free' ? 'Instant access' : 'Flexible billing cycles'}
+              {tool.pricingType === 'Free' ? 'Instant access' : 'Flexible billing cycles'}
             </span>
           </div>
           
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
             <span className="text-gray-700 text-sm sm:text-base">
-              {tool.price === 'Free' ? 'No credit card needed' : 'Secure payment processing'}
+              {tool.pricingType === 'Free' ? 'No credit card needed' : 'Secure payment processing'}
             </span>
           </div>
         </div>
@@ -949,9 +910,9 @@ export default function ToolDetailPage({ params }) {
           💡 Our Recommendation
         </h4>
         <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
-          {tool.price === 'Free'
+          {tool.pricingType === 'Free'
             ? 'Perfect for users who want to explore all features without any financial commitment. Ideal for personal projects and small teams.'
-            : tool.price === 'Freemium'
+            : tool.pricingType === 'Freemium'
             ? 'Start with the free tier to test the waters, then upgrade when you need advanced features. Great for growing businesses.'
             : 'Consider the value proposition carefully - this tool offers comprehensive features that justify the investment for serious users.'}
         </p>
@@ -990,7 +951,7 @@ export default function ToolDetailPage({ params }) {
                     <ul className="space-y-4">
                       <li className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700"><strong>{tool.price} pricing model</strong> makes it accessible to all users</span>
+                        <span className="text-gray-700"><strong>{tool.pricingType} pricing model</strong> makes it accessible to all users</span>
                       </li>
                       <li className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
@@ -1008,7 +969,7 @@ export default function ToolDetailPage({ params }) {
                       )}
                       <li className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700"><strong>Perfect for {tool.category[0].toLowerCase()}</strong> professionals and teams</span>
+                        <span className="text-gray-700"><strong>Perfect for {tool.categories[0].toLowerCase()}</strong> professionals and teams</span>
                       </li>
                       <li className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
@@ -1027,14 +988,14 @@ export default function ToolDetailPage({ params }) {
                         <XCircle className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
                         <span className="text-gray-700">
                           <strong>Learning curve</strong> for advanced features
-                          {tool.price !== 'Free' ? ' in premium tiers' : ''}
+                          {tool.pricingType !== 'Free' ? ' in premium tiers' : ''}
                         </span>
                       </li>
                       <li className="flex items-start gap-3">
                         <XCircle className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
                         <span className="text-gray-700"><strong>Internet connection required</strong> for full functionality</span>
                       </li>
-                      {tool.price !== 'Free' && (
+                      {tool.pricingType !== 'Free' && (
                         <li className="flex items-start gap-3">
                           <XCircle className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
                           <span className="text-gray-700"><strong>Premium features</strong> require paid subscription</span>
@@ -1053,71 +1014,78 @@ export default function ToolDetailPage({ params }) {
                 </div>
               </section>
 
-              {/* Alternatives Section */}
               {alternatives.length > 0 && (
-                <section
-  id="alternatives"
-  className="bg-white mt-3 rounded-3xl shadow-lg border border-gray-100 px-4 py-6 sm:px-8 sm:py-8"
->
-  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 flex items-center gap-3">
-    <Share2 className="w-6 sm:w-7 h-6 sm:h-7 text-purple-600" />
-    Top {tool.name} Alternatives
-  </h2>
+  <section
+    id="alternatives"
+    className="bg-white mt-3 rounded-3xl shadow-lg border border-gray-100 px-4 py-6 sm:px-8 sm:py-8"
+  >
+    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 flex items-center gap-3">
+      <Share2 className="w-6 sm:w-7 h-6 sm:h-7 text-purple-600" />
+      Top {tool.name} Alternatives
+    </h2>
 
-  <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6">
-    {alternatives.map((alt) => (
-      <div
-        key={alt.slug}
-        className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-4 sm:p-6 border border-gray-200 hover:shadow-lg transition-shadow cursor-pointer"
-      >
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <img
-            src={alt.image}
-            alt={`${alt.name} alternative to ${tool.name}`}
-            className="w-16 h-16 rounded-xl object-cover flex-shrink-0"
-            loading="lazy"
-            width="64"
-            height="64"
-          />
-          <div className="flex-1 min-w-0">
-            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 sm:mb-2 truncate">
-              {alt.name}
-            </h3>
-            <p className="text-gray-600 mb-2 text-sm sm:text-base">
-              {alt.description.length > 100
-                ? `${alt.description.slice(0, 100)}...`
-                : alt.description}
-            </p>
-            <div className="flex flex-wrap items-center gap-2 mb-2">
-              <span
-                className={`px-2 py-1 rounded-full text-xs sm:text-sm font-medium ${getPriceBadgeStyle(
-                  alt.price
-                )}`}
-              >
-                {alt.price}
-              </span>
-              {alt.rating && (
-                <div className="flex items-center gap-1 text-sm">
-                  <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                  <span className="font-medium">{alt.rating}</span>
+    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6">
+      {alternatives.map((alt) => {
+        // 💡 FIX: Safely define the description
+        const altDescription = alt.longDescription || alt.shortDescription || '';
+        
+        return (
+          <div
+            key={alt.slug}
+            className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-4 sm:p-6 border border-gray-200 hover:shadow-lg transition-shadow cursor-pointer"
+          >
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <img
+                // 💡 FIX: Use alt.logo, not alt.image
+                src={alt.logo} 
+                alt={`${alt.name} alternative to ${tool.name}`}
+                className="w-16 h-16 rounded-xl object-cover flex-shrink-0"
+                loading="lazy"
+                width="64"
+                height="64"
+              />
+              <div className="flex-1 min-w-0">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 sm:mb-2 truncate">
+                  {alt.name}
+                </h3>
+                <p className="text-gray-600 mb-2 text-sm sm:text-base">
+                  {/* 💡 FIX: Use altDescription variable */ }
+                  {altDescription.length > 100
+                    ? `${altDescription.slice(0, 100)}...`
+                    : altDescription}
+                </p>
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <span
+                    className={`px-2 py-1 rounded-full text-xs sm:text-sm font-medium ${getPriceBadgeStyle(
+                      // 💡 FIX: Use alt.pricingType, not alt.price
+                      alt.pricingType 
+                    )}`}
+                  >
+                    {/* 💡 FIX: Use alt.pricingType, not alt.price */ }
+                    {alt.pricingType} 
+                  </span>
+                  {alt.rating && (
+                    <div className="flex items-center gap-1 text-sm">
+                      <Star className="w-4 h-4 text-yellow-500 fill-current" />
+                      <span className="font-medium">{alt.rating}</span>
+                    </div>
+                  )}
                 </div>
-              )}
+                <a
+                  href={`/tools/${alt.slug}`}
+                  className="inline-flex items-center gap-1 sm:gap-2 text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base"
+                >
+                  View {alt.name} Review
+                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
+                </a>
+              </div>
             </div>
-            <a
-              href={`/tools/${alt.slug}`}
-              className="inline-flex items-center gap-1 sm:gap-2 text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base"
-            >
-              View {alt.name} Review
-              <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
-            </a>
           </div>
-        </div>
-      </div>
-    ))}
-  </div>
-</section>
-
-              )}
+        );
+      })}
+    </div>
+  </section>
+)}
 
               {/* How to Use Section */}
               <section id="how-to-use" className="bg-white mt-3 rounded-3xl shadow-lg border border-gray-100 px-2 py-5 sm:p-8">
@@ -1130,15 +1098,15 @@ export default function ToolDetailPage({ params }) {
                     <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">1</div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">Sign Up & Get Started</h3>
-                      <p className="text-gray-700">Create your {tool.price === 'Free' ? 'free' : ''} account on {tool.name} and complete the onboarding process. The setup takes less than 5 minutes.</p>
+                      <p className="text-gray-700">Create your {tool.pricingType === 'Free' ? 'free' : ''} account on {tool.name} and complete the onboarding process. The setup takes less than 5 minutes.</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-4 p-6 bg-purple-50 rounded-2xl border border-purple-200">
                     <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">2</div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">Choose Your {tool.category[0]} Project</h3>
-                      <p className="text-gray-700">Select from various {tool.category[0].toLowerCase()} templates or start from scratch. {tool.name} offers templates for different use cases and industries.</p>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">Choose Your {tool.categories[0]} Project</h3>
+                      <p className="text-gray-700">Select from various {tool.categories[0].toLowerCase()} templates or start from scratch. {tool.name} offers templates for different use cases and industries.</p>
                     </div>
                   </div>
                   
@@ -1177,8 +1145,8 @@ export default function ToolDetailPage({ params }) {
                       <div className="border-b border-gray-200 pb-6">
                         <h3 className="text-xl font-bold text-gray-900 mb-3">Is {tool.name} free to use?</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          {tool.price === 'Free' ? `Yes, ${tool.name} is completely free to use with all features included.` :
-                           tool.price === 'Freemium' ? `${tool.name} offers a free tier with basic features, and premium plans for advanced functionality.` :
+                          {tool.pricingType === 'Free' ? `Yes, ${tool.name} is completely free to use with all features included.` :
+                           tool.pricingType === 'Freemium' ? `${tool.name} offers a free tier with basic features, and premium plans for advanced functionality.` :
                            `${tool.name} is a paid service with flexible pricing plans starting from $29/month.`}
                         </p>
                       </div>
@@ -1186,35 +1154,37 @@ export default function ToolDetailPage({ params }) {
                       <div className="border-b border-gray-200 pb-6">
                         <h3 className="text-xl font-bold text-gray-900 mb-3">What are the main features of {tool.name}?</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          {tool.name} offers {tool.tags.length} main features including {tool.tags.slice(0, 5).join(', ')}, making it a comprehensive {tool.category[0].toLowerCase()} solution.
+                          {tool.name} offers {tool.tags.length} main features including {tool.tags.slice(0, 5).join(', ')}, making it a comprehensive {tool.categories[0].toLowerCase()} solution.
                         </p>
                       </div>
                       
                       <div className="border-b border-gray-200 pb-6">
                         <h3 className="text-xl font-bold text-gray-900 mb-3">Who should use {tool.name}?</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          {tool.name} is perfect for {tool.category.join(', ').toLowerCase()} professionals, freelancers, small businesses, and enterprises looking to improve their {tool.category[0].toLowerCase()} workflow.
+                          {tool.name} is perfect for {tool.categories.join(', ').toLowerCase()} professionals, freelancers, small businesses, and enterprises looking to improve their {tool.categories[0].toLowerCase()} workflow.
                         </p>
                       </div>
                       
                       <div className="border-b border-gray-200 pb-6">
                         <h3 className="text-xl font-bold text-gray-900 mb-3">How does {tool.name} compare to alternatives?</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          {tool.name} stands out with its {tool.price.toLowerCase()} pricing, {tool.rating ? `${tool.rating}-star user rating,` : 'high user satisfaction,'} and comprehensive feature set. It's particularly strong in {tool.tags.slice(0, 3).join(', ')}.
+                          {tool.name} stands out with its {tool.pricingType.toLowerCase()} pricing, {tool.rating ? `${tool.rating}-star user rating,` : 'high user satisfaction,'} and comprehensive feature set. It's particularly strong in {tool.tags.slice(0, 3).join(', ')}.
                         </p>
                       </div>
                       
                       <div>
                         <h3 className="text-xl font-bold text-gray-900 mb-3">Can I integrate {tool.name} with other tools?</h3>
                         <p className="text-gray-700 leading-relaxed">
-                          Yes, {tool.name} offers integrations with popular {tool.category[0].toLowerCase()} tools and platforms. Check their documentation for the latest integration options and API availability.
+                          Yes, {tool.name} offers integrations with popular {tool.categories[0].toLowerCase()} tools and platforms. Check their documentation for the latest integration options and API availability.
                         </p>
                       </div>
                     </>
                   )}
                 </div>
               </section>
-<RelatedTools currentTool={tool} allTools={tools} />
+<RelatedTools currentTool={tool} allTools={relatedTools} />
+
+
 
 
 
@@ -1233,11 +1203,11 @@ export default function ToolDetailPage({ params }) {
                     <ul className="space-y-2 text-blue-100">
                       <li className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4" />
-                        {tool.category[0]} professionals and teams
+                        {tool.categories[0]} professionals and teams
                       </li>
                       <li className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4" />
-                        Users looking for {tool.price.toLowerCase()} solutions
+                        Users looking for {tool.pricingType.toLowerCase()} solutions
                       </li>
                       <li className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4" />
@@ -1280,8 +1250,8 @@ export default function ToolDetailPage({ params }) {
                     Our Rating: {tool.rating || '4.5'}/5
                   </h3>
                   <p className="text-lg text-blue-100">
-                    {tool.name} delivers excellent value with its {tool.price.toLowerCase()} pricing and comprehensive feature set. 
-                    {tool.rating ? `With a ${tool.rating}/5 user rating,` : 'With high user satisfaction,'} it's definitely worth trying for {tool.category[0].toLowerCase()} needs.
+                    {tool.name} delivers excellent value with its {tool.pricingType.toLowerCase()} pricing and comprehensive feature set. 
+                    {tool.rating ? `With a ${tool.rating}/5 user rating,` : 'With high user satisfaction,'} it's definitely worth trying for {tool.categories[0].toLowerCase()} needs.
                   </p>
                 </div>
               </section>
@@ -1298,8 +1268,8 @@ export default function ToolDetailPage({ params }) {
                   </div>
                   <h3 className="text-2xl font-bold mb-2">Try {tool.name} Now</h3>
                   <p className="text-blue-100 text-sm">
-                    {tool.price === 'Free' ? 'Start using for free today!' : 
-                     tool.price === 'Freemium' ? 'Free tier available!' : 
+                    {tool.pricingType === 'Free' ? 'Start using for free today!' : 
+                     tool.pricingType === 'Freemium' ? 'Free tier available!' : 
                      'Get started with premium features'}
                   </p>
                 </div>
@@ -1307,7 +1277,7 @@ export default function ToolDetailPage({ params }) {
                 <div className="space-y-4 mb-6">
                   <div className="flex items-center gap-3 text-blue-100">
                     <CheckCircle className="w-4 h-4" />
-                    <span className="text-sm">{tool.price} access</span>
+                    <span className="text-sm">{tool.pricingType} access</span>
                   </div>
                   <div className="flex items-center gap-3 text-blue-100">
                     <CheckCircle className="w-4 h-4" />
@@ -1337,7 +1307,7 @@ export default function ToolDetailPage({ params }) {
                 )}
                 
                 <p className="text-xs text-blue-200 text-center mt-4">
-                  {tool.price === 'Free' ? 'No credit card required' : 'Cancel anytime'}
+                  {tool.pricingType === 'Free' ? 'No credit card required' : 'Cancel anytime'}
                 </p>
               </div>
 {/* /////////////////////////////////////////// */}
@@ -1399,7 +1369,7 @@ export default function ToolDetailPage({ params }) {
         </div>
         <div className="mb-1">
           <div className="text-sm font-bold text-gray-900 group-hover:text-green-700 transition-colors leading-tight break-words">
-            {tool.price}
+            {tool.pricingType}
           </div>
         </div>
         <p className="text-xs text-gray-500">Current pricing structure</p>
@@ -1419,21 +1389,21 @@ export default function ToolDetailPage({ params }) {
         </div>
         <div className="flex items-center justify-between mb-2">
           <div className="text-2xl font-bold text-gray-900 group-hover:text-purple-700 transition-colors">
-            {tool.category.length}
+            {tool.categories.length}
           </div>
           <div className="text-xs text-gray-500">
-            categor{tool.category.length === 1 ? 'y' : 'ies'}
+            categor{tool.categories.length === 1 ? 'y' : 'ies'}
           </div>
         </div>
         <div className="flex flex-wrap gap-1">
-          {tool.category.slice(0, 2).map((cat, index) => (
+          {tool.categories.slice(0, 2).map((cat, index) => (
             <span key={index} className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">
               {cat.length > 8 ? `${cat.substring(0, 8)}...` : cat}
             </span>
           ))}
-          {tool.category.length > 2 && (
+          {tool.categories.length > 2 && (
             <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
-              +{tool.category.length - 2}
+              +{tool.categories.length - 2}
             </span>
           )}
         </div>
@@ -1540,7 +1510,7 @@ export default function ToolDetailPage({ params }) {
                         className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group cursor-pointer"
                       >
                         <img 
-                          src={related.image} 
+                          src={related.logo} 
                           alt={related.name}
                           className="w-10 h-10 rounded-lg object-cover flex-shrink-0"
                           loading="lazy"
@@ -1558,44 +1528,21 @@ export default function ToolDetailPage({ params }) {
                     ))}
                   </div>
                   <a 
-                    href={`/category/${tool.category[0].toLowerCase()}`}
+                    href={`/category/${tool.categories[0].toLowerCase()}`}
                     className="flex items-center justify-center gap-2 mt-4 text-center text-blue-600 hover:text-blue-800 font-medium text-sm cursor-pointer"
                   >
-                    View All {tool.category[0]} Tools
+                    View All {tool.categories[0]} Tools
                     <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
               )}
 
-              {/* Newsletter Signup */}
-              {/* <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl border border-green-200 p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
-                  <Mail className="w-5 h-5 text-green-600" />
-                  Stay Updated
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  Get weekly updates on the latest AI tools and reviews.
-                </p>
-                <div className="space-y-3">
-                  <input 
-                    type="email" 
-                    placeholder="Enter your email"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                  <button className="w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors cursor-pointer flex items-center justify-center gap-2">
-                    <Mail className="w-4 h-4" />
-                    Subscribe Free
-                  </button>
-                </div>
-                <p className="text-xs text-gray-500 mt-2 text-center">
-                  No spam, unsubscribe anytime
-                </p>
-              </div> */}
+              
             </aside>
           </div>
         </main>
 
-        {/* Enhanced Footer with Internal Links */}
+     
         
       </div>
     </>

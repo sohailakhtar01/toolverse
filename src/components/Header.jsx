@@ -57,7 +57,7 @@ const Header = () => {
   </Link>
 
   {/* Free AI Tools with Dropdown */}
-  <div className="relative group">
+  {/* <div className="relative group">
     <button className="flex cursor-pointer items-center font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
       Free AI Tools
       <ChevronDown className="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" />
@@ -78,9 +78,9 @@ const Header = () => {
       </Link>
       
     </div>
-  </div>
+  </div> */}
   {/* ////////////////// */}
-  <div className="relative group">
+  {/* <div className="relative group">
   <button className="flex items-center cursor-pointer font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
     Compare AI Tools
     <ChevronDown className="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" />
@@ -117,7 +117,7 @@ const Header = () => {
       ChatGPT vs GitHub Copilot
     </Link>
   </div>
-</div>
+</div> */}
 
   {/* /////////////////////// */}
   {/* <Link
@@ -205,7 +205,7 @@ const Header = () => {
   </Link>
 
   {/* Free AI Tools Dropdown */}
-  <div>
+  {/* <div>
     <button
       onClick={() => setMobileToolsOpen(!mobileToolsOpen)}
       className="flex justify-between items-center w-full px-4 py-3 text-xl font-spaceGrotesk text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all"
@@ -219,10 +219,10 @@ const Header = () => {
         <Link href="/free-ai-tools/business" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-purple-600">Business</Link>
       </div>
     )}
-  </div>
+  </div> */}
 
   {/* Compare AI Tools Dropdown */}
-  <div>
+  {/* <div>
     <button
       onClick={() => setMobileCompareOpen(!mobileCompareOpen)}
       className="flex justify-between items-center w-full px-4 py-3 text-xl font-spaceGrotesk text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all"
@@ -239,7 +239,7 @@ const Header = () => {
         <Link href="/compare/chatgpt-vs-copilot" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-purple-600">ChatGPT vs Copilot</Link>
       </div>
     )}
-  </div>
+  </div> */}
 
   {/* Rest of links */}
   {/* <Link href="/browse-tools" onClick={() => setIsOpen(false)} className="px-4 py-3 text-xl font-spaceGrotesk text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all">

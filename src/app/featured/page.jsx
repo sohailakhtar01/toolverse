@@ -201,7 +201,7 @@ export default function FeaturedPage() {
                 },
                 "offers": {
                   "@type": "Offer",
-                  "price": tool.price === "Free" ? "0" : tool.price.replace(/[^0-9.]/g, ''),
+                  "price": tool.price?.replace(/[^0-9.]/g, '') || "0",
                   "priceCurrency": "USD"
                 }
               }))

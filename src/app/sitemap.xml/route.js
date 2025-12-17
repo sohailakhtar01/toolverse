@@ -1,9 +1,10 @@
 // app/sitemap.xml/route.js
-import toolsData from '@/data/tools.js';
+import connectDB from '@/lib/mongodb';
+import Tool from '@/models/Tool';
 import { getAllPosts } from '@/lib/sanity';
 
 export const dynamic = 'force-dynamic';
-export const revalidate = 3600;
+export const revalidate = 3600; // Regenerate every hour
 
 // Helper functions
 const toISO = (d) => {
@@ -38,55 +39,81 @@ const urlXml = (base, { url, lastmod, priority = 0.5, changefreq = 'weekly' }) =
 };
 
 export async function GET() {
-  const baseUrl = 'https://www.thetoolsverse.com';
+  const baseUrl = 'https://thetoolsverse.com';
   const now = new Date().toISOString();
 
   try {
-    // 1) HIGH PRIORITY: Homepage & Main Pages (Priority: 1.0)
+    // 🔥 CONNECT TO DATABASE
+    await connectDB();
+
+    // 1) ⭐ HIGHEST PRIORITY: Homepage & Core Pages (Priority: 1.0)
     const staticRoutes = [
       { url: '', lastmod: now, priority: 1.0, changefreq: 'daily' }, // Homepage
-      { url: '/browse-tools', lastmod: now, priority: 0.9, changefreq: 'daily' },
+      { url: '/browse-tools', lastmod: now, priority: 0.95, changefreq: 'daily' },
       { url: '/featured', lastmod: now, priority: 0.9, changefreq: 'daily' },
-      { url: '/blog', lastmod: now, priority: 0.9, changefreq: 'daily' },
+      { url: '/blog', lastmod: now, priority: 0.85, changefreq: 'daily' },
     ];
 
-    // 2) MEDIUM PRIORITY: About & Info Pages (Priority: 0.7)
+    // 2) 🔥 PRICING FILTER PAGES WITH PAGINATION (Priority: 0.9)
+    // Pages: /free, /freemium, /paid, /free-trial
+    // With pagination: /free?page=2, /free?page=3, etc.
+    const pricingRoutes = await getPricingPaginationRoutes();
+
+    // 3) 📄 MEDIUM PRIORITY: Info Pages (Priority: 0.7)
     const infoPages = [
       { url: '/about', lastmod: now, priority: 0.7, changefreq: 'monthly' },
+      { url: '/contact', lastmod: now, priority: 0.7, changefreq: 'monthly' },
       { url: '/how-it-works', lastmod: now, priority: 0.7, changefreq: 'monthly' },
       { url: '/submit-tool', lastmod: now, priority: 0.7, changefreq: 'monthly' },
       { url: '/pricing', lastmod: now, priority: 0.6, changefreq: 'monthly' },
-      { url: '/privacy-policy', lastmod: now, priority: 0.5, changefreq: 'yearly' },
+      { url: '/privacy-policy', lastmod: now, priority: 0.4, changefreq: 'yearly' },
+      { url: '/terms-of-service', lastmod: now, priority: 0.4, changefreq: 'yearly' },
     ];
 
-    // 3) WORKING FREE TOOLS PAGES (Priority: 0.8)
+    // 4) 🎓 FREE TOOLS LANDING PAGES (Priority: 0.85)
     const freeToolsPages = [
-      { url: '/free-ai-tools/business', lastmod: now, priority: 0.8, changefreq: 'weekly' },
-      { url: '/free-ai-tools/students', lastmod: now, priority: 0.8, changefreq: 'weekly' },
+      { url: '/free-ai-tools', lastmod: now, priority: 0.85, changefreq: 'weekly' },
+      { url: '/free-ai-tools/business', lastmod: now, priority: 0.85, changefreq: 'weekly' },
+      { url: '/free-ai-tools/students', lastmod: now, priority: 0.85, changefreq: 'weekly' },
     ];
 
-    // 4) Dynamic: Tools (Priority: 0.8)
-    const toolRoutes = getToolRoutes();
+    // 5) 🔥 DYNAMIC: Browse Tools Pagination
+    // URLs: /browse-tools/page/2, /browse-tools/page/3, etc.
+    const browsePaginationRoutes = await getBrowsePaginationRoutes();
 
-    // 5) Dynamic: Blog Posts (Priority: 0.8)
+    // 6) 🔥 DYNAMIC: All Tools from DB (Priority: 0.8)
+    // URLs: /tools/chatgpt, /tools/midjourney, etc.
+    const toolRoutes = await getToolRoutesFromDB();
+
+    // 7) 🔥 DYNAMIC: Blog Posts (Priority: 0.8)
     const blogRoutes = await getBlogRoutes();
 
-    // 6) Dynamic: Categories (Priority: 0.7)
-    const categoryRoutes = getCategoryRoutes(toolRoutes);
+    // 8) 🔥 DYNAMIC: Categories from DB (Priority: 0.85)
+    // URLs: /categories/ai-writing, /categories/design, etc.
+    const categoryRoutes = await getCategoryRoutesFromDB();
 
-    // 7) Compare Pages (Priority: 0.6) - ONLY if implemented
+    // 9) 🔥 DYNAMIC: Categories with Price Filters
+    // URLs: /categories/ai-writing/free, /categories/design/paid, etc.
+    const categoryPriceRoutes = await getCategoryPriceRoutes();
+
+    // 10) 📊 Compare Pages (Priority: 0.7)
     const compareRoutes = getCompareRoutes();
 
     // Merge all routes
     const all = dedupe([
       ...staticRoutes,
+      ...pricingRoutes,
       ...infoPages,
       ...freeToolsPages,
+      ...browsePaginationRoutes,
       ...categoryRoutes,
+      ...categoryPriceRoutes,
       ...toolRoutes,
       ...blogRoutes,
       ...compareRoutes,
     ]);
+
+    console.log(`✅ Sitemap generated: ${all.length} URLs`);
 
     const routesXml = all.map((r) => urlXml(baseUrl, r)).join('\n');
 
@@ -109,7 +136,7 @@ ${routesXml}
       },
     });
   } catch (err) {
-    console.error('Sitemap generation error:', err);
+    console.error('❌ Sitemap generation error:', err);
     
     // Minimal fallback
     const fallback = `<?xml version="1.0" encoding="UTF-8"?>
@@ -119,45 +146,118 @@ ${routesXml}
     <lastmod>${now}</lastmod>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>${baseUrl}/blog</loc>
-    <lastmod>${now}</lastmod>
-    <priority>0.9</priority>
-  </url>
 </urlset>`;
     
     return new Response(fallback, {
       headers: {
         'Content-Type': 'application/xml; charset=utf-8',
-        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Cache-Control': 'no-cache',
       },
     });
   }
 }
 
-// ---- Helper Functions ----
+// ---- 🔥 DYNAMIC HELPER FUNCTIONS ----
 
-function getToolRoutes() {
-  try {
-    if (!Array.isArray(toolsData)) return [];
-    
-    return toolsData
-      .filter((t) => t?.slug)
-      .map((tool) => {
-        const lastmod = tool?.updatedAt || tool?.publishedAt || new Date();
-        
-        return {
-          url: `/tools/${tool.slug}`,
-          lastmod: isValidDate(lastmod) ? toISO(lastmod) : toISO(new Date()),
-          priority: 0.8,
-          changefreq: 'weekly',
-        };
+// 🔥 Get Pricing Pages with Pagination
+// URLs: /free, /free?page=2, /freemium, /freemium?page=2, etc.
+async function getPricingPaginationRoutes() {
+  const pricingTypes = [
+    { path: '/free', query: { pricingType: { $regex: /^free$/i } } },
+    { path: '/freemium', query: { pricingType: { $regex: /^freemium$/i } } },
+    { path: '/paid', query: { pricingType: { $regex: /^paid$/i } } },
+    { path: '/free-trial', query: { pricingType: { $regex: /^free[- ]?trial$/i } } },
+  ];
+
+  const routes = [];
+  const limit = 12; // Tools per page
+
+  for (const { path, query } of pricingTypes) {
+    try {
+      const count = await Tool.countDocuments(query);
+      const totalPages = Math.ceil(count / limit);
+      const maxPages = Math.min(totalPages, 30); // Index first 30 pages
+
+      // Base page (no query param)
+      routes.push({
+        url: path,
+        lastmod: toISO(new Date()),
+        priority: 0.9,
+        changefreq: 'daily',
       });
+
+      // Paginated pages: /free?page=2, /free?page=3, etc.
+      for (let i = 2; i <= maxPages; i++) {
+        routes.push({
+          url: `${path}?page=${i}`,
+          lastmod: toISO(new Date()),
+          priority: 0.85 - (i * 0.01), // Decreasing priority
+          changefreq: 'weekly',
+        });
+      }
+    } catch (err) {
+      console.error(`Error counting ${path}:`, err);
+    }
+  }
+
+  return routes;
+}
+
+// 🔥 Get Browse Tools Pagination
+// URLs: /browse-tools/page/2, /browse-tools/page/3, etc.
+async function getBrowsePaginationRoutes() {
+  try {
+    const totalTools = await Tool.countDocuments({});
+    const totalPages = Math.ceil(totalTools / 24); // 24 tools per page
+    const maxPages = Math.min(totalPages, 50); // Index first 50 pages
+    
+    const routes = [];
+    for (let i = 2; i <= maxPages; i++) {
+      routes.push({
+        url: `/browse-tools/page/${i}`,
+        lastmod: toISO(new Date()),
+        priority: 0.8 - (i * 0.01), // Decreasing priority
+        changefreq: 'daily',
+      });
+    }
+    
+    return routes;
   } catch {
     return [];
   }
 }
 
+// 🔥 Get All Tools from MongoDB
+// URLs: /tools/chatgpt, /tools/midjourney, etc.
+async function getToolRoutesFromDB() {
+  try {
+    const tools = await Tool.find({})
+      .select('slug updatedAt createdAt rating')
+      .lean();
+    
+    if (!Array.isArray(tools)) return [];
+    
+    return tools
+      .filter((t) => t?.slug)
+      .map((tool) => {
+        const lastmod = tool.updatedAt || tool.createdAt || new Date();
+        // Higher priority for highly-rated tools
+        const priority = tool.rating >= 4.5 ? 0.85 : 0.8;
+        
+        return {
+          url: `/tools/${tool.slug}`,
+          lastmod: toISO(lastmod),
+          priority,
+          changefreq: 'weekly',
+        };
+      });
+  } catch (err) {
+    console.error('Error fetching tool routes:', err);
+    return [];
+  }
+}
+
+// 🔥 Get Blog Posts from Sanity
 async function getBlogRoutes() {
   try {
     const posts = await getAllPosts();
@@ -168,11 +268,11 @@ async function getBlogRoutes() {
         const slug = typeof post?.slug === 'string' ? post.slug : post?.slug?.current;
         if (!slug) return null;
         
-        const lastmod = post?.updatedAt || post?.publishedAt || new Date();
+        const lastmod = post.updatedAt || post.publishedAt || new Date();
         
         return {
           url: `/blog/${slug}`,
-          lastmod: isValidDate(lastmod) ? toISO(lastmod) : toISO(new Date()),
+          lastmod: toISO(lastmod),
           priority: 0.8,
           changefreq: 'monthly',
         };
@@ -183,67 +283,119 @@ async function getBlogRoutes() {
   }
 }
 
-function getCategoryRoutes(toolRoutes) {
+// 🔥 Get Categories from MongoDB
+// URLs: /categories/ai-writing, /categories/design, etc.
+async function getCategoryRoutesFromDB() {
   try {
-    if (!Array.isArray(toolsData)) return [];
+    const categories = await Tool.distinct('categories');
     
-    const catMap = new Map();
+    if (!Array.isArray(categories)) return [];
     
-    const catSlug = (txt) =>
-      txt
+    const routes = [];
+    
+    for (const category of categories) {
+      if (!category || typeof category !== 'string') continue;
+      
+      // Get most recent tool in this category
+      const latestTool = await Tool.findOne({ categories: category })
+        .sort({ updatedAt: -1 })
+        .select('updatedAt')
+        .lean();
+      
+      const slug = category
         .toLowerCase()
         .trim()
-        .replace(/&/g, 'and')
+        .replace(/\s*&\s*/g, '-and-')
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/^-+|-+$/g, '');
-
-    for (const tool of toolsData) {
-      if (!Array.isArray(tool?.category)) continue;
       
-      const tLastmod = tool?.updatedAt || tool?.publishedAt || new Date();
+      if (!slug) continue;
       
-      for (const c of tool.category) {
-        if (typeof c !== 'string' || !c.trim()) continue;
-        const slug = catSlug(c);
-        if (!slug) continue;
-        
-        const current = catMap.get(slug);
-        
-        if (!current || (isValidDate(tLastmod) && new Date(tLastmod) > new Date(current))) {
-          catMap.set(slug, tLastmod);
-        }
-      }
+      routes.push({
+        url: `/categories/${slug}`,
+        lastmod: latestTool?.updatedAt ? toISO(latestTool.updatedAt) : toISO(new Date()),
+        priority: 0.85, // Categories are very important!
+        changefreq: 'daily',
+      });
     }
     
-    return Array.from(catMap.entries()).map(([slug, lastmod]) => ({
-      url: `/categories/${slug}`,
-      lastmod: isValidDate(lastmod) ? toISO(lastmod) : toISO(new Date()),
-      priority: 0.7,
-      changefreq: 'weekly',
-    }));
-  } catch {
+    return routes;
+  } catch (err) {
+    console.error('Error fetching category routes:', err);
     return [];
   }
 }
 
+// 🔥 Get Categories with Price Filters
+// URLs: /categories/ai-writing/free, /categories/design/paid, etc.
+async function getCategoryPriceRoutes() {
+  try {
+    const categories = await Tool.distinct('categories');
+    const priceFilters = ['free', 'freemium', 'paid', 'free-trial'];
+    
+    const routes = [];
+    
+    for (const category of categories) {
+      if (!category || typeof category !== 'string') continue;
+      
+      const slug = category
+        .toLowerCase()
+        .trim()
+        .replace(/\s*&\s*/g, '-and-')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+      
+      if (!slug) continue;
+      
+      // Add price filter combinations
+      for (const price of priceFilters) {
+        // Check if this combination has tools
+        const regex = price === 'free-trial' 
+          ? { $regex: /^free[- ]?trial$/i }
+          : { $regex: new RegExp(`^${price}$`, 'i') };
+        
+        const count = await Tool.countDocuments({
+          categories: category,
+          pricingType: regex,
+        });
+        
+        if (count > 0) {
+          routes.push({
+            url: `/categories/${slug}/${price}`,
+            lastmod: toISO(new Date()),
+            priority: 0.75,
+            changefreq: 'weekly',
+          });
+        }
+      }
+    }
+    
+    return routes;
+  } catch (err) {
+    console.error('Error fetching category price routes:', err);
+    return [];
+  }
+}
+
+// 🔥 Compare Pages (Static for now)
 function getCompareRoutes() {
-  // ONLY include pages that actually exist on your site
   const compareSlugs = [
-    'chatgpt-vs-bard',
     'chatgpt-vs-claude',
-    'chatgpt-vs-copilot',
+    'chatgpt-vs-bard',
     'midjourney-vs-dalle',
     'midjourney-vs-stable-diffusion',
+    'chatgpt-vs-copilot',
   ];
   
   return compareSlugs.map((slug) => ({
     url: `/compare/${slug}`,
     lastmod: toISO(new Date()),
-    priority: 0.6,
+    priority: 0.7,
     changefreq: 'monthly',
   }));
 }
 
+// 🔥 Remove Duplicates
 function dedupe(routes) {
   const out = [];
   const seen = new Set();

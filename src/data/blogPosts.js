@@ -25,8 +25,8 @@ const blogPosts = [
   },
   {
     slug: 'chatbot-pros-and-cons',
-    title: 'Chatbots Explained: Pros, Cons, and Must-Have Features',
-    excerpt: 'Explore the advantages and limitations of chatbots, along with key features to look for.',
+    title: 'ChatBots Explained: Pros, Cons, and Must-Have Features',
+    excerpt: 'Explore the advantages and limitations of ChatBots, along with key features to look for.',
     datePublished: '2025-07-26',
     author: 'Sohail Akhtar',
     component: ChatbotProsConsPost,

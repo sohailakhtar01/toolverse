@@ -32,7 +32,7 @@ export default function ToolSubmissionForm() {
     "AI Image Generation", "AI Investing", "AI OCR", "AI Recruiting",
     "AI Travel", "Affiliate Marketing", "Art & Creative Design",
     "B2B Marketing", "Business & Productivity", "Business Management",
-    "Business Research", "Chatbots & Virtual Companions", "Cloud Storage",
+    "Business Research", "ChatBots & Virtual Companions", "Cloud Storage",
     "Coding & Development", "Collaboration", "Contact Creation",
     "Content Creation", "CRM & Automation", "Customer Service",
     "Daily Life", "Design & Graphics", "Design & Media",

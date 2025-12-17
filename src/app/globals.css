@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 /* Fonts */
 .font-montserrat {
   font-family: var(--font-montserrat);
@@ -10,4 +9,23 @@
 html, body {
   font-family: var(--font-space-grotesk), sans-serif;
 }
+@layer utilities {
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 
+  .animate-scroll-left {
+    animation: scroll-left 30s linear infinite; /* Slowed down slightly for readability */
+    will-change: transform; /* hardware acceleration */
+  }
+
+  /* Pause animation when user hovers over the logos */
+  .animate-scroll-left:hover {
+    animation-play-state: paused;
+  }
+}

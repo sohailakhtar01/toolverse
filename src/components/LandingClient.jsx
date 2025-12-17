@@ -1,36 +1,35 @@
-'use client';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import tools from '@/data/tools';
-import Image from 'next/image';
-import ToolList from '@/components/ToolList';
-import {
-  Search, Star, Users, Eye, MessageCircle, Code, Palette, BarChart3, Headphones, Database, Globe, Zap, Heart, Wrench
-} from 'lucide-react';
+"use client";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import ToolList from "@/components/ToolList";
+import { Search, Star } from "lucide-react";
+import LeftScroll from "@/components/LeftScroll";
 
-export default function LandingClient() {
-  const [selectedCategory, setSelectedCategory] = useState('Featured');
+// ✅ FIX: Match prop names with what page.jsx sends[web:15][web:36]
+export default function LandingClient({ featuredTools = [], totalCount = 0, allCategories = [] }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = mobileMenuOpen ? 'hidden' : 'unset';
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "unset";
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [mobileMenuOpen]);
 
-  const filteredTools = useMemo(() => {
-    if (!tools || !Array.isArray(tools)) return [];
-    return selectedCategory === "Featured"
-      ? tools.filter((tool) => tool.isFeatured)
-      : tools.filter((tool) => (tool.category || []).includes(selectedCategory));
-  }, [selectedCategory]);
+  // ✅ Debug: Check what we received[web:15]
+  useEffect(() => {
+    console.log('🎯 LandingClient received:', {
+      featuredToolsCount: featuredTools.length,
+      totalCount: totalCount,
+      firstTool: featuredTools[0]?.name
+    });
+  }, [featuredTools, totalCount]);
 
   return (
-    <main className="relative min-h-screen   flex flex-col">
-      {/* Background Layer */}
+    <main className="relative min-h-screen flex flex-col bg-white">
+      {/* Background layer */}
       <div
-        className="absolute inset-0 rounded-br-full rounded-bl-full
+        className="absolute h-screen mt-18 inset-0 rounded-br-full rounded-bl-full
         bg-gradient-to-br from-white/10 to-transparent
         before:content-[''] before:absolute before:inset-0
         before:bg-[linear-gradient(to_right,rgba(255,105,180,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,105,180,0.15)_1px,transparent_1px)]
@@ -39,84 +38,103 @@ export default function LandingClient() {
         z-0 pointer-events-none"
       />
 
-
-
-      {/* Hero Section */}
+      {/* Hero section */}
       <section className="relative z-10 flex flex-col md:flex-row items-center justify-center min-h-screen px-6 lg:px-12 gap-10 pt-20">
+        <div className="absolute top-20 sm:top-20 left-1/2 transform -translate-x-1/2 z-20">
+          <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-xs sm:text-sm md:text-base font-medium shadow-sm">
+            🎯 Featured Tool Directory
+          </span>
+        </div>
 
-  {/* Top Badge - Centered */}
-  <div className="absolute top-20 sm:top-16 md:top-20 w-full flex justify-center z-20 px-2">
-  <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-purple-100 text-purple-700 rounded-full text-[10px] sm:text-xs md:text-sm font-medium shadow-sm text-center whitespace-nowrap">
-    🎯 Featured Tool Directory
-  </span>
-</div>
+        <div className="w-full md:w-1/2 text-center lg:ml-10 md:text-left flex flex-col justify-center mt-16 md:-mt-30">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-spaceGrotesk font-bold mb-6 leading-tight">
+            Discover the{" "}
+            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              Best AI Tools
+            </span>{" "}
+            for Your Business
+          </h1>
+
+          <p className="text-base sm:text-lg md:text-xl font-spaceGrotesk text-gray-600 max-w-xl mx-auto md:mx-0 mb-8">
+            Explore thousands of carefully curated digital tools, software, and services to grow your business.
+          </p>
+
+          <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-6 mx-auto md:mx-0 sm:gap-6">
+            <a
+              href="/browse-tools"
+              className="relative group flex items-center justify-center gap-2 px-8 py-3 font-spaceGrotesk font-semibold rounded-md shadow-sm text-white bg-gradient-to-r from-purple-500 to-pink-500 overflow-hidden transition-all duration-500 hover:scale-[1.02]"
+            >
+              <span className="absolute inset-0 bg-white scale-x-0 origin-center transform transition-transform duration-700 ease-in-out group-hover:scale-x-100 rounded-md -z-10"></span>
+              <span className="relative flex items-center gap-2 z-10 transition-colors duration-500 group-hover:text-black">
+                <Search size={18} />
+                Browse All AI Tools
+              </span>
+            </a>
+
+            <a
+              href="/featured"
+              className="relative group flex items-center justify-center gap-2 px-8 py-3 font-spaceGrotesk font-semibold rounded-md shadow-sm text-white bg-gradient-to-r from-purple-500 to-pink-500 overflow-hidden transition-all duration-500 hover:scale-[1.02]"
+            >
+              <span className="absolute inset-0 bg-white scale-x-0 origin-center transform transition-transform duration-700 ease-in-out group-hover:scale-x-100 rounded-md -z-10"></span>
+              <span className="relative flex items-center gap-2 z-10 transition-colors duration-500 group-hover:text-black">
+                <Star size={18} />
+                Featured Tools of the Week
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div className="w-full md:w-1/2 flex justify-center">
+          {/* ✅ Optimized Next.js Image[web:21] */}
+          <Image
+            src="/landing.png"
+            alt="AI Tools Illustration - Best AI Directory 2025"
+            width={1200}
+            height={800}
+            priority
+            quality={90}
+            placeholder="blur"
+            blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect width='1200' height='800' fill='%23f3e8ff'/%3E%3C/svg%3E"
+            className="w-[90%] mt-1 sm:mt-12 md:w-[80%] lg:w-[60%] h-auto object-contain drop-shadow-2xl mb-20"
+          />
+        </div>
+      </section>
 
 
-  {/* Left Content */}
-  <div className="w-full md:w-1/2 text-center lg:ml-10 md:text-left flex flex-col justify-center mt-16 md:-mt-30">
-    <h1 className="text-4xl  sm:text-5xl md:text-6xl font-spaceGrotesk font-bold mb-6 leading-tight">
-      Discover the{" "}
-      <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-        Best AI Tools
-      </span>{" "}
-      for Your Business
-    </h1>
+{/* Tools Section */}
+<section className="relative z-10 px-4 sm:px-6 lg:px-8 py-6 -mb-20 bg-white">
+  <div className="flex items-center gap-1 mb-12">
+    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
 
-    <p className="text-base sm:text-lg md:text-xl font-spaceGrotesk text-gray-600 max-w-xl mx-auto md:mx-0 mb-8">
-      Explore thousands of carefully curated digital tools, software, and services to grow your business.
-    </p>
+    <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-gray-200 shadow-sm">
+      <span className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></span>
+      <span className="text-sm font-spaceGrotesk font-medium text-gray-600">
+        Explore Tools
+      </span>
+    </div>
 
-    {/* Buttons */}
-   <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-6 mx-auto md:mx-0 sm:gap-6">
-  {/* Browse All Tools Button */}
-  <a
-    href="/browse-tools"
-    className="relative group flex items-center justify-center gap-2 px-8 py-3 font-spaceGrotesk font-semibold rounded-md shadow-sm text-white bg-gradient-to-r from-purple-500 to-pink-500 overflow-hidden transition-all duration-500 hover:scale-[1.02]"
-  >
-    {/* Hover White Background Layer */}
-    <span className="absolute inset-0 bg-white scale-x-0 origin-center transform transition-transform duration-700 ease-in-out group-hover:scale-x-100 rounded-md -z-10"></span>
-
-    <span className="relative flex items-center gap-2 z-10 transition-colors duration-500 group-hover:text-black">
-      <Search size={18} />
-      Browse All AI Tools
-    </span>
-  </a>
-
-  {/* Featured Tools Button */}
-  <a
-    href="/featured"
-    className="relative group flex items-center justify-center gap-2 px-8 py-3 font-spaceGrotesk font-semibold rounded-md shadow-sm text-white bg-gradient-to-r from-purple-500 to-pink-500 overflow-hidden transition-all duration-500 hover:scale-[1.02]"
-  >
-    {/* Hover White Background Layer */}
-    <span className="absolute inset-0 bg-white scale-x-0 origin-center transform transition-transform duration-700 ease-in-out group-hover:scale-x-100 rounded-md -z-10"></span>
-
-    <span className="relative flex items-center gap-2 z-10 transition-colors duration-500 group-hover:text-black">
-      <Star size={18} />
-      Featured Tools of the Week
-    </span>
-  </a>
-</div>
-
-
+    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
   </div>
+</section>
 
-  {/* Right Image */}
-  <div className="w-full md:w-1/2 flex justify-center">
-    <img
-      src="/landing.png"
-      alt="AI Tools Illustration"
-      width={1200}
-      height={800}
-      className="w-[90%] mt-1 sm:mt-12 md:w-[80%] lg:w-[60%] h-auto object-contain drop-shadow-2xl"
-    />
-  </div>
+{/* ✅ TOOLLIST SECTION - SHOWS 20 FEATURED TOOLS WITH SEARCH/FILTERS */}
+      <ToolList
+  tools={featuredTools}
+  allCategories={allCategories}
+  title="Browse AI Tools"
+  showSearch={true}
+  showFilters={true}
+  isLoading={false}
+/>
 
-  
-
-</section> 
-{/* Tools Section */} <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-16 bg-white"> <div className="flex items-center gap-1 mb-12"> <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div> <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-gray-200 shadow-sm"> <span className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></span> <span className="text-sm font-spaceGrotesk font-medium text-gray-600"> Explore Tools </span> </div> <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div> </div> <ToolList tools={tools} title="Browse AI Tools" showSearch={true} showFilters={true} /> </section>
-
-
-   </main>
+      {/* ✅ MOVED LEFTSCROLL HERE (Standard Layout) */}
+      <div className="mt-20 mb-20">
+        <p className="text-center text-gray-800 font-extrabold text-2xl font-spaceGrotesk mb-6 uppercase tracking-widest">
+          Trusted by top innovative companies
+        </p>
+        <LeftScroll />
+      </div>
+    </main>
+    
   );
 }

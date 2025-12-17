@@ -22,7 +22,7 @@ export const metadata = {
     'ai content tools',
     'ai image tools',
     'ai video tools',
-    'ai chatbots',
+    'ai ChatBots',
     'ai automation tools',
     'browse ai tools by category',
     'categorized ai tools',

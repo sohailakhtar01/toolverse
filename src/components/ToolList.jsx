@@ -1,243 +1,304 @@
-"use client"; // Ensures client-side rendering
-import { useRouter } from 'next/navigation';
-import React, { useState, useMemo } from 'react';
-import ToolCard from './ToolCard'; // Adjust path if needed
+"use client";
+import { useRouter, usePathname } from "next/navigation";
+import React, { useState, useMemo } from "react";
+import ToolCard from "./ToolCard";
 
-const ToolList = ({ tools, title = "Featured Tools", showSearch = true, showFilters = true }) => {
+const PRICING_PAGES = {
+  free: "/free",
+  freemium: "/freemium",
+  paid: "/paid",
+  "free trial": "/free-trial",
+};
+
+const ToolList = ({
+  tools = [],
+  allCategories = [],
+  title = "Browse AI Tools",
+  showSearch = true,
+  showFilters = true,
+  isLoading = false,
+}) => {
+
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [sortBy, setSortBy] = useState("rating");
-  const [viewMode, setViewMode] = useState("grid");
-  const router = useRouter();
+  const [selectedPricing, setSelectedPricing] = useState("");
 
-  const categories = useMemo(() => {
-    if (!Array.isArray(tools)) return [];
-    const cats = [...new Set(tools.flatMap(tool => tool.category || []))];
-    return cats.sort();
-  }, [tools]);
+  const router = useRouter();
+  const pathname = usePathname();
+  const categories = allCategories;
+  
 
   const filteredTools = useMemo(() => {
-    if (!tools || !Array.isArray(tools)) return [];
+    if (!Array.isArray(tools) || tools.length === 0) return [];
 
     let filtered = tools;
 
     if (searchTerm.trim() !== "") {
-      filtered = filtered.filter((tool) =>
-        tool.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        tool.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (tool.tags || []).some((tag) =>
-          tag.toLowerCase().includes(searchTerm.toLowerCase())
-        )
+      const term = searchTerm.toLowerCase();
+      filtered = filtered.filter(
+        (tool) =>
+          tool.name?.toLowerCase().includes(term) ||
+          tool.description?.toLowerCase().includes(term) ||
+          (tool.tags || []).some((tag) => tag.toLowerCase().includes(term))
       );
     }
 
     if (selectedCategory !== "all") {
       filtered = filtered.filter((tool) =>
-        (tool.category || []).includes(selectedCategory)
+        (tool.categories || []).includes(selectedCategory)
       );
     }
 
-    filtered.sort((a, b) => {
-      switch (sortBy) {
-        case "name":
-          return a.name.localeCompare(b.name);
-        case "rating":
-          return (parseFloat(b.rating) || 0) - (parseFloat(a.rating) || 0);
-        case "price":
-          if (a.price === "Free" && b.price !== "Free") return -1;
-          if (b.price === "Free" && a.price !== "Free") return 1;
-          return (a.price || "").localeCompare(b.price || "");
-        default:
-          return 0;
-      }
-    });
+    if (selectedPricing) {
+      const pricingLower = selectedPricing.toLowerCase();
+      filtered = filtered.filter(
+        (tool) => tool.pricingType?.toLowerCase() === pricingLower
+      );
+    }
+
+    filtered = [...filtered];
+
+   filtered.sort((a, b) => {
+  switch (sortBy) {
+    case "rating":
+      return (parseFloat(b.rating) || 0) - (parseFloat(a.rating) || 0);
+
+    case "az":
+      return (a.name || "").localeCompare(b.name || "");
+
+    case "za":
+      return (b.name || "").localeCompare(a.name || "");
+
+    case "pricing": {
+      const order = { free: 1, "free trial": 2, freemium: 3, paid: 4 };
+      return (order[a.pricingType?.toLowerCase()] || 99) - (order[b.pricingType?.toLowerCase()] || 99);
+    }
+
+    case "default":
+    default:
+      return 0;
+  }
+});
+
 
     return filtered;
-  }, [tools, searchTerm, selectedCategory, sortBy]);
+  }, [tools, searchTerm, selectedCategory, sortBy, selectedPricing]);
+
+  const isDisabled = isLoading;
 
   return (
-    <div className="w-full">
+    <section className="relative w-full py-16 px-3 sm:px-6 mt-20 bg-gradient-to-br from-white to-purple-100 rounded-t-[40px] shadow-lg overflow-hidden">
+      {/* Glow effects – unchanged */}
+      <div className="absolute -top-24 -left-24 w-72 h-72 bg-purple-600/100 rounded-full blur-[120px]"></div>
+      <div className="absolute -top-24 -right-24 w-72 h-72 bg-purple-600/100 rounded-full blur-[120px]"></div>
+      <div className="absolute -top-10 -left-10 w-60 h-60 bg-purple-500/30 rounded-full blur-[90px]"></div>
+      <div className="absolute -top-10 -right-10 w-60 h-60 bg-purple-500/30 rounded-full blur-[90px]"></div>
+
       {/* Header */}
-      <div className="mb-8">
-        <div className="flex font-spaceGrotesk flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-6">
-          <div>
-            <h2 className="text-3xl font-spaceGrotesk font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
-              {title}
-            </h2>
-            <p className="text-gray-600 font-spaceGrotesk">
-              Discover {filteredTools.length} amazing tools to boost your productivity
-            </p>
-          </div>
+      <div className="relative z-10 text-center px-3 mb-10">
+  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-spaceGrotesk leading-snug sm:leading-tight
+    text-white sm:bg-gradient-to-r sm:from-purple-600 sm:to-pink-600 sm:bg-clip-text sm:text-transparent drop-shadow-sm">
+    {title}
+  </h2>
+  
+  <p className="text-white sm:text-black mt-2 text-lg font-spaceGrotesk">
+    Discover 4000+ amazing tools to boost your productivity
+  </p>
+</div>
 
-          {/* View mode toggle */}
-          <div className="flex items-center gap-2 bg-gray-100 p-1 rounded-lg">
-            <button
-              onClick={() => setViewMode("grid")}
-              className={`p-2 rounded-md transition-all ${
-                viewMode === "grid"
-                  ? "bg-white cursor-pointer text-purple-600 shadow-sm"
-                  : "text-gray-500 cursor-pointer hover:text-gray-700"
-              }`}
-              aria-label="Grid view"
-            >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-              </svg>
-            </button>
-            <button
-              onClick={() => setViewMode("list")}
-              className={`p-2 rounded-md transition-all ${
-                viewMode === "list"
-                  ? "bg-white cursor-pointer text-purple-600 shadow-sm"
-                  : "text-gray-500 cursor-pointer hover:text-gray-700"
-              }`}
-              aria-label="List view"
-            >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 8a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 12a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 16a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" />
-              </svg>
-            </button>
-          </div>
-        </div>
 
-        {/* Search and Filters */}
-        {(showSearch || showFilters) && (
-          <div className="flex flex-col sm:flex-row gap-4 mb-6">
-            {showSearch && (
-              <div className="flex-1 relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <svg
-                    className="h-5 w-5 text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                  </svg>
-                </div>
-                <input
-                  type="text"
-                  placeholder="Search tools..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border-purple-500 border rounded-xl focus:border-2 focus:border-purple-500 outline-none transition-all"
-                  aria-label="Search tools"
-                />
-              </div>
-            )}
+      {/* Search, Filters & Pricing */}
+      <div className="relative z-10 flex flex-col sm:flex-row flex-wrap items-center justify-center sm:justify-between gap-4 sm:gap-6 p-4 sm:p-6 max-w-7xl mx-auto bg-white/60 backdrop-blur-md rounded-2xl shadow-sm">
+        {/* Search */}
+        {showSearch && (
+          <div className="relative w-full sm:flex-1 min-w-[240px] sm:min-w-[280px] sm:max-w-[420px]">
+  <input
+    type="text"
+    placeholder={isLoading ? "Loading tools..." : "Search over 4000+ AI tools"}
+    value={searchTerm}
+    onChange={(e) => !isDisabled && setSearchTerm(e.target.value)}
+    disabled={isDisabled}
+    className="w-full pl-4 pr-12 py-3 border border-gray-300 rounded-full 
+               focus:ring-2 focus:ring-purple-500 focus:border-purple-500 
+               outline-none transition text-gray-700 text-sm sm:text-base 
+               bg-white disabled:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
+  />
 
-            {showFilters && (
-              <div className="flex flex-col sm:flex-row gap-3">
-                <select
-                  value={selectedCategory}
-                  onChange={(e) => {
-                    const selected = e.target.value;
-                    setSelectedCategory(selected);
+  {/* Search Button */}
+  <button
+    type="button"
+    disabled={isDisabled}
+    className="absolute cursor-pointer right-1 top-1/2 -translate-y-1/2 
+               h-10 w-10 flex items-center justify-center 
+               rounded-full bg-gray-100 hover:bg-gray-200 transition
+               disabled:opacity-50 disabled:cursor-not-allowed"
+  >
+    <svg
+      className="h-5 w-5 text-gray-500"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+      />
+    </svg>
+  </button>
+</div>
 
-                    if (selected !== 'all') {
-                      const slug = selected
-                        .toLowerCase()
-                        .replace(/ & /g, '-and-')
-                        .replace(/\s+/g, '-');
-                      router.push(`/categories/${slug}`);
-                    }
-                  }}
-                  className="px-4 py-3 border cursor-pointer border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none bg-white min-w-[150px]"
-                  aria-label="Filter by category"
-                >
-                  <option value="all">All Categories</option>
-                  {categories.map((category) => (
-                    <option key={category} value={category}>{category}</option>
-                  ))}
-                </select>
-
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="px-4 py-3 cursor-pointer border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none bg-white min-w-[150px]"
-                  aria-label="Sort tools"
-                >
-                  <option value="rating">Sort by Rating</option>
-                  <option value="name">Sort by Name</option>
-                  <option value="price">Sort by Price</option>
-                </select>
-              </div>
-            )}
-          </div>
         )}
 
-        {/* Active Filters */}
-        {(searchTerm || selectedCategory !== "all") && (
-          <div className="flex flex-wrap items-center gap-2 mb-4">
-            <span className="text-sm text-gray-500">Active filters:</span>
-            {searchTerm && (
-              <span className="inline-flex items-center gap-1 px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">
-                Search: "{searchTerm}"
-                <button onClick={() => setSearchTerm("")} className="hover:text-purple-900">×</button>
-              </span>
-            )}
-            {selectedCategory !== "all" && (
-              <span className="inline-flex items-center gap-1 px-3 py-1 bg-pink-100 text-pink-700 text-sm rounded-full">
-                Category: {selectedCategory}
-                <button onClick={() => setSelectedCategory("all")} className="hover:text-pink-900 cursor-pointer">×</button>
-              </span>
-            )}
+        {/* Filters + Sort */}
+        <div className="flex flex-col sm:flex-row w-full sm:w-auto justify-center sm:justify-start items-center gap-3 sm:gap-4">
+          {showFilters && (
+            <select
+              value={selectedCategory}
+              onChange={(e) => {
+                if (isDisabled) return;
+                const selected = e.target.value;
+                document.body.style.cursor = "wait";
+
+                if (selected === "all") {
+                  router.push("/");
+                } else {
+                  const slug = selected
+                    .toLowerCase()
+                    .replace(/ & /g, "-and-")
+                    .replace(/\s+/g, "-");
+                  router.push(`/categories/${slug}`);
+                }
+
+                setTimeout(() => {
+                  document.body.style.cursor = "default";
+                }, 400);
+              }}
+              disabled={isDisabled}
+              className="w-full sm:w-auto px-4 py-3 border border-gray-300 rounded-xl cursor-pointer focus:ring-2 focus:ring-purple-500 outline-none bg-white text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              <option value="all">All Categories</option>
+              {categories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          )}
+
+          <select value={sortBy} onChange={(e) => !isDisabled && setSortBy(e.target.value)} disabled={isDisabled} className="w-full sm:w-auto px-4 py-3 border border-gray-300 rounded-xl cursor-pointer focus:ring-2 focus:ring-purple-500 outline-none bg-white text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50">
+  <option value="default">Sort by Default</option>
+  <option value="rating">Rating</option>
+  <option value="az">Alphabet A to Z</option>
+  <option value="za">Alphabet Z to A</option>
+  <option value="pricing">Pricing</option>
+</select>
+
+        </div>
+
+        {/* Pricing buttons – unchanged, only disabled during loading */}
+        <div className="flex flex-wrap justify-center sm:justify-end items-center gap-2 sm:gap-3 w-full sm:w-auto">
+          {["Free", "Freemium", "Paid", "Free Trial"].map((type) => {
+            const typeKey = type.toLowerCase();
+            const href = PRICING_PAGES[typeKey];
+            const isActive = pathname === href;
+
+            return (
+              <button
+                key={type}
+                onClick={() => !isDisabled && router.push(href)}
+                disabled={isDisabled}
+                className={`px-4 cursor-pointer py-2 rounded-full text-sm font-medium border transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50 ${
+                  isActive
+                    ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-md scale-105"
+                    : "bg-white text-gray-700 border-gray-200 hover:shadow-md hover:bg-purple-50 disabled:hover:bg-white"
+                }`}
+              >
+                {type}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Active filters – hidden while loading */}
+      {!isLoading && (searchTerm || selectedCategory !== "all" || selectedPricing) && (
+        <div className="flex flex-wrap justify-center gap-2 mt-6">
+          {searchTerm && (
+            <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm flex items-center gap-1">
+              Search: {searchTerm}
+              <button
+                onClick={() => setSearchTerm("")}
+                className="hover:text-purple-900"
+              >
+                ×
+              </button>
+            </span>
+          )}
+          {selectedCategory !== "all" && (
+            <span className="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm flex items-center gap-1">
+              {selectedCategory}
+              <button onClick={() => setSelectedCategory("all")}>×</button>
+            </span>
+          )}
+          {selectedPricing && (
+            <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm flex items-center gap-1">
+              {selectedPricing.charAt(0).toUpperCase() + selectedPricing.slice(1)}
+              <button onClick={() => setSelectedPricing("")}>×</button>
+            </span>
+          )}
+        </div>
+      )}
+
+      {/* Results */}
+      <div className="relative z-10 mt-12">
+        {isLoading ? (
+          // Skeletons with same layout → no CLS, good for Core Web Vitals[web:23][web:24]
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {Array.from({ length: 8 }).map((_, index) => (
+              <div
+                key={index}
+                className="animate-pulse bg-white rounded-2xl p-6 shadow-sm border border-gray-200"
+              >
+                <div className="w-20 h-20 bg-gray-200 rounded-2xl mb-4 mx-auto"></div>
+                <div className="h-6 bg-gray-200 rounded-lg mb-3 mx-auto w-3/4"></div>
+                <div className="h-4 bg-gray-200 rounded w-1/2 mx-auto mb-4"></div>
+                <div className="h-10 bg-gray-200 rounded-xl w-full"></div>
+              </div>
+            ))}
+          </div>
+        ) : filteredTools.length === 0 ? (
+          <div className="text-center py-16">
+            <h3 className="text-2xl font-semibold text-gray-800">No tools found</h3>
+            <p className="text-gray-500 mt-2">Try adjusting your filters</p>
+            <button
+              onClick={() => {
+                setSearchTerm("");
+                setSelectedCategory("all");
+                setSelectedPricing("");
+              }}
+              className="mt-4 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-medium hover:from-purple-600 hover:to-pink-600"
+            >
+              Clear Filters
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-8">
+            {filteredTools.map((tool, index) => (
+              <div
+                key={`${tool.slug}-${index}`}
+                className="animate-in slide-in-from-bottom-4 duration-300"
+                style={{ animationDelay: `${index * 40}ms` }}
+              >
+                <ToolCard tool={tool} />
+              </div>
+            ))}
           </div>
         )}
       </div>
-
-      {/* Results */}
-      {filteredTools.length === 0 ? (
-        <div className="text-center py-12">
-          <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-          </div>
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">No tools found</h3>
-          <p className="text-gray-600 mb-4">Try adjusting your search or filters</p>
-          <button
-            onClick={() => {
-              setSearchTerm("");
-              setSelectedCategory("all");
-            }}
-            className="px-6 cursor-pointer py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all font-medium"
-          >
-            Clear Filters
-          </button>
-        </div>
-      ) : (
-        <div
-          className={`${
-            viewMode === "grid"
-              ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-              : "flex flex-col gap-4"
-          } animate-in fade-in duration-300`}
-        >
-          {filteredTools.map((tool, index) => (
-            <div
-              key={`${tool.slug}-${index}`}
-              className="h-full flex flex-col animate-in slide-in-from-bottom-4 duration-300"
-              style={{ animationDelay: `${index * 50}ms` }}
-            >
-              <ToolCard tool={tool} viewMode={viewMode} />
-            </div>
-          ))}
-        </div>
-      )}
-
-      {/* Load More (disabled/commented) */}
-      {filteredTools.length > 0 && tools.length > filteredTools.length && (
-        <div className="text-center mt-12">
-          {/* Load more button could go here */}
-        </div>
-      )}
-    </div>
+    </section>
   );
 };
 
