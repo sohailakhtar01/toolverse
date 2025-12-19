@@ -1,12 +1,9 @@
+// components/LandingClient.jsx
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import ToolList from "@/components/ToolList";
 import { Search, Star } from "lucide-react";
-import LeftScroll from "@/components/LeftScroll";
-
-// ✅ FIX: Match prop names with what page.jsx sends[web:15][web:36]
-export default function LandingClient({ featuredTools = [], totalCount = 0, allCategories = [] }) {
+export default function LandingClient({ totalCount = 0 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -15,15 +12,6 @@ export default function LandingClient({ featuredTools = [], totalCount = 0, allC
       document.body.style.overflow = "unset";
     };
   }, [mobileMenuOpen]);
-
-  // ✅ Debug: Check what we received[web:15]
-  useEffect(() => {
-    console.log('🎯 LandingClient received:', {
-      featuredToolsCount: featuredTools.length,
-      totalCount: totalCount,
-      firstTool: featuredTools[0]?.name
-    });
-  }, [featuredTools, totalCount]);
 
   return (
     <main className="relative min-h-screen flex flex-col bg-white">
@@ -37,6 +25,8 @@ export default function LandingClient({ featuredTools = [], totalCount = 0, allC
         before:mask-image-[radial-gradient(ellipse_at_top_left,black_40%,transparent_80%)]
         z-0 pointer-events-none"
       />
+
+
 
       {/* Hero section */}
       <section className="relative z-10 flex flex-col md:flex-row items-center justify-center min-h-screen px-6 lg:px-12 gap-10 pt-20">
@@ -56,7 +46,7 @@ export default function LandingClient({ featuredTools = [], totalCount = 0, allC
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl font-spaceGrotesk text-gray-600 max-w-xl mx-auto md:mx-0 mb-8">
-            Explore thousands of carefully curated digital tools, software, and services to grow your business.
+            Explore {totalCount}+ carefully curated AI tools and software to grow your business.
           </p>
 
           <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-6 mx-auto md:mx-0 sm:gap-6">
@@ -84,15 +74,14 @@ export default function LandingClient({ featuredTools = [], totalCount = 0, allC
           </div>
         </div>
 
-        <div className="w-full md:w-1/2 flex justify-center">
-          {/* ✅ Optimized Next.js Image[web:21] */}
+        <div className="w-full mt-8 md:w-1/2 flex justify-center">
           <Image
             src="/landing.png"
             alt="AI Tools Illustration - Best AI Directory 2025"
             width={1200}
             height={800}
             priority
-            quality={90}
+            quality={100}
             placeholder="blur"
             blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect width='1200' height='800' fill='%23f3e8ff'/%3E%3C/svg%3E"
             className="w-[90%] mt-1 sm:mt-12 md:w-[80%] lg:w-[60%] h-auto object-contain drop-shadow-2xl mb-20"
@@ -100,41 +89,21 @@ export default function LandingClient({ featuredTools = [], totalCount = 0, allC
         </div>
       </section>
 
+      {/* Divider Section */}
+      <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-6 -mb-20 bg-white">
+        <div className="flex items-center gap-1 mb-12">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+          <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-gray-200 shadow-sm">
+            <span className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></span>
+            <span className="text-sm font-spaceGrotesk font-medium text-gray-600">
+              Explore Tools
+            </span>
+          </div>
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+        </div>
+      </section>
 
-{/* Tools Section */}
-<section className="relative z-10 px-4 sm:px-6 lg:px-8 py-6 -mb-20 bg-white">
-  <div className="flex items-center gap-1 mb-12">
-    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
 
-    <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-gray-200 shadow-sm">
-      <span className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></span>
-      <span className="text-sm font-spaceGrotesk font-medium text-gray-600">
-        Explore Tools
-      </span>
-    </div>
-
-    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-  </div>
-</section>
-
-{/* ✅ TOOLLIST SECTION - SHOWS 20 FEATURED TOOLS WITH SEARCH/FILTERS */}
-      <ToolList
-  tools={featuredTools}
-  allCategories={allCategories}
-  title="Browse AI Tools"
-  showSearch={true}
-  showFilters={true}
-  isLoading={false}
-/>
-
-      {/* ✅ MOVED LEFTSCROLL HERE (Standard Layout) */}
-      <div className="mt-20 mb-20">
-        <p className="text-center text-gray-800 font-extrabold text-2xl font-spaceGrotesk mb-6 uppercase tracking-widest">
-          Trusted by top innovative companies
-        </p>
-        <LeftScroll />
-      </div>
     </main>
-    
   );
 }

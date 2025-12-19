@@ -33,11 +33,11 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="py-1 bg-white relative z-10">
+    <section className="py-1 bg-white relative z-10 mt-10" >
       <div className="max-w-4xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          
+
           <h2 className="text-3xl md:text-4xl font-spaceGrotesk font-bold text-gray-900 mb-4">
             Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Questions</span>
           </h2>
@@ -49,8 +49,8 @@ export default function FaqSection() {
         {/* Accordion */}
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'bg-purple-50/50 border-purple-200 shadow-sm' : 'bg-white hover:border-purple-200'}`}
             >
               <button
@@ -64,8 +64,8 @@ export default function FaqSection() {
                   <ChevronDown size={20} />
                 </span>
               </button>
-              
-              <div 
+
+              <div
                 className={`transition-all duration-300 ease-in-out overflow-hidden ${openIndex === index ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}
               >
                 <div className="p-6 pt-0 text-gray-600 leading-relaxed">

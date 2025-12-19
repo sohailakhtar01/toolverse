@@ -22,11 +22,16 @@ const ToolCard = ({ tool, viewMode = 'grid' }) => {
     <div
       onClick={() => router.push(`/tools/${tool.slug}`)}
       className={`
-        group relative bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col justify-between cursor-pointer
-        transition-all duration-200 hover:shadow-md hover:border-purple-200
-        ${viewMode === 'list' ? 'flex-row items-center gap-6' : 'h-full'}
-      `}
+  group relative bg-white rounded-xl border border-gray-100 p-6
+  flex flex-col justify-between cursor-pointer
+  transition-transform transition-shadow duration-300 ease-out
+  hover:scale-[1.02] hover:-translate-y-2 hover:shadow-xl
+  hover:border-purple-200
+  ${viewMode === 'list' ? 'flex-row items-center gap-6' : 'h-full'}
+`}
+
     >
+
       {/* PRICING + RATING */}
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
@@ -35,8 +40,8 @@ const ToolCard = ({ tool, viewMode = 'grid' }) => {
               inline-block w-4 h-2 rounded-full
               ${tool.pricingType === 'free' ? 'bg-green-500' :
                 tool.pricingType === 'freemium' ? 'bg-orange-500' :
-                tool.pricingType === 'paid' ? 'bg-red-500' :
-                'bg-purple-500'}
+                  tool.pricingType === 'paid' ? 'bg-red-500' :
+                    'bg-purple-500'}
             `}
           ></span>
           <span className="text-sm font-medium text-gray-800">{pricing.label}</span>
@@ -51,21 +56,26 @@ const ToolCard = ({ tool, viewMode = 'grid' }) => {
       </div>
 
       {/* LOGO + NAME */}
-      
- <div className="flex items-center justify-center gap-3 mb-4">
-    <img
-      src={tool.logo || tool.image}
-      alt={tool.name}
-      className="w-10 h-10 rounded-lg object-cover bg-gray-100 flex-shrink-0"
-    />
-    <h3
-      className="relative inline-block text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
-      title={tool.name}
-    >
-      {tool.name}
-      <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md origin-left"></span>
-    </h3>
-  </div>
+
+      <div className="flex items-center justify-center gap-3 mb-4">
+        <img
+          src={tool.logo || tool.image}
+          alt={tool.name}
+          className="
+    w-10 h-10 rounded-lg object-cover bg-gray-100 flex-shrink-0
+    transition-transform duration-300
+    group-hover:scale-110
+  "
+        />
+
+        <h3
+          className="relative inline-block text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
+          title={tool.name}
+        >
+          {tool.name}
+          <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md origin-left"></span>
+        </h3>
+      </div>
 
       {/* DESCRIPTION */}
       <p className="text-gray-600 text-sm mb-7 mt-4 line-clamp-2 min-h-[38px]">

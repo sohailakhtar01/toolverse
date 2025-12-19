@@ -7,7 +7,7 @@ const FAQClient = ({ faqs }) => {
   const [expandedFaq, setExpandedFaq] = useState(null);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 ">
       {faqs.map((faq, index) => (
         <div key={index} className="bg-gray-50 rounded-xl overflow-hidden">
           <button

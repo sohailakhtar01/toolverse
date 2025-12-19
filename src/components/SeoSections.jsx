@@ -10,7 +10,7 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", 
 export function HeroSection({ heroData }) {
   return (
     <section className="relative py-24 text-gray-900 overflow-hidden">
-      
+
       <div className="relative max-w-6xl mx-auto px-5 text-center">
 
         {/* small label */}
@@ -44,7 +44,7 @@ export function HeroSection({ heroData }) {
 
         {/* CTA */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          
+
           <Link
             href="#tools"
             className={`${montserrat.className} px-6 py-3 bg-purple-600 text-white font-medium text-base rounded-lg shadow-md hover:bg-purple-700 transition`}
@@ -153,7 +153,7 @@ export function FAQSection({ faqs }) {
       <div className="max-w-3xl mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className={`${spaceGrotesk.className} text-3xl font-semibold text-gray-900 mb-2`}>
-            FAQs    
+            FAQs
           </h2>
           <p className={`${montserrat.className} text-lg text-gray-600`}>
             Quick answers to common questions
