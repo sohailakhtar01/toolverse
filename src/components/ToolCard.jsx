@@ -24,7 +24,7 @@ const ToolCard = ({ tool, viewMode = 'grid' }) => {
       className={`
   group relative bg-white rounded-xl border border-gray-100 p-6
   flex flex-col justify-between cursor-pointer
-  transition-transform transition-shadow duration-300 ease-out
+  transition-transform  duration-300 ease-out
   hover:scale-[1.02] hover:-translate-y-2 hover:shadow-xl
   hover:border-purple-200
   ${viewMode === 'list' ? 'flex-row items-center gap-6' : 'h-full'}
@@ -83,20 +83,38 @@ const ToolCard = ({ tool, viewMode = 'grid' }) => {
       </p>
 
       {/* CATEGORIES */}
-      <div className="flex flex-wrap gap-2 justify-center mb-5">
-        {(tool.categories || []).map((category) => (
-          <button
-            key={category}
-            onClick={(e) => {
-              e.stopPropagation();
-              router.push(`/categories/${category.toLowerCase()}`);
-            }}
-            className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full whitespace-nowrap hover:bg-purple-100 hover:text-purple-700 transition"
-          >
-            #{category}
-          </button>
-        ))}
-      </div>
+      {/* CATEGORIES */}
+<div className="flex flex-wrap gap-2 justify-center mb-5">
+  {(tool.categories || []).slice(0, 2).map((category) => {
+    const slug = category
+      .toLowerCase()
+      .trim()
+      .replace(/ & /g, "-and-")
+      .replace(/\s+/g, "-");
+
+    return (
+      <button
+        key={category}
+        onClick={(e) => {
+          e.stopPropagation();
+          router.push(`/categories/${slug}`);
+        }}
+        className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full whitespace-nowrap hover:bg-purple-100 hover:text-purple-700 transition"
+      >
+        #{category}
+      </button>
+    );
+  })}
+
+  {/* +MORE COUNT */}
+  {(tool.categories?.length || 0) > 2 && (
+    <span className="px-3 py-1 bg-gray-200 text-gray-600 text-xs rounded-full">
+      +{tool.categories.length - 2}
+    </span>
+  )}
+</div>
+
+
 
       {/* VISIT BUTTON */}
       <div className="flex justify-center items-center mt-auto">

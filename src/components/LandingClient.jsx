@@ -17,7 +17,7 @@ export default function LandingClient({ totalCount = 0 }) {
     <main className="relative min-h-screen flex flex-col bg-white">
       {/* Background layer */}
       <div
-        className="absolute h-screen mt-18 inset-0 rounded-br-full rounded-bl-full
+        className="absolute h-screen mt-16 inset-0 rounded-br-full rounded-bl-full
         bg-gradient-to-br from-white/10 to-transparent
         before:content-[''] before:absolute before:inset-0
         before:bg-[linear-gradient(to_right,rgba(255,105,180,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,105,180,0.15)_1px,transparent_1px)]

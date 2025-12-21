@@ -317,51 +317,125 @@ export default async function HomePage() {
         </div>
 
         {/* CTA Section */}
-        <div className="max-w-5xl mt-10 mx-auto relative px-4">
-          <div className="bg-white rounded-3xl p-8 md:p-16 text-center shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)] border border-gray-100 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-              <div className="absolute top-0 right-0 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl -mr-20 -mt-20"></div>
-              <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-600/5 rounded-full blur-3xl -ml-20 -mb-20"></div>
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-            </div>
+       <div className="max-w-6xl mt-16 mx-auto relative px-4 sm:px-6 lg:px-8">
+  
+  {/* Professional Background with Grid */}
+  <div className="relative">
+    
+    {/* Multi-layer Background */}
+    <div className="absolute inset-0 -z-10 rounded-[2.5rem] overflow-hidden">
+      {/* Soft gradient base */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-50/60 via-pink-50/40 to-indigo-50/50" />
+      
+      {/* Main grid pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e0e7ff_1px,transparent_1px),linear-gradient(to_bottom,#e0e7ff_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-50" />
+      
+      {/* Dot overlay for texture */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#c7d2fe_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-25" />
+      
+      {/* Subtle radial accents */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-pink-200/20 rounded-full blur-3xl" />
+    </div>
 
-            <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-100 rounded-full text-sm font-medium mb-8 text-purple-700">
-                <Sparkles size={14} className="text-purple-600" />
-                <span>Join the AI Revolution</span>
+    {/* Main Card */}
+    <div className="relative bg-white/85 backdrop-blur-xl rounded-3xl 
+      p-8 sm:p-12 lg:p-16 text-center 
+      shadow-[0_20px_60px_rgba(139,92,246,0.1)] 
+      border border-indigo-100/60
+      transition-all duration-500">
+      
+      {/* Inner Grid Pattern */}
+      <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10">
+        
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 
+          bg-gradient-to-r from-purple-50 to-pink-50 
+          border border-purple-200/50 rounded-full 
+          text-sm font-medium mb-6
+          text-purple-700">
+          <Sparkles size={15} className="text-purple-600" />
+          <span>Join the AI Revolution</span>
+        </div>
+
+        {/* Heading */}
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight">
+          <span className="text-gray-900">
+            Ready to Supercharge Your
+          </span>
+          <br />
+          <span className="inline-block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700">
+            Workflow with AI?
+          </span>
+        </h2>
+
+        {/* Description */}
+        <p className="text-gray-600 text-base sm:text-lg lg:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
+          Join thousands of founders, developers, and creators discovering the latest AI tools daily on Toolsverse.
+        </p>
+
+        {/* Simple Professional Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          
+          {/* Primary Button - Clean & Simple */}
+          <Link
+            href="/browse-tools"
+            className="group w-full sm:w-auto px-7 py-3.5 
+              bg-gradient-to-r from-purple-600 to-pink-600 
+              text-white text-base font-semibold rounded-xl
+              hover:from-purple-700 hover:to-pink-700
+              shadow-md hover:shadow-lg
+              transition-all duration-200
+              flex items-center justify-center gap-2"
+          >
+            Browse All Tools
+            <ArrowRight size={18} className="group-hover:translate-x-0.5 transition-transform duration-200" />
+          </Link>
+
+          {/* Secondary Button - Clean & Simple */}
+          <Link
+            href="/submit-tool"
+            className="group w-full sm:w-auto px-7 py-3.5 
+              bg-white border border-gray-300 
+              text-gray-700 text-base font-semibold rounded-xl 
+              hover:bg-gray-50 hover:border-gray-400
+              shadow-sm hover:shadow
+              transition-all duration-200
+              flex items-center justify-center gap-2"
+          >
+            <Rocket size={18} className="text-gray-500" />
+            Submit Your Tool
+          </Link>
+        </div>
+
+        {/* Social Proof - Clean Stats */}
+        <div className="mt-10 pt-8 border-t border-gray-200/50">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm">
+            <div className="flex items-center gap-2 text-gray-600">
+              <div className="flex -space-x-1.5">
+                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 border-2 border-white shadow-sm" />
+                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-indigo-400 to-purple-400 border-2 border-white shadow-sm" />
+                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-pink-400 to-purple-400 border-2 border-white shadow-sm" />
               </div>
-
-              <h2 className="text-3xl md:text-5xl font-spaceGrotesk font-bold mb-6 leading-tight text-gray-900">
-                Ready to Supercharge Your <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
-                  Workflow with AI?
-                </span>
-              </h2>
-
-              <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-                Join thousands of founders, developers, and creators discovering the latest AI tools daily on Toolsverse.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="/browse-tools"
-                  className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-2xl hover:shadow-lg hover:shadow-purple-500/20 transition-all transform flex items-center justify-center gap-2"
-                >
-                  Browse All Tools
-                  <ArrowRight size={18} />
-                </Link>
-
-                <Link
-                  href="/submit-tool"
-                  className="w-full sm:w-auto px-8 py-4 bg-white border border-gray-200 text-gray-700 font-bold rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all flex items-center justify-center gap-2"
-                >
-                  <Rocket size={18} className="text-gray-500" />
-                  Submit Your Tool
-                </Link>
-              </div>
+              <span className="font-medium text-gray-700">10,000+ users</span>
             </div>
+            <span className="hidden sm:inline text-gray-300">•</span>
+            <span className="font-medium text-gray-600">4,000+ AI Tools</span>
+            <span className="hidden sm:inline text-gray-300">•</span>
+            <span className="font-medium text-gray-600">Updated Daily</span>
           </div>
         </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
       </main>
     </>
   );

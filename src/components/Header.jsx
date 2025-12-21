@@ -55,6 +55,13 @@ const Header = () => {
     Home
     <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
   </Link>
+  <Link
+    href="/free"
+    className="group font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors"
+  >
+    Free AI Solutions
+    <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
+  </Link>
 
   {/* Free AI Tools with Dropdown */}
   {/* <div className="relative group">
@@ -202,6 +209,9 @@ const Header = () => {
 <nav className="flex flex-col space-y-2 flex-grow">
   <Link href="/" onClick={() => setIsOpen(false)} className="px-3 font-spaceGrotesk py-2 text-xl text-gray-700 hover:text-purple-600 transition-colors">
     Home
+  </Link>
+  <Link href="/free" onClick={() => setIsOpen(false)} className="px-3 font-spaceGrotesk py-2 text-xl text-gray-700 hover:text-purple-600 transition-colors">
+   Free AI Solutions
   </Link>
 
   {/* Free AI Tools Dropdown */}

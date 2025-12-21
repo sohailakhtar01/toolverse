@@ -104,15 +104,6 @@ const teamMembers = [
     previousWork: "Student Innovator, Team SARK"
   },
   {
-    name: "Priya Patel",
-    role: "Head of Content & Curation", 
-    image: "/priya.jpg",
-    bio: "Content strategist with deep expertise in evaluating SaaS tools. Ensures every tool in our directory meets quality standards for Indian businesses.",
-    expertise: ["Content Strategy", "Tool Analysis", "Technical Writing"],
-    education: "NIT Surat, Information Technology",
-    previousWork: "Ex-Zomato, Ex-Razorpay"
-  },
-  {
   name: "Sameer Akhtar",
   role: "E-mail Marketing Expert",
   image: "/sameer.jpg",
@@ -566,7 +557,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
   {teamMembers.map((member, index) => (
     <article
       key={index}
