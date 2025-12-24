@@ -3,6 +3,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { notFound } from "next/navigation";
 import dbConnect from "@/lib/mongodb";
 import Tool from "@/models/Tool";
+import { ExpandableStatsRow } from '@/components/StatsCards';
 
 import { Metadata } from "next";
 import {
@@ -10,6 +11,17 @@ import {
   Share2, Bookmark, ArrowRight, ChevronRight, Mail,
   Award, Zap, Clock, DollarSign, TrendingUp, Eye
 } from "lucide-react";
+
+function getPriceBadgeStyle(pricingType) {
+  const styles = {
+    'Free': 'bg-emerald-50 text-emerald-700 border-emerald-300 hover:bg-emerald-100 hover:border-emerald-400',
+    'Freemium': 'bg-blue-50 text-blue-700 border-blue-300 hover:bg-blue-100 hover:border-blue-400',
+    'Paid': 'bg-purple-50 text-purple-700 border-purple-300 hover:bg-purple-100 hover:border-purple-400',
+    'Free Trial': 'bg-amber-50 text-amber-700 border-amber-300 hover:bg-amber-100 hover:border-amber-400',
+    'free': 'bg-emerald-50 text-emerald-700 border-emerald-300 hover:bg-emerald-100 hover:border-emerald-400',
+  };
+  return styles[pricingType] || 'bg-gray-50 text-gray-700 border-gray-300 hover:bg-gray-100 hover:border-gray-400';
+}
 
 // Enhanced static generation with ISR
 // Revalidate every hour (adjust as you like)
@@ -43,7 +55,6 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  // Safe fallbacks
   const categories =
     Array.isArray(tool.categories) && tool.categories.length > 0
       ? tool.categories
@@ -61,48 +72,30 @@ export async function generateMetadata({ params }) {
     tool.description ||
     "";
 
-  const descForMeta = baseDescription.slice(0, 140);
+  const descForMeta = baseDescription.slice(0, 155);
 
-  const dynamicKeywords = [
-    `${tool.name} review 2025`,
-    `${tool.name} alternative`,
-    `${tool.name} vs competitors`,
-    `${tool.name} pricing`,
-    `${tool.name} features`,
-    `${tool.name} tutorial`,
-    `${tool.name} discount`,
-    `${tool.name} free trial`,
-    `best ${categories[0]} AI tool`,
-    `${categories[0]} AI tools`,
-    `free AI ${categories[0]} tools`,
-    `${tool.name} user reviews`,
-    `${tool.name} pros and cons`,
-    `how to use ${tool.name}`,
-    `${tool.name} for business`,
-    `${tool.name} for beginners`,
-    ...tags.map((tag) => `${tag} AI tool`),
-    ...categories.flatMap((cat) => [`${cat} tools`, `best ${cat} software`]),
-  ];
+  // Prefer per-tool SEO from Mongo JSON
+  const fallbackTitle = `${tool.name} Review (${new Date().getFullYear()}): Features, Pricing & Rating`;
+  const title = tool.seo && tool.seo.metaTitle ? tool.seo.metaTitle : fallbackTitle;
 
-  const title = `${tool.name} Review 2025: Features, Pricing & ${
-    tool.rating ? `${tool.rating}⭐ Rating` : "User Reviews"
-  } | TheToolsVerse`;
-
-  const description = `${tool.name} Complete Review ✅ ${descForMeta}... ⭐ ${
-    tool.rating || "User"
-  } Rating 💰 ${tool.pricingType || "Flexible"} 🔥 ${categories.join(
-    ", "
-  )} | Compare features, pricing & alternatives.`;
+  const fallbackDescription = `${tool.name} review for ${categories[0]}: features, pricing, pros & cons, and who should use it.`;
+  const description =
+    tool.seo && tool.seo.metaDescription
+      ? tool.seo.metaDescription
+      : fallbackDescription;
 
   return {
     title,
     description,
-    keywords: dynamicKeywords.join(", "),
     openGraph: {
-      title: `${tool.name} - Complete AI Tool Review & Analysis`,
-      description: `Discover ${tool.name}: Features, Pricing, Pros & Cons. ${
-        tool.rating ? `${tool.rating}⭐ rated` : "Highly rated"
-      } ${categories[0]} AI tool.`,
+      title:
+        tool.seo && tool.seo.metaTitle
+          ? tool.seo.metaTitle
+          : `${tool.name} - Features, Pricing & Review`,
+      description:
+        tool.seo && tool.seo.metaDescription
+          ? tool.seo.metaDescription
+          : `${descForMeta}... Learn use cases, pros & cons, and alternatives.`,
       images: [
         {
           url: tool.logo,
@@ -118,10 +111,14 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${tool.name} Review: ${
-        tool.rating ? `${tool.rating}⭐` : "Top Rated"
-      } AI Tool`,
-      description: `${descForMeta}... | ${tool.pricingType || "Flexible"} | TheToolsVerse`,
+      title:
+        tool.seo && tool.seo.metaTitle
+          ? tool.seo.metaTitle
+          : `${tool.name} Review & Pricing`,
+      description:
+        tool.seo && tool.seo.metaDescription
+          ? tool.seo.metaDescription
+          : `${descForMeta}... Compare features, pricing, and alternatives.`,
       images: [tool.logo],
       creator: "@thetoolsverse",
       site: "@thetoolsverse",
@@ -144,15 +141,17 @@ export async function generateMetadata({ params }) {
       "article:author": "TheToolsVerse Editorial Team",
       "article:section": categories[0],
       "article:tag": tags.join(","),
-      "article:published_time": "2024-01-01T00:00:00Z",
+      "article:published_time":
+        tool.publishedAt && tool.publishedAt.toISOString
+          ? tool.publishedAt.toISOString()
+          : "2024-01-01T00:00:00Z",
       "article:modified_time": new Date().toISOString(),
-      "og:see_also": `https://www.thetoolsverse.com/category/${categories[0]
+      "og:see_also": `https://www.thetoolsverse.com/categories/${categories[0]
         .toLowerCase()
         .replace(/\s+/g, "-")}`,
     },
   };
 }
-
 
 export default async function ToolDetailPage({ params }) {
   await dbConnect();
@@ -169,6 +168,7 @@ export default async function ToolDetailPage({ params }) {
     description: toolDoc.longDescription || toolDoc.shortDescription || "",
     faqs: toolDoc.faqs || [],
   };
+    const effectiveRating = tool.rating || null;
 
   if (!tool) {
     return notFound();
@@ -353,27 +353,41 @@ const alternatives = await Tool.find(
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
         
         {/* Enhanced Header with Rich Breadcrumbs */}
-        <header className="bg-white mt-20 w-full ">
-  <div className="max-w-7xl mx-auto px-4 py-2">
-    <Breadcrumbs
-      items={[
-        { name: 'Home', path: '/' },
-        { name: 'AI Tools', path: '/browse-tools' },
-        {
-          name: tool.categories[0],
-          path: `/categories/${tool.categories[0]
-            .toLowerCase()
-            .replace(/\s+/g, '-')}`,
-        },
-        { name: tool.name, path: `/tools/${tool.slug}` },
-      ]}
-    />
+       <header className="bg-gradient-to-r from-slate-50 via-white to-blue-50/30 mt-12  w-full border-b border-gray-100 shadow-sm">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div className="flex items-center top-10 justify-between">
+      {/* Breadcrumbs with Professional Styling */}
+      <div className="flex-1">
+        <Breadcrumbs
+          items={[
+            { name: 'Home', path: '/' },
+            { name: 'AI Tools', path: '/browse-tools' },
+            {
+              name: tool.categories[0],
+              path: `/categories/${tool.categories[0]
+                .toLowerCase()
+                .replace(/\s+/g, '-')}`,
+            },
+            { name: tool.displayName, path: `/tools/${tool.slug}` },
+          ]}
+        />
+      </div>
+      
+      {/* Optional: Last Updated Badge */}
+      <div className="hidden md:flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-100 rounded-full">
+        <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+        <span className="text-xs font-medium text-blue-700">
+          Updated {new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+        </span>
+      </div>
+    </div>
   </div>
 </header>
 
 
+
         {/* Main Content Container */}
-        <main className="max-w-full -mt-12  mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+        <main className="max-w-full -mt-12 bg-white  mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
             
             {/* Left Column - Main Content (3/4 width) */}
@@ -382,274 +396,170 @@ const alternatives = await Tool.find(
               {/* Hero Section with Tool Header */}
               <article className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
                 {/* /////////////////// */}
-                <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-6 text-white">
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                    <div className="flex-shrink-0">
-                     <img 
-                      src={tool.logo} 
-                      alt={`${tool.name} logo`}
-                      className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl shadow-3xl object-cover bg-white"
-                      loading="lazy"
-                      width="128"
-                      height="128"
-                    />
-                      {/* /////////////////// */}
-                    </div>
-                    <div className="flex-1">
-                      <h1 className="text-3xl sm:text-5xl font-bold mb-4 leading-tight">
-                        {tool.name} Review 2025
-                      </h1>
-                      <p className="text-md sm:text-xl text-blue-100 mb-4 leading-relaxed">
-                        {tool.description}
-                      </p>
-                      {/* ////////////////// */}
-                      {/* Enhanced Badge System - Mobile First Approach */}
-<div className="w-full">
-  {/* Mobile Layout - Stacked vertically */}
-  <div className="flex flex-col gap-3 sm:hidden">
+                {/* Hero Section - Professional & Clean */}
+{/* Hero Section - Professional with Grid Pattern */}
+<div className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50/30 border-b border-gray-100 overflow-hidden">
+  
+  {/* Grid Pattern Background */}
+  <div className="absolute inset-0 opacity-30">
+    <div 
+      className="absolute inset-0" 
+      style={{
+        backgroundImage: `
+          linear-gradient(to right, rgb(191, 219, 254) 1px, transparent 1px),
+          linear-gradient(to bottom, rgb(191, 219, 254) 1px, transparent 1px)
+        `,
+        backgroundSize: '32px 32px'
+      }}
+    ></div>
+  </div>
+  
+  {/* Blue Gradient Overlay - Fade from Top */}
+  <div className="absolute inset-0 bg-gradient-to-b from-blue-400/8 via-indigo-400/4 to-transparent pointer-events-none"></div>
+  
+  {/* Decorative Glow Orbs */}
+  <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+  <div className="absolute top-1/2 -left-24 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl"></div>
+  
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
     
-    {/* Pricing Badge - Full width on mobile */}
-    <div className="w-full">
-      <span className="inline-flex items-center justify-center w-full px-3 py-2.5 rounded-xl text-sm font-semibold bg-white/20 backdrop-blur border border-white/30 text-white shadow-lg">
-        <DollarSign className="w-4 h-4 mr-2 text-green-200 flex-shrink-0" />
-        <span className="text-center leading-tight">{tool.pricingType}</span>
-      </span>
+    {/* Top Row: Logo + Quick Info */}
+    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-6">
+      
+      {/* Logo with Hover Effect */}
+      <div className="flex-shrink-0">
+        <div className="relative group">
+          {/* Glow ring on hover */}
+          <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-3xl opacity-0 group-hover:opacity-25 blur-sm transition-opacity duration-300"></div>
+          
+          <img 
+            src={tool.logo} 
+            alt={`${tool.name} logo`}
+            className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl shadow-lg object-cover bg-white border border-gray-200 group-hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+            width="96"
+            height="96"
+          />
+          
+          {/* Verified Badge */}
+          {tool.isVerified && (
+            <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-md border-2 border-white">
+              <CheckCircle className="w-4 h-4 text-white fill-current" />
+            </div>
+          )}
+        </div>
+      </div>
+      
+      {/* Title + Short Description */}
+      <div className="flex-1 min-w-0">
+        <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 leading-tight">
+          {tool.displayName}
+        </h1>
+        <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-4">
+          {tool.shortDescription}
+        </p>
+        
+        {/* Badges Row - Enhanced with Glassmorphism */}
+        <div className="flex flex-wrap items-center gap-2">
+          
+          {/* Pricing Badge */}
+          <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-50/90 backdrop-blur-sm text-emerald-700 border border-emerald-200 hover:bg-emerald-100 hover:scale-105 transition-all duration-200 shadow-sm">
+            <DollarSign className="w-3 h-3 mr-1.5" />
+            {tool.pricingType}
+          </span>
+          
+          {/* Rating Badge */}
+          {effectiveRating && (
+            <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-amber-50/90 backdrop-blur-sm text-amber-700 border border-amber-200 hover:bg-amber-100 hover:scale-105 transition-all duration-200 shadow-sm">
+              <Star className="w-3 h-3 mr-1.5 fill-current" />
+              {effectiveRating}/5
+              {tool.ratingCount && (
+                <span className="ml-1 text-amber-600">({tool.ratingCount})</span>
+              )}
+            </span>
+          )}
+          
+          {/* Category Badge */}
+          <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-50/90 backdrop-blur-sm text-blue-700 border border-blue-200 hover:bg-blue-100 hover:scale-105 transition-all duration-200 shadow-sm">
+            <Users className="w-3 h-3 mr-1.5" />
+            {tool.categories[0]}
+          </span>
+          
+          {/* Featured Badge (if applicable) */}
+          {tool.isFeatured && (
+            <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-purple-50/90 backdrop-blur-sm text-purple-700 border border-purple-200 hover:bg-purple-100 hover:scale-105 transition-all duration-200 shadow-sm">
+              <Award className="w-3 h-3 mr-1.5" />
+              Featured
+            </span>
+          )}
+        </div>
+      </div>
+      
+      {/* CTA Button - Desktop Only with Shine Effect */}
+      <div className="hidden lg:block flex-shrink-0">
+        {tool.url ? (
+          <a 
+            href={tool.url}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="relative group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 overflow-hidden"
+          >
+            {/* Shine effect */}
+            <div className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-[200%] transition-transform duration-700"></div>
+            <span className="relative">Visit Website</span>
+            <ExternalLink className="w-4 h-4 relative group-hover:translate-x-0.5 transition-transform" />
+          </a>
+        ) : (
+          <button className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 text-gray-500 font-semibold rounded-xl cursor-not-allowed shadow-sm">
+            <Clock className="w-4 h-4" />
+            Coming Soon
+          </button>
+        )}
+      </div>
     </div>
     
-    {/* Rating Badge - Full width on mobile */}
-    {tool.rating && (
-      <div className="w-full">
-        <div className="flex items-center justify-center gap-2 w-full bg-purple-500/20 backdrop-blur rounded-xl px-3 py-2.5 border border-amber-300/30 text-white shadow-lg">
-          <Star className="w-4 h-4 text-amber-300 fill-current flex-shrink-0" />
-          <span className="font-bold">{tool.rating}/5</span>
-          <span className="text-sm text-amber-100">
-            ({Math.floor(Math.random() * 1000) + 250} reviews)
+    {/* Bottom Row: Key Features Grid */}
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 mb-2 mt-10">
+      {tool.features.slice(0, 6).map((feature, index) => (
+        <div 
+          key={index}
+          className="group flex items-start gap-2 p-3 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
+        >
+          <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-200" />
+          <span className="text-xs text-gray-700 leading-tight font-medium group-hover:text-blue-700 transition-colors duration-200">
+            {feature}
           </span>
         </div>
-      </div>
-    )}
-    
-    {/* Category Badge - Full width on mobile */}
-    <div className="w-full">
-      <div className="flex items-center justify-center gap-2 w-full bg-purple-500/20 backdrop-blur rounded-xl px-3 py-2.5 border border-purple-300/30 text-white shadow-lg">
-        <Users className="w-4 h-4 text-purple-200 flex-shrink-0" />
-        <span className="font-medium text-center leading-tight">
-          {tool.categories.join(', ')}
-        </span>
-      </div>
+      ))}
     </div>
-  </div>
-
-  {/* Desktop & Tablet Layout - Horizontal flex wrap */}
-  <div className="hidden sm:flex flex-wrap items-center gap-3 lg:gap-4">
     
-    {/* Pricing Badge */}
-    <span className="inline-flex items-center px-3 py-2 lg:px-4 lg:py-2.5 rounded-full text-xs lg:text-sm font-semibold bg-white/20 backdrop-blur border border-white/30 text-white shadow-lg hover:bg-white/25 transition-all duration-200">
-      <DollarSign className="w-3 h-3 lg:w-4 lg:h-4 mr-1.5 lg:mr-2 text-green-200 flex-shrink-0" />
-      <span className="whitespace-nowrap">{tool.pricingType}</span>
-    </span>
-    
-    {/* Rating Badge */}
-    {tool.rating && (
-      <div className="inline-flex items-center gap-1.5 lg:gap-2 bg-purple-500/20 backdrop-blur rounded-full px-3 py-2 lg:px-4 lg:py-2.5 border border-amber-300/30  transition-all duration-200">
-        <Star className="w-3 h-3 lg:w-4 lg:h-4 text-amber-300 fill-current flex-shrink-0" />
-        <span className="font-bold text-white text-xs lg:text-sm whitespace-nowrap">
-          {tool.rating}/5
-        </span>
-        <span className="text-xs text-amber-100 whitespace-nowrap hidden md:inline">
-          ({Math.floor(Math.random() * 1000) + 250} reviews)
-        </span>
-      </div>
-    )}
-    
-    {/* Category Badge */}
-    <div className="inline-flex items-center gap-1.5 lg:gap-2 bg-purple-500/20 backdrop-blur rounded-full px-3 py-2 lg:px-4 lg:py-2.5 border border-purple-300/30 shadow-lg hover:bg-purple-500/25 transition-all duration-200">
-      <Users className="w-3 h-3 lg:w-4 lg:h-4 text-purple-200 flex-shrink-0" />
-      <span className="font-medium text-white text-xs lg:text-sm">
-        {tool.categories.length > 2 ? 
-          `${tool.categories.slice(0, 2).join(', ')}${tool.categories.length > 2 ? '...' : ''}` : 
-          tool.categories.join(', ')
-        }
-      </span>
+    {/* CTA Button - Mobile/Tablet */}
+    <div className="block lg:hidden">
+      {tool.url ? (
+        <a 
+          href={tool.url}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          className="flex items-center justify-center gap-2 w-full px-6 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+        >
+          Visit {tool.displayName}
+          <ExternalLink className="w-5 h-5" />
+        </a>
+      ) : (
+        <button className="flex items-center justify-center gap-2 w-full px-6 py-3.5 bg-gray-100 text-gray-500 font-semibold rounded-xl cursor-not-allowed shadow-sm">
+          <Clock className="w-5 h-5" />
+          Coming Soon
+        </button>
+      )}
     </div>
+    
   </div>
 </div>
 
-                      {/* ///////////////////////// */}
-                    </div>
-                  </div>
-                </div>
 
-                {/* Quick Stats Bar */}
-                {/* Enhanced Stats Cards Section - Full Content Display */}
-<div className="bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50 py-8 sm:py-12 border-t border-gray-100">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    {/* Section Header */}
-    <div className="text-center mb-8 sm:mb-10">
-      <h2 className="text-2xl sm:text-2xl font-bold text-gray-900 mb-2">
-        Quick Stats & Overview
-      </h2>
-      <p className="text-sm sm:text-base text-gray-600">
-        Key metrics and information about {tool.name}
-      </p>
-    </div>
+<ExpandableStatsRow categories={tool.categories} tags={tool.tags} />
 
-    {/* Stats Cards Grid - Dynamic Heights */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 auto-rows-fr">
-      
-      {/* Pricing Card */}
-      <div className="group relative bg-white rounded-xl sm:rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-green-200 transition-all duration-300 hover:-translate-y-1 h-auto min-h-[180px] flex flex-col">
-        <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        
-        <div className="relative z-10 flex flex-col h-full">
-          {/* Icon */}
-          <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-emerald-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-            <DollarSign className="w-6 h-6 text-green-600" />
-          </div>
-          
-          {/* Content */}
-          <div className="flex flex-col flex-grow">
-            <h3 className="text-sm font-medium text-gray-600 uppercase tracking-wide mb-3">
-              Pricing
-            </h3>
-            <div className="flex-grow flex items-start">
-              <p className="text-md sm:text-base font-bold text-gray-900 leading-tight group-hover:text-green-700 transition-colors duration-300 break-words hyphens-auto text-wrap">
-                {tool.pricingType}
-              </p>
-            </div>
-          </div>
-          
-          {/* Bottom accent line */}
-          <div className="absolute -bottom-4 left-6 right-6 h-1 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-        </div>
-      </div>
 
-      {/* Rating Card */}
-      <div className="group relative bg-white rounded-xl sm:rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-amber-200 transition-all duration-300 hover:-translate-y-1 h-auto min-h-[180px] flex flex-col">
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        
-        <div className="relative z-10 flex flex-col h-full">
-          {/* Icon */}
-          <div className="w-12 h-12 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-            <Star className="w-6 h-6 text-amber-600 fill-current" />
-          </div>
-          
-          {/* Content */}
-          <div className="flex flex-col flex-grow">
-            <h3 className="text-sm font-medium text-gray-600 uppercase tracking-wide mb-3">
-              Rating
-            </h3>
-            <div className="flex-grow flex items-start">
-              {tool.rating ? (
-                <div className="space-y-2 w-full">
-                  <div className="flex items-center gap-2">
-                    <span className="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-amber-700 transition-colors duration-300">
-                      {tool.rating}
-                    </span>
-                    <span className="text-lg text-gray-500">/5</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star 
-                        key={i} 
-                        className={`w-3 h-3 ${i < Math.floor(tool.rating) ? 'text-amber-400 fill-current' : 'text-gray-300'}`} 
-                      />
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <span className="text-2xl sm:text-3xl font-bold text-gray-400">N/A</span>
-              )}
-            </div>
-          </div>
-          
-          {/* Bottom accent line */}
-          <div className="absolute -bottom-4 left-6 right-6 h-1 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-        </div>
-      </div>
-
-      {/* Categories Card */}
-      <div className="group relative bg-white rounded-xl sm:rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-purple-200 transition-all duration-300 hover:-translate-y-1 h-auto min-h-[180px] flex flex-col">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        
-        <div className="relative z-10 flex flex-col h-full">
-          {/* Icon */}
-          <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-violet-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-            <Users className="w-6 h-6 text-purple-600" />
-          </div>
-          
-          {/* Content */}
-          <div className="flex flex-col flex-grow">
-            <h3 className="text-sm font-medium text-gray-600 uppercase tracking-wide mb-3">
-              Categories
-            </h3>
-            <div className="flex-grow flex flex-col justify-start">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-purple-700 transition-colors duration-300">
-                  {tool.categories.length}
-                </span>
-                <span className="text-sm text-gray-500">
-                  categor{tool.categories.length === 1 ? 'y' : 'ies'}
-                </span>
-              </div>
-              <div className="flex flex-wrap gap-1.5">
-                {tool.categories.map((cat, index) => (
-                  <span key={index} className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full break-words">
-                    {cat}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-          
-          {/* Bottom accent line */}
-          <div className="absolute -bottom-4 left-6 right-6 h-1 bg-gradient-to-r from-purple-400 to-violet-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-        </div>
-      </div>
-
-      {/* Features Card */}
-      <div className="group relative bg-white rounded-xl sm:rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300 hover:-translate-y-1 h-auto min-h-[180px] flex flex-col">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        
-        <div className="relative z-10 flex flex-col h-full">
-          {/* Icon */}
-          <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-            <Zap className="w-6 h-6 text-blue-600" />
-          </div>
-          
-          {/* Content */}
-          <div className="flex flex-col flex-grow">
-            <h3 className="text-sm font-medium text-gray-600 uppercase tracking-wide mb-3">
-              Features
-            </h3>
-            <div className="flex-grow flex flex-col justify-start">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-300">
-                  {tool.tags.length}
-                </span>
-                <span className="text-sm text-gray-500">
-                  feature{tool.tags.length === 1 ? '' : 's'}
-                </span>
-              </div>
-              <div className="flex flex-wrap gap-1.5">
-                {tool.tags.map((tag, index) => (
-                  <span key={index} className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full break-words">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-          
-          {/* Bottom accent line */}
-          <div className="absolute -bottom-4 left-6 right-6 h-1 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 {/* /////////////////////////////////// */}
 
@@ -718,10 +628,11 @@ const alternatives = await Tool.find(
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">What is {tool.name}?</h2>
                 <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
                   <p className="text-md sm:text-md leading-relaxed">
-                    <strong>{tool.name}</strong> is a {tool.categories[0].toLowerCase()} AI tool that {tool.description.toLowerCase()}. 
-                    Launched in 2024, it has quickly become one of the most popular {tool.categories[0].toLowerCase()} solutions 
-                    with a {tool.rating ? `${tool.rating}-star rating` : 'high user satisfaction score'}.
-                  </p>
+  <strong>{tool.name}</strong> is a {tool.categories[0].toLowerCase()} AI tool that {tool.description.toLowerCase()}.
+  It focuses on features like {tool.tags.slice(0, 3).join(", ")} to help with {tool.categories[0].toLowerCase()} workflows.
+</p>
+
+
                   
                   <p>
                     The platform offers {tool.pricingType.toLowerCase()} access to {tool.tags.length} core features including {tool.tags.slice(0, 5).join(', ')}, 
@@ -753,11 +664,9 @@ const alternatives = await Tool.find(
                       <div>
                         <h3 className="text-lg font-bold text-gray-900 mb-2">{feature}</h3>
                         <p className="text-gray-600">
-                          Advanced {feature.toLowerCase()} capabilities that help you 
-                          {tool.categories[0] === 'Writing' ? 'create better content' :
-                           tool.categories[0] === 'Design' ? 'design professional visuals' :
-                           'achieve professional results'} faster than traditional methods.
-                        </p>
+  This feature focuses on {feature.toLowerCase()} so you can handle {tool.categories[0].toLowerCase()} tasks with fewer manual steps.
+</p>
+
                       </div>
                     </div>
                   ))}
@@ -765,254 +674,386 @@ const alternatives = await Tool.find(
               </section>
 
               {/* Pricing Analysis */}
-              <section id="pricing" className="bg-white mt-6 rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
-  {/* Header Section */}
-  <div className="bg-gradient-to-r from-green-600 via-emerald-600 to-blue-600 px-2 py-6 text-white relative overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent"></div>
-    <div className="relative z-10">
-      <div className="flex items-center gap-4 mb-4">
-        <div className="w-12 h-12 bg-white/20 backdrop-blur rounded-2xl flex items-center justify-center">
-          <DollarSign className="w-7 h-7 text-white" />
+              {/* Pricing Section - Professional & Clean */}
+<section id="pricing" className="bg-white mt-8 rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+  
+  {/* Header */}
+  <div className="border-b border-gray-100 px-6 py-6 sm:px-8 sm:py-8">
+    <div className="flex items-start gap-4">
+      <div className="flex-shrink-0">
+        <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-sm">
+          <DollarSign className="w-6 h-6 text-white" />
         </div>
-        <div>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-1">
-            Pricing & Plans
-          </h2>
-          <p className="text-green-100 text-sm sm:text-base">
-            Complete cost breakdown and subscription options
-          </p>
-        </div>
+      </div>
+      <div className="flex-1">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+          Pricing & Plans
+        </h2>
+        <p className="text-gray-600 text-sm sm:text-base">
+          Transparent pricing with no hidden fees
+        </p>
       </div>
     </div>
   </div>
 
   {/* Main Content */}
-  <div className="px-2 py-6 sm:p-8">
+  <div className="px-6 py-8 sm:p-8">
     
-    {/* Current Pricing Highlight */}
+    {/* Current Plan Highlight */}
     <div className="mb-8">
-      <div className="bg-gradient-to-br from-green-50 via-emerald-50 to-blue-50 rounded-2xl p-6 border-2 border-green-200/50 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-200/20 to-blue-200/20 rounded-full -translate-y-16 translate-x-16"></div>
+      <div className="relative bg-gradient-to-br from-gray-50 to-blue-50/50 rounded-2xl p-6 sm:p-8 border border-gray-200">
         
-        <div className="relative z-10">
-          {/* ///////////////////////////////// */}
-          <div className="flex flex-col  items-start sm:items-center gap-4 sm:gap-6">
-            
-            {/* Price Badge */}
-            <div className="flex-shrink-0 ">
-              <div className={`inline-flex items-center px-4 py-3 rounded-2xl font-bold text-sm sm:text-base shadow-lg ${getPriceBadgeStyle(tool.pricingType)}`}>
-                <div className="w-2 h-2 bg-current rounded-full mr-3 animate-pulse"></div>
-                {tool.pricingType}
-              </div>
-            </div>
-            
-            {/* Content */}
-            <div className="flex-1">
-              <h3 className="text-xl text-center sm:text-2xl font-bold text-gray-900 mb-2">
-                Current Pricing Model
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-  {tool.pricing || 'Pricing information not available.'}
-</p>
-            </div>
-          </div>
-          {/* /////////////////////// */}
-        </div>
-      </div>
+        <div className="flex flex-col sm:flex-row items-start gap-6">
+          
+          {/* Price Badge */}
+          <div className="flex-shrink-0">
+  <div className={`inline-flex items-center gap-2.5 px-5 py-3 rounded-lg font-bold text-base shadow-md border-2 transition-all duration-300 hover:scale-105 ${getPriceBadgeStyle(tool.pricingType)}`}>
+    <div className="relative flex items-center justify-center">
+      <div className="absolute w-3 h-3 bg-current rounded-full animate-ping opacity-40"></div>
+      <div className="relative w-2.5 h-2.5 bg-current rounded-full"></div>
     </div>
-
-    {/* Pricing Details Grid */}
-    <div className="grid md:grid-cols-2 gap-6 mb-8">
-      
-      {/* Value Proposition Card */}
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl px-3 py-6 sm:p-6 border border-blue-200/50">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
-            <TrendingUp className="w-5 h-5 text-white" />
-          </div>
-          <h4 className="text-lg font-bold text-gray-900">Value Analysis</h4>
-        </div>
-        
-        <div className="space-y-3">
-          <div className="flex items-center gap-3">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span className="text-gray-700 text-sm sm:text-base">
-              {tool.pricingType?.toLowerCase() === 'free' ? 'Exceptional value with no cost barrier' :
-               tool.pricingType === 'Freemium' ? 'Great entry point with upgrade flexibility' :
-               'Competitive pricing for feature-rich solution'}
-            </span>
-          </div>
-          
-          <div className="flex items-center gap-3">
-            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-            <span className="text-gray-700 text-sm sm:text-base">
-              ROI-focused pricing structure
-            </span>
-          </div>
-          
-          <div className="flex items-center gap-3">
-            <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-            <span className="text-gray-700 text-sm sm:text-base">
-              Transparent cost with no hidden fees
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Payment Options Card */}
-      <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-200/50">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center">
-            <CreditCard className="w-5 h-5 text-white" />
-          </div>
-          <h4 className="text-lg font-bold text-gray-900">Payment Details</h4>
-        </div>
-        
-        <div className="space-y-3">
-          <div className="flex items-center gap-3">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span className="text-gray-700 text-sm sm:text-base">
-              {tool.pricingType === 'Free' ? 'No payment required' :
-               tool.pricingType === 'Freemium' ? 'Optional premium payments' :
-               'Multiple payment methods accepted'}
-            </span>
-          </div>
-          
-          <div className="flex items-center gap-3">
-            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-            <span className="text-gray-700 text-sm sm:text-base">
-              {tool.pricingType === 'Free' ? 'Instant access' : 'Flexible billing cycles'}
-            </span>
-          </div>
-          
-          <div className="flex items-center gap-3">
-            <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-            <span className="text-gray-700 text-sm sm:text-base">
-              {tool.pricingType === 'Free' ? 'No credit card needed' : 'Secure payment processing'}
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {/* Pricing Recommendation */}
-<div className="bg-gradient-to-r from-amber-50 via-yellow-50 to-orange-50 rounded-2xl p-4 sm:p-6 border-2 border-amber-200/50 relative overflow-hidden">
-  <div className="relative z-10">
-    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-      {/* Icon */}
-      <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-        <Star className="w-6 h-6 text-white fill-current" />
-      </div>
-
-      {/* Content */}
-      <div className="flex-1">
-        <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
-          💡 Our Recommendation
-        </h4>
-        <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
-          {tool.pricingType === 'Free'
-            ? 'Perfect for users who want to explore all features without any financial commitment. Ideal for personal projects and small teams.'
-            : tool.pricingType === 'Freemium'
-            ? 'Start with the free tier to test the waters, then upgrade when you need advanced features. Great for growing businesses.'
-            : 'Consider the value proposition carefully - this tool offers comprehensive features that justify the investment for serious users.'}
-        </p>
-
-        {/* Badges */}
-        <div className="flex flex-wrap gap-2">
-          <span className="inline-flex items-center px-3 py-1.5 bg-green-100 text-green-800 rounded-full text-xs sm:text-sm font-medium">
-            ✅ Recommended
-          </span>
-          <span className="inline-flex items-center px-3 py-1.5 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm font-medium">
-            🎯 Best Value
-          </span>
-          {tool.rating && tool.rating >= 4 && (
-            <span className="inline-flex items-center px-3 py-1.5 bg-purple-100 text-purple-800 rounded-full text-xs sm:text-sm font-medium">
-              ⭐ Top Rated
-            </span>
-          )}
-        </div>
-      </div>
-    </div>
+    <span className="uppercase tracking-wide text-sm font-extrabold">
+      {tool.pricingType}
+    </span>
   </div>
 </div>
+
+          
+          {/* Details */}
+          <div className="flex-1">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
+              Pricing Model
+            </h3>
+            <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+              {tool.pricing || 'Visit the official website for detailed pricing information and plan comparisons.'}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Two-Column Feature Grid */}
+    <div className="grid sm:grid-cols-2 gap-6 mb-8">
+      
+      {/* Value Card */}
+      <div className="bg-white rounded-xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-300">
+        <div className="flex items-center gap-3 mb-5">
+          <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+            <TrendingUp className="w-5 h-5 text-blue-600" />
+          </div>
+          <h4 className="text-lg font-bold text-gray-900">What You Get</h4>
+        </div>
+        
+        <ul className="space-y-3">
+          <li className="flex items-start gap-3">
+            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+            <span className="text-gray-700 text-sm sm:text-base">
+              {tool.pricingType?.toLowerCase() === 'free' 
+                ? 'Full access with no credit card required' 
+                : tool.pricingType === 'Freemium' 
+                ? 'Free tier available to get started' 
+                : 'Professional features and support'}
+            </span>
+          </li>
+          <li className="flex items-start gap-3">
+            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+            <span className="text-gray-700 text-sm sm:text-base">
+              Regular updates and improvements
+            </span>
+          </li>
+          <li className="flex items-start gap-3">
+            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+            <span className="text-gray-700 text-sm sm:text-base">
+              {tool.features.length}+ core features included
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      {/* Payment Card */}
+      <div className="bg-white rounded-xl p-6 border border-gray-200 hover:border-purple-300 hover:shadow-md transition-all duration-300">
+        <div className="flex items-center gap-3 mb-5">
+          <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+            <CreditCard className="w-5 h-5 text-purple-600" />
+          </div>
+          <h4 className="text-lg font-bold text-gray-900">Payment Options</h4>
+        </div>
+        
+        <ul className="space-y-3">
+          <li className="flex items-start gap-3">
+            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+            <span className="text-gray-700 text-sm sm:text-base">
+              {tool.pricingType === 'Free' 
+                ? 'No payment needed to access' 
+                : 'Multiple payment methods supported'}
+            </span>
+          </li>
+          <li className="flex items-start gap-3">
+            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+            <span className="text-gray-700 text-sm sm:text-base">
+              {tool.pricingType === 'Free' 
+                ? 'Sign up and start using immediately' 
+                : 'Flexible billing cycles available'}
+            </span>
+          </li>
+          <li className="flex items-start gap-3">
+            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+            <span className="text-gray-700 text-sm sm:text-base">
+              Secure and encrypted transactions
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    {/* Recommendation Box */}
+    <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 border border-amber-200">
+      <div className="flex flex-col sm:flex-row gap-4">
+        
+        {/* Icon */}
+        <div className="flex-shrink-0">
+          <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center">
+            <Star className="w-6 h-6 text-white fill-current" />
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="flex-1">
+          <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">
+            Our Assessment
+          </h4>
+          <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+            {tool.pricingType === 'Free'
+              ? `${tool.displayName} offers excellent value with its completely free model. Perfect for individuals and teams looking for a cost-effective solution without compromising on features.`
+              : tool.pricingType === 'Freemium'
+              ? `${tool.displayName} provides a solid free tier to get started. You can explore the platform risk-free and upgrade only when you need advanced capabilities.`
+              : `${tool.displayName} positions itself as a premium solution with pricing that reflects its comprehensive feature set. Consider your budget and requirements before committing.`}
+          </p>
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2">
+            {tool.pricingType === 'Free' && (
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-100 text-green-800 rounded-lg text-xs sm:text-sm font-medium">
+                <CheckCircle className="w-4 h-4" />
+                Great Value
+              </span>
+            )}
+            {tool.rating && tool.rating >= 4.5 && (
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-100 text-blue-800 rounded-lg text-xs sm:text-sm font-medium">
+                <Star className="w-4 h-4 fill-current" />
+                Highly Rated
+              </span>
+            )}
+            {tool.isFeatured && (
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-purple-100 text-purple-800 rounded-lg text-xs sm:text-sm font-medium">
+                <Award className="w-4 h-4" />
+                Editor's Choice
+              </span>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
 
+
               {/* Pros and Cons */}
-              <section id="pros-cons" className="bg-white rounded-3xl mt-3 shadow-lg border border-gray-100 px-2 py-7  sm:p-8">
-                <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Pros & Cons Analysis</h2>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div className="bg-green-50 rounded-2xl p-6 border border-green-200">
-                    <h3 className="text-2xl font-bold text-green-800 mb-6 flex items-center gap-3">
-                      <CheckCircle className="w-6 h-6" />
-                      Pros
-                    </h3>
-                    <ul className="space-y-4">
-                      <li className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700"><strong>{tool.pricingType} pricing model</strong> makes it accessible to all users</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700"><strong>User-friendly interface</strong> with intuitive design</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700"><strong>Comprehensive features</strong> including {tool.tags.slice(0, 3).join(', ')}</span>
-                      </li>
-                      {tool.rating && (
-                        <li className="flex items-start gap-3">
-                          <CheckCircle className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
-                          <span className="text-gray-700"><strong>High user satisfaction</strong> with {tool.rating}/5 rating</span>
-                        </li>
-                      )}
-                      <li className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700"><strong>Perfect for {tool.categories[0].toLowerCase()}</strong> professionals and teams</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700"><strong>Regular updates</strong> and feature improvements</span>
-                      </li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-red-50 rounded-2xl p-6 border border-red-200">
-                    <h3 className="text-2xl font-bold text-red-800 mb-6 flex items-center gap-3">
-                      <XCircle className="w-6 h-6" />
-                      Cons
-                    </h3>
-                    <ul className="space-y-4">
-                      <li className="flex items-start gap-3">
-                        <XCircle className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700">
-                          <strong>Learning curve</strong> for advanced features
-                          {tool.pricingType !== 'Free' ? ' in premium tiers' : ''}
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <XCircle className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700"><strong>Internet connection required</strong> for full functionality</span>
-                      </li>
-                      {tool.pricingType !== 'Free' && (
-                        <li className="flex items-start gap-3">
-                          <XCircle className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
-                          <span className="text-gray-700"><strong>Premium features</strong> require paid subscription</span>
-                        </li>
-                      )}
-                      <li className="flex items-start gap-3">
-                        <XCircle className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700"><strong>Mobile app</strong> may have limited features compared to web version</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <XCircle className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700"><strong>Customer support</strong> response times can vary during peak hours</span>
-                      </li>
-                    </ul>
-                  </div>
+             {/* Pros & Cons Section - Professional Design */}
+<section id="pros-cons" className="bg-white rounded-2xl mt-8 shadow-sm border border-gray-200 overflow-hidden">
+  
+  {/* Header */}
+  <div className="border-b border-gray-100 px-6 py-6 sm:px-8 sm:py-8">
+    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center">
+      Pros & Cons Analysis
+    </h2>
+    <p className="text-gray-600 text-center mt-2 text-sm sm:text-base">
+      Honest assessment based on user experience and features
+    </p>
+  </div>
+
+  {/* Cards Grid */}
+  <div className="px-6 py-8 sm:p-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      
+      {/* Pros Card */}
+      <div className="group relative bg-white rounded-2xl p-6 sm:p-8 border-2 border-gray-200 hover:border-green-300 transition-all duration-500 overflow-hidden">
+        
+        {/* Gradient overlay on hover - top-left to diagonal */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-emerald-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        
+        {/* Decorative corner accent */}
+<div className="absolute top-0 right-0 w-20 h-20 bg-green-500/5 rounded-bl-full transform translate-x-10 -translate-y-10 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500"></div>
+        
+        <div className="relative z-10">
+          {/* Header */}
+          <div className="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
+            <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <CheckCircle className="w-6 h-6 text-green-600" />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
+              Advantages
+            </h3>
+          </div>
+          
+          {/* List */}
+          <ul className="space-y-4">
+            <li className="flex items-start gap-3 group/item">
+              <div className="flex-shrink-0 mt-0.5">
+                <CheckCircle className="w-5 h-5 text-green-600 group-hover/item:scale-110 transition-transform duration-200" />
+              </div>
+              <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                <strong className="text-gray-900">{tool.pricingType} pricing model</strong> makes it accessible to everyone
+              </span>
+            </li>
+            
+            <li className="flex items-start gap-3 group/item">
+              <div className="flex-shrink-0 mt-0.5">
+                <CheckCircle className="w-5 h-5 text-green-600 group-hover/item:scale-110 transition-transform duration-200" />
+              </div>
+              <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                <strong className="text-gray-900">Intuitive interface</strong> with minimal learning curve
+              </span>
+            </li>
+            
+            <li className="flex items-start gap-3 group/item">
+              <div className="flex-shrink-0 mt-0.5">
+                <CheckCircle className="w-5 h-5 text-green-600 group-hover/item:scale-110 transition-transform duration-200" />
+              </div>
+              <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                <strong className="text-gray-900">Comprehensive toolset</strong> including {tool.tags.slice(0, 3).join(', ')}
+              </span>
+            </li>
+            
+            {tool.rating && tool.rating >= 4 && (
+              <li className="flex items-start gap-3 group/item">
+                <div className="flex-shrink-0 mt-0.5">
+                  <CheckCircle className="w-5 h-5 text-green-600 group-hover/item:scale-110 transition-transform duration-200" />
                 </div>
-              </section>
+                <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                  <strong className="text-gray-900">Highly rated</strong> with {tool.rating}/5 user satisfaction
+                </span>
+              </li>
+            )}
+            
+            <li className="flex items-start gap-3 group/item">
+              <div className="flex-shrink-0 mt-0.5">
+                <CheckCircle className="w-5 h-5 text-green-600 group-hover/item:scale-110 transition-transform duration-200" />
+              </div>
+              <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                <strong className="text-gray-900">Built for {tool.categories[0].toLowerCase()}</strong> professionals
+              </span>
+            </li>
+            
+            <li className="flex items-start gap-3 group/item">
+              <div className="flex-shrink-0 mt-0.5">
+                <CheckCircle className="w-5 h-5 text-green-600 group-hover/item:scale-110 transition-transform duration-200" />
+              </div>
+              <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                <strong className="text-gray-900">Regular updates</strong> with new features
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Cons Card */}
+      <div className="group relative bg-white rounded-2xl p-6 sm:p-8 border-2 border-gray-200 hover:border-red-300 transition-all duration-500 overflow-hidden">
+        
+        {/* Gradient overlay on hover - top-right to diagonal */}
+        <div className="absolute inset-0 bg-gradient-to-bl from-red-50 via-rose-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        
+        {/* Decorative corner accent */}
+        <div className="absolute top-0 right-0 w-20 h-20 bg-red-500/5 rounded-bl-full transform translate-x-10 -translate-y-10 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500"></div>
+        
+        <div className="relative z-10">
+          {/* Header */}
+          <div className="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
+            <div className="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <XCircle className="w-6 h-6 text-red-600" />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
+              Limitations
+            </h3>
+          </div>
+          
+          {/* List */}
+          <ul className="space-y-4">
+            <li className="flex items-start gap-3 group/item">
+              <div className="flex-shrink-0 mt-0.5">
+                <XCircle className="w-5 h-5 text-red-600 group-hover/item:scale-110 transition-transform duration-200" />
+              </div>
+              <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                <strong className="text-gray-900">Learning curve</strong> exists for advanced features
+              </span>
+            </li>
+            
+            <li className="flex items-start gap-3 group/item">
+              <div className="flex-shrink-0 mt-0.5">
+                <XCircle className="w-5 h-5 text-red-600 group-hover/item:scale-110 transition-transform duration-200" />
+              </div>
+              <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                <strong className="text-gray-900">Requires internet</strong> for full functionality
+              </span>
+            </li>
+            
+            {tool.pricingType !== 'Free' && (
+              <li className="flex items-start gap-3 group/item">
+                <div className="flex-shrink-0 mt-0.5">
+                  <XCircle className="w-5 h-5 text-red-600 group-hover/item:scale-110 transition-transform duration-200" />
+                </div>
+                <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                  <strong className="text-gray-900">Premium features</strong> behind paywall
+                </span>
+              </li>
+            )}
+            
+            <li className="flex items-start gap-3 group/item">
+              <div className="flex-shrink-0 mt-0.5">
+                <XCircle className="w-5 h-5 text-red-600 group-hover/item:scale-110 transition-transform duration-200" />
+              </div>
+              <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                <strong className="text-gray-900">Mobile limitations</strong> compared to desktop
+              </span>
+            </li>
+            
+            <li className="flex items-start gap-3 group/item">
+              <div className="flex-shrink-0 mt-0.5">
+                <XCircle className="w-5 h-5 text-red-600 group-hover/item:scale-110 transition-transform duration-200" />
+              </div>
+              <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                <strong className="text-gray-900">Support response</strong> varies during peak times
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    {/* Bottom Summary */}
+    <div className="mt-8 p-4 sm:p-6 bg-gray-50 rounded-xl border border-gray-200">
+      <div className="flex items-start gap-3">
+        <div className="flex-shrink-0">
+          <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+            <TrendingUp className="w-5 h-5 text-blue-600" />
+          </div>
+        </div>
+        <div>
+          <h4 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">
+            Overall Assessment
+          </h4>
+          <p className="text-gray-600 text-sm leading-relaxed">
+            {tool.displayName} is a solid choice for {tool.categories[0].toLowerCase()} work. 
+            While it has some limitations, the advantages outweigh the drawbacks for most users.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
               {alternatives.length > 0 && (
   <section
@@ -1128,6 +1169,8 @@ const alternatives = await Tool.find(
                 </div>
               </section>
 
+              
+
               {/* FAQ Section */}
               <section id="faq" className="bg-white mt-3 rounded-3xl shadow-lg border border-gray-100 p-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
@@ -1185,131 +1228,340 @@ const alternatives = await Tool.find(
 <RelatedTools currentTool={tool} allTools={relatedTools} />
 
 
+<section className="bg-gray-50 mt-3 rounded-3xl border border-gray-200 px-4 py-5 sm:p-6">
+  <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+    About this {tool.name} review
+  </h2>
+  <p className="text-sm text-gray-700">
+    This page is part of TheToolsVerse, an independent AI tools directory. Our team looks at
+    the tool’s official website, documentation, and user feedback to summarize features, pricing,
+    and common use cases. Listings are reviewed periodically when tools change their plans or capabilities.
+  </p>
+</section>
 
 
 
               {/* Final Verdict Section */}
-              <section className="bg-gradient-to-r mt-3 from-blue-500 to-purple-600 rounded-3xl shadow-xl p-8 text-white">
-                <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                  <Award className="w-8 h-8" />
-                  Final Verdict: Is {tool.name} Worth It?
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5" />
-                      {tool.name} is Perfect For:
-                    </h3>
-                    <ul className="space-y-2 text-blue-100">
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4" />
-                        {tool.categories[0]} professionals and teams
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4" />
-                        Users looking for {tool.pricingType.toLowerCase()} solutions
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4" />
-                        Those who need {tool.tags.slice(0, 3).join(', ')}
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4" />
-                        Both beginners and advanced users
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                      <XCircle className="w-5 h-5" />
-                      Consider Alternatives If:
-                    </h3>
-                    <ul className="space-y-2 text-blue-100">
-                      <li className="flex items-center gap-2">
-                        <XCircle className="w-4 h-4" />
-                        You need highly specialized features
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <XCircle className="w-4 h-4" />
-                        Budget is extremely tight (if paid)
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <XCircle className="w-4 h-4" />
-                        You prefer desktop-only solutions
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <XCircle className="w-4 h-4" />
-                        Integration requirements are very specific
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="mt-8 p-6 bg-white/10 backdrop-blur rounded-2xl border border-white/20">
-                  <h3 className="text-2xl font-bold mb-3 flex items-center gap-2">
-                    <Star className="w-6 h-6 text-yellow-300 fill-current" />
-                    Our Rating: {tool.rating || '4.5'}/5
-                  </h3>
-                  <p className="text-lg text-blue-100">
-                    {tool.name} delivers excellent value with its {tool.pricingType.toLowerCase()} pricing and comprehensive feature set. 
-                    {tool.rating ? `With a ${tool.rating}/5 user rating,` : 'With high user satisfaction,'} it's definitely worth trying for {tool.categories[0].toLowerCase()} needs.
-                  </p>
-                </div>
-              </section>
+              {/* Final Verdict Section - SEO Optimized */}
+<section className="bg-white mt-8 rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+  
+  {/* Header with Gradient Accent */}
+  <div className="relative bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-8 sm:px-8 sm:py-10 text-white overflow-hidden">
+    
+    {/* Background Pattern */}
+    <div className="absolute inset-0 opacity-10">
+      <div 
+        className="absolute inset-0" 
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, white 1px, transparent 1px),
+            linear-gradient(to bottom, white 1px, transparent 1px)
+          `,
+          backgroundSize: '20px 20px'
+        }}
+      ></div>
+    </div>
+    
+    <div className="relative z-10">
+      <div className="flex items-start gap-4 mb-3">
+        <div className="flex-shrink-0">
+          <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+            <Award className="w-7 h-7 text-white" />
+          </div>
+        </div>
+        <div>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-2">
+            Final Verdict: Is {tool.displayName} Worth It?
+          </h2>
+          <p className="text-blue-100 text-sm sm:text-base">
+            Our honest assessment based on features, pricing, and user feedback
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Main Content */}
+  <div className="px-6 py-8 sm:p-8">
+    
+    {/* Two Column Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      
+      {/* Best For Card */}
+      <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200">
+        <div className="flex items-center gap-3 mb-5">
+          <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center">
+            <CheckCircle className="w-6 h-6 text-white" />
+          </div>
+          <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+            {tool.displayName} is Perfect For
+          </h3>
+        </div>
+        
+        <ul className="space-y-3">
+          <li className="flex items-start gap-3">
+            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+            <span className="text-gray-700 text-sm sm:text-base">
+              <strong className="text-gray-900">{tool.categories[0]} professionals</strong> and creative teams
+            </span>
+          </li>
+          
+          <li className="flex items-start gap-3">
+            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+            <span className="text-gray-700 text-sm sm:text-base">
+              Users seeking <strong className="text-gray-900">{tool.pricingType.toLowerCase()} solutions</strong> with robust features
+            </span>
+          </li>
+          
+          <li className="flex items-start gap-3">
+            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+            <span className="text-gray-700 text-sm sm:text-base">
+              Projects requiring <strong className="text-gray-900">{tool.tags.slice(0, 2).join(' and ')}</strong>
+            </span>
+          </li>
+          
+          <li className="flex items-start gap-3">
+            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+            <span className="text-gray-700 text-sm sm:text-base">
+              <strong className="text-gray-900">Beginners to experts</strong> across all skill levels
+            </span>
+          </li>
+          
+          <li className="flex items-start gap-3">
+            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+            <span className="text-gray-700 text-sm sm:text-base">
+              Teams prioritizing <strong className="text-gray-900">efficiency and collaboration</strong>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      {/* Not Ideal For Card */}
+      <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 border border-amber-200">
+        <div className="flex items-center gap-3 mb-5">
+          <div className="w-10 h-10 bg-amber-600 rounded-lg flex items-center justify-center">
+            <XCircle className="w-6 h-6 text-white" />
+          </div>
+          <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+            Consider Alternatives If
+          </h3>
+        </div>
+        
+        <ul className="space-y-3">
+          <li className="flex items-start gap-3">
+            <XCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+            <span className="text-gray-700 text-sm sm:text-base">
+              You need <strong className="text-gray-900">highly specialized niche features</strong>
+            </span>
+          </li>
+          
+          {tool.pricingType !== 'Free' && (
+            <li className="flex items-start gap-3">
+              <XCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+              <span className="text-gray-700 text-sm sm:text-base">
+                <strong className="text-gray-900">Budget constraints</strong> limit paid tool adoption
+              </span>
+            </li>
+          )}
+          
+          <li className="flex items-start gap-3">
+            <XCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+            <span className="text-gray-700 text-sm sm:text-base">
+              You require <strong className="text-gray-900">offline-first functionality</strong>
+            </span>
+          </li>
+          
+          <li className="flex items-start gap-3">
+            <XCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+            <span className="text-gray-700 text-sm sm:text-base">
+              <strong className="text-gray-900">Complex integrations</strong> with legacy systems needed
+            </span>
+          </li>
+          
+          <li className="flex items-start gap-3">
+            <XCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+            <span className="text-gray-700 text-sm sm:text-base">
+              You prefer <strong className="text-gray-900">on-premise deployment</strong> only
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    {/* Rating Summary Box */}
+    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 sm:p-8 border-2 border-blue-200">
+      <div className="flex flex-col sm:flex-row items-start gap-6">
+        
+        {/* Rating Badge */}
+        <div className="flex-shrink-0">
+          <div className="bg-white rounded-2xl p-6 shadow-lg border border-blue-200 text-center min-w-[140px]">
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <Star className="w-8 h-8 text-amber-500 fill-current" />
+            </div>
+            <div className="text-4xl font-bold text-gray-900 mb-1">
+              {tool.rating || '4.5'}
+            </div>
+            <div className="text-sm text-gray-600 font-medium">
+              out of 5.0
+            </div>
+            <div className="flex items-center justify-center gap-1 mt-3">
+              {[...Array(5)].map((_, i) => (
+                <Star 
+                  key={i} 
+                  className={`w-4 h-4 ${
+                    i < Math.floor(tool.rating || 4.5) 
+                      ? 'text-amber-400 fill-current' 
+                      : 'text-gray-300'
+                  }`} 
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Verdict Text */}
+        <div className="flex-1">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+            Our Expert Verdict
+          </h3>
+          <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+            <strong>{tool.displayName}</strong> stands out as a {tool.pricingType.toLowerCase() === 'free' ? 'exceptional free' : 'solid'} choice in the {tool.categories[0].toLowerCase()} space. 
+            {tool.rating && tool.rating >= 4.5 
+              ? ` With an impressive ${tool.rating}/5 rating, it consistently delivers value to users across different skill levels.` 
+              : ' Users appreciate its balance of features and usability.'}
+          </p>
+          <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+            The combination of {tool.pricingType.toLowerCase()} pricing, {tool.features.length}+ features, and strong user ratings makes {tool.displayName} a recommended option for {tool.categories[0].toLowerCase()} professionals looking to {tool.tags[0]?.toLowerCase() || 'enhance their workflow'}.
+          </p>
+          
+          {/* Recommendation Badge */}
+          <div className="mt-5 inline-flex items-center gap-2 px-4 py-2 bg-green-100 text-green-800 rounded-lg font-semibold text-sm border border-green-300">
+            <CheckCircle className="w-5 h-5" />
+            Recommended by TheToolsVerse
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* CTA Button */}
+    {tool.url && (
+      <div className="mt-8 text-center">
+        <a 
+          href={tool.url}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-base sm:text-lg"
+        >
+          Try {tool.displayName} Now
+          <ExternalLink className="w-5 h-5" />
+        </a>
+        <p className="text-gray-500 text-sm mt-3">
+          {tool.pricingType === 'Free' ? 'No credit card required' : 'Visit official website for pricing details'}
+        </p>
+      </div>
+    )}
+
+  </div>
+</section>
+
             </div>
 
             {/* Right Sidebar (1/4 width) */}
             <aside className="space-y-6">
               
-              {/* Enhanced CTA Card */}
-              <div className="bg-gradient-to-br from-blue-500 via-purple-600 to-pink-600 rounded-3xl shadow-xl p-6 text-white  top-24">
-                <div className="text-center mb-6">
-                  <div className="w-20 h-20 mx-auto mb-4 bg-white/20 backdrop-blur rounded-full flex items-center justify-center">
-                    <Zap className="w-8 h-8" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2">Try {tool.name} Now</h3>
-                  <p className="text-blue-100 text-sm">
-                    {tool.pricingType === 'Free' ? 'Start using for free today!' : 
-                     tool.pricingType === 'Freemium' ? 'Free tier available!' : 
-                     'Get started with premium features'}
-                  </p>
-                </div>
-                
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-center gap-3 text-blue-100">
-                    <CheckCircle className="w-4 h-4" />
-                    <span className="text-sm">{tool.pricingType} access</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-blue-100">
-                    <CheckCircle className="w-4 h-4" />
-                    <span className="text-sm">All {tool.tags.length} features</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-blue-100">
-                    <Star className="w-4 h-4 fill-current" />
-                    <span className="text-sm">{tool.rating ? `${tool.rating}⭐ rated` : 'Highly rated'}</span>
-                  </div>
-                </div>
+             {/* Enhanced Professional CTA Card */}
+<div className="bg-white rounded-3xl shadow-lg border border-gray-100 p-6  top-24 hover:shadow-xl transition-shadow duration-300">
+  
+  {/* Header Section */}
+  <div className="text-center mb-6 pb-5 border-b border-gray-100">
+    
+    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+      Try {tool.displayName}
+    </h3>
+    <p className="text-gray-600 text-sm leading-relaxed">
+      {tool.pricingType === 'free' 
+        ? 'Start using for free — no credit card required' 
+        : tool.pricingType === 'freemium' 
+        ? 'Free tier available, upgrade anytime' 
+        : 'Get started with a free trial'}
+    </p>
+  </div>
+  
+  {/* Features List */}
+  <div className="space-y-3 mb-6">
+    <div className="flex items-start gap-3">
+      <div className="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+        <CheckCircle className="w-3.5 h-3.5 text-emerald-600" />
+      </div>
+      <span className="text-sm text-gray-700 leading-relaxed">
+        {tool.pricingType === 'free' ? 'Completely free to use' : `${tool.pricingType} pricing model`}
+      </span>
+    </div>
+    
+    <div className="flex items-start gap-3">
+      <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+        <CheckCircle className="w-3.5 h-3.5 text-blue-600" />
+      </div>
+      <span className="text-sm text-gray-700 leading-relaxed">
+        Access to {tool.tags.length} core features
+      </span>
+    </div>
+    
+    {tool.rating && (
+      <div className="flex items-start gap-3">
+        <div className="w-5 h-5 rounded-full bg-amber-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <Star className="w-3.5 h-3.5 text-amber-500 fill-current" />
+        </div>
+        <span className="text-sm text-gray-700 leading-relaxed">
+          {tool.rating}/5 user rating
+        </span>
+      </div>
+    )}
+    
+    <div className="flex items-start gap-3">
+      <div className="w-5 h-5 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+        <CheckCircle className="w-3.5 h-3.5 text-purple-600" />
+      </div>
+      <span className="text-sm text-gray-700 leading-relaxed">
+        No setup or installation needed
+      </span>
+    </div>
+  </div>
 
-                {tool.url ? (
-                  <a 
-                    href={tool.url}
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="flex items-center justify-center gap-2 w-full bg-white text-purple-600 font-bold py-2 px-3 rounded-2xl text-center hover:bg-gray-50 transition-all transform  shadow-lg cursor-pointer"
-                  >
-                    Visit {tool.name}
-                    <ExternalLink className="w-5 h-5" />
-                  </a>
-                ) : (
-                  <button className="flex items-center justify-center gap-2 w-full bg-white/20 text-white font-bold py-4 px-6 rounded-2xl hover:bg-white/30 transition-colors backdrop-blur border border-white/30 cursor-pointer">
-                    <Clock className="w-5 h-5" />
-                    Coming Soon
-                  </button>
-                )}
-                
-                <p className="text-xs text-blue-200 text-center mt-4">
-                  {tool.pricingType === 'Free' ? 'No credit card required' : 'Cancel anytime'}
-                </p>
-              </div>
+  {/* CTA Button */}
+  {tool.url ? (
+    <a 
+      href={tool.url}
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      className="group relative flex items-center justify-center gap-2 w-full bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-semibold py-3.5 px-6 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+    >
+      <span>Visit {tool.displayName}</span>
+      <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+    </a>
+  ) : (
+    <button className="flex items-center justify-center gap-2 w-full bg-gray-100 text-gray-500 font-semibold py-3.5 px-6 rounded-xl cursor-not-allowed">
+      <Clock className="w-4 h-4" />
+      <span>Coming Soon</span>
+    </button>
+  )}
+  
+  {/* Trust Badge (optional) */}
+  <div className="mt-4 pt-4 border-t border-gray-100">
+    <p className="text-xs text-center text-gray-500">
+      {tool.isVerified ? (
+        <span className="inline-flex items-center gap-1">
+          <CheckCircle className="w-3 h-3 text-emerald-600" />
+          Verified by TheToolsVerse
+        </span>
+      ) : (
+        <span>Listed on TheToolsVerse directory</span>
+      )}
+    </p>
+  </div>
+  
+</div>
+
 {/* /////////////////////////////////////////// */}
               {/* Tool Stats */}
              {/* Tool Statistics Sidebar */}
@@ -1344,13 +1596,21 @@ const alternatives = await Tool.find(
         </div>
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold text-gray-900 group-hover:text-amber-700 transition-colors">
-            {tool.rating || '4.5'}
-          </div>
-          <div className="flex items-center gap-1">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className={`w-3 h-3 ${i < Math.floor(tool.rating || 4.5) ? 'text-amber-400 fill-current' : 'text-gray-300'}`} />
-            ))}
-          </div>
+  {effectiveRating ? effectiveRating : 'N/A'}
+</div>
+<div className="flex items-center gap-1">
+  {[...Array(5)].map((_, i) => (
+    <Star
+      key={i}
+      className={`w-3 h-3 ${
+        effectiveRating && i < Math.floor(effectiveRating)
+          ? 'text-amber-400 fill-current'
+          : 'text-gray-300'
+      }`}
+    />
+  ))}
+</div>
+
         </div>
         <p className="text-xs text-gray-500 mt-1">Average user satisfaction score</p>
       </div>
@@ -1392,7 +1652,7 @@ const alternatives = await Tool.find(
             {tool.categories.length}
           </div>
           <div className="text-xs text-gray-500">
-            categor{tool.categories.length === 1 ? 'y' : 'ies'}
+          {tool.categories.length === 1 ? 'y' : 'categories'}
           </div>
         </div>
         <div className="flex flex-wrap gap-1">
@@ -1521,14 +1781,20 @@ const alternatives = await Tool.find(
                           <div className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors truncate">
                             {related.name}
                           </div>
-                          <div className="text-xs text-gray-500">{related.price}</div>
+                         <div className="text-xs text-gray-500">
+  {related.pricingType || related.shortDescription || "View details"}
+</div>
+
                         </div>
                         <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600" />
                       </a>
                     ))}
                   </div>
                   <a 
-                    href={`/category/${tool.categories[0].toLowerCase()}`}
+                    href={`/categories/${tool.categories[0]
+  .toLowerCase()
+  .replace(/\s+/g, "-")}`}
+
                     className="flex items-center justify-center gap-2 mt-4 text-center text-blue-600 hover:text-blue-800 font-medium text-sm cursor-pointer"
                   >
                     View All {tool.categories[0]} Tools

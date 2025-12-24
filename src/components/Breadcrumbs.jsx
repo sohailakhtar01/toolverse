@@ -3,56 +3,37 @@ import Link from 'next/link';
 import { ChevronRight, Home } from 'lucide-react';
 
 export default function Breadcrumbs({ items }) {
-  // Generate Schema.org BreadcrumbList
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": items.map((item, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "name": item.name,
-      "item": `https://www.thetoolsverse.com${item.path}`
-    }))
-  };
-
   return (
-    <>
-      {/* Schema Markup */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      
-      {/* Visual Breadcrumbs */}
-      <nav 
-        className="flex items-center flex-wrap gap-2 text-sm text-gray-600 mb-6 bg-white rounded-xl px-4 py-3 shadow-sm border border-gray-100" 
-        aria-label="Breadcrumb"
-      >
-        {items.map((item, index) => (
-          <div key={item.path} className="flex items-center gap-2">
-            {index > 0 && (
-              <ChevronRight className="w-4 h-4 text-gray-400 flex-shrink-0" />
-            )}
-            
-            {index === items.length - 1 ? (
-              // Last item (current page) - no link
-              <span className="font-semibold text-gray-900 flex items-center gap-1.5">
-                {index === 0 && <Home className="w-4 h-4" />}
-                {item.name}
-              </span>
-            ) : (
-              // Clickable breadcrumb items
-              <Link 
-                href={item.path} 
-                className="hover:text-blue-600 transition-colors font-medium flex items-center gap-1.5 hover:underline"
-              >
-                {index === 0 && <Home className="w-4 h-4" />}
-                {item.name}
-              </Link>
-            )}
-          </div>
-        ))}
-      </nav>
-    </>
+    <nav className="flex items-center" aria-label="Breadcrumb">
+      <ol className="flex items-center  space-x-2 flex-wrap">
+        {items.map((item, index) => {
+          const isLast = index === items.length - 1;
+          const isFirst = index === 0;
+          
+          return (
+            <li key={item.path} className="flex items-center ">
+              {index > 0 && (
+                <ChevronRight className="w-4 h-4 text-gray-400 mx-2 flex-shrink-0" />
+              )}
+              
+              {isLast ? (
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-sm font-semibold rounded-full shadow-sm">
+                  {isFirst && <Home className="w-3.5 h-3.5" />}
+                  <span className="max-w-[200px] truncate">{item.name}</span>
+                </span>
+              ) : (
+                <Link
+                  href={item.path}
+                  className="group inline-flex items-center gap-2 px-3 py-1.5 bg-white hover:bg-gray-50 border border-gray-200 hover:border-gray-300 text-gray-700 hover:text-gray-900 text-sm font-medium rounded-full transition-all duration-200 shadow-sm hover:shadow"
+                >
+                  {isFirst && <Home className="w-3.5 h-3.5 text-gray-500 group-hover:text-gray-700 transition-colors" />}
+                  <span className="max-w-[150px] truncate">{item.name}</span>
+                </Link>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
   );
 }

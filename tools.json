@@ -3374,465 +3374,465 @@
       }
     ]
   },
-  {
-    "id": 72,
-    "displayName": "RTFM",
-    "name": "RTFM",
-    "slug": "rtfm-world-lab-ai-simulation",
-    "logo": "/logo/rtfm.png",
-    "url": "https://rtfm.ai/",
-    "shortDescription": "Persistent spatial AI model generating dynamic 3D worlds at 60 FPS with realistic reflections and shadows.",
-    "longDescription": "RTFM by World Lab is a high-performance AI simulation platform that produces persistent 3D worlds running at smooth 60 frames per second. It offers users highly realistic virtual environments with dynamic reflections and shadows, suitable for games, research, and immersive media applications.",
-    "categories": [
-      "AI Simulation",
-      "Games",
-      "Latest AI",
-      "Video Generators"
-    ],
-    "tags": [
-      "persistent world",
-      "3D simulation",
-      "real-time rendering",
-      "AI reflections"
-    ],
-    "pricingType": "free",
-    "pricing": "Free during beta with planned subscription options.",
-    "features": [
-      "Persistent 3D spatial modeling",
-      "60 FPS real-time performance",
-      "Dynamic lighting, reflections, and shadows",
-      "Ideal for gaming and research"
-    ],
-    "rating": 4.5,
-    "isVerified": false,
-    "isFeatured": false,
-    "featuredRank": null,
-    "seo": {
-      "metaTitle": "RTFM AI - Free Persistent 3D World Simulation at 60 FPS",
-      "metaDescription": "Create persistent and immersive 3D worlds with RTFM AI. Real-time, high-quality rendering at 60 FPS for games and studies."
+    {
+      "id": 72,
+      "displayName": "RTFM",
+      "name": "RTFM",
+      "slug": "rtfm-world-lab-ai-simulation",
+      "logo": "/logo/rtfm.png",
+      "url": "https://rtfm.ai/",
+      "shortDescription": "Persistent spatial AI model generating dynamic 3D worlds at 60 FPS with realistic reflections and shadows.",
+      "longDescription": "RTFM by World Lab is a high-performance AI simulation platform that produces persistent 3D worlds running at smooth 60 frames per second. It offers users highly realistic virtual environments with dynamic reflections and shadows, suitable for games, research, and immersive media applications.",
+      "categories": [
+        "AI Simulation",
+        "Games",
+        "Latest AI",
+        "Video Generators"
+      ],
+      "tags": [
+        "persistent world",
+        "3D simulation",
+        "real-time rendering",
+        "AI reflections"
+      ],
+      "pricingType": "free",
+      "pricing": "Free during beta with planned subscription options.",
+      "features": [
+        "Persistent 3D spatial modeling",
+        "60 FPS real-time performance",
+        "Dynamic lighting, reflections, and shadows",
+        "Ideal for gaming and research"
+      ],
+      "rating": 4.5,
+      "isVerified": false,
+      "isFeatured": false,
+      "featuredRank": null,
+      "seo": {
+        "metaTitle": "RTFM AI - Free Persistent 3D World Simulation at 60 FPS",
+        "metaDescription": "Create persistent and immersive 3D worlds with RTFM AI. Real-time, high-quality rendering at 60 FPS for games and studies."
+      },
+      "faqs": [
+        {
+          "question": "What frame rate does RTFM support?",
+          "answer": "RTFM runs persistent 3D worlds at a smooth 60 frames per second."
+        },
+        {
+          "question": "Is RTFM suitable for game development?",
+          "answer": "Yes, its dynamic lighting and environmental effects make it ideal for game design and research."
+        },
+        {
+          "question": "Is RTFM free to use?",
+          "answer": "RTFM is currently available for free during its beta phase."
+        }
+      ]
     },
-    "faqs": [
-      {
-        "question": "What frame rate does RTFM support?",
-        "answer": "RTFM runs persistent 3D worlds at a smooth 60 frames per second."
+    {
+      "id": 73,
+      "displayName": "Notion AI",
+      "name": "Notion AI",
+      "slug": "notion-ai",
+      "logo": "/logo/notion-ai.webp",
+      "url": "https://www.notion.so/product/ai",
+      "shortDescription": "Boost your productivity and creativity with AI-assisted writing, task management, and organization in Notion.",
+      "longDescription": "Notion AI enhances your favorite note-taking and productivity platform with AI-powered tools for faster writing, brainstorming, and task prioritization. Perfect for individuals and teams wanting to organize their work efficiently with AI-driven assistance in task management, content creation, and knowledge management.",
+      "categories": [
+        "AI Useful",
+        "Education / Studies",
+        "Productivity",
+        "Super Tools"
+      ],
+      "tags": [
+        "productivity",
+        "task management",
+        "AI writing",
+        "note taking",
+        "organization"
+      ],
+      "pricingType": "freemium",
+      "pricing": "Free tier available with AI features; paid plans unlock advanced AI capabilities and team collaboration.",
+      "features": [
+        "AI-powered content generation",
+        "Task and project management",
+        "Adaptive writing assistance",
+        "Seamless team collaboration"
+      ],
+      "rating": 4.8,
+      "isVerified": true,
+      "isFeatured": true,
+      "featuredRank": null,
+      "seo": {
+        "metaTitle": "Notion AI - Freemium Productivity & AI Writing Assistant",
+        "metaDescription": "Increase your creativity and organize tasks with Notion AI’s smart writing and project management tools."
       },
-      {
-        "question": "Is RTFM suitable for game development?",
-        "answer": "Yes, its dynamic lighting and environmental effects make it ideal for game design and research."
-      },
-      {
-        "question": "Is RTFM free to use?",
-        "answer": "RTFM is currently available for free during its beta phase."
-      }
-    ]
-  },
-  {
-    "id": 73,
-    "displayName": "Notion AI",
-    "name": "Notion AI",
-    "slug": "notion-ai",
-    "logo": "/logo/notion-ai.webp",
-    "url": "https://www.notion.so/product/ai",
-    "shortDescription": "Boost your productivity and creativity with AI-assisted writing, task management, and organization in Notion.",
-    "longDescription": "Notion AI enhances your favorite note-taking and productivity platform with AI-powered tools for faster writing, brainstorming, and task prioritization. Perfect for individuals and teams wanting to organize their work efficiently with AI-driven assistance in task management, content creation, and knowledge management.",
-    "categories": [
-      "AI Useful",
-      "Education / Studies",
-      "Productivity",
-      "Super Tools"
-    ],
-    "tags": [
-      "productivity",
-      "task management",
-      "AI writing",
-      "note taking",
-      "organization"
-    ],
-    "pricingType": "freemium",
-    "pricing": "Free tier available with AI features; paid plans unlock advanced AI capabilities and team collaboration.",
-    "features": [
-      "AI-powered content generation",
-      "Task and project management",
-      "Adaptive writing assistance",
-      "Seamless team collaboration"
-    ],
-    "rating": 4.8,
-    "isVerified": true,
-    "isFeatured": true,
-    "featuredRank": null,
-    "seo": {
-      "metaTitle": "Notion AI - Freemium Productivity & AI Writing Assistant",
-      "metaDescription": "Increase your creativity and organize tasks with Notion AI’s smart writing and project management tools."
+      "faqs": [
+        {
+          "question": "What can Notion AI help me create?",
+          "answer": "Notion AI can assist in writing notes, brainstorming ideas, and organizing projects efficiently."
+        },
+        {
+          "question": "Is AI functionality included in the free plan?",
+          "answer": "Yes, Notion offers basic AI assistance for free with enhanced features unlocked on paid plans."
+        },
+        {
+          "question": "Can teams collaborate with Notion AI?",
+          "answer": "Absolutely, Notion AI supports real-time collaboration and shared AI-powered workspaces."
+        }
+      ]
     },
-    "faqs": [
-      {
-        "question": "What can Notion AI help me create?",
-        "answer": "Notion AI can assist in writing notes, brainstorming ideas, and organizing projects efficiently."
+    {
+      "id": 74,
+      "displayName": "Deepl",
+      "name": "Deepl",
+      "slug": "deepl",
+      "logo": "/logo/deepl.png",
+      "url": "https://www.deepl.com/",
+      "shortDescription": "Powerful AI translation tool delivering high-quality, accurate translations in multiple languages.",
+      "longDescription": "DeepL is an industry-leading AI-powered translation platform known for its accurate, nuanced translations across dozens of languages. Widely used by individuals and businesses globally, it supports document, website, and real-time chat translations with a focus on natural language understanding and contextual accuracy.",
+      "categories": [
+        "AI Useful",
+        "Education / Studies",
+        "Translation"
+      ],
+      "tags": [
+        "language translation",
+        "AI translation",
+        "multilingual",
+        "document translation"
+      ],
+      "pricingType": "free",
+      "pricing": "Free to use with limits on daily characters. Premium plans offer enhanced features and higher volumes.",
+      "features": [
+        "AI-powered document and text translation",
+        "Multiple language support",
+        "Context-aware linguistic accuracy",
+        "Real-time communication tools"
+      ],
+      "rating": 4.7,
+      "isVerified": true,
+      "isFeatured": false,
+      "featuredRank": null,
+      "seo": {
+        "metaTitle": "DeepL - Free AI-Powered Translator With Multi-Language Support",
+        "metaDescription": "Use DeepL to translate documents and texts accurately between numerous languages using advanced AI."
       },
-      {
-        "question": "Is AI functionality included in the free plan?",
-        "answer": "Yes, Notion offers basic AI assistance for free with enhanced features unlocked on paid plans."
-      },
-      {
-        "question": "Can teams collaborate with Notion AI?",
-        "answer": "Absolutely, Notion AI supports real-time collaboration and shared AI-powered workspaces."
-      }
-    ]
-  },
-  {
-    "id": 74,
-    "displayName": "Deepl",
-    "name": "Deepl",
-    "slug": "deepl",
-    "logo": "/logo/deepl.png",
-    "url": "https://www.deepl.com/",
-    "shortDescription": "Powerful AI translation tool delivering high-quality, accurate translations in multiple languages.",
-    "longDescription": "DeepL is an industry-leading AI-powered translation platform known for its accurate, nuanced translations across dozens of languages. Widely used by individuals and businesses globally, it supports document, website, and real-time chat translations with a focus on natural language understanding and contextual accuracy.",
-    "categories": [
-      "AI Useful",
-      "Education / Studies",
-      "Translation"
-    ],
-    "tags": [
-      "language translation",
-      "AI translation",
-      "multilingual",
-      "document translation"
-    ],
-    "pricingType": "free",
-    "pricing": "Free to use with limits on daily characters. Premium plans offer enhanced features and higher volumes.",
-    "features": [
-      "AI-powered document and text translation",
-      "Multiple language support",
-      "Context-aware linguistic accuracy",
-      "Real-time communication tools"
-    ],
-    "rating": 4.7,
-    "isVerified": true,
-    "isFeatured": false,
-    "featuredRank": null,
-    "seo": {
-      "metaTitle": "DeepL - Free AI-Powered Translator With Multi-Language Support",
-      "metaDescription": "Use DeepL to translate documents and texts accurately between numerous languages using advanced AI."
+      "faqs": [
+        {
+          "question": "What languages does DeepL support?",
+          "answer": "DeepL supports translation among over 20 languages with high accuracy and contextual understanding."
+        },
+        {
+          "question": "Is there a free version of DeepL?",
+          "answer": "Yes, the free plan allows limited daily translation with access to most core features."
+        },
+        {
+          "question": "Can DeepL translate documents?",
+          "answer": "Yes, it supports various document formats including PDFs and Word files."
+        }
+      ]
     },
-    "faqs": [
-      {
-        "question": "What languages does DeepL support?",
-        "answer": "DeepL supports translation among over 20 languages with high accuracy and contextual understanding."
+    {
+      "id": 75,
+      "displayName": "Anychat",
+      "name": "Anychat",
+      "slug": "anychat",
+      "logo": "/logo/anychat.png",
+      "url": "https://anychat.ai/",
+      "shortDescription": "Unified platform to test and compare over 500 AI models like ChatGPT, Claude, and Gemini in a single interface.",
+      "longDescription": "Anychat brings together the power of hundreds of AI language models including ChatGPT, Claude, and Gemini, within a unified interactive interface. It enables users to test, compare, and select the best models for their needs, streamlining AI adoption for developers, researchers, and enthusiasts.",
+      "categories": [
+        "AI Useful",
+        "LLM models"
+      ],
+      "tags": [
+        "AI models",
+        "multi-LLM",
+        "comparison",
+        "chatbot"
+      ],
+      "pricingType": "free",
+      "pricing": "Free to access and experiment with included AI models.",
+      "features": [
+        "500+ LLM models and tools in one place",
+        "Interactive and compare mode",
+        "Easy-to-use web platform",
+        "Access to various AI providers"
+      ],
+      "rating": 4.6,
+      "isVerified": false,
+      "isFeatured": false,
+      "featuredRank": null,
+      "seo": {
+        "metaTitle": "Anychat - Free Platform for Testing and Comparing 500+ AI Models",
+        "metaDescription": "Try and compare the best AI models including ChatGPT, Claude, and Gemini using Anychat’s free all-in-one interface."
       },
-      {
-        "question": "Is there a free version of DeepL?",
-        "answer": "Yes, the free plan allows limited daily translation with access to most core features."
-      },
-      {
-        "question": "Can DeepL translate documents?",
-        "answer": "Yes, it supports various document formats including PDFs and Word files."
-      }
-    ]
-  },
-  {
-    "id": 75,
-    "displayName": "Anychat",
-    "name": "Anychat",
-    "slug": "anychat",
-    "logo": "/logo/anychat.png",
-    "url": "https://anychat.ai/",
-    "shortDescription": "Unified platform to test and compare over 500 AI models like ChatGPT, Claude, and Gemini in a single interface.",
-    "longDescription": "Anychat brings together the power of hundreds of AI language models including ChatGPT, Claude, and Gemini, within a unified interactive interface. It enables users to test, compare, and select the best models for their needs, streamlining AI adoption for developers, researchers, and enthusiasts.",
-    "categories": [
-      "AI Useful",
-      "LLM models"
-    ],
-    "tags": [
-      "AI models",
-      "multi-LLM",
-      "comparison",
-      "chatbot"
-    ],
-    "pricingType": "free",
-    "pricing": "Free to access and experiment with included AI models.",
-    "features": [
-      "500+ LLM models and tools in one place",
-      "Interactive and compare mode",
-      "Easy-to-use web platform",
-      "Access to various AI providers"
-    ],
-    "rating": 4.6,
-    "isVerified": false,
-    "isFeatured": false,
-    "featuredRank": null,
-    "seo": {
-      "metaTitle": "Anychat - Free Platform for Testing and Comparing 500+ AI Models",
-      "metaDescription": "Try and compare the best AI models including ChatGPT, Claude, and Gemini using Anychat’s free all-in-one interface."
+      "faqs": [
+        {
+          "question": "What is Anychat?",
+          "answer": "An aggregator platform for testing and comparing hundreds of AI language models."
+        },
+        {
+          "question": "Does Anychat charge for access?",
+          "answer": "No, Anychat is free to use for all supported AI tools."
+        },
+        {
+          "question": "Can I integrate Anychat API?",
+          "answer": "Yes, commercial API options are available for developers."
+        }
+      ]
     },
-    "faqs": [
-      {
-        "question": "What is Anychat?",
-        "answer": "An aggregator platform for testing and comparing hundreds of AI language models."
+    {
+      "id": 76,
+      "displayName": "Seedance 1.0",
+      "name": "Seedance 1.0",
+      "slug": "seedance-1-0",
+      "logo": "/logo/seedance-1-0.png",
+      "url": "https://seedance.com/",
+      "shortDescription": "AI video generator creating 5-second 1080p videos with high narrative coherence and visual fidelity.",
+      "longDescription": "Seedance 1.0 is an AI-powered video generation platform developed by ByteDance, designed to produce short videos at 1080p resolution with exceptional visual quality and storytelling coherence. Ideal for marketers, content creators, and social media campaigns looking for rapid, high-quality video content.",
+      "categories": [
+        "AI Useful",
+        "Future Tools",
+        "Video Generators"
+      ],
+      "tags": [
+        "AI video",
+        "content creation",
+        "short videos",
+        "ByteDance"
+      ],
+      "pricingType": "free",
+      "pricing": "Free for basic video generation with premium plans offering longer videos and customizations.",
+      "features": [
+        "1080p short video creation",
+        "Narrative consistency across frames",
+        "Fast generation pipeline",
+        "User-friendly editing tools"
+      ],
+      "rating": 4.5,
+      "isVerified": false,
+      "isFeatured": false,
+      "featuredRank": null,
+      "seo": {
+        "metaTitle": "Seedance 1.0 - Free AI 1080p Video Generator for Content Creators",
+        "metaDescription": "Generate stunning 5-second videos with Seedance 1.0’s AI-powered platform. Fast, high-quality video generation for marketing and social media."
       },
-      {
-        "question": "Does Anychat charge for access?",
-        "answer": "No, Anychat is free to use for all supported AI tools."
-      },
-      {
-        "question": "Can I integrate Anychat API?",
-        "answer": "Yes, commercial API options are available for developers."
-      }
-    ]
-  },
-  {
-    "id": 76,
-    "displayName": "Seedance 1.0",
-    "name": "Seedance 1.0",
-    "slug": "seedance-1-0",
-    "logo": "/logo/seedance-1-0.png",
-    "url": "https://seedance.com/",
-    "shortDescription": "AI video generator creating 5-second 1080p videos with high narrative coherence and visual fidelity.",
-    "longDescription": "Seedance 1.0 is an AI-powered video generation platform developed by ByteDance, designed to produce short videos at 1080p resolution with exceptional visual quality and storytelling coherence. Ideal for marketers, content creators, and social media campaigns looking for rapid, high-quality video content.",
-    "categories": [
-      "AI Useful",
-      "Future Tools",
-      "Video Generators"
-    ],
-    "tags": [
-      "AI video",
-      "content creation",
-      "short videos",
-      "ByteDance"
-    ],
-    "pricingType": "free",
-    "pricing": "Free for basic video generation with premium plans offering longer videos and customizations.",
-    "features": [
-      "1080p short video creation",
-      "Narrative consistency across frames",
-      "Fast generation pipeline",
-      "User-friendly editing tools"
-    ],
-    "rating": 4.5,
-    "isVerified": false,
-    "isFeatured": false,
-    "featuredRank": null,
-    "seo": {
-      "metaTitle": "Seedance 1.0 - Free AI 1080p Video Generator for Content Creators",
-      "metaDescription": "Generate stunning 5-second videos with Seedance 1.0’s AI-powered platform. Fast, high-quality video generation for marketing and social media."
+      "faqs": [
+        {
+          "question": "How good is Seedance 1.0’s video quality?",
+          "answer": "It produces full HD 1080p videos with smooth transitions and strong narrative flow."
+        },
+        {
+          "question": "Is there a cost to use Seedance 1.0?",
+          "answer": "Basic usage is free, while premium plans expand video length and editing features."
+        },
+        {
+          "question": "Can I customize video content?",
+          "answer": "Yes, users can add narrative prompts and visual choices."
+        }
+      ]
     },
-    "faqs": [
-      {
-        "question": "How good is Seedance 1.0’s video quality?",
-        "answer": "It produces full HD 1080p videos with smooth transitions and strong narrative flow."
+    {
+      "id": 77,
+      "displayName": "Similar Songs Finder",
+      "name": "Similar Songs Finder",
+      "slug": "similar-songs-finder",
+      "logo": "/logo/similar-songs-finder.png",
+      "url": "https://similarsongsfinder.com/",
+      "shortDescription": "AI tool to find and create playlists of songs similar to your favorites for music discovery.",
+      "longDescription": "Similar Songs Finder helps music lovers discover new tunes quickly by analyzing characteristics of your favorite songs and generating playlists of similar tracks tailored to your taste. Perfect for discovering new artists and expanding your music library effortlessly.",
+      "categories": [
+        "AI Useful",
+        "Music"
+      ],
+      "tags": [
+        "music discovery",
+        "playlist generation",
+        "AI music recommendation",
+        "similar songs"
+      ],
+      "pricingType": "free",
+      "pricing": "Completely free music recommendation platform.",
+      "features": [
+        "Generate playlists of similar songs",
+        "Analyze audio features",
+        "Discover new music artists",
+        "Easy playlist exports"
+      ],
+      "rating": 4.5,
+      "isVerified": false,
+      "isFeatured": false,
+      "featuredRank": null,
+      "seo": {
+        "metaTitle": "Similar Songs Finder - Free AI Music Discovery & Playlist Generator",
+        "metaDescription": "Quickly find songs similar to your favorites with Similar Songs Finder. AI-powered playlist creation and music discovery platform."
       },
-      {
-        "question": "Is there a cost to use Seedance 1.0?",
-        "answer": "Basic usage is free, while premium plans expand video length and editing features."
-      },
-      {
-        "question": "Can I customize video content?",
-        "answer": "Yes, users can add narrative prompts and visual choices."
-      }
-    ]
-  },
-  {
-    "id": 77,
-    "displayName": "Similar Songs Finder",
-    "name": "Similar Songs Finder",
-    "slug": "similar-songs-finder",
-    "logo": "/logo/similar-songs-finder.png",
-    "url": "https://similarsongsfinder.com/",
-    "shortDescription": "AI tool to find and create playlists of songs similar to your favorites for music discovery.",
-    "longDescription": "Similar Songs Finder helps music lovers discover new tunes quickly by analyzing characteristics of your favorite songs and generating playlists of similar tracks tailored to your taste. Perfect for discovering new artists and expanding your music library effortlessly.",
-    "categories": [
-      "AI Useful",
-      "Music"
-    ],
-    "tags": [
-      "music discovery",
-      "playlist generation",
-      "AI music recommendation",
-      "similar songs"
-    ],
-    "pricingType": "free",
-    "pricing": "Completely free music recommendation platform.",
-    "features": [
-      "Generate playlists of similar songs",
-      "Analyze audio features",
-      "Discover new music artists",
-      "Easy playlist exports"
-    ],
-    "rating": 4.5,
-    "isVerified": false,
-    "isFeatured": false,
-    "featuredRank": null,
-    "seo": {
-      "metaTitle": "Similar Songs Finder - Free AI Music Discovery & Playlist Generator",
-      "metaDescription": "Quickly find songs similar to your favorites with Similar Songs Finder. AI-powered playlist creation and music discovery platform."
+      "faqs": [
+        {
+          "question": "How does Similar Songs Finder work?",
+          "answer": "It uses AI to analyze musical features and generate playlists tailored to your favorite songs."
+        },
+        {
+          "question": "Is Similar Songs Finder free?",
+          "answer": "Yes, it's available at no cost for all users."
+        },
+        {
+          "question": "Can I export generated playlists?",
+          "answer": "Yes, playlists can be exported to popular music streaming platforms."
+        }
+      ]
     },
-    "faqs": [
-      {
-        "question": "How does Similar Songs Finder work?",
-        "answer": "It uses AI to analyze musical features and generate playlists tailored to your favorite songs."
+    {
+      "id": 78,
+      "displayName": "Owlift",
+      "name": "Owlift",
+      "slug": "owlift",
+      "logo": "/logo/owlift.png",
+      "url": "https://owlift.ai/",
+      "shortDescription": "AI assistant that explains complex topics in simple terms as if you were a 5-year-old.",
+      "longDescription": "Owlift provides an intuitive AI interface that breaks down complicated concepts into simple, easy-to-understand explanations. Ideal for students, educators, and lifelong learners, it makes knowledge accessible and engaging through clear, child-friendly language.",
+      "categories": [
+        "AI Useful",
+        "Education / Studies"
+      ],
+      "tags": [
+        "AI education",
+        "simplified learning",
+        "explanations",
+        "teaching aid"
+      ],
+      "pricingType": "freemium",
+      "pricing": "Free with a premium subscription available for enhanced features and extended access.",
+      "features": [
+        "Simplifies complex information",
+        "Easy-to-understand explanations",
+        "Educator-friendly tools",
+        "Accessible on multiple devices"
+      ],
+      "rating": 4.6,
+      "isVerified": false,
+      "isFeatured": false,
+      "featuredRank": null,
+      "seo": {
+        "metaTitle": "Owlift - AI Tool for Simple, Child-Friendly Explanations",
+        "metaDescription": "Discover Owlift, an AI assistant explaining difficult concepts simply for learners and educators. Free with premium enhancements."
       },
-      {
-        "question": "Is Similar Songs Finder free?",
-        "answer": "Yes, it's available at no cost for all users."
-      },
-      {
-        "question": "Can I export generated playlists?",
-        "answer": "Yes, playlists can be exported to popular music streaming platforms."
-      }
-    ]
-  },
-  {
-    "id": 78,
-    "displayName": "Owlift",
-    "name": "Owlift",
-    "slug": "owlift",
-    "logo": "/logo/owlift.png",
-    "url": "https://owlift.ai/",
-    "shortDescription": "AI assistant that explains complex topics in simple terms as if you were a 5-year-old.",
-    "longDescription": "Owlift provides an intuitive AI interface that breaks down complicated concepts into simple, easy-to-understand explanations. Ideal for students, educators, and lifelong learners, it makes knowledge accessible and engaging through clear, child-friendly language.",
-    "categories": [
-      "AI Useful",
-      "Education / Studies"
-    ],
-    "tags": [
-      "AI education",
-      "simplified learning",
-      "explanations",
-      "teaching aid"
-    ],
-    "pricingType": "freemium",
-    "pricing": "Free with a premium subscription available for enhanced features and extended access.",
-    "features": [
-      "Simplifies complex information",
-      "Easy-to-understand explanations",
-      "Educator-friendly tools",
-      "Accessible on multiple devices"
-    ],
-    "rating": 4.6,
-    "isVerified": false,
-    "isFeatured": false,
-    "featuredRank": null,
-    "seo": {
-      "metaTitle": "Owlift - AI Tool for Simple, Child-Friendly Explanations",
-      "metaDescription": "Discover Owlift, an AI assistant explaining difficult concepts simply for learners and educators. Free with premium enhancements."
+      "faqs": [
+        {
+          "question": "Who can benefit from Owlift?",
+          "answer": "Students, teachers, and anyone seeking simplified explanations of complex topics."
+        },
+        {
+          "question": "Is there a free version of Owlift?",
+          "answer": "Yes, Owlift offers free usage with options for premium plans."
+        },
+        {
+          "question": "Can Owlift explain technical subjects?",
+          "answer": "Owlift is designed to make technical and academic content accessible through simplified language."
+        }
+      ]
     },
-    "faqs": [
-      {
-        "question": "Who can benefit from Owlift?",
-        "answer": "Students, teachers, and anyone seeking simplified explanations of complex topics."
+    {
+      "id": 79,
+      "displayName": "SpyGPT",
+      "name": "SpyGPT",
+      "slug": "spygpt",
+      "logo": "/logo/spygpt.png",
+      "url": "https://spyfu.com/spygpt",
+      "shortDescription": "Analysis tool exploring 250M+ ChatGPT responses to optimize brand presence and competitor comparisons.",
+      "longDescription": "SpyGPT offers unique insights by analyzing over 250 million ChatGPT user interactions to gauge how brands are perceived in AI responses. Marketers and businesses use SpyGPT to benchmark competitors, optimize presence, and strategically shape their AI interactions for improved visibility and reputation.",
+      "categories": [
+        "AI Useful",
+        "Marketing"
+      ],
+      "tags": [
+        "brand analysis",
+        "ChatGPT data",
+        "competitor research",
+        "AI marketing"
+      ],
+      "pricingType": "free",
+      "pricing": "Available free with optional premium features for advanced analytics.",
+      "features": [
+        "Analyzes large-scale ChatGPT interactions",
+        "Brand perception insights",
+        "Competitor analysis",
+        "Marketing optimization tools"
+      ],
+      "rating": 4.5,
+      "isVerified": false,
+      "isFeatured": false,
+      "featuredRank": null,
+      "seo": {
+        "metaTitle": "SpyGPT - Free ChatGPT Brand Analysis & Competitor Insights",
+        "metaDescription": "Use SpyGPT to analyze ChatGPT responses for brand perception, competitor benchmarking, and AI-powered marketing strategies."
       },
-      {
-        "question": "Is there a free version of Owlift?",
-        "answer": "Yes, Owlift offers free usage with options for premium plans."
-      },
-      {
-        "question": "Can Owlift explain technical subjects?",
-        "answer": "Owlift is designed to make technical and academic content accessible through simplified language."
-      }
-    ]
-  },
-  {
-    "id": 79,
-    "displayName": "SpyGPT",
-    "name": "SpyGPT",
-    "slug": "spygpt",
-    "logo": "/logo/spygpt.png",
-    "url": "https://spyfu.com/spygpt",
-    "shortDescription": "Analysis tool exploring 250M+ ChatGPT responses to optimize brand presence and competitor comparisons.",
-    "longDescription": "SpyGPT offers unique insights by analyzing over 250 million ChatGPT user interactions to gauge how brands are perceived in AI responses. Marketers and businesses use SpyGPT to benchmark competitors, optimize presence, and strategically shape their AI interactions for improved visibility and reputation.",
-    "categories": [
-      "AI Useful",
-      "Marketing"
-    ],
-    "tags": [
-      "brand analysis",
-      "ChatGPT data",
-      "competitor research",
-      "AI marketing"
-    ],
-    "pricingType": "free",
-    "pricing": "Available free with optional premium features for advanced analytics.",
-    "features": [
-      "Analyzes large-scale ChatGPT interactions",
-      "Brand perception insights",
-      "Competitor analysis",
-      "Marketing optimization tools"
-    ],
-    "rating": 4.5,
-    "isVerified": false,
-    "isFeatured": false,
-    "featuredRank": null,
-    "seo": {
-      "metaTitle": "SpyGPT - Free ChatGPT Brand Analysis & Competitor Insights",
-      "metaDescription": "Use SpyGPT to analyze ChatGPT responses for brand perception, competitor benchmarking, and AI-powered marketing strategies."
+      "faqs": [
+        {
+          "question": "How does SpyGPT help my brand?",
+          "answer": "It provides insights into how your brand is mentioned and perceived within billions of ChatGPT responses."
+        },
+        {
+          "question": "Is SpyGPT free to use?",
+          "answer": "SpyGPT offers free usage with premium subscription options."
+        },
+        {
+          "question": "Can SpyGPT compare my brand with competitors?",
+          "answer": "Yes, competitor comparison is one of SpyGPT’s core features."
+        }
+      ]
     },
-    "faqs": [
-      {
-        "question": "How does SpyGPT help my brand?",
-        "answer": "It provides insights into how your brand is mentioned and perceived within billions of ChatGPT responses."
+    {
+      "id": 80,
+      "displayName": "Zapier",
+      "name": "Zapier",
+      "slug": "zapier-ai",
+      "logo": "/logo/zapier-ai.png",
+      "url": "https://zapier.com/",
+      "shortDescription": "Automation platform connecting apps to maximize productivity with intelligent AI workflows.",
+      "longDescription": "Zapier AI automates repetitive tasks by connecting thousands of web apps, enabling users to create intelligent workflows without coding. The AI-powered automations enhance productivity by managing data, notifications, and integrations seamlessly across business and personal tools.",
+      "categories": [
+        "AI Useful",
+        "Automation",
+        "Latest AI",
+        "Productivity"
+      ],
+      "tags": [
+        "automation",
+        "workflow",
+        "AI integration",
+        "productivity tools"
+      ],
+      "pricingType": "freemium",
+      "pricing": "Free tier with limited automation runs; premium plans unlock advanced features and unlimited usage.",
+      "features": [
+        "Connects 3000+ apps",
+        "Automate repetitive tasks",
+        "No coding required",
+        "AI workflow logic"
+      ],
+      "rating": 4.7,
+      "isVerified": true,
+      "isFeatured": true,
+      "featuredRank": null,
+      "seo": {
+        "metaTitle": "Zapier AI - Freemium Automation Platform for Productivity",
+        "metaDescription": "Automate your tasks and connect apps effortlessly with Zapier AI. Free and paid plans available."
       },
-      {
-        "question": "Is SpyGPT free to use?",
-        "answer": "SpyGPT offers free usage with premium subscription options."
-      },
-      {
-        "question": "Can SpyGPT compare my brand with competitors?",
-        "answer": "Yes, competitor comparison is one of SpyGPT’s core features."
-      }
-    ]
-  },
-  {
-    "id": 80,
-    "displayName": "Zapier",
-    "name": "Zapier",
-    "slug": "zapier-ai",
-    "logo": "/logo/zapier-ai.png",
-    "url": "https://zapier.com/",
-    "shortDescription": "Automation platform connecting apps to maximize productivity with intelligent AI workflows.",
-    "longDescription": "Zapier AI automates repetitive tasks by connecting thousands of web apps, enabling users to create intelligent workflows without coding. The AI-powered automations enhance productivity by managing data, notifications, and integrations seamlessly across business and personal tools.",
-    "categories": [
-      "AI Useful",
-      "Automation",
-      "Latest AI",
-      "Productivity"
-    ],
-    "tags": [
-      "automation",
-      "workflow",
-      "AI integration",
-      "productivity tools"
-    ],
-    "pricingType": "freemium",
-    "pricing": "Free tier with limited automation runs; premium plans unlock advanced features and unlimited usage.",
-    "features": [
-      "Connects 3000+ apps",
-      "Automate repetitive tasks",
-      "No coding required",
-      "AI workflow logic"
-    ],
-    "rating": 4.7,
-    "isVerified": true,
-    "isFeatured": true,
-    "featuredRank": null,
-    "seo": {
-      "metaTitle": "Zapier AI - Freemium Automation Platform for Productivity",
-      "metaDescription": "Automate your tasks and connect apps effortlessly with Zapier AI. Free and paid plans available."
+      "faqs": [
+        {
+          "question": "How many apps can Zapier connect?",
+          "answer": "Zapier connects over 3000 popular applications and services."
+        },
+        {
+          "question": "Is coding required to use Zapier?",
+          "answer": "No, Zapier enables no-code automation workflows."
+        },
+        {
+          "question": "Does Zapier offer a free plan?",
+          "answer": "Yes, the free plan supports basic automations with paid plans unlocking more features."
+        }
+      ]
     },
-    "faqs": [
-      {
-        "question": "How many apps can Zapier connect?",
-        "answer": "Zapier connects over 3000 popular applications and services."
-      },
-      {
-        "question": "Is coding required to use Zapier?",
-        "answer": "No, Zapier enables no-code automation workflows."
-      },
-      {
-        "question": "Does Zapier offer a free plan?",
-        "answer": "Yes, the free plan supports basic automations with paid plans unlocking more features."
-      }
-    ]
-  },
   {
     "id": 81,
     "displayName": "AppSumo AI",
