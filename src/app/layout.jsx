@@ -189,15 +189,19 @@ export default function RootLayout({ children }) {
         </Script>
       </head>
 
-      <body
+       <body
         className={`${spaceGrotesk.variable} antialiased scroll-smooth bg-white text-gray-900`}
       >
+        {/* Client-only wrappers (ProgressBar, etc.) */}
         <ClientProviders>
-    {children}
-  </ClientProviders>
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+          <Header />
+
+          <main className="min-h-screen">
+            {children}
+          </main>
+
+          <Footer />
+        </ClientProviders>
       </body>
     </html>
   );
