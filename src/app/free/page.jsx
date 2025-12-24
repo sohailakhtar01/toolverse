@@ -2,6 +2,8 @@ import dbConnect from '@/lib/mongodb';
 import Tool from '@/models/Tool';
 import ToolList from '@/components/ToolList';
 import info from '@/data/info';
+import HomeSearchBar from "@/components/HomeSearchBar";
+
 
 import {
   HeroSection,
@@ -35,6 +37,7 @@ async function ToolsSection({ searchParams }) {
     Tool.find(query).sort({ rating: -1, _id: 1 }).skip(skip).limit(limit).lean(),
     Tool.countDocuments(query),
   ]);
+  const allCategories = await Tool.distinct("categories");
 
   const totalPages = Math.max(1, Math.ceil(total / limit));
 
@@ -81,15 +84,21 @@ async function ToolsSection({ searchParams }) {
     pages.push(totalPages);
   }
 
-  return { freeTools, totalPages, page, pages };
+return { freeTools, totalPages, page, pages, allCategories };
 }
 
 export default async function FreePage({ searchParams }) {
-  const { freeTools, totalPages, page, pages } = await ToolsSection({ searchParams });
+const { freeTools, totalPages, page, pages, allCategories } =
+  await ToolsSection({ searchParams });
 
   return (
     <main>
       <HeroSection heroData={info.free.hero} />
+      <div className="mb-20">
+  <HomeSearchBar allCategories={allCategories} />
+</div>
+
+
 
       <section
         id="tools"
@@ -98,14 +107,13 @@ export default async function FreePage({ searchParams }) {
         {/* scroll target */}
         <div id="tools-section" />
 
-        <ToolList
-        id="tools-section" 
-        
-          tools={freeTools}
-          title="All Free AI Tools"
-          showSearch={true}
-          showFilters={true}
-        />
+       <ToolList
+  tools={freeTools}
+  title="All Free AI Tools"
+  showSearch={false}
+  showFilters={false}
+/>
+
 
         <PaginationTools
           page={page}

@@ -2,6 +2,7 @@ import dbConnect from '@/lib/mongodb';
 import Tool from '@/models/Tool';
 import ToolList from '@/components/ToolList';
 import info from '@/data/info';
+import HomeSearchBar from "@/components/HomeSearchBar";
 import {
   HeroSection,
   SEOContentSection,
@@ -40,6 +41,8 @@ async function ToolsSection({ searchParams }) {
       .lean(),
     Tool.countDocuments(query),
   ]);
+  const allCategories = await Tool.distinct("categories");
+
 
   const totalPages = Math.max(1, Math.ceil(total / limit));
 
@@ -86,16 +89,21 @@ async function ToolsSection({ searchParams }) {
     pages.push(totalPages);
   }
 
-  return { freemiumTools, totalPages, page, pages };
+return { freemiumTools, totalPages, page, pages, allCategories };
 }
 
 export default async function FreemiumPage({ searchParams }) {
-  const { freemiumTools, totalPages, page, pages } =
-    await ToolsSection({ searchParams });
+ const { freemiumTools, totalPages, page, pages, allCategories } =
+  await ToolsSection({ searchParams });
+
 
   return (
     <main>
       <HeroSection heroData={info.freemium.hero} />
+      <div className="mb-20">
+  <HomeSearchBar allCategories={allCategories} />
+</div>
+
 
       <section
         id="tools"
@@ -105,11 +113,11 @@ export default async function FreemiumPage({ searchParams }) {
         <div id="tools-section" />
 
         <ToolList
-          tools={freemiumTools}
-          title="Best Freemium AI Tools"
-          showSearch={true}
-          showFilters={true}
-        />
+  tools={freemiumTools}
+  title="Best Freemium AI Tools"
+  showSearch={false}
+  showFilters={false}
+/>
 
         <PaginationTools
           page={page}

@@ -55,13 +55,13 @@ const uniqueCategories = Array.from(uniqueCategoriesMap.values());
             {/* Multi-layered Professional Background */}
             <div className="absolute inset-0 -z-10">
                 {/* Soft gradient base */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50/40 via-blue-50/30 to-indigo-50/40" />
+                {/* <div className="absolute inset-0 bg-gradient-to-br from-purple-50/40 via-blue-50/30 to-indigo-50/40" /> */}
                 
                 {/* Subtle grid pattern */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#e0e7ff_1px,transparent_1px),linear-gradient(to_bottom,#e0e7ff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+                {/* <div className="absolute inset-0 bg-[linear-gradient(to_right,#e0e7ff_1px,transparent_1px),linear-gradient(to_bottom,#e0e7ff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" /> */}
                 
                 {/* Dot pattern overlay for depth */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#c7d2fe_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" />
+                {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#c7d2fe_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" /> */}
             </div>
 
             <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl 

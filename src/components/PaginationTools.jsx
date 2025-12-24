@@ -29,11 +29,18 @@ export default function PaginationTools({
 
     // wait a bit so the new page content is rendered, then scroll
     setTimeout(() => {
-      const el = document.getElementById(scrollTargetId || 'tools-section');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 150); // 100–200ms is enough in practice
+  const el = document.getElementById(scrollTargetId || 'tools-section');
+  if (el) {
+    const yOffset = -30; // 👈 yahan adjust kar sakta hai (-20, -40, etc.)
+    const y =
+      el.getBoundingClientRect().top +
+      window.pageYOffset +
+      yOffset;
+
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+}, 150);
+// 100–200ms is enough in practice
   };
 
   return (
