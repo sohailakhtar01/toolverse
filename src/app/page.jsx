@@ -88,10 +88,14 @@ export default async function HomePage() {
 
     // Fetch featured tools only
     const [tools, count] = await Promise.all([
-      Tool.find({ isFeatured: true })
-        .sort({ rating: -1 })
-        .limit(20)
-        .select('displayName name shortDescription longDescription description rating categories pricingType tags slug logo image url logoUrl isVerified isFeatured')
+      Tool.find({ 
+  isFeatured: true,
+  featuredRank: { $gte: 1, $lte: 20 }
+})
+.sort({ featuredRank: 1 }) // 👈 MOST IMPORTANT LINE
+.limit(20)
+
+        .select('displayName name shortDescription longDescription description rating categories pricingType tags slug logo image url logoUrl isVerified isFeatured featuredRank')
         .lean(),
       Tool.countDocuments({})
     ]);
@@ -108,6 +112,7 @@ export default async function HomePage() {
       categories: Array.isArray(tool.categories) ? tool.categories : [],
       pricingType: tool.pricingType || 'freemium',
       slug: tool.slug,
+        featuredRank: tool.featuredRank,
     }));
 
     console.log(`✅ Homepage: Loaded ${featuredTools.length} featured tools (Total DB: ${totalCount})`);
@@ -296,6 +301,19 @@ export default async function HomePage() {
 
         {/* ✅ CLIENT SEARCH COMPONENT (No more errors!) */}
         <HomeSearchBar allCategories={allCategories} />
+        {/* Header Section */}
+        <div className="text-center mb-6">
+          <div className="inline-block">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent mb-3">
+            Featured AI Tools
+            </h2>
+            <div className="h-1 w-24 mx-auto bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
+          </div>
+          
+          <p className="mt-4 text-base sm:text-lg text-gray-600 font-medium">
+           Trending, trusted, and battle-tested AI tools people actually use to get real work done
+          </p>
+        </div>
 
         {/* ✅ FEATURED TOOLS */}
         <ToolList

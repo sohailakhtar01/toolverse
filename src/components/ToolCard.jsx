@@ -17,9 +17,12 @@ const getPricingDisplay = (type) => {
 const ToolCard = ({ tool, viewMode = 'grid' }) => {
   const router = useRouter();
   const pricing = getPricingDisplay(tool.pricingType);
+console.log(tool.name, tool.featuredRank);
 
   return (
+    
     <div
+    
       onClick={() => router.push(`/tools/${tool.slug}`)}
       className={`
   group relative bg-white rounded-xl border border-gray-100 p-6
@@ -47,12 +50,14 @@ const ToolCard = ({ tool, viewMode = 'grid' }) => {
           <span className="text-sm font-medium text-gray-800">{pricing.label}</span>
         </div>
 
-        <span className="flex items-center gap-1 text-yellow-500 text-sm">
-          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.929 8.737c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
-          </svg>
-          {tool.rating}
-        </span>
+        {/* RATING – Bottom Right */}
+<div className="absolute bottom-4 right-4 flex items-center gap-1 text-yellow-500 text-sm">
+  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.929 8.737c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+  </svg>
+  <span className="font-medium">{tool.rating}</span>
+</div>
+
       </div>
 
       {/* LOGO + NAME */}
@@ -113,6 +118,29 @@ const ToolCard = ({ tool, viewMode = 'grid' }) => {
     </span>
   )}
 </div>
+{/* TOP BADGE (Only for Rank 1–5) */}
+{/* TOP BADGE (Only for Rank 1–5) */}
+{tool.isFeatured && tool.featuredRank && tool.featuredRank <= 5 && (
+  <div className="absolute -top-1 -right-1 w-30 h-30 z-20 pointer-events-none overflow-hidden rounded-tr-xl">
+    
+    <Image 
+      src="/ribbon.png" 
+      alt="Top Rank Ribbon"
+      fill
+      className="object-contain scale-110 -translate-y-4 translate-x-3" 
+      priority
+    />
+
+    <div className="absolute top-[22px] -right-[11px] w-[100px] transform rotate-45 flex flex-col items-center justify-center text-center">
+      <span className="block text-sm font-extrabold text-white leading-none drop-shadow-md">
+        TOP {tool.featuredRank}
+      </span>
+    </div>
+
+  </div>
+)}
+
+
 
 
 

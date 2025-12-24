@@ -10,7 +10,7 @@ const ToolList = ({
 }) => {
 
   return (
-    <section className="relative w-full py-16 px-4 sm:px-6 lg:px-8">
+    <section className="relative w-full py-16 px-4 sm:px-6 lg:px-6">
       
       {/* Professional Multi-Layer Background */}
       {/* Clean Background */}
@@ -30,7 +30,7 @@ const ToolList = ({
       <div className="relative max-w-7xl mx-auto">
         
         {/* Header Section */}
-        <div className="text-center mb-12">
+        {/* <div className="text-center mb-12">
           <div className="inline-block">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent mb-3">
               {title}
@@ -44,7 +44,7 @@ const ToolList = ({
               : `Discover ${tools.length}+ powerful AI tools to transform your workflow`
             }
           </p>
-        </div>
+        </div> */}
 
         {/* Tools Grid / Loading / Empty State */}
         <div className="relative">

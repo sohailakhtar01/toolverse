@@ -353,11 +353,15 @@ const alternatives = await Tool.find(
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
         
         {/* Enhanced Header with Rich Breadcrumbs */}
-       <header className="bg-gradient-to-r from-slate-50 via-white to-blue-50/30 mt-12  w-full border-b border-gray-100 shadow-sm">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div className="flex items-center top-10 justify-between">
-      {/* Breadcrumbs with Professional Styling */}
-      <div className="flex-1">
+       <header className="bg-gradient-to-r from-slate-50 via-white to-blue-50/30 mt-16 sm:mt-12 w-full border-b border-gray-100 shadow-sm">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+    <div className="flex items-center justify-between gap-4">
+      
+      {/* Breadcrumbs Container 
+          min-w-0 is CRITICAL here: it prevents the flex item from overflowing 
+          and forces the inner scrollbar to work 
+      */}
+      <div className="flex-1 min-w-0 overflow-hidden">
         <Breadcrumbs
           items={[
             { name: 'Home', path: '/' },
@@ -373,8 +377,8 @@ const alternatives = await Tool.find(
         />
       </div>
       
-      {/* Optional: Last Updated Badge */}
-      <div className="hidden md:flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-100 rounded-full">
+      {/* Last Updated Badge - Hidden on small mobile, visible on md+ */}
+      <div className="hidden md:flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-100 rounded-full flex-shrink-0">
         <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
         <span className="text-xs font-medium text-blue-700">
           Updated {new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
@@ -441,19 +445,19 @@ const alternatives = await Tool.find(
             height="96"
           />
           
-          {/* Verified Badge */}
+          {/* Verified Badge
           {tool.isVerified && (
             <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-md border-2 border-white">
               <CheckCircle className="w-4 h-4 text-white fill-current" />
             </div>
-          )}
+          )} */}
         </div>
       </div>
       
       {/* Title + Short Description */}
       <div className="flex-1 min-w-0">
         <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 leading-tight">
-          {tool.displayName}
+          {tool.name}
         </h1>
         <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-4">
           {tool.shortDescription}

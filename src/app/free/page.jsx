@@ -2,6 +2,7 @@ import dbConnect from '@/lib/mongodb';
 import Tool from '@/models/Tool';
 import ToolList from '@/components/ToolList';
 import info from '@/data/info';
+
 import {
   HeroSection,
   SEOContentSection,

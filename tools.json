@@ -1720,7 +1720,7 @@
     "rating": 4.9,
     "isVerified": true,
     "isFeatured": true,
-    "featuredRank": null,
+    "featuredRank": 1,
     "seo": {
       "metaTitle": "ChatGPT by OpenAI - The Best Free Conversational AI Assistant",
       "metaDescription": "Chat with ChatGPT, the world’s top AI chatbot for accurate answers, creative help, and natural conversations. Trusted by millions."
@@ -1873,7 +1873,7 @@
     "rating": 4.8,
     "isVerified": true,
     "isFeatured": true,
-    "featuredRank": null,
+    "featuredRank": 3,
     "seo": {
       "metaTitle": "Gemini AI by Google - Free Multimodal Chat Assistant for Research & Productivity",
       "metaDescription": "Try Gemini AI, Google’s free AI assistant. Multimodal, real-time, image and text chat. Next-gen DeepMind model for productivity."
@@ -2029,7 +2029,7 @@
     "rating": 4.7,
     "isVerified": true,
     "isFeatured": true,
-    "featuredRank": null,
+    "featuredRank": 5,
     "seo": {
       "metaTitle": "Microsoft Copilot - Free AI Assistant Built for Productivity",
       "metaDescription": "Get personalized help, insights, and support from Microsoft Copilot—built into Windows and 365. AI for work, study, and daily life."
@@ -3459,7 +3459,7 @@
       "rating": 4.8,
       "isVerified": true,
       "isFeatured": true,
-      "featuredRank": null,
+      "featuredRank": 9,
       "seo": {
         "metaTitle": "Notion AI - Freemium Productivity & AI Writing Assistant",
         "metaDescription": "Increase your creativity and organize tasks with Notion AI’s smart writing and project management tools."
@@ -3813,7 +3813,7 @@
       "rating": 4.7,
       "isVerified": true,
       "isFeatured": true,
-      "featuredRank": null,
+      "featuredRank": 13,
       "seo": {
         "metaTitle": "Zapier AI - Freemium Automation Platform for Productivity",
         "metaDescription": "Automate your tasks and connect apps effortlessly with Zapier AI. Free and paid plans available."
@@ -5068,7 +5068,7 @@
     "rating": 4.8,
     "isVerified": true,
     "isFeatured": true,
-    "featuredRank": null,
+    "featuredRank": 11,
     "seo": {
       "metaTitle": "GitHub Copilot AI - AI-Powered Code Assistant",
       "metaDescription": "Boost coding productivity with GitHub Copilot AI. Get AI-based code suggestions, completions and generate code fast. Free trial available."
@@ -5120,7 +5120,7 @@
     "rating": 4.7,
      "isVerified": true,
     "isFeatured": true,
-    "featuredRank": null,
+    "featuredRank": 12,
     "seo": {
       "metaTitle": "Cursor AI - Free AI Assistant for Faster Coding",
       "metaDescription": "Accelerate your coding workflow with Cursor AI. Get contextual code suggestions and automated generation for free."
@@ -5585,7 +5585,7 @@
     "rating": 4.7,
     "isVerified": true,
     "isFeatured": true,
-    "featuredRank": null,
+    "featuredRank": 20,
     "seo": {
       "metaTitle": "Woebot Health – Free AI Mental Health Coach & Support",
       "metaDescription": "Woebot Health offers free, 24/7 AI-powered mental health support using advanced CBT. Start your journey with a supportive AI chatbot for better wellbeing."
@@ -5683,7 +5683,7 @@
     "rating": 4.8,
     "isVerified": true,
     "isFeatured": true,
-    "featuredRank": null,
+    "featuredRank": 19,
     "seo": {
       "metaTitle": "Be My Eyes - Live Visual Assistance for the Visually Impaired",
       "metaDescription": "Get real-time help with daily tasks using Be My Eyes. Connect with volunteers and AI for accessible visual support whenever you need it."
@@ -7857,7 +7857,7 @@
     "rating": 4.8,
     "isVerified": true,
     "isFeatured": true,
-    "featuredRank": 4,
+    "featuredRank": 7,
     "seo": {
       "metaTitle": "Canva AI – Design Faster with AI Images, Copy & Templates",
       "metaDescription": "Use Canva AI to generate images, write copy, and create presentations in minutes. Freemium visual design platform for marketing, business, and content teams."
@@ -12014,7 +12014,7 @@
     "rating": 4.9,
     "isVerified": false,
     "isFeatured": true,
-    "featuredRank": null,
+    "featuredRank": 2,
     "seo": {
       "metaTitle": "Perplexity AI Review: Free Research Engine with Citations 2025",
       "metaDescription": "Perplexity AI answers complex questions with cited sources instantly. Free unlimited research, academic papers, real-time web synthesis, 5x faster discovery."
@@ -12439,7 +12439,7 @@
     "rating": 4.9,
     "isVerified": false,
     "isFeatured": true,
-    "featuredRank": null,
+    "featuredRank": 10,
     "seo": {
       "metaTitle": "NotebookLM Review: Free Google AI Research Notebook 2025 Guide",
       "metaDescription": "NotebookLM by Google creates AI notebooks from documents with audio guides, timelines, FAQs. Free grounded research synthesis, no hallucinations."
@@ -13073,7 +13073,7 @@
     "rating": 4.8,
     "isVerified": false,
     "isFeatured": true,
-    "featuredRank": null,
+    "featuredRank": 4,
     "seo": {
       "metaTitle": "Claude for Chrome Review: Free AI Browser Automation 2025",
       "metaDescription": "Claude for Chrome automates web tasks, summarizes pages, drafts emails. Free Claude AI extension for Gmail, calendars, productivity automation."
@@ -18932,7 +18932,7 @@
     "rating": 4.9,
     "isVerified": true,
     "isFeatured": true,
-    "featuredRank": 2,
+    "featuredRank": 8,
     "seo": {
       "metaTitle": "Adobe Express Review: Free Firefly AI Image Editor 2025",
       "metaDescription": "Adobe Express offers free Firefly AI editing - background removal, generative fill, templates. Professional results instantly."
@@ -23086,7 +23086,7 @@
     "rating": 4.8,
     "isVerified": true,
     "isFeatured": true,
-    "featuredRank": 348,
+    "featuredRank": 14,
     "seo": {
       "metaTitle": "HubSpot CRM Review: Free AI Sales & Marketing Automation Platform",
       "metaDescription": "HubSpot CRM offers free AI-powered sales automation, lead scoring, 360° views. Scales to enterprise. Perfect for growing teams."
@@ -26420,7 +26420,7 @@
     "rating": 4.7,
     "isVerified": true,
     "isFeatured": true,
-    "featuredRank": 3,
+    "featuredRank": 18,
     "seo": {
       "metaTitle": "MidJourney Prompt Helper Review: Professional MJ Prompts Free",
       "metaDescription": "MidJourney Prompt Helper generates perfect parameters, AR, stylize, chaos. NFT/concept art optimized. Completely free."
@@ -33271,7 +33271,7 @@
     "rating": 4.9,
     "isVerified": true,
     "isFeatured": true,
-    "featuredRank": 1,
+    "featuredRank": 15,
     "seo": {
       "metaTitle": "ElevenLabs Review: Best AI Voice Generator & Cloning 2025",
       "metaDescription": "ElevenLabs creates realistic AI voices with instant cloning. 29 languages, studio tools, API, free plan details."
@@ -36628,7 +36628,7 @@
     "rating": 4.9,
     "isVerified": true,
     "isFeatured": true,
-    "featuredRank": 1,
+    "featuredRank": 6,
     "seo": {
       "metaTitle": "CapCut Review: Free AI Video Editor TikTok 2025",
       "metaDescription": "CapCut: free AI-powered video editor for TikTok/YouTube. Auto-captions, effects, 10k templates, 4K export, no watermark."
@@ -39950,7 +39950,7 @@
     "rating": 4.5,
     "isVerified": true,
     "isFeatured": true,
-    "featuredRank": 1,
+    "featuredRank": 17,
     "seo": {
       "metaTitle": "Photomath Review: Camera Math Solver 2025",
       "metaDescription": "Photomath scans math → step-by-step solutions. Free core/Plus $9.99/mo. Arithmetic to calculus instantly."
@@ -40108,7 +40108,7 @@
     "rating": 4.7,
     "isVerified": true,
     "isFeatured": true,
-    "featuredRank": 1,
+    "featuredRank": 16,
     "seo": {
       "metaTitle": "Duolingo Review 2025: Best Free Language Learning App",
       "metaDescription": "Duolingo teaches 100+ languages FREE with gamified lessons. Spanish/French/Japanese proven effective. Super $6.99/mo unlimited. 500M+ users."
