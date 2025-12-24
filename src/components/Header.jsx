@@ -1,280 +1,140 @@
-// components/Header.jsx
+"use client";
 
-"use client"; // This is necessary for Next.js to treat this file as a client component
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
-import { ChevronDown } from "lucide-react"; // dropdown icon
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [mobileToolsOpen, setMobileToolsOpen] = useState(false);
-    const [mobileCompareOpen, setMobileCompareOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  // Effect to manage body scroll when mobile menu is open
+  // Prevent scrolling when menu is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = ''; // Resets to default, which is usually 'auto' or 'unset'
+      document.body.style.overflow = "";
     }
-    // Cleanup function to ensure overflow is reset if component unmounts
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/free", label: "Free AI Solutions" },
+    { href: "/blog", label: "Insights" },
+    { href: "/featured", label: "Featured" },
+  ];
+
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50"> {/* Changed sticky to fixed */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="flex items-center justify-center">
+    <>
+      {/* Main Header 
+        z-50 ensures it stays ON TOP of the mobile menu 
+      */}
+      <header className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 h-16 border-b border-gray-100/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+          <div className="flex justify-between items-center h-full">
+            {/* Logo Section */}
+            <Link href="/" className="flex items-center space-x-2 z-50">
               <Image
-                src="/logo.png" // Ensure this path is correct relative to public folder
+                src="/logo.png"
                 alt="Toolsverse Logo"
                 width={40}
                 height={40}
-                className="w-10 h-10"
+                className="w-10 h-10 object-contain"
+                priority
               />
-            </div>
-            <span className="text-2xl font-spaceGrotesk font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"> {/* Reverted to pink-600 */}
-              ToolsVerse
-            </span>
-          </Link>
+              <span className="text-2xl font-spaceGrotesk font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                ToolsVerse
+              </span>
+            </Link>
 
-          {/* Desktop Navigation */}
-         
-<nav className="hidden md:flex items-center space-x-4">
-  <Link
-    href="/"
-    className="group font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors"
-  >
-    Home
-    <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
-  </Link>
-  <Link
-    href="/free"
-    className="group font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors"
-  >
-    Free AI Solutions
-    <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
-  </Link>
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-4">
+              {navLinks.map(({ href, label }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="group font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors"
+                >
+                  {label}
+                  <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md" />
+                </Link>
+              ))}
 
-  {/* Free AI Tools with Dropdown */}
-  {/* <div className="relative group">
-    <button className="flex cursor-pointer items-center font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
-      Free AI Tools
-      <ChevronDown className="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" />
-      
-    </button>
-    <div className="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
-      <Link
-        href="/free-ai-tools/students"
-        className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600"
-      >
-        Free AI Tools for Students
-      </Link>
-      <Link
-        href="/free-ai-tools/business"
-        className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600"
-      >
-        Free AI Tools for Business
-      </Link>
-      
-    </div>
-  </div> */}
-  {/* ////////////////// */}
-  {/* <div className="relative group">
-  <button className="flex items-center cursor-pointer font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors">
-    Compare AI Tools
-    <ChevronDown className="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" />
-  </button>
-  <div className="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
-    <Link
-      href="/compare/chatgpt-vs-claude"
-      className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600"
-    >
-      ChatGPT vs Claude
-    </Link>
-    <Link
-      href="/compare/chatgpt-vs-bard"
-      className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600"
-    >
-      ChatGPT vs Bard
-    </Link>
-    <Link
-      href="/compare/midjourney-vs-dalle"
-      className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600"
-    >
-      Midjourney vs DALL·E
-    </Link>
-    <Link
-      href="/compare/midjourney-vs-stable-diffusion"
-      className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600"
-    >
-      Midjourney vs Stable Diffusion
-    </Link>
-    <Link
-      href="/compare/chatgpt-vs-copilot"
-      className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600"
-    >
-      ChatGPT vs GitHub Copilot
-    </Link>
-  </div>
-</div> */}
-
-  {/* /////////////////////// */}
-  {/* <Link
-    href="/browse-tools"
-    className="group font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors"
-  >
-    Browse Tools
-    <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
-  </Link> */}
-
-  <Link
-    href="/blog"
-    className="group font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors"
-  >
-    Insights
-    <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
-  </Link>
-
-
-  <Link
-    href="/featured"
-    className="group font-spaceGrotesk relative px-3 py-2 text-[18px] text-gray-700 font-semibold hover:text-purple-600 transition-colors"
-  >
-    Featured
-    <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full rounded-md"></span>
-  </Link>
-  <Link
-  href="/submit-tool"
-  className="relative group flex items-center justify-center gap-2 px-6 py-2 font-spaceGrotesk font-semibold rounded-[25px] text-white bg-gradient-to-br from-purple-500 to-pink-500 shadow-sm overflow-hidden transition-all duration-500 hover:scale-[1.02]"
->
-  {/* Hover white background animation */}
-  <span className="absolute inset-0 bg-white scale-x-0 origin-center transform transition-transform duration-700 ease-in-out group-hover:scale-x-100 rounded-[25px] -z-10"></span>
-
-  <span className="relative z-10 transition-colors duration-500 group-hover:text-black">
-    Submit Tool
-  </span>
-</Link>
-
-
-
-
-</nav>
-
-          {/* Mobile Hamburger Icon */}
-          <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="p-2 text-purple-600 hover:text-purple-700 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-md" aria-label="Toggle mobile menu">
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Overlay */}
-        {isOpen && (
-          <div
-            onClick={() => setIsOpen(false)}
-            className="fixed inset-0 bg-gradient-to-r from-purple-500 to-pink-500 bg-opacity-10 backdrop-blur-sm z-40 md:hidden"
-            
-          />
-        )}
-
-        {/* Mobile Navigation Menu */}
-        <div className={`
-            fixed top-16 left-0 w-full h-[calc(100vh-4rem)] bg-white/95 backdrop-blur-md shadow-2xl z-50
-            transform transition-transform duration-300 ease-in-out origin-top
-            ${isOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 pointer-events-none'} md:hidden
-        `}>
-          <div className="p-6 flex flex-col h-full overflow-y-auto"> {/* Added overflow-y-auto for scrollable content */}
-            {/* Close button at the top of the mobile menu */}
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Menu</h3>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="p-2 text-purple-600 hover:text-purple-700 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-md"
-                aria-label="Close mobile menu"
+              <Link
+                href="/submit-tool"
+                className="relative group flex items-center justify-center px-6 py-2 font-spaceGrotesk font-semibold rounded-[25px] text-white bg-gradient-to-br from-purple-500 to-pink-500 shadow-sm transition-all duration-500 hover:scale-[1.02]"
               >
-                <X className="w-7 h-7" />
+                <span className="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-700 rounded-[25px] -z-10" />
+                <span className="relative z-10 group-hover:text-black">
+                  Submit Tool
+                </span>
+              </Link>
+            </nav>
+
+            {/* Mobile Hamburger Button */}
+            <div className="md:hidden flex items-center">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="p-2 text-purple-600 hover:text-purple-700 focus:outline-none transition-colors duration-200"
+                aria-label="Toggle mobile menu"
+              >
+                {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
               </button>
             </div>
+          </div>
+        </div>
+      </header>
 
-            {/* Mobile Navigation Links */}
-            {/* Mobile Navigation Links */}
-<nav className="flex flex-col space-y-2 flex-grow">
-  <Link href="/" onClick={() => setIsOpen(false)} className="px-3 font-spaceGrotesk py-2 text-xl text-gray-700 hover:text-purple-600 transition-colors">
-    Home
-  </Link>
-  <Link href="/free" onClick={() => setIsOpen(false)} className="px-3 font-spaceGrotesk py-2 text-xl text-gray-700 hover:text-purple-600 transition-colors">
-   Free AI Solutions
-  </Link>
+      {/* Mobile Menu Overlay 
+        - Uses translate-x for 60FPS animation (no lag)
+        - top-16 ensures it sits strictly BELOW the header logo
+        - will-change-transform hints browser to use GPU
+      */}
+      <div
+        className={`
+          fixed top-16 right-0 bottom-0 w-full md:hidden bg-white z-40
+          transform transition-transform duration-300 ease-in-out will-change-transform
+          ${isOpen ? "translate-x-0 shadow-[-10px_0_30px_rgba(0,0,0,0.1)]" : "translate-x-full"}
+        `}
+      >
+        <div className="flex flex-col h-full overflow-y-auto p-6">
+          <div className="flex flex-col space-y-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="font-spaceGrotesk text-xl font-medium text-gray-700 py-3 border-b border-gray-100 hover:text-purple-600 hover:pl-2 transition-all duration-200"
+              >
+                {link.label}
+              </Link>
+            ))}
 
-  {/* Free AI Tools Dropdown */}
-  {/* <div>
-    <button
-      onClick={() => setMobileToolsOpen(!mobileToolsOpen)}
-      className="flex justify-between items-center w-full px-4 py-3 text-xl font-spaceGrotesk text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all"
-    >
-      Free AI Tools
-      <ChevronDown className={`ml-2 w-5 h-5 transition-transform ${mobileToolsOpen ? "rotate-180" : ""}`} />
-    </button>
-    {mobileToolsOpen && (
-      <div className="pl-6">
-        <Link href="/free-ai-tools/students" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-purple-600">Students</Link>
-        <Link href="/free-ai-tools/business" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-purple-600">Business</Link>
-      </div>
-    )}
-  </div> */}
-
-  {/* Compare AI Tools Dropdown */}
-  {/* <div>
-    <button
-      onClick={() => setMobileCompareOpen(!mobileCompareOpen)}
-      className="flex justify-between items-center w-full px-4 py-3 text-xl font-spaceGrotesk text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all"
-    >
-      Compare AI Tools
-      <ChevronDown className={`ml-2 w-5 h-5 transition-transform ${mobileCompareOpen ? "rotate-180" : ""}`} />
-    </button>
-    {mobileCompareOpen && (
-      <div className="pl-6">
-        <Link href="/compare/chatgpt-vs-claude" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-purple-600">ChatGPT vs Claude</Link>
-        <Link href="/compare/chatgpt-vs-bard" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-purple-600">ChatGPT vs Bard</Link>
-        <Link href="/compare/midjourney-vs-dalle" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-purple-600">Midjourney vs DALL·E</Link>
-        <Link href="/compare/midjourney-vs-stable-diffusion" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-purple-600">Midjourney vs Stable Diffusion</Link>
-        <Link href="/compare/chatgpt-vs-copilot" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-purple-600">ChatGPT vs Copilot</Link>
-      </div>
-    )}
-  </div> */}
-
-  {/* Rest of links */}
-  {/* <Link href="/browse-tools" onClick={() => setIsOpen(false)} className="px-4 py-3 text-xl font-spaceGrotesk text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all">
-    Browse Tools
-  </Link> */}
-  <Link href="/blog" onClick={() => setIsOpen(false)} className="px-4 py-3 text-xl font-spaceGrotesk text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all">
-    Insights
-  </Link>
-  <Link href="/featured" onClick={() => setIsOpen(false)} className="px-4 py-3 text-xl font-spaceGrotesk text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-all">
-    Featured
-  </Link>
-<Link 
-  href="/submit-tool"
-  onClick={() => setIsOpen(false)}   // ✅ this closes the mobile menu
-  className="flex items-center justify-center gap-2 w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-2 text-sm sm:text-base cursor-pointer bg-gradient-to-br from-purple-500 to-pink-500 text-white rounded-[20px] sm:rounded-[25px] font-semibold font-spaceGrotesk hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105"
->
-  Submit Tool
-</Link>
-
-</nav>
-
+            <div className="pt-6">
+              <Link
+                href="/submit-tool"
+                onClick={() => setIsOpen(false)}
+                className="flex items-center justify-center w-full px-6 py-4 bg-gradient-to-br from-purple-500 to-pink-500 text-white text-lg font-bold rounded-xl shadow-md active:scale-95 transition-transform"
+              >
+                Submit Tool
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-    </header>
+
+      {/* Optional: Dark Overlay for the background content only */}
+      {isOpen && (
+        <div 
+          onClick={() => setIsOpen(false)}
+          className="fixed inset-0 bg-black/20 backdrop-blur-[1px] z-30 md:hidden transition-opacity duration-300"
+          aria-hidden="true"
+        />
+      )}
+    </>
   );
 };
 

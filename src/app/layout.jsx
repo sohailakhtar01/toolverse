@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
+import ProgressBar from '@/components/ProgressBar';
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -189,6 +190,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${spaceGrotesk.variable} antialiased scroll-smooth bg-white text-gray-900`}
       >
+        <ProgressBar />   {/* 👈 yahin add karo */}
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />

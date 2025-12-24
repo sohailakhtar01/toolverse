@@ -209,7 +209,7 @@ export default async function BlogPage() {
           <section className="py-16 md:py-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-4xl mx-auto mb-16">
-                <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-gray-900 mb-6">
+                <h1 className="text-5xl md:text-6xl mt-10 font-bold tracking-tight text-gray-900 mb-6">
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     AI Tools Blog
                   </span>
