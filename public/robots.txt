@@ -1,27 +1,17 @@
-# Allow all crawlers
 User-agent: *
 
-# Allow important directories
+# Allow everything needed for proper rendering
 Allow: /
-Allow: /tools/
-Allow: /categories/
-Allow: /blog/
-Allow: /compare/
-Allow: /free-ai-tools/
 
-# Block unnecessary paths (save crawl budget)
+# Block non-SEO, internal, or private routes
 Disallow: /api/
 Disallow: /admin/
-Disallow: /_next/
-Disallow: /static/
-Disallow: /products/
-Disallow: /product/
-Disallow: /shop/
+Disallow: /dashboard/
 Disallow: /cart/
 Disallow: /checkout/
+Disallow: /shop/
+Disallow: /product/
+Disallow: /products/
 
-# Crawl delay (optional - remove if causing issues)
-# Crawl-delay: 1
-
-# Sitemap location
+# Sitemap
 Sitemap: https://www.thetoolsverse.com/sitemap.xml

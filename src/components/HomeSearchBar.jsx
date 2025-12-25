@@ -18,22 +18,19 @@ export default function HomeSearchBar({ allCategories }) {
     );
   };
 
- // 🔹 Slug generator (preserves parentheses like "(AT)")
-const categoryToSlug = (category) => {
-  return category
-    .toLowerCase()
-    .trim()
-    // handle &
-    .replace(/&/g, "-and-")
-    // keep parentheses but normalize spacing around them
-    .replace(/\s*\(\s*/g, "-(")
-    .replace(/\s*\)\s*/g, ")-")
-    // replace remaining spaces & special chars (except parentheses)
-    .replace(/[^a-z0-9()]+/g, "-")
-    // cleanup extra hyphens
-    .replace(/-+/g, "-")
-    .replace(/^-+|-+$/g, "");
-};
+  // 🔹 Slug generator (preserves parentheses like "(AT)")
+  const categoryToSlug = (category) => {
+    return category
+      .toLowerCase()
+      .trim()
+      .replace(/&/g, "-and-")
+      .replace(/\//g, "-") // <--- Add this line here too
+      .replace(/\s*\(\s*/g, "-(")
+      .replace(/\s*\)\s*/g, ")-")
+      .replace(/[^a-z0-9()]+/g, "-")
+      .replace(/-+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  };
 
 
   const handleSearchSubmit = (e) => {
@@ -54,7 +51,7 @@ const categoryToSlug = (category) => {
       if (!cat) return;
       // Normalize: lowercase and single spaces
       const normalizedKey = cat.toLowerCase().trim().replace(/\s+/g, " ");
-      
+
       // Only add if we haven't seen this category yet
       if (!uniqueMap.has(normalizedKey)) {
         uniqueMap.set(normalizedKey, toTitleCase(normalizedKey));
@@ -139,7 +136,7 @@ const categoryToSlug = (category) => {
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
           {/* Left: Dropdown Filters */}
           <div className="flex flex-col sm:flex-row flex-wrap gap-3 w-full lg:w-auto">
-            
+
             {/* 🔴 THIS WAS THE ISSUE BEFORE: You were mapping 'allCategories' instead of 'uniqueCategories' */}
             <select
               onChange={(e) => {
@@ -184,56 +181,56 @@ const categoryToSlug = (category) => {
             </select>
           </div>
           {/* Right: Pricing Filter Pills */}
-          <div 
-  className="flex flex-nowrap gap-2 overflow-x-auto pb-2 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0"
->
-  {[
-    {
-      label: "Free",
-      href: "/free",
-      gradient: "from-emerald-500 to-green-500",
-      bg: "bg-emerald-50",
-    },
-    {
-      label: "Freemium",
-      href: "/freemium",
-      gradient: "from-amber-500 to-orange-500",
-      bg: "bg-amber-50",
-    },
-    {
-      label: "Paid",
-      href: "/paid",
-      gradient: "from-rose-500 to-red-500",
-      bg: "bg-rose-50",
-    },
-    {
-      label: "Free Trial",
-      href: "/free-trial",
-      gradient: "from-violet-500 to-purple-500",
-      bg: "bg-violet-50",
-    },
-  ].map((item) => (
-    <Link
-      key={item.label}
-      href={item.href}
-      // Added flex-shrink-0 so buttons don't get squashed
-      // Added whitespace-nowrap so text "Free Trial" doesn't break into two lines
-      className={`relative flex-shrink-0 px-4 py-2 text-sm font-medium text-gray-700
+          <div
+            className="flex flex-nowrap gap-2 overflow-x-auto pb-2 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0"
+          >
+            {[
+              {
+                label: "Free",
+                href: "/free",
+                gradient: "from-emerald-500 to-green-500",
+                bg: "bg-emerald-50",
+              },
+              {
+                label: "Freemium",
+                href: "/freemium",
+                gradient: "from-amber-500 to-orange-500",
+                bg: "bg-amber-50",
+              },
+              {
+                label: "Paid",
+                href: "/paid",
+                gradient: "from-rose-500 to-red-500",
+                bg: "bg-rose-50",
+              },
+              {
+                label: "Free Trial",
+                href: "/free-trial",
+                gradient: "from-violet-500 to-purple-500",
+                bg: "bg-violet-50",
+              },
+            ].map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                // Added flex-shrink-0 so buttons don't get squashed
+                // Added whitespace-nowrap so text "Free Trial" doesn't break into two lines
+                className={`relative flex-shrink-0 px-4 py-2 text-sm font-medium text-gray-700
                   ${item.bg} border border-gray-200/60 rounded-lg
                   hover:text-white hover:border-transparent
                   overflow-hidden group whitespace-nowrap
                   shadow-sm hover:shadow-md
                   transition-all duration-300`}
-    >
-      <span
-        className={`absolute inset-0 bg-gradient-to-r ${item.gradient} 
+              >
+                <span
+                  className={`absolute inset-0 bg-gradient-to-r ${item.gradient} 
                     translate-y-full group-hover:translate-y-0 
                     transition-transform duration-300 ease-out`}
-      />
-      <span className="relative z-10">{item.label}</span>
-    </Link>
-  ))}
-</div>
+                />
+                <span className="relative z-10">{item.label}</span>
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* ================= QUICK LINKS ================= */}

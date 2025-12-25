@@ -39,14 +39,14 @@ const geistMono = Geist_Mono({
 export const metadata = {
   // 🔥 COMPETITOR-BEATING TITLE
   title: "1200+ Best AI Tools Directory 2025 | Complete AI Software List - Toolsverse",
-  
+
   // 🔥 KEYWORD-RICH DESCRIPTION
   description: "Discover 1200+ best AI tools across 100+ categories. Complete AI tools directory updated daily with free & paid AI software for business, design, writing, productivity, marketing & more. Compare top AI apps 2025.",
-  
+
   // 🔥 HIGH-VOLUME KEYWORDS (What people actually search)
   keywords: [
     "best ai tools 2025",
-    "ai tools directory", 
+    "ai tools directory",
     "complete ai tools list",
     "1200+ ai tools",
     "free ai tools",
@@ -60,14 +60,14 @@ export const metadata = {
     "ai marketing tools",
     "Toolsverse"
   ],
-  
- icons: {
-  icon: "/favicon.ico",          // Default favicon
-  shortcut: "/favicon.ico",
-  apple: "/logo.png",            // iOS ke liye
-},
 
-  
+  icons: {
+    icon: "/favicon.ico",          // Default favicon
+    shortcut: "/favicon.ico",
+    apple: "/logo.png",            // iOS ke liye
+  },
+
+
   // 🔥 OPTIMIZED OPEN GRAPH
   openGraph: {
     title: "1200+ Best AI Tools Directory 2025 - ToolsVerse",
@@ -85,7 +85,7 @@ export const metadata = {
     type: "website",
     locale: "en_US",
   },
-  
+
   // 🔥 TWITTER OPTIMIZED
   twitter: {
     card: "summary_large_image",
@@ -94,11 +94,11 @@ export const metadata = {
     images: ["/logo.png"],
     site: "@Toolsverse", // Add your Twitter handle if you have one
   },
-  
+
   alternates: {
     canonical: "https://thetoolsverse.com",
   },
-  
+
   // 🔥 ADDITIONAL SEO METADATA
   robots: {
     index: true,
@@ -111,7 +111,7 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-  
+
   // 🔥 STRUCTURED DATA HINTS
   other: {
     'theme-color': '#ffffff',
@@ -140,13 +140,13 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-title" content="ToolsVerse" />
         <meta name="google-adsense-account" content="ca-pub-9468891564981720" />
 
-        
+
         {/* 🔥 ADDITIONAL SEO META TAGS */}
         <meta name="author" content="ToolsVerse Team" />
         <meta name="publisher" content="ToolsVerse" />
         <meta name="copyright" content="ToolsVerse 2025" />
         <meta name="revisit-after" content="1 day" />
-        
+
         {/* 🔥 STRUCTURED DATA FOR AI TOOLS DIRECTORY */}
         <script
           type="application/ld+json"
@@ -189,14 +189,14 @@ export default function RootLayout({ children }) {
         </Script>
       </head>
 
-       <body
+      <body
         className={`${spaceGrotesk.variable} antialiased scroll-smooth bg-white text-gray-900`}
       >
         {/* Client-only wrappers (ProgressBar, etc.) */}
         <ClientProviders>
           <Header />
 
-          <main className="min-h-screen">
+          <main id="main-content" className="min-h-screen">
             {children}
           </main>
 

@@ -150,88 +150,179 @@ export default function BrowseClient({
     (pageType === "category" && pricingType) ? pricingType : null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
+    <div className="min-h-screen ">
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-12 px-4">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative pt-20 pb-16 px-4 overflow-hidden bg-gradient-to-b from-blue-50 via-indigo-50/30 to-white">
+        {/* Animated Grid Background */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Gradient mesh overlay */}
+          <div
+            className="absolute inset-0 opacity-30"
+            style={{
+              backgroundImage: `
+          linear-gradient(to right, rgb(229, 231, 235) 1px, transparent 1px),
+          linear-gradient(to bottom, rgb(229, 231, 235) 1px, transparent 1px)
+        `,
+              backgroundSize: '80px 80px'
+            }}
+          ></div>
 
+          {/* Gradient orbs */}
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-indigo-200/30 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto">
           {/* Breadcrumbs */}
-          <nav className="flex items-center gap-2 text-sm text-gray-500 mb-6">
-            <Link href="/" className="hover:text-purple-600 transition">Home</Link>
-            <span>/</span>
+          <nav className="flex items-center gap-2 text-sm text-slate-600 mb-8">
+            <Link href="/" className="hover:text-indigo-600 transition-colors duration-200">
+              Home
+            </Link>
+            <span className="text-slate-400">/</span>
 
             {pageType === "category" ? (
               <>
-                <Link href="/browse-tools" className="hover:text-purple-600 transition">Browse</Link>
-                <span>/</span>
+                <Link href="/browse-tools" className="hover:text-indigo-600 transition-colors duration-200">
+                  Browse
+                </Link>
+                <span className="text-slate-400">/</span>
                 <Link
                   href={`/categories/${categoryName.toLowerCase().replace(/ & /g, "-and-").replace(/\s+/g, "-")}`}
-                  className="hover:text-purple-600 transition"
+                  className="hover:text-indigo-600 transition-colors duration-200"
                 >
                   {categoryName}
                 </Link>
                 {pricingType && (
                   <>
-                    <span>/</span>
-                    <span className="text-purple-600 capitalize">{pricingType.replace("-", " ")}</span>
+                    <span className="text-slate-400">/</span>
+                    <span className="text-indigo-600 font-semibold capitalize">
+                      {pricingType.replace("-", " ")}
+                    </span>
                   </>
                 )}
               </>
             ) : pageType === "pricing" ? (
               <>
-                <Link href="/browse-tools" className="hover:text-purple-600 transition">Browse</Link>
-                <span>/</span>
-                <span className="text-purple-600 capitalize">{pricingType.replace("-", " ")}</span>
+                <Link href="/browse-tools" className="hover:text-indigo-600 transition-colors duration-200">
+                  Browse
+                </Link>
+                <span className="text-slate-400">/</span>
+                <span className="text-indigo-600 font-semibold capitalize">
+                  {pricingType.replace("-", " ")}
+                </span>
               </>
             ) : (
-              <span className="text-purple-600">Browse Tools</span>
+              <span className="text-indigo-600 font-semibold">Browse Tools</span>
             )}
           </nav>
 
-          {/* Title */}
-          <div className="text-center mb-8">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-              {searchParams.q ? (
-                <>Search: <span className="text-purple-600">"{searchParams.q}"</span></>
-              ) : pageType === "category" ? (
-                <>
-                  {categoryName}{pricingType && <span className="capitalize"> {pricingType.replace("-", " ")}</span>} <span className="text-purple-600">AI Tools</span>
-                </>
-              ) : pageType === "pricing" ? (
-                <>
-                  <span className="text-purple-600 capitalize">{pricingType.replace("-", " ")}</span> AI Tools
-                </>
-              ) : (
-                <>Browse <span className="text-purple-600">4000+ AI Tools</span></>
-              )}
-            </h1>
+          {/* Hero Content */}
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 mb-12">
+            {/* Main Content */}
+            <div className="flex-1">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 leading-tight">
+                {searchParams.q ? (
+                  <>
+                    Search Results for{" "}
+                    <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                      "{searchParams.q}"
+                    </span>
+                  </>
+                ) : pageType === "category" ? (
+                  <>
+                    {categoryName}
+                    {pricingType && <span className="capitalize"> {pricingType.replace("-", " ")}</span>}{" "}
+                    <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                      AI Tools
+                    </span>
+                  </>
+                ) : pageType === "pricing" ? (
+                  <>
+                    <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent capitalize">
+                      {pricingType.replace("-", " ")}
+                    </span>{" "}
+                    AI Tools
+                  </>
+                ) : (
+                  <>
+                    Discover{" "}
+                    <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                      4000+ AI Tools
+                    </span>
+                  </>
+                )}
+              </h1>
 
-            <p className="text-xl text-gray-600">
-              {isPending ? "Loading..." : `${totalCount.toLocaleString()} tools found`}
-            </p>
+              <p className="text-lg sm:text-xl text-slate-600 mb-6 leading-relaxed">
+                {isPending ? (
+                  <span className="inline-flex items-center gap-2">
+                    <svg className="animate-spin h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Loading tools...
+                  </span>
+                ) : (
+                  <>
+                    <span className="font-semibold text-slate-900">{totalCount.toLocaleString()}</span> curated AI tools to boost your productivity
+                  </>
+                )}
+              </p>
+
+              {/* Quick Stats Badges */}
+              <div className="flex flex-nowrap items-center justify-center gap-1.5 md:gap-3 w-full overflow-x-auto no-scrollbar px-2">
+
+                {/* Badge 1: Free Access */}
+                <span className="inline-flex flex-shrink-0 items-center px-2 py-1 md:px-4 md:py-2 rounded-full text-[10px] md:text-sm font-semibold bg-emerald-50/90 backdrop-blur-sm text-emerald-700 border border-emerald-200 hover:bg-emerald-100 hover:scale-105 transition-all duration-200 shadow-sm whitespace-nowrap">
+                  <svg className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                  </svg>
+                  100% Free Access
+                </span>
+
+                {/* Badge 2: Updated Daily */}
+                <span className="inline-flex flex-shrink-0 items-center px-2 py-1 md:px-4 md:py-2 rounded-full text-[10px] md:text-sm font-semibold bg-blue-50/90 backdrop-blur-sm text-blue-700 border border-blue-200 hover:bg-blue-100 hover:scale-105 transition-all duration-200 shadow-sm whitespace-nowrap">
+                  <svg className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
+                  </svg>
+                  Updated Daily
+                </span>
+
+                {/* Badge 3: 10K Users */}
+                <span className="inline-flex flex-shrink-0 items-center px-2 py-1 md:px-4 md:py-2 rounded-full text-[10px] md:text-sm font-semibold bg-purple-50/90 backdrop-blur-sm text-purple-700 border border-purple-200 hover:bg-purple-100 hover:scale-105 transition-all duration-200 shadow-sm whitespace-nowrap">
+                  <svg className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+                  </svg>
+                  10K+ Users
+                </span>
+
+              </div>
+            </div>
+
+            {/* Stats Cards - Desktop */}
+            <div className="hidden lg:grid grid-cols-1 gap-4 flex-shrink-0">
+              <div className="group relative overflow-hidden">
+                {/* Glow effect on hover */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl opacity-0 group-hover:opacity-20 blur transition-opacity duration-300"></div>
+
+
+              </div>
+
+              <div className="group relative overflow-hidden">
+                <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl opacity-0 group-hover:opacity-20 blur transition-opacity duration-300"></div>
+
+
+              </div>
+            </div>
           </div>
 
-          {/* Stats */}
-          <div className="flex justify-center gap-8 mb-8">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-purple-600">{totalCount}+</div>
-              <div className="text-sm text-gray-500">Tools</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-pink-600">10K+</div>
-              <div className="text-sm text-gray-500">Users</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600">4.9</div>
-              <div className="text-sm text-gray-500">Rating</div>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Filters Section */}
-      <HomeSearchBar allCategories={allCategories} />
+      <div className="-mt-40"><HomeSearchBar allCategories={allCategories} />
+      </div>
 
       {/* Results */}
       <section className="max-w-7xl mx-auto px-4 pb-20">

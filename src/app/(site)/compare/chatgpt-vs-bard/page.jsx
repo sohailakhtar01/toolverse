@@ -1,8 +1,8 @@
 // app/chatgpt-vs-bard/page.jsx (Server Component - SEO Optimized)
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { 
-  Brain, Code, FileText, Search, Smartphone, TrendingUp, 
+import {
+  Brain, Code, FileText, Search, Smartphone, TrendingUp,
   Database, Mail, Sparkles, Award, MessageCircle, Globe,
   CheckCircle, AlertTriangle, Star, Users, Zap, Shield,
   BarChart3, Lightbulb, Settings, Lock, Cpu, Eye, ThumbsUp,
@@ -75,29 +75,29 @@ const detailedComparison = [
     icon: <Brain className="w-6 h-6" />,
     description: "Fundamental AI performance and intelligence comparison",
     items: [
-      { 
-        feature: "Language Understanding", 
+      {
+        feature: "Language Understanding",
         chatgpt: { score: "Excellent", rating: 5, details: "Superior contextual understanding and nuanced responses" },
         bard: { score: "Good", rating: 4, details: "Solid comprehension with occasional context gaps" },
         winner: "chatgpt",
         explanation: "ChatGPT demonstrates more sophisticated language understanding with better context retention and nuanced interpretation of complex queries."
       },
-      { 
-        feature: "Reasoning & Logic", 
+      {
+        feature: "Reasoning & Logic",
         chatgpt: { score: "Very Good", rating: 4, details: "Strong logical reasoning for most scenarios" },
         bard: { score: "Moderate", rating: 3, details: "Basic reasoning with inconsistencies in complex problems" },
         winner: "chatgpt",
         explanation: "ChatGPT shows superior analytical thinking and handles multi-step logical problems more effectively than Bard."
       },
-      { 
-        feature: "Factual Accuracy", 
+      {
+        feature: "Factual Accuracy",
         chatgpt: { score: "Good", rating: 4, details: "Generally accurate with occasional hallucinations" },
         bard: { score: "Excellent", rating: 5, details: "Real-time information access ensures current accuracy" },
         winner: "bard",
         explanation: "Bard's access to real-time information gives it an edge in providing current and factually accurate responses."
       },
-      { 
-        feature: "Creative Problem Solving", 
+      {
+        feature: "Creative Problem Solving",
         chatgpt: { score: "Excellent", rating: 5, details: "Highly creative and innovative solutions" },
         bard: { score: "Good", rating: 4, details: "Creative but sometimes conventional approaches" },
         winner: "chatgpt",
@@ -110,29 +110,29 @@ const detailedComparison = [
     icon: <Code className="w-6 h-6" />,
     description: "Programming, development, and technical task capabilities",
     items: [
-      { 
-        feature: "Code Generation", 
+      {
+        feature: "Code Generation",
         chatgpt: { score: "Excellent", rating: 5, details: "High-quality, well-documented code across languages" },
         bard: { score: "Good", rating: 4, details: "Functional code with basic documentation" },
         winner: "chatgpt",
         explanation: "ChatGPT produces more reliable, production-ready code with comprehensive documentation and better error handling."
       },
-      { 
-        feature: "Debugging Assistance", 
+      {
+        feature: "Debugging Assistance",
         chatgpt: { score: "Superior", rating: 5, details: "Comprehensive error analysis and multiple solutions" },
         bard: { score: "Moderate", rating: 3, details: "Basic debugging help with limited insights" },
         winner: "chatgpt",
         explanation: "ChatGPT provides more thorough debugging analysis with detailed explanations and alternative approaches."
       },
-      { 
-        feature: "Technical Documentation", 
+      {
+        feature: "Technical Documentation",
         chatgpt: { score: "Excellent", rating: 5, details: "Clear, comprehensive technical writing" },
         bard: { score: "Good", rating: 4, details: "Adequate documentation with basic structure" },
         winner: "chatgpt",
         explanation: "ChatGPT creates more detailed and professionally structured technical documentation."
       },
-      { 
-        feature: "Architecture Planning", 
+      {
+        feature: "Architecture Planning",
         chatgpt: { score: "Advanced", rating: 5, details: "Sophisticated system design recommendations" },
         bard: { score: "Basic", rating: 3, details: "Simple architectural suggestions" },
         winner: "chatgpt",
@@ -145,29 +145,29 @@ const detailedComparison = [
     icon: <FileText className="w-6 h-6" />,
     description: "Writing, creativity, and content development capabilities",
     items: [
-      { 
-        feature: "Creative Writing", 
+      {
+        feature: "Creative Writing",
         chatgpt: { score: "Excellent", rating: 5, details: "Engaging, original creative content" },
         bard: { score: "Good", rating: 4, details: "Decent creativity with room for improvement" },
         winner: "chatgpt",
         explanation: "ChatGPT demonstrates superior storytelling abilities with more engaging and original creative content."
       },
-      { 
-        feature: "Blog Writing", 
+      {
+        feature: "Blog Writing",
         chatgpt: { score: "Superior", rating: 5, details: "SEO-optimized, engaging blog content" },
         bard: { score: "Good", rating: 4, details: "Solid blog posts with basic optimization" },
         winner: "chatgpt",
         explanation: "ChatGPT creates more engaging blog content with better SEO optimization and reader engagement."
       },
-      { 
-        feature: "Marketing Copy", 
+      {
+        feature: "Marketing Copy",
         chatgpt: { score: "Excellent", rating: 5, details: "Persuasive, conversion-focused copy" },
         bard: { score: "Moderate", rating: 3, details: "Basic marketing content lacking persuasion" },
         winner: "chatgpt",
         explanation: "ChatGPT excels at creating compelling marketing copy that drives engagement and conversions."
       },
-      { 
-        feature: "Email Writing", 
+      {
+        feature: "Email Writing",
         chatgpt: { score: "Superior", rating: 5, details: "Professional, contextually appropriate emails" },
         bard: { score: "Good", rating: 4, details: "Well-structured emails with proper tone" },
         winner: "chatgpt",
@@ -180,29 +180,29 @@ const detailedComparison = [
     icon: <Search className="w-6 h-6" />,
     description: "Research capabilities and information retrieval",
     items: [
-      { 
-        feature: "Real-time Information", 
+      {
+        feature: "Real-time Information",
         chatgpt: { score: "Limited", rating: 2, details: "Knowledge cutoff limits current information" },
         bard: { score: "Excellent", rating: 5, details: "Direct access to current web information" },
         winner: "bard",
         explanation: "Bard's ability to access real-time information gives it a significant advantage for current events and up-to-date data."
       },
-      { 
-        feature: "Research Depth", 
+      {
+        feature: "Research Depth",
         chatgpt: { score: "Superior", rating: 5, details: "Comprehensive analysis and synthesis" },
         bard: { score: "Good", rating: 4, details: "Adequate research with basic analysis" },
         winner: "chatgpt",
         explanation: "ChatGPT provides more in-depth research analysis with better synthesis of information from its training data."
       },
-      { 
-        feature: "Source Verification", 
+      {
+        feature: "Source Verification",
         chatgpt: { score: "Moderate", rating: 3, details: "Cannot verify current sources directly" },
         bard: { score: "Good", rating: 4, details: "Can access and verify web sources" },
         winner: "bard",
         explanation: "Bard's web access allows for better source verification and current information validation."
       },
-      { 
-        feature: "Data Analysis", 
+      {
+        feature: "Data Analysis",
         chatgpt: { score: "Excellent", rating: 5, details: "Sophisticated data interpretation and insights" },
         bard: { score: "Good", rating: 4, details: "Solid data analysis capabilities" },
         winner: "chatgpt",
@@ -215,29 +215,29 @@ const detailedComparison = [
     icon: <Smartphone className="w-6 h-6" />,
     description: "Interface design, usability, and overall user satisfaction",
     items: [
-      { 
-        feature: "Interface Design", 
+      {
+        feature: "Interface Design",
         chatgpt: { score: "Excellent", rating: 5, details: "Clean, intuitive, professional interface" },
         bard: { score: "Good", rating: 4, details: "Modern design with Google's aesthetic" },
         winner: "chatgpt",
         explanation: "ChatGPT offers a more polished and user-friendly interface with better navigation and accessibility."
       },
-      { 
-        feature: "Response Speed", 
+      {
+        feature: "Response Speed",
         chatgpt: { score: "Fast", rating: 4, details: "Quick response generation" },
         bard: { score: "Very Fast", rating: 5, details: "Rapid responses with web integration" },
         winner: "bard",
         explanation: "Bard typically provides faster response times, especially when incorporating real-time information."
       },
-      { 
-        feature: "Conversation Flow", 
+      {
+        feature: "Conversation Flow",
         chatgpt: { score: "Superior", rating: 5, details: "Natural, engaging dialogue patterns" },
         bard: { score: "Good", rating: 4, details: "Decent conversation with occasional awkwardness" },
         winner: "chatgpt",
         explanation: "ChatGPT maintains more natural conversation flow with better context understanding throughout dialogues."
       },
-      { 
-        feature: "Mobile Experience", 
+      {
+        feature: "Mobile Experience",
         chatgpt: { score: "Excellent", rating: 5, details: "Optimized mobile interface and performance" },
         bard: { score: "Good", rating: 4, details: "Functional mobile experience" },
         winner: "chatgpt",
@@ -500,15 +500,15 @@ const FeatureCard = ({ feature, chatgpt, bard, winner, explanation }) => (
     <div className="flex items-center justify-between mb-4">
       <h4 className="font-semibold text-gray-800 text-lg">{feature}</h4>
       <div className="flex items-center space-x-2">
-        {winner === 'chatgpt' ? 
-          <Award className="w-5 h-5 text-blue-600" /> : 
+        {winner === 'chatgpt' ?
+          <Award className="w-5 h-5 text-blue-600" /> :
           winner === 'bard' ?
-          <Award className="w-5 h-5 text-green-600" /> :
-          <div className="w-5 h-5"></div>
+            <Award className="w-5 h-5 text-green-600" /> :
+            <div className="w-5 h-5"></div>
         }
       </div>
     </div>
-    
+
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
       <div className={`p-4 rounded-lg ${winner === 'chatgpt' ? 'bg-blue-50 border-l-4 border-blue-500' : 'bg-gray-50'}`}>
         <div className="flex items-center justify-between mb-2">
@@ -522,7 +522,7 @@ const FeatureCard = ({ feature, chatgpt, bard, winner, explanation }) => (
         <div className="text-sm font-semibold text-gray-800 mb-1">{chatgpt.score}</div>
         <div className="text-xs text-gray-600">{chatgpt.details}</div>
       </div>
-      
+
       <div className={`p-4 rounded-lg ${winner === 'bard' ? 'bg-green-50 border-l-4 border-green-500' : 'bg-gray-50'}`}>
         <div className="flex items-center justify-between mb-2">
           <span className="font-medium text-sm text-gray-600">Bard</span>
@@ -536,7 +536,7 @@ const FeatureCard = ({ feature, chatgpt, bard, winner, explanation }) => (
         <div className="text-xs text-gray-600">{bard.details}</div>
       </div>
     </div>
-    
+
     <div className="bg-gray-50 p-3 rounded-lg">
       <div className="flex items-start space-x-2">
         <Lightbulb className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
@@ -555,7 +555,7 @@ const UseCaseCard = ({ title, icon, chatgpt, bard, verdict }) => (
       </div>
       <h3 className="text-xl font-bold text-gray-800">{title}</h3>
     </div>
-    
+
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
       <div className="space-y-4">
         <div className="flex items-center justify-between">
@@ -589,7 +589,7 @@ const UseCaseCard = ({ title, icon, chatgpt, bard, verdict }) => (
           </ul>
         </div>
       </div>
-      
+
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <h4 className="font-semibold text-gray-700">Bard</h4>
@@ -623,7 +623,7 @@ const UseCaseCard = ({ title, icon, chatgpt, bard, verdict }) => (
         </div>
       </div>
     </div>
-    
+
     <div className="bg-gradient-to-r from-blue-50 to-green-50 p-4 rounded-lg">
       <div className="flex items-start space-x-2">
         <Award className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
@@ -645,7 +645,7 @@ export default function ChatGPTvsBardPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      
+
       {/* Static SEO Content */}
       <div className="sr-only">
         <h1>ChatGPT vs Bard 2025 Complete Comparison</h1>
@@ -682,7 +682,7 @@ export default function ChatGPTvsBardPage() {
                 <a href="#pricing" className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-6 sm:px-8 py-3  rounded-2xl text-base sm:text-lg font-semibold shadow-2xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto">
                   Pricing <ArrowRight className="inline w-4 h-4 sm:w-5 sm:h-5 ml-2" />
                 </a>
-                
+
               </div>
             </div>
           </div>
@@ -701,7 +701,7 @@ export default function ChatGPTvsBardPage() {
                 Comprehensive analysis based on 15,000+ test queries and professional user feedback across industries
               </p>
             </div>
-            
+
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
               {[
                 { label: "Content Quality", chatgpt: "92%", bard: "78%", icon: <FileText className="w-6 h-6 sm:w-8 sm:h-8" /> },
@@ -740,7 +740,7 @@ export default function ChatGPTvsBardPage() {
                 </span>
               </h2>
             </div>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
               <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border-2 border-blue-200">
                 <div className="flex items-center mb-6">
@@ -775,7 +775,7 @@ export default function ChatGPTvsBardPage() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg flex items-center justify-center mr-4">
@@ -825,7 +825,7 @@ export default function ChatGPTvsBardPage() {
                 Comprehensive evaluation across critical performance metrics and use cases
               </p>
             </div>
-            
+
             <div className="space-y-8 sm:space-y-12">
               {detailedComparison.map((category, index) => (
                 <div key={index} className="bg-gray-50 rounded-2xl p-6 sm:p-8">
@@ -864,7 +864,7 @@ export default function ChatGPTvsBardPage() {
                 Real-world application analysis for different professional scenarios
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {useCases.map((useCase, index) => (
                 <UseCaseCard key={index} {...useCase} />
@@ -883,7 +883,7 @@ export default function ChatGPTvsBardPage() {
                 </span>
               </h2>
             </div>
-            
+
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {pricingComparison.map((plan, index) => (
@@ -917,7 +917,7 @@ export default function ChatGPTvsBardPage() {
                             </div>
                           </div>
                         </div>
-                        
+
                         <div className="space-y-4">
                           <div className="text-center">
                             <h4 className="font-semibold text-gray-800 mb-2">Bard</h4>
@@ -951,52 +951,6 @@ export default function ChatGPTvsBardPage() {
           </div>
         </section>
 
-        {/* User Testimonials */}
-        <section className="py-12 sm:py-16 bg-gradient-to-br from-blue-50 to-green-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8 sm:mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-                  Professional User Insights
-                </span>
-              </h2>
-              <p className="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base">
-                Real experiences from professionals using both ChatGPT and Bard in their daily workflows
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {testimonials.map((testimonial, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                    <div className={`px-2 py-1 rounded-full text-xs font-medium ${
-                      testimonial.preference === 'ChatGPT' ? 'bg-blue-100 text-blue-800' :
-                      testimonial.preference === 'Both' ? 'bg-purple-100 text-purple-800' :
-                      'bg-green-100 text-green-800'
-                    }`}>
-                      Prefers: {testimonial.preference}
-                    </div>
-                  </div>
-                  <p className="text-gray-600 mb-4 italic text-sm sm:text-base">"{testimonial.content}"</p>
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-600 to-green-600 rounded-full flex items-center justify-center text-white font-bold mr-3 text-sm sm:text-base">
-                      {testimonial.avatar}
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-800 text-sm sm:text-base">{testimonial.name}</div>
-                      <div className="text-xs sm:text-sm text-gray-500">{testimonial.role}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* FAQ Section with Client Component */}
         <section className="py-12 sm:py-16 bg-white">
@@ -1011,12 +965,12 @@ export default function ChatGPTvsBardPage() {
                 Expert answers to the most important questions about ChatGPT vs Bard comparison
               </p>
             </div>
-            
+
             <FAQClient faqs={faqs} />
           </div>
         </section>
 
-        
+
         {/* Final Recommendation */}
         <section className="py-12 sm:py-16 bg-gradient-to-br from-blue-900 via-purple-600 to-green-600">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -1026,31 +980,22 @@ export default function ChatGPTvsBardPage() {
                 Our Professional Recommendation
               </h2>
               <div className="text-lg sm:text-xl text-gray-200 mb-6 leading-relaxed">
-                For most professional applications, 
-                <span className="font-bold text-white"> ChatGPT is the superior choice</span>, offering better content quality, technical capabilities, and creative output. 
+                For most professional applications,
+                <span className="font-bold text-white"> ChatGPT is the superior choice</span>, offering better content quality, technical capabilities, and creative output.
                 <span className="font-bold text-white"> Use Bard for real-time research</span> and current information needs.
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8 text-sm">
-                <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                  <div className="font-bold text-black mb-2">ChatGPT Wins</div>
-                  <div className="text-gray-700">Content, Coding, Creativity, Business</div>
-                </div>
-                <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                  <div className="font-bold text-black mb-2">Bard Excels</div>
-                  <div className="text-gray-700">Real-time Info, Free Access, Google Integration</div>
-                </div>
-              </div>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                 <Link href={`/tools/chatgpt`} className="block group">
-                   <button className="bg-white text-blue-900 w-full px-6 sm:px-8 py-3  rounded-2xl text-base sm:text-lg font-semibold hover:bg-gray-100 transform hover:scale-101 cursor-pointer transition-all duration-300 shadow-lg">
-                     Try ChatGPT Plus <ArrowRight className="inline w-4 h-4 sm:w-5 sm:h-5 ml-2" />
-                   </button>
-                 </Link>
-                 <Link href={`/tools/bard`} className="block group">
-                   <button className="border-2 border-white text-white w-full px-6 sm:px-8 py-3 rounded-2xl text-base sm:text-lg font-semibold hover:bg-white hover:text-blue-900 transform hover:scale-101 cursor-pointer transition-all duration-300">
-                     Try Bard Free
-                   </button>
-                 </Link>
+                <Link href={`/tools/chatgpt`} className="block group">
+                  <button className="bg-white text-blue-900 w-full px-6 sm:px-8 py-3  rounded-2xl text-base sm:text-lg font-semibold hover:bg-gray-100 transform hover:scale-101 cursor-pointer transition-all duration-300 shadow-lg">
+                    Try ChatGPT Plus <ArrowRight className="inline w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+                  </button>
+                </Link>
+                <Link href={`/tools/bard`} className="block group">
+                  <button className="border-2 border-white text-white w-full px-6 sm:px-8 py-3 rounded-2xl text-base sm:text-lg font-semibold hover:bg-white hover:text-blue-900 transform hover:scale-101 cursor-pointer transition-all duration-300">
+                    Try Bard Free
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

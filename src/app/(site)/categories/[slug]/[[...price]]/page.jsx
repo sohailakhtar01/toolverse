@@ -21,27 +21,31 @@ import {
 import ToolCard from "@/components/ToolCard";
 import dbConnect from "@/lib/mongodb";
 import Tool from "@/models/Tool";
+import { categoryToSlug } from "@/lib/categorySlug";
 
 // 🔹 HELPER: Flexible category matching (spaces, hyphens, parentheses)
+// 🔹 HELPER: Flexible category matching (spaces, hyphens, parentheses, AND SLASHES)
 const createFlexibleRegex = (text) => {
-  // 1. Normalize text first
+  // 1. Normalize text first (remove special chars usually found in slugs)
   const normalized = text
     .toLowerCase()
-    .replace(/\s+/g, " ")
     .trim();
 
   // 2. Escape regex special chars (including parentheses)
   const escaped = normalized.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-  // 3. Allow space OR hyphen
-  const spaceFlexible = escaped.replace(/\s+/g, "[\\s-]");
+  // 3. The Logic: Replace any space in the search term with a pattern that matches:
+  //    - A space (\s)
+  //    - A hyphen (-)
+  //    - A slash with optional spaces around it (\s*\/\s*)
+  const flexiblePattern = escaped.replace(/\s+/g, "(?:[\\s-]|\\s*\\/\\s*)+");
 
-  // 4. Allow optional spaces around parentheses
-  const parenFlexible = spaceFlexible
+  // 4. Handle parentheses (existing logic)
+  const finalPattern = flexiblePattern
     .replace(/\\\(/g, "[\\s-]*\\(")
     .replace(/\\\)/g, "\\)[\\s-]*");
 
-  return new RegExp(`^${parenFlexible}$`, "i");
+  return new RegExp(`^${finalPattern}$`, "i");
 };
 
 
@@ -63,14 +67,18 @@ export async function generateMetadata({ params }) {
     .join(" ");
 
   // Fetch tools in this category from MongoDB
- const categoryRegex = createFlexibleRegex(readableCategory);
+  const categoryRegex = createFlexibleRegex(readableCategory);
 
-const toolsInCategory = await Tool.find({
-  $or: [
-    { categories: { $elemMatch: { $regex: categoryRegex } } },
-    { category:   { $elemMatch: { $regex: categoryRegex } } },
-  ],
-}).lean();
+
+  // 1️⃣ Fetch all tools (or paginated)
+  const allTools = await Tool.find({});
+
+  // 2️⃣ Filter by slug-matched category
+  const toolsInCategory = allTools.filter((tool) =>
+    tool.categories?.some(
+      (cat) => categoryToSlug(cat) === rawSlug
+    )
+  );
 
 
   const toolCount = toolsInCategory.length;
@@ -83,7 +91,7 @@ const toolsInCategory = await Tool.find({
     toolCount === 0
       ? 0
       : toolsInCategory.reduce((sum, tool) => sum + (tool.rating || 0), 0) /
-        toolCount;
+      toolCount;
 
   const safeAvgRating = Number.isFinite(avgRating) ? avgRating : 0;
 
@@ -180,8 +188,7 @@ const toolsInCategory = await Tool.find({
       "article:modified_time": new Date().toISOString(),
       "og:see_also": [
         "https://thetoolsverse.com/categories",
-        "https://thetoolsverse.com/featured",
-        "https://thetoolsverse.com/free-tools",
+        "https://thetoolsverse.com/free",
       ].join(","),
     },
   };
@@ -212,12 +219,12 @@ export default async function CategoryPage({ params, searchParams }) {
   // Fetch tools in this category
   const categoryRegex = createFlexibleRegex(readableCategory);
 
-const allCategoryTools = await Tool.find({
-  $or: [
-    { categories: { $elemMatch: { $regex: categoryRegex } } },
-    { category:   { $elemMatch: { $regex: categoryRegex } } },
-  ],
-}).lean();
+  const allCategoryTools = await Tool.find({
+    $or: [
+      { categories: { $elemMatch: { $regex: categoryRegex } } },
+      { category: { $elemMatch: { $regex: categoryRegex } } },
+    ],
+  }).lean();
 
 
   // Apply price filter (free, freemium, paid, free trial, all)
@@ -225,9 +232,9 @@ const allCategoryTools = await Tool.find({
     priceFilter === "all"
       ? allCategoryTools
       : allCategoryTools.filter(
-          (tool) =>
-            tool.pricingType?.toLowerCase() === priceFilter.toLowerCase()
-        );
+        (tool) =>
+          tool.pricingType?.toLowerCase() === priceFilter.toLowerCase()
+      );
 
   // Apply search filter (within this category)
   if (searchQuery) {
@@ -266,9 +273,9 @@ const allCategoryTools = await Tool.find({
     return (b.rating || 0) - (a.rating || 0);
   });
   const normalizedTools = sortedTools.map(tool => ({
-  ...tool,
-  name: tool.displayName || tool.name || "Untitled Tool",
-}));
+    ...tool,
+    name: tool.displayName || tool.name || "Untitled Tool",
+  }));
 
 
   // Stats for UI + SEO
@@ -404,8 +411,8 @@ const allCategoryTools = await Tool.find({
             text: `The top AI ${readableCategory} tools include ${popularTools
               .map((t) => t.name)
               .join(", ")}. Our directory features ${stats.total}+ carefully curated AI ${readableCategory} tools with ${safeAvg.toFixed(
-              1
-            )} average rating, including ${stats.free} free options.`,
+                1
+              )} average rating, including ${stats.free} free options.`,
           },
         },
         {
@@ -467,44 +474,44 @@ const allCategoryTools = await Tool.find({
         {/* HERO + BADGE */}
         <div className="relative min-h-screen w-full overflow-hidden flex flex-col justify-center bg-gradient-to-b from-white via-blue-50 to-white text-gray-900">
           {/* Top Nav + Badge */}
-         <div className="absolute top-0 left-0 right-0 z-20 flex flex-col md:flex-row items-start md:items-center justify-between px-4 pt-4 md:px-8 md:pt-8 gap-y-4 md:gap-y-0">
-  
-  {/* 1. Home Navigation */}
-  <nav className="text-sm z-10">
-    <a
-      href="/"
-      className="text-gray-500 hover:text-blue-600 flex items-center gap-1 transition-colors bg-white/50 backdrop-blur-sm md:bg-transparent rounded-full px-2 py-1 md:px-0 md:py-0"
-    >
-      <ChevronRight className="w-4 h-4 rotate-180" />
-      Home
-    </a>
-  </nav>
+          <div className="absolute top-0 left-0 right-0 z-20 flex flex-col md:flex-row items-start md:items-center justify-between px-4 pt-4 md:px-8 md:pt-8 gap-y-4 md:gap-y-0">
 
-  {/* 2. Center Badge */}
-  <div className="
+            {/* 1. Home Navigation */}
+            <nav className="text-sm z-10">
+              <a
+                href="/"
+                className="text-gray-500 hover:text-blue-600 flex items-center gap-1 transition-colors bg-white/50 backdrop-blur-sm md:bg-transparent rounded-full px-2 py-1 md:px-0 md:py-0"
+              >
+                <ChevronRight className="w-4 h-4 rotate-180" />
+                Home
+              </a>
+            </nav>
+
+            {/* 2. Center Badge */}
+            <div className="
     relative w-full md:w-auto flex justify-center 
     md:absolute md:left-1/2 md:-translate-x-1/2
   ">
-    <div className="
+              <div className="
       inline-flex items-center  justify-center gap-2 sm:gap-3 
       px-3 py-1.5 sm:px-4 sm:py-2 
       rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 
       border border-blue-200 shadow-sm
       max-w-full
     ">
-      <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-blue-700 animate-pulse flex-shrink-0" />
-      
-      <span className="text-blue-700 font-medium text-xs sm:text-sm truncate">
-        {stats.total}+ AI {capitalizedCategory} <span className="hidden xs:inline">Tools • 2025</span>
-      </span>
-      
-      <span className="flex-shrink-0 px-1.5 py-0.5 sm:px-2 bg-green-100 text-green-700 rounded-full text-[10px] sm:text-xs font-bold">
-        {stats.free} Free
-      </span>
-    </div>
-  </div>
+                <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-blue-700 animate-pulse flex-shrink-0" />
 
-</div>
+                <span className="text-blue-700 font-medium text-xs sm:text-sm truncate">
+                  {stats.total}+ AI {capitalizedCategory} <span className="hidden xs:inline">Tools • 2025</span>
+                </span>
+
+                <span className="flex-shrink-0 px-1.5 py-0.5 sm:px-2 bg-green-100 text-green-700 rounded-full text-[10px] sm:text-xs font-bold">
+                  {stats.free} Free
+                </span>
+              </div>
+            </div>
+
+          </div>
 
           {/* Center Hero Content */}
           <div className="relative z-10 flex flex-col items-center text-center px-6 sm:px-8 sm:mt-20 mt-30">
@@ -644,87 +651,87 @@ const allCategoryTools = await Tool.find({
           </div>
         </div>
 
-{/* Popular Picks Section */}
-<section id="popular-picks" className="max-w-7xl mx-auto px-4 py-12">
-  {/* Header */}
-  <div className="text-center mb-10">
-    <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 flex items-center justify-center gap-2">
-      <TrendingUp className="w-6 h-6 text-gray-600" />
-      <span>Popular {capitalizedCategory} AI Tools</span>
-    </h2>
-    <p className="text-sm sm:text-base text-gray-600 mt-2 max-w-lg mx-auto leading-relaxed">
-      Real favorites based on ratings, usage, and community feedback.
-    </p>
-  </div>
-
-  {/* Cards */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    {popularTools.map((tool, i) => (
-      <article
-        key={tool._id.toString()}
-        className="relative bg-white border border-gray-200 rounded-xl p-5 shadow-sm transition-all hover:shadow-lg hover:scale-105 cursor-pointer"
-      >
-        <div className="flex items-start gap-4">
-          {/* Logo */}
-          <img
-            src={tool.logo || tool.image}
-            alt={tool.name}
-            className="w-12 h-12 rounded-lg bg-gray-50 border border-gray-100 p-1 object-contain flex-shrink-0"
-            loading="lazy"
-            width="48"
-            height="48"
-          />
-
-          {/* Body */}
-          <div className="flex-1 min-w-0">
-            {/* Name */}
-            <h3 className="text-lg font-semibold text-gray-900 truncate">
-              {tool.name}
-            </h3>
-
-            {/* Description */}
-            <p className="text-sm text-gray-600 mt-1 leading-relaxed line-clamp-2">
-              {tool.description?.slice(0, 90) || tool.shortDescription}...
+        {/* Popular Picks Section */}
+        <section id="popular-picks" className="max-w-7xl mx-auto px-4 py-12">
+          {/* Header */}
+          <div className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 flex items-center justify-center gap-2">
+              <TrendingUp className="w-6 h-6 text-gray-600" />
+              <span>Popular {capitalizedCategory} AI Tools</span>
+            </h2>
+            <p className="text-sm sm:text-base text-gray-600 mt-2 max-w-lg mx-auto leading-relaxed">
+              Real favorites based on ratings, usage, and community feedback.
             </p>
-
-            {/* Rating + Price */}
-            <div className="flex items-center justify-between mt-4 flex-wrap gap-2">
-              <div className="inline-flex items-center gap-1 text-sm font-medium text-amber-600">
-                <Star className="w-4 h-4 fill-current text-amber-500" />
-                <span>{tool.rating?.toFixed(1) || "4.5"}</span>
-              </div>
-              <div className="px-3 py-1 bg-gray-50 text-gray-700 border border-gray-200 rounded-full text-xs font-medium">
-                {tool.pricingType || "Free"}
-              </div>
-            </div>
           </div>
-        </div>
 
-        {/* Rank Badge */}
-        <div className="absolute -top-2 -right-2 px-2 py-1 bg-blue-600 text-white rounded-full text-xs font-bold">
-          #{i + 1}
-        </div>
+          {/* Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {popularTools.map((tool, i) => (
+              <article
+                key={tool._id.toString()}
+                className="relative bg-white border border-gray-200 rounded-xl p-5 shadow-sm transition-all hover:shadow-lg hover:scale-105 cursor-pointer"
+              >
+                <div className="flex items-start gap-4">
+                  {/* Logo */}
+                  <img
+                    src={tool.logo || tool.image}
+                    alt={tool.name}
+                    className="w-12 h-12 rounded-lg bg-gray-50 border border-gray-100 p-1 object-contain flex-shrink-0"
+                    loading="lazy"
+                    width="48"
+                    height="48"
+                  />
 
-        {/* Full link overlay */}
-        <a
-          href={`/tools/${tool.slug}`}
-          className="absolute inset-0 rounded-xl cursor-pointer"
-          aria-label={`Visit ${tool.name}`}
-        />
-      </article>
-    ))}
-  </div>
+                  {/* Body */}
+                  <div className="flex-1 min-w-0">
+                    {/* Name */}
+                    <h3 className="text-lg font-semibold text-gray-900 truncate">
+                      {tool.name}
+                    </h3>
 
-  {/* Optional extra link hint */}
-  <div className="text-center mt-12">
-    <a
-      href={`/categories/${rawSlug}`}
-      className="inline-flex items-center gap-1 text-sm text-blue-600 hover:scale-105 transition-all cursor-pointer"
-    >
-      View full {capitalizedCategory} directory <ArrowRight className="w-4 h-4"/>
-    </a>
-  </div>
-</section>
+                    {/* Description */}
+                    <p className="text-sm text-gray-600 mt-1 leading-relaxed line-clamp-2">
+                      {tool.description?.slice(0, 90) || tool.shortDescription}...
+                    </p>
+
+                    {/* Rating + Price */}
+                    <div className="flex items-center justify-between mt-4 flex-wrap gap-2">
+                      <div className="inline-flex items-center gap-1 text-sm font-medium text-amber-600">
+                        <Star className="w-4 h-4 fill-current text-amber-500" />
+                        <span>{tool.rating?.toFixed(1) || "4.5"}</span>
+                      </div>
+                      <div className="px-3 py-1 bg-gray-50 text-gray-700 border border-gray-200 rounded-full text-xs font-medium">
+                        {tool.pricingType || "Free"}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Rank Badge */}
+                <div className="absolute -top-2 -right-2 px-2 py-1 bg-blue-600 text-white rounded-full text-xs font-bold">
+                  #{i + 1}
+                </div>
+
+                {/* Full link overlay */}
+                <a
+                  href={`/tools/${tool.slug}`}
+                  className="absolute inset-0 rounded-xl cursor-pointer"
+                  aria-label={`Visit ${tool.name}`}
+                />
+              </article>
+            ))}
+          </div>
+
+          {/* Optional extra link hint */}
+          <div className="text-center mt-12">
+            <a
+              href={`/categories/${rawSlug}`}
+              className="inline-flex items-center gap-1 text-sm text-blue-600 hover:scale-105 transition-all cursor-pointer"
+            >
+              View full {capitalizedCategory} directory <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </section>
 
         {/* Tools Directory Section */}
         <main
@@ -784,11 +791,10 @@ const allCategoryTools = await Tool.find({
                         ? `/categories/${rawSlug}`
                         : `/categories/${rawSlug}/${typeSlug}`
                     }
-                    className={`px-4 cursor-pointer py-2 rounded-full text-sm font-medium border transition-all duration-200 ${
-                      isActive
-                        ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-md scale-105"
-                        : "bg-white text-gray-700 border-gray-200 hover:shadow-md hover:bg-purple-50"
-                    }`}
+                    className={`px-4 cursor-pointer py-2 rounded-full text-sm font-medium border transition-all duration-200 ${isActive
+                      ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-md scale-105"
+                      : "bg-white text-gray-700 border-gray-200 hover:shadow-md hover:bg-purple-50"
+                      }`}
                   >
                     {type === "all" ? "All" : type}
                   </a>
@@ -846,24 +852,23 @@ const allCategoryTools = await Tool.find({
           ) : (
             <>
               <div
-                className={`grid gap-6 mt-6 lg:gap-8 ${
-                  viewMode === "grid"
-                    ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-                    : "grid-cols-1"
-                }`}
+                className={`grid gap-6 mt-6 lg:gap-8 ${viewMode === "grid"
+                  ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+                  : "grid-cols-1"
+                  }`}
                 role="list"
                 aria-label={`AI ${capitalizedCategory} tools`}
               >{normalizedTools.map((tool, index) => (
-  <div key={tool._id.toString()} role="listitem">
-    <ToolCard
-      tool={{
-        ...tool,
-        _id: tool._id.toString(),
-      }}
-      viewMode={viewMode}
-    />
-  </div>
-))}
+                <div key={tool._id.toString()} role="listitem">
+                  <ToolCard
+                    tool={{
+                      ...tool,
+                      _id: tool._id.toString(),
+                    }}
+                    viewMode={viewMode}
+                  />
+                </div>
+              ))}
 
 
               </div>
@@ -872,86 +877,86 @@ const allCategoryTools = await Tool.find({
         </main>
 
         {/* Free Tools Section */}
-{stats.free > 0 && (
-  <section id="free-tools" className="bg-transparent py-16">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {stats.free > 0 && (
+          <section id="free-tools" className="bg-transparent py-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      {/* Section intro */}
-      <div className="text-center mb-10">
-        <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 flex items-center justify-center gap-2">
-          <Zap className="w-6 h-6 text-green-600" />
-          Free AI Tools for {capitalizedCategory}
-        </h2>
-        <p className="text-sm sm:text-base text-gray-600 mt-2 max-w-2xl mx-auto">
-          Hand-picked tools you can explore without opening your wallet. Great features. No cost barrier.
-        </p>
-      </div>
-
-      {/* Cards grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {allCategoryTools
-          .filter(tool => tool.pricingType?.toLowerCase() === "free")
-          .slice(0, 6)
-          .map((tool, i) => (
-            <div
-              key={tool._id.toString()}
-              className="bg-white border border-green-200 p-6 rounded-xl shadow-sm hover:shadow-lg transition-all"
-            >
-              <div className="flex items-start gap-4">
-
-                {/* Tool icon / logo */}
-                <img
-                  src={tool.image || tool.logo}
-                  alt={tool.name}
-                  className="w-12 h-12 rounded-lg object-cover flex-shrink-0 border border-gray-100"
-                  loading="lazy"
-                />
-
-                {/* Card body */}
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-semibold text-gray-900 truncate">
-                    {tool.name}
-                  </h3>
-
-                  <p className="text-sm text-gray-600 mt-1 line-clamp-2">
-                    {tool.description?.slice(0, 80) || tool.shortDescription}...
-                  </p>
-
-                  {/* Price + CTA */}
-                  <div className="flex items-center justify-between mt-4 flex-wrap gap-2">
-
-                    {/* Free cost pill */}
-                    <div className="flex items-center gap-1 px-3 py-1 bg-green-50 text-green-700 border border-green-300 rounded-full text-xs font-semibold">
-                      <Star className="w-3.5 h-3.5 fill-current text-amber-500" />
-                      <span>Free</span>
-                      <span className="text-gray-400">|</span>
-                      <span>$0</span>
-                    </div>
-
-                    {/* CTA */}
-                    <a
-                      href={`/tools/${tool.slug}`}
-                      className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700"
-                    >
-                      Try it now <ArrowRight className="w-4 h-4" />
-                    </a>
-
-                  </div>
-                </div>
-
+              {/* Section intro */}
+              <div className="text-center mb-10">
+                <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 flex items-center justify-center gap-2">
+                  <Zap className="w-6 h-6 text-green-600" />
+                  Free AI Tools for {capitalizedCategory}
+                </h2>
+                <p className="text-sm sm:text-base text-gray-600 mt-2 max-w-2xl mx-auto">
+                  Hand-picked tools you can explore without opening your wallet. Great features. No cost barrier.
+                </p>
               </div>
-            </div>
-          ))}
-      </div>
 
-      {/* Mini footer line */}
-      <div className="text-center mt-10 text-sm text-gray-500">
-        Showing {Math.min(6, stats.free)} of {stats.free} free tools. More are waiting up in the directory.
-      </div>
-      
-    </div>
-  </section>
-)}
+              {/* Cards grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {allCategoryTools
+                  .filter(tool => tool.pricingType?.toLowerCase() === "free")
+                  .slice(0, 6)
+                  .map((tool, i) => (
+                    <div
+                      key={tool._id.toString()}
+                      className="bg-white border border-green-200 p-6 rounded-xl shadow-sm hover:shadow-lg transition-all"
+                    >
+                      <div className="flex items-start gap-4">
+
+                        {/* Tool icon / logo */}
+                        <img
+                          src={tool.image || tool.logo}
+                          alt={tool.name}
+                          className="w-12 h-12 rounded-lg object-cover flex-shrink-0 border border-gray-100"
+                          loading="lazy"
+                        />
+
+                        {/* Card body */}
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-lg font-semibold text-gray-900 truncate">
+                            {tool.name}
+                          </h3>
+
+                          <p className="text-sm text-gray-600 mt-1 line-clamp-2">
+                            {tool.description?.slice(0, 80) || tool.shortDescription}...
+                          </p>
+
+                          {/* Price + CTA */}
+                          <div className="flex items-center justify-between mt-4 flex-wrap gap-2">
+
+                            {/* Free cost pill */}
+                            <div className="flex items-center gap-1 px-3 py-1 bg-green-50 text-green-700 border border-green-300 rounded-full text-xs font-semibold">
+                              <Star className="w-3.5 h-3.5 fill-current text-amber-500" />
+                              <span>Free</span>
+                              <span className="text-gray-400">|</span>
+                              <span>$0</span>
+                            </div>
+
+                            {/* CTA */}
+                            <a
+                              href={`/tools/${tool.slug}`}
+                              className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700"
+                            >
+                              Try it now <ArrowRight className="w-4 h-4" />
+                            </a>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  ))}
+              </div>
+
+              {/* Mini footer line */}
+              <div className="text-center mt-10 text-sm text-gray-500">
+                Showing {Math.min(6, stats.free)} of {stats.free} free tools. More are waiting up in the directory.
+              </div>
+
+            </div>
+          </section>
+        )}
 
         {/* Buying Guide / SEO Content */}
         <section
@@ -1388,8 +1393,7 @@ const allCategoryTools = await Tool.find({
               Ready to Discover Your Perfect AI {capitalizedCategory} Tool?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join {Math.floor(Math.random() * 50000) + 10000}+ professionals using
-              TheToolsVerse to find the best AI tools for their needs.
+              Join 50,000+ professionals using TheToolsVerse to find the best AI tools for their needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -1400,11 +1404,11 @@ const allCategoryTools = await Tool.find({
                 Browse All {stats.total} Tools
               </a>
               <a
-                href="/featured"
+                href="/submit-tool"
                 className="inline-flex items-center justify-center px-8 py-3 bg-white/20 text-white font-bold rounded-xl border-2 border-white/30 hover:bg-white/30 transition-all cursor-pointer backdrop-blur"
               >
                 <Star className="w-5 h-5 mr-2" />
-                View Featured Tools
+                Submit Your Tool
               </a>
             </div>
           </div>

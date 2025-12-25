@@ -50,7 +50,6 @@ export async function GET() {
     const staticRoutes = [
       { url: '', lastmod: now, priority: 1.0, changefreq: 'daily' }, // Homepage
       { url: '/browse-tools', lastmod: now, priority: 0.95, changefreq: 'daily' },
-      { url: '/featured', lastmod: now, priority: 0.9, changefreq: 'daily' },
       { url: '/blog', lastmod: now, priority: 0.85, changefreq: 'daily' },
     ];
 

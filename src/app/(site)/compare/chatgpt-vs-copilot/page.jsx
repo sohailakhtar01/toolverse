@@ -9,10 +9,10 @@ import { Metadata } from 'next';
 export const metadata = {
   title: "ChatGPT vs GitHub Copilot 2025: Ultimate AI Assistant Comparison | Toolsverse",
   description: "Complete ChatGPT vs Microsoft Copilot comparison 2025. Expert analysis shows ChatGPT wins in 7/10 categories. Compare features, pricing, coding capabilities & performance data.",
-  
+
   keywords: [
     "chatgpt vs copilot",
-    "chatgpt vs github copilot", 
+    "chatgpt vs github copilot",
     "microsoft copilot vs chatgpt",
     "best ai assistant 2025",
     "ai coding assistant comparison",
@@ -35,7 +35,7 @@ export const metadata = {
   openGraph: {
     title: "ChatGPT vs GitHub Copilot 2025: ChatGPT Wins in Content Creation & Conversation",
     description: "Comprehensive comparison: ChatGPT excels in content creation (9/10) & conversation (9/10), while Copilot dominates coding (9/10) & business automation (9/10). Expert analysis with real data.",
-    url: "https://thetoolsverse.com/compare/chatgpt-vs-copilot", 
+    url: "https://thetoolsverse.com/compare/chatgpt-vs-copilot",
     siteName: "Toolsverse - AI Tools Directory",
     images: [
       {
@@ -57,7 +57,7 @@ export const metadata = {
   },
 
   twitter: {
-    card: "summary_large_image", 
+    card: "summary_large_image",
     title: "🚀 ChatGPT vs Copilot 2025: SHOCKING Results Revealed!",
     description: "BREAKING: ChatGPT dominates content creation (9/10) while Copilot rules coding (9/10). See the complete comparison that's changing how professionals choose AI tools! 🔥",
     images: ["https://thetoolsverse.com/images/chatgpt-copilot-twitter-viral.jpg"],
@@ -83,7 +83,7 @@ export const metadata = {
       index: true,
       follow: true,
       'max-video-preview': -1,
-      'max-image-preview': 'large', 
+      'max-image-preview': 'large',
       'max-snippet': -1,
     },
   },
@@ -101,7 +101,7 @@ export const metadata = {
 function StructuredData() {
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article", 
+    "@type": "Article",
     "headline": "ChatGPT vs GitHub Copilot 2025: Ultimate AI Assistant Comparison",
     "description": "Comprehensive comparison of ChatGPT and Microsoft GitHub Copilot showing strengths in different areas: ChatGPT for content creation and conversation, Copilot for coding and business automation.",
     "image": [
@@ -123,7 +123,7 @@ function StructuredData() {
       ]
     },
     "publisher": {
-      "@type": "Organization", 
+      "@type": "Organization",
       "name": "Toolsverse - AI Tools Directory",
       "logo": {
         "@type": "ImageObject",
@@ -160,7 +160,7 @@ function StructuredData() {
         }
       },
       {
-        "@type": "SoftwareApplication", 
+        "@type": "SoftwareApplication",
         "name": "GitHub Copilot",
         "applicationCategory": "AI Coding Assistant",
         "operatingSystem": "Cross-platform",
@@ -185,12 +185,12 @@ function StructuredData() {
       },
       {
         "@type": "Organization",
-        "name": "Microsoft", 
+        "name": "Microsoft",
         "url": "https://microsoft.com"
       },
       {
         "@type": "Organization",
-        "name": "GitHub", 
+        "name": "GitHub",
         "url": "https://github.com"
       }
     ]
@@ -204,13 +204,13 @@ function StructuredData() {
         "@type": "Question",
         "name": "Which is better for coding: ChatGPT or GitHub Copilot?",
         "acceptedAnswer": {
-          "@type": "Answer", 
+          "@type": "Answer",
           "text": "For coding, GitHub Copilot is superior with a 9/10 rating vs ChatGPT's 8/10. Copilot offers real-time code completion, superior IDE integration, and GitHub repository understanding. However, ChatGPT excels at code explanation and debugging with detailed analysis."
         }
       },
       {
         "@type": "Question",
-        "name": "Which AI assistant is better for content creation?", 
+        "name": "Which AI assistant is better for content creation?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "ChatGPT dominates content creation with a 9/10 rating vs Copilot's 8/10. ChatGPT provides superior creative writing, blog posts, marketing copy, and natural language generation with more engaging and versatile content output."
@@ -288,7 +288,7 @@ function StructuredData() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <script
-        type="application/ld+json" 
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <script
@@ -305,31 +305,31 @@ function StructuredData() {
 
 // 🔥 VIRAL PERFORMANCE STATS FOR USER ATTRACTION
 const performanceStats = [
-  { 
-    metric: "Content Creation", 
-    chatgpt: { value: "9/10", color: "text-green-600", winner: true }, 
-    copilot: { value: "8/10", color: "text-orange-600" }, 
+  {
+    metric: "Content Creation",
+    chatgpt: { value: "9/10", color: "text-green-600", winner: true },
+    copilot: { value: "8/10", color: "text-orange-600" },
     icon: <Brain className="w-6 h-6 sm:w-8 sm:h-8" />,
     description: "Blog posts, marketing copy, creative writing"
   },
-  { 
-    metric: "Coding Assistance", 
-    chatgpt: { value: "8/10", color: "text-orange-600" }, 
-    copilot: { value: "9/10", color: "text-green-600", winner: true }, 
+  {
+    metric: "Coding Assistance",
+    chatgpt: { value: "8/10", color: "text-orange-600" },
+    copilot: { value: "9/10", color: "text-green-600", winner: true },
     icon: <Code className="w-6 h-6 sm:w-8 sm:h-8" />,
     description: "Real-time code completion & IDE integration"
   },
-  { 
-    metric: "Conversation Quality", 
-    chatgpt: { value: "9/10", color: "text-green-600", winner: true }, 
-    copilot: { value: "7/10", color: "text-orange-600" }, 
+  {
+    metric: "Conversation Quality",
+    chatgpt: { value: "9/10", color: "text-green-600", winner: true },
+    copilot: { value: "7/10", color: "text-orange-600" },
     icon: <Users className="w-6 h-6 sm:w-8 sm:h-8" />,
     description: "Natural dialogue & customer support"
   },
-  { 
-    metric: "Business Integration", 
-    chatgpt: { value: "7/10", color: "text-orange-600" }, 
-    copilot: { value: "9/10", color: "text-green-600", winner: true }, 
+  {
+    metric: "Business Integration",
+    chatgpt: { value: "7/10", color: "text-orange-600" },
+    copilot: { value: "9/10", color: "text-green-600", winner: true },
     icon: <Shield className="w-6 h-6 sm:w-8 sm:h-8" />,
     description: "Microsoft Office & enterprise tools"
   }
@@ -462,7 +462,7 @@ const useCases = [
 const pros = {
   chatgpt: [
     "Superior conversational AI with natural responses",
-    "Extensive plugin ecosystem and third-party integrations", 
+    "Extensive plugin ecosystem and third-party integrations",
     "Better creative writing and content generation capabilities",
     "More flexible and adaptable to various use cases",
     "Strong community support and extensive documentation",
@@ -572,7 +572,7 @@ const UseCaseCard = ({ title, icon, chatgpt, copilot, winner }) => (
       <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-3 rounded-lg mr-4 text-white shadow-lg">{icon}</div>
       <h3 className="text-xl font-bold text-gray-800">{title}</h3>
     </div>
-    
+
     <div className="space-y-4">
       <div className={`p-4 rounded-lg ${winner === 'chatgpt' ? 'bg-green-50 border-2 border-green-300' : 'bg-gray-50'}`}>
         <div className="flex items-center justify-between mb-2">
@@ -585,7 +585,7 @@ const UseCaseCard = ({ title, icon, chatgpt, copilot, winner }) => (
         </div>
         <p className="text-sm text-gray-600">{chatgpt.description}</p>
       </div>
-      
+
       <div className={`p-4 rounded-lg ${winner === 'copilot' ? 'bg-blue-50 border-2 border-blue-300' : 'bg-gray-50'}`}>
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center">
@@ -606,7 +606,7 @@ const ComparisonPage = () => {
   return (
     <>
       <StructuredData />
-      
+
       <div className="min-h-screen bg-white">
         {/* HERO HEADER */}
         <header className="bg-gradient-to-br mt-16 from-purple-500 via-blue-900 to-pink-400 text-white py-20">
@@ -630,7 +630,7 @@ const ComparisonPage = () => {
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl text-gray-100 mb-8 max-w-4xl mx-auto px-4">
-              <strong className="text-yellow-300">SHOCKING Results:</strong> ChatGPT dominates content creation (9/10) while Copilot rules coding (9/10). 
+              <strong className="text-yellow-300">SHOCKING Results:</strong> ChatGPT dominates content creation (9/10) while Copilot rules coding (9/10).
               See the complete comparison that's helping millions choose their AI assistant!
             </p>
 
@@ -656,8 +656,8 @@ const ComparisonPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-extrabold mb-4">
-                <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
-                  🔥 HEAD-TO-HEAD: The Results Will SHOCK You!
+                <span className="text-teal-600">
+                  HEAD-TO-HEAD: The Results Will SHOCK You!
                 </span>
               </h2>
               <p className="text-xl text-gray-600 max-w-4xl mx-auto">
@@ -758,7 +758,7 @@ const ComparisonPage = () => {
                 Complete Feature Breakdown: Every Capability Compared
               </span>
             </h2>
-            
+
             {features.map((category, idx) => (
               <div key={idx} className="mb-12">
                 <h3 className="text-2xl font-bold mb-6 text-gray-800 flex items-center">
@@ -820,14 +820,14 @@ const ComparisonPage = () => {
                 Honest Analysis: Strengths & Weaknesses Exposed
               </span>
             </h2>
-            
+
             <div className="grid md:grid-cols-2 gap-12">
               <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200">
                 <h3 className="text-2xl font-bold mb-6 text-gray-800 flex items-center">
                   <Brain className="text-green-500 mr-3" size={32} />
                   ChatGPT Analysis
                 </h3>
-                
+
                 <div className="mb-8">
                   <h4 className="text-lg font-bold mb-4 text-green-600 flex items-center">
                     <ThumbsUp className="w-5 h-5 mr-2" />
@@ -842,7 +842,7 @@ const ComparisonPage = () => {
                     ))}
                   </ul>
                 </div>
-                
+
                 <div>
                   <h4 className="text-lg font-bold mb-4 text-red-600 flex items-center">
                     <AlertTriangle className="w-5 h-5 mr-2" />
@@ -858,13 +858,13 @@ const ComparisonPage = () => {
                   </ul>
                 </div>
               </div>
-              
+
               <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200">
                 <h3 className="text-2xl font-bold mb-6 text-gray-800 flex items-center">
                   <Code className="text-blue-500 mr-3" size={32} />
                   GitHub Copilot Analysis
                 </h3>
-                
+
                 <div className="mb-8">
                   <h4 className="text-lg font-bold mb-4 text-green-600 flex items-center">
                     <ThumbsUp className="w-5 h-5 mr-2" />
@@ -879,7 +879,7 @@ const ComparisonPage = () => {
                     ))}
                   </ul>
                 </div>
-                
+
                 <div>
                   <h4 className="text-lg font-bold mb-4 text-red-600 flex items-center">
                     <AlertTriangle className="w-5 h-5 mr-2" />
@@ -943,10 +943,10 @@ const ComparisonPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                🎯 Expert Verdict: When to Choose Which AI Assistant
+                Expert Verdict: When to Choose Which AI Assistant
               </span>
             </h2>
-            
+
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 border-2 border-green-300 shadow-xl">
                 <div className="flex items-center mb-6">
@@ -989,7 +989,7 @@ const ComparisonPage = () => {
                   </p>
                 </div>
               </div>
-              
+
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 border-2 border-blue-300 shadow-xl">
                 <div className="flex items-center mb-6">
                   <Code className="text-blue-600 mr-3" size={32} />
@@ -1064,20 +1064,20 @@ const ComparisonPage = () => {
               🎯 The Verdict: Choose Your AI Champion Today!
             </h2>
             <p className="text-xl text-purple-100 mb-8 leading-relaxed max-w-4xl mx-auto">
-              <strong className="text-yellow-300">ChatGPT wins in content creation (9/10) and conversation (9/10)</strong>, 
-              while <strong className="text-yellow-300">GitHub Copilot dominates coding (9/10) and business automation (9/10)</strong>. 
+              <strong className="text-yellow-300">ChatGPT wins in content creation (9/10) and conversation (9/10)</strong>,
+              while <strong className="text-yellow-300">GitHub Copilot dominates coding (9/10) and business automation (9/10)</strong>.
               Both cost $20/month - but which fits your workflow better?
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link href="/tools/chatgpt" className="group">
                 <button className="inline-flex items-center bg-white text-purple-700 font-bold text-xl px-10 py-5 rounded-2xl cursor-pointer shadow-2xl transform group-hover:scale-101 transition-all duration-300 hover:bg-blue-200">
-                   Try ChatGPT Now
+                  Try ChatGPT Now
                   <Sparkles className="ml-3 w-6 h-6" />
                 </button>
               </Link>
               <Link href="/tools/github-copilot" className="group">
                 <button className="inline-flex items-center bg-transparent border-2 border-white text-white font-bold text-xl px-10 py-5 cursor-pointer rounded-2xl hover:bg-blue-200 hover:text-purple-700 transition-all duration-300 group-hover:scale-101">
-                   Try GitHub Copilot
+                  Try GitHub Copilot
                   <Code className="ml-3 w-6 h-6" />
                 </button>
               </Link>
@@ -1088,13 +1088,7 @@ const ComparisonPage = () => {
           </div>
         </section>
 
-        {/* FOOTER */}
-        <footer className="bg-gray-900 text-gray-400 py-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-lg">&copy; 2025 Toolsverse - India's #1 AI Tools Directory. All Rights Reserved.</p>
-            <p className="mt-2">Independent analysis • Not affiliated with OpenAI, Microsoft, or GitHub • Updated October 2025</p>
-          </div>
-        </footer>
+
       </div>
     </>
   );

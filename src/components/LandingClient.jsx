@@ -2,7 +2,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Search, Star } from "lucide-react";
+import { Search, Star, Send } from "lucide-react";
 export default function LandingClient({ totalCount = 0 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -62,15 +62,16 @@ export default function LandingClient({ totalCount = 0 }) {
             </a>
 
             <a
-              href="/featured"
+              href="/submit-tool"
               className="relative group flex items-center justify-center gap-2 px-8 py-3 font-spaceGrotesk font-semibold rounded-md shadow-sm text-white bg-gradient-to-r from-purple-500 to-pink-500 overflow-hidden transition-all duration-500 hover:scale-[1.02]"
             >
               <span className="absolute inset-0 bg-white scale-x-0 origin-center transform transition-transform duration-700 ease-in-out group-hover:scale-x-100 rounded-md -z-10"></span>
               <span className="relative flex items-center gap-2 z-10 transition-colors duration-500 group-hover:text-black">
-                <Star size={18} />
-                Featured Tools of the Week
+                <Send size={18} />
+                Submit Your AI Tool
               </span>
             </a>
+
           </div>
         </div>
 

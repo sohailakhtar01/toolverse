@@ -10,10 +10,10 @@ import { AnimatedHeader, FaqSection } from '@components/InteractiveElements';
 export const metadata = {
   title: "ChatGPT vs Claude 3.5 Sonnet 2025: Ultimate AI Comparison | Toolsverse",
   description: "Complete ChatGPT vs Claude comparison 2025. Compare features, coding, reasoning, pricing & performance. Expert analysis shows Claude wins in 9/10 categories. Find the best AI assistant.",
-  
+
   keywords: [
     "chatgpt vs claude",
-    "claude 3.5 sonnet vs chatgpt", 
+    "claude 3.5 sonnet vs chatgpt",
     "openai vs anthropic 2025",
     "best ai assistant 2025",
     "claude vs chatgpt comparison",
@@ -36,7 +36,7 @@ export const metadata = {
   openGraph: {
     title: "ChatGPT vs Claude 3.5 Sonnet 2025: Claude Wins in 9/10 Categories",
     description: "Comprehensive comparison shows Claude outperforms ChatGPT in accuracy (94% vs 78%), coding quality (8.9/10 vs 7.2/10), and user satisfaction (91% vs 82%). Expert analysis with real data.",
-    url: "https://thetoolsverse.com/compare/chatgpt-vs-claude", 
+    url: "https://thetoolsverse.com/compare/chatgpt-vs-claude",
     siteName: "Toolsverse - AI Tools Directory",
     images: [
       {
@@ -58,7 +58,7 @@ export const metadata = {
   },
 
   twitter: {
-    card: "summary_large_image", 
+    card: "summary_large_image",
     title: "🚀 ChatGPT vs Claude 2025: Claude DESTROYS ChatGPT in 9/10 Categories",
     description: "SHOCKING results: Claude beats ChatGPT in accuracy (94% vs 78%), coding (8.9 vs 7.2), satisfaction (91% vs 82%). See the complete comparison that's breaking the internet! 🔥",
     images: ["https://thetoolsverse.com/images/chatgpt-claude-twitter-viral.jpg"],
@@ -84,7 +84,7 @@ export const metadata = {
       index: true,
       follow: true,
       'max-video-preview': -1,
-      'max-image-preview': 'large', 
+      'max-image-preview': 'large',
       'max-snippet': -1,
     },
   },
@@ -103,7 +103,7 @@ export const metadata = {
 function StructuredData() {
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article", 
+    "@type": "Article",
     "headline": "ChatGPT vs Claude 3.5 Sonnet 2025: Ultimate AI Assistant Comparison - Claude Wins",
     "description": "Comprehensive comparison of ChatGPT and Anthropic Claude shows Claude outperforms in accuracy, coding, reasoning, and user satisfaction. Expert analysis with real performance data.",
     "image": [
@@ -125,7 +125,7 @@ function StructuredData() {
       ]
     },
     "publisher": {
-      "@type": "Organization", 
+      "@type": "Organization",
       "name": "Toolsverse - AI Tools Directory",
       "logo": {
         "@type": "ImageObject",
@@ -162,7 +162,7 @@ function StructuredData() {
         }
       },
       {
-        "@type": "SoftwareApplication", 
+        "@type": "SoftwareApplication",
         "name": "Claude 3.5 Sonnet",
         "applicationCategory": "AI Assistant",
         "operatingSystem": "Web-based",
@@ -187,7 +187,7 @@ function StructuredData() {
       },
       {
         "@type": "Organization",
-        "name": "Anthropic", 
+        "name": "Anthropic",
         "url": "https://anthropic.com"
       }
     ]
@@ -201,13 +201,13 @@ function StructuredData() {
         "@type": "Question",
         "name": "Which is better: ChatGPT or Claude 3.5 Sonnet in 2025?",
         "acceptedAnswer": {
-          "@type": "Answer", 
+          "@type": "Answer",
           "text": "Based on comprehensive testing, Claude 3.5 Sonnet outperforms ChatGPT in 9 out of 10 categories including accuracy (94% vs 78%), coding quality (8.9/10 vs 7.2/10), and user satisfaction (91% vs 82%). Claude offers superior reasoning, fewer hallucinations, and better safety measures."
         }
       },
       {
         "@type": "Question",
-        "name": "Is Claude better for coding than ChatGPT?", 
+        "name": "Is Claude better for coding than ChatGPT?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes, Claude significantly outperforms ChatGPT in coding tasks with a quality score of 8.9/10 vs ChatGPT's 7.2/10. Claude generates cleaner, more maintainable code with better documentation, fewer bugs, and superior debugging support."
@@ -285,7 +285,7 @@ function StructuredData() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <script
-        type="application/ld+json" 
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <script
@@ -302,34 +302,34 @@ function StructuredData() {
 
 // 🔥 PERFORMANCE DATA FOR VIRAL APPEAL
 const viralStats = [
-  { 
-    metric: "Accuracy Rate", 
-    chatgpt: { value: "78%", color: "text-orange-600" }, 
-    claude: { value: "94%", color: "text-green-600" }, 
+  {
+    metric: "Accuracy Rate",
+    chatgpt: { value: "78%", color: "text-orange-600" },
+    claude: { value: "94%", color: "text-green-600" },
     improvement: "+20.5%",
     icon: <Target className="w-6 h-6 sm:w-8 sm:h-8" />,
     description: "Tested across 10,000+ queries"
   },
-  { 
-    metric: "User Satisfaction", 
-    chatgpt: { value: "82%", color: "text-orange-600" }, 
-    claude: { value: "91%", color: "text-green-600" }, 
+  {
+    metric: "User Satisfaction",
+    chatgpt: { value: "82%", color: "text-orange-600" },
+    claude: { value: "91%", color: "text-green-600" },
     improvement: "+11%",
     icon: <ThumbsUp className="w-6 h-6 sm:w-8 sm:h-8" />,
     description: "Based on 5,000+ user reviews"
   },
-  { 
-    metric: "Response Speed", 
-    chatgpt: { value: "2.1s", color: "text-orange-600" }, 
-    claude: { value: "1.8s", color: "text-green-600" }, 
+  {
+    metric: "Response Speed",
+    chatgpt: { value: "2.1s", color: "text-orange-600" },
+    claude: { value: "1.8s", color: "text-green-600" },
     improvement: "16% faster",
     icon: <Zap className="w-6 h-6 sm:w-8 sm:h-8" />,
     description: "Average response time"
   },
-  { 
-    metric: "Code Quality", 
-    chatgpt: { value: "7.2/10", color: "text-orange-600" }, 
-    claude: { value: "8.9/10", color: "text-green-600" }, 
+  {
+    metric: "Code Quality",
+    chatgpt: { value: "7.2/10", color: "text-orange-600" },
+    claude: { value: "8.9/10", color: "text-green-600" },
     improvement: "+24%",
     icon: <Code className="w-6 h-6 sm:w-8 sm:h-8" />,
     description: "Professional developer ratings"
@@ -350,7 +350,7 @@ const detailedComparison = [
     ]
   },
   {
-    category: "Technical Capabilities", 
+    category: "Technical Capabilities",
     icon: <Code className="w-6 h-6" />,
     description: "Programming, data analysis, and technical task performance",
     items: [
@@ -365,10 +365,10 @@ const detailedComparison = [
     icon: <FileText className="w-6 h-6" />,
     description: "Content creation, creative writing, and language tasks",
     items: [
-        { feature: "Creative Writing", chatgpt: { score: "Good", rating: 4, details: "Creative but sometimes formulaic" }, claude: { score: "Excellent", rating: 5, details: "Highly original and engaging content" }, winner: "claude", explanation: "Claude demonstrates superior creativity with more original storylines and character development." },
-        { feature: "Tone Adaptation", chatgpt: { score: "Moderate", rating: 3, details: "Basic tone matching capabilities" }, claude: { score: "Superior", rating: 5, details: "Excellent tone consistency and adaptation" }, winner: "claude", explanation: "Claude better adapts to different writing styles and maintains consistent tone throughout content." },
-        { feature: "Content Structure", chatgpt: { score: "Good", rating: 4, details: "Well-organized with clear formatting" }, claude: { score: "Excellent", rating: 5, details: "Superior organization and flow" }, winner: "claude", explanation: "Claude creates more logically structured content with better flow and readability." },
-        { feature: "SEO Content", chatgpt: { score: "Basic", rating: 3, details: "Basic SEO understanding" }, claude: { score: "Advanced", rating: 5, details: "Comprehensive SEO optimization" }, winner: "claude", explanation: "Claude demonstrates better understanding of SEO principles and creates more search-friendly content." }
+      { feature: "Creative Writing", chatgpt: { score: "Good", rating: 4, details: "Creative but sometimes formulaic" }, claude: { score: "Excellent", rating: 5, details: "Highly original and engaging content" }, winner: "claude", explanation: "Claude demonstrates superior creativity with more original storylines and character development." },
+      { feature: "Tone Adaptation", chatgpt: { score: "Moderate", rating: 3, details: "Basic tone matching capabilities" }, claude: { score: "Superior", rating: 5, details: "Excellent tone consistency and adaptation" }, winner: "claude", explanation: "Claude better adapts to different writing styles and maintains consistent tone throughout content." },
+      { feature: "Content Structure", chatgpt: { score: "Good", rating: 4, details: "Well-organized with clear formatting" }, claude: { score: "Excellent", rating: 5, details: "Superior organization and flow" }, winner: "claude", explanation: "Claude creates more logically structured content with better flow and readability." },
+      { feature: "SEO Content", chatgpt: { score: "Basic", rating: 3, details: "Basic SEO understanding" }, claude: { score: "Advanced", rating: 5, details: "Comprehensive SEO optimization" }, winner: "claude", explanation: "Claude demonstrates better understanding of SEO principles and creates more search-friendly content." }
     ]
   },
   {
@@ -376,10 +376,10 @@ const detailedComparison = [
     icon: <Shield className="w-6 h-6" />,
     description: "Safety measures, bias prevention, and ethical considerations",
     items: [
-        { feature: "Safety Protocols", chatgpt: { score: "Standard", rating: 3, details: "Basic safety filtering system" }, claude: { score: "Advanced", rating: 5, details: "Constitutional AI safety framework" }, winner: "claude", explanation: "Claude employs more sophisticated safety measures based on constitutional AI principles." },
-        { feature: "Bias Mitigation", chatgpt: { score: "Moderate", rating: 3, details: "Some bias reduction efforts" }, claude: { score: "Superior", rating: 5, details: "Advanced bias detection and prevention" }, winner: "claude", explanation: "Claude shows significantly less bias in responses and better representation across different perspectives." },
-        { feature: "Harmful Content Prevention", chatgpt: { score: "Good", rating: 4, details: "Effective content filtering" }, claude: { score: "Excellent", rating: 5, details: "Comprehensive harm prevention" }, winner: "claude", explanation: "Claude has more robust mechanisms to prevent generation of harmful or inappropriate content." },
-        { feature: "Privacy Protection", chatgpt: { score: "Standard", rating: 3, details: "Basic privacy measures" }, claude: { score: "Enhanced", rating: 5, details: "Strong privacy-focused design" }, winner: "claude", explanation: "Claude demonstrates stronger commitment to user privacy with more transparent data handling practices." }
+      { feature: "Safety Protocols", chatgpt: { score: "Standard", rating: 3, details: "Basic safety filtering system" }, claude: { score: "Advanced", rating: 5, details: "Constitutional AI safety framework" }, winner: "claude", explanation: "Claude employs more sophisticated safety measures based on constitutional AI principles." },
+      { feature: "Bias Mitigation", chatgpt: { score: "Moderate", rating: 3, details: "Some bias reduction efforts" }, claude: { score: "Superior", rating: 5, details: "Advanced bias detection and prevention" }, winner: "claude", explanation: "Claude shows significantly less bias in responses and better representation across different perspectives." },
+      { feature: "Harmful Content Prevention", chatgpt: { score: "Good", rating: 4, details: "Effective content filtering" }, claude: { score: "Excellent", rating: 5, details: "Comprehensive harm prevention" }, winner: "claude", explanation: "Claude has more robust mechanisms to prevent generation of harmful or inappropriate content." },
+      { feature: "Privacy Protection", chatgpt: { score: "Standard", rating: 3, details: "Basic privacy measures" }, claude: { score: "Enhanced", rating: 5, details: "Strong privacy-focused design" }, winner: "claude", explanation: "Claude demonstrates stronger commitment to user privacy with more transparent data handling practices." }
     ]
   },
   {
@@ -387,10 +387,10 @@ const detailedComparison = [
     icon: <Smartphone className="w-6 h-6" />,
     description: "Interface design, usability, and overall user satisfaction",
     items: [
-        { feature: "Response Speed", chatgpt: { score: "Fast", rating: 4, details: "Quick response generation" }, claude: { score: "Very Fast", rating: 5, details: "Consistently faster response times" }, winner: "claude", explanation: "Claude typically provides faster response times while maintaining quality output." },
-        { feature: "Interface Design", chatgpt: { score: "Standard", rating: 3, details: "Functional but basic interface" }, claude: { score: "Modern", rating: 5, details: "Clean, intuitive, user-friendly design" }, winner: "claude", explanation: "Claude offers a more polished and intuitive user interface with better accessibility features." },
-        { feature: "Mobile Experience", chatgpt: { score: "Good", rating: 4, details: "Decent mobile optimization" }, claude: { score: "Excellent", rating: 5, details: "Superior mobile responsiveness" }, winner: "claude", explanation: "Claude provides a better mobile experience with more responsive design and touch-friendly interface." },
-        { feature: "Conversation Flow", chatgpt: { score: "Good", rating: 4, details: "Natural conversation patterns" }, claude: { score: "Superior", rating: 5, details: "More natural and engaging dialogue" }, winner: "claude", explanation: "Claude maintains more natural conversation flow with better understanding of conversational context." }
+      { feature: "Response Speed", chatgpt: { score: "Fast", rating: 4, details: "Quick response generation" }, claude: { score: "Very Fast", rating: 5, details: "Consistently faster response times" }, winner: "claude", explanation: "Claude typically provides faster response times while maintaining quality output." },
+      { feature: "Interface Design", chatgpt: { score: "Standard", rating: 3, details: "Functional but basic interface" }, claude: { score: "Modern", rating: 5, details: "Clean, intuitive, user-friendly design" }, winner: "claude", explanation: "Claude offers a more polished and intuitive user interface with better accessibility features." },
+      { feature: "Mobile Experience", chatgpt: { score: "Good", rating: 4, details: "Decent mobile optimization" }, claude: { score: "Excellent", rating: 5, details: "Superior mobile responsiveness" }, winner: "claude", explanation: "Claude provides a better mobile experience with more responsive design and touch-friendly interface." },
+      { feature: "Conversation Flow", chatgpt: { score: "Good", rating: 4, details: "Natural conversation patterns" }, claude: { score: "Superior", rating: 5, details: "More natural and engaging dialogue" }, winner: "claude", explanation: "Claude maintains more natural conversation flow with better understanding of conversational context." }
     ]
   }
 ];
@@ -418,15 +418,6 @@ const faqs = [
   { question: "Can Claude replace ChatGPT for business and professional use?", answer: "Absolutely. With 94% accuracy, superior reasoning, and 91% user satisfaction, Claude is the preferred choice for professionals. Many businesses report 40-65% productivity improvements after switching from ChatGPT to Claude." },
   { question: "How does mobile experience compare between ChatGPT and Claude?", answer: "Claude offers superior mobile experience with better responsive design, more intuitive interface, and faster loading times. The mobile optimization makes Claude significantly more user-friendly on smartphones and tablets." },
   { question: "Which AI assistant is recommended for students and educators?", answer: "Claude is highly recommended for education due to superior explanatory abilities, adaptive teaching approaches, and 94% accuracy. Students benefit from clearer explanations while educators appreciate the reliability and comprehensive coverage." }
-];
-
-const testimonials = [
-  { name: "Rajesh Kumar", role: "Senior Software Engineer, Tech Mahindra", content: "After switching from ChatGPT to Claude, my coding productivity increased by 40%. Claude generates cleaner code with better documentation and fewer bugs. It's like having a senior developer as your coding partner.", rating: 5, avatar: "RK" },
-  { name: "Priya Sharma", role: "Digital Marketing Manager, Flipkart", content: "Claude's content creation capabilities are outstanding. It understands SEO better than ChatGPT and maintains our brand voice consistently. Our organic traffic increased by 65% after switching to Claude.", rating: 5, avatar: "PS" },
-  { name: "Dr. Amit Patel", role: "AI Researcher, IIT Delhi", content: "From a technical standpoint, Claude's reasoning capabilities and factual accuracy are superior. The reduction in hallucinations is significant, making it more reliable for research and academic work.", rating: 5, avatar: "AP" },
-  { name: "Sneha Gupta", role: "Content Creator & Blogger", content: "Claude has transformed my content creation process. The creativity and originality it brings to writing is remarkable. My blog engagement increased by 80% since I started using Claude.", rating: 5, avatar: "SG" },
-  { name: "Vikram Singh", role: "Startup Founder, EdTech", content: "Claude's ability to understand context and provide nuanced responses is perfect for our educational platform. Students get better explanations and more personalized learning support.", rating: 5, avatar: "VS" },
-  { name: "Anita Reddy", role: "Business Analyst, Infosys", content: "The accuracy and reliability of Claude's analysis have been game-changing. We've reduced fact-checking time by 50% and improved decision-making quality significantly.", rating: 5, avatar: "AR" }
 ];
 
 // 🔥 OPTIMIZED COMPONENTS
@@ -538,7 +529,7 @@ const ChatGPTvsClaudePage = () => {
   return (
     <>
       <StructuredData />
-      
+
       <div className="min-h-screen bg-gray-50 text-gray-800">
         {/* HERO SECTION */}
         <header className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-blue-900 to-pink-500 pt-16 pb-24">
@@ -552,7 +543,7 @@ const ChatGPTvsClaudePage = () => {
                   <span className="text-black font-semibold">Based on 10,000+ tested queries • Updated October 2025</span>
                 </div>
                 <p className="text-xl text-purple-100 max-w-4xl mx-auto leading-relaxed">
-                  Comprehensive analysis reveals <span className="font-bold text-yellow-300">Claude outperforms ChatGPT in 9 out of 10 categories</span>. 
+                  Comprehensive analysis reveals <span className="font-bold text-yellow-300">Claude outperforms ChatGPT in 9 out of 10 categories</span>.
                   See the shocking results that are making professionals worldwide switch to Claude.
                 </p>
               </div>
@@ -560,14 +551,16 @@ const ChatGPTvsClaudePage = () => {
           </div>
         </header>
 
+
+
         <main>
           {/* VIRAL STATS SECTION */}
           <section className="py-16 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
                 <h2 className="text-4xl font-extrabold mb-4">
-                  <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
-                    🚀 SHOCKING Results: Claude DESTROYS ChatGPT
+                  <span className="text-teal-600">
+                    SHOCKING Results: Claude DESTROYS ChatGPT
                   </span>
                 </h2>
                 <p className="text-xl text-gray-600 max-w-4xl mx-auto">
@@ -612,83 +605,57 @@ const ChatGPTvsClaudePage = () => {
 
           {/* USE CASES */}
           <section className="py-16 bg-white">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <div className="text-center mb-12">
-                      <h2 className="text-4xl font-bold mb-4">Real-World Professional Use Cases</h2>
-                      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        How Claude and ChatGPT perform in actual professional scenarios. The winner is clear in every category.
-                      </p>
-                  </div>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                      {useCases.map((useCase, index) => <UseCaseCard key={index} {...useCase} />)}
-                  </div>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold mb-4">Real-World Professional Use Cases</h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  How Claude and ChatGPT perform in actual professional scenarios. The winner is clear in every category.
+                </p>
               </div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                {useCases.map((useCase, index) => <UseCaseCard key={index} {...useCase} />)}
+              </div>
+            </div>
           </section>
 
           {/* PRICING */}
           <section id="pricing" className="py-16 bg-gray-50">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <div className="text-center mb-12">
-                      <h2 className="text-4xl font-bold mb-4">Value Comparison: Same Price, Better Performance</h2>
-                      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Both cost $20/month, but Claude delivers significantly more value. Here's why Claude is the smarter choice.
-                      </p>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                      {pricingComparison.map((tier, index) => (
-                          <div key={index} className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                              <div className="p-8">
-                                  <h3 className="text-3xl font-bold text-center mb-6">{tier.plan}</h3>
-                                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                      <div className="p-6 rounded-xl bg-gray-50 border border-gray-200">
-                                          <h4 className="font-bold text-xl mb-4">ChatGPT</h4>
-                                          <p className="font-extrabold text-3xl mb-4 text-orange-600">{tier.chatgpt.price}</p>
-                                          <ul className="space-y-3 text-sm">{tier.chatgpt.features.map((f, i) => <li key={i} className="flex items-start"><CheckCircle className="w-4 h-4 text-green-500 mr-3 mt-0.5 flex-shrink-0" />{f}</li>)}</ul>
-                                      </div>
-                                      <div className="p-6 rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-500 shadow-lg">
-                                          <h4 className="font-bold text-xl mb-4 text-purple-800">Claude 🏆</h4>
-                                          <p className="font-extrabold text-3xl text-purple-800 mb-4">{tier.claude.price}</p>
-                                          <ul className="space-y-3 text-sm">{tier.claude.features.map((f, i) => <li key={i} className="flex items-start"><CheckCircle className="w-4 h-4 text-purple-600 mr-3 mt-0.5 flex-shrink-0" />{f}</li>)}</ul>
-                                      </div>
-                                  </div>
-                              </div>
-                              {tier.plan === "Premium Plan" && (
-                                <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-center p-4 text-lg font-bold">
-                                  🏆 Winner: Claude (Better Value + Performance)
-                                </div>
-                              )}
-                          </div>
-                      ))}
-                  </div>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold mb-4">Value Comparison: Same Price, Better Performance</h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Both cost $20/month, but Claude delivers significantly more value. Here's why Claude is the smarter choice.
+                </p>
               </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                {pricingComparison.map((tier, index) => (
+                  <div key={index} className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <div className="p-8">
+                      <h3 className="text-3xl font-bold text-center mb-6">{tier.plan}</h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div className="p-6 rounded-xl bg-gray-50 border border-gray-200">
+                          <h4 className="font-bold text-xl mb-4">ChatGPT</h4>
+                          <p className="font-extrabold text-3xl mb-4 text-orange-600">{tier.chatgpt.price}</p>
+                          <ul className="space-y-3 text-sm">{tier.chatgpt.features.map((f, i) => <li key={i} className="flex items-start"><CheckCircle className="w-4 h-4 text-green-500 mr-3 mt-0.5 flex-shrink-0" />{f}</li>)}</ul>
+                        </div>
+                        <div className="p-6 rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-500 shadow-lg">
+                          <h4 className="font-bold text-xl mb-4 text-purple-800">Claude 🏆</h4>
+                          <p className="font-extrabold text-3xl text-purple-800 mb-4">{tier.claude.price}</p>
+                          <ul className="space-y-3 text-sm">{tier.claude.features.map((f, i) => <li key={i} className="flex items-start"><CheckCircle className="w-4 h-4 text-purple-600 mr-3 mt-0.5 flex-shrink-0" />{f}</li>)}</ul>
+                        </div>
+                      </div>
+                    </div>
+                    {tier.plan === "Premium Plan" && (
+                      <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-center p-4 text-lg font-bold">
+                        🏆 Winner: Claude (Better Value + Performance)
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
           </section>
 
-          {/* TESTIMONIALS */}
-          <section className="py-16 bg-white">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <div className="text-center mb-12">
-                      <h2 className="text-4xl font-bold mb-4">What Indian Professionals Are Saying</h2>
-                      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Real success stories from users who switched from ChatGPT to Claude and never looked back.
-                      </p>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                      {testimonials.map((testimonial, index) => (
-                          <div key={index} className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl border-2 border-gray-100 flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300">
-                              <div className="flex mb-4">{[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />)}</div>
-                              <p className="text-gray-700 italic mb-6 flex-grow text-lg leading-relaxed">"{testimonial.content}"</p>
-                              <div className="flex items-center">
-                                  <div className="w-14 h-14 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center text-white font-bold text-xl mr-4 shadow-md">{testimonial.avatar}</div>
-                                  <div>
-                                      <p className="font-bold text-lg">{testimonial.name}</p>
-                                      <p className="text-sm text-gray-500">{testimonial.role}</p>
-                                  </div>
-                              </div>
-                          </div>
-                      ))}
-                  </div>
-              </div>
-          </section>
 
           {/* FAQ */}
           <section className="py-16 bg-gray-50">
@@ -702,48 +669,42 @@ const ChatGPTvsClaudePage = () => {
               <FaqSection faqs={faqs} />
             </div>
           </section>
-          
+
           {/* CTA SECTION */}
           <section className="bg-gradient-to-r from-purple-800 via-blue-800 to-pink-800 py-20">
-              <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                  <h2 className="text-5xl font-extrabold text-white mb-6">
-                    The Choice is Clear: Claude Wins in 2025 🏆
-                  </h2>
-                  <p className="text-xl text-purple-200 mb-8 leading-relaxed max-w-4xl mx-auto">
-                    With <span className="font-bold text-yellow-300">94% accuracy vs ChatGPT's 78%</span>, superior coding capabilities, 
-                    and <span className="font-bold text-yellow-300">91% user satisfaction</span>, Claude represents the future of AI assistance. 
-                    Join millions of professionals who have already made the switch.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                                        <Link 
-                      href="/tools/chatgpt" 
-                      className="inline-flex items-center bg-white text-purple-700 font-bold text-xl px-10 py-5 rounded-2xl shadow-2xl transform hover:bg-blue-100 hover:scale-101 transition-all duration-300"
-                    >
-                      🚀 Try Chatgpt Now (Free)
-                      <Sparkles className="ml-3 w-6 h-6" />
-                    </Link>
-                    <Link 
-                      href="/tools/claude" 
-                      className="inline-flex items-center bg-white text-purple-700 font-bold text-xl px-10 py-5 rounded-2xl shadow-2xl transform hover:bg-blue-100 hover:scale-101 transition-all duration-300"
-                    >
-                      🚀 Try Claude Now (Free)
-                      <Sparkles className="ml-3 w-6 h-6" />
-                    </Link>
-                    
-                  </div>
-                  <p className="text-purple-200 mt-6 text-sm">
-                    ⭐ Trusted by 50,000+ professionals across India • Free to start • No credit card required
-                  </p>
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h2 className="text-5xl font-extrabold text-white mb-6">
+                The Choice is Clear: Claude Wins in 2025 🏆
+              </h2>
+              <p className="text-xl text-purple-200 mb-8 leading-relaxed max-w-4xl mx-auto">
+                With <span className="font-bold text-yellow-300">94% accuracy vs ChatGPT's 78%</span>, superior coding capabilities,
+                and <span className="font-bold text-yellow-300">91% user satisfaction</span>, Claude represents the future of AI assistance.
+                Join millions of professionals who have already made the switch.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Link
+                  href="/tools/chatgpt"
+                  className="inline-flex items-center bg-white text-purple-700 font-bold text-xl px-10 py-5 rounded-2xl shadow-2xl transform hover:bg-blue-100 hover:scale-101 transition-all duration-300"
+                >
+                  🚀 Try Chatgpt Now (Free)
+                  <Sparkles className="ml-3 w-6 h-6" />
+                </Link>
+                <Link
+                  href="/tools/claude"
+                  className="inline-flex items-center bg-white text-purple-700 font-bold text-xl px-10 py-5 rounded-2xl shadow-2xl transform hover:bg-blue-100 hover:scale-101 transition-all duration-300"
+                >
+                  🚀 Try Claude Now (Free)
+                  <Sparkles className="ml-3 w-6 h-6" />
+                </Link>
+
               </div>
+              <p className="text-purple-200 mt-6 text-sm">
+                ⭐ Trusted by 50,000+ professionals across India • Free to start • No credit card required
+              </p>
+            </div>
           </section>
         </main>
 
-        <footer className="bg-gray-900 text-gray-400 py-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-lg">&copy; 2025 Toolsverse - India's #1 AI Tools Directory. All Rights Reserved.</p>
-            <p className="mt-2">Independent analysis • Not affiliated with OpenAI or Anthropic • Updated October 2025</p>
-          </div>
-        </footer>
       </div>
     </>
   );

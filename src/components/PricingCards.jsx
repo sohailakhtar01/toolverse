@@ -1,75 +1,79 @@
 import React from "react";
-import { Star, Zap, ArrowRight, Users, Shield } from "lucide-react";
+import { Star, Zap, Shield, Users, Check } from "lucide-react";
 import Link from "next/link";
 
 const plans = [
   {
     name: "Free",
-    price: "₹0/month",
-    icon: <Star className="w-8 h-8 text-yellow-400 mb-3" />,
-    description: "Basic listing with limited visibility on The Toolsverse.",
-    popular: false,
-    cta: "Get Started Free",
+    price: "₹0",
+    icon: Star,
+    iconColor: "text-amber-600",
+    iconBg: "bg-amber-50",
+    description: "Get started with basic listing",
+    cta: "Start Free",
     ctaLink: "/submit-tool?plan=free",
     features: [
       "Basic listing page",
-      "Standard category placement",
-      "Review within 7 days",
-      "Searchable by users",
+      "Standard placement",
+      "7-day review",
     ],
   },
   {
     name: "Starter",
-    price: "$5/month",
-    icon: <Zap className="w-8 h-8 text-purple-600 mb-3" />,
-    description: "Better reach and appearance in recommended tools.",
-    popular: true,
-    cta: "Try Starter",
+    price: "$5",
+    period: "/mo",
+    icon: Zap,
+    iconColor: "text-purple-600",
+    iconBg: "bg-purple-50",
+    description: "Better visibility and reach",
+    cta: "Get Starter",
     ctaLink: "/submit-tool?plan=starter",
     features: [
-      "Priority directory placement",
-      "2 images/screenshots",
-      "Featured in recommendations",
-      "Review within 3 days",
+      "Priority placement",
+      "3 images included",
+      "3-day review",
     ],
   },
   {
     name: "Pro",
-    price: "$20/month",
-    icon: <Shield className="w-8 h-8 text-green-500 mb-3" />,
-    description: "Priority listing, verified badge, and analytics access.",
+    price: "$20",
+    period: "one-time",
+    icon: Shield,
+    iconColor: "text-emerald-600",
+    iconBg: "bg-emerald-50",
     popular: true,
+    description: "Maximum visibility & analytics",
     cta: "Go Pro",
     ctaLink: "/submit-tool?plan=pro",
     features: [
-      "Verified badge on listing",
-      "Priority homepage & category placement",
-      "5 images/screenshots",
-      "Advanced analytics dashboard",
+      "Featured badge",
+      "Homepage priority",
+      "Analytics + SEO boost",
     ],
   },
   {
     name: "Enterprise",
-    price: "$199/month",
-    icon: <Users className="w-8 h-8 text-blue-700 mb-3" />,
-    description: "For large teams with full promotional support.",
-    popular: true,
-    cta: "Enterprise Inquiry",
+    price: "$199",
+    period: "/mo",
+    icon: Users,
+    iconColor: "text-blue-600",
+    iconBg: "bg-blue-50",
+    description: "Full promotional package",
+    cta: "Contact Us",
     ctaLink: "/contact?plan=enterprise",
     features: [
-      "Full promotional campaign",
-      "Dedicated account manager",
-      "Newsletter & social media push",
-      "Custom integrations available",
+      "Dedicated manager",
+      "Social media push",
+      "Custom integration",
     ],
   },
 ];
 
 export default function PricingCards() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-4 bg-gradient-to-b from-white via-purple-50/40 to-white">
-      <div className="max-w-7xl mx-auto">
-        {/* SEO-friendly Structured Data */}
+    <section className="py-12 px-4">
+      <div className="max-w-6xl mx-auto">
+        {/* SEO Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -77,84 +81,101 @@ export default function PricingCards() {
               "@context": "https://schema.org",
               "@type": "Product",
               name: "Toolsverse AI Tool Listing Plans",
-              description:
-                "Submit your AI tool for free or boost it with Featured, Pro, or Enterprise plans for maximum reach.",
               offers: plans.map((plan) => ({
                 "@type": "Offer",
                 name: plan.name,
                 price: plan.price.replace(/[^0-9.]/g, ""),
                 priceCurrency: "USD",
-                availability: "https://schema.org/InStock",
                 url: `https://thetoolsverse.com${plan.ctaLink}`,
               })),
             }),
           }}
         />
 
-        {/* Heading */}
-        <div className="text-center mb-14 px-4">
-          <h1 className="text-4xl sm:text-5xl font-bold font-spaceGrotesk text-gray-900 mb-3">
-            Choose Your Toolsverse Plan
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-            Submit your AI tool to reach thousands of visitors. Flexible plans for every need.
-          </p>
-        </div>
+        {/* Compact Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {plans.map((plan) => {
+            const IconComponent = plan.icon;
+            const isPopular = plan.popular;
 
-        {/* Cards */}
-        <div className="grid w-full gap-8 sm:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className={`flex flex-col justify-between ring-1 ring-gray-200 shadow-md rounded-2xl p-8 sm:p-10 bg-white hover:shadow-xl transition-all duration-300 ${
-                plan.popular ? "border-2 border-purple-600 scale-[1.02]" : ""
-              }`}
-              itemScope
-              itemType="http://schema.org/Service"
-            >
-              <div>
-                <div className="mb-4 flex justify-center">{plan.icon}</div>
-                <h2
-                  className="font-bold text-2xl sm:text-3xl text-center mb-1 text-gray-900"
-                  itemProp="name"
-                >
-                  {plan.name}
-                </h2>
-                <div
-                  className="text-3xl sm:text-4xl font-extrabold mb-3 text-purple-600 text-center"
-                  itemProp="offers"
-                >
-                  {plan.price}
+            return (
+              <div
+                key={plan.name}
+                className={`relative bg-white rounded-xl p-6 transition-all duration-300 ${isPopular
+                    ? "border-2 border-emerald-500 shadow-lg shadow-emerald-100"
+                    : "border border-gray-200 shadow hover:shadow-md"
+                  }`}
+              >
+                {/* Popular Badge */}
+                {isPopular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    POPULAR
+                  </div>
+                )}
+
+                {/* Icon */}
+                <div className={`w-12 h-12 ${plan.iconBg} rounded-lg flex items-center justify-center mb-4`}>
+                  <IconComponent className={`w-6 h-6 ${plan.iconColor}`} />
                 </div>
-                <p
-                  className="text-gray-600 mb-6 text-center leading-relaxed"
-                  itemProp="description"
-                >
+
+                {/* Plan Name */}
+                <h3 className="text-xl font-bold text-gray-900 mb-1">
+                  {plan.name}
+                </h3>
+
+                {/* Price */}
+                <div className="mb-3">
+                  <span className="text-3xl font-bold text-gray-900">{plan.price}</span>
+                  {plan.period && (
+                    <span className="text-sm text-gray-500 ml-1">{plan.period}</span>
+                  )}
+                </div>
+
+                {/* Description */}
+                <p className="text-sm text-gray-600 mb-4 min-h-[40px]">
                   {plan.description}
                 </p>
-                <ul className="mb-8 space-y-3 text-gray-700 text-sm sm:text-base text-left">
-                  {plan.features.map((feat, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <ArrowRight className="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" />
-                      <span>{feat}</span>
+
+                {/* Features - Compact */}
+                <ul className="space-y-2 mb-5">
+                  {plan.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
+                      <Check className={`w-4 h-4 flex-shrink-0 mt-0.5 ${isPopular ? 'text-emerald-600' : 'text-gray-400'
+                        }`} />
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
-              </div>
 
-              <Link
-                href={plan.ctaLink}
-                className={`w-full mt-auto flex-shrink-0 px-6 py-3 text-center rounded-xl font-semibold tracking-wide ${
-                  plan.popular
-                    ? "bg-gradient-to-tr from-purple-700 to-pink-500 text-white shadow-lg hover:from-purple-800 hover:to-pink-600"
-                    : "bg-purple-50 text-purple-900 border border-purple-200 hover:bg-purple-100 hover:text-purple-950"
-                } transition-all duration-200`}
-                aria-label={`Select ${plan.name} Plan`}
-              >
-                {plan.cta}
-              </Link>
-            </div>
-          ))}
+                {/* CTA Button */}
+                <Link
+                  href={plan.ctaLink}
+                  className={`block w-full py-2.5 px-4 rounded-lg text-center font-semibold text-sm transition-all ${isPopular
+                      ? "bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm"
+                      : "bg-gray-100 text-gray-900 hover:bg-gray-200 border border-gray-200"
+                    }`}
+                >
+                  {plan.cta}
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Trust Line */}
+        <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-xs text-gray-500">
+          <span className="flex items-center gap-1">
+            <Check className="w-3.5 h-3.5 text-emerald-600" />
+            No hidden fees
+          </span>
+          <span className="flex items-center gap-1">
+            <Check className="w-3.5 h-3.5 text-emerald-600" />
+            7-day refund
+          </span>
+          <span className="flex items-center gap-1">
+            <Check className="w-3.5 h-3.5 text-emerald-600" />
+            Cancel anytime
+          </span>
         </div>
       </div>
     </section>

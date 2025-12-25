@@ -4,6 +4,7 @@ import { ExternalLink } from 'lucide-react';
 import categories from '@/data/categories';
 import Image from 'next/image';
 import Link from "next/link";
+import { categoryToSlug } from '@/lib/categorySlug';
 
 const getPricingDisplay = (type) => {
   switch ((type || "").toLowerCase()) {
@@ -102,23 +103,24 @@ const ToolCard = ({ tool, viewMode = 'grid' }) => {
       {/* CATEGORIES */}
       <div className="flex flex-wrap gap-2 justify-center mb-5">
         {(tool.categories || []).slice(0, 2).map((category) => {
-          const slug = category
-            .toLowerCase()
-            .trim()
-            .replace(/ & /g, "-and-")
-            .replace(/\s+/g, "-");
+          const slug = categoryToSlug(category);
 
           return (
-            <button
+            <Link
               key={category}
-              onClick={(e) => {
-                e.stopPropagation();
-                router.push(`/categories/${slug}`);
-              }}
-              className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full whitespace-nowrap hover:bg-purple-100 hover:text-purple-700 transition"
+              href={`/categories/${slug}`}
+              onClick={(e) => e.stopPropagation()}
+              className="
+          px-3 py-1
+          bg-gray-100 text-gray-700
+          text-xs rounded-full whitespace-nowrap
+          hover:bg-purple-100 hover:text-purple-700
+          transition
+        "
+              aria-label={`Browse ${category} tools`}
             >
               #{category}
-            </button>
+            </Link>
           );
         })}
 
@@ -129,6 +131,7 @@ const ToolCard = ({ tool, viewMode = 'grid' }) => {
           </span>
         )}
       </div>
+
       {/* TOP BADGE (Only for Rank 1–5) */}
       {/* TOP BADGE (Only for Rank 1–5) */}
       {tool.isFeatured && tool.featuredRank && tool.featuredRank <= 5 && (

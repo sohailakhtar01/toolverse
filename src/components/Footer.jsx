@@ -17,16 +17,16 @@ export default function Footer() {
   return (
     <footer className="bg-white/80 backdrop-blur-md border-t border-purple-100 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-        
+
         {/* ✅ Updated Grid: Now 6 columns on large screens to fit everything in one row */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-6">
-          
+
           {/* 1. Logo + Description */}
           <div className="col-span-1 md:col-span-3 lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <div className="flex items-center justify-center">
                 <Image
-                  src="/logo.png" 
+                  src="/logo.png"
                   alt="Toolsverse Logo"
                   width={40}
                   height={40}
@@ -69,7 +69,6 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-gray-800 mb-4 whitespace-nowrap">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/browse-tools" className="text-gray-600 hover:text-purple-600">Browse Tools</Link></li>
-              <li><Link href="/featured" className="text-gray-600 hover:text-purple-600">Featured</Link></li>
               <li><Link href="/submit-tool" className="text-gray-600 hover:text-purple-600">Submit Tool</Link></li>
               <li><Link href="/pricing" className="text-gray-600 hover:text-purple-600">Pricing</Link></li>
               <li><Link href="/contact" className="text-gray-600 hover:text-purple-600">Contact</Link></li>
@@ -85,15 +84,6 @@ export default function Footer() {
               <li><Link href="/compare/midjourney-vs-dalle" className="text-gray-600 hover:text-purple-600">Midjourney vs DALL·E</Link></li>
               <li><Link href="/compare/midjourney-vs-stable-diffusion" className="text-gray-600 hover:text-purple-600">Midjourney vs SD</Link></li>
               <li><Link href="/compare/chatgpt-vs-copilot" className="text-gray-600 hover:text-purple-600">ChatGPT vs Copilot</Link></li>
-            </ul>
-          </div>
-
-          {/* 4. Free Tools (✅ Separated) */}
-          <div>
-            <h4 className="text-lg font-semibold text-gray-800 mb-4 whitespace-nowrap">Free Tools</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/free-ai-tools/students" className="text-gray-600 hover:text-purple-600">For Students</Link></li>
-              <li><Link href="/free-ai-tools/business" className="text-gray-600 hover:text-purple-600">For Business</Link></li>
             </ul>
           </div>
 

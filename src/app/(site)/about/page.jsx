@@ -1,13 +1,13 @@
-import { 
-  Target, 
-  Eye, 
-  Heart, 
-  Users, 
-  Award, 
-  Globe, 
-  Sparkles, 
-  ArrowRight, 
-  CheckCircle, 
+import {
+  Target,
+  Eye,
+  Heart,
+  Users,
+  Award,
+  Globe,
+  Sparkles,
+  ArrowRight,
+  CheckCircle,
   TrendingUp,
   Shield,
   Zap,
@@ -28,7 +28,7 @@ export const metadata = {
   description: 'Learn about The Tools Verse\'s mission to help Indian professionals and businesses discover the best AI tools, productivity software, and digital solutions. Founded in India, serving professionals worldwide with curated tool recommendations.',
   keywords: [
     'about the tools verse',
-    'AI tools directory India', 
+    'AI tools directory India',
     'productivity tools platform',
     'Indian startup directory',
     'professional software curation',
@@ -104,14 +104,14 @@ const teamMembers = [
     previousWork: "Student Innovator, Team SARK"
   },
   {
-  name: "Sameer Akhtar",
-  role: "E-mail Marketing Expert",
-  image: "/sameer.jpg",
-  bio: "Entrepreneur and email marketing expert helping e-commerce brands boost customer retention and revenue through high-performing email strategies. Leads BadRetention.com with a focus on results-driven campaigns and brand growth.",
-  expertise: ["Email Marketing", "E-commerce Growth", "Customer Retention", "Copywriting", "Automation"],
-  education: "Bachelor’s in Business Administration",
-  previousWork: "Founder - BadRetention.com"
-}
+    name: "Sameer Akhtar",
+    role: "E-mail Marketing Expert",
+    image: "/sameer.jpg",
+    bio: "Entrepreneur and email marketing expert helping e-commerce brands boost customer retention and revenue through high-performing email strategies. Leads BadRetention.com with a focus on results-driven campaigns and brand growth.",
+    expertise: ["Email Marketing", "E-commerce Growth", "Customer Retention", "Copywriting", "Automation"],
+    education: "Bachelor’s in Business Administration",
+    previousWork: "Founder - BadRetention.com"
+  }
 
 ];
 
@@ -145,27 +145,27 @@ const values = [
 
 // Realistic stats for a growing startup
 const stats = [
-  { 
-    number: "1,200+", 
-    label: "Tools Curated", 
+  {
+    number: "1,200+",
+    label: "Tools Curated",
     icon: <Award className="w-5 h-5" />,
     description: "Carefully evaluated and categorized"
   },
-  { 
-    number: "50+", 
-    label: "Categories", 
+  {
+    number: "50+",
+    label: "Categories",
     icon: <Target className="w-5 h-5" />,
     description: "From AI to productivity tools"
   },
-  { 
-    number: "1,000+", 
-    label: "Monthly Users", 
+  {
+    number: "1,000+",
+    label: "Monthly Users",
     icon: <Users className="w-5 h-5" />,
     description: "Growing community of professionals"
   },
-  { 
-    number: "4.8/5", 
-    label: "User Rating", 
+  {
+    number: "4.8/5",
+    label: "User Rating",
     icon: <Star className="w-5 h-5" />,
     description: "Based on user feedback"
   }
@@ -190,7 +190,7 @@ const testimonials = [
     content: "As a freelancer, budget matters. The Tools Verse's detailed pricing analysis and alternatives helped me find design tools that fit my budget without compromising on quality. Highly recommended!",
     avatar: "👩‍🎨",
     rating: 5,
-    location: "Bangalore, India", 
+    location: "Bangalore, India",
     industry: "Design & Creative"
   },
   {
@@ -270,7 +270,7 @@ export default function AboutPage() {
                 "name": "Sohail Akhtar",
                 "jobTitle": "Founder & CEO",
                 "Studentof": "Siddaganga Institute of Technology"
-                
+
               }
             ],
             "numberOfEmployees": {
@@ -297,14 +297,14 @@ export default function AboutPage() {
               "https://linkedin.com/company/thetoolsverse"
             ],
             "aggregateRating": {
-              "@type": "AggregateRating", 
+              "@type": "AggregateRating",
               "ratingValue": "4.8",
               "reviewCount": "150",
               "bestRating": "5"
             },
             "knowsAbout": [
               "AI Tools",
-              "Productivity Software", 
+              "Productivity Software",
               "SaaS Platforms",
               "Digital Marketing Tools",
               "Design Software",
@@ -317,74 +317,74 @@ export default function AboutPage() {
       <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
         <main role="main">
           {/* Hero Section */}
-<header className="px-4 sm:px-6 py-16 md:py-24 bg-white">
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+          <header className="px-4 sm:px-6 py-16 md:py-24 bg-white">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12">
 
-    {/* Left side text (always first on mobile, first on desktop too) */}
-    <div className="order-1 md:order-1 text-center md:text-left">
-      {/* Trust indicators */}
-      <div className="flex justify-center md:justify-start items-center space-x-6 mb-6">
-        <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <MapPin className="w-4 h-4" />
-          <span>Made in India</span>
-        </div>
-        <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <Calendar className="w-4 h-4" />
-          <span>Founded 2024</span>
-        </div>
-        <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <Users className="w-4 h-4" />
-          <span>5,000+ Users</span>
-        </div>
-      </div>
+              {/* Left side text (always first on mobile, first on desktop too) */}
+              <div className="order-1 md:order-1 text-center md:text-left">
+                {/* Trust indicators */}
+                <div className="flex justify-center md:justify-start items-center space-x-6 mb-6">
+                  <div className="flex items-center space-x-2 text-sm text-gray-600">
+                    <MapPin className="w-4 h-4" />
+                    <span>Made in India</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-sm text-gray-600">
+                    <Calendar className="w-4 h-4" />
+                    <span>Founded 2024</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-sm text-gray-600">
+                    <Users className="w-4 h-4" />
+                    <span>5,000+ Users</span>
+                  </div>
+                </div>
 
-      <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 rounded-full mb-6">
-        <Building2 className="w-4 h-4 text-purple-600" />
-        <span className="text-sm font-medium text-purple-700">
-          Indian Startup • Bangalore Based
-        </span>
-      </div>
+                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 rounded-full mb-6">
+                  <Building2 className="w-4 h-4 text-purple-600" />
+                  <span className="text-sm font-medium text-purple-700">
+                    Indian Startup • Bangalore Based
+                  </span>
+                </div>
 
-      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-        India's{" "}
-        <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-          Trusted Directory
-        </span>{" "}
-        for AI & Productivity Tools
-      </h1>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                  India's{" "}
+                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    Trusted Directory
+                  </span>{" "}
+                  for AI & Productivity Tools
+                </h1>
 
-      <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mb-8 leading-relaxed mx-auto md:mx-0">
-        Founded by Indian professionals, for Indian professionals. We curate, evaluate, and
-        recommend the best digital tools to help businesses and individuals succeed in the modern
-        economy.
-      </p>
+                <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mb-8 leading-relaxed mx-auto md:mx-0">
+                  Founded by Indian professionals, for Indian professionals. We curate, evaluate, and
+                  recommend the best digital tools to help businesses and individuals succeed in the modern
+                  economy.
+                </p>
 
-      {/* Contact information */}
-      <div className="flex flex-wrap justify-center md:justify-start gap-6 mt-8 text-sm text-gray-600">
-        <div className="flex items-center space-x-2">
-          <Mail className="w-4 h-4" />
-          <a href="mailto:sohail@thetoolsverse.com" className="hover:text-purple-600">
-            sohail@thetoolsverse.com
-          </a>
-        </div>
-        <div className="flex items-center space-x-2">
-          <FileCheck className="w-4 h-4" />
-          <span>Registered Indian Entity</span>
-        </div>
-      </div>
-    </div>
+                {/* Contact information */}
+                <div className="flex flex-wrap justify-center md:justify-start gap-6 mt-8 text-sm text-gray-600">
+                  <div className="flex items-center space-x-2">
+                    <Mail className="w-4 h-4" />
+                    <a href="mailto:sohail@thetoolsverse.com" className="hover:text-purple-600">
+                      sohail@thetoolsverse.com
+                    </a>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <FileCheck className="w-4 h-4" />
+                    <span>Registered Indian Entity</span>
+                  </div>
+                </div>
+              </div>
 
-    {/* Image section (comes after text on mobile, right side on desktop) */}
-    <div className="order-2 md:order-2 flex justify-center mt-10 md:mt-0">
-      <img
-        src="/sohail.jpg"
-        alt="TheToolsVerse - Empowering Indian professionals"
-        className="w-full max-w-md rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 object-cover"
-      />
-    </div>
+              {/* Image section (comes after text on mobile, right side on desktop) */}
+              <div className="order-2 md:order-2 flex justify-center mt-10 md:mt-0">
+                <img
+                  src="/sohail.jpg"
+                  alt="TheToolsVerse - Empowering Indian professionals"
+                  className="w-full max-w-md rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 object-cover"
+                />
+              </div>
 
-  </div>
-</header>
+            </div>
+          </header>
 
 
 
@@ -431,18 +431,18 @@ export default function AboutPage() {
                   </h3>
                   <div className="text-lg text-gray-600 leading-relaxed space-y-4">
                     <p>
-                      The Tools Verse was born out of a simple frustration: spending countless hours researching 
-                      and evaluating digital tools, only to find generic reviews that didn't consider Indian 
+                      The Tools Verse was born out of a simple frustration: spending countless hours researching
+                      and evaluating digital tools, only to find generic reviews that didn't consider Indian
                       business contexts, pricing sensitivities, or specific use cases.
                     </p>
                     <p>
-                      As former employees at leading Indian tech companies like Flipkart, Paytm, and Swiggy, 
-                      our team experienced firsthand the challenge of finding tools that work for Indian budgets, 
+                      As former employees at leading Indian tech companies like Flipkart, Paytm, and Swiggy,
+                      our team experienced firsthand the challenge of finding tools that work for Indian budgets,
                       integrate with local payment systems, and understand our unique business requirements.
                     </p>
                     <p>
-                      Today, we've curated over 1,000+ tools across 50+ categories, helping thousands of 
-                      professionals, startups, and businesses make informed decisions. Every tool is evaluated 
+                      Today, we've curated over 1,000+ tools across 50+ categories, helping thousands of
+                      professionals, startups, and businesses make informed decisions. Every tool is evaluated
                       with Indian users in mind - from pricing in INR to customer support availability in IST.
                     </p>
                   </div>
@@ -472,28 +472,47 @@ export default function AboutPage() {
           </section>
 
           {/* Values Section */}
-          <section className="px-4 sm:px-6 py-16 bg-gradient-to-r from-purple-600 to-pink-600">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
-                  Our Core Values
+          <section className="px-4 sm:px-6 py-20 bg-gradient-to-b from-slate-50 via-blue-50/20 to-white">
+            <div className="max-w-6xl mx-auto">
+              {/* Section Header */}
+              <div className="text-center mb-16">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                  Our Core <span className="text-blue-600">Values</span>
                 </h2>
-                <p className="text-lg text-purple-100 max-w-2xl mx-auto">
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                   The principles that guide every decision we make
                 </p>
               </div>
 
+              {/* Values Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {values.map((value, index) => (
-                  <article key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-all duration-300">
-                    <div className="w-12 h-12 mx-auto mb-4 bg-white/20 rounded-xl flex items-center justify-center text-white">
+                  <article
+                    key={index}
+                    className="group bg-white rounded-xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
+                  >
+                    {/* Icon */}
+                    <div className="w-14 h-14 mx-auto mb-4 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-100 transition-colors">
                       {value.icon}
                     </div>
-                    <h3 className="text-xl font-bold mb-3 text-white">{value.title}</h3>
-                    <p className="text-purple-100 text-sm leading-relaxed mb-4">{value.description}</p>
-                    <ul className="text-xs text-purple-200 space-y-1">
+
+                    {/* Title */}
+                    <h3 className="text-lg font-bold text-gray-900 mb-3 text-center group-hover:text-blue-600 transition-colors">
+                      {value.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4 text-center">
+                      {value.description}
+                    </p>
+
+                    {/* Details List */}
+                    <ul className="text-xs text-gray-500 space-y-2">
                       {value.details.map((detail, i) => (
-                        <li key={i}>• {detail}</li>
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="text-blue-600 mt-0.5">•</span>
+                          <span>{detail}</span>
+                        </li>
                       ))}
                     </ul>
                   </article>
@@ -502,39 +521,70 @@ export default function AboutPage() {
             </div>
           </section>
 
+
           {/* Timeline Section */}
-          <section className="px-4 sm:px-6 py-16 md:py-20 bg-white">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                  Our{' '}
-                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                    Journey
-                  </span>
+          <section className="px-4 sm:px-6 py-20 bg-gradient-to-b from-white via-slate-50/30 -mt-20 to-white">
+            <div className="max-w-5xl mx-auto">
+              {/* Section Header */}
+              <div className="text-center mb-16">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                  Our <span className="text-blue-600">Journey</span>
                 </h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  From idea to India's trusted tools directory
+                  From idea to India's most trusted AI tools directory
                 </p>
               </div>
 
+              {/* Timeline */}
               <div className="relative">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-500 to-pink-500 rounded-full hidden md:block"></div>
-                
-                <div className="space-y-8 md:space-y-12 ">
+                {/* Center Line - Desktop Only */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-blue-200 via-blue-300 to-blue-200 hidden md:block"></div>
+
+                {/* Timeline Items */}
+                <div className="space-y-12">
                   {timeline.map((item, index) => (
-                    <article key={index} className={`flex  flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                      <div className="flex-1 md:px-8">
-                        <div className={`hover:bg-gradient-to-br from-white to-pink-200 hover:border-2 hover:border-pink-600 duration-100 rounded-2xl p-6 shadow-lg border border-purple-100 ${index % 2 === 0 ? 'md:text-left' : ''}`}>
-                          <div className="text-2xl font-bold text-purple-600 mb-2">{item.year}</div>
-                          <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                          <p className="text-gray-600 mb-2">{item.description}</p>
-                          <div className="text-sm text-purple-600 font-medium">{item.metrics}</div>
+                    <article
+                      key={index}
+                      className={`flex flex-col md:flex-row items-center gap-6 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                        }`}
+                    >
+                      {/* Content Card - Always Left Aligned */}
+                      <div className="flex-1 md:px-6">
+                        <div
+                          className="group bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-lg hover:border-blue-300 transition-all duration-300 text-left"
+                        >
+                          {/* Year Badge */}
+                          <div className="inline-block bg-blue-50 text-blue-700 font-bold text-lg px-4 py-1.5 rounded-lg mb-3">
+                            {item.year}
+                          </div>
+
+                          {/* Title */}
+                          <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                            {item.title}
+                          </h3>
+
+                          {/* Description */}
+                          <p className="text-gray-600 mb-3 leading-relaxed">
+                            {item.description}
+                          </p>
+
+                          {/* Metrics */}
+                          <div className="inline-flex items-center gap-2 bg-blue-50 px-3 py-1.5 rounded-full">
+                            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span className="text-sm font-medium text-blue-700">
+                              {item.metrics}
+                            </span>
+                          </div>
                         </div>
                       </div>
-                      
-                      <div className="w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full border-4 border-white shadow-lg z-10 my-4 md:my-0"></div>
-                      
-                      <div className="flex-1 md:px-8"></div>
+
+                      {/* Center Dot */}
+                      <div className="relative flex-shrink-0">
+                        <div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full border-4 border-white shadow-md z-10 group-hover:scale-125 transition-transform"></div>
+                      </div>
+
+                      {/* Empty Space for Alternating Layout */}
+                      <div className="flex-1 md:px-6 hidden md:block"></div>
                     </article>
                   ))}
                 </div>
@@ -542,131 +592,83 @@ export default function AboutPage() {
             </div>
           </section>
 
+
           {/* Team Section */}
-          <section className="px-4 sm:px-6 py-16 md:py-20">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                  Meet Our{' '}
-                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                    Team
-                  </span>
+          <section className="px-4 sm:px-6 py-20 bg-gradient-to-b from-white via-slate-50/30 to-white">
+            <div className="max-w-6xl mx-auto">
+              {/* Section Header */}
+              <div className="text-center mb-16">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                  Meet Our <span className="text-blue-600">Team</span>
                 </h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                   Experienced professionals from top Indian tech companies
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-  {teamMembers.map((member, index) => (
-    <article
-      key={index}
-      className="bg-white rounded-3xl p-8 shadow-md hover:shadow-2xl border border-purple-100 transition-all duration-300 transform hover:-translate-y-2 text-center"
-    >
-      <div className="w-24 h-24 mx-auto mb-5 rounded-2xl overflow-hidden shadow-md">
-  <img
-    src={member.image}
-    alt={member.name}
-    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-  />
-</div>
-
-
-      <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
-      <p className="text-purple-600 font-medium">{member.role}</p>
-      <p className="text-xs text-gray-500 mt-1 mb-3">{member.previousWork}</p>
-
-      <p className="text-gray-600 text-sm leading-relaxed mb-6">{member.bio}</p>
-
-      <div className="mb-3">
-        <p className="text-xs text-gray-500 mb-1">Education:</p>
-        <p className="text-xs text-purple-700 font-medium">{member.education}</p>
-      </div>
-
-      <div>
-        <p className="text-xs text-gray-500 mb-2">Expertise:</p>
-        <div className="flex flex-wrap justify-center gap-2">
-          {member.expertise.map((skill, i) => (
-            <span
-              key={i}
-              className="text-xs bg-purple-50 text-purple-700 px-3 py-1 rounded-full border border-purple-100"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </div>
-    </article>
-  ))}
-</div>
-
-
-              {/* Team credentials */}
-              <div className="mt-12 text-center">
-                <div className="inline-flex items-center space-x-6 bg-white rounded-2xl px-8 py-4 shadow-lg border border-purple-100">
-                  <div className="text-sm">
-                    <div className="font-semibold text-gray-800">Combined Experience</div>
-                    <div className="text-purple-600">15+ Years in Tech</div>
-                  </div>
-                  <div className="h-8 w-px bg-gray-200"></div>
-                  <div className="text-sm">
-                    <div className="font-semibold text-gray-800">Alumni Of</div>
-                    <div className="text-purple-600">IIT Delhi, NIT Surat, BITS Pilani</div>
-                  </div>
-                  <div className="h-8 w-px bg-gray-200"></div>
-                  <div className="text-sm">
-                    <div className="font-semibold text-gray-800">Previous Companies</div>
-                    <div className="text-purple-600">Flipkart, Paytm, Swiggy, Zomato</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Testimonials Section */}
-          <section className="px-4 sm:px-6 py-16 bg-gradient-to-br from-purple-50 to-pink-50">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                  What Indian Professionals{' '}
-                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                    Say About Us
-                  </span>
-                </h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Real feedback from startups, freelancers, and businesses across India
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {testimonials.map((testimonial, index) => (
-                  <article key={index} className="bg-white rounded-3xl p-6 shadow-lg border border-purple-100 relative">
-                    <Quote className="w-8 h-8 text-purple-300 mb-4" />
-                    <blockquote className="text-gray-600 mb-6 leading-relaxed">"{testimonial.content}"</blockquote>
-                    
-                    <footer className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full flex items-center justify-center text-lg">
-                          {testimonial.avatar}
-                        </div>
-                        <div>
-                          <cite className="font-bold text-gray-800 not-italic">{testimonial.name}</cite>
-                          <p className="text-sm text-gray-600">{testimonial.role}</p>
-                          <p className="text-xs text-gray-500">{testimonial.location} • {testimonial.industry}</p>
-                        </div>
+              {/* Team Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                {teamMembers.map((member, index) => (
+                  <article
+                    key={index}
+                    className="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
+                  >
+                    {/* Header with Image and Basic Info */}
+                    <div className="flex items-start gap-4 mb-5">
+                      {/* Profile Image */}
+                      <div className="flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden border-2 border-gray-100 group-hover:border-blue-300 transition-colors">
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                      
-                      <div className="flex space-x-1">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+
+                      {/* Name and Role */}
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
+                          {member.name}
+                        </h3>
+                        <p className="text-blue-600 font-medium text-sm mb-1">
+                          {member.role}
+                        </p>
+                        <p className="text-xs text-gray-500">
+                          {member.previousWork}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Bio */}
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                      {member.bio}
+                    </p>
+
+                    {/* Education */}
+                    <div className="mb-4 pb-4 border-b border-gray-100">
+                      <p className="text-xs font-medium text-gray-500 mb-1">Education</p>
+                      <p className="text-sm text-gray-900">{member.education}</p>
+                    </div>
+
+                    {/* Expertise Tags */}
+                    <div>
+                      <p className="text-xs font-medium text-gray-500 mb-2">Expertise</p>
+                      <div className="flex flex-wrap gap-2">
+                        {member.expertise.map((skill, i) => (
+                          <span
+                            key={i}
+                            className="text-xs bg-blue-50 text-blue-700 px-3 py-1 rounded-full border border-blue-100 hover:bg-blue-100 transition-colors"
+                          >
+                            {skill}
+                          </span>
                         ))}
                       </div>
-                    </footer>
+                    </div>
                   </article>
                 ))}
               </div>
             </div>
           </section>
+
 
           {/* Trust & Legal Section */}
           <section className="px-4 sm:px-6 py-16 bg-white">
@@ -706,30 +708,49 @@ export default function AboutPage() {
               </div>
 
               {/* Contact details for trust */}
-              <div className="mt-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-8 text-white text-center">
-                <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
+              <div className="mt-12 bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Get In Touch</h3>
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div>
-                    <Mail className="w-6 h-6 mx-auto mb-2" />
-                    <div className="font-medium">General Inquiries</div>
-                    <a href="mailto:sohail@thetoolsverse.com" className="text-purple-100 hover:text-white">
+                  {/* General Inquiries */}
+                  <div className="text-center group">
+                    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-blue-100 transition-colors">
+                      <Mail className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div className="font-semibold text-gray-900 mb-1">General Inquiries</div>
+                    <a
+                      href="mailto:sohail@thetoolsverse.com"
+                      className="text-blue-600 hover:text-blue-700 text-sm transition-colors"
+                    >
                       sohail@thetoolsverse.com
                     </a>
                   </div>
-                  <div>
-                    <Building2 className="w-6 h-6 mx-auto mb-2" />
-                    <div className="font-medium">Headquarters</div>
-                    <div className="text-purple-100">Bangalore, Karnataka, India</div>
+
+                  {/* Headquarters */}
+                  <div className="text-center group">
+                    <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-green-100 transition-colors">
+                      <Building2 className="w-6 h-6 text-green-600" />
+                    </div>
+                    <div className="font-semibold text-gray-900 mb-1">Headquarters</div>
+                    <div className="text-gray-600 text-sm">Bangalore, Karnataka, India</div>
                   </div>
-                  <div>
-                    <Users className="w-6 h-6 mx-auto mb-2" />
-                    <div className="font-medium">Support</div>
-                    <a href="mailto:support@thetoolsverse.com" className="text-purple-100 hover:text-white">
+
+                  {/* Support */}
+                  <div className="text-center group">
+                    <div className="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-purple-100 transition-colors">
+                      <Users className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <div className="font-semibold text-gray-900 mb-1">Support</div>
+                    <a
+                      href="mailto:support@thetoolsverse.com"
+                      className="text-purple-600 hover:text-purple-700 text-sm transition-colors"
+                    >
                       support@thetoolsverse.com
                     </a>
                   </div>
                 </div>
               </div>
+
             </div>
           </section>
 
@@ -743,14 +764,14 @@ export default function AboutPage() {
                 Join thousands of Indian professionals who trust The Tools Verse for honest, detailed tool recommendations
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
+                <a
                   href="/browse-tools"
                   className="px-8 py-4 bg-white text-purple-600 rounded-2xl hover:bg-gray-50 transition-all duration-300 font-semibold shadow-lg inline-flex items-center justify-center space-x-2"
                 >
                   <span>Browse 1,000+ Tools</span>
                   <ArrowRight className="w-5 h-5" />
                 </a>
-                <a 
+                <a
                   href="/blog"
                   className="px-8 py-4 bg-purple-700 text-white rounded-2xl hover:bg-purple-800 transition-all duration-300 font-semibold shadow-lg"
                 >
