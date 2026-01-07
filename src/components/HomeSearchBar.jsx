@@ -80,7 +80,7 @@ export default function HomeSearchBar({ allCategories }) {
 
             <div
               className="relative flex items-center gap-2 sm:gap-3
-                px-3 py-2 sm:px-6 sm:py-4
+                px-4 py-1.5 sm:px-6 sm:py-2.5
                 bg-gradient-to-br from-gray-50 to-indigo-50/30
                 border-2 border-indigo-100/60 rounded-full
                 hover:border-indigo-200
@@ -92,14 +92,23 @@ export default function HomeSearchBar({ allCategories }) {
               <Search className="w-5 h-5 text-indigo-400 flex-shrink-0" />
 
               <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search over 4000+ AI tools..."
-                className="flex-1 bg-transparent outline-none
-                  text-sm sm:text-base text-gray-700
-                  placeholder-gray-400"
-              />
+  type="text"
+  value={searchQuery}
+  onChange={(e) => setSearchQuery(e.target.value)}
+  placeholder="Search over 4000+ AI tools..."
+  className="
+    flex-1
+    bg-transparent
+    outline-none
+    py-1.5 sm:py-2
+    text-base sm:text-lg
+    leading-tight
+    text-gray-700
+    placeholder-gray-400
+  "
+/>
+
+
 
               <button
                 type="submit"

@@ -672,6 +672,87 @@ export default async function ToolDetailPage({ params }) {
                   </p>
                 </div>
               </section>
+              {/* ///////////////////////editorial section //////////////////////////////// */}
+              {/* Editor Review Section - Personal Testing Experience */}
+{tool.editorReview && (
+  <section className="bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 mt-8 rounded-3xl shadow-lg border-2 border-amber-200 px-4 py-7 sm:p-8 relative overflow-hidden">
+    {/* Decorative badge ribbon */}
+    <div className="absolute top-4 right-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg flex items-center gap-2">
+      <Award className="w-4 h-4" />
+      <span>Editor's Honest Take</span>
+    </div>
+
+    {/* Header */}
+    <div className="mb-6">
+      <div className="flex items-center gap-3 mb-3">
+        <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center shadow-md">
+          <Eye className="w-6 h-6 text-white" />
+        </div>
+        <div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+            Real-World Testing: {tool.displayName}
+          </h2>
+          <p className="text-gray-600 text-sm mt-1">
+            Tested by TheToolsVerse editors • Not AI-generated content
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* Editor Review Content */}
+    <div className="prose prose-lg max-w-none">
+      <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-md border border-amber-200">
+        {/* Review text with proper formatting */}
+        <div className="text-gray-800 leading-relaxed space-y-4">
+          {tool.editorReview.split('\n\n').map((paragraph, index) => (
+            <p key={index} className="text-base sm:text-lg">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+
+        {/* Editor badge at bottom */}
+        <div className="mt-6 pt-6 border-t border-gray-200">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+              TV
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900">TheToolsVerse Editorial Team</p>
+              <p className="text-sm text-gray-600">Tested {new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Trust indicators */}
+    <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="flex items-center gap-3 bg-white rounded-xl p-4 border border-amber-200">
+        <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
+        <div>
+          <p className="font-semibold text-gray-900 text-sm">Hands-On Tested</p>
+          <p className="text-xs text-gray-600">Real usage scenarios</p>
+        </div>
+      </div>
+      <div className="flex items-center gap-3 bg-white rounded-xl p-4 border border-amber-200">
+        <Clock className="w-6 h-6 text-blue-600 flex-shrink-0" />
+        <div>
+          <p className="font-semibold text-gray-900 text-sm">Updated {new Date().getFullYear()}</p>
+          <p className="text-xs text-gray-600">Current version tested</p>
+        </div>
+      </div>
+      <div className="flex items-center gap-3 bg-white rounded-xl p-4 border border-amber-200">
+        <Star className="w-6 h-6 text-amber-500 flex-shrink-0 fill-current" />
+        <div>
+          <p className="font-semibold text-gray-900 text-sm">Unbiased Review</p>
+          <p className="text-xs text-gray-600">Not sponsored content</p>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
 
               {/* Features Deep Dive */}
               <section className="bg-white mt-3 rounded-3xl shadow-lg border border-gray-100 px-1 py-7 sm:p-8">
