@@ -2,17 +2,17 @@
 
 export const metadata = {
   // 🎯 TARGET HIGH-VOLUME CATEGORY KEYWORDS
-  title: 'AI Tools Categories 2025 | 100+ Categories of Best AI Software - Toolsverse',
-  
+  title: 'AI Tools Categories 2026 | 100+ Categories of Best AI Software - Toolsverse',
+
   // 🎯 CATEGORY-FOCUSED DESCRIPTION  
   description: 'Browse AI tools by categories. 100+ categories including AI writing tools, AI design tools, AI productivity apps, AI coding assistants, AI marketing software & more. Find the perfect AI tool for your needs.',
-  
+
   // 🎯 CATEGORY KEYWORDS (High search volume)
   keywords: [
     'ai tools categories',
     'ai tools by category',
     'types of ai tools',
-    'ai software categories', 
+    'ai software categories',
     'ai writing tools',
     'ai design tools',
     'ai productivity tools',
@@ -28,12 +28,12 @@ export const metadata = {
     'categorized ai tools',
     '100+ ai tool categories'
   ],
-  
+
   // 🎯 OPEN GRAPH
   openGraph: {
-    title: 'AI Tools Categories 2025 | 100+ Categories - Toolsverse',
+    title: 'AI Tools Categories 2026 | 100+ Categories - Toolsverse',
     description: 'Explore AI tools organized in 100+ categories. Find AI writing, design, productivity, coding & marketing tools.',
-    type: 'website', 
+    type: 'website',
     url: 'https://thetoolsverse.com/categories',
     siteName: 'Toolsverse - AI Tools Directory',
     images: [
@@ -45,7 +45,7 @@ export const metadata = {
       },
     ],
   },
-  
+
   // 🎯 TWITTER CARD
   twitter: {
     card: 'summary_large_image',
@@ -53,12 +53,12 @@ export const metadata = {
     description: 'Browse AI tools organized by categories. Writing, design, productivity, coding & more.',
     images: ['/logo.png'],
   },
-  
+
   // 🎯 CANONICAL & ROBOTS
   alternates: {
     canonical: 'https://thetoolsverse.com/categories',
   },
-  
+
   robots: {
     index: true,
     follow: true,
@@ -90,7 +90,7 @@ export default function CategoriesLayout({ children }) {
               "itemListOrder": "https://schema.org/ItemListOrderAscending"
             },
             "breadcrumb": {
-              "@type": "BreadcrumbList", 
+              "@type": "BreadcrumbList",
               "itemListElement": [
                 {
                   "@type": "ListItem",
@@ -100,7 +100,7 @@ export default function CategoriesLayout({ children }) {
                 },
                 {
                   "@type": "ListItem",
-                  "position": 2, 
+                  "position": 2,
                   "name": "Categories",
                   "item": "https://thetoolsverse.com/categories"
                 }
@@ -114,14 +114,14 @@ export default function CategoriesLayout({ children }) {
           })
         }}
       />
-      
+
       {/* 🔥 CATEGORIES SCHEMA - SPECIFIC CATEGORIES */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "ItemList", 
+            "@type": "ItemList",
             "name": "Popular AI Tool Categories",
             "itemListElement": [
               {
@@ -132,7 +132,7 @@ export default function CategoriesLayout({ children }) {
                 "description": "AI tools for content creation, copywriting, and text generation"
               },
               {
-                "@type": "ListItem", 
+                "@type": "ListItem",
                 "position": 2,
                 "name": "AI Design Tools",
                 "url": "https://thetoolsverse.com/categories/design",
@@ -140,15 +140,15 @@ export default function CategoriesLayout({ children }) {
               },
               {
                 "@type": "ListItem",
-                "position": 3, 
+                "position": 3,
                 "name": "AI Productivity Tools",
-                "url": "https://thetoolsverse.com/categories/productivity", 
+                "url": "https://thetoolsverse.com/categories/productivity",
                 "description": "AI tools for task automation and workflow optimization"
               },
               {
                 "@type": "ListItem",
                 "position": 4,
-                "name": "AI Coding Tools", 
+                "name": "AI Coding Tools",
                 "url": "https://thetoolsverse.com/categories/coding",
                 "description": "AI-powered development and programming assistants"
               },
@@ -163,7 +163,7 @@ export default function CategoriesLayout({ children }) {
           })
         }}
       />
-      
+
       {children}
     </>
   );

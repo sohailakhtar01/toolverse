@@ -254,50 +254,58 @@ export default function BrowseClient({
                 )}
               </h1>
 
-              <p className="text-lg sm:text-xl text-slate-600 mb-6 leading-relaxed">
-                {isPending ? (
-                  <span className="inline-flex items-center gap-2">
-                    <svg className="animate-spin h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Loading tools...
-                  </span>
-                ) : (
-                  <>
-                    <span className="font-semibold text-slate-900">{totalCount.toLocaleString()}</span> curated AI tools to boost your productivity
-                  </>
-                )}
+              <p className="relative inline-block text-lg sm:text-xl text-slate-600 mb-6 leading-relaxed">
+                <span className="relative">
+                  {isPending ? (
+                    <span className="inline-flex items-center gap-2">
+                      <svg className="animate-spin h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Loading tools...
+                    </span>
+                  ) : (
+                    <>
+                      <span className="font-semibold text-slate-900">{totalCount.toLocaleString()}</span> curated AI tools to boost your productivity
+                    </>
+                  )}
+
+                  {/* Classic underline - animates from left, matches text width */}
+                  <span className="absolute bottom-0 left-0 h-[24px] w-0 rounded-xl bg-gradient-to-r from-indigo-500/15 via-indigo-600/20 to-indigo-500/15 animate-[slideIn_1.2s_ease-out_0.3s_forwards]"></span>                </span>
               </p>
+
+
+
 
               {/* Quick Stats Badges */}
               <div className="flex flex-nowrap items-center justify-center gap-1.5 md:gap-3 w-full overflow-x-auto no-scrollbar px-2">
 
                 {/* Badge 1: Free Access */}
-                <span className="inline-flex flex-shrink-0 items-center px-2 py-1 md:px-4 md:py-2 rounded-full text-[10px] md:text-sm font-semibold bg-emerald-50/90 backdrop-blur-sm text-emerald-700 border border-emerald-200 hover:bg-emerald-100 hover:scale-105 transition-all duration-200 shadow-sm whitespace-nowrap">
+                <span className="inline-flex flex-shrink-0 items-center px-2 py-1 md:px-4 md:py-2 rounded-full text-[10px] md:text-sm font-semibold bg-emerald-50/90 backdrop-blur-sm text-emerald-700 border border-emerald-200 shadow-sm whitespace-nowrap">
                   <svg className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   100% Free Access
                 </span>
 
                 {/* Badge 2: Updated Daily */}
-                <span className="inline-flex flex-shrink-0 items-center px-2 py-1 md:px-4 md:py-2 rounded-full text-[10px] md:text-sm font-semibold bg-blue-50/90 backdrop-blur-sm text-blue-700 border border-blue-200 hover:bg-blue-100 hover:scale-105 transition-all duration-200 shadow-sm whitespace-nowrap">
+                <span className="inline-flex flex-shrink-0 items-center px-2 py-1 md:px-4 md:py-2 rounded-full text-[10px] md:text-sm font-semibold bg-blue-50/90 backdrop-blur-sm text-blue-700 border border-blue-200 shadow-sm whitespace-nowrap">
                   <svg className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
+                    <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
                   </svg>
                   Updated Daily
                 </span>
 
-                {/* Badge 3: 10K Users */}
-                <span className="inline-flex flex-shrink-0 items-center px-2 py-1 md:px-4 md:py-2 rounded-full text-[10px] md:text-sm font-semibold bg-purple-50/90 backdrop-blur-sm text-purple-700 border border-purple-200 hover:bg-purple-100 hover:scale-105 transition-all duration-200 shadow-sm whitespace-nowrap">
+                {/* Badge 3: Users */}
+                <span className="inline-flex flex-shrink-0 items-center px-2 py-1 md:px-4 md:py-2 rounded-full text-[10px] md:text-sm font-semibold bg-purple-50/90 backdrop-blur-sm text-purple-700 border border-purple-200 shadow-sm whitespace-nowrap">
                   <svg className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                   </svg>
-                  10K+ Users
+                  50K+ Users
                 </span>
 
               </div>
+
             </div>
 
             {/* Stats Cards - Desktop */}

@@ -559,7 +559,7 @@ export default function MidjourneyVsStableDiffusion() {
                 You can always switch platforms as your needs change. Many creative professionals learn both—start simple, then grow your toolkit over time.
               </p>
               <p className="text-sm text-gray-500">
-                Last updated: October 2025 — A TheToolsVerse Expert Guide
+                Last updated: January 2026 — A TheToolsVerse Expert Guide
               </p>
             </div>
           </div>

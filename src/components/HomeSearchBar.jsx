@@ -1,16 +1,16 @@
-// components/HomeSearchBar.jsx
 "use client";
 
 import { Search } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useTransition } from "react";
 
 export default function HomeSearchBar({ allCategories }) {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
+  const [isPending, startTransition] = useTransition();
 
-  // 🔹 Helper to capitalize words (e.g., "image editing" -> "Image Editing")
+  // 🔹 Helper to capitalize words
   const toTitleCase = (str) => {
     if (!str) return "";
     return str.replace(/\w\S*/g, (txt) =>
@@ -18,13 +18,13 @@ export default function HomeSearchBar({ allCategories }) {
     );
   };
 
-  // 🔹 Slug generator (preserves parentheses like "(AT)")
+  // 🔹 Slug generator
   const categoryToSlug = (category) => {
     return category
       .toLowerCase()
       .trim()
       .replace(/&/g, "-and-")
-      .replace(/\//g, "-") // <--- Add this line here too
+      .replace(/\//g, "-")
       .replace(/\s*\(\s*/g, "-(")
       .replace(/\s*\)\s*/g, ")-")
       .replace(/[^a-z0-9()]+/g, "-")
@@ -32,16 +32,16 @@ export default function HomeSearchBar({ allCategories }) {
       .replace(/^-+|-+$/g, "");
   };
 
-
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      router.push(`/browse-tools?q=${encodeURIComponent(searchQuery.trim())}`);
+      startTransition(() => {
+        router.push(`/browse-tools?q=${encodeURIComponent(searchQuery.trim())}`);
+      });
     }
   };
 
-  // 🔹 FIXED: Deduplication & Sorting Logic
-  // We use useMemo so this doesn't run on every single re-render
+  // 🔹 Deduplication & Sorting Logic
   const sortedUniqueCategories = useMemo(() => {
     if (!allCategories || !Array.isArray(allCategories)) return [];
 
@@ -49,31 +49,26 @@ export default function HomeSearchBar({ allCategories }) {
 
     allCategories.forEach((cat) => {
       if (!cat) return;
-      // Normalize: lowercase and single spaces
       const normalizedKey = cat.toLowerCase().trim().replace(/\s+/g, " ");
-
-      // Only add if we haven't seen this category yet
       if (!uniqueMap.has(normalizedKey)) {
         uniqueMap.set(normalizedKey, toTitleCase(normalizedKey));
       }
     });
 
-    // Convert values to array and Sort Alphabetically (A-Z)
     return Array.from(uniqueMap.values()).sort((a, b) => a.localeCompare(b));
   }, [allCategories]);
 
   return (
     <section className="relative max-w-7xl mt-17 mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-8">
-      {/* Background Elements */}
       <div className="absolute inset-0 -z-10"></div>
 
       <div
         className="relative bg-white/80 backdrop-blur-xl rounded-3xl 
-    shadow-[0_8px_30px_rgba(99,102,241,0.08)] 
-    border border-indigo-100/50
-    p-4 sm:p-8 lg:p-10 space-y-6
-                hover:shadow-[0_20px_50px_rgba(99,102,241,0.12)]
-                transition-all duration-500"
+        shadow-[0_8px_30px_rgba(99,102,241,0.08)] 
+        border border-indigo-100/50
+        p-4 sm:p-8 lg:p-10 space-y-6
+        hover:shadow-[0_20px_50px_rgba(99,102,241,0.12)]
+        transition-all duration-500"
       >
         {/* Top accent bar */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 rounded-b-full shadow-lg" />
@@ -81,22 +76,18 @@ export default function HomeSearchBar({ allCategories }) {
         {/* ================= SEARCH BAR ================= */}
         <form onSubmit={handleSearchSubmit} className="w-full">
           <div className="relative group">
-            {/* Glow effect */}
             <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-purple-400 via-indigo-400 to-blue-400 opacity-0 blur-xl transition-all duration-700 group-hover:opacity-20" />
 
-            {/* Search Container */}
             <div
-              className="
-        relative flex items-center gap-2 sm:gap-3
-        px-3 py-2 sm:px-6 sm:py-4
-        bg-gradient-to-br from-gray-50 to-indigo-50/30
-        border-2 border-indigo-100/60 rounded-full
-        hover:border-indigo-200
-        focus-within:bg-white
-        focus-within:border-indigo-300
-        focus-within:shadow-[0_0_0_4px_rgba(99,102,241,0.1)]
-        transition-all duration-300
-      "
+              className="relative flex items-center gap-2 sm:gap-3
+                px-3 py-2 sm:px-6 sm:py-4
+                bg-gradient-to-br from-gray-50 to-indigo-50/30
+                border-2 border-indigo-100/60 rounded-full
+                hover:border-indigo-200
+                focus-within:bg-white
+                focus-within:border-indigo-300
+                focus-within:shadow-[0_0_0_4px_rgba(99,102,241,0.1)]
+                transition-all duration-300"
             >
               <Search className="w-5 h-5 text-indigo-400 flex-shrink-0" />
 
@@ -105,28 +96,26 @@ export default function HomeSearchBar({ allCategories }) {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search over 4000+ AI tools..."
-                className="
-          flex-1 bg-transparent outline-none
-          text-sm sm:text-base text-gray-700
-          placeholder-gray-400
-        "
+                className="flex-1 bg-transparent outline-none
+                  text-sm sm:text-base text-gray-700
+                  placeholder-gray-400"
               />
 
               <button
                 type="submit"
-                className="
-          px-4 sm:px-6 py-1.5 sm:py-2.5
-          bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600
-          text-white text-xs sm:text-sm font-medium
-          rounded-full cursor-pointer
-          hover:from-purple-700 hover:via-indigo-700 hover:to-blue-700
-          active:scale-95
-          shadow-lg shadow-indigo-500/30
-          hover:shadow-xl hover:shadow-indigo-500/40
-          transition-all duration-200
-        "
+                disabled={isPending}
+                className="px-4 sm:px-6 py-1.5 sm:py-2.5
+                  bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600
+                  text-white text-xs sm:text-sm font-medium
+                  rounded-full cursor-pointer
+                  hover:from-purple-700 hover:via-indigo-700 hover:to-blue-700
+                  active:scale-95
+                  shadow-lg shadow-indigo-500/30
+                  hover:shadow-xl hover:shadow-indigo-500/40
+                  transition-all duration-200
+                  disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Search
+                {isPending ? "Searching..." : "Search"}
               </button>
             </div>
           </div>
@@ -136,25 +125,29 @@ export default function HomeSearchBar({ allCategories }) {
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
           {/* Left: Dropdown Filters */}
           <div className="flex flex-col sm:flex-row flex-wrap gap-3 w-full lg:w-auto">
-
-            {/* 🔴 THIS WAS THE ISSUE BEFORE: You were mapping 'allCategories' instead of 'uniqueCategories' */}
+            {/* ✅ OPTIMIZED CATEGORY SELECT WITH PREFETCH */}
             <select
               onChange={(e) => {
                 if (e.target.value !== "all") {
-                  router.push(`/categories/${categoryToSlug(e.target.value)}`);
+                  startTransition(() => {
+                    router.push(`/categories/${categoryToSlug(e.target.value)}`);
+                  });
                 }
               }}
+              disabled={isPending}
               className="w-full sm:w-auto px-4 py-2.5 text-sm font-medium text-gray-700
-    bg-gradient-to-br from-white to-indigo-50/20
-    border border-indigo-200/60 rounded-xl
-    hover:bg-white hover:border-indigo-300
-    focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent
-    cursor-pointer transition-all duration-200
-    shadow-sm hover:shadow-md"
+                bg-gradient-to-br from-white to-indigo-50/20
+                border border-indigo-200/60 rounded-xl
+                hover:bg-white hover:border-indigo-300
+                focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent
+                cursor-pointer transition-all duration-200
+                shadow-sm hover:shadow-md
+                disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <option value="all">All Categories</option>
+              <option value="all">
+                {isPending ? "Loading..." : "All Categories"}
+              </option>
 
-              {/* ✅ MAPPING OVER THE CLEAN, SORTED LIST NOW */}
               {sortedUniqueCategories.map((cat) => (
                 <option key={cat} value={cat}>
                   {cat}
@@ -162,17 +155,22 @@ export default function HomeSearchBar({ allCategories }) {
               ))}
             </select>
 
+            {/* ✅ OPTIMIZED SORT SELECT */}
             <select
-              onChange={(e) =>
-                router.push(`/browse-tools?sort=${e.target.value}`)
-              }
+              onChange={(e) => {
+                startTransition(() => {
+                  router.push(`/browse-tools?sort=${e.target.value}`);
+                });
+              }}
+              disabled={isPending}
               className="w-full sm:w-auto px-4 py-2.5 text-sm font-medium text-gray-700
-            bg-gradient-to-br from-white to-indigo-50/20
-            border border-indigo-200/60 rounded-xl
-            hover:bg-white hover:border-indigo-300
-            focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent
-            cursor-pointer transition-all duration-200
-            shadow-sm hover:shadow-md"
+                bg-gradient-to-br from-white to-indigo-50/20
+                border border-indigo-200/60 rounded-xl
+                hover:bg-white hover:border-indigo-300
+                focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent
+                cursor-pointer transition-all duration-200
+                shadow-sm hover:shadow-md
+                disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <option value="rating">Sort by Rating</option>
               <option value="az">A → Z</option>
@@ -180,10 +178,9 @@ export default function HomeSearchBar({ allCategories }) {
               <option value="newest">Newest First</option>
             </select>
           </div>
+
           {/* Right: Pricing Filter Pills */}
-          <div
-            className="flex flex-nowrap gap-2 overflow-x-auto pb-2 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0"
-          >
+          <div className="flex flex-nowrap gap-2 overflow-x-auto pb-2 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
             {[
               {
                 label: "Free",
@@ -213,8 +210,6 @@ export default function HomeSearchBar({ allCategories }) {
               <Link
                 key={item.label}
                 href={item.href}
-                // Added flex-shrink-0 so buttons don't get squashed
-                // Added whitespace-nowrap so text "Free Trial" doesn't break into two lines
                 className={`relative flex-shrink-0 px-4 py-2 text-sm font-medium text-gray-700
                   ${item.bg} border border-gray-200/60 rounded-lg
                   hover:text-white hover:border-transparent
@@ -272,7 +267,7 @@ export default function HomeSearchBar({ allCategories }) {
             <Link
               href="/browse-tools"
               className="ml-auto font-semibold text-indigo-700 hover:text-indigo-800 
-                                inline-flex items-center gap-1 group"
+                inline-flex items-center gap-1 group"
             >
               Browse All
               <span className="group-hover:translate-x-1 transition-transform duration-200">

@@ -36,7 +36,7 @@ export async function generateStaticParams() {
   // Otherwise, just limit by createdAt or _id.
   const tools = await Tool.find({}, "slug")
     .sort({ createdAt: -1 })   // or { popularity: -1 }
-    .limit(200)                // prebuild 200; the rest use ISR on first hit
+    .limit(500)                // prebuild 200; the rest use ISR on first hit
     .lean();
 
   return tools.map((tool) => ({ slug: tool.slug }));
@@ -106,7 +106,7 @@ export async function generateMetadata({ params }) {
         },
       ],
       type: "article",
-      url: `https://www.thetoolsverse.com/tools/${tool.slug}`,
+      url: `https://thetoolsverse.com/tools/${tool.slug}`,
       siteName: "TheToolsVerse - AI Tools Directory",
       locale: "en_US",
     },
@@ -125,7 +125,7 @@ export async function generateMetadata({ params }) {
       site: "@thetoolsverse",
     },
     alternates: {
-      canonical: `https://www.thetoolsverse.com/tools/${tool.slug}`,
+      canonical: `https://thetoolsverse.com/tools/${tool.slug}`,
     },
     robots: {
       index: true,
@@ -139,7 +139,7 @@ export async function generateMetadata({ params }) {
       },
     },
     other: {
-      "article:author": "TheToolsVerse Editorial Team",
+      "article:author": "TheToolsVerse - AI Tools Directory",
       "article:section": categories[0],
       "article:tag": tags.join(","),
       "article:published_time":
@@ -147,7 +147,7 @@ export async function generateMetadata({ params }) {
           ? tool.publishedAt.toISOString()
           : "2024-01-01T00:00:00Z",
       "article:modified_time": new Date().toISOString(),
-      "og:see_also": `https://www.thetoolsverse.com/categories/${categories[0]
+      "og:see_also": `https://thetoolsverse.com/categories/${categories[0]
         .toLowerCase()
         .replace(/\s+/g, "-")}`,
     },
@@ -254,7 +254,7 @@ export default async function ToolDetailPage({ params }) {
         "@type": "Review",
         "author": {
           "@type": "Organization",
-          "name": "TheToolsVerse Editorial Team"
+          "name": "TheToolsVerse - AI Tools Directory"
         },
         "reviewRating": {
           "@type": "Rating",
@@ -274,7 +274,7 @@ export default async function ToolDetailPage({ params }) {
       "image": tool.logo,
       "author": {
         "@type": "Organization",
-        "name": "TheToolsVerse Editorial Team",
+        "name": "TheToolsVerse - AI Tools Directory",
         "url": "https://thetoolsverse.com"
       },
       "publisher": {

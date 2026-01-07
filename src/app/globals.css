@@ -101,3 +101,12 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #8b5cf6 #f1f5f9;
 }
+
+@keyframes slideIn {
+  to {
+    width: calc(100% + 20px);
+    /* extra width */
+    left: -10px;
+    /* half on each side */
+  }
+}

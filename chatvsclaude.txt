@@ -528,7 +528,7 @@ const ChatGPTvsClaude = () => {
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Claude</span>
             </h1>
             <p className={`text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} px-4`}>
-              Comprehensive Analysis & Comparison of the World's Leading AI Assistants - Updated for 2025
+              Comprehensive Analysis & Comparison of the World's Leading AI Assistants - Updated for 2026
             </p>
             <div className={`transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
@@ -536,7 +536,7 @@ const ChatGPTvsClaude = () => {
                   Read Full Comparison <ArrowRight className="inline w-4 h-4 sm:w-5 sm:h-5 ml-2" />
                 </a>
                 <div className="text-gray-300 text-sm">
-                  Last updated: December 2025
+                  Last updated: January 2026
                 </div>
               </div>
             </div>

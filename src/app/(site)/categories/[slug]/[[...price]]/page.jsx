@@ -592,28 +592,25 @@ export default async function CategoryPage({ params, searchParams }) {
 
           {/* Hero Buttons */}
           <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            {/* Primary CTA - Browse Tools */}
             <a
               href="#tools-directory"
-              className="relative group flex items-center justify-center gap-2 px-8 py-3 font-semibold rounded-md border border-gray-200 shadow-sm bg-white text-black overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:text-white"
+              className="group relative inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-[1.02] overflow-hidden before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,theme(colors.white/.2)_50%,transparent_75%,transparent_100%)] before:bg-[length:250%_250%] before:bg-[position:200%_0] before:bg-no-repeat before:transition-[background-position_0s_ease] hover:before:bg-[position:-100%_0] hover:before:duration-[1500ms]"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 scale-x-0 origin-center transform transition-transform duration-700 ease-in-out group-hover:scale-x-100 rounded-md -z-10" />
-              <span className="relative flex items-center gap-2 z-10">
-                <Eye className="w-5 h-5" />
-                Browse {stats.total}+ Tools
-              </span>
+              <Eye className="w-5 h-5 relative z-10" />
+              <span className="relative z-10">Browse {stats.total}+ Tools</span>
             </a>
 
+            {/* Secondary CTA - Free Tools */}
             <a
               href="#free-tools"
-              className="relative group flex items-center justify-center gap-2 px-8 py-3 font-semibold rounded-md border border-gray-200 shadow-sm bg-white text-black overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:text-white"
+              className="group relative inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold text-white bg-gradient-to-r from-emerald-500 to-green-600 rounded-xl shadow-lg shadow-emerald-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/40 hover:scale-[1.02] overflow-hidden before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,theme(colors.white/.2)_50%,transparent_75%,transparent_100%)] before:bg-[length:250%_250%] before:bg-[position:200%_0] before:bg-no-repeat before:transition-[background-position_0s_ease] hover:before:bg-[position:-100%_0] hover:before:duration-[1500ms]"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-green-500 scale-x-0 origin-center transform transition-transform duration-700 ease-in-out group-hover:scale-x-100 rounded-md -z-10" />
-              <span className="relative flex items-center gap-2 z-10">
-                <Zap className="w-5 h-5" />
-                See {stats.free} Free Tools
-              </span>
+              <Zap className="w-5 h-5 relative z-10" />
+              <span className="relative z-10">See {stats.free} Free Tools</span>
             </a>
           </div>
+
         </div>
 
         {/* Sticky Quick Nav */}
@@ -803,7 +800,7 @@ export default async function CategoryPage({ params, searchParams }) {
             </div>
 
             {/* Sort */}
-            <form method="get" className="flex items-center gap-2">
+            <form method="get" action="#tools-directory" className="flex items-center gap-2">
               <label
                 htmlFor="sort"
                 className="text-md font-medium text-gray-700"
@@ -815,7 +812,7 @@ export default async function CategoryPage({ params, searchParams }) {
                 id="sort"
                 name="sort"
                 defaultValue={sortParam}
-                className="px-4 py-3 border border-gray-300 rounded-xl cursor-pointer focus:ring-2 focus:ring-purple-500 bg-white text-sm sm:text-base"
+                className="px-3 py-2 border border-gray-300 rounded-xl cursor-pointer focus:ring-2 focus:ring-purple-500 bg-white text-sm sm:text-base"
               >
                 <option value="rating">Rating</option>
                 <option value="name">Name</option>
@@ -1393,7 +1390,7 @@ export default async function CategoryPage({ params, searchParams }) {
               Ready to Discover Your Perfect AI {capitalizedCategory} Tool?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join 50,000+ professionals using TheToolsVerse to find the best AI tools for their needs.
+              Join thousands of professionals discovering AI tools
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

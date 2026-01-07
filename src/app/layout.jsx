@@ -7,7 +7,6 @@ import Footer from "@components/Footer";
 import ProgressBar from '@/components/ProgressBar';
 import ClientProviders from "@/components/ClientProviders";
 
-
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
@@ -15,7 +14,6 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-// Load Space Grotesk
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
@@ -23,35 +21,34 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-// Import fonts
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
 });
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
 });
 
-// --- OPTIMIZED SEO METADATA FOR COMPETING WITH TOOLIFY & INSIDR ---
 export const metadata = {
-  // 🔥 COMPETITOR-BEATING TITLE
-  title: "1200+ Best AI Tools Directory 2025 | Complete AI Software List - Toolsverse",
+  title: {
+    default: "1200+ Best AI Tools Directory 2026 | ToolsVerse",
+    template: "%s | ToolsVerse",
+  },
 
-  // 🔥 KEYWORD-RICH DESCRIPTION
-  description: "Discover 1200+ best AI tools across 100+ categories. Complete AI tools directory updated daily with free & paid AI software for business, design, writing, productivity, marketing & more. Compare top AI apps 2025.",
+  description: "Discover 1200+ best AI tools across 100+ categories. Complete AI tools directory updated daily with free & paid AI software for business, design, writing, productivity, marketing & more. Compare top AI apps 2026.",
 
-  // 🔥 HIGH-VOLUME KEYWORDS (What people actually search)
   keywords: [
-    "best ai tools 2025",
+    "best ai tools 2026",
     "ai tools directory",
     "complete ai tools list",
     "1200+ ai tools",
     "free ai tools",
     "ai software directory",
-    "best ai apps 2025",
+    "best ai apps 2026",
     "ai tools list",
     "top ai tools",
     "ai productivity tools",
@@ -62,15 +59,13 @@ export const metadata = {
   ],
 
   icons: {
-    icon: "/favicon.ico",          // Default favicon
+    icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/logo.png",            // iOS ke liye
+    apple: "/logo.png",
   },
 
-
-  // 🔥 OPTIMIZED OPEN GRAPH
   openGraph: {
-    title: "1200+ Best AI Tools Directory 2025 - ToolsVerse",
+    title: "1200+ Best AI Tools Directory 2026 - ToolsVerse",
     description: "Complete directory of 1200+ best AI tools across 100+ categories. Updated daily with free & paid AI software for every need.",
     url: "https://thetoolsverse.com",
     siteName: "ToolsVerse - AI Tools Directory",
@@ -79,27 +74,25 @@ export const metadata = {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "ToolsVerse - Best AI Tools Directory 2025",
+        alt: "ToolsVerse - Best AI Tools Directory 2026",
       },
     ],
     type: "website",
     locale: "en_US",
   },
 
-  // 🔥 TWITTER OPTIMIZED
   twitter: {
     card: "summary_large_image",
-    title: "1200+ Best AI Tools Directory 2025 - Toolsverse",
+    title: "1200+ Best AI Tools Directory 2026 - Toolsverse",
     description: "Discover the complete directory of best AI tools across 100+ categories. Updated daily!",
     images: ["/logo.png"],
-    site: "@Toolsverse", // Add your Twitter handle if you have one
+    site: "@Toolsverse",
   },
 
   alternates: {
     canonical: "https://thetoolsverse.com",
   },
 
-  // 🔥 ADDITIONAL SEO METADATA
   robots: {
     index: true,
     follow: true,
@@ -112,19 +105,16 @@ export const metadata = {
     },
   },
 
-  // 🔥 STRUCTURED DATA HINTS
   other: {
     'theme-color': '#ffffff',
     'msapplication-TileColor': '#ffffff',
   },
 };
 
-// --- LAYOUT ---
 export default function RootLayout({ children }) {
   return (
     <html lang="en" dir="ltr" data-theme="light">
       <head>
-        {/* Google Search Console verification */}
         <meta
           name="google-site-verification"
           content="fhoUx6Asp7AlWxDIvLfaXFEbw4pp94yNUhqewq6pMJM"
@@ -134,47 +124,48 @@ export default function RootLayout({ children }) {
           content="4112f957-1414-4b17-baaa-ea2bb07b2ba7"
         />
 
-        {/* ✅ Important Site Name Metadata */}
         <meta property="og:site_name" content="ToolsVerse - AI Tools Directory" />
         <meta name="application-name" content="ToolsVerse" />
         <meta name="apple-mobile-web-app-title" content="ToolsVerse" />
         <meta name="google-adsense-account" content="ca-pub-9468891564981720" />
 
-
-        {/* 🔥 ADDITIONAL SEO META TAGS */}
         <meta name="author" content="ToolsVerse Team" />
         <meta name="publisher" content="ToolsVerse" />
-        <meta name="copyright" content="ToolsVerse 2025" />
+        <meta name="copyright" content="ToolsVerse 2026" />
         <meta name="revisit-after" content="1 day" />
 
-        {/* 🔥 STRUCTURED DATA FOR AI TOOLS DIRECTORY */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": "Toolsverse",
-              "alternateName": "Toolsverse - AI Tools Directory",
-              "url": "https://thetoolsverse.com",
-              "description": "Complete directory of 1200+ best AI tools across 100+ categories",
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://thetoolsverse.com/search?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-              },
-              "sameAs": [
-                // Add your social media links here when you have them
-                // "https://twitter.com/Toolsverse",
-                // "https://linkedin.com/company/Toolsverse"
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  "name": "ToolsVerse",
+                  "alternateName": "ToolsVerse - AI Tools Directory",
+                  "url": "https://thetoolsverse.com",
+                  "description": "Complete directory of 1200+ best AI tools across 100+ categories",
+                  "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://thetoolsverse.com/search?q={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                  }
+                },
+                {
+                  "@type": "Organization",
+                  "name": "ToolsVerse",
+                  "url": "https://thetoolsverse.com",
+                  "logo": "https://thetoolsverse.com/logo.png",
+                  "description": "Curated AI tools directory helping users discover and compare the best AI software"
+                }
               ]
             })
           }}
         />
 
-        {/* Google Analytics Script */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=G-2ZC85B8D0N`}
+          src="https://www.googletagmanager.com/gtag/js?id=G-2ZC85B8D0N"
           strategy="afterInteractive"
         />
         <Script id="ga-init" strategy="afterInteractive">
@@ -190,10 +181,10 @@ export default function RootLayout({ children }) {
       </head>
 
       <body
-        className={`${spaceGrotesk.variable} antialiased scroll-smooth bg-white text-gray-900`}
+        className={`${spaceGrotesk.variable} ${montserrat.variable} ${geistSans.variable} antialiased scroll-smooth bg-white text-gray-900`}
       >
-        {/* Client-only wrappers (ProgressBar, etc.) */}
         <ClientProviders>
+          <ProgressBar />
           <Header />
 
           <main id="main-content" className="min-h-screen">

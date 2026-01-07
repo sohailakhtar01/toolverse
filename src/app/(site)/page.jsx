@@ -51,14 +51,14 @@ export const metadata = {
   title: 'Toolsverse: 4000+ Best AI Tools Directory 2025 | #1 AI Software List',
   description: 'Toolsverse is the #1 AI tools directory with 4000+ best AI tools across 100+ categories. Discover free & paid AI software for business, productivity, writing, design, marketing & more. Updated daily with latest AI apps 2025.',
   keywords: [
-    'best ai tools 2025',
+    'best ai tools 2026',
     'ai tools directory',
     '4000+ ai tools',
     'complete ai tools list',
     'top ai tools',
     'ai software directory',
     'free ai tools',
-    'best ai apps 2025',
+    'best ai apps 2026',
   ],
   openGraph: {
     title: 'Toolsverse: #1 AI Tools Directory with 4000+ Best AI Tools 2025',
