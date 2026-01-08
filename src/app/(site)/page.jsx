@@ -8,6 +8,8 @@ import FaqSection from "@/components/FaqSection";
 import { Rocket, Sparkles, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import LeftScroll from "@/components/LeftScroll";
+import AIChatbot from "@/components/AIChatbot";
+
 
 // Trending Categories Data with actual images
 const trendingCategories = [
@@ -646,6 +648,7 @@ export default async function HomePage() {
             </div>
           </div>
         </div>
+        <AIChatbot />
 
       </main>
     </>
