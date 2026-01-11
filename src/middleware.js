@@ -1,21 +1,13 @@
 import { NextResponse } from 'next/server';
 
 export function middleware(request) {
-  const url = request.nextUrl;
-  const { pathname } = url;
-  const hostname = request.headers.get('host') || '';
+  const { pathname } = request.nextUrl;
+
+  // ❌ DELETED: The "www" redirect logic. 
+  // REASON: Vercel already handles this. Having it here caused the crash.
 
   // -----------------------------------------------------------
-  // 1. CRITICAL SEO FIX: Force "non-www"
-  // If user visits www.thetoolsverse.com, move them to thetoolsverse.com
-  // -----------------------------------------------------------
-  if (hostname.startsWith('www.')) {
-    url.host = hostname.replace('www.', '');
-    return NextResponse.redirect(url, 301); // 301 = Moved Permanently (SEO Gold Standard)
-  }
-
-  // -----------------------------------------------------------
-  // 2. Block Non-Existent "Junk" Paths
+  // 1. Block Non-Existent "Junk" Paths
   // Returns 410 (Gone) to tell Google "Stop looking here forever"
   // -----------------------------------------------------------
   const blockedPaths = [
@@ -26,6 +18,7 @@ export function middleware(request) {
     '/checkout',
   ];
 
+  // If the path starts with any of the blocked paths, kill it.
   if (blockedPaths.some(path => pathname.startsWith(path))) {
     return new NextResponse(null, {
       status: 410,
@@ -36,7 +29,7 @@ export function middleware(request) {
     });
   }
 
-  // Allow all other requests
+  // Allow all other requests to pass through normally
   return NextResponse.next();
 }
 
