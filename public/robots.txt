@@ -1,17 +1,12 @@
 User-agent: *
-
-# Allow everything needed for proper rendering
+# Allow Google to crawl the whole site instantly
 Allow: /
 
-# Block non-SEO, internal, or private routes
+# Block backend API routes (Save crawl budget for your real pages)
 Disallow: /api/
-Disallow: /admin/
-Disallow: /dashboard/
-Disallow: /cart/
-Disallow: /checkout/
-Disallow: /shop/
-Disallow: /product/
-Disallow: /products/
 
-# Sitemap
-Sitemap: https://www.thetoolsverse.com/sitemap.xml
+# Block admin pages (If you have any protected routes, list them here)
+Disallow: /admin/
+
+# Sitemap (This MUST match the 'metadataBase' we set in layout.jsx)
+Sitemap: https://thetoolsverse.com/sitemap.xml

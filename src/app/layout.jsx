@@ -33,22 +33,27 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+// 🔥 CRITICAL FIX: Define the Base URL for all metadata
+const baseUrl = new URL("https://thetoolsverse.com");
+
 export const metadata = {
+  metadataBase: baseUrl, // ✅ This fixes the "broken images" issue in Google
+
   title: {
-    default: "1200+ Best AI Tools Directory 2026 | ToolsVerse",
+    default: `1200+ Best AI Tools Directory ${new Date().getFullYear()} | ToolsVerse`,
     template: "%s | ToolsVerse",
   },
 
-  description: "Discover 1200+ best AI tools across 100+ categories. Complete AI tools directory updated daily with free & paid AI software for business, design, writing, productivity, marketing & more. Compare top AI apps 2026.",
+  description: `Discover 1200+ best AI tools across 100+ categories. Complete AI tools directory updated daily with free & paid AI software for business, design, writing, productivity, marketing & more. Compare top AI apps ${new Date().getFullYear()}.`,
 
   keywords: [
-    "best ai tools 2026",
+    `best ai tools ${new Date().getFullYear()}`,
     "ai tools directory",
     "complete ai tools list",
     "1200+ ai tools",
     "free ai tools",
     "ai software directory",
-    "best ai apps 2026",
+    `best ai apps ${new Date().getFullYear()}`,
     "ai tools list",
     "top ai tools",
     "ai productivity tools",
@@ -61,20 +66,20 @@ export const metadata = {
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/logo.png",
+    apple: "/logo.png", // ✅ Now correctly resolves to https://thetoolsverse.com/logo.png
   },
 
   openGraph: {
-    title: "1200+ Best AI Tools Directory 2026 - ToolsVerse",
+    title: `1200+ Best AI Tools Directory ${new Date().getFullYear()} - ToolsVerse`,
     description: "Complete directory of 1200+ best AI tools across 100+ categories. Updated daily with free & paid AI software for every need.",
-    url: "https://thetoolsverse.com",
+    url: "/", // ✅ Resolves correctly using metadataBase
     siteName: "ToolsVerse - AI Tools Directory",
     images: [
       {
-        url: "/logo.png",
+        url: "/logo.png", // ✅ CRITICAL FIX: Now valid for Google/Facebook
         width: 1200,
         height: 630,
-        alt: "ToolsVerse - Best AI Tools Directory 2026",
+        alt: `ToolsVerse - Best AI Tools Directory ${new Date().getFullYear()}`,
       },
     ],
     type: "website",
@@ -83,14 +88,14 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "1200+ Best AI Tools Directory 2026 - Toolsverse",
+    title: `1200+ Best AI Tools Directory ${new Date().getFullYear()} - Toolsverse`,
     description: "Discover the complete directory of best AI tools across 100+ categories. Updated daily!",
     images: ["/logo.png"],
     site: "@Toolsverse",
   },
 
   alternates: {
-    canonical: "https://thetoolsverse.com",
+    canonical: "/", // ✅ Points to https://thetoolsverse.com/
   },
 
   robots: {
@@ -131,10 +136,11 @@ export default function RootLayout({ children }) {
 
         <meta name="author" content="ToolsVerse Team" />
         <meta name="publisher" content="ToolsVerse" />
-        <meta name="copyright" content="ToolsVerse 2026" />
+        <meta name="copyright" content={`ToolsVerse ${new Date().getFullYear()}`} />
         <meta name="revisit-after" content="1 day" />
 
-        <script
+        <Script
+          id="schema-org"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({

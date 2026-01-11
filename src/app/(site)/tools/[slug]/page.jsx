@@ -44,6 +44,7 @@ export async function generateStaticParams() {
 
 
 // 1000% SEO-Optimized Metadata (SAFE)
+// 🚀 1000% SEO-Optimized Metadata (SAFE & HIGH CTR)
 export async function generateMetadata({ params }) {
   await dbConnect();
   const tool = await Tool.findOne({ slug: params.slug }).lean();
@@ -51,82 +52,74 @@ export async function generateMetadata({ params }) {
   if (!tool) {
     return {
       title: "AI Tool Not Found - TheToolsVerse",
-      description:
-        "The AI tool you are looking for could not be found. Discover 1000+ AI tools at TheToolsVerse.",
+      description: "The AI tool you are looking for could not be found. Discover 1000+ AI tools at TheToolsVerse.",
+      robots: { index: false }, // Don't index 404s
     };
   }
 
-  const categories =
-    Array.isArray(tool.categories) && tool.categories.length > 0
-      ? tool.categories
-      : ["Uncategorized"];
+  const currentYear = new Date().getFullYear();
 
-  const tags = Array.isArray(tool.tags)
-    ? tool.tags
-    : Array.isArray(tool.features)
-      ? tool.features
-      : [];
+  // 1. USE DISPLAY NAME (Clean Brand Name)
+  // This is the key fix. Instead of the long "GPTGO - AI Search...", we just use "GPTGO"
+  const brandName = tool.displayName || tool.name.split(' - ')[0];
+  const category = tool.categories?.[0] || "AI Tool";
 
-  const baseDescription =
-    tool.longDescription ||
-    tool.shortDescription ||
-    tool.description ||
-    "";
+  // 2. SMART TITLE GENERATION (Max 60 chars)
+  // Google truncates at 60. We force it to fit.
+  let finalTitle;
 
-  const descForMeta = baseDescription.slice(0, 155);
+  // Priority: DB Title (if optimized) > Auto-Generated High CTR Title
+  if (tool.seo?.metaTitle && tool.seo.metaTitle.length < 65) {
+    finalTitle = tool.seo.metaTitle;
+  } else {
+    // Formula: [Brand] Review [Year]: [Category] & Pricing
+    // Example: "GPTGO Review 2026: Features, Pricing & Alternatives"
+    finalTitle = `${brandName} Review ${currentYear}: Features, Pricing & Alternatives`;
+  }
 
-  // Prefer per-tool SEO from Mongo JSON
-  const fallbackTitle = `${tool.name} Review (${new Date().getFullYear()}): Features, Pricing & Rating`;
-  const title = tool.seo && tool.seo.metaTitle ? tool.seo.metaTitle : fallbackTitle;
-
-  const fallbackDescription = `${tool.name} review for ${categories[0]}: features, pricing, pros & cons, and who should use it.`;
-  const description =
-    tool.seo && tool.seo.metaDescription
-      ? tool.seo.metaDescription
-      : fallbackDescription;
+  // 3. SMART DESCRIPTION GENERATION (Max 160 chars)
+  let finalDesc;
+  if (tool.seo?.metaDescription) {
+    finalDesc = tool.seo.metaDescription;
+  } else {
+    // A question + answer format increases CTR
+    finalDesc = `Is ${brandName} the best ${category} in ${currentYear}? Read our honest review covering features, pricing (${tool.pricingType}), pros, cons, and top alternatives.`;
+  }
 
   return {
-    title,
-    description,
+    title: finalTitle,
+    description: finalDesc.slice(0, 160), // Hard limit prevents Google rewrite
+
     openGraph: {
-      title:
-        tool.seo && tool.seo.metaTitle
-          ? tool.seo.metaTitle
-          : `${tool.name} - Features, Pricing & Review`,
-      description:
-        tool.seo && tool.seo.metaDescription
-          ? tool.seo.metaDescription
-          : `${descForMeta}... Learn use cases, pros & cons, and alternatives.`,
+      title: finalTitle,
+      description: finalDesc,
+      url: `https://thetoolsverse.com/tools/${tool.slug}`,
+      siteName: "TheToolsVerse - AI Tools Directory",
       images: [
         {
           url: tool.logo,
           width: 1200,
           height: 630,
-          alt: `${tool.name} AI Tool - Features & Review`,
+          alt: `${brandName} Review and Features`,
         },
       ],
       type: "article",
-      url: `https://thetoolsverse.com/tools/${tool.slug}`,
-      siteName: "TheToolsVerse - AI Tools Directory",
       locale: "en_US",
     },
+
     twitter: {
       card: "summary_large_image",
-      title:
-        tool.seo && tool.seo.metaTitle
-          ? tool.seo.metaTitle
-          : `${tool.name} Review & Pricing`,
-      description:
-        tool.seo && tool.seo.metaDescription
-          ? tool.seo.metaDescription
-          : `${descForMeta}... Compare features, pricing, and alternatives.`,
+      title: finalTitle,
+      description: finalDesc,
       images: [tool.logo],
-      creator: "@thetoolsverse",
-      site: "@thetoolsverse",
+      creator: "@Toolsverse",
+      site: "@Toolsverse",
     },
+
     alternates: {
       canonical: `https://thetoolsverse.com/tools/${tool.slug}`,
     },
+
     robots: {
       index: true,
       follow: true,
@@ -138,22 +131,13 @@ export async function generateMetadata({ params }) {
         "max-snippet": -1,
       },
     },
+
     other: {
-      "article:author": "TheToolsVerse - AI Tools Directory",
-      "article:section": categories[0],
-      "article:tag": tags.join(","),
-      "article:published_time":
-        tool.publishedAt && tool.publishedAt.toISOString
-          ? tool.publishedAt.toISOString()
-          : "2024-01-01T00:00:00Z",
+      "article:published_time": tool.publishedAt ? new Date(tool.publishedAt).toISOString() : "2024-01-01T00:00:00Z",
       "article:modified_time": new Date().toISOString(),
-      "og:see_also": `https://thetoolsverse.com/categories/${categories[0]
-        .toLowerCase()
-        .replace(/\s+/g, "-")}`,
     },
   };
 }
-
 export default async function ToolDetailPage({ params }) {
   await dbConnect();
   const toolDoc = await Tool.findOne({ slug: params.slug }).lean();
@@ -221,12 +205,12 @@ export default async function ToolDetailPage({ params }) {
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": tool.name,
-      "description": tool.description,
+      "name": tool.displayName || tool.name, // ✅ Use clean name here too
+      "description": tool.shortDescription,
       "image": tool.logo,
       "url": tool.url,
-      "applicationCategory": "AI Tool",
-      "operatingSystem": "Web",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web Browser, SaaS",
       "softwareVersion": "Latest",
       "datePublished": "2024-01-01",
       "dateModified": new Date().toISOString().split('T')[0],
@@ -237,39 +221,44 @@ export default async function ToolDetailPage({ params }) {
       },
       "offers": {
         "@type": "Offer",
-        "price": tool.pricingType?.toLowerCase() === 'free' ? "0" : "29.99",
+        "price": "0", // Default to 0 unless specific data exists
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
         "category": tool.pricingType
       },
-      "aggregateRating": tool.rating ? {
-        "@type": "AggregateRating",
-        "ratingValue": tool.rating,
-        "ratingCount": tool.ratingCount || 250,  // add ratingCount field in DB later
-        "bestRating": "5",
-        "worstRating": "1"
-      } : undefined,
 
-      "review": tool.rating ? [{
-        "@type": "Review",
-        "author": {
-          "@type": "Organization",
-          "name": "TheToolsVerse - AI Tools Directory"
-        },
-        "reviewRating": {
-          "@type": "Rating",
+      // 🚨 CRITICAL FIX: Only include AggregateRating if REAL data exists
+      // If tool.ratingCount is missing, we skip this block entirely.
+      // This saves you from the "Spammy Structured Data" Manual Action.
+      ...(tool.rating && tool.ratingCount ? {
+        "aggregateRating": {
+          "@type": "AggregateRating",
           "ratingValue": tool.rating,
-          "bestRating": "5"
+          "ratingCount": tool.ratingCount, // ✅ NO FAKE NUMBERS
+          "bestRating": "5",
+          "worstRating": "1"
         },
-        "reviewBody": `${tool.name} is an excellent ${tool.categories[0]} AI tool that offers ${tool.tags.slice(0, 3).join(', ')}. ${tool.pricingType} pricing makes it accessible for various use cases.`
-      }] : undefined,
+        "review": [{
+          "@type": "Review",
+          "author": {
+            "@type": "Organization",
+            "name": "TheToolsVerse Editorial Team"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": tool.rating,
+            "bestRating": "5"
+          },
+          "reviewBody": `Our editorial review of ${tool.displayName || tool.name} highlights its key features for ${tool.categories?.[0]} tasks.`
+        }]
+      } : {}),
     },
 
     // Article Schema for content
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": `${tool.name} Review 2025: Complete Guide & Analysis`,
+      "headline": `${tool.displayName || tool.name} Review ${new Date().getFullYear()}: Complete Guide & Analysis`,
       "description": tool.description,
       "image": tool.logo,
       "author": {
@@ -328,12 +317,12 @@ export default async function ToolDetailPage({ params }) {
           "@type": "ListItem",
           "position": 3,
           "name": tool.categories[0],
-          "item": `https://thetoolsverse.com/category/${tool.categories[0].toLowerCase()}`
+          "item": `https://thetoolsverse.com/category/${categoryToSlug(tool.categories[0])}`
         },
         {
           "@type": "ListItem",
           "position": 4,
-          "name": tool.name,
+          "name": tool.displayName || tool.name,
           "item": `https://thetoolsverse.com/tools/${tool.slug}`
         }
       ]
@@ -674,84 +663,84 @@ export default async function ToolDetailPage({ params }) {
               </section>
               {/* ///////////////////////editorial section //////////////////////////////// */}
               {/* Editor Review Section - Personal Testing Experience */}
-{tool.editorReview && (
-  <section className="bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 mt-8 rounded-3xl shadow-lg border-2 border-amber-200 px-4 py-7 sm:p-8 relative overflow-hidden">
-    {/* Decorative badge ribbon */}
-    <div className="absolute top-4 right-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg flex items-center gap-2">
-      <Award className="w-4 h-4" />
-      <span>Editor's Honest Take</span>
-    </div>
+              {tool.editorReview && (
+                <section className="bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 mt-8 rounded-3xl shadow-lg border-2 border-amber-200 px-4 py-7 sm:p-8 relative overflow-hidden">
+                  {/* Decorative badge ribbon */}
+                  <div className="absolute top-4 right-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg flex items-center gap-2">
+                    <Award className="w-4 h-4" />
+                    <span>Editor's Honest Take</span>
+                  </div>
 
-    {/* Header */}
-    <div className="mb-6">
-      <div className="flex items-center gap-3 mb-3">
-        <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center shadow-md">
-          <Eye className="w-6 h-6 text-white" />
-        </div>
-        <div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-            Real-World Testing: {tool.displayName}
-          </h2>
-          <p className="text-gray-600 text-sm mt-1">
-            Tested by TheToolsVerse editors • Not AI-generated content
-          </p>
-        </div>
-      </div>
-    </div>
+                  {/* Header */}
+                  <div className="mb-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center shadow-md">
+                        <Eye className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                          Real-World Testing: {tool.displayName}
+                        </h2>
+                        <p className="text-gray-600 text-sm mt-1">
+                          Tested by TheToolsVerse editors • Not AI-generated content
+                        </p>
+                      </div>
+                    </div>
+                  </div>
 
-    {/* Editor Review Content */}
-    <div className="prose prose-lg max-w-none">
-      <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-md border border-amber-200">
-        {/* Review text with proper formatting */}
-        <div className="text-gray-800 leading-relaxed space-y-4">
-          {tool.editorReview.split('\n\n').map((paragraph, index) => (
-            <p key={index} className="text-base sm:text-lg">
-              {paragraph}
-            </p>
-          ))}
-        </div>
+                  {/* Editor Review Content */}
+                  <div className="prose prose-lg max-w-none">
+                    <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-md border border-amber-200">
+                      {/* Review text with proper formatting */}
+                      <div className="text-gray-800 leading-relaxed space-y-4">
+                        {tool.editorReview.split('\n\n').map((paragraph, index) => (
+                          <p key={index} className="text-base sm:text-lg">
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
 
-        {/* Editor badge at bottom */}
-        <div className="mt-6 pt-6 border-t border-gray-200">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-              TV
-            </div>
-            <div>
-              <p className="font-semibold text-gray-900">TheToolsVerse Editorial Team</p>
-              <p className="text-sm text-gray-600">Tested {new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                      {/* Editor badge at bottom */}
+                      <div className="mt-6 pt-6 border-t border-gray-200">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                            TV
+                          </div>
+                          <div>
+                            <p className="font-semibold text-gray-900">TheToolsVerse Editorial Team</p>
+                            <p className="text-sm text-gray-600">Tested {new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-    {/* Trust indicators */}
-    <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-      <div className="flex items-center gap-3 bg-white rounded-xl p-4 border border-amber-200">
-        <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
-        <div>
-          <p className="font-semibold text-gray-900 text-sm">Hands-On Tested</p>
-          <p className="text-xs text-gray-600">Real usage scenarios</p>
-        </div>
-      </div>
-      <div className="flex items-center gap-3 bg-white rounded-xl p-4 border border-amber-200">
-        <Clock className="w-6 h-6 text-blue-600 flex-shrink-0" />
-        <div>
-          <p className="font-semibold text-gray-900 text-sm">Updated {new Date().getFullYear()}</p>
-          <p className="text-xs text-gray-600">Current version tested</p>
-        </div>
-      </div>
-      <div className="flex items-center gap-3 bg-white rounded-xl p-4 border border-amber-200">
-        <Star className="w-6 h-6 text-amber-500 flex-shrink-0 fill-current" />
-        <div>
-          <p className="font-semibold text-gray-900 text-sm">Unbiased Review</p>
-          <p className="text-xs text-gray-600">Not sponsored content</p>
-        </div>
-      </div>
-    </div>
-  </section>
-)}
+                  {/* Trust indicators */}
+                  <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="flex items-center gap-3 bg-white rounded-xl p-4 border border-amber-200">
+                      <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-gray-900 text-sm">Hands-On Tested</p>
+                        <p className="text-xs text-gray-600">Real usage scenarios</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3 bg-white rounded-xl p-4 border border-amber-200">
+                      <Clock className="w-6 h-6 text-blue-600 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-gray-900 text-sm">Updated {new Date().getFullYear()}</p>
+                        <p className="text-xs text-gray-600">Current version tested</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3 bg-white rounded-xl p-4 border border-amber-200">
+                      <Star className="w-6 h-6 text-amber-500 flex-shrink-0 fill-current" />
+                      <div>
+                        <p className="font-semibold text-gray-900 text-sm">Unbiased Review</p>
+                        <p className="text-xs text-gray-600">Not sponsored content</p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              )}
 
 
               {/* Features Deep Dive */}

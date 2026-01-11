@@ -9,6 +9,7 @@ import { Rocket, Sparkles, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import LeftScroll from "@/components/LeftScroll";
 import AIChatbot from "@/components/AIChatbot";
+// import AffiliatePrograms from '@/components/AffiliatePrograms';
 
 
 // Trending Categories Data with actual images
@@ -361,6 +362,7 @@ export default async function HomePage() {
           showSearch={false}
           showFilters={false}
         />
+        {/* <AffiliatePrograms /> */}
         <section className="w-[90%] mx-auto py-16 rounded-t-3xl px-4 relative overflow-hidden bg-white">
           {/* Gradient overlay - positioned at top, fades before bottom */}
           <div className="absolute inset-0 bg-gradient-to-b from-teal-50/40 via-blue-50/20 to-transparent pointer-events-none"

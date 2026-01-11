@@ -22,6 +22,7 @@ import ToolCard from "@/components/ToolCard";
 import dbConnect from "@/lib/mongodb";
 import Tool from "@/models/Tool";
 import { categoryToSlug } from "@/lib/categorySlug";
+import { notFound } from "next/navigation";
 
 // 🔹 HELPER: Flexible category matching (spaces, hyphens, parentheses)
 // 🔹 HELPER: Flexible category matching (spaces, hyphens, parentheses, AND SLASHES)
