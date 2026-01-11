@@ -84,7 +84,7 @@ const ToolCard = ({ tool, viewMode = 'grid' }) => {
         >
           {tool.name}
           <span className="
-      absolute left-0 -bottom-1 w-0 h-1
+      absolute left-0 -bottom-1 w-0 h-0.5
       bg-gradient-to-r from-purple-500 to-pink-500
       transition-all duration-300
       group-hover:w-full

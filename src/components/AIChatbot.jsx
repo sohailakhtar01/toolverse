@@ -38,7 +38,7 @@ export default function AIChatbot() {
 
   const handleSubmit = async (e, quickMessage = null) => {
     if (e) e.preventDefault();
-    
+
     const userMessage = quickMessage || input.trim();
     if (!userMessage || isLoading) return;
 
@@ -120,26 +120,25 @@ export default function AIChatbot() {
   return (
     <>
       {/* Floating Chat Button */}
-     {!isOpen && (
-  <button
-    onClick={() => setIsOpen(true)}
-    className="fixed bottom-6 right-6 z-50 cursor-pointer"
-    aria-label="Open ToolsVerse AI Assistant"
-  >
-    <div className="w-14 h-14 rounded-full bg-white border border-blue-200 shadow-[0_6px_18px_rgba(59,130,246,0.25)] hover:shadow-[0_10px_28px_rgba(59,130,246,0.35)] transition-shadow flex items-center justify-center">
-      <Sparkles className="w-5 h-5 text-blue-600" />
-    </div>
-  </button>
-)}
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 cursor-pointer"
+          aria-label="Open ToolsVerse AI Assistant"
+        >
+          <div className="w-14 h-14 rounded-full bg-white border border-blue-200 shadow-[0_6px_18px_rgba(59,130,246,0.25)] hover:shadow-[0_10px_28px_rgba(59,130,246,0.35)] transition-shadow flex items-center justify-center">
+            <Sparkles className="w-5 h-5 text-blue-600" />
+          </div>
+        </button>
+      )}
 
 
       {/* Professional Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-[400px] h-[650px] bg-white rounded-3xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden">
-          {/* Header with Reset & Close */}
+        <div className="fixed bottom-0 right-0 sm:bottom-6 sm:right-6 z-50 w-full h-[100dvh] sm:w-[400px] sm:h-[650px] bg-white sm:rounded-3xl shadow-2xl sm:border border-gray-200 flex flex-col overflow-hidden transition-all duration-300 ease-in-out">          {/* Header with Reset & Close */}
           <div className="relative bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-5">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:20px_20px] opacity-20"></div>
-            
+
             <div className="relative flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="relative w-12 h-12 bg-white/15 backdrop-blur-md rounded-xl flex items-center justify-center shadow-lg">
@@ -147,7 +146,7 @@ export default function AIChatbot() {
                   {/* <div className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>
                   <div className="absolute -bottom-0.5 -left-0.5 w-1 h-1 bg-white/80 rounded-full animate-pulse" style={{ animationDelay: '200ms' }}></div> */}
                 </div>
-                
+
                 <div>
                   <h3 className="text-white font-bold text-xl">Toolsverse AI</h3>
                   <p className="text-blue-100 text-xs font-medium flex items-center gap-1">
@@ -167,7 +166,7 @@ export default function AIChatbot() {
                 >
                   <RotateCcw className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
                 </button>
-                
+
                 <button
                   onClick={() => setIsOpen(false)}
                   className="text-white/80 hover:text-white hover:bg-white/10 rounded-lg p-2 transition-all cursor-pointer"
@@ -187,11 +186,10 @@ export default function AIChatbot() {
                 className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} animate-fade-in`}
               >
                 <div
-                  className={`max-w-[85%] rounded-2xl px-4 py-3.5 shadow-sm ${
-                    msg.role === 'user'
-                      ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white'
-                      : 'bg-white border border-gray-200 text-gray-800'
-                  }`}
+                  className={`max-w-[85%] rounded-2xl px-4 py-3.5 shadow-sm ${msg.role === 'user'
+                    ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white'
+                    : 'bg-white border border-gray-200 text-gray-800'
+                    }`}
                 >
                   <div className="text-sm whitespace-pre-wrap leading-relaxed">
                     {renderMessage(msg.content)}

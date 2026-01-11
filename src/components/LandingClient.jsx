@@ -30,11 +30,44 @@ export default function LandingClient({ totalCount = 0 }) {
 
       {/* Hero section */}
       <section className="relative z-10 flex flex-col md:flex-row items-center justify-center min-h-screen px-6 lg:px-12 gap-10 pt-20">
-        <div className="absolute top-20 sm:top-20 left-1/2 transform -translate-x-1/2 z-20">
-          <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-xs sm:text-sm md:text-base font-medium shadow-sm">
-            🎯 Featured Tool Directory
-          </span>
+        <div className="absolute top-24 left-1/2 transform -translate-x-1/2 z-30 w-full text-center px-4">
+          <button
+            onClick={() =>
+              document.getElementById("partner-tools")?.scrollIntoView({
+                behavior: "smooth",
+              })
+            }
+            className="group cursor-pointer relative inline-flex p-[2px] overflow-hidden rounded-full shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300"
+          >
+            {/* THE REVOLVING 'COMET' BORDER LAYER
+      - animate-spin: Makes it rotate 360 degrees.
+      - conic-gradient: Creates the colorful trail (Red -> Yellow -> Green -> Blue -> Transparent).
+      - inset-[-100%]: Makes the gradient layer huge so corners don't clip during rotation.
+    */}
+            <span className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] 
+      bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_50%,#ff4b1f_60%,#ff9068_70%,#43e97b_80%,#38f9d7_90%,transparent_100%)]"
+            />
+
+            {/* THE INNER CONTENT MASK 
+      - bg-white: Covers the center of the spinning gradient so only the edge is visible.
+    */}
+            <span className="relative inline-flex h-full w-full items-center gap-2 rounded-full bg-white px-6 py-2 text-sm font-semibold text-slate-700 group-hover:bg-slate-50 transition-colors">
+
+              {/* Icon (Sparkles) */}
+              <svg className="w-4 h-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+
+              <span>View our recommended tools</span>
+
+              {/* Arrow */}
+              <span className="ml-1 text-slate-400 group-hover:text-purple-600 group-hover:translate-x-0.5 transition-all">
+                →
+              </span>
+            </span>
+          </button>
         </div>
+
 
         <div className="w-full md:w-1/2 text-center lg:ml-10 md:text-left flex flex-col justify-center mt-16 md:-mt-30">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-spaceGrotesk font-bold mb-6 leading-tight">

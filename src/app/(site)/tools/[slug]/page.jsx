@@ -447,7 +447,7 @@ export default async function ToolDetailPage({ params }) {
                       {/* Title + Short Description */}
                       <div className="flex-1 min-w-0">
                         <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 leading-tight">
-                          {tool.name} Review, Features & Pricing
+                          {tool.displayName} Review, Features & Pricing
                         </h1>
 
                         <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-4">
