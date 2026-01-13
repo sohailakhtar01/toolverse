@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
 /* Fonts */
-.font-montserrat {
-  font-family: var(--font-montserrat);
-}
 
-.font-spaceGrotesk {
-  font-family: var(--font-space-grotesk);
-}
 
-html,
-body {
-  font-family: var(--font-space-grotesk), sans-serif;
+@layer base {
+
+  html,
+  body {
+    /* This stack ensures that if Space Grotesk is loading, 
+       the browser uses the best native font (Apple, Windows, or Android) 
+       instead of a generic ugly font.
+    */
+    font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
 }
 
 @layer utilities {
@@ -110,17 +111,19 @@ body {
     /* half on each side */
   }
 }
+
 @keyframes fade-in {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .animate-fade-in {
-          animation: fade-in 0.3s ease-out;
-        }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}

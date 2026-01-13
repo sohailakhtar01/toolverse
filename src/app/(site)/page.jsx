@@ -1,7 +1,7 @@
 // app/page.jsx
 import connectDB from "@/lib/mongodb";
 import Tool from "@/models/Tool";
-import LandingClient from "@/components/LandingClient";
+import HeroSection from "@/components/HeroSection"; // Import the new Server Component
 import HomeSearchBar from "@/components/HomeSearchBar";
 import ToolList from "@/components/ToolList";
 import FaqSection from "@/components/FaqSection";
@@ -336,7 +336,7 @@ export default async function HomePage() {
 
       <main className="min-h-screen bg-white pb-20">
         {/* Hero Section */}
-        <LandingClient totalCount={totalCount} />
+        <HeroSection totalCount={totalCount} />
 
         {/* ✅ CLIENT SEARCH COMPONENT (No more errors!) */}
         <HomeSearchBar allCategories={allCategories} />

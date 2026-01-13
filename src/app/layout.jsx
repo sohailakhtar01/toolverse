@@ -1,5 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import { Montserrat, Space_Grotesk } from "next/font/google";
+import { Space_Grotesk } from "next/font/google"; 
 import Script from "next/script";
 import "./globals.css";
 import Header from "@components/Header";
@@ -7,30 +6,13 @@ import Footer from "@components/Footer";
 import ProgressBar from '@/components/ProgressBar';
 import ClientProviders from "@/components/ClientProviders";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
+
 
 const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
   variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
+  display: "swap", // Mandatory for Google LCP score
+  adjustFontFallback: true, // Prevents layout shift (CLS) automatically
 });
 
 // 🔥 CRITICAL FIX: Define the Base URL for all metadata
@@ -187,7 +169,9 @@ export default function RootLayout({ children }) {
       </head>
 
       <body
-        className={`${spaceGrotesk.variable} ${montserrat.variable} ${geistSans.variable} antialiased scroll-smooth bg-white text-gray-900`}
+        className={`${spaceGrotesk.variable} antialiased scroll-smooth bg-white text-gray-900`}
+        // This inline style forces the font immediately, bypassing Tailwind issues
+        style={{ fontFamily: 'var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif' }}
       >
         <ClientProviders>
           <ProgressBar />
