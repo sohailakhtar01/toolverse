@@ -25,7 +25,7 @@ const getHomepageData = unstable_cache(
         .sort({ featuredRank: 1 })
         .limit(20)
         // ✅ NEW (Matches your DB, removes bloat)
-        .select('displayName name shortDescription rating ratingCount categories pricingType slug logo image isVerified isFeatured featuredRank').lean()
+        .select('displayName name shortDescription rating ratingCount categories pricingType slug logo image url  isVerified isFeatured featuredRank').lean()
     ]);
 
     let featuredTools = featuredToolsRaw;
@@ -35,7 +35,7 @@ const getHomepageData = unstable_cache(
         .sort({ rating: -1 })
         .limit(20)
         // ✅ NEW FALLBACK
-        .select('displayName name shortDescription rating ratingCount categories pricingType slug logo image')
+        .select('displayName name shortDescription rating ratingCount categories pricingType slug logo image url')
         .lean();
     }
 

@@ -2,7 +2,6 @@
 "use client";
 import React from "react";
 import ToolCard from "./ToolCard";
-
 const ToolList = ({
   tools = [],
   title = "Browse AI Tools",
@@ -11,24 +10,24 @@ const ToolList = ({
 
   return (
     <section className="relative w-full py-16 px-4 sm:px-6 lg:px-6">
-      
+
       {/* Professional Multi-Layer Background */}
       {/* Clean Background */}
-<div className="absolute inset-0 -z-10">
-  {/* Soft base gradient */}
-  <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-indigo-50/30 to-purple-50/20" />
+      <div className="absolute inset-0 -z-10">
+        {/* Soft base gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-indigo-50/30 to-purple-50/20" />
 
-  {/* Very subtle grid */}
-  <div className="absolute inset-0 
+        {/* Very subtle grid */}
+        <div className="absolute inset-0 
     bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),
     linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)]
     bg-[size:3rem_3rem] opacity-20" />
-</div>
+      </div>
 
 
       {/* Content Container */}
       <div className="relative max-w-7xl mx-auto">
-        
+
         {/* Header Section */}
         {/* <div className="text-center mb-12">
           <div className="inline-block">
@@ -82,7 +81,7 @@ const ToolList = ({
                 <div
                   key={`${tool.slug}-${index}`}
                   className="animate-in fade-in slide-in-from-bottom-4 duration-500"
-                  style={{ 
+                  style={{
                     animationDelay: `${Math.min(index * 50, 400)}ms`,
                     animationFillMode: 'backwards'
                   }}
@@ -94,7 +93,7 @@ const ToolList = ({
           )}
         </div>
 
-        
+
       </div>
     </section>
   );

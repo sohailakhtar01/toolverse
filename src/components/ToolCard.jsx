@@ -1,7 +1,4 @@
-'use client';
-import { useRouter } from 'next/navigation';
 import { ExternalLink } from 'lucide-react';
-import categories from '@/data/categories';
 import Image from 'next/image';
 import Link from "next/link";
 import { categoryToSlug } from '@/lib/categorySlug';
@@ -11,15 +8,14 @@ const getPricingDisplay = (type) => {
     case 'free': return { label: 'Free', color: 'bg-green-100 text-green-700' };
     case 'freemium': return { label: 'Freemium', color: 'bg-orange-100 text-orange-700' };
     case 'paid': return { label: 'Paid', color: 'bg-red-100 text-red-700' };
-    case 'free trial': return { label: 'Free Trial', color: 'bg-purple-100 text-purple-700' };
+    case 'free-trial': return { label: 'Free Trial', color: 'bg-purple-100 text-purple-700' };
     default: return { label: type || '', color: 'bg-gray-100 text-gray-600' };
   }
 };
 
 const ToolCard = ({ tool, viewMode = 'grid' }) => {
-  const router = useRouter();
   const pricing = getPricingDisplay(tool.pricingType);
-  console.log(tool.name, tool.featuredRank);
+
 
   return (
 
@@ -66,15 +62,16 @@ const ToolCard = ({ tool, viewMode = 'grid' }) => {
         href={`/tools/${tool.slug}`}
         className="flex items-center justify-center gap-3 mb-4 group"
       >
-        <img
-          src={tool.logo || tool.image}
-          alt={tool.name}
-          className="
-      w-10 h-10 rounded-lg object-cover bg-gray-100 flex-shrink-0
-      transition-transform duration-300
-      group-hover:scale-110
-    "
-        />
+        <div className="relative w-10 h-10 rounded-lg overflow-hidden bg-gray-100">
+          <Image
+            src={tool.logo || tool.image || '/default-tool-icon.png'}
+            alt={tool.name}
+            fill
+            sizes="40px"
+            className="object-cover"
+          />
+        </div>
+
 
         <h3
           className="relative inline-block text-lg font-semibold
@@ -109,7 +106,6 @@ const ToolCard = ({ tool, viewMode = 'grid' }) => {
             <Link
               key={category}
               href={`/categories/${slug}`}
-              onClick={(e) => e.stopPropagation()}
               className="
           px-3 py-1
           bg-gray-100 text-gray-700
@@ -154,26 +150,51 @@ const ToolCard = ({ tool, viewMode = 'grid' }) => {
         </div>
       )}
 
-
-
-
-
-      {/* VISIT BUTTON */}
-      <div className="flex justify-center items-center mt-auto">
-        <a
-          href={tool.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
-          className="relative group flex items-center gap-2 px-8 py-2 mb-5 cursor-pointer rounded-md font-semibold font-spaceGrotesk border border-gray-200 shadow-sm bg-white text-black overflow-hidden transition-all duration-500 hover:text-white hover:scale-[1.02]"
-        >
-          <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 scale-x-0 origin-center transform transition-transform duration-700 ease-in-out group-hover:scale-x-100 rounded-md -z-10"></span>
-          <span className="relative flex items-center gap-2 z-10">
-            <ExternalLink className="w-5 h-5" />
-            VISIT TOOL
+      <div className="mt-auto flex justify-center">
+        {tool.url ? (
+          <a
+            href={
+              tool.url.startsWith("http")
+                ? tool.url
+                : `https://${tool.url}`
+            }
+            target="_blank"
+            rel="noopener noreferrer sponsored nofollow"
+            className="
+        inline-flex items-center gap-2
+       px-5 py-2 rounded-md
+        bg-white text-gray-800
+        border border-gray-200
+        font-semibold
+        shadow-sm
+        transition
+        hover:bg-gray-50
+        hover:shadow-md
+        hover:-translate-y-[1px]
+      "
+          >
+            <span className="tracking-wide">VISIT</span>
+            <ExternalLink className="w-4 h-4 text-gray-500" />
+          </a>
+        ) : (
+          <span
+            className="
+        inline-flex items-center
+        px-3 py-2 rounded-md
+        bg-gray-100 text-gray-400
+        border border-gray-200
+        font-semibold
+        cursor-not-allowed
+      "
+          >
+            Coming Soon
           </span>
-        </a>
+        )}
       </div>
+
+
+
+
     </div>
   );
 };

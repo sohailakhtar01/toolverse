@@ -84,7 +84,8 @@ export default async function BrowseToolsPage({ searchParams }) {
         slug: 1,
         logo: 1,
         image: 1,
-        logoUrl: 1
+        logoUrl: 1,
+        url: 1 // ✅ ADD THIS
       };
 
       // Sort by text search relevance score first, then rating
@@ -131,14 +132,20 @@ export default async function BrowseToolsPage({ searchParams }) {
       _id: tool._id.toString(),
       name: tool.displayName || tool.name || 'Untitled Tool',
       logo: tool.logo || tool.image || tool.logoUrl || '/default-tool-icon.png',
-      shortDescription: tool.shortDescription || tool.longDescription?.substring(0, 120) || tool.description?.substring(0, 120) || 'Explore this amazing AI tool',
+      shortDescription:
+        tool.shortDescription ||
+        tool.longDescription?.substring(0, 120) ||
+        tool.description?.substring(0, 120) ||
+        'Explore this amazing AI tool',
       rating: tool.rating || 4.5,
       categories: Array.isArray(tool.categories) ? tool.categories : [],
       pricingType: tool.pricingType || 'freemium',
       slug: tool.slug || tool._id.toString(),
       tags: Array.isArray(tool.tags) ? tool.tags : [],
       features: Array.isArray(tool.features) ? tool.features : [],
+      url: tool.url || null, // ✅ THIS IS THE FIX
     }));
+
 
     console.log(`✅ Browse Tools: Found ${tools.length}/${totalCount} tools (Page ${currentPage}/${totalPages})${searchParams.q ? ` for query: "${searchParams.q}"` : ''}`);
 

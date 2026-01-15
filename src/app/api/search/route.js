@@ -9,13 +9,27 @@ export const dynamic = "force-dynamic"; // Always fresh results
 export async function GET(request) {
     try {
         const { searchParams } = new URL(request.url);
-        const query = searchParams.get("q") || "";
+        const rawQuery = searchParams.get("q") || "";
+        const query = rawQuery.trim().slice(0, 100); // hard limit
+
         const category = searchParams.get("category") || "all";
         const pricing = searchParams.get("pricing") || "";
         const sort = searchParams.get("sort") || "rating";
-        const page = parseInt(searchParams.get("page") || "1");
+
+        const page = Math.max(
+            1,
+            Math.min(parseInt(searchParams.get("page") || "1"), 100)
+        );
+
         const limit = 20;
         const skip = (page - 1) * limit;
+        if (query.length > 0 && query.length < 2) {
+            return NextResponse.json(
+                { success: false, error: "Search query too short" },
+                { status: 400 }
+            );
+        }
+
 
         await connectDB();
 
@@ -29,8 +43,9 @@ export async function GET(request) {
 
         // Category filter
         if (category !== "all") {
-            filter.categories = category;
+            filter.categories = { $in: [category] };
         }
+
 
         // Pricing filter
         if (pricing) {
@@ -38,23 +53,16 @@ export async function GET(request) {
         }
 
         // Build sort object
-        let sortObj = {};
-        switch (sort) {
-            case "rating":
-                sortObj = { rating: -1 };
-                break;
-            case "az":
-                sortObj = { name: 1 };
-                break;
-            case "za":
-                sortObj = { name: -1 };
-                break;
-            case "pricing":
-                sortObj = { pricingType: 1 };
-                break;
-            default:
-                sortObj = query.trim() ? { score: { $meta: "textScore" } } : { rating: -1 };
+        let sortObj = { rating: -1 };
+
+        if (query) {
+            sortObj = { score: { $meta: "textScore" } };
+        } else if (sort === "az") {
+            sortObj = { name: 1 };
+        } else if (sort === "za") {
+            sortObj = { name: -1 };
         }
+
 
         // Add text score for relevance sorting
         const projection = query.trim()
@@ -62,15 +70,15 @@ export async function GET(request) {
             : {};
 
         // Execute query with pagination
-        const [tools, totalCount] = await Promise.all([
-            Tool.find(filter, projection)
-                .sort(sortObj)
-                .skip(skip)
-                .limit(limit)
-                .select("id displayName name shortDescription rating categories pricingType tags slug logo")
-                .lean(),
-            Tool.countDocuments(filter)
-        ]);
+        const tools = await Tool.find(filter, projection)
+            .sort(sortObj)
+            .skip(skip)
+            .limit(limit)
+            .select("id displayName name shortDescription rating categories pricingType tags slug logo url")
+            .lean();
+
+        const totalCount =
+            page === 1 ? await Tool.countDocuments(filter) : null;
 
         // Map to consistent format
         const mappedTools = tools.map(tool => ({
@@ -82,8 +90,10 @@ export async function GET(request) {
             categories: tool.categories || [],
             pricingType: tool.pricingType || "freemium",
             slug: tool.slug,
-            tags: tool.tags || []
+            tags: tool.tags || [],
+            url: tool.url || null
         }));
+
 
         return NextResponse.json({
             success: true,
@@ -91,8 +101,7 @@ export async function GET(request) {
             pagination: {
                 total: totalCount,
                 page,
-                pages: Math.ceil(totalCount / limit),
-                hasMore: page * limit < totalCount
+                hasMore: tools.length === limit
             },
             query: {
                 search: query,

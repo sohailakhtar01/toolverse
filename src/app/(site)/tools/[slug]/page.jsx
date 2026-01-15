@@ -140,7 +140,11 @@ export async function generateMetadata({ params }) {
 }
 export default async function ToolDetailPage({ params }) {
   await dbConnect();
-  const toolDoc = await Tool.findOne({ slug: params.slug }).lean();
+  const toolDoc = await Tool.findOne(
+    { slug: params.slug },
+    "name displayName slug url logo pricingType rating ratingCount categories tags features shortDescription longDescription pricing faqs isFeatured isVerified visits seo"
+  ).lean();
+
 
   if (!toolDoc) {
     return notFound();
@@ -182,7 +186,7 @@ export default async function ToolDetailPage({ params }) {
     return 'text-red-500';
   };
 
-  const projection = "name slug logo pricingType rating categories tags shortDescription";
+  const projection = "name slug logo pricingType rating categories tags shortDescription url";
 
   // ✅ FIX 1: THE SPIDERWEB STRATEGY
   // We increased limit from 6 to 12. 

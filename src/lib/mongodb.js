@@ -9,7 +9,7 @@ if (!MONGODB_URI) {
 // 🔥 OPTIMIZED CONNECTION POOLING FOR MILLIONS OF USERS [web:45][web:54][web:58]
 const options = {
   bufferCommands: false,
-  maxPoolSize: 10,              // Max connections (Vercel serverless limit)
+  maxPoolSize: process.env.NODE_ENV === "production" ? 30 : 10,
   minPoolSize: 2,               // Always keep 2 connections ready
   serverSelectionTimeoutMS: 5000,
   socketTimeoutMS: 45000,
