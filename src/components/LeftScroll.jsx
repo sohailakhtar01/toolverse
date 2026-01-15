@@ -18,33 +18,31 @@ const logos = [
 
 function LeftScroll() {
   return (
-    <section className="w-full bg-white py-10">
+    <section className="relative w-full bg-white py-12 overflow-hidden">
+      {/* Subtle section dividers */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
 
       {/* Centered Container */}
-      <div className="w-[90%] md:w-[80%] mx-auto">
+      <div className="w-[90%] md:w-[80%] mx-auto relative">
 
-        {/* Scrolling Wrapper */}
-        <div className="relative w-full overflow-hidden">
+        {/* Fade edges */}
+        <div className="absolute top-0 left-0 h-full w-20 md:w-32 bg-gradient-to-r from-white via-white/90 to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 right-0 h-full w-20 md:w-32 bg-gradient-to-l from-white via-white/90 to-transparent z-10 pointer-events-none" />
 
-          {/* Left Fade Gradient */}
-          <div className="absolute top-0 left-0 h-full w-16 md:w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+        {/* Scroll Track */}
+        <div className="relative overflow-hidden">
+          <div className="flex w-max animate-scroll-left py-6 hover:[animation-play-state:paused]">
 
-          {/* Right Fade Gradient */}
-          <div className="absolute top-0 right-0 h-full w-16 md:w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
-
-          {/* The Animation Track */}
-          {/* hover:pause stops the scroll when user hovers to read text */}
-          <div className="flex w-max animate-scroll-left group py-4 hover:[animation-play-state:paused]">
-
-            {/* --- First Set of Logos --- */}
-            <div className="flex items-start gap-12 mx-6">
+            {/* First set */}
+            <div className="flex items-start gap-14 mx-8">
               {logos.map((logo, index) => (
                 <LogoItem key={`a-${index}`} logo={logo} />
               ))}
             </div>
 
-            {/* --- Second Set of Logos (Duplicate for infinite loop) --- */}
-            <div className="flex items-start gap-12 mx-6">
+            {/* Duplicate set */}
+            <div className="flex items-start gap-14 mx-8">
               {logos.map((logo, index) => (
                 <LogoItem key={`b-${index}`} logo={logo} />
               ))}
@@ -57,29 +55,24 @@ function LeftScroll() {
   );
 }
 
-// ✅ Extracted Component for Layout Consistency
 const LogoItem = ({ logo }) => {
   return (
-    <div className="flex flex-col items-center justify-center min-w-[120px] gap-4 group/item cursor-default">
+    <div className="flex flex-col items-center min-w-[120px] gap-3 group cursor-default select-none">
 
-      {/* Image Container: 
-         - Fixed Height (h-12) ensures text aligns horizontally across all items.
-         - Flexbox centers the logo inside that height.
-      */}
-      <div className="h-12 w-auto flex items-center justify-center transition-transform duration-300 group-hover/item:-translate-y-1">
+      {/* Logo */}
+      <div className="h-12 flex items-center justify-center transition-all duration-300 ease-out group-hover:-translate-y-1 group-hover:scale-[1.03]">
         <img
           src={logo.src}
           alt={logo.alt}
-          // No grayscale, full opacity, full color always
           className="h-full w-auto object-contain"
+          loading="lazy"
         />
       </div>
 
-      {/* Text Label */}
-      <span className="text-sm font-semibold text-gray-600 whitespace-nowrap">
+      {/* Label */}
+      <span className="text-sm font-medium text-gray-500 tracking-tight group-hover:text-gray-700 transition-colors">
         {logo.alt}
       </span>
-
     </div>
   );
 };

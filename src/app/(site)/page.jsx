@@ -24,8 +24,8 @@ const getHomepageData = unstable_cache(
       Tool.find({ isFeatured: true, featuredRank: { $gte: 1, $lte: 20 } })
         .sort({ featuredRank: 1 })
         .limit(20)
-        .select('displayName name shortDescription longDescription description rating categories pricingType tags slug logo image url logoUrl isVerified isFeatured featuredRank')
-        .lean()
+        // ✅ NEW (Matches your DB, removes bloat)
+        .select('displayName name shortDescription rating ratingCount categories pricingType slug logo image isVerified isFeatured featuredRank').lean()
     ]);
 
     let featuredTools = featuredToolsRaw;
@@ -34,7 +34,8 @@ const getHomepageData = unstable_cache(
       featuredTools = await Tool.find({})
         .sort({ rating: -1 })
         .limit(20)
-        .select('displayName name shortDescription rating categories pricingType slug logo')
+        // ✅ NEW FALLBACK
+        .select('displayName name shortDescription rating ratingCount categories pricingType slug logo image')
         .lean();
     }
 
@@ -245,12 +246,15 @@ export default async function HomePage() {
                   "description": tool.shortDescription,
                   "applicationCategory": "AI Tool",
                   "url": `https://thetoolsverse.com/tools/${tool.slug}`,
-                  "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": tool.rating,
-                    "bestRating": 5,
-                    "ratingCount": 100
-                  },
+                  // ✅ SAFETY FIX: Only include aggregateRating if real data exists
+                  ...(tool.ratingCount > 0 ? {
+                    "aggregateRating": {
+                      "@type": "AggregateRating",
+                      "ratingValue": tool.rating,
+                      "bestRating": 5,
+                      "ratingCount": tool.ratingCount
+                    }
+                  } : {}),
                   "offers": {
                     "@type": "Offer",
                     "price": tool.pricingType === 'free' ? '0' : undefined,
@@ -307,7 +311,11 @@ export default async function HomePage() {
 
       <main className="min-h-screen bg-white pb-20">
         <HeroSection totalCount={totalCount} />
-        <HomeSearchBar allCategories={allCategories} />
+        <HomeSearchBar
+          allCategories={allCategories}
+          totalCount={totalCount}
+        />
+        <AffiliatePrograms />
 
         <div className="text-center mb-6">
           <div className="inline-block">
@@ -329,20 +337,26 @@ export default async function HomePage() {
           showFilters={false}
         />
 
-        <AffiliatePrograms />
+
 
         <section className="w-[90%] mx-auto py-16 rounded-t-3xl px-4 relative overflow-hidden bg-white">
           <div className="absolute inset-0 bg-gradient-to-b from-teal-50/40 via-blue-50/20 to-transparent pointer-events-none" style={{ height: '70%' }} />
 
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              <h2 className="text-3xl font-bold text-gray-900 mb-3 relative inline-block">
                 Trending Categories
+
+                {/* Premium underline */}
+                <span className="absolute left-1/2 -bottom-2 -translate-x-1/2 h-[3px] w-32 rounded-full bg-gradient-to-r from-transparent via-teal-400 to-transparent" />
+                <span className="absolute left-1/2 -bottom-2 -translate-x-1/2 h-3 w-32 rounded-full bg-teal-400/20 blur-lg" />
               </h2>
-              <p className="text-base text-gray-600 max-w-2xl mx-auto">
+
+              <p className="mt-6 text-base text-gray-600 max-w-2xl mx-auto">
                 Explore the most popular AI tool categories trusted by thousands of users
               </p>
             </div>
+
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {trendingCategories.map((category) => (
@@ -402,13 +416,21 @@ export default async function HomePage() {
         </section>
 
         <div className="mt-20 mb-20">
-          <p className="text-center text-gray-800 font-extrabold text-2xl font-spaceGrotesk mb-6 uppercase tracking-widest">
-            Trusted by top innovative companies
-          </p>
+          <div className="relative text-center mb-8">
+            <p className="text-gray-800 font-extrabold text-2xl font-spaceGrotesk uppercase tracking-widest relative inline-block">
+              Trusted by top innovative companies
+
+              {/* Classic modern underline */}
+              <span className="absolute left-1/2 -bottom-3 -translate-x-1/2 h-[2px] w-40 bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
+              <span className="absolute left-1/2 -bottom-3 -translate-x-1/2 h-3 w-40 bg-gray-400/20 blur-md" />
+            </p>
+          </div>
+
           <LeftScroll />
         </div>
 
-        <FaqSection />
+
+        <FaqSection totalCount={totalCount} />
 
         <div className="max-w-6xl mt-16 mx-auto relative px-4 sm:px-6 lg:px-8">
           <div className="relative">

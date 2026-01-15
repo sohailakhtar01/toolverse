@@ -145,7 +145,7 @@ export default function Footer() {
               <span>© {new Date().getFullYear()} Toolsverse. All rights reserved.</span>
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className="text-purple-600 hover:text-purple-700 flex items-center font-medium"
+                className="text-purple-600 cursor-pointer hover:text-purple-700 flex items-center font-medium"
               >
                 <ChevronUp className="w-4 h-4 mr-1" /> Back to Top
               </button>

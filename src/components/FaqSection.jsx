@@ -2,42 +2,44 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
 
-const faqs = [
-  {
-    question: "What is Toolsverse?",
-    answer: "Toolsverse is a premium directory of over 1200+ AI tools and software. We curate the best AI applications across 100+ categories to help businesses, developers, and creatives find the perfect tools to boost their productivity."
-  },
-  {
-    question: "Is Toolsverse free to use?",
-    answer: "Yes! Browsing our directory, comparing tools, and reading reviews is 100% free for everyone. We aim to democratize access to AI technology."
-  },
-  {
-    question: "How can I submit my AI tool?",
-    answer: "You can submit your tool by clicking the 'Submit Tool' button in the navigation bar. We offer both free and expedited review options to get your tool listed in front of thousands of daily visitors."
-  },
-  {
-    question: "How often is the directory updated?",
-    answer: "Our team updates the directory daily. We constantly monitor the AI landscape to add new tools, update existing listings, and remove outdated software to ensure you get the most accurate information."
-  },
-  {
-    question: "Do you offer advertising options?",
-    answer: "Yes, we offer various sponsorship and advertising packages for tool owners looking to increase their visibility. You can check our 'Pricing' page for more details on featured listings and newsletter sponsorships."
-  }
-];
-
-export default function FaqSection() {
+// ✅ Accept totalCount as a prop (default to 770 if missing)
+export default function FaqSection({ totalCount = 770 }) {
   const [openIndex, setOpenIndex] = useState(null);
+
+  // ✅ Move FAQs inside the component to use the dynamic variable
+  const faqs = [
+    {
+      question: "What is Toolsverse?",
+      // 🔥 Dynamic Count Here
+      answer: `Toolsverse is a premium directory of over ${totalCount}+ AI tools and software. We curate the best AI applications across 100+ categories to help businesses, developers, and creatives find the perfect tools to boost their productivity.`
+    },
+    {
+      question: "Is Toolsverse free to use?",
+      answer: "Yes! Browsing our directory, comparing tools, and reading reviews is 100% free for everyone. We aim to democratize access to AI technology."
+    },
+    {
+      question: "How can I submit my AI tool?",
+      answer: "You can submit your tool by clicking the 'Submit Tool' button in the navigation bar. We offer both free and expedited review options to get your tool listed in front of thousands of daily visitors."
+    },
+    {
+      question: "How often is the directory updated?",
+      answer: "Our team updates the directory daily. We constantly monitor the AI landscape to add new tools, update existing listings, and remove outdated software to ensure you get the most accurate information."
+    },
+    {
+      question: "Do you offer advertising options?",
+      answer: "Yes, we offer various sponsorship and advertising packages for tool owners looking to increase their visibility. You can check our 'Pricing' page for more details on featured listings and newsletter sponsorships."
+    }
+  ];
 
   const toggleFaq = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="py-1 bg-white relative z-10 mt-10" >
+    <section className="py-1 bg-white relative z-10 mt-10">
       <div className="max-w-4xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-
           <h2 className="text-3xl md:text-4xl font-spaceGrotesk font-bold text-gray-900 mb-4">
             Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Questions</span>
           </h2>

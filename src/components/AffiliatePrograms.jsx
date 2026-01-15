@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import { ExternalLink, TrendingUp, Sparkles, Handshake } from "lucide-react";
 /**
  * Affiliate Programs Configuration
  * Truthful, conversion-focused, and scalable
@@ -142,23 +142,37 @@ export default function AffiliatePrograms() {
   return (
     <section
       id="partner-tools"
-      className="py-24 rounded-t-[15px] bg-slate-50/70 border-t border-slate-200"
+      className="py-24 rounded-t-[15px] bg-white  border-slate-200"
     >
 
 
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* --- Header Section --- */}
-        <div className="text-center mb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* --- Header Section (Matched to Homepage) --- */}
+          <div className="text-center mb-16">
+            <div className="relative inline-block">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent mb-4">
+                Partners We Trust & Recommend
+              </h2>
 
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 font-display">
-            Our Trusted Partners
-          </h2>
-          <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Hand-picked tools we actively use and recommend. These partnerships
-            help support our platform at no extra cost to you.
-          </p>
+              {/* Premium underline */}
+              <div className="relative flex justify-center">
+                <span className="absolute -bottom-2 h-[3px] w-40 sm:w-48 rounded-full bg-gradient-to-r from-transparent via-indigo-400 to-transparent opacity-80" />
+                <span className="absolute -bottom-2 h-[10px] w-40 sm:w-48 rounded-full bg-indigo-400/20 blur-lg" />
+              </div>
+            </div>
+
+            <p className="mt-8 text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              These are tools we genuinely use and trust. When you choose to explore or
+              purchase through our links, you may get exclusive offers, and it helps support
+              ToolsVerse at no extra cost to you.
+            </p>
+          </div>
+
         </div>
+
 
         {/* --- Mobile View (Cards) --- */}
         <div className="grid grid-cols-1 gap-5 md:hidden">

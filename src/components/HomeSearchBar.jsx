@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useMemo, useTransition } from "react";
 
-export default function HomeSearchBar({ allCategories }) {
+// ✅ 1. Accept totalCount as a prop here
+export default function HomeSearchBar({ allCategories, totalCount }) {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const [isPending, startTransition] = useTransition();
@@ -91,24 +92,23 @@ export default function HomeSearchBar({ allCategories }) {
             >
               <Search className="w-5 h-5 text-indigo-400 flex-shrink-0" />
 
+              {/* ✅ 2. Use the dynamic totalCount prop here */}
               <input
-  type="text"
-  value={searchQuery}
-  onChange={(e) => setSearchQuery(e.target.value)}
-  placeholder="Search over 4000+ AI tools..."
-  className="
-    flex-1
-    bg-transparent
-    outline-none
-    py-1.5 sm:py-2
-    text-base sm:text-lg
-    leading-tight
-    text-gray-700
-    placeholder-gray-400
-  "
-/>
-
-
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder={`Search over ${totalCount || 770}+ AI tools...`}
+                className="
+                  flex-1
+                  bg-transparent
+                  outline-none
+                  py-1.5 sm:py-2
+                  text-base sm:text-lg
+                  leading-tight
+                  text-gray-700
+                  placeholder-gray-400
+                "
+              />
 
               <button
                 type="submit"
