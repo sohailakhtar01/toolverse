@@ -10,7 +10,7 @@ import { Metadata } from "next";
 import {
   Star, MapPin, CreditCard, Calendar, Users, CheckCircle, XCircle, ExternalLink,
   Share2, Bookmark, ArrowRight, ChevronRight, Mail,
-  Award, Zap, Clock, DollarSign, TrendingUp, Eye
+  Award, Zap, Clock, DollarSign, TrendingUp, Eye, Sparkles
 } from "lucide-react";
 
 function getPriceBadgeStyle(pricingType) {
@@ -184,21 +184,32 @@ export default async function ToolDetailPage({ params }) {
 
   const projection = "name slug logo pricingType rating categories tags shortDescription";
 
+  // ✅ FIX 1: THE SPIDERWEB STRATEGY
+  // We increased limit from 6 to 12. 
+  // We sort by rating to show the BEST related tools, keeping users on site longer.
   const relatedTools = await Tool.find(
     { slug: { $ne: tool.slug }, categories: { $in: tool.categories } },
     projection
   )
-    .limit(6)
+    .sort({ rating: -1 }) // Show highest rated first
+    .limit(12)            // TRAP GOOGLEBOT: Increased links from 6 -> 12
     .lean();
 
+  // We increased alternatives from 4 to 8
   const alternatives = await Tool.find(
     { slug: { $ne: tool.slug }, categories: tool.categories[0] },
     projection
   )
-    .limit(4)
+    .sort({ rating: -1 })
+    .limit(8)             // MORE ALTERNATIVES = MORE INDEXING
     .lean();
 
-
+  const similarPricing = await Tool.find({
+    pricingType: tool.pricingType,
+    _id: { $ne: tool._id }
+  })
+    .limit(6)
+    .lean();
   // Enhanced JSON-LD with multiple schemas
   const jsonLdSchemas = [
     // Software Application Schema
@@ -662,16 +673,14 @@ export default async function ToolDetailPage({ params }) {
                 </div>
               </section>
               {/* ///////////////////////editorial section //////////////////////////////// */}
-              {/* Editor Review Section - Personal Testing Experience */}
               {tool.editorReview && (
                 <section className="bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 mt-8 rounded-3xl shadow-lg border-2 border-amber-200 px-4 py-7 sm:p-8 relative overflow-hidden">
-                  {/* Decorative badge ribbon */}
+
                   <div className="absolute top-4 right-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg flex items-center gap-2">
                     <Award className="w-4 h-4" />
                     <span>Editor's Honest Take</span>
                   </div>
 
-                  {/* Header */}
                   <div className="mb-6">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center shadow-md">
@@ -688,19 +697,14 @@ export default async function ToolDetailPage({ params }) {
                     </div>
                   </div>
 
-                  {/* Editor Review Content */}
                   <div className="prose prose-lg max-w-none">
                     <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-md border border-amber-200">
-                      {/* Review text with proper formatting */}
                       <div className="text-gray-800 leading-relaxed space-y-4">
                         {tool.editorReview.split('\n\n').map((paragraph, index) => (
-                          <p key={index} className="text-base sm:text-lg">
-                            {paragraph}
-                          </p>
+                          <p key={index} className="text-base sm:text-lg">{paragraph}</p>
                         ))}
                       </div>
 
-                      {/* Editor badge at bottom */}
                       <div className="mt-6 pt-6 border-t border-gray-200">
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
@@ -708,14 +712,15 @@ export default async function ToolDetailPage({ params }) {
                           </div>
                           <div>
                             <p className="font-semibold text-gray-900">TheToolsVerse Editorial Team</p>
-                            <p className="text-sm text-gray-600">Tested {new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</p>
+                            <p className="text-sm text-gray-600">
+                              Tested {new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                            </p>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Trust indicators */}
                   <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div className="flex items-center gap-3 bg-white rounded-xl p-4 border border-amber-200">
                       <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
@@ -738,6 +743,73 @@ export default async function ToolDetailPage({ params }) {
                         <p className="text-xs text-gray-600">Not sponsored content</p>
                       </div>
                     </div>
+                  </div>
+                </section>
+              )}
+
+              {/* Option 2: Quick Summary Section (For tools WITHOUT editor reviews) */}
+              {!tool.editorReview && (
+                <section className="bg-gradient-to-br from-blue-50 to-indigo-50 mt-8 rounded-2xl border border-blue-200 px-4 py-6 sm:p-8">
+
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-md flex-shrink-0">
+                      <Sparkles className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+                        About {tool.displayName}
+                      </h2>
+                      <p className="text-gray-600 text-sm">
+                        Quick overview based on listed features and specifications
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="bg-white rounded-xl p-6 border border-blue-100">
+                    <div className="space-y-4">
+
+                      {/* Category & Pricing Info */}
+                      <div className="flex flex-wrap gap-3">
+                        {tool.categories?.slice(0, 3).map((cat, idx) => (
+                          <span key={idx} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+                            {cat}
+                          </span>
+                        ))}
+                        <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">
+                          {tool.pricingType || 'Freemium'}
+                        </span>
+                      </div>
+
+
+
+                      {/* Quick Stats */}
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-gray-200">
+                        {tool.rating && (
+                          <div>
+                            <p className="text-2xl font-bold text-gray-900">{tool.rating}⭐</p>
+                            <p className="text-xs text-gray-600">User Rating</p>
+                          </div>
+                        )}
+                        {tool.visits && (
+                          <div>
+                            <p className="text-2xl font-bold text-gray-900">{tool.visits.toLocaleString()}</p>
+                            <p className="text-xs text-gray-600">Monthly Visits</p>
+                          </div>
+                        )}
+                        <div>
+                          <p className="text-2xl font-bold text-gray-900">{new Date().getFullYear()}</p>
+                          <p className="text-xs text-gray-600">Last Updated</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CTA for more info */}
+                  <div className="mt-4 bg-blue-50 rounded-lg p-4 border border-blue-100">
+                    <p className="text-sm text-blue-900">
+                      <strong>Want to learn more?</strong> Visit the official website or check user reviews below
+                      to see if {tool.displayName} fits your needs.
+                    </p>
                   </div>
                 </section>
               )}

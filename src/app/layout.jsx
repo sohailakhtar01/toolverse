@@ -1,104 +1,142 @@
-import { Space_Grotesk } from "next/font/google"; 
+import { Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import ProgressBar from '@/components/ProgressBar';
 import ClientProviders from "@/components/ClientProviders";
-
-
+import dbConnect from "@/lib/mongodb";
+import Tool from "@/models/Tool";
+import { unstable_cache } from 'next/cache'; // ⚡️ The Secret Weapon for Speed
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space-grotesk",
-  display: "swap", // Mandatory for Google LCP score
-  adjustFontFallback: true, // Prevents layout shift (CLS) automatically
+  display: "swap",
+  adjustFontFallback: true,
 });
 
-// 🔥 CRITICAL FIX: Define the Base URL for all metadata
+// 🔥 Define Base URL
 const baseUrl = new URL("https://thetoolsverse.com");
 
-export const metadata = {
-  metadataBase: baseUrl, // ✅ This fixes the "broken images" issue in Google
+/**
+ * ⚡️ HIGH PERFORMANCE DATA FETCHING
+ * This function caches the tool count for 1 hour (3600 seconds).
+ * Even if 1 million users visit, the DB is only queried ONCE per hour.
+ */
+const getSiteStats = unstable_cache(
+  async () => {
+    try {
+      await dbConnect();
+      // Run queries in parallel for speed
+      const [toolCount, categories] = await Promise.all([
+        Tool.countDocuments({}),
+        Tool.distinct('categories')
+      ]);
 
-  title: {
-    default: `1200+ Best AI Tools Directory ${new Date().getFullYear()} | ToolsVerse`,
-    template: "%s | ToolsVerse",
+      return {
+        toolCount: toolCount || 770,
+        categoryCount: categories?.length || 50
+      };
+    } catch (error) {
+      console.error("Stats Fetch Error:", error);
+      return { toolCount: 770, categoryCount: 50 }; // Safe fallback
+    }
   },
+  ['site-stats-cache'], // Unique Cache Key
+  { revalidate: 3600 }  // ⏳ Update cache every 1 hour
+);
 
-  description: `Discover 1200+ best AI tools across 100+ categories. Complete AI tools directory updated daily with free & paid AI software for business, design, writing, productivity, marketing & more. Compare top AI apps ${new Date().getFullYear()}.`,
+export async function generateMetadata() {
+  const { toolCount, categoryCount } = await getSiteStats();
+  const currentYear = new Date().getFullYear();
 
-  keywords: [
-    `best ai tools ${new Date().getFullYear()}`,
-    "ai tools directory",
-    "complete ai tools list",
-    "1200+ ai tools",
-    "free ai tools",
-    "ai software directory",
-    `best ai apps ${new Date().getFullYear()}`,
-    "ai tools list",
-    "top ai tools",
-    "ai productivity tools",
-    "ai writing tools",
-    "ai design tools",
-    "ai marketing tools",
-    "Toolsverse"
-  ],
+  return {
+    metadataBase: baseUrl,
 
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/logo.png", // ✅ Now correctly resolves to https://thetoolsverse.com/logo.png
-  },
+    title: {
+      default: `${toolCount}+ Best AI Tools Directory ${currentYear} | ToolsVerse`,
+      template: "%s | ToolsVerse",
+    },
 
-  openGraph: {
-    title: `1200+ Best AI Tools Directory ${new Date().getFullYear()} - ToolsVerse`,
-    description: "Complete directory of 1200+ best AI tools across 100+ categories. Updated daily with free & paid AI software for every need.",
-    url: "/", // ✅ Resolves correctly using metadataBase
-    siteName: "ToolsVerse - AI Tools Directory",
-    images: [
-      {
-        url: "/logo.png", // ✅ CRITICAL FIX: Now valid for Google/Facebook
-        width: 1200,
-        height: 630,
-        alt: `ToolsVerse - Best AI Tools Directory ${new Date().getFullYear()}`,
-      },
+    description: `Discover ${toolCount}+ best AI tools across ${categoryCount}+ categories. Complete AI tools directory updated daily with free & paid AI software for business, design, writing, productivity, marketing & more. Compare top AI apps ${currentYear}.`,
+
+    keywords: [
+      `best ai tools ${currentYear}`,
+      "ai tools directory",
+      "complete ai tools list",
+      `${toolCount}+ ai tools`,
+      "free ai tools",
+      "ai software directory",
+      `best ai apps ${currentYear}`,
+      "ai tools list",
+      "top ai tools",
+      "ai productivity tools",
+      "ai writing tools",
+      "ai design tools",
+      "ai marketing tools",
+      "Toolsverse"
     ],
-    type: "website",
-    locale: "en_US",
-  },
 
-  twitter: {
-    card: "summary_large_image",
-    title: `1200+ Best AI Tools Directory ${new Date().getFullYear()} - Toolsverse`,
-    description: "Discover the complete directory of best AI tools across 100+ categories. Updated daily!",
-    images: ["/logo.png"],
-    site: "@Toolsverse",
-  },
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+      apple: "/logo.png",
+    },
 
-  alternates: {
-    canonical: "/", // ✅ Points to https://thetoolsverse.com/
-  },
+    openGraph: {
+      title: `${toolCount}+ Best AI Tools Directory ${currentYear} - ToolsVerse`,
+      description: `Complete directory of ${toolCount}+ best AI tools across ${categoryCount}+ categories. Updated daily with free & paid AI software.`,
+      url: "/",
+      siteName: "ToolsVerse - AI Tools Directory",
+      images: [
+        {
+          url: "/logo.png",
+          width: 1200,
+          height: 630,
+          alt: `ToolsVerse - Best AI Tools Directory ${currentYear}`,
+        },
+      ],
+      type: "website",
+      locale: "en_US",
+    },
 
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    twitter: {
+      card: "summary_large_image",
+      title: `${toolCount}+ Best AI Tools Directory ${currentYear} - Toolsverse`,
+      description: `Discover the complete directory of best AI tools across ${categoryCount}+ categories. Updated daily!`,
+      images: ["/logo.png"],
+      site: "@Toolsverse",
+    },
+
+    alternates: {
+      canonical: "/",
+    },
+
+    robots: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
-  },
 
-  other: {
-    'theme-color': '#ffffff',
-    'msapplication-TileColor': '#ffffff',
-  },
-};
+    other: {
+      'theme-color': '#ffffff',
+      'msapplication-TileColor': '#ffffff',
+    },
+  };
+}
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  // This call is now instant because it hits the cache
+  const { toolCount, categoryCount } = await getSiteStats();
+  const currentYear = new Date().getFullYear();
+
   return (
     <html lang="en" dir="ltr" data-theme="light">
       <head>
@@ -118,7 +156,7 @@ export default function RootLayout({ children }) {
 
         <meta name="author" content="ToolsVerse Team" />
         <meta name="publisher" content="ToolsVerse" />
-        <meta name="copyright" content={`ToolsVerse ${new Date().getFullYear()}`} />
+        <meta name="copyright" content={`ToolsVerse ${currentYear}`} />
         <meta name="revisit-after" content="1 day" />
 
         <Script
@@ -133,7 +171,7 @@ export default function RootLayout({ children }) {
                   "name": "ToolsVerse",
                   "alternateName": "ToolsVerse - AI Tools Directory",
                   "url": "https://thetoolsverse.com",
-                  "description": "Complete directory of 1200+ best AI tools across 100+ categories",
+                  "description": `Complete directory of ${toolCount}+ best AI tools across ${categoryCount}+ categories`,
                   "potentialAction": {
                     "@type": "SearchAction",
                     "target": "https://thetoolsverse.com/search?q={search_term_string}",
@@ -170,7 +208,6 @@ export default function RootLayout({ children }) {
 
       <body
         className={`${spaceGrotesk.variable} antialiased scroll-smooth bg-white text-gray-900`}
-        // This inline style forces the font immediately, bypassing Tailwind issues
         style={{ fontFamily: 'var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif' }}
       >
         <ClientProviders>
