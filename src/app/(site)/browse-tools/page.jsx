@@ -3,7 +3,9 @@ import connectDB from "@/lib/mongodb";
 import Tool from "@/models/Tool";
 import BrowseClient from "@/components/BrowseClient";
 
-export const revalidate = 60;
+// ✅ FIX: Increase to 1 Hour. Directory pages don't need minute-by-minute updates.
+// Saves ~43,000 writes per month compared to 60s.
+export const revalidate = 3600;
 
 export async function generateMetadata({ searchParams }) {
   const page = parseInt(searchParams.page || "1");
@@ -56,9 +58,20 @@ export default async function BrowseToolsPage({ searchParams }) {
     allCategories = allCategories.filter(Boolean).sort();
 
     // 🔥 ADVANCED SEARCH FILTER
+    // 🔥 ADVANCED SEARCH FILTER
     let filter = {};
     let sortObj = { rating: -1, _id: 1 };
-    let projection = {};
+
+    // ✅ FIX: Define specific fields to fetch (Saves Bandwidth & RAM)
+    // Prevents fetching unused heavy data like 'editorReview', 'faqs', 'seo' etc.
+    let projection = {
+      name: 1, displayName: 1, slug: 1,
+      logo: 1, image: 1, logoUrl: 1,
+      pricingType: 1, rating: 1,
+      description: 1, shortDescription: 1, longDescription: 1,
+      categories: 1, tags: 1, features: 1,
+      url: 1, isVerified: 1, createdAt: 1
+    };
 
     if (searchParams.q?.trim()) {
       const searchTerm = searchParams.q.trim();
@@ -68,25 +81,8 @@ export default async function BrowseToolsPage({ searchParams }) {
         $text: { $search: searchTerm }
       };
 
-      // Add text score for relevance sorting
-      projection = {
-        score: { $meta: "textScore" },
-        displayName: 1,
-        name: 1,
-        shortDescription: 1,
-        longDescription: 1,
-        description: 1,
-        rating: 1,
-        categories: 1,
-        pricingType: 1,
-        tags: 1,
-        features: 1,
-        slug: 1,
-        logo: 1,
-        image: 1,
-        logoUrl: 1,
-        url: 1 // ✅ ADD THIS
-      };
+      // Add text score to projection for relevance sorting
+      projection.score = { $meta: "textScore" };
 
       // Sort by text search relevance score first, then rating
       sortObj = {
@@ -95,7 +91,6 @@ export default async function BrowseToolsPage({ searchParams }) {
         _id: 1
       };
     }
-
     // Apply sort from query params (if not searching)
     if (!searchParams.q) {
       switch (searchParams.sort) {

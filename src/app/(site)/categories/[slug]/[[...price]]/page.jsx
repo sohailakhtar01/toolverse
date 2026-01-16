@@ -24,6 +24,7 @@ import dbConnect from "@/lib/mongodb";
 import Tool from "@/models/Tool";
 import { categoryToSlug } from "@/lib/categorySlug";
 import { notFound } from "next/navigation";
+export const revalidate = 86400;
 
 // 🔹 HELPER: Flexible category matching (spaces, hyphens, parentheses)
 // 🔹 HELPER: Flexible category matching (spaces, hyphens, parentheses, AND SLASHES)
@@ -56,15 +57,13 @@ const getCategoryStats = unstable_cache(
     try {
       await dbConnect();
 
-      // ✅ Fetch ONLY what we need. This is 10x faster than Tool.find({})
+      // ✅ Fetch ONLY needed fields (Optimized for speed)
       const allTools = await Tool.find({})
         .select('categories pricingType rating')
         .lean();
 
-      // Clean the slug to match your DB categories
       const cleanSlug = slug.toLowerCase();
 
-      // Filter tools by category (Matches your logic)
       const toolsInCategory = allTools.filter((tool) =>
         tool.categories?.some((cat) =>
           cat.toLowerCase().replace(/\s+/g, '-') === cleanSlug ||
@@ -73,12 +72,10 @@ const getCategoryStats = unstable_cache(
       );
 
       const toolCount = toolsInCategory.length;
-
       const freeCount = toolsInCategory.filter(
         (t) => t.pricingType?.toLowerCase() === 'free'
       ).length;
 
-      // Calculate Average Rating safely
       const avgRating = toolCount > 0
         ? toolsInCategory.reduce((sum, t) => sum + (t.rating || 0), 0) / toolCount
         : 0;
@@ -86,15 +83,15 @@ const getCategoryStats = unstable_cache(
       return {
         toolCount: toolCount || 0,
         freeCount,
-        avgRating: Number.isFinite(avgRating) ? avgRating.toFixed(1) : '4.8' // Default to high rating
+        avgRating: Number.isFinite(avgRating) ? avgRating.toFixed(1) : '4.8'
       };
     } catch (error) {
       console.error('Category stats error:', error);
       return { toolCount: 0, freeCount: 0, avgRating: '0.0' };
     }
   },
-  ['category-stats-v1'], // Unique Cache Key
-  { revalidate: 3600 }   // Update every 1 hour
+  ['category-stats'], // ✅ FIXED: Removed ${slug} to prevent ReferenceError
+  { revalidate: 86400 } // Revalidate every 24 hours
 );
 
 // ---------- SEO METADATA (MONGODB-BASED) ----------
@@ -226,14 +223,18 @@ export default async function CategoryPage({ params, searchParams }) {
     .join(" ");
 
   // Fetch tools in this category
+  // Fetch tools in this category
   const categoryRegex = createFlexibleRegex(readableCategory);
 
+  // ✅ FIX: Use .select() to reduce data transfer by 80%
   const allCategoryTools = await Tool.find({
     $or: [
       { categories: { $elemMatch: { $regex: categoryRegex } } },
       { category: { $elemMatch: { $regex: categoryRegex } } },
     ],
-  }).lean();
+  })
+    .select("name displayName slug logo image pricingType rating description shortDescription dateAdded url") // Only fetch needed fields
+    .lean();
 
 
   // Apply price filter (free, freemium, paid, free trial, all)

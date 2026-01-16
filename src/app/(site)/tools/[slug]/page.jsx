@@ -24,19 +24,20 @@ function getPriceBadgeStyle(pricingType) {
   return styles[pricingType] || 'bg-gray-50 text-gray-700 border-gray-300 hover:bg-gray-100 hover:border-gray-400';
 }
 
-// Enhanced static generation with ISR
-// Revalidate every hour (adjust as you like)
-export const revalidate = 3600;
+// ✅ FIX: Increase to 24 Hours to stop "Write Storm"
+// 3600 se 86400 karne se tumhare daily writes 96% kam ho jayenge!
+export const revalidate = 86400;
 
 // Optional prebuild: only most important tools, not all 2000+
+// ✅ FIX: Limit pre-build to TOP 50 only
+// 500 pages build karne mein Vercel time-out ho sakta hai.
+// Baaki tools automatic generate honge jab koi user visit karega.
 export async function generateStaticParams() {
   await dbConnect();
 
-  // If you have a popularity/featured field, sort by it.
-  // Otherwise, just limit by createdAt or _id.
   const tools = await Tool.find({}, "slug")
-    .sort({ createdAt: -1 })   // or { popularity: -1 }
-    .limit(500)                // prebuild 200; the rest use ISR on first hit
+    .sort({ views: -1, createdAt: -1 }) // Popular tools pehle build karo
+    .limit(50)  // 500 se 50 kar diya safe rehne ke liye
     .lean();
 
   return tools.map((tool) => ({ slug: tool.slug }));
@@ -142,7 +143,8 @@ export default async function ToolDetailPage({ params }) {
   await dbConnect();
   const toolDoc = await Tool.findOne(
     { slug: params.slug },
-    "name displayName slug url logo pricingType rating ratingCount categories tags features shortDescription longDescription pricing faqs isFeatured isVerified visits seo"
+    // 👇 Maine last mein 'editorReview' add kar diya hai
+    "name displayName slug url logo pricingType rating ratingCount categories tags features shortDescription longDescription pricing faqs isFeatured isVerified visits seo editorReview"
   ).lean();
 
 

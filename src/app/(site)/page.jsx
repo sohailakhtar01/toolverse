@@ -96,7 +96,9 @@ const trendingCategories = [
   }
 ];
 
-export const revalidate = 60;
+// ✅ FIX: Revalidate every 30 minutes. 
+// Sufficient for homepage freshness, saves massive server resources.
+export const revalidate = 1800;
 
 // ✅ DYNAMIC METADATA with REAL numbers
 export async function generateMetadata() {

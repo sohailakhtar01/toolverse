@@ -3,18 +3,39 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+
+  // ✅ OPTIMIZED IMAGE CONFIG
   images: {
-    domains: ["cdn.sanity.io"],
+    // Enable modern formats for Sanity images
+    formats: ['image/avif', 'image/webp'],
+
+    // 🔒 RESTRICTED: Only allow Sanity for image optimization
+    // Local images in /public don't need this list
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        pathname: '/**',
+      },
+    ],
+
+    // Cache optimized images longer to reduce re-processing
+    minimumCacheTTL: 2592000, // 30 days
+
+    // Limit sizes to prevent generating massive images for small containers
+    deviceSizes: [640, 750, 828, 1080, 1200],
+    imageSizes: [16, 32, 48, 64, 96],
   },
+
   env: {
     SITE_URL: process.env.SITE_URL || 'https://www.thetoolsverse.com',
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.thetoolsverse.com',
   },
   trailingSlash: false,
-  
+
+  // 🔄 YOUR EXISTING REDIRECTS (Kept exactly as is)
   async redirects() {
     return [
-      // 🌐 Redirect old vercel domain to main domain
       {
         source: '/:path*',
         has: [
@@ -26,8 +47,6 @@ const nextConfig = {
         destination: 'https://www.thetoolsverse.com/:path*',
         permanent: true,
       },
-      
-      // 🚫 Block /products/ URLs
       {
         source: '/products/:path*',
         destination: '/',
@@ -53,8 +72,6 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
-      
-      // 📱 Mobile redirect
       {
         source: '/:path*',
         has: [
@@ -66,8 +83,6 @@ const nextConfig = {
         destination: 'https://www.thetoolsverse.com/:path*',
         permanent: true,
       },
-      
-      // 🔄 HTTP to HTTPS
       {
         source: '/:path*',
         has: [
@@ -82,10 +97,10 @@ const nextConfig = {
       },
     ];
   },
-  
+
+  // 🛡️ YOUR EXISTING HEADERS (Kept exactly as is)
   async headers() {
     return [
-      // ✅ Default headers
       {
         source: '/:path*',
         headers: [
@@ -103,8 +118,6 @@ const nextConfig = {
           },
         ],
       },
-      
-      // ❌ Block bad URLs
       {
         source: '/products/:path*',
         headers: [
@@ -132,8 +145,6 @@ const nextConfig = {
           },
         ],
       },
-      
-      // ✅ Tool pages - YOUR 250+ DYNAMIC PAGES
       {
         source: '/tools/:slug*',
         headers: [
@@ -147,8 +158,6 @@ const nextConfig = {
           },
         ],
       },
-      
-      // ✅ Category pages - YOUR 40+ DYNAMIC PAGES
       {
         source: '/categories/:slug*',
         headers: [
@@ -162,8 +171,6 @@ const nextConfig = {
           },
         ],
       },
-      
-      // 🚀 Static assets
       {
         source: '/images/:path*',
         headers: [
@@ -173,8 +180,6 @@ const nextConfig = {
           },
         ],
       },
-      
-      // 📄 Sitemap & Robots
       {
         source: '/sitemap.xml',
         headers: [
@@ -203,8 +208,7 @@ const nextConfig = {
       },
     ];
   },
-  
-  // NO REWRITES NEEDED - sitemap.xml.js handles it automatically
+
   async rewrites() {
     return [];
   },

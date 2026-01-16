@@ -63,12 +63,13 @@ const ToolCard = ({ tool, viewMode = 'grid' }) => {
         className="flex items-center justify-center gap-3 mb-4 group"
       >
         <div className="relative w-10 h-10 rounded-lg overflow-hidden bg-gray-100">
-          <Image
+          <img
             src={tool.logo || tool.image || '/default-tool-icon.png'}
             alt={tool.name}
-            fill
-            sizes="40px"
-            className="object-cover"
+            width="40"
+            height="40"
+            loading="lazy"
+            className="w-full h-full object-cover"
           />
         </div>
 
