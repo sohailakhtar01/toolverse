@@ -136,6 +136,36 @@ const affiliatePrograms = [
     link: "https://smartli.partnerlinks.io/hxcf2i0zo3hh",
     priority: "low",
   },
+  {
+    id: 14,
+    name: "Centripe",
+    logo: "/logo/centripe.png",
+    deal: "14-day free trial (credit card required)",
+    pricing: "free-trial",
+    visits: "—",
+    link: "https://partner.crmone.com/s3bcd4xyqnzm",
+    priority: "medium",
+  },
+  {
+    id: 15,
+    name: "Iconosquare",
+    logo: "/logo/iconosquare.webp",
+    deal: "Free trial + paid plans available",
+    pricing: "freemium",
+    visits: "—",
+    link: "https://try.iconosquare.com/pricing-yyj7kz1rjjla",
+    priority: "medium",
+  },
+  {
+    id: 16,
+    name: "QuillBot AI Humanizer",
+    logo: "/logo/ai-humanizer-quillbot.png",
+    deal: "Free to use + premium upgrade available",
+    pricing: "free",
+    visits: "—",
+    link: "https://try.quillbot.com/d050f3e00930",
+    priority: "high",
+  },
 ];
 
 export default function AffiliatePrograms() {

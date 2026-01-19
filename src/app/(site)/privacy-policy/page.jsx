@@ -120,7 +120,7 @@ export default function PrivacyPolicy() {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 2. Information We Collect
               </h2>
-              
+
               <h3 className="text-xl font-semibold text-gray-800 mb-3">
                 2.1 Personal Information
               </h3>
@@ -183,7 +183,7 @@ export default function PrivacyPolicy() {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 4. Cookies and Tracking Technologies
               </h2>
-              
+
               <h3 className="text-xl font-semibold text-gray-800 mb-3">
                 4.1 What Are Cookies
               </h3>
@@ -209,34 +209,41 @@ export default function PrivacyPolicy() {
               </p>
             </section>
 
-            {/* Section 5: Third-Party Advertising */}
+            {/* Section 5: Third-Party Advertising (UPDATED FOR ADSENSE COMPLIANCE) */}
             <section className="mb-10">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 5. Third-Party Advertising and Google AdSense
               </h2>
-              
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">
-                5.1 Google AdSense
-              </h3>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                We use Google AdSense to display advertisements on Toolsverse. Google AdSense uses cookies to serve ads based on your prior visits to our website or other websites on the internet.
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to our site and/or other sites on the internet. These cookies collect information about your browsing activities to provide you with personalized advertisements.
-              </p>
 
               <h3 className="text-xl font-semibold text-gray-800 mb-3">
-                5.2 Third-Party Vendors
+                5.1 Google AdSense & Cookie Usage
               </h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to our website. These vendors may collect and use information about your visits to this and other websites to provide advertisements about goods and services of interest to you.
+                We use Google AdSense to display advertisements on Toolsverse. Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to our website or other websites.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Google's use of advertising cookies enables it and its partners to serve ads to our users based on their visit to our sites and/or other sites on the Internet.
               </p>
 
+              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                <p className="text-gray-700 leading-relaxed">
+                  <strong>How Google uses your data:</strong> For more detailed information on how Google uses data when you use our partners' sites or apps, please visit:{" "}
+                  <a
+                    href="https://policies.google.com/technologies/partner-sites"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-700 hover:text-blue-900 underline font-medium"
+                  >
+                    How Google uses data when you use our partners' sites or apps
+                  </a>.
+                </p>
+              </div>
+
               <h3 className="text-xl font-semibold text-gray-800 mb-3">
-                5.3 Opting Out of Personalized Advertising
+                5.2 Opting Out of Personalized Advertising
               </h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                You may opt out of personalized advertising by visiting the following links:
+                Users may opt out of personalized advertising by visiting the following links:
               </p>
               <ul className="list-disc pl-6 mb-4 space-y-2 text-gray-700">
                 <li>
@@ -257,16 +264,6 @@ export default function PrivacyPolicy() {
                     className="text-blue-600 hover:text-blue-800 underline"
                   >
                     Digital Advertising Alliance Opt-Out
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://optout.networkadvertising.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:text-blue-800 underline"
-                  >
-                    Network Advertising Initiative Opt-Out
                   </a>
                 </li>
               </ul>
@@ -351,7 +348,7 @@ export default function PrivacyPolicy() {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 10. Your Privacy Rights
               </h2>
-              
+
               <h3 className="text-xl font-semibold text-gray-800 mb-3">
                 10.1 General Rights
               </h3>

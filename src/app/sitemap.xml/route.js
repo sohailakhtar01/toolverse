@@ -3,9 +3,8 @@ import Tool from '@/models/Tool';
 import { getAllPosts } from '@/lib/sanity';
 
 // ⚡️ PERFORMANCE CONFIG
-export const dynamic = 'force-dynamic';
-export const revalidate = 3600; // Cache for 1 hour
-export const maxDuration = 60;  // Allow up to 60s (Vercel Pro)
+export const revalidate = 3600; // ✅ ACTIVE: Now it only runs once per hour
+export const maxDuration = 60;
 
 // ---------------------------------------------------------
 // 🛠️ HELPER FUNCTIONS
