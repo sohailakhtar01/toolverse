@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, TrendingUp, Sparkles, Handshake } from "lucide-react";
+import { ExternalLink, TrendingUp, Sparkles, Handshake, BadgeCheck } from "lucide-react";
 /**
  * Affiliate Programs Configuration
  * Truthful, conversion-focused, and scalable
  */
 const affiliatePrograms = [
   {
-    id: 1,
+    id: 27,
     name: "SaneBox",
     logo: "/logo/sanebox.jpg",
     deal: "$15 credit + 14-day free trial",
@@ -17,7 +17,7 @@ const affiliatePrograms = [
     priority: "high",
   },
   {
-    id: 2,
+    id: 8,
     name: "AdCreative.ai",
     logo: "/logo/sohailad.png",
     deal: "Free trial via partner link",
@@ -27,7 +27,7 @@ const affiliatePrograms = [
     priority: "high",
   },
   {
-    id: 3,
+    id: 22,
     name: "Apollo.io",
     logo: "/logo/apolloio.jpg",
     deal: "Official partner link",
@@ -37,7 +37,7 @@ const affiliatePrograms = [
     priority: "high",
   },
   {
-    id: 4,
+    id: 26,
     name: "LearnWorlds",
     logo: "/logo/learnworlds.jpg",
     deal: "Partner offer available",
@@ -47,7 +47,7 @@ const affiliatePrograms = [
     priority: "medium",
   },
   {
-    id: 5,
+    id: 6,
     name: "BidX",
     logo: "/logo/bidx.png",
     deal: "15% instant discount on coupon code (TOOLSVERSE15)",
@@ -57,7 +57,7 @@ const affiliatePrograms = [
     priority: "medium",
   },
   {
-    id: 6,
+    id: 7,
     name: "BLACKBOX AI",
     logo: "/logo/blackboxai.png",
     deal: "Official partner link",
@@ -67,7 +67,7 @@ const affiliatePrograms = [
     priority: "medium",
   },
   {
-    id: 7,
+    id: 24,
     name: "ElevenLabs",
     logo: "/logo/elevenlabs.png",
     deal: "Creator partner program",
@@ -77,7 +77,7 @@ const affiliatePrograms = [
     priority: "medium",
   },
   {
-    id: 8,
+    id: 21,
     name: "Browse AI",
     logo: "/logo/browseai.png",
     deal: "Official partner link",
@@ -142,7 +142,7 @@ const affiliatePrograms = [
     logo: "/logo/centripe.png",
     deal: "14-day free trial (credit card required)",
     pricing: "free-trial",
-    visits: "—",
+    visits: "16.5K",
     link: "https://partner.crmone.com/s3bcd4xyqnzm",
     priority: "medium",
   },
@@ -152,7 +152,7 @@ const affiliatePrograms = [
     logo: "/logo/iconosquare.webp",
     deal: "Free trial + paid plans available",
     pricing: "freemium",
-    visits: "—",
+    visits: "262.2K",
     link: "https://try.iconosquare.com/pricing-yyj7kz1rjjla",
     priority: "medium",
   },
@@ -162,25 +162,149 @@ const affiliatePrograms = [
     logo: "/logo/ai-humanizer-quillbot.png",
     deal: "Free to use + premium upgrade available",
     pricing: "free",
-    visits: "—",
+    visits: "47M",
     link: "https://try.quillbot.com/d050f3e00930",
     priority: "high",
+  },
+  {
+    id: 17,
+    name: "Reclaim.ai",
+    logo: "/logo/reclaimai.png",
+    deal: "Free plan available + paid productivity plans",
+    pricing: "freemium",
+    visits: "1M",
+    link: "https://reclaim.ai",
+    priority: "high",
+  },
+  {
+    id: 18,
+    name: "Brand24",
+    logo: "/logo/brand24.jpeg",
+    deal: "14-day free trial on all plans",
+    pricing: "free-trial",
+    visits: "277K",
+    link: "https://try.brand24.com/89g7vup9z3su",
+    priority: "high",
+  },
+  {
+    id: 19,
+    name: "Vista Social",
+    logo: "/logo/vistasocial.png",
+    deal: "14-day free trial (no credit card)",
+    pricing: "free-trial",
+    visits: "217.3K+",
+    link: "https://join.vistasocial.com/g9099zgsw0fa",
+    priority: "medium",
+  },
+  {
+    id: 20,
+    name: "Landbot",
+    logo: "/logo/landbot.png",
+    deal: "Free sandbox + paid chatbot plans",
+    pricing: "freemium",
+    visits: "377k",
+    link: "https://get.landbotlab.com/rt5swx586u1w",
+    priority: "medium",
+  },
+  {
+    id: 2,
+    name: "Logome.ai",
+    logo: "/logo/logomeai.png",
+    deal: "Try logo generation free, paid brand kits",
+    pricing: "free-trial",
+    visits: "300K+",
+    link: "https://logomeai.partnerlinks.io/j3d9x4dvqson",
+    priority: "low",
+  },
+  {
+    id: 3,
+    name: "Descript",
+    logo: "/logo/descript.png",
+    deal: "Free plan + AI audio & video editing",
+    pricing: "freemium",
+    visits: "5M+",
+    link: "https://get.descript.com/04929q6odrgn",
+    priority: "high",
+  },
+  {
+    id: 23,
+    name: "Tidio",
+    logo: "/logo/tidio.png",
+    deal: "7-day free trial on AI customer support",
+    pricing: "free-trial",
+    visits: "3M+",
+    link: "https://affiliate.tidio.com/08lfj3o0iapb",
+    priority: "high",
+  },
+  {
+    id: 5,
+    name: "GetResponse",
+    logo: "/logo/getresponse.png",
+    deal: "Free trial on email & marketing automation",
+    pricing: "free-trial",
+    visits: "10M+",
+    link: "https://try.getresponsetoday.com/u1mbsb8iybsj",
+    priority: "high",
+  },
+  {
+    id: 25,
+    name: "Murf AI",
+    logo: "/logo/murfai.png",
+    deal: "Free voice generation trial",
+    pricing: "free-trial",
+    visits: "4M+",
+    link: "https://get.murf.ai/gsit1pdoxrll",
+    priority: "medium",
+  },
+  {
+    id: 4,
+    name: "Prezi",
+    logo: "/logo/prezi.png",
+    deal: "Free plan + AI-powered presentations",
+    pricing: "freemium",
+    visits: "12M+",
+    link: "https://try.prezi.com/ywu6u9mx8svt",
+    priority: "medium",
+  },
+  {
+    id: 1,
+    name: "Gusto",
+    logo: "/logo/gusto.png",
+    deal: "Payroll & HR plans starting at $49/month",
+    pricing: "free-trial",
+    visits: "8M+",
+    link: "https://get.gusto.com/phvi0tjgn6mt",
+    priority: "medium",
+  },
+  {
+    id: 28,
+    name: "Castmagic",
+    logo: "/logo/castmagic.png",
+    deal: "AI transcription & content repurposing plans",
+    pricing: "paid",
+    visits: "500K+",
+    link: "https://get.castmagic.io/z320s3dzlfii",
+    priority: "low",
   },
 ];
 
 export default function AffiliatePrograms() {
+  // SORTING LOGIC:
+  // We create a copy of the array and sort it by ID (Ascending: 1, 2, 3...)
+  // This ensures that even if the JSON above is mixed up, the UI renders them in order.
+  const sortedPrograms = [...affiliatePrograms].sort((a, b) => a.id - b.id);
+  // --- ADD THIS LINE HERE ---
+  const isVerified = (id) => [1, 2, 3, 4, 5].includes(id);
+
   return (
     <section
       id="partner-tools"
       className="py-24 rounded-t-[15px] bg-white  border-slate-200"
     >
-
-
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* --- Header Section --- */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* --- Header Section (Matched to Homepage) --- */}
           <div className="text-center mb-16">
             <div className="relative inline-block">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent mb-4">
@@ -200,13 +324,12 @@ export default function AffiliatePrograms() {
               ToolsVerse at no extra cost to you.
             </p>
           </div>
-
         </div>
 
-
         {/* --- Mobile View (Cards) --- */}
+        {/* We map over 'sortedPrograms' instead of the raw array */}
         <div className="grid grid-cols-1 gap-5 md:hidden">
-          {affiliatePrograms.map((tool) => (
+          {sortedPrograms.map((tool) => (
             <div
               key={tool.id}
               className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-purple-200 transition-all duration-300"
@@ -220,6 +343,13 @@ export default function AffiliatePrograms() {
                       fill
                       className="object-contain rounded-md"
                     />
+                    {/* --- ADD THIS BLOCK HERE --- */}
+                    {isVerified(tool.id) && (
+                      <div className="absolute -top-2 -right-2 z-10">
+                        <BadgeCheck className="w-5 h-5 text-white fill-blue-500" strokeWidth={2.5} />
+                      </div>
+                    )}
+                    {/* --------------------------- */}
                   </div>
                   <h3 className="font-semibold text-slate-900">{tool.name}</h3>
                 </div>
@@ -265,6 +395,7 @@ export default function AffiliatePrograms() {
         </div>
 
         {/* --- Desktop View (Table) --- */}
+        {/* We map over 'sortedPrograms' here as well */}
         <div className="hidden md:block overflow-hidden rounded-2xl border border-slate-200 shadow-sm bg-white">
           <table className="w-full text-left border-collapse">
             <thead>
@@ -287,7 +418,7 @@ export default function AffiliatePrograms() {
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
-              {affiliatePrograms.map((tool) => (
+              {sortedPrograms.map((tool) => (
                 <tr
                   key={tool.id}
                   className="hover:bg-slate-50/80 transition-colors duration-200 group"
@@ -301,6 +432,13 @@ export default function AffiliatePrograms() {
                           fill
                           className="object-contain rounded-md"
                         />
+                        {/* --- ADD THIS BLOCK HERE --- */}
+                        {isVerified(tool.id) && (
+                          <div className="absolute -top-2 -right-2 z-10">
+                            <BadgeCheck className="w-5 h-5 text-white fill-blue-500" strokeWidth={2.5} />
+                          </div>
+                        )}
+                        {/* --------------------------- */}
                       </div>
                       <span className="font-semibold text-slate-900 group-hover:text-purple-600 transition-colors">
                         {tool.name}
@@ -333,9 +471,7 @@ export default function AffiliatePrograms() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-200 rounded-lg shadow-[0_1px_2px_rgba(0,0,0,0.06)] hover:bg-slate-50 hover:border-slate-300 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2 transition-all active:scale-95"
-
                     >
-
                       Visit
                       <svg
                         className="w-3.5 h-3.5 ml-1.5 opacity-60"
@@ -363,7 +499,7 @@ export default function AffiliatePrograms() {
           Trusted and verified partners only.
         </p>
 
-        {/* --- Become a Partner CTA (New) --- */}
+        {/* --- Become a Partner CTA --- */}
         <div className="mt-20">
           <div className="relative bg-white rounded-2xl border border-slate-200 p-8 md:p-10 shadow-sm text-center overflow-hidden">
             {/* Decorative Top Line */}
