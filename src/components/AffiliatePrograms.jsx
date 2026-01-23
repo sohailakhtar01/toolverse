@@ -47,7 +47,7 @@ const affiliatePrograms = [
     priority: "medium",
   },
   {
-    id: 6,
+    id: 17,
     name: "BidX",
     logo: "/logo/bidx.png",
     deal: "15% instant discount on coupon code (TOOLSVERSE15)",
@@ -167,13 +167,13 @@ const affiliatePrograms = [
     priority: "high",
   },
   {
-    id: 17,
+    id: 1,
     name: "Reclaim.ai",
     logo: "/logo/reclaimai.png",
     deal: "Free plan available + paid productivity plans",
     pricing: "freemium",
     visits: "1M",
-    link: "https://reclaim.ai",
+    link: "https://go.reclaim.ai/251ngneyr8mv",
     priority: "high",
   },
   {
@@ -207,7 +207,7 @@ const affiliatePrograms = [
     priority: "medium",
   },
   {
-    id: 2,
+    id: 3,
     name: "Logome.ai",
     logo: "/logo/logomeai.png",
     deal: "Try logo generation free, paid brand kits",
@@ -217,7 +217,7 @@ const affiliatePrograms = [
     priority: "low",
   },
   {
-    id: 3,
+    id: 4,
     name: "Descript",
     logo: "/logo/descript.png",
     deal: "Free plan + AI audio & video editing",
@@ -237,7 +237,7 @@ const affiliatePrograms = [
     priority: "high",
   },
   {
-    id: 5,
+    id: 6,
     name: "GetResponse",
     logo: "/logo/getresponse.png",
     deal: "Free trial on email & marketing automation",
@@ -257,7 +257,7 @@ const affiliatePrograms = [
     priority: "medium",
   },
   {
-    id: 4,
+    id: 5,
     name: "Prezi",
     logo: "/logo/prezi.png",
     deal: "Free plan + AI-powered presentations",
@@ -267,7 +267,7 @@ const affiliatePrograms = [
     priority: "medium",
   },
   {
-    id: 1,
+    id: 2,
     name: "Gusto",
     logo: "/logo/gusto.png",
     deal: "Payroll & HR plans starting at $49/month",
